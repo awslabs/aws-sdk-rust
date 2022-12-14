@@ -66,3 +66,4 @@ mod test {
         assert_eq!(parsed.code(), Some("InvalidGreeting"));
     }
 }
+

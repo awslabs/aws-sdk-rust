@@ -3,12 +3,11 @@ use std::fmt::Write;
 
 /// See [`BatchGetRecordInput`](crate::input::BatchGetRecordInput).
 pub mod batch_get_record_input {
-
+    
     /// A builder for [`BatchGetRecordInput`](crate::input::BatchGetRecordInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
-        pub(crate) identifiers:
-            std::option::Option<std::vec::Vec<crate::model::BatchGetRecordIdentifier>>,
+        pub(crate) identifiers: std::option::Option<std::vec::Vec<crate::model::BatchGetRecordIdentifier>>,
     }
     impl Builder {
         /// Appends an item to `identifiers`.
@@ -18,128 +17,82 @@ pub mod batch_get_record_input {
         /// <p>A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name that have been requested to be retrieved in batch.</p>
         pub fn identifiers(mut self, input: crate::model::BatchGetRecordIdentifier) -> Self {
             let mut v = self.identifiers.unwrap_or_default();
-            v.push(input);
-            self.identifiers = Some(v);
-            self
+                            v.push(input);
+                            self.identifiers = Some(v);
+                            self
         }
         /// <p>A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name that have been requested to be retrieved in batch.</p>
-        pub fn set_identifiers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BatchGetRecordIdentifier>>,
-        ) -> Self {
-            self.identifiers = input;
-            self
+        pub fn set_identifiers(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchGetRecordIdentifier>>) -> Self {
+            self.identifiers = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetRecordInput`](crate::input::BatchGetRecordInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::BatchGetRecordInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::BatchGetRecordInput {
-                identifiers: self.identifiers,
-            })
+        pub fn build(self) -> Result<crate::input::BatchGetRecordInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::BatchGetRecordInput {
+                    identifiers: self.identifiers
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl BatchGetRecordInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetRecord`](crate::operation::BatchGetRecord)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::BatchGetRecord,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::BatchGetRecord, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::BatchGetRecordInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::BatchGetRecordInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/BatchGetRecord").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::BatchGetRecordInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::BatchGetRecordInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_batch_get_record(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_batch_get_record(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::BatchGetRecord::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "BatchGetRecord",
-            "sagemakerfeaturestoreruntime",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::BatchGetRecord::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("BatchGetRecord", "sagemakerfeaturestoreruntime"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -151,9 +104,9 @@ impl BatchGetRecordInput {
 
 /// See [`DeleteRecordInput`](crate::input::DeleteRecordInput).
 pub mod delete_record_input {
-
+    
     /// A builder for [`DeleteRecordInput`](crate::input::DeleteRecordInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) feature_group_name: std::option::Option<std::string::String>,
         pub(crate) record_identifier_value_as_string: std::option::Option<std::string::String>,
@@ -166,28 +119,17 @@ pub mod delete_record_input {
             self
         }
         /// <p>The name of the feature group to delete the record from. </p>
-        pub fn set_feature_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.feature_group_name = input;
-            self
+        pub fn set_feature_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.feature_group_name = input; self
         }
         /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in string format. </p>
-        pub fn record_identifier_value_as_string(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn record_identifier_value_as_string(mut self, input: impl Into<std::string::String>) -> Self {
             self.record_identifier_value_as_string = Some(input.into());
             self
         }
         /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in string format. </p>
-        pub fn set_record_identifier_value_as_string(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.record_identifier_value_as_string = input;
-            self
+        pub fn set_record_identifier_value_as_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.record_identifier_value_as_string = input; self
         }
         /// <p>Timestamp indicating when the deletion event occurred. <code>EventTime</code> can be used to query data at a certain point in time.</p>
         pub fn event_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -196,86 +138,53 @@ pub mod delete_record_input {
         }
         /// <p>Timestamp indicating when the deletion event occurred. <code>EventTime</code> can be used to query data at a certain point in time.</p>
         pub fn set_event_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.event_time = input;
-            self
+            self.event_time = input; self
         }
         /// Consumes the builder and constructs a [`DeleteRecordInput`](crate::input::DeleteRecordInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteRecordInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DeleteRecordInput {
-                feature_group_name: self.feature_group_name,
-                record_identifier_value_as_string: self.record_identifier_value_as_string,
-                event_time: self.event_time,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteRecordInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DeleteRecordInput {
+                    feature_group_name: self.feature_group_name
+                    ,
+                    record_identifier_value_as_string: self.record_identifier_value_as_string
+                    ,
+                    event_time: self.event_time
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteRecordInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRecord`](crate::operation::DeleteRecord)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteRecord,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteRecord, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteRecordInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteRecordInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.feature_group_name;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "feature_group_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "feature_group_name", details: "cannot be empty or unset" })?;
                 let feature_group_name = aws_smithy_http::label::fmt_string(input_1, false);
                 if feature_group_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "feature_group_name",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/FeatureGroup/{FeatureGroupName}",
-                    FeatureGroupName = feature_group_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "feature_group_name", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/FeatureGroup/{FeatureGroupName}", FeatureGroupName = feature_group_name).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::DeleteRecordInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::DeleteRecordInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_2) = &_input.record_identifier_value_as_string {
-                    query.push_kv(
-                        "RecordIdentifierValueAsString",
-                        &aws_smithy_http::query::fmt_string(&inner_2),
-                    );
+                    query.push_kv("RecordIdentifierValueAsString", &aws_smithy_http::query::fmt_string(&inner_2));
                 }
                 if let Some(inner_3) = &_input.event_time {
                     query.push_kv("EventTime", &aws_smithy_http::query::fmt_string(&inner_3));
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DeleteRecordInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DeleteRecordInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -285,54 +194,37 @@ impl DeleteRecordInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteRecord::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteRecord",
-            "sagemakerfeaturestoreruntime",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteRecord::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteRecord", "sagemakerfeaturestoreruntime"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -344,9 +236,9 @@ impl DeleteRecordInput {
 
 /// See [`GetRecordInput`](crate::input::GetRecordInput).
 pub mod get_record_input {
-
+    
     /// A builder for [`GetRecordInput`](crate::input::GetRecordInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) feature_group_name: std::option::Option<std::string::String>,
         pub(crate) record_identifier_value_as_string: std::option::Option<std::string::String>,
@@ -359,28 +251,17 @@ pub mod get_record_input {
             self
         }
         /// <p>The name of the feature group in which you want to put the records.</p>
-        pub fn set_feature_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.feature_group_name = input;
-            self
+        pub fn set_feature_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.feature_group_name = input; self
         }
         /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies the record in the <code>FeatureGroup</code>. </p>
-        pub fn record_identifier_value_as_string(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn record_identifier_value_as_string(mut self, input: impl Into<std::string::String>) -> Self {
             self.record_identifier_value_as_string = Some(input.into());
             self
         }
         /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies the record in the <code>FeatureGroup</code>. </p>
-        pub fn set_record_identifier_value_as_string(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.record_identifier_value_as_string = input;
-            self
+        pub fn set_record_identifier_value_as_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.record_identifier_value_as_string = input; self
         }
         /// Appends an item to `feature_names`.
         ///
@@ -389,82 +270,49 @@ pub mod get_record_input {
         /// <p>List of names of Features to be retrieved. If not specified, the latest value for all the Features are returned.</p>
         pub fn feature_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.feature_names.unwrap_or_default();
-            v.push(input.into());
-            self.feature_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.feature_names = Some(v);
+                            self
         }
         /// <p>List of names of Features to be retrieved. If not specified, the latest value for all the Features are returned.</p>
-        pub fn set_feature_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.feature_names = input;
-            self
+        pub fn set_feature_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.feature_names = input; self
         }
         /// Consumes the builder and constructs a [`GetRecordInput`](crate::input::GetRecordInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetRecordInput, aws_smithy_http::operation::BuildError> {
-            Ok(crate::input::GetRecordInput {
-                feature_group_name: self.feature_group_name,
-                record_identifier_value_as_string: self.record_identifier_value_as_string,
-                feature_names: self.feature_names,
-            })
+        pub fn build(self) -> Result<crate::input::GetRecordInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::GetRecordInput {
+                    feature_group_name: self.feature_group_name
+                    ,
+                    record_identifier_value_as_string: self.record_identifier_value_as_string
+                    ,
+                    feature_names: self.feature_names
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetRecordInput {
     /// Consumes the builder and constructs an Operation<[`GetRecord`](crate::operation::GetRecord)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetRecord,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetRecord, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetRecordInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::GetRecordInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_4 = &_input.feature_group_name;
-                let input_4 = input_4.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "feature_group_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_4 = input_4.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "feature_group_name", details: "cannot be empty or unset" })?;
                 let feature_group_name = aws_smithy_http::label::fmt_string(input_4, false);
                 if feature_group_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "feature_group_name",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/FeatureGroup/{FeatureGroupName}",
-                    FeatureGroupName = feature_group_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "feature_group_name", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/FeatureGroup/{FeatureGroupName}", FeatureGroupName = feature_group_name).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::GetRecordInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::GetRecordInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_5) = &_input.record_identifier_value_as_string {
-                    query.push_kv(
-                        "RecordIdentifierValueAsString",
-                        &aws_smithy_http::query::fmt_string(&inner_5),
-                    );
+                    query.push_kv("RecordIdentifierValueAsString", &aws_smithy_http::query::fmt_string(&inner_5));
                 }
                 if let Some(inner_6) = &_input.feature_names {
                     for inner_7 in inner_6 {
@@ -473,12 +321,10 @@ impl GetRecordInput {
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::GetRecordInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::GetRecordInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -488,52 +334,37 @@ impl GetRecordInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op =
-            aws_smithy_http::operation::Operation::new(request, crate::operation::GetRecord::new())
-                .with_metadata(aws_smithy_http::operation::Metadata::new(
-                    "GetRecord",
-                    "sagemakerfeaturestoreruntime",
-                ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetRecord::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetRecord", "sagemakerfeaturestoreruntime"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -545,9 +376,9 @@ impl GetRecordInput {
 
 /// See [`PutRecordInput`](crate::input::PutRecordInput).
 pub mod put_record_input {
-
+    
     /// A builder for [`PutRecordInput`](crate::input::PutRecordInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) feature_group_name: std::option::Option<std::string::String>,
         pub(crate) record: std::option::Option<std::vec::Vec<crate::model::FeatureValue>>,
@@ -559,169 +390,110 @@ pub mod put_record_input {
             self
         }
         /// <p>The name of the feature group that you want to insert the record into.</p>
-        pub fn set_feature_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.feature_group_name = input;
-            self
+        pub fn set_feature_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.feature_group_name = input; self
         }
         /// Appends an item to `record`.
         ///
         /// To override the contents of this collection use [`set_record`](Self::set_record).
         ///
-        /// <p>List of FeatureValues to be inserted. This will be a full over-write. If you only want to update few of the feature values, do the following:</p>
-        /// <ul>
-        /// <li> <p>Use <code>GetRecord</code> to retrieve the latest record.</p> </li>
-        /// <li> <p>Update the record returned from <code>GetRecord</code>. </p> </li>
-        /// <li> <p>Use <code>PutRecord</code> to update feature values.</p> </li>
+        /// <p>List of FeatureValues to be inserted. This will be a full over-write. If you only want to update few of the feature values, do the following:</p> 
+        /// <ul> 
+        /// <li> <p>Use <code>GetRecord</code> to retrieve the latest record.</p> </li> 
+        /// <li> <p>Update the record returned from <code>GetRecord</code>. </p> </li> 
+        /// <li> <p>Use <code>PutRecord</code> to update feature values.</p> </li> 
         /// </ul>
         pub fn record(mut self, input: crate::model::FeatureValue) -> Self {
             let mut v = self.record.unwrap_or_default();
-            v.push(input);
-            self.record = Some(v);
-            self
+                            v.push(input);
+                            self.record = Some(v);
+                            self
         }
-        /// <p>List of FeatureValues to be inserted. This will be a full over-write. If you only want to update few of the feature values, do the following:</p>
-        /// <ul>
-        /// <li> <p>Use <code>GetRecord</code> to retrieve the latest record.</p> </li>
-        /// <li> <p>Update the record returned from <code>GetRecord</code>. </p> </li>
-        /// <li> <p>Use <code>PutRecord</code> to update feature values.</p> </li>
+        /// <p>List of FeatureValues to be inserted. This will be a full over-write. If you only want to update few of the feature values, do the following:</p> 
+        /// <ul> 
+        /// <li> <p>Use <code>GetRecord</code> to retrieve the latest record.</p> </li> 
+        /// <li> <p>Update the record returned from <code>GetRecord</code>. </p> </li> 
+        /// <li> <p>Use <code>PutRecord</code> to update feature values.</p> </li> 
         /// </ul>
-        pub fn set_record(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FeatureValue>>,
-        ) -> Self {
-            self.record = input;
-            self
+        pub fn set_record(mut self, input: std::option::Option<std::vec::Vec<crate::model::FeatureValue>>) -> Self {
+            self.record = input; self
         }
         /// Consumes the builder and constructs a [`PutRecordInput`](crate::input::PutRecordInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::PutRecordInput, aws_smithy_http::operation::BuildError> {
-            Ok(crate::input::PutRecordInput {
-                feature_group_name: self.feature_group_name,
-                record: self.record,
-            })
+        pub fn build(self) -> Result<crate::input::PutRecordInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::PutRecordInput {
+                    feature_group_name: self.feature_group_name
+                    ,
+                    record: self.record
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl PutRecordInput {
     /// Consumes the builder and constructs an Operation<[`PutRecord`](crate::operation::PutRecord)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::PutRecord,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PutRecord, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::PutRecordInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::PutRecordInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_8 = &_input.feature_group_name;
-                let input_8 = input_8.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "feature_group_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_8 = input_8.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "feature_group_name", details: "cannot be empty or unset" })?;
                 let feature_group_name = aws_smithy_http::label::fmt_string(input_8, false);
                 if feature_group_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "feature_group_name",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/FeatureGroup/{FeatureGroupName}",
-                    FeatureGroupName = feature_group_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "feature_group_name", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/FeatureGroup/{FeatureGroupName}", FeatureGroupName = feature_group_name).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::PutRecordInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::PutRecordInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_record(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_put_record(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op =
-            aws_smithy_http::operation::Operation::new(request, crate::operation::PutRecord::new())
-                .with_metadata(aws_smithy_http::operation::Metadata::new(
-                    "PutRecord",
-                    "sagemakerfeaturestoreruntime",
-                ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PutRecord::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("PutRecord", "sagemakerfeaturestoreruntime"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -732,37 +504,34 @@ impl PutRecordInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PutRecordInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct PutRecordInput  {
     /// <p>The name of the feature group that you want to insert the record into.</p>
-    #[doc(hidden)]
-    pub feature_group_name: std::option::Option<std::string::String>,
-    /// <p>List of FeatureValues to be inserted. This will be a full over-write. If you only want to update few of the feature values, do the following:</p>
-    /// <ul>
-    /// <li> <p>Use <code>GetRecord</code> to retrieve the latest record.</p> </li>
-    /// <li> <p>Update the record returned from <code>GetRecord</code>. </p> </li>
-    /// <li> <p>Use <code>PutRecord</code> to update feature values.</p> </li>
+    #[doc(hidden)]pub feature_group_name: std::option::Option<std::string::String>,
+    /// <p>List of FeatureValues to be inserted. This will be a full over-write. If you only want to update few of the feature values, do the following:</p> 
+    /// <ul> 
+    /// <li> <p>Use <code>GetRecord</code> to retrieve the latest record.</p> </li> 
+    /// <li> <p>Update the record returned from <code>GetRecord</code>. </p> </li> 
+    /// <li> <p>Use <code>PutRecord</code> to update feature values.</p> </li> 
     /// </ul>
-    #[doc(hidden)]
-    pub record: std::option::Option<std::vec::Vec<crate::model::FeatureValue>>,
+    #[doc(hidden)]pub record: std::option::Option<std::vec::Vec<crate::model::FeatureValue>>,
 }
 impl PutRecordInput {
     /// <p>The name of the feature group that you want to insert the record into.</p>
-    pub fn feature_group_name(&self) -> std::option::Option<&str> {
+    pub fn feature_group_name(&self) -> std::option::Option<& str> {
         self.feature_group_name.as_deref()
     }
-    /// <p>List of FeatureValues to be inserted. This will be a full over-write. If you only want to update few of the feature values, do the following:</p>
-    /// <ul>
-    /// <li> <p>Use <code>GetRecord</code> to retrieve the latest record.</p> </li>
-    /// <li> <p>Update the record returned from <code>GetRecord</code>. </p> </li>
-    /// <li> <p>Use <code>PutRecord</code> to update feature values.</p> </li>
+    /// <p>List of FeatureValues to be inserted. This will be a full over-write. If you only want to update few of the feature values, do the following:</p> 
+    /// <ul> 
+    /// <li> <p>Use <code>GetRecord</code> to retrieve the latest record.</p> </li> 
+    /// <li> <p>Update the record returned from <code>GetRecord</code>. </p> </li> 
+    /// <li> <p>Use <code>PutRecord</code> to update feature values.</p> </li> 
     /// </ul>
-    pub fn record(&self) -> std::option::Option<&[crate::model::FeatureValue]> {
+    pub fn record(&self) -> std::option::Option<& [crate::model::FeatureValue]> {
         self.record.as_deref()
     }
 }
-impl std::fmt::Debug for PutRecordInput {
+impl  std::fmt::Debug for PutRecordInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutRecordInput");
         formatter.field("feature_group_name", &self.feature_group_name);
@@ -772,105 +541,90 @@ impl std::fmt::Debug for PutRecordInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetRecordInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct GetRecordInput  {
     /// <p>The name of the feature group in which you want to put the records.</p>
-    #[doc(hidden)]
-    pub feature_group_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub feature_group_name: std::option::Option<std::string::String>,
     /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies the record in the <code>FeatureGroup</code>. </p>
-    #[doc(hidden)]
-    pub record_identifier_value_as_string: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub record_identifier_value_as_string: std::option::Option<std::string::String>,
     /// <p>List of names of Features to be retrieved. If not specified, the latest value for all the Features are returned.</p>
-    #[doc(hidden)]
-    pub feature_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub feature_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetRecordInput {
     /// <p>The name of the feature group in which you want to put the records.</p>
-    pub fn feature_group_name(&self) -> std::option::Option<&str> {
+    pub fn feature_group_name(&self) -> std::option::Option<& str> {
         self.feature_group_name.as_deref()
     }
     /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies the record in the <code>FeatureGroup</code>. </p>
-    pub fn record_identifier_value_as_string(&self) -> std::option::Option<&str> {
+    pub fn record_identifier_value_as_string(&self) -> std::option::Option<& str> {
         self.record_identifier_value_as_string.as_deref()
     }
     /// <p>List of names of Features to be retrieved. If not specified, the latest value for all the Features are returned.</p>
-    pub fn feature_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn feature_names(&self) -> std::option::Option<& [std::string::String]> {
         self.feature_names.as_deref()
     }
 }
-impl std::fmt::Debug for GetRecordInput {
+impl  std::fmt::Debug for GetRecordInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRecordInput");
         formatter.field("feature_group_name", &self.feature_group_name);
-        formatter.field(
-            "record_identifier_value_as_string",
-            &self.record_identifier_value_as_string,
-        );
+        formatter.field("record_identifier_value_as_string", &self.record_identifier_value_as_string);
         formatter.field("feature_names", &self.feature_names);
         formatter.finish()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteRecordInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DeleteRecordInput  {
     /// <p>The name of the feature group to delete the record from. </p>
-    #[doc(hidden)]
-    pub feature_group_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub feature_group_name: std::option::Option<std::string::String>,
     /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in string format. </p>
-    #[doc(hidden)]
-    pub record_identifier_value_as_string: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub record_identifier_value_as_string: std::option::Option<std::string::String>,
     /// <p>Timestamp indicating when the deletion event occurred. <code>EventTime</code> can be used to query data at a certain point in time.</p>
-    #[doc(hidden)]
-    pub event_time: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub event_time: std::option::Option<std::string::String>,
 }
 impl DeleteRecordInput {
     /// <p>The name of the feature group to delete the record from. </p>
-    pub fn feature_group_name(&self) -> std::option::Option<&str> {
+    pub fn feature_group_name(&self) -> std::option::Option<& str> {
         self.feature_group_name.as_deref()
     }
     /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in string format. </p>
-    pub fn record_identifier_value_as_string(&self) -> std::option::Option<&str> {
+    pub fn record_identifier_value_as_string(&self) -> std::option::Option<& str> {
         self.record_identifier_value_as_string.as_deref()
     }
     /// <p>Timestamp indicating when the deletion event occurred. <code>EventTime</code> can be used to query data at a certain point in time.</p>
-    pub fn event_time(&self) -> std::option::Option<&str> {
+    pub fn event_time(&self) -> std::option::Option<& str> {
         self.event_time.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRecordInput {
+impl  std::fmt::Debug for DeleteRecordInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRecordInput");
         formatter.field("feature_group_name", &self.feature_group_name);
-        formatter.field(
-            "record_identifier_value_as_string",
-            &self.record_identifier_value_as_string,
-        );
+        formatter.field("record_identifier_value_as_string", &self.record_identifier_value_as_string);
         formatter.field("event_time", &self.event_time);
         formatter.finish()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct BatchGetRecordInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct BatchGetRecordInput  {
     /// <p>A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name that have been requested to be retrieved in batch.</p>
-    #[doc(hidden)]
-    pub identifiers: std::option::Option<std::vec::Vec<crate::model::BatchGetRecordIdentifier>>,
+    #[doc(hidden)]pub identifiers: std::option::Option<std::vec::Vec<crate::model::BatchGetRecordIdentifier>>,
 }
 impl BatchGetRecordInput {
     /// <p>A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name that have been requested to be retrieved in batch.</p>
-    pub fn identifiers(&self) -> std::option::Option<&[crate::model::BatchGetRecordIdentifier]> {
+    pub fn identifiers(&self) -> std::option::Option<& [crate::model::BatchGetRecordIdentifier]> {
         self.identifiers.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetRecordInput {
+impl  std::fmt::Debug for BatchGetRecordInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetRecordInput");
         formatter.field("identifiers", &self.identifiers);
         formatter.finish()
     }
 }
+

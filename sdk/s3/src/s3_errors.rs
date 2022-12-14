@@ -76,3 +76,4 @@ mod test {
         assert_eq!(error.extended_request_id(), None);
     }
 }
+

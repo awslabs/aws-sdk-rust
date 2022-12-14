@@ -3,9 +3,9 @@ use std::fmt::Write;
 
 /// See [`AnalyzeDocumentInput`](crate::input::AnalyzeDocumentInput).
 pub mod analyze_document_input {
-
+    
     /// A builder for [`AnalyzeDocumentInput`](crate::input::AnalyzeDocumentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) document: std::option::Option<crate::model::Document>,
         pub(crate) feature_types: std::option::Option<std::vec::Vec<crate::model::FeatureType>>,
@@ -13,17 +13,16 @@ pub mod analyze_document_input {
         pub(crate) queries_config: std::option::Option<crate::model::QueriesConfig>,
     }
     impl Builder {
-        /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG, PNG, PDF, or TIFF format.</p>
+        /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG, PNG, PDF, or TIFF format.</p> 
         /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are passed using the <code>Bytes</code> field. </p>
         pub fn document(mut self, input: crate::model::Document) -> Self {
             self.document = Some(input);
             self
         }
-        /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG, PNG, PDF, or TIFF format.</p>
+        /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG, PNG, PDF, or TIFF format.</p> 
         /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are passed using the <code>Bytes</code> field. </p>
         pub fn set_document(mut self, input: std::option::Option<crate::model::Document>) -> Self {
-            self.document = input;
-            self
+            self.document = input; self
         }
         /// Appends an item to `feature_types`.
         ///
@@ -32,17 +31,13 @@ pub mod analyze_document_input {
         /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. To perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
         pub fn feature_types(mut self, input: crate::model::FeatureType) -> Self {
             let mut v = self.feature_types.unwrap_or_default();
-            v.push(input);
-            self.feature_types = Some(v);
-            self
+                            v.push(input);
+                            self.feature_types = Some(v);
+                            self
         }
         /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. To perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
-        pub fn set_feature_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FeatureType>>,
-        ) -> Self {
-            self.feature_types = input;
-            self
+        pub fn set_feature_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::FeatureType>>) -> Self {
+            self.feature_types = input; self
         }
         /// <p>Sets the configuration for the human in the loop workflow for analyzing documents.</p>
         pub fn human_loop_config(mut self, input: crate::model::HumanLoopConfig) -> Self {
@@ -50,12 +45,8 @@ pub mod analyze_document_input {
             self
         }
         /// <p>Sets the configuration for the human in the loop workflow for analyzing documents.</p>
-        pub fn set_human_loop_config(
-            mut self,
-            input: std::option::Option<crate::model::HumanLoopConfig>,
-        ) -> Self {
-            self.human_loop_config = input;
-            self
+        pub fn set_human_loop_config(mut self, input: std::option::Option<crate::model::HumanLoopConfig>) -> Self {
+            self.human_loop_config = input; self
         }
         /// <p>Contains Queries and the alias for those Queries, as determined by the input. </p>
         pub fn queries_config(mut self, input: crate::model::QueriesConfig) -> Self {
@@ -63,131 +54,88 @@ pub mod analyze_document_input {
             self
         }
         /// <p>Contains Queries and the alias for those Queries, as determined by the input. </p>
-        pub fn set_queries_config(
-            mut self,
-            input: std::option::Option<crate::model::QueriesConfig>,
-        ) -> Self {
-            self.queries_config = input;
-            self
+        pub fn set_queries_config(mut self, input: std::option::Option<crate::model::QueriesConfig>) -> Self {
+            self.queries_config = input; self
         }
         /// Consumes the builder and constructs a [`AnalyzeDocumentInput`](crate::input::AnalyzeDocumentInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::AnalyzeDocumentInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::AnalyzeDocumentInput {
-                document: self.document,
-                feature_types: self.feature_types,
-                human_loop_config: self.human_loop_config,
-                queries_config: self.queries_config,
-            })
+        pub fn build(self) -> Result<crate::input::AnalyzeDocumentInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::AnalyzeDocumentInput {
+                    document: self.document
+                    ,
+                    feature_types: self.feature_types
+                    ,
+                    human_loop_config: self.human_loop_config
+                    ,
+                    queries_config: self.queries_config
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl AnalyzeDocumentInput {
     /// Consumes the builder and constructs an Operation<[`AnalyzeDocument`](crate::operation::AnalyzeDocument)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::AnalyzeDocument,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::AnalyzeDocument, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::AnalyzeDocumentInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::AnalyzeDocumentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::AnalyzeDocumentInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::AnalyzeDocumentInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "Textract.AnalyzeDocument",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "Textract.AnalyzeDocument"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_analyze_document(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_analyze_document(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::AnalyzeDocument::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "AnalyzeDocument",
-            "textract",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::AnalyzeDocument::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("AnalyzeDocument", "textract"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -199,148 +147,105 @@ impl AnalyzeDocumentInput {
 
 /// See [`AnalyzeExpenseInput`](crate::input::AnalyzeExpenseInput).
 pub mod analyze_expense_input {
-
+    
     /// A builder for [`AnalyzeExpenseInput`](crate::input::AnalyzeExpenseInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) document: std::option::Option<crate::model::Document>,
     }
     impl Builder {
-        /// <p>The input document, either as bytes or as an S3 object.</p>
-        /// <p>You pass image bytes to an Amazon Textract API operation by using the <code>Bytes</code> property. For example, you would use the <code>Bytes</code> property to pass a document loaded from a local file system. Image bytes passed by using the <code>Bytes</code> property must be base64 encoded. Your code might not need to encode document file bytes if you're using an AWS SDK to call Amazon Textract API operations. </p>
-        /// <p>You pass images stored in an S3 bucket to an Amazon Textract API operation by using the <code>S3Object</code> property. Documents stored in an S3 bucket don't need to be base64 encoded.</p>
-        /// <p>The AWS Region for the S3 bucket that contains the S3 object must match the AWS Region that you use for Amazon Textract operations.</p>
-        /// <p>If you use the AWS CLI to call Amazon Textract operations, passing image bytes using the Bytes property isn't supported. You must first upload the document to an Amazon S3 bucket, and then call the operation using the S3Object property.</p>
+        /// <p>The input document, either as bytes or as an S3 object.</p> 
+        /// <p>You pass image bytes to an Amazon Textract API operation by using the <code>Bytes</code> property. For example, you would use the <code>Bytes</code> property to pass a document loaded from a local file system. Image bytes passed by using the <code>Bytes</code> property must be base64 encoded. Your code might not need to encode document file bytes if you're using an AWS SDK to call Amazon Textract API operations. </p> 
+        /// <p>You pass images stored in an S3 bucket to an Amazon Textract API operation by using the <code>S3Object</code> property. Documents stored in an S3 bucket don't need to be base64 encoded.</p> 
+        /// <p>The AWS Region for the S3 bucket that contains the S3 object must match the AWS Region that you use for Amazon Textract operations.</p> 
+        /// <p>If you use the AWS CLI to call Amazon Textract operations, passing image bytes using the Bytes property isn't supported. You must first upload the document to an Amazon S3 bucket, and then call the operation using the S3Object property.</p> 
         /// <p>For Amazon Textract to process an S3 object, the user must have permission to access the S3 object. </p>
         pub fn document(mut self, input: crate::model::Document) -> Self {
             self.document = Some(input);
             self
         }
-        /// <p>The input document, either as bytes or as an S3 object.</p>
-        /// <p>You pass image bytes to an Amazon Textract API operation by using the <code>Bytes</code> property. For example, you would use the <code>Bytes</code> property to pass a document loaded from a local file system. Image bytes passed by using the <code>Bytes</code> property must be base64 encoded. Your code might not need to encode document file bytes if you're using an AWS SDK to call Amazon Textract API operations. </p>
-        /// <p>You pass images stored in an S3 bucket to an Amazon Textract API operation by using the <code>S3Object</code> property. Documents stored in an S3 bucket don't need to be base64 encoded.</p>
-        /// <p>The AWS Region for the S3 bucket that contains the S3 object must match the AWS Region that you use for Amazon Textract operations.</p>
-        /// <p>If you use the AWS CLI to call Amazon Textract operations, passing image bytes using the Bytes property isn't supported. You must first upload the document to an Amazon S3 bucket, and then call the operation using the S3Object property.</p>
+        /// <p>The input document, either as bytes or as an S3 object.</p> 
+        /// <p>You pass image bytes to an Amazon Textract API operation by using the <code>Bytes</code> property. For example, you would use the <code>Bytes</code> property to pass a document loaded from a local file system. Image bytes passed by using the <code>Bytes</code> property must be base64 encoded. Your code might not need to encode document file bytes if you're using an AWS SDK to call Amazon Textract API operations. </p> 
+        /// <p>You pass images stored in an S3 bucket to an Amazon Textract API operation by using the <code>S3Object</code> property. Documents stored in an S3 bucket don't need to be base64 encoded.</p> 
+        /// <p>The AWS Region for the S3 bucket that contains the S3 object must match the AWS Region that you use for Amazon Textract operations.</p> 
+        /// <p>If you use the AWS CLI to call Amazon Textract operations, passing image bytes using the Bytes property isn't supported. You must first upload the document to an Amazon S3 bucket, and then call the operation using the S3Object property.</p> 
         /// <p>For Amazon Textract to process an S3 object, the user must have permission to access the S3 object. </p>
         pub fn set_document(mut self, input: std::option::Option<crate::model::Document>) -> Self {
-            self.document = input;
-            self
+            self.document = input; self
         }
         /// Consumes the builder and constructs a [`AnalyzeExpenseInput`](crate::input::AnalyzeExpenseInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::AnalyzeExpenseInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::AnalyzeExpenseInput {
-                document: self.document,
-            })
+        pub fn build(self) -> Result<crate::input::AnalyzeExpenseInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::AnalyzeExpenseInput {
+                    document: self.document
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl AnalyzeExpenseInput {
     /// Consumes the builder and constructs an Operation<[`AnalyzeExpense`](crate::operation::AnalyzeExpense)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::AnalyzeExpense,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::AnalyzeExpense, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::AnalyzeExpenseInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::AnalyzeExpenseInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::AnalyzeExpenseInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::AnalyzeExpenseInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "Textract.AnalyzeExpense",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "Textract.AnalyzeExpense"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_analyze_expense(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_analyze_expense(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::AnalyzeExpense::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "AnalyzeExpense",
-            "textract",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::AnalyzeExpense::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("AnalyzeExpense", "textract"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -352,9 +257,9 @@ impl AnalyzeExpenseInput {
 
 /// See [`AnalyzeIdInput`](crate::input::AnalyzeIdInput).
 pub mod analyze_id_input {
-
+    
     /// A builder for [`AnalyzeIdInput`](crate::input::AnalyzeIdInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) document_pages: std::option::Option<std::vec::Vec<crate::model::Document>>,
     }
@@ -366,130 +271,87 @@ pub mod analyze_id_input {
         /// <p>The document being passed to AnalyzeID.</p>
         pub fn document_pages(mut self, input: crate::model::Document) -> Self {
             let mut v = self.document_pages.unwrap_or_default();
-            v.push(input);
-            self.document_pages = Some(v);
-            self
+                            v.push(input);
+                            self.document_pages = Some(v);
+                            self
         }
         /// <p>The document being passed to AnalyzeID.</p>
-        pub fn set_document_pages(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Document>>,
-        ) -> Self {
-            self.document_pages = input;
-            self
+        pub fn set_document_pages(mut self, input: std::option::Option<std::vec::Vec<crate::model::Document>>) -> Self {
+            self.document_pages = input; self
         }
         /// Consumes the builder and constructs a [`AnalyzeIdInput`](crate::input::AnalyzeIdInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::AnalyzeIdInput, aws_smithy_http::operation::BuildError> {
-            Ok(crate::input::AnalyzeIdInput {
-                document_pages: self.document_pages,
-            })
+        pub fn build(self) -> Result<crate::input::AnalyzeIdInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::AnalyzeIdInput {
+                    document_pages: self.document_pages
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl AnalyzeIdInput {
     /// Consumes the builder and constructs an Operation<[`AnalyzeID`](crate::operation::AnalyzeID)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::AnalyzeID,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::AnalyzeID, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::AnalyzeIdInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::AnalyzeIdInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::AnalyzeIdInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::AnalyzeIdInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "Textract.AnalyzeID",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "Textract.AnalyzeID"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_analyze_id(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_analyze_id(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op =
-            aws_smithy_http::operation::Operation::new(request, crate::operation::AnalyzeID::new())
-                .with_metadata(aws_smithy_http::operation::Metadata::new(
-                    "AnalyzeID",
-                    "textract",
-                ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::AnalyzeID::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("AnalyzeID", "textract"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -501,140 +363,97 @@ impl AnalyzeIdInput {
 
 /// See [`DetectDocumentTextInput`](crate::input::DetectDocumentTextInput).
 pub mod detect_document_text_input {
-
+    
     /// A builder for [`DetectDocumentTextInput`](crate::input::DetectDocumentTextInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) document: std::option::Option<crate::model::Document>,
     }
     impl Builder {
-        /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG or PNG format.</p>
+        /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG or PNG format.</p> 
         /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are passed using the <code>Bytes</code> field. </p>
         pub fn document(mut self, input: crate::model::Document) -> Self {
             self.document = Some(input);
             self
         }
-        /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG or PNG format.</p>
+        /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG or PNG format.</p> 
         /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are passed using the <code>Bytes</code> field. </p>
         pub fn set_document(mut self, input: std::option::Option<crate::model::Document>) -> Self {
-            self.document = input;
-            self
+            self.document = input; self
         }
         /// Consumes the builder and constructs a [`DetectDocumentTextInput`](crate::input::DetectDocumentTextInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DetectDocumentTextInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DetectDocumentTextInput {
-                document: self.document,
-            })
+        pub fn build(self) -> Result<crate::input::DetectDocumentTextInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DetectDocumentTextInput {
+                    document: self.document
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DetectDocumentTextInput {
     /// Consumes the builder and constructs an Operation<[`DetectDocumentText`](crate::operation::DetectDocumentText)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DetectDocumentText,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DetectDocumentText, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DetectDocumentTextInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DetectDocumentTextInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DetectDocumentTextInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DetectDocumentTextInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "Textract.DetectDocumentText",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "Textract.DetectDocumentText"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_detect_document_text(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_detect_document_text(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DetectDocumentText::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DetectDocumentText",
-            "textract",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DetectDocumentText::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DetectDocumentText", "textract"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -646,9 +465,9 @@ impl DetectDocumentTextInput {
 
 /// See [`GetDocumentAnalysisInput`](crate::input::GetDocumentAnalysisInput).
 pub mod get_document_analysis_input {
-
+    
     /// A builder for [`GetDocumentAnalysisInput`](crate::input::GetDocumentAnalysisInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -662,8 +481,7 @@ pub mod get_document_analysis_input {
         }
         /// <p>A unique identifier for the text-detection job. The <code>JobId</code> is returned from <code>StartDocumentAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The maximum number of results to return per paginated call. The largest value that you can specify is 1,000. If you specify a value greater than 1,000, a maximum of 1,000 results is returned. The default value is 1,000.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -672,8 +490,7 @@ pub mod get_document_analysis_input {
         }
         /// <p>The maximum number of results to return per paginated call. The largest value that you can specify is 1,000. If you specify a value greater than 1,000, a maximum of 1,000 results is returned. The default value is 1,000.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>If the previous response was incomplete (because there are more blocks to retrieve), Amazon Textract returns a pagination token in the response. You can use this pagination token to retrieve the next set of blocks.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -682,126 +499,85 @@ pub mod get_document_analysis_input {
         }
         /// <p>If the previous response was incomplete (because there are more blocks to retrieve), Amazon Textract returns a pagination token in the response. You can use this pagination token to retrieve the next set of blocks.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetDocumentAnalysisInput`](crate::input::GetDocumentAnalysisInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetDocumentAnalysisInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::GetDocumentAnalysisInput {
-                job_id: self.job_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::GetDocumentAnalysisInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::GetDocumentAnalysisInput {
+                    job_id: self.job_id
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetDocumentAnalysisInput {
     /// Consumes the builder and constructs an Operation<[`GetDocumentAnalysis`](crate::operation::GetDocumentAnalysis)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetDocumentAnalysis,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetDocumentAnalysis, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetDocumentAnalysisInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::GetDocumentAnalysisInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::GetDocumentAnalysisInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::GetDocumentAnalysisInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "Textract.GetDocumentAnalysis",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "Textract.GetDocumentAnalysis"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_document_analysis(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_document_analysis(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetDocumentAnalysis::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetDocumentAnalysis",
-            "textract",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetDocumentAnalysis::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetDocumentAnalysis", "textract"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -813,9 +589,9 @@ impl GetDocumentAnalysisInput {
 
 /// See [`GetDocumentTextDetectionInput`](crate::input::GetDocumentTextDetectionInput).
 pub mod get_document_text_detection_input {
-
+    
     /// A builder for [`GetDocumentTextDetectionInput`](crate::input::GetDocumentTextDetectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -829,8 +605,7 @@ pub mod get_document_text_detection_input {
         }
         /// <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from <code>StartDocumentTextDetection</code>. A <code>JobId</code> value is only valid for 7 days.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 1,000. If you specify a value greater than 1,000, a maximum of 1,000 results is returned. The default value is 1,000.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -839,8 +614,7 @@ pub mod get_document_text_detection_input {
         }
         /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 1,000. If you specify a value greater than 1,000, a maximum of 1,000 results is returned. The default value is 1,000.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>If the previous response was incomplete (because there are more blocks to retrieve), Amazon Textract returns a pagination token in the response. You can use this pagination token to retrieve the next set of blocks.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -849,130 +623,85 @@ pub mod get_document_text_detection_input {
         }
         /// <p>If the previous response was incomplete (because there are more blocks to retrieve), Amazon Textract returns a pagination token in the response. You can use this pagination token to retrieve the next set of blocks.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetDocumentTextDetectionInput`](crate::input::GetDocumentTextDetectionInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetDocumentTextDetectionInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::GetDocumentTextDetectionInput {
-                job_id: self.job_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::GetDocumentTextDetectionInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::GetDocumentTextDetectionInput {
+                    job_id: self.job_id
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetDocumentTextDetectionInput {
     /// Consumes the builder and constructs an Operation<[`GetDocumentTextDetection`](crate::operation::GetDocumentTextDetection)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetDocumentTextDetection,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetDocumentTextDetection, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetDocumentTextDetectionInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::GetDocumentTextDetectionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::GetDocumentTextDetectionInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::GetDocumentTextDetectionInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "Textract.GetDocumentTextDetection",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "Textract.GetDocumentTextDetection"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_document_text_detection(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_document_text_detection(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetDocumentTextDetection::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetDocumentTextDetection",
-            "textract",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetDocumentTextDetection::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetDocumentTextDetection", "textract"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -984,9 +713,9 @@ impl GetDocumentTextDetectionInput {
 
 /// See [`GetExpenseAnalysisInput`](crate::input::GetExpenseAnalysisInput).
 pub mod get_expense_analysis_input {
-
+    
     /// A builder for [`GetExpenseAnalysisInput`](crate::input::GetExpenseAnalysisInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -1000,8 +729,7 @@ pub mod get_expense_analysis_input {
         }
         /// <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 20. If you specify a value greater than 20, a maximum of 20 results is returned. The default value is 20.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -1010,8 +738,7 @@ pub mod get_expense_analysis_input {
         }
         /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 20. If you specify a value greater than 20, a maximum of 20 results is returned. The default value is 20.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>If the previous response was incomplete (because there are more blocks to retrieve), Amazon Textract returns a pagination token in the response. You can use this pagination token to retrieve the next set of blocks.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1020,126 +747,85 @@ pub mod get_expense_analysis_input {
         }
         /// <p>If the previous response was incomplete (because there are more blocks to retrieve), Amazon Textract returns a pagination token in the response. You can use this pagination token to retrieve the next set of blocks.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetExpenseAnalysisInput`](crate::input::GetExpenseAnalysisInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetExpenseAnalysisInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::GetExpenseAnalysisInput {
-                job_id: self.job_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::GetExpenseAnalysisInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::GetExpenseAnalysisInput {
+                    job_id: self.job_id
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetExpenseAnalysisInput {
     /// Consumes the builder and constructs an Operation<[`GetExpenseAnalysis`](crate::operation::GetExpenseAnalysis)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetExpenseAnalysis,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetExpenseAnalysis, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetExpenseAnalysisInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::GetExpenseAnalysisInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::GetExpenseAnalysisInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::GetExpenseAnalysisInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "Textract.GetExpenseAnalysis",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "Textract.GetExpenseAnalysis"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_expense_analysis(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_expense_analysis(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetExpenseAnalysis::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetExpenseAnalysis",
-            "textract",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetExpenseAnalysis::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetExpenseAnalysis", "textract"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1151,9 +837,9 @@ impl GetExpenseAnalysisInput {
 
 /// See [`StartDocumentAnalysisInput`](crate::input::StartDocumentAnalysisInput).
 pub mod start_document_analysis_input {
-
+    
     /// A builder for [`StartDocumentAnalysisInput`](crate::input::StartDocumentAnalysisInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) document_location: std::option::Option<crate::model::DocumentLocation>,
         pub(crate) feature_types: std::option::Option<std::vec::Vec<crate::model::FeatureType>>,
@@ -1171,12 +857,8 @@ pub mod start_document_analysis_input {
             self
         }
         /// <p>The location of the document to be processed.</p>
-        pub fn set_document_location(
-            mut self,
-            input: std::option::Option<crate::model::DocumentLocation>,
-        ) -> Self {
-            self.document_location = input;
-            self
+        pub fn set_document_location(mut self, input: std::option::Option<crate::model::DocumentLocation>) -> Self {
+            self.document_location = input; self
         }
         /// Appends an item to `feature_types`.
         ///
@@ -1185,17 +867,13 @@ pub mod start_document_analysis_input {
         /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. To perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
         pub fn feature_types(mut self, input: crate::model::FeatureType) -> Self {
             let mut v = self.feature_types.unwrap_or_default();
-            v.push(input);
-            self.feature_types = Some(v);
-            self
+                            v.push(input);
+                            self.feature_types = Some(v);
+                            self
         }
         /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. To perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
-        pub fn set_feature_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FeatureType>>,
-        ) -> Self {
-            self.feature_types = input;
-            self
+        pub fn set_feature_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::FeatureType>>) -> Self {
+            self.feature_types = input; self
         }
         /// <p>The idempotent token that you use to identify the start request. If you use the same token with multiple <code>StartDocumentAnalysis</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1203,12 +881,8 @@ pub mod start_document_analysis_input {
             self
         }
         /// <p>The idempotent token that you use to identify the start request. If you use the same token with multiple <code>StartDocumentAnalysis</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
-        pub fn set_client_request_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.client_request_token = input;
-            self
+        pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_request_token = input; self
         }
         /// <p>An identifier that you specify that's included in the completion notification published to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify the type of document that the completion notification corresponds to (such as a tax form or a receipt).</p>
         pub fn job_tag(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1217,8 +891,7 @@ pub mod start_document_analysis_input {
         }
         /// <p>An identifier that you specify that's included in the completion notification published to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify the type of document that the completion notification corresponds to (such as a tax form or a receipt).</p>
         pub fn set_job_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_tag = input;
-            self
+            self.job_tag = input; self
         }
         /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
         pub fn notification_channel(mut self, input: crate::model::NotificationChannel) -> Self {
@@ -1226,12 +899,8 @@ pub mod start_document_analysis_input {
             self
         }
         /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
-        pub fn set_notification_channel(
-            mut self,
-            input: std::option::Option<crate::model::NotificationChannel>,
-        ) -> Self {
-            self.notification_channel = input;
-            self
+        pub fn set_notification_channel(mut self, input: std::option::Option<crate::model::NotificationChannel>) -> Self {
+            self.notification_channel = input; self
         }
         /// <p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the GetDocumentAnalysis operation.</p>
         pub fn output_config(mut self, input: crate::model::OutputConfig) -> Self {
@@ -1239,12 +908,8 @@ pub mod start_document_analysis_input {
             self
         }
         /// <p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the GetDocumentAnalysis operation.</p>
-        pub fn set_output_config(
-            mut self,
-            input: std::option::Option<crate::model::OutputConfig>,
-        ) -> Self {
-            self.output_config = input;
-            self
+        pub fn set_output_config(mut self, input: std::option::Option<crate::model::OutputConfig>) -> Self {
+            self.output_config = input; self
         }
         /// <p>The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1253,8 +918,7 @@ pub mod start_document_analysis_input {
         }
         /// <p>The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// <p></p>
         pub fn queries_config(mut self, input: crate::model::QueriesConfig) -> Self {
@@ -1262,137 +926,96 @@ pub mod start_document_analysis_input {
             self
         }
         /// <p></p>
-        pub fn set_queries_config(
-            mut self,
-            input: std::option::Option<crate::model::QueriesConfig>,
-        ) -> Self {
-            self.queries_config = input;
-            self
+        pub fn set_queries_config(mut self, input: std::option::Option<crate::model::QueriesConfig>) -> Self {
+            self.queries_config = input; self
         }
         /// Consumes the builder and constructs a [`StartDocumentAnalysisInput`](crate::input::StartDocumentAnalysisInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::StartDocumentAnalysisInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::StartDocumentAnalysisInput {
-                document_location: self.document_location,
-                feature_types: self.feature_types,
-                client_request_token: self.client_request_token,
-                job_tag: self.job_tag,
-                notification_channel: self.notification_channel,
-                output_config: self.output_config,
-                kms_key_id: self.kms_key_id,
-                queries_config: self.queries_config,
-            })
+        pub fn build(self) -> Result<crate::input::StartDocumentAnalysisInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::StartDocumentAnalysisInput {
+                    document_location: self.document_location
+                    ,
+                    feature_types: self.feature_types
+                    ,
+                    client_request_token: self.client_request_token
+                    ,
+                    job_tag: self.job_tag
+                    ,
+                    notification_channel: self.notification_channel
+                    ,
+                    output_config: self.output_config
+                    ,
+                    kms_key_id: self.kms_key_id
+                    ,
+                    queries_config: self.queries_config
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl StartDocumentAnalysisInput {
     /// Consumes the builder and constructs an Operation<[`StartDocumentAnalysis`](crate::operation::StartDocumentAnalysis)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::StartDocumentAnalysis,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::StartDocumentAnalysis, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::StartDocumentAnalysisInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::StartDocumentAnalysisInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::StartDocumentAnalysisInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::StartDocumentAnalysisInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "Textract.StartDocumentAnalysis",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "Textract.StartDocumentAnalysis"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_document_analysis(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_start_document_analysis(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::StartDocumentAnalysis::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "StartDocumentAnalysis",
-            "textract",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::StartDocumentAnalysis::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("StartDocumentAnalysis", "textract"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1404,9 +1027,9 @@ impl StartDocumentAnalysisInput {
 
 /// See [`StartDocumentTextDetectionInput`](crate::input::StartDocumentTextDetectionInput).
 pub mod start_document_text_detection_input {
-
+    
     /// A builder for [`StartDocumentTextDetectionInput`](crate::input::StartDocumentTextDetectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) document_location: std::option::Option<crate::model::DocumentLocation>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -1422,12 +1045,8 @@ pub mod start_document_text_detection_input {
             self
         }
         /// <p>The location of the document to be processed.</p>
-        pub fn set_document_location(
-            mut self,
-            input: std::option::Option<crate::model::DocumentLocation>,
-        ) -> Self {
-            self.document_location = input;
-            self
+        pub fn set_document_location(mut self, input: std::option::Option<crate::model::DocumentLocation>) -> Self {
+            self.document_location = input; self
         }
         /// <p>The idempotent token that's used to identify the start request. If you use the same token with multiple <code>StartDocumentTextDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1435,12 +1054,8 @@ pub mod start_document_text_detection_input {
             self
         }
         /// <p>The idempotent token that's used to identify the start request. If you use the same token with multiple <code>StartDocumentTextDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
-        pub fn set_client_request_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.client_request_token = input;
-            self
+        pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_request_token = input; self
         }
         /// <p>An identifier that you specify that's included in the completion notification published to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify the type of document that the completion notification corresponds to (such as a tax form or a receipt).</p>
         pub fn job_tag(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1449,8 +1064,7 @@ pub mod start_document_text_detection_input {
         }
         /// <p>An identifier that you specify that's included in the completion notification published to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify the type of document that the completion notification corresponds to (such as a tax form or a receipt).</p>
         pub fn set_job_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_tag = input;
-            self
+            self.job_tag = input; self
         }
         /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
         pub fn notification_channel(mut self, input: crate::model::NotificationChannel) -> Self {
@@ -1458,12 +1072,8 @@ pub mod start_document_text_detection_input {
             self
         }
         /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
-        pub fn set_notification_channel(
-            mut self,
-            input: std::option::Option<crate::model::NotificationChannel>,
-        ) -> Self {
-            self.notification_channel = input;
-            self
+        pub fn set_notification_channel(mut self, input: std::option::Option<crate::model::NotificationChannel>) -> Self {
+            self.notification_channel = input; self
         }
         /// <p>Sets if the output will go to a customer defined bucket. By default Amazon Textract will save the results internally to be accessed with the GetDocumentTextDetection operation.</p>
         pub fn output_config(mut self, input: crate::model::OutputConfig) -> Self {
@@ -1471,12 +1081,8 @@ pub mod start_document_text_detection_input {
             self
         }
         /// <p>Sets if the output will go to a customer defined bucket. By default Amazon Textract will save the results internally to be accessed with the GetDocumentTextDetection operation.</p>
-        pub fn set_output_config(
-            mut self,
-            input: std::option::Option<crate::model::OutputConfig>,
-        ) -> Self {
-            self.output_config = input;
-            self
+        pub fn set_output_config(mut self, input: std::option::Option<crate::model::OutputConfig>) -> Self {
+            self.output_config = input; self
         }
         /// <p>The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1485,71 +1091,54 @@ pub mod start_document_text_detection_input {
         }
         /// <p>The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// Consumes the builder and constructs a [`StartDocumentTextDetectionInput`](crate::input::StartDocumentTextDetectionInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::StartDocumentTextDetectionInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::StartDocumentTextDetectionInput {
-                document_location: self.document_location,
-                client_request_token: self.client_request_token,
-                job_tag: self.job_tag,
-                notification_channel: self.notification_channel,
-                output_config: self.output_config,
-                kms_key_id: self.kms_key_id,
-            })
+        pub fn build(self) -> Result<crate::input::StartDocumentTextDetectionInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::StartDocumentTextDetectionInput {
+                    document_location: self.document_location
+                    ,
+                    client_request_token: self.client_request_token
+                    ,
+                    job_tag: self.job_tag
+                    ,
+                    notification_channel: self.notification_channel
+                    ,
+                    output_config: self.output_config
+                    ,
+                    kms_key_id: self.kms_key_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl StartDocumentTextDetectionInput {
     /// Consumes the builder and constructs an Operation<[`StartDocumentTextDetection`](crate::operation::StartDocumentTextDetection)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::StartDocumentTextDetection,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::StartDocumentTextDetection, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::StartDocumentTextDetectionInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::StartDocumentTextDetectionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::StartDocumentTextDetectionInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::StartDocumentTextDetectionInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "Textract.StartDocumentTextDetection",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "Textract.StartDocumentTextDetection"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -1557,58 +1146,36 @@ impl StartDocumentTextDetectionInput {
             crate::operation_ser::serialize_operation_crate_operation_start_document_text_detection(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::StartDocumentTextDetection::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "StartDocumentTextDetection",
-            "textract",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::StartDocumentTextDetection::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("StartDocumentTextDetection", "textract"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1620,9 +1187,9 @@ impl StartDocumentTextDetectionInput {
 
 /// See [`StartExpenseAnalysisInput`](crate::input::StartExpenseAnalysisInput).
 pub mod start_expense_analysis_input {
-
+    
     /// A builder for [`StartExpenseAnalysisInput`](crate::input::StartExpenseAnalysisInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) document_location: std::option::Option<crate::model::DocumentLocation>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -1638,12 +1205,8 @@ pub mod start_expense_analysis_input {
             self
         }
         /// <p>The location of the document to be processed.</p>
-        pub fn set_document_location(
-            mut self,
-            input: std::option::Option<crate::model::DocumentLocation>,
-        ) -> Self {
-            self.document_location = input;
-            self
+        pub fn set_document_location(mut self, input: std::option::Option<crate::model::DocumentLocation>) -> Self {
+            self.document_location = input; self
         }
         /// <p>The idempotent token that's used to identify the start request. If you use the same token with multiple <code>StartDocumentTextDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a> </p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1651,12 +1214,8 @@ pub mod start_expense_analysis_input {
             self
         }
         /// <p>The idempotent token that's used to identify the start request. If you use the same token with multiple <code>StartDocumentTextDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a> </p>
-        pub fn set_client_request_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.client_request_token = input;
-            self
+        pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_request_token = input; self
         }
         /// <p>An identifier you specify that's included in the completion notification published to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify the type of document that the completion notification corresponds to (such as a tax form or a receipt).</p>
         pub fn job_tag(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1665,8 +1224,7 @@ pub mod start_expense_analysis_input {
         }
         /// <p>An identifier you specify that's included in the completion notification published to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify the type of document that the completion notification corresponds to (such as a tax form or a receipt).</p>
         pub fn set_job_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_tag = input;
-            self
+            self.job_tag = input; self
         }
         /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
         pub fn notification_channel(mut self, input: crate::model::NotificationChannel) -> Self {
@@ -1674,12 +1232,8 @@ pub mod start_expense_analysis_input {
             self
         }
         /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
-        pub fn set_notification_channel(
-            mut self,
-            input: std::option::Option<crate::model::NotificationChannel>,
-        ) -> Self {
-            self.notification_channel = input;
-            self
+        pub fn set_notification_channel(mut self, input: std::option::Option<crate::model::NotificationChannel>) -> Self {
+            self.notification_channel = input; self
         }
         /// <p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the <code>GetExpenseAnalysis</code> operation.</p>
         pub fn output_config(mut self, input: crate::model::OutputConfig) -> Self {
@@ -1687,12 +1241,8 @@ pub mod start_expense_analysis_input {
             self
         }
         /// <p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the <code>GetExpenseAnalysis</code> operation.</p>
-        pub fn set_output_config(
-            mut self,
-            input: std::option::Option<crate::model::OutputConfig>,
-        ) -> Self {
-            self.output_config = input;
-            self
+        pub fn set_output_config(mut self, input: std::option::Option<crate::model::OutputConfig>) -> Self {
+            self.output_config = input; self
         }
         /// <p>The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1701,131 +1251,91 @@ pub mod start_expense_analysis_input {
         }
         /// <p>The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// Consumes the builder and constructs a [`StartExpenseAnalysisInput`](crate::input::StartExpenseAnalysisInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::StartExpenseAnalysisInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::StartExpenseAnalysisInput {
-                document_location: self.document_location,
-                client_request_token: self.client_request_token,
-                job_tag: self.job_tag,
-                notification_channel: self.notification_channel,
-                output_config: self.output_config,
-                kms_key_id: self.kms_key_id,
-            })
+        pub fn build(self) -> Result<crate::input::StartExpenseAnalysisInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::StartExpenseAnalysisInput {
+                    document_location: self.document_location
+                    ,
+                    client_request_token: self.client_request_token
+                    ,
+                    job_tag: self.job_tag
+                    ,
+                    notification_channel: self.notification_channel
+                    ,
+                    output_config: self.output_config
+                    ,
+                    kms_key_id: self.kms_key_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl StartExpenseAnalysisInput {
     /// Consumes the builder and constructs an Operation<[`StartExpenseAnalysis`](crate::operation::StartExpenseAnalysis)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::StartExpenseAnalysis,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::StartExpenseAnalysis, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::StartExpenseAnalysisInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::StartExpenseAnalysisInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::StartExpenseAnalysisInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::StartExpenseAnalysisInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "Textract.StartExpenseAnalysis",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "Textract.StartExpenseAnalysis"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_expense_analysis(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_start_expense_analysis(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::StartExpenseAnalysis::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "StartExpenseAnalysis",
-            "textract",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::StartExpenseAnalysis::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("StartExpenseAnalysis", "textract"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1836,55 +1346,48 @@ impl StartExpenseAnalysisInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct StartExpenseAnalysisInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct StartExpenseAnalysisInput  {
     /// <p>The location of the document to be processed.</p>
-    #[doc(hidden)]
-    pub document_location: std::option::Option<crate::model::DocumentLocation>,
+    #[doc(hidden)]pub document_location: std::option::Option<crate::model::DocumentLocation>,
     /// <p>The idempotent token that's used to identify the start request. If you use the same token with multiple <code>StartDocumentTextDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a> </p>
-    #[doc(hidden)]
-    pub client_request_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub client_request_token: std::option::Option<std::string::String>,
     /// <p>An identifier you specify that's included in the completion notification published to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify the type of document that the completion notification corresponds to (such as a tax form or a receipt).</p>
-    #[doc(hidden)]
-    pub job_tag: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub job_tag: std::option::Option<std::string::String>,
     /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
-    #[doc(hidden)]
-    pub notification_channel: std::option::Option<crate::model::NotificationChannel>,
+    #[doc(hidden)]pub notification_channel: std::option::Option<crate::model::NotificationChannel>,
     /// <p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the <code>GetExpenseAnalysis</code> operation.</p>
-    #[doc(hidden)]
-    pub output_config: std::option::Option<crate::model::OutputConfig>,
+    #[doc(hidden)]pub output_config: std::option::Option<crate::model::OutputConfig>,
     /// <p>The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.</p>
-    #[doc(hidden)]
-    pub kms_key_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl StartExpenseAnalysisInput {
     /// <p>The location of the document to be processed.</p>
-    pub fn document_location(&self) -> std::option::Option<&crate::model::DocumentLocation> {
+    pub fn document_location(&self) -> std::option::Option<& crate::model::DocumentLocation> {
         self.document_location.as_ref()
     }
     /// <p>The idempotent token that's used to identify the start request. If you use the same token with multiple <code>StartDocumentTextDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a> </p>
-    pub fn client_request_token(&self) -> std::option::Option<&str> {
+    pub fn client_request_token(&self) -> std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>An identifier you specify that's included in the completion notification published to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify the type of document that the completion notification corresponds to (such as a tax form or a receipt).</p>
-    pub fn job_tag(&self) -> std::option::Option<&str> {
+    pub fn job_tag(&self) -> std::option::Option<& str> {
         self.job_tag.as_deref()
     }
     /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
-    pub fn notification_channel(&self) -> std::option::Option<&crate::model::NotificationChannel> {
+    pub fn notification_channel(&self) -> std::option::Option<& crate::model::NotificationChannel> {
         self.notification_channel.as_ref()
     }
     /// <p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the <code>GetExpenseAnalysis</code> operation.</p>
-    pub fn output_config(&self) -> std::option::Option<&crate::model::OutputConfig> {
+    pub fn output_config(&self) -> std::option::Option<& crate::model::OutputConfig> {
         self.output_config.as_ref()
     }
     /// <p>The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
 }
-impl std::fmt::Debug for StartExpenseAnalysisInput {
+impl  std::fmt::Debug for StartExpenseAnalysisInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartExpenseAnalysisInput");
         formatter.field("document_location", &self.document_location);
@@ -1898,55 +1401,48 @@ impl std::fmt::Debug for StartExpenseAnalysisInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct StartDocumentTextDetectionInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct StartDocumentTextDetectionInput  {
     /// <p>The location of the document to be processed.</p>
-    #[doc(hidden)]
-    pub document_location: std::option::Option<crate::model::DocumentLocation>,
+    #[doc(hidden)]pub document_location: std::option::Option<crate::model::DocumentLocation>,
     /// <p>The idempotent token that's used to identify the start request. If you use the same token with multiple <code>StartDocumentTextDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
-    #[doc(hidden)]
-    pub client_request_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub client_request_token: std::option::Option<std::string::String>,
     /// <p>An identifier that you specify that's included in the completion notification published to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify the type of document that the completion notification corresponds to (such as a tax form or a receipt).</p>
-    #[doc(hidden)]
-    pub job_tag: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub job_tag: std::option::Option<std::string::String>,
     /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
-    #[doc(hidden)]
-    pub notification_channel: std::option::Option<crate::model::NotificationChannel>,
+    #[doc(hidden)]pub notification_channel: std::option::Option<crate::model::NotificationChannel>,
     /// <p>Sets if the output will go to a customer defined bucket. By default Amazon Textract will save the results internally to be accessed with the GetDocumentTextDetection operation.</p>
-    #[doc(hidden)]
-    pub output_config: std::option::Option<crate::model::OutputConfig>,
+    #[doc(hidden)]pub output_config: std::option::Option<crate::model::OutputConfig>,
     /// <p>The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.</p>
-    #[doc(hidden)]
-    pub kms_key_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl StartDocumentTextDetectionInput {
     /// <p>The location of the document to be processed.</p>
-    pub fn document_location(&self) -> std::option::Option<&crate::model::DocumentLocation> {
+    pub fn document_location(&self) -> std::option::Option<& crate::model::DocumentLocation> {
         self.document_location.as_ref()
     }
     /// <p>The idempotent token that's used to identify the start request. If you use the same token with multiple <code>StartDocumentTextDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
-    pub fn client_request_token(&self) -> std::option::Option<&str> {
+    pub fn client_request_token(&self) -> std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>An identifier that you specify that's included in the completion notification published to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify the type of document that the completion notification corresponds to (such as a tax form or a receipt).</p>
-    pub fn job_tag(&self) -> std::option::Option<&str> {
+    pub fn job_tag(&self) -> std::option::Option<& str> {
         self.job_tag.as_deref()
     }
     /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
-    pub fn notification_channel(&self) -> std::option::Option<&crate::model::NotificationChannel> {
+    pub fn notification_channel(&self) -> std::option::Option<& crate::model::NotificationChannel> {
         self.notification_channel.as_ref()
     }
     /// <p>Sets if the output will go to a customer defined bucket. By default Amazon Textract will save the results internally to be accessed with the GetDocumentTextDetection operation.</p>
-    pub fn output_config(&self) -> std::option::Option<&crate::model::OutputConfig> {
+    pub fn output_config(&self) -> std::option::Option<& crate::model::OutputConfig> {
         self.output_config.as_ref()
     }
     /// <p>The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
 }
-impl std::fmt::Debug for StartDocumentTextDetectionInput {
+impl  std::fmt::Debug for StartDocumentTextDetectionInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartDocumentTextDetectionInput");
         formatter.field("document_location", &self.document_location);
@@ -1960,69 +1456,60 @@ impl std::fmt::Debug for StartDocumentTextDetectionInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct StartDocumentAnalysisInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct StartDocumentAnalysisInput  {
     /// <p>The location of the document to be processed.</p>
-    #[doc(hidden)]
-    pub document_location: std::option::Option<crate::model::DocumentLocation>,
+    #[doc(hidden)]pub document_location: std::option::Option<crate::model::DocumentLocation>,
     /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. To perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
-    #[doc(hidden)]
-    pub feature_types: std::option::Option<std::vec::Vec<crate::model::FeatureType>>,
+    #[doc(hidden)]pub feature_types: std::option::Option<std::vec::Vec<crate::model::FeatureType>>,
     /// <p>The idempotent token that you use to identify the start request. If you use the same token with multiple <code>StartDocumentAnalysis</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
-    #[doc(hidden)]
-    pub client_request_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub client_request_token: std::option::Option<std::string::String>,
     /// <p>An identifier that you specify that's included in the completion notification published to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify the type of document that the completion notification corresponds to (such as a tax form or a receipt).</p>
-    #[doc(hidden)]
-    pub job_tag: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub job_tag: std::option::Option<std::string::String>,
     /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
-    #[doc(hidden)]
-    pub notification_channel: std::option::Option<crate::model::NotificationChannel>,
+    #[doc(hidden)]pub notification_channel: std::option::Option<crate::model::NotificationChannel>,
     /// <p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the GetDocumentAnalysis operation.</p>
-    #[doc(hidden)]
-    pub output_config: std::option::Option<crate::model::OutputConfig>,
+    #[doc(hidden)]pub output_config: std::option::Option<crate::model::OutputConfig>,
     /// <p>The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.</p>
-    #[doc(hidden)]
-    pub kms_key_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub kms_key_id: std::option::Option<std::string::String>,
     /// <p></p>
-    #[doc(hidden)]
-    pub queries_config: std::option::Option<crate::model::QueriesConfig>,
+    #[doc(hidden)]pub queries_config: std::option::Option<crate::model::QueriesConfig>,
 }
 impl StartDocumentAnalysisInput {
     /// <p>The location of the document to be processed.</p>
-    pub fn document_location(&self) -> std::option::Option<&crate::model::DocumentLocation> {
+    pub fn document_location(&self) -> std::option::Option<& crate::model::DocumentLocation> {
         self.document_location.as_ref()
     }
     /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. To perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
-    pub fn feature_types(&self) -> std::option::Option<&[crate::model::FeatureType]> {
+    pub fn feature_types(&self) -> std::option::Option<& [crate::model::FeatureType]> {
         self.feature_types.as_deref()
     }
     /// <p>The idempotent token that you use to identify the start request. If you use the same token with multiple <code>StartDocumentAnalysis</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
-    pub fn client_request_token(&self) -> std::option::Option<&str> {
+    pub fn client_request_token(&self) -> std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>An identifier that you specify that's included in the completion notification published to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify the type of document that the completion notification corresponds to (such as a tax form or a receipt).</p>
-    pub fn job_tag(&self) -> std::option::Option<&str> {
+    pub fn job_tag(&self) -> std::option::Option<& str> {
         self.job_tag.as_deref()
     }
     /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
-    pub fn notification_channel(&self) -> std::option::Option<&crate::model::NotificationChannel> {
+    pub fn notification_channel(&self) -> std::option::Option<& crate::model::NotificationChannel> {
         self.notification_channel.as_ref()
     }
     /// <p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the GetDocumentAnalysis operation.</p>
-    pub fn output_config(&self) -> std::option::Option<&crate::model::OutputConfig> {
+    pub fn output_config(&self) -> std::option::Option<& crate::model::OutputConfig> {
         self.output_config.as_ref()
     }
     /// <p>The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p></p>
-    pub fn queries_config(&self) -> std::option::Option<&crate::model::QueriesConfig> {
+    pub fn queries_config(&self) -> std::option::Option<& crate::model::QueriesConfig> {
         self.queries_config.as_ref()
     }
 }
-impl std::fmt::Debug for StartDocumentAnalysisInput {
+impl  std::fmt::Debug for StartDocumentAnalysisInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartDocumentAnalysisInput");
         formatter.field("document_location", &self.document_location);
@@ -2038,22 +1525,18 @@ impl std::fmt::Debug for StartDocumentAnalysisInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetExpenseAnalysisInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct GetExpenseAnalysisInput  {
     /// <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
-    #[doc(hidden)]
-    pub job_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub job_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 20. If you specify a value greater than 20, a maximum of 20 results is returned. The default value is 20.</p>
-    #[doc(hidden)]
-    pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]pub max_results: std::option::Option<i32>,
     /// <p>If the previous response was incomplete (because there are more blocks to retrieve), Amazon Textract returns a pagination token in the response. You can use this pagination token to retrieve the next set of blocks.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
 }
 impl GetExpenseAnalysisInput {
     /// <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 20. If you specify a value greater than 20, a maximum of 20 results is returned. The default value is 20.</p>
@@ -2061,11 +1544,11 @@ impl GetExpenseAnalysisInput {
         self.max_results
     }
     /// <p>If the previous response was incomplete (because there are more blocks to retrieve), Amazon Textract returns a pagination token in the response. You can use this pagination token to retrieve the next set of blocks.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetExpenseAnalysisInput {
+impl  std::fmt::Debug for GetExpenseAnalysisInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetExpenseAnalysisInput");
         formatter.field("job_id", &self.job_id);
@@ -2076,22 +1559,18 @@ impl std::fmt::Debug for GetExpenseAnalysisInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetDocumentTextDetectionInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct GetDocumentTextDetectionInput  {
     /// <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from <code>StartDocumentTextDetection</code>. A <code>JobId</code> value is only valid for 7 days.</p>
-    #[doc(hidden)]
-    pub job_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub job_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 1,000. If you specify a value greater than 1,000, a maximum of 1,000 results is returned. The default value is 1,000.</p>
-    #[doc(hidden)]
-    pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]pub max_results: std::option::Option<i32>,
     /// <p>If the previous response was incomplete (because there are more blocks to retrieve), Amazon Textract returns a pagination token in the response. You can use this pagination token to retrieve the next set of blocks.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
 }
 impl GetDocumentTextDetectionInput {
     /// <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from <code>StartDocumentTextDetection</code>. A <code>JobId</code> value is only valid for 7 days.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 1,000. If you specify a value greater than 1,000, a maximum of 1,000 results is returned. The default value is 1,000.</p>
@@ -2099,11 +1578,11 @@ impl GetDocumentTextDetectionInput {
         self.max_results
     }
     /// <p>If the previous response was incomplete (because there are more blocks to retrieve), Amazon Textract returns a pagination token in the response. You can use this pagination token to retrieve the next set of blocks.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetDocumentTextDetectionInput {
+impl  std::fmt::Debug for GetDocumentTextDetectionInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDocumentTextDetectionInput");
         formatter.field("job_id", &self.job_id);
@@ -2114,22 +1593,18 @@ impl std::fmt::Debug for GetDocumentTextDetectionInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetDocumentAnalysisInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct GetDocumentAnalysisInput  {
     /// <p>A unique identifier for the text-detection job. The <code>JobId</code> is returned from <code>StartDocumentAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
-    #[doc(hidden)]
-    pub job_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub job_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per paginated call. The largest value that you can specify is 1,000. If you specify a value greater than 1,000, a maximum of 1,000 results is returned. The default value is 1,000.</p>
-    #[doc(hidden)]
-    pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]pub max_results: std::option::Option<i32>,
     /// <p>If the previous response was incomplete (because there are more blocks to retrieve), Amazon Textract returns a pagination token in the response. You can use this pagination token to retrieve the next set of blocks.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
 }
 impl GetDocumentAnalysisInput {
     /// <p>A unique identifier for the text-detection job. The <code>JobId</code> is returned from <code>StartDocumentAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The maximum number of results to return per paginated call. The largest value that you can specify is 1,000. If you specify a value greater than 1,000, a maximum of 1,000 results is returned. The default value is 1,000.</p>
@@ -2137,11 +1612,11 @@ impl GetDocumentAnalysisInput {
         self.max_results
     }
     /// <p>If the previous response was incomplete (because there are more blocks to retrieve), Amazon Textract returns a pagination token in the response. You can use this pagination token to retrieve the next set of blocks.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetDocumentAnalysisInput {
+impl  std::fmt::Debug for GetDocumentAnalysisInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDocumentAnalysisInput");
         formatter.field("job_id", &self.job_id);
@@ -2152,22 +1627,20 @@ impl std::fmt::Debug for GetDocumentAnalysisInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DetectDocumentTextInput {
-    /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG or PNG format.</p>
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DetectDocumentTextInput  {
+    /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG or PNG format.</p> 
     /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are passed using the <code>Bytes</code> field. </p>
-    #[doc(hidden)]
-    pub document: std::option::Option<crate::model::Document>,
+    #[doc(hidden)]pub document: std::option::Option<crate::model::Document>,
 }
 impl DetectDocumentTextInput {
-    /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG or PNG format.</p>
+    /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG or PNG format.</p> 
     /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are passed using the <code>Bytes</code> field. </p>
-    pub fn document(&self) -> std::option::Option<&crate::model::Document> {
+    pub fn document(&self) -> std::option::Option<& crate::model::Document> {
         self.document.as_ref()
     }
 }
-impl std::fmt::Debug for DetectDocumentTextInput {
+impl  std::fmt::Debug for DetectDocumentTextInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectDocumentTextInput");
         formatter.field("document", &self.document);
@@ -2176,20 +1649,18 @@ impl std::fmt::Debug for DetectDocumentTextInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AnalyzeIdInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct AnalyzeIdInput  {
     /// <p>The document being passed to AnalyzeID.</p>
-    #[doc(hidden)]
-    pub document_pages: std::option::Option<std::vec::Vec<crate::model::Document>>,
+    #[doc(hidden)]pub document_pages: std::option::Option<std::vec::Vec<crate::model::Document>>,
 }
 impl AnalyzeIdInput {
     /// <p>The document being passed to AnalyzeID.</p>
-    pub fn document_pages(&self) -> std::option::Option<&[crate::model::Document]> {
+    pub fn document_pages(&self) -> std::option::Option<& [crate::model::Document]> {
         self.document_pages.as_deref()
     }
 }
-impl std::fmt::Debug for AnalyzeIdInput {
+impl  std::fmt::Debug for AnalyzeIdInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AnalyzeIdInput");
         formatter.field("document_pages", &self.document_pages);
@@ -2198,30 +1669,28 @@ impl std::fmt::Debug for AnalyzeIdInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AnalyzeExpenseInput {
-    /// <p>The input document, either as bytes or as an S3 object.</p>
-    /// <p>You pass image bytes to an Amazon Textract API operation by using the <code>Bytes</code> property. For example, you would use the <code>Bytes</code> property to pass a document loaded from a local file system. Image bytes passed by using the <code>Bytes</code> property must be base64 encoded. Your code might not need to encode document file bytes if you're using an AWS SDK to call Amazon Textract API operations. </p>
-    /// <p>You pass images stored in an S3 bucket to an Amazon Textract API operation by using the <code>S3Object</code> property. Documents stored in an S3 bucket don't need to be base64 encoded.</p>
-    /// <p>The AWS Region for the S3 bucket that contains the S3 object must match the AWS Region that you use for Amazon Textract operations.</p>
-    /// <p>If you use the AWS CLI to call Amazon Textract operations, passing image bytes using the Bytes property isn't supported. You must first upload the document to an Amazon S3 bucket, and then call the operation using the S3Object property.</p>
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct AnalyzeExpenseInput  {
+    /// <p>The input document, either as bytes or as an S3 object.</p> 
+    /// <p>You pass image bytes to an Amazon Textract API operation by using the <code>Bytes</code> property. For example, you would use the <code>Bytes</code> property to pass a document loaded from a local file system. Image bytes passed by using the <code>Bytes</code> property must be base64 encoded. Your code might not need to encode document file bytes if you're using an AWS SDK to call Amazon Textract API operations. </p> 
+    /// <p>You pass images stored in an S3 bucket to an Amazon Textract API operation by using the <code>S3Object</code> property. Documents stored in an S3 bucket don't need to be base64 encoded.</p> 
+    /// <p>The AWS Region for the S3 bucket that contains the S3 object must match the AWS Region that you use for Amazon Textract operations.</p> 
+    /// <p>If you use the AWS CLI to call Amazon Textract operations, passing image bytes using the Bytes property isn't supported. You must first upload the document to an Amazon S3 bucket, and then call the operation using the S3Object property.</p> 
     /// <p>For Amazon Textract to process an S3 object, the user must have permission to access the S3 object. </p>
-    #[doc(hidden)]
-    pub document: std::option::Option<crate::model::Document>,
+    #[doc(hidden)]pub document: std::option::Option<crate::model::Document>,
 }
 impl AnalyzeExpenseInput {
-    /// <p>The input document, either as bytes or as an S3 object.</p>
-    /// <p>You pass image bytes to an Amazon Textract API operation by using the <code>Bytes</code> property. For example, you would use the <code>Bytes</code> property to pass a document loaded from a local file system. Image bytes passed by using the <code>Bytes</code> property must be base64 encoded. Your code might not need to encode document file bytes if you're using an AWS SDK to call Amazon Textract API operations. </p>
-    /// <p>You pass images stored in an S3 bucket to an Amazon Textract API operation by using the <code>S3Object</code> property. Documents stored in an S3 bucket don't need to be base64 encoded.</p>
-    /// <p>The AWS Region for the S3 bucket that contains the S3 object must match the AWS Region that you use for Amazon Textract operations.</p>
-    /// <p>If you use the AWS CLI to call Amazon Textract operations, passing image bytes using the Bytes property isn't supported. You must first upload the document to an Amazon S3 bucket, and then call the operation using the S3Object property.</p>
+    /// <p>The input document, either as bytes or as an S3 object.</p> 
+    /// <p>You pass image bytes to an Amazon Textract API operation by using the <code>Bytes</code> property. For example, you would use the <code>Bytes</code> property to pass a document loaded from a local file system. Image bytes passed by using the <code>Bytes</code> property must be base64 encoded. Your code might not need to encode document file bytes if you're using an AWS SDK to call Amazon Textract API operations. </p> 
+    /// <p>You pass images stored in an S3 bucket to an Amazon Textract API operation by using the <code>S3Object</code> property. Documents stored in an S3 bucket don't need to be base64 encoded.</p> 
+    /// <p>The AWS Region for the S3 bucket that contains the S3 object must match the AWS Region that you use for Amazon Textract operations.</p> 
+    /// <p>If you use the AWS CLI to call Amazon Textract operations, passing image bytes using the Bytes property isn't supported. You must first upload the document to an Amazon S3 bucket, and then call the operation using the S3Object property.</p> 
     /// <p>For Amazon Textract to process an S3 object, the user must have permission to access the S3 object. </p>
-    pub fn document(&self) -> std::option::Option<&crate::model::Document> {
+    pub fn document(&self) -> std::option::Option<& crate::model::Document> {
         self.document.as_ref()
     }
 }
-impl std::fmt::Debug for AnalyzeExpenseInput {
+impl  std::fmt::Debug for AnalyzeExpenseInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AnalyzeExpenseInput");
         formatter.field("document", &self.document);
@@ -2230,43 +1699,38 @@ impl std::fmt::Debug for AnalyzeExpenseInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AnalyzeDocumentInput {
-    /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG, PNG, PDF, or TIFF format.</p>
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct AnalyzeDocumentInput  {
+    /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG, PNG, PDF, or TIFF format.</p> 
     /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are passed using the <code>Bytes</code> field. </p>
-    #[doc(hidden)]
-    pub document: std::option::Option<crate::model::Document>,
+    #[doc(hidden)]pub document: std::option::Option<crate::model::Document>,
     /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. To perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
-    #[doc(hidden)]
-    pub feature_types: std::option::Option<std::vec::Vec<crate::model::FeatureType>>,
+    #[doc(hidden)]pub feature_types: std::option::Option<std::vec::Vec<crate::model::FeatureType>>,
     /// <p>Sets the configuration for the human in the loop workflow for analyzing documents.</p>
-    #[doc(hidden)]
-    pub human_loop_config: std::option::Option<crate::model::HumanLoopConfig>,
+    #[doc(hidden)]pub human_loop_config: std::option::Option<crate::model::HumanLoopConfig>,
     /// <p>Contains Queries and the alias for those Queries, as determined by the input. </p>
-    #[doc(hidden)]
-    pub queries_config: std::option::Option<crate::model::QueriesConfig>,
+    #[doc(hidden)]pub queries_config: std::option::Option<crate::model::QueriesConfig>,
 }
 impl AnalyzeDocumentInput {
-    /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG, PNG, PDF, or TIFF format.</p>
+    /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG, PNG, PDF, or TIFF format.</p> 
     /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are passed using the <code>Bytes</code> field. </p>
-    pub fn document(&self) -> std::option::Option<&crate::model::Document> {
+    pub fn document(&self) -> std::option::Option<& crate::model::Document> {
         self.document.as_ref()
     }
     /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. To perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
-    pub fn feature_types(&self) -> std::option::Option<&[crate::model::FeatureType]> {
+    pub fn feature_types(&self) -> std::option::Option<& [crate::model::FeatureType]> {
         self.feature_types.as_deref()
     }
     /// <p>Sets the configuration for the human in the loop workflow for analyzing documents.</p>
-    pub fn human_loop_config(&self) -> std::option::Option<&crate::model::HumanLoopConfig> {
+    pub fn human_loop_config(&self) -> std::option::Option<& crate::model::HumanLoopConfig> {
         self.human_loop_config.as_ref()
     }
     /// <p>Contains Queries and the alias for those Queries, as determined by the input. </p>
-    pub fn queries_config(&self) -> std::option::Option<&crate::model::QueriesConfig> {
+    pub fn queries_config(&self) -> std::option::Option<& crate::model::QueriesConfig> {
         self.queries_config.as_ref()
     }
 }
-impl std::fmt::Debug for AnalyzeDocumentInput {
+impl  std::fmt::Debug for AnalyzeDocumentInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AnalyzeDocumentInput");
         formatter.field("document", &self.document);
@@ -2276,3 +1740,4 @@ impl std::fmt::Debug for AnalyzeDocumentInput {
         formatter.finish()
     }
 }
+

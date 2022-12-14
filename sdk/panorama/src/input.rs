@@ -3,21 +3,18 @@ use std::fmt::Write;
 
 /// See [`CreateApplicationInstanceInput`](crate::input::CreateApplicationInstanceInput).
 pub mod create_application_instance_input {
-
+    
     /// A builder for [`CreateApplicationInstanceInput`](crate::input::CreateApplicationInstanceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) manifest_payload: std::option::Option<crate::model::ManifestPayload>,
-        pub(crate) manifest_overrides_payload:
-            std::option::Option<crate::model::ManifestOverridesPayload>,
+        pub(crate) manifest_overrides_payload: std::option::Option<crate::model::ManifestOverridesPayload>,
         pub(crate) application_instance_id_to_replace: std::option::Option<std::string::String>,
         pub(crate) runtime_role_arn: std::option::Option<std::string::String>,
         pub(crate) default_runtime_context_device: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>A name for the application instance.</p>
@@ -27,8 +24,7 @@ pub mod create_application_instance_input {
         }
         /// <p>A name for the application instance.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A description for the application instance.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -37,8 +33,7 @@ pub mod create_application_instance_input {
         }
         /// <p>A description for the application instance.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The application's manifest document.</p>
         pub fn manifest_payload(mut self, input: crate::model::ManifestPayload) -> Self {
@@ -46,44 +41,26 @@ pub mod create_application_instance_input {
             self
         }
         /// <p>The application's manifest document.</p>
-        pub fn set_manifest_payload(
-            mut self,
-            input: std::option::Option<crate::model::ManifestPayload>,
-        ) -> Self {
-            self.manifest_payload = input;
-            self
+        pub fn set_manifest_payload(mut self, input: std::option::Option<crate::model::ManifestPayload>) -> Self {
+            self.manifest_payload = input; self
         }
         /// <p>Setting overrides for the application manifest.</p>
-        pub fn manifest_overrides_payload(
-            mut self,
-            input: crate::model::ManifestOverridesPayload,
-        ) -> Self {
+        pub fn manifest_overrides_payload(mut self, input: crate::model::ManifestOverridesPayload) -> Self {
             self.manifest_overrides_payload = Some(input);
             self
         }
         /// <p>Setting overrides for the application manifest.</p>
-        pub fn set_manifest_overrides_payload(
-            mut self,
-            input: std::option::Option<crate::model::ManifestOverridesPayload>,
-        ) -> Self {
-            self.manifest_overrides_payload = input;
-            self
+        pub fn set_manifest_overrides_payload(mut self, input: std::option::Option<crate::model::ManifestOverridesPayload>) -> Self {
+            self.manifest_overrides_payload = input; self
         }
         /// <p>The ID of an application instance to replace with the new instance.</p>
-        pub fn application_instance_id_to_replace(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn application_instance_id_to_replace(mut self, input: impl Into<std::string::String>) -> Self {
             self.application_instance_id_to_replace = Some(input.into());
             self
         }
         /// <p>The ID of an application instance to replace with the new instance.</p>
-        pub fn set_application_instance_id_to_replace(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_instance_id_to_replace = input;
-            self
+        pub fn set_application_instance_id_to_replace(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_instance_id_to_replace = input; self
         }
         /// <p>The ARN of a runtime role for the application instance.</p>
         pub fn runtime_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,175 +68,115 @@ pub mod create_application_instance_input {
             self
         }
         /// <p>The ARN of a runtime role for the application instance.</p>
-        pub fn set_runtime_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.runtime_role_arn = input;
-            self
+        pub fn set_runtime_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.runtime_role_arn = input; self
         }
         /// <p>A device's ID.</p>
-        pub fn default_runtime_context_device(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn default_runtime_context_device(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_runtime_context_device = Some(input.into());
             self
         }
         /// <p>A device's ID.</p>
-        pub fn set_default_runtime_context_device(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_runtime_context_device = input;
-            self
+        pub fn set_default_runtime_context_device(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_runtime_context_device = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags for the application instance.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags for the application instance.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateApplicationInstanceInput`](crate::input::CreateApplicationInstanceInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateApplicationInstanceInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::CreateApplicationInstanceInput {
-                name: self.name,
-                description: self.description,
-                manifest_payload: self.manifest_payload,
-                manifest_overrides_payload: self.manifest_overrides_payload,
-                application_instance_id_to_replace: self.application_instance_id_to_replace,
-                runtime_role_arn: self.runtime_role_arn,
-                default_runtime_context_device: self.default_runtime_context_device,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::CreateApplicationInstanceInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CreateApplicationInstanceInput {
+                    name: self.name
+                    ,
+                    description: self.description
+                    ,
+                    manifest_payload: self.manifest_payload
+                    ,
+                    manifest_overrides_payload: self.manifest_overrides_payload
+                    ,
+                    application_instance_id_to_replace: self.application_instance_id_to_replace
+                    ,
+                    runtime_role_arn: self.runtime_role_arn
+                    ,
+                    default_runtime_context_device: self.default_runtime_context_device
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateApplicationInstanceInput {
     /// Consumes the builder and constructs an Operation<[`CreateApplicationInstance`](crate::operation::CreateApplicationInstance)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateApplicationInstance,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateApplicationInstance, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateApplicationInstanceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::CreateApplicationInstanceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/application-instances").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreateApplicationInstanceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CreateApplicationInstanceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_application_instance(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_application_instance(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateApplicationInstance::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateApplicationInstance",
-            "panorama",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateApplicationInstance::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateApplicationInstance", "panorama"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -271,9 +188,9 @@ impl CreateApplicationInstanceInput {
 
 /// See [`CreateJobForDevicesInput`](crate::input::CreateJobForDevicesInput).
 pub mod create_job_for_devices_input {
-
+    
     /// A builder for [`CreateJobForDevicesInput`](crate::input::CreateJobForDevicesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) device_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) device_job_config: std::option::Option<crate::model::DeviceJobConfig>,
@@ -287,17 +204,13 @@ pub mod create_job_for_devices_input {
         /// <p>IDs of target devices.</p>
         pub fn device_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.device_ids.unwrap_or_default();
-            v.push(input.into());
-            self.device_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.device_ids = Some(v);
+                            self
         }
         /// <p>IDs of target devices.</p>
-        pub fn set_device_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.device_ids = input;
-            self
+        pub fn set_device_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.device_ids = input; self
         }
         /// <p>Configuration settings for the job.</p>
         pub fn device_job_config(mut self, input: crate::model::DeviceJobConfig) -> Self {
@@ -305,12 +218,8 @@ pub mod create_job_for_devices_input {
             self
         }
         /// <p>Configuration settings for the job.</p>
-        pub fn set_device_job_config(
-            mut self,
-            input: std::option::Option<crate::model::DeviceJobConfig>,
-        ) -> Self {
-            self.device_job_config = input;
-            self
+        pub fn set_device_job_config(mut self, input: std::option::Option<crate::model::DeviceJobConfig>) -> Self {
+            self.device_job_config = input; self
         }
         /// <p>The type of job to run.</p>
         pub fn job_type(mut self, input: crate::model::JobType) -> Self {
@@ -319,123 +228,80 @@ pub mod create_job_for_devices_input {
         }
         /// <p>The type of job to run.</p>
         pub fn set_job_type(mut self, input: std::option::Option<crate::model::JobType>) -> Self {
-            self.job_type = input;
-            self
+            self.job_type = input; self
         }
         /// Consumes the builder and constructs a [`CreateJobForDevicesInput`](crate::input::CreateJobForDevicesInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateJobForDevicesInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::CreateJobForDevicesInput {
-                device_ids: self.device_ids,
-                device_job_config: self.device_job_config,
-                job_type: self.job_type,
-            })
+        pub fn build(self) -> Result<crate::input::CreateJobForDevicesInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CreateJobForDevicesInput {
+                    device_ids: self.device_ids
+                    ,
+                    device_job_config: self.device_job_config
+                    ,
+                    job_type: self.job_type
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateJobForDevicesInput {
     /// Consumes the builder and constructs an Operation<[`CreateJobForDevices`](crate::operation::CreateJobForDevices)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateJobForDevices,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateJobForDevices, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateJobForDevicesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::CreateJobForDevicesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/jobs").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreateJobForDevicesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CreateJobForDevicesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_job_for_devices(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_job_for_devices(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateJobForDevices::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateJobForDevices",
-            "panorama",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateJobForDevices::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateJobForDevices", "panorama"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -447,18 +313,16 @@ impl CreateJobForDevicesInput {
 
 /// See [`CreateNodeFromTemplateJobInput`](crate::input::CreateNodeFromTemplateJobInput).
 pub mod create_node_from_template_job_input {
-
+    
     /// A builder for [`CreateNodeFromTemplateJobInput`](crate::input::CreateNodeFromTemplateJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) template_type: std::option::Option<crate::model::TemplateType>,
         pub(crate) output_package_name: std::option::Option<std::string::String>,
         pub(crate) output_package_version: std::option::Option<std::string::String>,
         pub(crate) node_name: std::option::Option<std::string::String>,
         pub(crate) node_description: std::option::Option<std::string::String>,
-        pub(crate) template_parameters: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) template_parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) job_tags: std::option::Option<std::vec::Vec<crate::model::JobResourceTags>>,
     }
     impl Builder {
@@ -468,12 +332,8 @@ pub mod create_node_from_template_job_input {
             self
         }
         /// <p>The type of node.</p>
-        pub fn set_template_type(
-            mut self,
-            input: std::option::Option<crate::model::TemplateType>,
-        ) -> Self {
-            self.template_type = input;
-            self
+        pub fn set_template_type(mut self, input: std::option::Option<crate::model::TemplateType>) -> Self {
+            self.template_type = input; self
         }
         /// <p>An output package name for the node.</p>
         pub fn output_package_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -481,12 +341,8 @@ pub mod create_node_from_template_job_input {
             self
         }
         /// <p>An output package name for the node.</p>
-        pub fn set_output_package_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.output_package_name = input;
-            self
+        pub fn set_output_package_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.output_package_name = input; self
         }
         /// <p>An output package version for the node.</p>
         pub fn output_package_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -494,12 +350,8 @@ pub mod create_node_from_template_job_input {
             self
         }
         /// <p>An output package version for the node.</p>
-        pub fn set_output_package_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.output_package_version = input;
-            self
+        pub fn set_output_package_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.output_package_version = input; self
         }
         /// <p>A name for the node.</p>
         pub fn node_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -508,8 +360,7 @@ pub mod create_node_from_template_job_input {
         }
         /// <p>A name for the node.</p>
         pub fn set_node_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.node_name = input;
-            self
+            self.node_name = input; self
         }
         /// <p>A description for the node.</p>
         pub fn node_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -517,37 +368,23 @@ pub mod create_node_from_template_job_input {
             self
         }
         /// <p>A description for the node.</p>
-        pub fn set_node_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.node_description = input;
-            self
+        pub fn set_node_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.node_description = input; self
         }
         /// Adds a key-value pair to `template_parameters`.
         ///
         /// To override the contents of this collection use [`set_template_parameters`](Self::set_template_parameters).
         ///
         /// <p>Template parameters for the node.</p>
-        pub fn template_parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn template_parameters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.template_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.template_parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.template_parameters = Some(hash_map);
+                            self
         }
         /// <p>Template parameters for the node.</p>
-        pub fn set_template_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.template_parameters = input;
-            self
+        pub fn set_template_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.template_parameters = input; self
         }
         /// Appends an item to `job_tags`.
         ///
@@ -556,76 +393,57 @@ pub mod create_node_from_template_job_input {
         /// <p>Tags for the job.</p>
         pub fn job_tags(mut self, input: crate::model::JobResourceTags) -> Self {
             let mut v = self.job_tags.unwrap_or_default();
-            v.push(input);
-            self.job_tags = Some(v);
-            self
+                            v.push(input);
+                            self.job_tags = Some(v);
+                            self
         }
         /// <p>Tags for the job.</p>
-        pub fn set_job_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::JobResourceTags>>,
-        ) -> Self {
-            self.job_tags = input;
-            self
+        pub fn set_job_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::JobResourceTags>>) -> Self {
+            self.job_tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateNodeFromTemplateJobInput`](crate::input::CreateNodeFromTemplateJobInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateNodeFromTemplateJobInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::CreateNodeFromTemplateJobInput {
-                template_type: self.template_type,
-                output_package_name: self.output_package_name,
-                output_package_version: self.output_package_version,
-                node_name: self.node_name,
-                node_description: self.node_description,
-                template_parameters: self.template_parameters,
-                job_tags: self.job_tags,
-            })
+        pub fn build(self) -> Result<crate::input::CreateNodeFromTemplateJobInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CreateNodeFromTemplateJobInput {
+                    template_type: self.template_type
+                    ,
+                    output_package_name: self.output_package_name
+                    ,
+                    output_package_version: self.output_package_version
+                    ,
+                    node_name: self.node_name
+                    ,
+                    node_description: self.node_description
+                    ,
+                    template_parameters: self.template_parameters
+                    ,
+                    job_tags: self.job_tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateNodeFromTemplateJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateNodeFromTemplateJob`](crate::operation::CreateNodeFromTemplateJob)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateNodeFromTemplateJob,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateNodeFromTemplateJob, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateNodeFromTemplateJobInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::CreateNodeFromTemplateJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/packages/template-job").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreateNodeFromTemplateJobInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CreateNodeFromTemplateJobInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -633,58 +451,36 @@ impl CreateNodeFromTemplateJobInput {
             crate::operation_ser::serialize_operation_crate_operation_create_node_from_template_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateNodeFromTemplateJob::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateNodeFromTemplateJob",
-            "panorama",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateNodeFromTemplateJob::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateNodeFromTemplateJob", "panorama"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -696,14 +492,12 @@ impl CreateNodeFromTemplateJobInput {
 
 /// See [`CreatePackageInput`](crate::input::CreatePackageInput).
 pub mod create_package_input {
-
+    
     /// A builder for [`CreatePackageInput`](crate::input::CreatePackageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) package_name: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>A name for the package.</p>
@@ -713,145 +507,93 @@ pub mod create_package_input {
         }
         /// <p>A name for the package.</p>
         pub fn set_package_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.package_name = input;
-            self
+            self.package_name = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags for the package.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags for the package.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreatePackageInput`](crate::input::CreatePackageInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreatePackageInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::CreatePackageInput {
-                package_name: self.package_name,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::CreatePackageInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CreatePackageInput {
+                    package_name: self.package_name
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreatePackageInput {
     /// Consumes the builder and constructs an Operation<[`CreatePackage`](crate::operation::CreatePackage)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreatePackage,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreatePackage, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreatePackageInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::CreatePackageInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/packages").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreatePackageInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CreatePackageInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_package(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_package(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreatePackage::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreatePackage",
-            "panorama",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreatePackage::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreatePackage", "panorama"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -863,9 +605,9 @@ impl CreatePackageInput {
 
 /// See [`CreatePackageImportJobInput`](crate::input::CreatePackageImportJobInput).
 pub mod create_package_import_job_input {
-
+    
     /// A builder for [`CreatePackageImportJobInput`](crate::input::CreatePackageImportJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) job_type: std::option::Option<crate::model::PackageImportJobType>,
         pub(crate) input_config: std::option::Option<crate::model::PackageImportJobInputConfig>,
@@ -880,12 +622,8 @@ pub mod create_package_import_job_input {
             self
         }
         /// <p>A job type for the package import job.</p>
-        pub fn set_job_type(
-            mut self,
-            input: std::option::Option<crate::model::PackageImportJobType>,
-        ) -> Self {
-            self.job_type = input;
-            self
+        pub fn set_job_type(mut self, input: std::option::Option<crate::model::PackageImportJobType>) -> Self {
+            self.job_type = input; self
         }
         /// <p>An input config for the package import job.</p>
         pub fn input_config(mut self, input: crate::model::PackageImportJobInputConfig) -> Self {
@@ -893,12 +631,8 @@ pub mod create_package_import_job_input {
             self
         }
         /// <p>An input config for the package import job.</p>
-        pub fn set_input_config(
-            mut self,
-            input: std::option::Option<crate::model::PackageImportJobInputConfig>,
-        ) -> Self {
-            self.input_config = input;
-            self
+        pub fn set_input_config(mut self, input: std::option::Option<crate::model::PackageImportJobInputConfig>) -> Self {
+            self.input_config = input; self
         }
         /// <p>An output config for the package import job.</p>
         pub fn output_config(mut self, input: crate::model::PackageImportJobOutputConfig) -> Self {
@@ -906,12 +640,8 @@ pub mod create_package_import_job_input {
             self
         }
         /// <p>An output config for the package import job.</p>
-        pub fn set_output_config(
-            mut self,
-            input: std::option::Option<crate::model::PackageImportJobOutputConfig>,
-        ) -> Self {
-            self.output_config = input;
-            self
+        pub fn set_output_config(mut self, input: std::option::Option<crate::model::PackageImportJobOutputConfig>) -> Self {
+            self.output_config = input; self
         }
         /// <p>A client token for the package import job.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -920,8 +650,7 @@ pub mod create_package_import_job_input {
         }
         /// <p>A client token for the package import job.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// Appends an item to `job_tags`.
         ///
@@ -930,134 +659,90 @@ pub mod create_package_import_job_input {
         /// <p>Tags for the package import job.</p>
         pub fn job_tags(mut self, input: crate::model::JobResourceTags) -> Self {
             let mut v = self.job_tags.unwrap_or_default();
-            v.push(input);
-            self.job_tags = Some(v);
-            self
+                            v.push(input);
+                            self.job_tags = Some(v);
+                            self
         }
         /// <p>Tags for the package import job.</p>
-        pub fn set_job_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::JobResourceTags>>,
-        ) -> Self {
-            self.job_tags = input;
-            self
+        pub fn set_job_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::JobResourceTags>>) -> Self {
+            self.job_tags = input; self
         }
         /// Consumes the builder and constructs a [`CreatePackageImportJobInput`](crate::input::CreatePackageImportJobInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreatePackageImportJobInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::CreatePackageImportJobInput {
-                job_type: self.job_type,
-                input_config: self.input_config,
-                output_config: self.output_config,
-                client_token: self.client_token,
-                job_tags: self.job_tags,
-            })
+        pub fn build(self) -> Result<crate::input::CreatePackageImportJobInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CreatePackageImportJobInput {
+                    job_type: self.job_type
+                    ,
+                    input_config: self.input_config
+                    ,
+                    output_config: self.output_config
+                    ,
+                    client_token: self.client_token
+                    ,
+                    job_tags: self.job_tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreatePackageImportJobInput {
     /// Consumes the builder and constructs an Operation<[`CreatePackageImportJob`](crate::operation::CreatePackageImportJob)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreatePackageImportJob,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreatePackageImportJob, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreatePackageImportJobInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::CreatePackageImportJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/packages/import-jobs").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreatePackageImportJobInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CreatePackageImportJobInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_package_import_job(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_package_import_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreatePackageImportJob::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreatePackageImportJob",
-            "panorama",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreatePackageImportJob::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreatePackageImportJob", "panorama"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1069,9 +754,9 @@ impl CreatePackageImportJobInput {
 
 /// See [`DeleteDeviceInput`](crate::input::DeleteDeviceInput).
 pub mod delete_device_input {
-
+    
     /// A builder for [`DeleteDeviceInput`](crate::input::DeleteDeviceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
     }
@@ -1083,64 +768,39 @@ pub mod delete_device_input {
         }
         /// <p>The device's ID.</p>
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_id = input;
-            self
+            self.device_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDeviceInput`](crate::input::DeleteDeviceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteDeviceInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DeleteDeviceInput {
-                device_id: self.device_id,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteDeviceInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DeleteDeviceInput {
+                    device_id: self.device_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteDeviceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDevice`](crate::operation::DeleteDevice)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteDevice,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteDevice, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteDeviceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteDeviceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.device_id;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "device_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "device_id", details: "cannot be empty or unset" })?;
                 let device_id = aws_smithy_http::label::fmt_string(input_1, false);
                 if device_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "device_id",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(output, "/devices/{DeviceId}", DeviceId = device_id)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "device_id", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/devices/{DeviceId}", DeviceId = device_id).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DeleteDeviceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DeleteDeviceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -1149,54 +809,37 @@ impl DeleteDeviceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteDevice::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteDevice",
-            "panorama",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteDevice::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteDevice", "panorama"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1208,9 +851,9 @@ impl DeleteDeviceInput {
 
 /// See [`DeletePackageInput`](crate::input::DeletePackageInput).
 pub mod delete_package_input {
-
+    
     /// A builder for [`DeletePackageInput`](crate::input::DeletePackageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) package_id: std::option::Option<std::string::String>,
         pub(crate) force_delete: std::option::Option<bool>,
@@ -1223,8 +866,7 @@ pub mod delete_package_input {
         }
         /// <p>The package's ID.</p>
         pub fn set_package_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.package_id = input;
-            self
+            self.package_id = input; self
         }
         /// <p>Delete the package even if it has artifacts stored in its access point. Deletes the package's artifacts from Amazon S3.</p>
         pub fn force_delete(mut self, input: bool) -> Self {
@@ -1233,78 +875,49 @@ pub mod delete_package_input {
         }
         /// <p>Delete the package even if it has artifacts stored in its access point. Deletes the package's artifacts from Amazon S3.</p>
         pub fn set_force_delete(mut self, input: std::option::Option<bool>) -> Self {
-            self.force_delete = input;
-            self
+            self.force_delete = input; self
         }
         /// Consumes the builder and constructs a [`DeletePackageInput`](crate::input::DeletePackageInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeletePackageInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DeletePackageInput {
-                package_id: self.package_id,
-                force_delete: self.force_delete.unwrap_or_default(),
-            })
+        pub fn build(self) -> Result<crate::input::DeletePackageInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DeletePackageInput {
+                    package_id: self.package_id
+                    ,
+                    force_delete: self.force_delete
+                        .unwrap_or_default()
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeletePackageInput {
     /// Consumes the builder and constructs an Operation<[`DeletePackage`](crate::operation::DeletePackage)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeletePackage,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeletePackage, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeletePackageInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DeletePackageInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_2 = &_input.package_id;
-                let input_2 = input_2.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "package_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "package_id", details: "cannot be empty or unset" })?;
                 let package_id = aws_smithy_http::label::fmt_string(input_2, false);
                 if package_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "package_id",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(output, "/packages/{PackageId}", PackageId = package_id)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "package_id", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/packages/{PackageId}", PackageId = package_id).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::DeletePackageInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::DeletePackageInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if _input.force_delete {
-                    query.push_kv(
-                        "ForceDelete",
-                        aws_smithy_types::primitive::Encoder::from(_input.force_delete).encode(),
-                    );
+                    query.push_kv("ForceDelete", aws_smithy_types::primitive::Encoder::from(_input.force_delete).encode());
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DeletePackageInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DeletePackageInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1314,54 +927,37 @@ impl DeletePackageInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeletePackage::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeletePackage",
-            "panorama",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeletePackage::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeletePackage", "panorama"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1373,9 +969,9 @@ impl DeletePackageInput {
 
 /// See [`DeregisterPackageVersionInput`](crate::input::DeregisterPackageVersionInput).
 pub mod deregister_package_version_input {
-
+    
     /// A builder for [`DeregisterPackageVersionInput`](crate::input::DeregisterPackageVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
         pub(crate) package_id: std::option::Option<std::string::String>,
@@ -1390,12 +986,8 @@ pub mod deregister_package_version_input {
             self
         }
         /// <p>An owner account.</p>
-        pub fn set_owner_account(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owner_account = input;
-            self
+        pub fn set_owner_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_account = input; self
         }
         /// <p>A package ID.</p>
         pub fn package_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1404,8 +996,7 @@ pub mod deregister_package_version_input {
         }
         /// <p>A package ID.</p>
         pub fn set_package_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.package_id = input;
-            self
+            self.package_id = input; self
         }
         /// <p>A package version.</p>
         pub fn package_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1413,12 +1004,8 @@ pub mod deregister_package_version_input {
             self
         }
         /// <p>A package version.</p>
-        pub fn set_package_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.package_version = input;
-            self
+        pub fn set_package_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.package_version = input; self
         }
         /// <p>A patch version.</p>
         pub fn patch_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1426,143 +1013,79 @@ pub mod deregister_package_version_input {
             self
         }
         /// <p>A patch version.</p>
-        pub fn set_patch_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.patch_version = input;
-            self
+        pub fn set_patch_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.patch_version = input; self
         }
         /// <p>If the version was marked latest, the new version to maker as latest.</p>
-        pub fn updated_latest_patch_version(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn updated_latest_patch_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.updated_latest_patch_version = Some(input.into());
             self
         }
         /// <p>If the version was marked latest, the new version to maker as latest.</p>
-        pub fn set_updated_latest_patch_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.updated_latest_patch_version = input;
-            self
+        pub fn set_updated_latest_patch_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.updated_latest_patch_version = input; self
         }
         /// Consumes the builder and constructs a [`DeregisterPackageVersionInput`](crate::input::DeregisterPackageVersionInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeregisterPackageVersionInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::DeregisterPackageVersionInput {
-                owner_account: self.owner_account,
-                package_id: self.package_id,
-                package_version: self.package_version,
-                patch_version: self.patch_version,
-                updated_latest_patch_version: self.updated_latest_patch_version,
-            })
+        pub fn build(self) -> Result<crate::input::DeregisterPackageVersionInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DeregisterPackageVersionInput {
+                    owner_account: self.owner_account
+                    ,
+                    package_id: self.package_id
+                    ,
+                    package_version: self.package_version
+                    ,
+                    patch_version: self.patch_version
+                    ,
+                    updated_latest_patch_version: self.updated_latest_patch_version
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeregisterPackageVersionInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterPackageVersion`](crate::operation::DeregisterPackageVersion)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeregisterPackageVersion,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeregisterPackageVersion, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeregisterPackageVersionInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DeregisterPackageVersionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_3 = &_input.package_id;
-                let input_3 = input_3.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "package_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "package_id", details: "cannot be empty or unset" })?;
                 let package_id = aws_smithy_http::label::fmt_string(input_3, false);
                 if package_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "package_id",
-                        details: "cannot be empty or unset",
-                    });
-                }
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "package_id", details: "cannot be empty or unset" })
+                            }
                 let input_4 = &_input.package_version;
-                let input_4 = input_4.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "package_version",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_4 = input_4.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "package_version", details: "cannot be empty or unset" })?;
                 let package_version = aws_smithy_http::label::fmt_string(input_4, false);
                 if package_version.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "package_version",
-                        details: "cannot be empty or unset",
-                    });
-                }
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "package_version", details: "cannot be empty or unset" })
+                            }
                 let input_5 = &_input.patch_version;
-                let input_5 = input_5.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "patch_version",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_5 = input_5.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "patch_version", details: "cannot be empty or unset" })?;
                 let patch_version = aws_smithy_http::label::fmt_string(input_5, false);
                 if patch_version.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "patch_version",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/packages/{PackageId}/versions/{PackageVersion}/patch/{PatchVersion}",
-                    PackageId = package_id,
-                    PackageVersion = package_version,
-                    PatchVersion = patch_version
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "patch_version", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/packages/{PackageId}/versions/{PackageVersion}/patch/{PatchVersion}", PackageId = package_id, PackageVersion = package_version, PatchVersion = patch_version).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::DeregisterPackageVersionInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::DeregisterPackageVersionInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_6) = &_input.owner_account {
-                    query.push_kv(
-                        "OwnerAccount",
-                        &aws_smithy_http::query::fmt_string(&inner_6),
-                    );
+                    query.push_kv("OwnerAccount", &aws_smithy_http::query::fmt_string(&inner_6));
                 }
                 if let Some(inner_7) = &_input.updated_latest_patch_version {
-                    query.push_kv(
-                        "UpdatedLatestPatchVersion",
-                        &aws_smithy_http::query::fmt_string(&inner_7),
-                    );
+                    query.push_kv("UpdatedLatestPatchVersion", &aws_smithy_http::query::fmt_string(&inner_7));
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DeregisterPackageVersionInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DeregisterPackageVersionInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1572,54 +1095,37 @@ impl DeregisterPackageVersionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeregisterPackageVersion::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeregisterPackageVersion",
-            "panorama",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeregisterPackageVersion::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeregisterPackageVersion", "panorama"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1631,9 +1137,9 @@ impl DeregisterPackageVersionInput {
 
 /// See [`DescribeApplicationInstanceInput`](crate::input::DescribeApplicationInstanceInput).
 pub mod describe_application_instance_input {
-
+    
     /// A builder for [`DescribeApplicationInstanceInput`](crate::input::DescribeApplicationInstanceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) application_instance_id: std::option::Option<std::string::String>,
     }
@@ -1644,74 +1150,40 @@ pub mod describe_application_instance_input {
             self
         }
         /// <p>The application instance's ID.</p>
-        pub fn set_application_instance_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_instance_id = input;
-            self
+        pub fn set_application_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_instance_id = input; self
         }
         /// Consumes the builder and constructs a [`DescribeApplicationInstanceInput`](crate::input::DescribeApplicationInstanceInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeApplicationInstanceInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::DescribeApplicationInstanceInput {
-                application_instance_id: self.application_instance_id,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeApplicationInstanceInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DescribeApplicationInstanceInput {
+                    application_instance_id: self.application_instance_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeApplicationInstanceInput {
     /// Consumes the builder and constructs an Operation<[`DescribeApplicationInstance`](crate::operation::DescribeApplicationInstance)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeApplicationInstance,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeApplicationInstance, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeApplicationInstanceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeApplicationInstanceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_8 = &_input.application_instance_id;
-                let input_8 = input_8.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "application_instance_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_8 = input_8.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "application_instance_id", details: "cannot be empty or unset" })?;
                 let application_instance_id = aws_smithy_http::label::fmt_string(input_8, false);
                 if application_instance_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "application_instance_id",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/application-instances/{ApplicationInstanceId}",
-                    ApplicationInstanceId = application_instance_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "application_instance_id", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/application-instances/{ApplicationInstanceId}", ApplicationInstanceId = application_instance_id).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribeApplicationInstanceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DescribeApplicationInstanceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1720,54 +1192,37 @@ impl DescribeApplicationInstanceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeApplicationInstance::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeApplicationInstance",
-            "panorama",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeApplicationInstance::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeApplicationInstance", "panorama"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1779,9 +1234,9 @@ impl DescribeApplicationInstanceInput {
 
 /// See [`DescribeApplicationInstanceDetailsInput`](crate::input::DescribeApplicationInstanceDetailsInput).
 pub mod describe_application_instance_details_input {
-
+    
     /// A builder for [`DescribeApplicationInstanceDetailsInput`](crate::input::DescribeApplicationInstanceDetailsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) application_instance_id: std::option::Option<std::string::String>,
     }
@@ -1792,74 +1247,40 @@ pub mod describe_application_instance_details_input {
             self
         }
         /// <p>The application instance's ID.</p>
-        pub fn set_application_instance_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_instance_id = input;
-            self
+        pub fn set_application_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_instance_id = input; self
         }
         /// Consumes the builder and constructs a [`DescribeApplicationInstanceDetailsInput`](crate::input::DescribeApplicationInstanceDetailsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeApplicationInstanceDetailsInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::DescribeApplicationInstanceDetailsInput {
-                application_instance_id: self.application_instance_id,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeApplicationInstanceDetailsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DescribeApplicationInstanceDetailsInput {
+                    application_instance_id: self.application_instance_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeApplicationInstanceDetailsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeApplicationInstanceDetails`](crate::operation::DescribeApplicationInstanceDetails)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeApplicationInstanceDetails,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeApplicationInstanceDetails, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeApplicationInstanceDetailsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeApplicationInstanceDetailsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_9 = &_input.application_instance_id;
-                let input_9 = input_9.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "application_instance_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_9 = input_9.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "application_instance_id", details: "cannot be empty or unset" })?;
                 let application_instance_id = aws_smithy_http::label::fmt_string(input_9, false);
                 if application_instance_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "application_instance_id",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/application-instances/{ApplicationInstanceId}/details",
-                    ApplicationInstanceId = application_instance_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "application_instance_id", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/application-instances/{ApplicationInstanceId}/details", ApplicationInstanceId = application_instance_id).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribeApplicationInstanceDetailsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DescribeApplicationInstanceDetailsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1868,54 +1289,37 @@ impl DescribeApplicationInstanceDetailsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeApplicationInstanceDetails::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeApplicationInstanceDetails",
-            "panorama",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeApplicationInstanceDetails::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeApplicationInstanceDetails", "panorama"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1927,9 +1331,9 @@ impl DescribeApplicationInstanceDetailsInput {
 
 /// See [`DescribeDeviceInput`](crate::input::DescribeDeviceInput).
 pub mod describe_device_input {
-
+    
     /// A builder for [`DescribeDeviceInput`](crate::input::DescribeDeviceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
     }
@@ -1941,64 +1345,39 @@ pub mod describe_device_input {
         }
         /// <p>The device's ID.</p>
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_id = input;
-            self
+            self.device_id = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDeviceInput`](crate::input::DescribeDeviceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DescribeDeviceInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DescribeDeviceInput {
-                device_id: self.device_id,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeDeviceInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DescribeDeviceInput {
+                    device_id: self.device_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeDeviceInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDevice`](crate::operation::DescribeDevice)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeDevice,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeDevice, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeDeviceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeDeviceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_10 = &_input.device_id;
-                let input_10 = input_10.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "device_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_10 = input_10.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "device_id", details: "cannot be empty or unset" })?;
                 let device_id = aws_smithy_http::label::fmt_string(input_10, false);
                 if device_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "device_id",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(output, "/devices/{DeviceId}", DeviceId = device_id)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "device_id", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/devices/{DeviceId}", DeviceId = device_id).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribeDeviceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DescribeDeviceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -2007,54 +1386,37 @@ impl DescribeDeviceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeDevice::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeDevice",
-            "panorama",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeDevice::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeDevice", "panorama"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2066,9 +1428,9 @@ impl DescribeDeviceInput {
 
 /// See [`DescribeDeviceJobInput`](crate::input::DescribeDeviceJobInput).
 pub mod describe_device_job_input {
-
+    
     /// A builder for [`DescribeDeviceJobInput`](crate::input::DescribeDeviceJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -2080,63 +1442,39 @@ pub mod describe_device_job_input {
         }
         /// <p>The job's ID.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDeviceJobInput`](crate::input::DescribeDeviceJobInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DescribeDeviceJobInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DescribeDeviceJobInput {
-                job_id: self.job_id,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeDeviceJobInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DescribeDeviceJobInput {
+                    job_id: self.job_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeDeviceJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDeviceJob`](crate::operation::DescribeDeviceJob)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeDeviceJob,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeDeviceJob, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeDeviceJobInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeDeviceJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_11 = &_input.job_id;
-                let input_11 = input_11.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "job_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_11 = input_11.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "job_id", details: "cannot be empty or unset" })?;
                 let job_id = aws_smithy_http::label::fmt_string(input_11, false);
                 if job_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "job_id",
-                        details: "cannot be empty or unset",
-                    });
-                }
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "job_id", details: "cannot be empty or unset" })
+                            }
                 write!(output, "/jobs/{JobId}", JobId = job_id).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribeDeviceJobInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DescribeDeviceJobInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -2145,54 +1483,37 @@ impl DescribeDeviceJobInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeDeviceJob::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeDeviceJob",
-            "panorama",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeDeviceJob::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeDeviceJob", "panorama"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2204,9 +1525,9 @@ impl DescribeDeviceJobInput {
 
 /// See [`DescribeNodeInput`](crate::input::DescribeNodeInput).
 pub mod describe_node_input {
-
+    
     /// A builder for [`DescribeNodeInput`](crate::input::DescribeNodeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) node_id: std::option::Option<std::string::String>,
         pub(crate) owner_account: std::option::Option<std::string::String>,
@@ -2219,8 +1540,7 @@ pub mod describe_node_input {
         }
         /// <p>The node's ID.</p>
         pub fn set_node_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.node_id = input;
-            self
+            self.node_id = input; self
         }
         /// <p>The account ID of the node's owner.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2228,82 +1548,49 @@ pub mod describe_node_input {
             self
         }
         /// <p>The account ID of the node's owner.</p>
-        pub fn set_owner_account(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owner_account = input;
-            self
+        pub fn set_owner_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_account = input; self
         }
         /// Consumes the builder and constructs a [`DescribeNodeInput`](crate::input::DescribeNodeInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DescribeNodeInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DescribeNodeInput {
-                node_id: self.node_id,
-                owner_account: self.owner_account,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeNodeInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DescribeNodeInput {
+                    node_id: self.node_id
+                    ,
+                    owner_account: self.owner_account
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeNodeInput {
     /// Consumes the builder and constructs an Operation<[`DescribeNode`](crate::operation::DescribeNode)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeNode,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeNode, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeNodeInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeNodeInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_12 = &_input.node_id;
-                let input_12 = input_12.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "node_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_12 = input_12.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "node_id", details: "cannot be empty or unset" })?;
                 let node_id = aws_smithy_http::label::fmt_string(input_12, false);
                 if node_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "node_id",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(output, "/nodes/{NodeId}", NodeId = node_id)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "node_id", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/nodes/{NodeId}", NodeId = node_id).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::DescribeNodeInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::DescribeNodeInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_13) = &_input.owner_account {
-                    query.push_kv(
-                        "OwnerAccount",
-                        &aws_smithy_http::query::fmt_string(&inner_13),
-                    );
+                    query.push_kv("OwnerAccount", &aws_smithy_http::query::fmt_string(&inner_13));
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribeNodeInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DescribeNodeInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2313,54 +1600,37 @@ impl DescribeNodeInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeNode::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeNode",
-            "panorama",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeNode::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeNode", "panorama"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2372,9 +1642,9 @@ impl DescribeNodeInput {
 
 /// See [`DescribeNodeFromTemplateJobInput`](crate::input::DescribeNodeFromTemplateJobInput).
 pub mod describe_node_from_template_job_input {
-
+    
     /// A builder for [`DescribeNodeFromTemplateJobInput`](crate::input::DescribeNodeFromTemplateJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -2386,66 +1656,39 @@ pub mod describe_node_from_template_job_input {
         }
         /// <p>The job's ID.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// Consumes the builder and constructs a [`DescribeNodeFromTemplateJobInput`](crate::input::DescribeNodeFromTemplateJobInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeNodeFromTemplateJobInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::DescribeNodeFromTemplateJobInput {
-                job_id: self.job_id,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeNodeFromTemplateJobInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DescribeNodeFromTemplateJobInput {
+                    job_id: self.job_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeNodeFromTemplateJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeNodeFromTemplateJob`](crate::operation::DescribeNodeFromTemplateJob)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeNodeFromTemplateJob,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeNodeFromTemplateJob, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeNodeFromTemplateJobInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeNodeFromTemplateJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_14 = &_input.job_id;
-                let input_14 = input_14.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "job_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_14 = input_14.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "job_id", details: "cannot be empty or unset" })?;
                 let job_id = aws_smithy_http::label::fmt_string(input_14, false);
                 if job_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "job_id",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(output, "/packages/template-job/{JobId}", JobId = job_id)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "job_id", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/packages/template-job/{JobId}", JobId = job_id).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribeNodeFromTemplateJobInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DescribeNodeFromTemplateJobInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -2454,54 +1697,37 @@ impl DescribeNodeFromTemplateJobInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeNodeFromTemplateJob::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeNodeFromTemplateJob",
-            "panorama",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeNodeFromTemplateJob::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeNodeFromTemplateJob", "panorama"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2513,9 +1739,9 @@ impl DescribeNodeFromTemplateJobInput {
 
 /// See [`DescribePackageInput`](crate::input::DescribePackageInput).
 pub mod describe_package_input {
-
+    
     /// A builder for [`DescribePackageInput`](crate::input::DescribePackageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) package_id: std::option::Option<std::string::String>,
     }
@@ -2527,68 +1753,39 @@ pub mod describe_package_input {
         }
         /// <p>The package's ID.</p>
         pub fn set_package_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.package_id = input;
-            self
+            self.package_id = input; self
         }
         /// Consumes the builder and constructs a [`DescribePackageInput`](crate::input::DescribePackageInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DescribePackageInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DescribePackageInput {
-                package_id: self.package_id,
-            })
+        pub fn build(self) -> Result<crate::input::DescribePackageInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DescribePackageInput {
+                    package_id: self.package_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribePackageInput {
     /// Consumes the builder and constructs an Operation<[`DescribePackage`](crate::operation::DescribePackage)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribePackage,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribePackage, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribePackageInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DescribePackageInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_15 = &_input.package_id;
-                let input_15 = input_15.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "package_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_15 = input_15.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "package_id", details: "cannot be empty or unset" })?;
                 let package_id = aws_smithy_http::label::fmt_string(input_15, false);
                 if package_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "package_id",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/packages/metadata/{PackageId}",
-                    PackageId = package_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "package_id", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/packages/metadata/{PackageId}", PackageId = package_id).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribePackageInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DescribePackageInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -2597,54 +1794,37 @@ impl DescribePackageInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribePackage::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribePackage",
-            "panorama",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribePackage::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribePackage", "panorama"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2656,9 +1836,9 @@ impl DescribePackageInput {
 
 /// See [`DescribePackageImportJobInput`](crate::input::DescribePackageImportJobInput).
 pub mod describe_package_import_job_input {
-
+    
     /// A builder for [`DescribePackageImportJobInput`](crate::input::DescribePackageImportJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -2670,66 +1850,39 @@ pub mod describe_package_import_job_input {
         }
         /// <p>The job's ID.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// Consumes the builder and constructs a [`DescribePackageImportJobInput`](crate::input::DescribePackageImportJobInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribePackageImportJobInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::DescribePackageImportJobInput {
-                job_id: self.job_id,
-            })
+        pub fn build(self) -> Result<crate::input::DescribePackageImportJobInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DescribePackageImportJobInput {
+                    job_id: self.job_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribePackageImportJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribePackageImportJob`](crate::operation::DescribePackageImportJob)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribePackageImportJob,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribePackageImportJob, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribePackageImportJobInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DescribePackageImportJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_16 = &_input.job_id;
-                let input_16 = input_16.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "job_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_16 = input_16.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "job_id", details: "cannot be empty or unset" })?;
                 let job_id = aws_smithy_http::label::fmt_string(input_16, false);
                 if job_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "job_id",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(output, "/packages/import-jobs/{JobId}", JobId = job_id)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "job_id", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/packages/import-jobs/{JobId}", JobId = job_id).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribePackageImportJobInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DescribePackageImportJobInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -2738,54 +1891,37 @@ impl DescribePackageImportJobInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribePackageImportJob::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribePackageImportJob",
-            "panorama",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribePackageImportJob::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribePackageImportJob", "panorama"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2797,9 +1933,9 @@ impl DescribePackageImportJobInput {
 
 /// See [`DescribePackageVersionInput`](crate::input::DescribePackageVersionInput).
 pub mod describe_package_version_input {
-
+    
     /// A builder for [`DescribePackageVersionInput`](crate::input::DescribePackageVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
         pub(crate) package_id: std::option::Option<std::string::String>,
@@ -2813,12 +1949,8 @@ pub mod describe_package_version_input {
             self
         }
         /// <p>The version's owner account.</p>
-        pub fn set_owner_account(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owner_account = input;
-            self
+        pub fn set_owner_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_account = input; self
         }
         /// <p>The version's ID.</p>
         pub fn package_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2827,8 +1959,7 @@ pub mod describe_package_version_input {
         }
         /// <p>The version's ID.</p>
         pub fn set_package_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.package_id = input;
-            self
+            self.package_id = input; self
         }
         /// <p>The version's version.</p>
         pub fn package_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2836,12 +1967,8 @@ pub mod describe_package_version_input {
             self
         }
         /// <p>The version's version.</p>
-        pub fn set_package_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.package_version = input;
-            self
+        pub fn set_package_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.package_version = input; self
         }
         /// <p>The version's patch version.</p>
         pub fn patch_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2849,109 +1976,62 @@ pub mod describe_package_version_input {
             self
         }
         /// <p>The version's patch version.</p>
-        pub fn set_patch_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.patch_version = input;
-            self
+        pub fn set_patch_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.patch_version = input; self
         }
         /// Consumes the builder and constructs a [`DescribePackageVersionInput`](crate::input::DescribePackageVersionInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DescribePackageVersionInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DescribePackageVersionInput {
-                owner_account: self.owner_account,
-                package_id: self.package_id,
-                package_version: self.package_version,
-                patch_version: self.patch_version,
-            })
+        pub fn build(self) -> Result<crate::input::DescribePackageVersionInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DescribePackageVersionInput {
+                    owner_account: self.owner_account
+                    ,
+                    package_id: self.package_id
+                    ,
+                    package_version: self.package_version
+                    ,
+                    patch_version: self.patch_version
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribePackageVersionInput {
     /// Consumes the builder and constructs an Operation<[`DescribePackageVersion`](crate::operation::DescribePackageVersion)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribePackageVersion,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribePackageVersion, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribePackageVersionInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DescribePackageVersionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_17 = &_input.package_id;
-                let input_17 = input_17.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "package_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_17 = input_17.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "package_id", details: "cannot be empty or unset" })?;
                 let package_id = aws_smithy_http::label::fmt_string(input_17, false);
                 if package_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "package_id",
-                        details: "cannot be empty or unset",
-                    });
-                }
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "package_id", details: "cannot be empty or unset" })
+                            }
                 let input_18 = &_input.package_version;
-                let input_18 = input_18.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "package_version",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_18 = input_18.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "package_version", details: "cannot be empty or unset" })?;
                 let package_version = aws_smithy_http::label::fmt_string(input_18, false);
                 if package_version.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "package_version",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/packages/metadata/{PackageId}/versions/{PackageVersion}",
-                    PackageId = package_id,
-                    PackageVersion = package_version
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "package_version", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/packages/metadata/{PackageId}/versions/{PackageVersion}", PackageId = package_id, PackageVersion = package_version).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::DescribePackageVersionInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::DescribePackageVersionInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_19) = &_input.owner_account {
-                    query.push_kv(
-                        "OwnerAccount",
-                        &aws_smithy_http::query::fmt_string(&inner_19),
-                    );
+                    query.push_kv("OwnerAccount", &aws_smithy_http::query::fmt_string(&inner_19));
                 }
                 if let Some(inner_20) = &_input.patch_version {
-                    query.push_kv(
-                        "PatchVersion",
-                        &aws_smithy_http::query::fmt_string(&inner_20),
-                    );
+                    query.push_kv("PatchVersion", &aws_smithy_http::query::fmt_string(&inner_20));
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribePackageVersionInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DescribePackageVersionInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2961,54 +2041,37 @@ impl DescribePackageVersionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribePackageVersion::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribePackageVersion",
-            "panorama",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribePackageVersion::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribePackageVersion", "panorama"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3020,9 +2083,9 @@ impl DescribePackageVersionInput {
 
 /// See [`ListApplicationInstanceDependenciesInput`](crate::input::ListApplicationInstanceDependenciesInput).
 pub mod list_application_instance_dependencies_input {
-
+    
     /// A builder for [`ListApplicationInstanceDependenciesInput`](crate::input::ListApplicationInstanceDependenciesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) application_instance_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3035,12 +2098,8 @@ pub mod list_application_instance_dependencies_input {
             self
         }
         /// <p>The application instance's ID.</p>
-        pub fn set_application_instance_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_instance_id = input;
-            self
+        pub fn set_application_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_instance_id = input; self
         }
         /// <p>The maximum number of application instance dependencies to return in one page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -3049,8 +2108,7 @@ pub mod list_application_instance_dependencies_input {
         }
         /// <p>The maximum number of application instance dependencies to return in one page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3059,88 +2117,54 @@ pub mod list_application_instance_dependencies_input {
         }
         /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListApplicationInstanceDependenciesInput`](crate::input::ListApplicationInstanceDependenciesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListApplicationInstanceDependenciesInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::ListApplicationInstanceDependenciesInput {
-                application_instance_id: self.application_instance_id,
-                max_results: self.max_results.unwrap_or_default(),
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListApplicationInstanceDependenciesInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListApplicationInstanceDependenciesInput {
+                    application_instance_id: self.application_instance_id
+                    ,
+                    max_results: self.max_results
+                        .unwrap_or_default()
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListApplicationInstanceDependenciesInput {
     /// Consumes the builder and constructs an Operation<[`ListApplicationInstanceDependencies`](crate::operation::ListApplicationInstanceDependencies)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListApplicationInstanceDependencies,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListApplicationInstanceDependencies, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListApplicationInstanceDependenciesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListApplicationInstanceDependenciesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_21 = &_input.application_instance_id;
-                let input_21 = input_21.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "application_instance_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_21 = input_21.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "application_instance_id", details: "cannot be empty or unset" })?;
                 let application_instance_id = aws_smithy_http::label::fmt_string(input_21, false);
                 if application_instance_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "application_instance_id",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/application-instances/{ApplicationInstanceId}/package-dependencies",
-                    ApplicationInstanceId = application_instance_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "application_instance_id", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/application-instances/{ApplicationInstanceId}/package-dependencies", ApplicationInstanceId = application_instance_id).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListApplicationInstanceDependenciesInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::ListApplicationInstanceDependenciesInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if _input.max_results != 0 {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
+                    query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
                 }
                 if let Some(inner_22) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_22));
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListApplicationInstanceDependenciesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListApplicationInstanceDependenciesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3150,54 +2174,37 @@ impl ListApplicationInstanceDependenciesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListApplicationInstanceDependencies::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListApplicationInstanceDependencies",
-            "panorama",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListApplicationInstanceDependencies::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListApplicationInstanceDependencies", "panorama"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3209,9 +2216,9 @@ impl ListApplicationInstanceDependenciesInput {
 
 /// See [`ListApplicationInstanceNodeInstancesInput`](crate::input::ListApplicationInstanceNodeInstancesInput).
 pub mod list_application_instance_node_instances_input {
-
+    
     /// A builder for [`ListApplicationInstanceNodeInstancesInput`](crate::input::ListApplicationInstanceNodeInstancesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) application_instance_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3224,12 +2231,8 @@ pub mod list_application_instance_node_instances_input {
             self
         }
         /// <p>The node instances' application instance ID.</p>
-        pub fn set_application_instance_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_instance_id = input;
-            self
+        pub fn set_application_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_instance_id = input; self
         }
         /// <p>The maximum number of node instances to return in one page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -3238,8 +2241,7 @@ pub mod list_application_instance_node_instances_input {
         }
         /// <p>The maximum number of node instances to return in one page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3248,88 +2250,54 @@ pub mod list_application_instance_node_instances_input {
         }
         /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListApplicationInstanceNodeInstancesInput`](crate::input::ListApplicationInstanceNodeInstancesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListApplicationInstanceNodeInstancesInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::ListApplicationInstanceNodeInstancesInput {
-                application_instance_id: self.application_instance_id,
-                max_results: self.max_results.unwrap_or_default(),
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListApplicationInstanceNodeInstancesInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListApplicationInstanceNodeInstancesInput {
+                    application_instance_id: self.application_instance_id
+                    ,
+                    max_results: self.max_results
+                        .unwrap_or_default()
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListApplicationInstanceNodeInstancesInput {
     /// Consumes the builder and constructs an Operation<[`ListApplicationInstanceNodeInstances`](crate::operation::ListApplicationInstanceNodeInstances)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListApplicationInstanceNodeInstances,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListApplicationInstanceNodeInstances, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListApplicationInstanceNodeInstancesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListApplicationInstanceNodeInstancesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_23 = &_input.application_instance_id;
-                let input_23 = input_23.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "application_instance_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_23 = input_23.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "application_instance_id", details: "cannot be empty or unset" })?;
                 let application_instance_id = aws_smithy_http::label::fmt_string(input_23, false);
                 if application_instance_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "application_instance_id",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/application-instances/{ApplicationInstanceId}/node-instances",
-                    ApplicationInstanceId = application_instance_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "application_instance_id", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/application-instances/{ApplicationInstanceId}/node-instances", ApplicationInstanceId = application_instance_id).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListApplicationInstanceNodeInstancesInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::ListApplicationInstanceNodeInstancesInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if _input.max_results != 0 {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
+                    query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
                 }
                 if let Some(inner_24) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_24));
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListApplicationInstanceNodeInstancesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListApplicationInstanceNodeInstancesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3339,54 +2307,37 @@ impl ListApplicationInstanceNodeInstancesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListApplicationInstanceNodeInstances::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListApplicationInstanceNodeInstances",
-            "panorama",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListApplicationInstanceNodeInstances::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListApplicationInstanceNodeInstances", "panorama"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3398,9 +2349,9 @@ impl ListApplicationInstanceNodeInstancesInput {
 
 /// See [`ListApplicationInstancesInput`](crate::input::ListApplicationInstancesInput).
 pub mod list_application_instances_input {
-
+    
     /// A builder for [`ListApplicationInstancesInput`](crate::input::ListApplicationInstancesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
         pub(crate) status_filter: std::option::Option<crate::model::StatusFilter>,
@@ -3415,8 +2366,7 @@ pub mod list_application_instances_input {
         }
         /// <p>The application instances' device ID.</p>
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_id = input;
-            self
+            self.device_id = input; self
         }
         /// <p>Only include instances with a specific status.</p>
         pub fn status_filter(mut self, input: crate::model::StatusFilter) -> Self {
@@ -3424,12 +2374,8 @@ pub mod list_application_instances_input {
             self
         }
         /// <p>Only include instances with a specific status.</p>
-        pub fn set_status_filter(
-            mut self,
-            input: std::option::Option<crate::model::StatusFilter>,
-        ) -> Self {
-            self.status_filter = input;
-            self
+        pub fn set_status_filter(mut self, input: std::option::Option<crate::model::StatusFilter>) -> Self {
+            self.status_filter = input; self
         }
         /// <p>The maximum number of application instances to return in one page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -3438,8 +2384,7 @@ pub mod list_application_instances_input {
         }
         /// <p>The maximum number of application instances to return in one page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3448,79 +2393,56 @@ pub mod list_application_instances_input {
         }
         /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListApplicationInstancesInput`](crate::input::ListApplicationInstancesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListApplicationInstancesInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::ListApplicationInstancesInput {
-                device_id: self.device_id,
-                status_filter: self.status_filter,
-                max_results: self.max_results.unwrap_or_default(),
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListApplicationInstancesInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListApplicationInstancesInput {
+                    device_id: self.device_id
+                    ,
+                    status_filter: self.status_filter
+                    ,
+                    max_results: self.max_results
+                        .unwrap_or_default()
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListApplicationInstancesInput {
     /// Consumes the builder and constructs an Operation<[`ListApplicationInstances`](crate::operation::ListApplicationInstances)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListApplicationInstances,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListApplicationInstances, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListApplicationInstancesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListApplicationInstancesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/application-instances").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListApplicationInstancesInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::ListApplicationInstancesInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_25) = &_input.device_id {
                     query.push_kv("deviceId", &aws_smithy_http::query::fmt_string(&inner_25));
                 }
                 if let Some(inner_26) = &_input.status_filter {
-                    query.push_kv(
-                        "statusFilter",
-                        &aws_smithy_http::query::fmt_string(&inner_26),
-                    );
+                    query.push_kv("statusFilter", &aws_smithy_http::query::fmt_string(&inner_26));
                 }
                 if _input.max_results != 0 {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
+                    query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
                 }
                 if let Some(inner_27) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_27));
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListApplicationInstancesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListApplicationInstancesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3530,54 +2452,37 @@ impl ListApplicationInstancesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListApplicationInstances::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListApplicationInstances",
-            "panorama",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListApplicationInstances::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListApplicationInstances", "panorama"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3589,17 +2494,16 @@ impl ListApplicationInstancesInput {
 
 /// See [`ListDevicesInput`](crate::input::ListDevicesInput).
 pub mod list_devices_input {
-
+    
     /// A builder for [`ListDevicesInput`](crate::input::ListDevicesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) sort_by: std::option::Option<crate::model::ListDevicesSortBy>,
         pub(crate) sort_order: std::option::Option<crate::model::SortOrder>,
         pub(crate) name_filter: std::option::Option<std::string::String>,
-        pub(crate) device_aggregated_status_filter:
-            std::option::Option<crate::model::DeviceAggregatedStatus>,
+        pub(crate) device_aggregated_status_filter: std::option::Option<crate::model::DeviceAggregatedStatus>,
     }
     impl Builder {
         /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
@@ -3609,8 +2513,7 @@ pub mod list_devices_input {
         }
         /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum number of devices to return in one page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -3619,8 +2522,7 @@ pub mod list_devices_input {
         }
         /// <p>The maximum number of devices to return in one page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>The target column to be sorted on. Default column sort is CREATED_TIME.</p>
         pub fn sort_by(mut self, input: crate::model::ListDevicesSortBy) -> Self {
@@ -3628,12 +2530,8 @@ pub mod list_devices_input {
             self
         }
         /// <p>The target column to be sorted on. Default column sort is CREATED_TIME.</p>
-        pub fn set_sort_by(
-            mut self,
-            input: std::option::Option<crate::model::ListDevicesSortBy>,
-        ) -> Self {
-            self.sort_by = input;
-            self
+        pub fn set_sort_by(mut self, input: std::option::Option<crate::model::ListDevicesSortBy>) -> Self {
+            self.sort_by = input; self
         }
         /// <p>The sorting order for the returned list. SortOrder is DESCENDING by default based on CREATED_TIME. Otherwise, SortOrder is ASCENDING.</p>
         pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
@@ -3641,12 +2539,8 @@ pub mod list_devices_input {
             self
         }
         /// <p>The sorting order for the returned list. SortOrder is DESCENDING by default based on CREATED_TIME. Otherwise, SortOrder is ASCENDING.</p>
-        pub fn set_sort_order(
-            mut self,
-            input: std::option::Option<crate::model::SortOrder>,
-        ) -> Self {
-            self.sort_order = input;
-            self
+        pub fn set_sort_order(mut self, input: std::option::Option<crate::model::SortOrder>) -> Self {
+            self.sort_order = input; self
         }
         /// <p>Filter based on device's name. Prefixes supported.</p>
         pub fn name_filter(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3655,77 +2549,56 @@ pub mod list_devices_input {
         }
         /// <p>Filter based on device's name. Prefixes supported.</p>
         pub fn set_name_filter(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name_filter = input;
-            self
+            self.name_filter = input; self
         }
         /// <p>Filter based on a device's status.</p>
-        pub fn device_aggregated_status_filter(
-            mut self,
-            input: crate::model::DeviceAggregatedStatus,
-        ) -> Self {
+        pub fn device_aggregated_status_filter(mut self, input: crate::model::DeviceAggregatedStatus) -> Self {
             self.device_aggregated_status_filter = Some(input);
             self
         }
         /// <p>Filter based on a device's status.</p>
-        pub fn set_device_aggregated_status_filter(
-            mut self,
-            input: std::option::Option<crate::model::DeviceAggregatedStatus>,
-        ) -> Self {
-            self.device_aggregated_status_filter = input;
-            self
+        pub fn set_device_aggregated_status_filter(mut self, input: std::option::Option<crate::model::DeviceAggregatedStatus>) -> Self {
+            self.device_aggregated_status_filter = input; self
         }
         /// Consumes the builder and constructs a [`ListDevicesInput`](crate::input::ListDevicesInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListDevicesInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::ListDevicesInput {
-                next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
-                sort_by: self.sort_by,
-                sort_order: self.sort_order,
-                name_filter: self.name_filter,
-                device_aggregated_status_filter: self.device_aggregated_status_filter,
-            })
+        pub fn build(self) -> Result<crate::input::ListDevicesInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListDevicesInput {
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                        .unwrap_or_default()
+                    ,
+                    sort_by: self.sort_by
+                    ,
+                    sort_order: self.sort_order
+                    ,
+                    name_filter: self.name_filter
+                    ,
+                    device_aggregated_status_filter: self.device_aggregated_status_filter
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListDevicesInput {
     /// Consumes the builder and constructs an Operation<[`ListDevices`](crate::operation::ListDevices)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListDevices,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListDevices, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListDevicesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListDevicesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/devices").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListDevicesInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::ListDevicesInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_28) = &_input.next_token {
                     query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_28));
                 }
                 if _input.max_results != 0 {
-                    query.push_kv(
-                        "MaxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
+                    query.push_kv("MaxResults", aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
                 }
                 if let Some(inner_29) = &_input.sort_by {
                     query.push_kv("SortBy", &aws_smithy_http::query::fmt_string(&inner_29));
@@ -3737,19 +2610,14 @@ impl ListDevicesInput {
                     query.push_kv("NameFilter", &aws_smithy_http::query::fmt_string(&inner_31));
                 }
                 if let Some(inner_32) = &_input.device_aggregated_status_filter {
-                    query.push_kv(
-                        "DeviceAggregatedStatusFilter",
-                        &aws_smithy_http::query::fmt_string(&inner_32),
-                    );
+                    query.push_kv("DeviceAggregatedStatusFilter", &aws_smithy_http::query::fmt_string(&inner_32));
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListDevicesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListDevicesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3759,54 +2627,37 @@ impl ListDevicesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListDevices::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListDevices",
-            "panorama",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListDevices::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListDevices", "panorama"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3818,9 +2669,9 @@ impl ListDevicesInput {
 
 /// See [`ListDevicesJobsInput`](crate::input::ListDevicesJobsInput).
 pub mod list_devices_jobs_input {
-
+    
     /// A builder for [`ListDevicesJobsInput`](crate::input::ListDevicesJobsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3834,8 +2685,7 @@ pub mod list_devices_jobs_input {
         }
         /// <p>Filter results by the job's target device ID.</p>
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_id = input;
-            self
+            self.device_id = input; self
         }
         /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3844,8 +2694,7 @@ pub mod list_devices_jobs_input {
         }
         /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum number of device jobs to return in one page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -3854,49 +2703,35 @@ pub mod list_devices_jobs_input {
         }
         /// <p>The maximum number of device jobs to return in one page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`ListDevicesJobsInput`](crate::input::ListDevicesJobsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListDevicesJobsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::ListDevicesJobsInput {
-                device_id: self.device_id,
-                next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
-            })
+        pub fn build(self) -> Result<crate::input::ListDevicesJobsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListDevicesJobsInput {
+                    device_id: self.device_id
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                        .unwrap_or_default()
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListDevicesJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListDevicesJobs`](crate::operation::ListDevicesJobs)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListDevicesJobs,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListDevicesJobs, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListDevicesJobsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListDevicesJobsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/jobs").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListDevicesJobsInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::ListDevicesJobsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_33) = &_input.device_id {
                     query.push_kv("DeviceId", &aws_smithy_http::query::fmt_string(&inner_33));
@@ -3905,19 +2740,14 @@ impl ListDevicesJobsInput {
                     query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_34));
                 }
                 if _input.max_results != 0 {
-                    query.push_kv(
-                        "MaxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
+                    query.push_kv("MaxResults", aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListDevicesJobsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListDevicesJobsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3927,54 +2757,37 @@ impl ListDevicesJobsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListDevicesJobs::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListDevicesJobs",
-            "panorama",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListDevicesJobs::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListDevicesJobs", "panorama"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3986,9 +2799,9 @@ impl ListDevicesJobsInput {
 
 /// See [`ListNodeFromTemplateJobsInput`](crate::input::ListNodeFromTemplateJobsInput).
 pub mod list_node_from_template_jobs_input {
-
+    
     /// A builder for [`ListNodeFromTemplateJobsInput`](crate::input::ListNodeFromTemplateJobsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -4001,8 +2814,7 @@ pub mod list_node_from_template_jobs_input {
         }
         /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum number of node from template jobs to return in one page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -4011,68 +2823,46 @@ pub mod list_node_from_template_jobs_input {
         }
         /// <p>The maximum number of node from template jobs to return in one page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`ListNodeFromTemplateJobsInput`](crate::input::ListNodeFromTemplateJobsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListNodeFromTemplateJobsInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::ListNodeFromTemplateJobsInput {
-                next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
-            })
+        pub fn build(self) -> Result<crate::input::ListNodeFromTemplateJobsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListNodeFromTemplateJobsInput {
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                        .unwrap_or_default()
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListNodeFromTemplateJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListNodeFromTemplateJobs`](crate::operation::ListNodeFromTemplateJobs)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListNodeFromTemplateJobs,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListNodeFromTemplateJobs, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListNodeFromTemplateJobsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListNodeFromTemplateJobsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/packages/template-job").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListNodeFromTemplateJobsInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::ListNodeFromTemplateJobsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_35) = &_input.next_token {
                     query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_35));
                 }
                 if _input.max_results != 0 {
-                    query.push_kv(
-                        "MaxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
+                    query.push_kv("MaxResults", aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListNodeFromTemplateJobsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListNodeFromTemplateJobsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4082,54 +2872,37 @@ impl ListNodeFromTemplateJobsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListNodeFromTemplateJobs::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListNodeFromTemplateJobs",
-            "panorama",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListNodeFromTemplateJobs::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListNodeFromTemplateJobs", "panorama"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4141,9 +2914,9 @@ impl ListNodeFromTemplateJobsInput {
 
 /// See [`ListNodesInput`](crate::input::ListNodesInput).
 pub mod list_nodes_input {
-
+    
     /// A builder for [`ListNodesInput`](crate::input::ListNodesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) category: std::option::Option<crate::model::NodeCategory>,
         pub(crate) owner_account: std::option::Option<std::string::String>,
@@ -4160,12 +2933,8 @@ pub mod list_nodes_input {
             self
         }
         /// <p>Search for nodes by category.</p>
-        pub fn set_category(
-            mut self,
-            input: std::option::Option<crate::model::NodeCategory>,
-        ) -> Self {
-            self.category = input;
-            self
+        pub fn set_category(mut self, input: std::option::Option<crate::model::NodeCategory>) -> Self {
+            self.category = input; self
         }
         /// <p>Search for nodes by the account ID of the nodes' owner.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4173,12 +2942,8 @@ pub mod list_nodes_input {
             self
         }
         /// <p>Search for nodes by the account ID of the nodes' owner.</p>
-        pub fn set_owner_account(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owner_account = input;
-            self
+        pub fn set_owner_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_account = input; self
         }
         /// <p>Search for nodes by name.</p>
         pub fn package_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4187,8 +2952,7 @@ pub mod list_nodes_input {
         }
         /// <p>Search for nodes by name.</p>
         pub fn set_package_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.package_name = input;
-            self
+            self.package_name = input; self
         }
         /// <p>Search for nodes by version.</p>
         pub fn package_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4196,12 +2960,8 @@ pub mod list_nodes_input {
             self
         }
         /// <p>Search for nodes by version.</p>
-        pub fn set_package_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.package_version = input;
-            self
+        pub fn set_package_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.package_version = input; self
         }
         /// <p>Search for nodes by patch version.</p>
         pub fn patch_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4209,12 +2969,8 @@ pub mod list_nodes_input {
             self
         }
         /// <p>Search for nodes by patch version.</p>
-        pub fn set_patch_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.patch_version = input;
-            self
+        pub fn set_patch_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.patch_version = input; self
         }
         /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4223,8 +2979,7 @@ pub mod list_nodes_input {
         }
         /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum number of nodes to return in one page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -4233,97 +2988,71 @@ pub mod list_nodes_input {
         }
         /// <p>The maximum number of nodes to return in one page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`ListNodesInput`](crate::input::ListNodesInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListNodesInput, aws_smithy_http::operation::BuildError> {
-            Ok(crate::input::ListNodesInput {
-                category: self.category,
-                owner_account: self.owner_account,
-                package_name: self.package_name,
-                package_version: self.package_version,
-                patch_version: self.patch_version,
-                next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
-            })
+        pub fn build(self) -> Result<crate::input::ListNodesInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListNodesInput {
+                    category: self.category
+                    ,
+                    owner_account: self.owner_account
+                    ,
+                    package_name: self.package_name
+                    ,
+                    package_version: self.package_version
+                    ,
+                    patch_version: self.patch_version
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                        .unwrap_or_default()
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListNodesInput {
     /// Consumes the builder and constructs an Operation<[`ListNodes`](crate::operation::ListNodes)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListNodes,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListNodes, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListNodesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListNodesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/nodes").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListNodesInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::ListNodesInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_36) = &_input.category {
                     query.push_kv("category", &aws_smithy_http::query::fmt_string(&inner_36));
                 }
                 if let Some(inner_37) = &_input.owner_account {
-                    query.push_kv(
-                        "ownerAccount",
-                        &aws_smithy_http::query::fmt_string(&inner_37),
-                    );
+                    query.push_kv("ownerAccount", &aws_smithy_http::query::fmt_string(&inner_37));
                 }
                 if let Some(inner_38) = &_input.package_name {
-                    query.push_kv(
-                        "packageName",
-                        &aws_smithy_http::query::fmt_string(&inner_38),
-                    );
+                    query.push_kv("packageName", &aws_smithy_http::query::fmt_string(&inner_38));
                 }
                 if let Some(inner_39) = &_input.package_version {
-                    query.push_kv(
-                        "packageVersion",
-                        &aws_smithy_http::query::fmt_string(&inner_39),
-                    );
+                    query.push_kv("packageVersion", &aws_smithy_http::query::fmt_string(&inner_39));
                 }
                 if let Some(inner_40) = &_input.patch_version {
-                    query.push_kv(
-                        "patchVersion",
-                        &aws_smithy_http::query::fmt_string(&inner_40),
-                    );
+                    query.push_kv("patchVersion", &aws_smithy_http::query::fmt_string(&inner_40));
                 }
                 if let Some(inner_41) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_41));
                 }
                 if _input.max_results != 0 {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
+                    query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListNodesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListNodesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4333,52 +3062,37 @@ impl ListNodesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op =
-            aws_smithy_http::operation::Operation::new(request, crate::operation::ListNodes::new())
-                .with_metadata(aws_smithy_http::operation::Metadata::new(
-                    "ListNodes",
-                    "panorama",
-                ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListNodes::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListNodes", "panorama"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4390,9 +3104,9 @@ impl ListNodesInput {
 
 /// See [`ListPackageImportJobsInput`](crate::input::ListPackageImportJobsInput).
 pub mod list_package_import_jobs_input {
-
+    
     /// A builder for [`ListPackageImportJobsInput`](crate::input::ListPackageImportJobsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -4405,8 +3119,7 @@ pub mod list_package_import_jobs_input {
         }
         /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum number of package import jobs to return in one page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -4415,66 +3128,46 @@ pub mod list_package_import_jobs_input {
         }
         /// <p>The maximum number of package import jobs to return in one page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`ListPackageImportJobsInput`](crate::input::ListPackageImportJobsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListPackageImportJobsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::ListPackageImportJobsInput {
-                next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
-            })
+        pub fn build(self) -> Result<crate::input::ListPackageImportJobsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListPackageImportJobsInput {
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                        .unwrap_or_default()
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListPackageImportJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListPackageImportJobs`](crate::operation::ListPackageImportJobs)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListPackageImportJobs,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListPackageImportJobs, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListPackageImportJobsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListPackageImportJobsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/packages/import-jobs").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListPackageImportJobsInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::ListPackageImportJobsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_42) = &_input.next_token {
                     query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_42));
                 }
                 if _input.max_results != 0 {
-                    query.push_kv(
-                        "MaxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
+                    query.push_kv("MaxResults", aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListPackageImportJobsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListPackageImportJobsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4484,54 +3177,37 @@ impl ListPackageImportJobsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListPackageImportJobs::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListPackageImportJobs",
-            "panorama",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListPackageImportJobs::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListPackageImportJobs", "panorama"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4543,9 +3219,9 @@ impl ListPackageImportJobsInput {
 
 /// See [`ListPackagesInput`](crate::input::ListPackagesInput).
 pub mod list_packages_input {
-
+    
     /// A builder for [`ListPackagesInput`](crate::input::ListPackagesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4558,8 +3234,7 @@ pub mod list_packages_input {
         }
         /// <p>The maximum number of packages to return in one page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4568,66 +3243,46 @@ pub mod list_packages_input {
         }
         /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListPackagesInput`](crate::input::ListPackagesInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListPackagesInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::ListPackagesInput {
-                max_results: self.max_results.unwrap_or_default(),
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListPackagesInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListPackagesInput {
+                    max_results: self.max_results
+                        .unwrap_or_default()
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListPackagesInput {
     /// Consumes the builder and constructs an Operation<[`ListPackages`](crate::operation::ListPackages)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListPackages,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListPackages, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListPackagesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListPackagesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/packages").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListPackagesInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::ListPackagesInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if _input.max_results != 0 {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
+                    query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
                 }
                 if let Some(inner_43) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_43));
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListPackagesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListPackagesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4637,54 +3292,37 @@ impl ListPackagesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListPackages::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListPackages",
-            "panorama",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListPackages::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListPackages", "panorama"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4696,9 +3334,9 @@ impl ListPackagesInput {
 
 /// See [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
 pub mod list_tags_for_resource_input {
-
+    
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -4710,64 +3348,39 @@ pub mod list_tags_for_resource_input {
         }
         /// <p>The resource's ARN.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::ListTagsForResourceInput {
-                resource_arn: self.resource_arn,
-            })
+        pub fn build(self) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListTagsForResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListTagsForResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListTagsForResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListTagsForResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_44 = &_input.resource_arn;
-                let input_44 = input_44.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_44 = input_44.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
                 let resource_arn = aws_smithy_http::label::fmt_string(input_44, false);
                 if resource_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListTagsForResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListTagsForResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -4776,54 +3389,37 @@ impl ListTagsForResourceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListTagsForResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListTagsForResource",
-            "panorama",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListTagsForResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListTagsForResource", "panorama"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4835,15 +3431,13 @@ impl ListTagsForResourceInput {
 
 /// See [`ProvisionDeviceInput`](crate::input::ProvisionDeviceInput).
 pub mod provision_device_input {
-
+    
     /// A builder for [`ProvisionDeviceInput`](crate::input::ProvisionDeviceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) networking_configuration: std::option::Option<crate::model::NetworkPayload>,
     }
     impl Builder {
@@ -4854,8 +3448,7 @@ pub mod provision_device_input {
         }
         /// <p>A name for the device.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A description for the device.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4864,33 +3457,22 @@ pub mod provision_device_input {
         }
         /// <p>A description for the device.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags for the device.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags for the device.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>A networking configuration for the device.</p>
         pub fn networking_configuration(mut self, input: crate::model::NetworkPayload) -> Self {
@@ -4898,126 +3480,83 @@ pub mod provision_device_input {
             self
         }
         /// <p>A networking configuration for the device.</p>
-        pub fn set_networking_configuration(
-            mut self,
-            input: std::option::Option<crate::model::NetworkPayload>,
-        ) -> Self {
-            self.networking_configuration = input;
-            self
+        pub fn set_networking_configuration(mut self, input: std::option::Option<crate::model::NetworkPayload>) -> Self {
+            self.networking_configuration = input; self
         }
         /// Consumes the builder and constructs a [`ProvisionDeviceInput`](crate::input::ProvisionDeviceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ProvisionDeviceInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::ProvisionDeviceInput {
-                name: self.name,
-                description: self.description,
-                tags: self.tags,
-                networking_configuration: self.networking_configuration,
-            })
+        pub fn build(self) -> Result<crate::input::ProvisionDeviceInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ProvisionDeviceInput {
+                    name: self.name
+                    ,
+                    description: self.description
+                    ,
+                    tags: self.tags
+                    ,
+                    networking_configuration: self.networking_configuration
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ProvisionDeviceInput {
     /// Consumes the builder and constructs an Operation<[`ProvisionDevice`](crate::operation::ProvisionDevice)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ProvisionDevice,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ProvisionDevice, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ProvisionDeviceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ProvisionDeviceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/devices").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ProvisionDeviceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ProvisionDeviceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_provision_device(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_provision_device(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ProvisionDevice::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ProvisionDevice",
-            "panorama",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ProvisionDevice::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ProvisionDevice", "panorama"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5029,9 +3568,9 @@ impl ProvisionDeviceInput {
 
 /// See [`RegisterPackageVersionInput`](crate::input::RegisterPackageVersionInput).
 pub mod register_package_version_input {
-
+    
     /// A builder for [`RegisterPackageVersionInput`](crate::input::RegisterPackageVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
         pub(crate) package_id: std::option::Option<std::string::String>,
@@ -5046,12 +3585,8 @@ pub mod register_package_version_input {
             self
         }
         /// <p>An owner account.</p>
-        pub fn set_owner_account(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owner_account = input;
-            self
+        pub fn set_owner_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_account = input; self
         }
         /// <p>A package ID.</p>
         pub fn package_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5060,8 +3595,7 @@ pub mod register_package_version_input {
         }
         /// <p>A package ID.</p>
         pub fn set_package_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.package_id = input;
-            self
+            self.package_id = input; self
         }
         /// <p>A package version.</p>
         pub fn package_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5069,12 +3603,8 @@ pub mod register_package_version_input {
             self
         }
         /// <p>A package version.</p>
-        pub fn set_package_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.package_version = input;
-            self
+        pub fn set_package_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.package_version = input; self
         }
         /// <p>A patch version.</p>
         pub fn patch_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5082,12 +3612,8 @@ pub mod register_package_version_input {
             self
         }
         /// <p>A patch version.</p>
-        pub fn set_patch_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.patch_version = input;
-            self
+        pub fn set_patch_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.patch_version = input; self
         }
         /// <p>Whether to mark the new version as the latest version.</p>
         pub fn mark_latest(mut self, input: bool) -> Self {
@@ -5096,174 +3622,103 @@ pub mod register_package_version_input {
         }
         /// <p>Whether to mark the new version as the latest version.</p>
         pub fn set_mark_latest(mut self, input: std::option::Option<bool>) -> Self {
-            self.mark_latest = input;
-            self
+            self.mark_latest = input; self
         }
         /// Consumes the builder and constructs a [`RegisterPackageVersionInput`](crate::input::RegisterPackageVersionInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::RegisterPackageVersionInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::RegisterPackageVersionInput {
-                owner_account: self.owner_account,
-                package_id: self.package_id,
-                package_version: self.package_version,
-                patch_version: self.patch_version,
-                mark_latest: self.mark_latest.unwrap_or_default(),
-            })
+        pub fn build(self) -> Result<crate::input::RegisterPackageVersionInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::RegisterPackageVersionInput {
+                    owner_account: self.owner_account
+                    ,
+                    package_id: self.package_id
+                    ,
+                    package_version: self.package_version
+                    ,
+                    patch_version: self.patch_version
+                    ,
+                    mark_latest: self.mark_latest
+                        .unwrap_or_default()
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl RegisterPackageVersionInput {
     /// Consumes the builder and constructs an Operation<[`RegisterPackageVersion`](crate::operation::RegisterPackageVersion)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::RegisterPackageVersion,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::RegisterPackageVersion, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::RegisterPackageVersionInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::RegisterPackageVersionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_45 = &_input.package_id;
-                let input_45 = input_45.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "package_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_45 = input_45.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "package_id", details: "cannot be empty or unset" })?;
                 let package_id = aws_smithy_http::label::fmt_string(input_45, false);
                 if package_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "package_id",
-                        details: "cannot be empty or unset",
-                    });
-                }
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "package_id", details: "cannot be empty or unset" })
+                            }
                 let input_46 = &_input.package_version;
-                let input_46 = input_46.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "package_version",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_46 = input_46.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "package_version", details: "cannot be empty or unset" })?;
                 let package_version = aws_smithy_http::label::fmt_string(input_46, false);
                 if package_version.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "package_version",
-                        details: "cannot be empty or unset",
-                    });
-                }
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "package_version", details: "cannot be empty or unset" })
+                            }
                 let input_47 = &_input.patch_version;
-                let input_47 = input_47.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "patch_version",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_47 = input_47.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "patch_version", details: "cannot be empty or unset" })?;
                 let patch_version = aws_smithy_http::label::fmt_string(input_47, false);
                 if patch_version.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "patch_version",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/packages/{PackageId}/versions/{PackageVersion}/patch/{PatchVersion}",
-                    PackageId = package_id,
-                    PackageVersion = package_version,
-                    PatchVersion = patch_version
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "patch_version", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/packages/{PackageId}/versions/{PackageVersion}/patch/{PatchVersion}", PackageId = package_id, PackageVersion = package_version, PatchVersion = patch_version).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::RegisterPackageVersionInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::RegisterPackageVersionInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_register_package_version(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_register_package_version(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::RegisterPackageVersion::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "RegisterPackageVersion",
-            "panorama",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::RegisterPackageVersion::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("RegisterPackageVersion", "panorama"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5275,9 +3730,9 @@ impl RegisterPackageVersionInput {
 
 /// See [`RemoveApplicationInstanceInput`](crate::input::RemoveApplicationInstanceInput).
 pub mod remove_application_instance_input {
-
+    
     /// A builder for [`RemoveApplicationInstanceInput`](crate::input::RemoveApplicationInstanceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) application_instance_id: std::option::Option<std::string::String>,
     }
@@ -5288,74 +3743,40 @@ pub mod remove_application_instance_input {
             self
         }
         /// <p>An application instance ID.</p>
-        pub fn set_application_instance_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_instance_id = input;
-            self
+        pub fn set_application_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_instance_id = input; self
         }
         /// Consumes the builder and constructs a [`RemoveApplicationInstanceInput`](crate::input::RemoveApplicationInstanceInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::RemoveApplicationInstanceInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::RemoveApplicationInstanceInput {
-                application_instance_id: self.application_instance_id,
-            })
+        pub fn build(self) -> Result<crate::input::RemoveApplicationInstanceInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::RemoveApplicationInstanceInput {
+                    application_instance_id: self.application_instance_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl RemoveApplicationInstanceInput {
     /// Consumes the builder and constructs an Operation<[`RemoveApplicationInstance`](crate::operation::RemoveApplicationInstance)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::RemoveApplicationInstance,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::RemoveApplicationInstance, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::RemoveApplicationInstanceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::RemoveApplicationInstanceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_48 = &_input.application_instance_id;
-                let input_48 = input_48.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "application_instance_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_48 = input_48.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "application_instance_id", details: "cannot be empty or unset" })?;
                 let application_instance_id = aws_smithy_http::label::fmt_string(input_48, false);
                 if application_instance_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "application_instance_id",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/application-instances/{ApplicationInstanceId}",
-                    ApplicationInstanceId = application_instance_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "application_instance_id", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/application-instances/{ApplicationInstanceId}", ApplicationInstanceId = application_instance_id).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::RemoveApplicationInstanceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::RemoveApplicationInstanceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -5364,54 +3785,37 @@ impl RemoveApplicationInstanceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::RemoveApplicationInstance::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "RemoveApplicationInstance",
-            "panorama",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::RemoveApplicationInstance::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("RemoveApplicationInstance", "panorama"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5423,14 +3827,12 @@ impl RemoveApplicationInstanceInput {
 
 /// See [`TagResourceInput`](crate::input::TagResourceInput).
 pub mod tag_resource_input {
-
+    
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The resource's ARN.</p>
@@ -5440,160 +3842,99 @@ pub mod tag_resource_input {
         }
         /// <p>The resource's ARN.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags for the resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags for the resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::TagResourceInput {
-                resource_arn: self.resource_arn,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::TagResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::TagResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::TagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::TagResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_49 = &_input.resource_arn;
-                let input_49 = input_49.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_49 = input_49.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
                 let resource_arn = aws_smithy_http::label::fmt_string(input_49, false);
                 if resource_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::TagResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::TagResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::TagResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "TagResource",
-            "panorama",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("TagResource", "panorama"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5605,9 +3946,9 @@ impl TagResourceInput {
 
 /// See [`UntagResourceInput`](crate::input::UntagResourceInput).
 pub mod untag_resource_input {
-
+    
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5620,8 +3961,7 @@ pub mod untag_resource_input {
         }
         /// <p>The resource's ARN.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Appends an item to `tag_keys`.
         ///
@@ -5630,72 +3970,44 @@ pub mod untag_resource_input {
         /// <p>Tag keys to remove.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-            v.push(input.into());
-            self.tag_keys = Some(v);
-            self
+                            v.push(input.into());
+                            self.tag_keys = Some(v);
+                            self
         }
         /// <p>Tag keys to remove.</p>
-        pub fn set_tag_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.tag_keys = input;
-            self
+        pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.tag_keys = input; self
         }
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::UntagResourceInput {
-                resource_arn: self.resource_arn,
-                tag_keys: self.tag_keys,
-            })
+        pub fn build(self) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::UntagResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                    tag_keys: self.tag_keys
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UntagResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UntagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UntagResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_50 = &_input.resource_arn;
-                let input_50 = input_50.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_50 = input_50.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
                 let resource_arn = aws_smithy_http::label::fmt_string(input_50, false);
                 if resource_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::UntagResourceInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_51) = &_input.tag_keys {
                     for inner_52 in inner_51 {
@@ -5704,12 +4016,10 @@ impl UntagResourceInput {
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::UntagResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::UntagResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5719,54 +4029,37 @@ impl UntagResourceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UntagResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UntagResource",
-            "panorama",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UntagResource", "panorama"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5778,9 +4071,9 @@ impl UntagResourceInput {
 
 /// See [`UpdateDeviceMetadataInput`](crate::input::UpdateDeviceMetadataInput).
 pub mod update_device_metadata_input {
-
+    
     /// A builder for [`UpdateDeviceMetadataInput`](crate::input::UpdateDeviceMetadataInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -5793,8 +4086,7 @@ pub mod update_device_metadata_input {
         }
         /// <p>The device's ID.</p>
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_id = input;
-            self
+            self.device_id = input; self
         }
         /// <p>A description for the device.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5803,137 +4095,84 @@ pub mod update_device_metadata_input {
         }
         /// <p>A description for the device.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`UpdateDeviceMetadataInput`](crate::input::UpdateDeviceMetadataInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UpdateDeviceMetadataInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::UpdateDeviceMetadataInput {
-                device_id: self.device_id,
-                description: self.description,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateDeviceMetadataInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::UpdateDeviceMetadataInput {
+                    device_id: self.device_id
+                    ,
+                    description: self.description
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateDeviceMetadataInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDeviceMetadata`](crate::operation::UpdateDeviceMetadata)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateDeviceMetadata,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateDeviceMetadata, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateDeviceMetadataInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateDeviceMetadataInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_53 = &_input.device_id;
-                let input_53 = input_53.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "device_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_53 = input_53.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "device_id", details: "cannot be empty or unset" })?;
                 let device_id = aws_smithy_http::label::fmt_string(input_53, false);
                 if device_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "device_id",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(output, "/devices/{DeviceId}", DeviceId = device_id)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "device_id", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/devices/{DeviceId}", DeviceId = device_id).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::UpdateDeviceMetadataInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::UpdateDeviceMetadataInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_device_metadata(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_device_metadata(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateDeviceMetadata::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateDeviceMetadata",
-            "panorama",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateDeviceMetadata::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateDeviceMetadata", "panorama"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5944,27 +4183,24 @@ impl UpdateDeviceMetadataInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateDeviceMetadataInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct UpdateDeviceMetadataInput  {
     /// <p>The device's ID.</p>
-    #[doc(hidden)]
-    pub device_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub device_id: std::option::Option<std::string::String>,
     /// <p>A description for the device.</p>
-    #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub description: std::option::Option<std::string::String>,
 }
 impl UpdateDeviceMetadataInput {
     /// <p>The device's ID.</p>
-    pub fn device_id(&self) -> std::option::Option<&str> {
+    pub fn device_id(&self) -> std::option::Option<& str> {
         self.device_id.as_deref()
     }
     /// <p>A description for the device.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateDeviceMetadataInput {
+impl  std::fmt::Debug for UpdateDeviceMetadataInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDeviceMetadataInput");
         formatter.field("device_id", &self.device_id);
@@ -5974,27 +4210,24 @@ impl std::fmt::Debug for UpdateDeviceMetadataInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UntagResourceInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct UntagResourceInput  {
     /// <p>The resource's ARN.</p>
-    #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Tag keys to remove.</p>
-    #[doc(hidden)]
-    pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
     /// <p>The resource's ARN.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>Tag keys to remove.</p>
-    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
+impl  std::fmt::Debug for UntagResourceInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -6004,31 +4237,24 @@ impl std::fmt::Debug for UntagResourceInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct TagResourceInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct TagResourceInput  {
     /// <p>The resource's ARN.</p>
-    #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Tags for the resource.</p>
-    #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[doc(hidden)]pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TagResourceInput {
     /// <p>The resource's ARN.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>Tags for the resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
+impl  std::fmt::Debug for TagResourceInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -6038,20 +4264,18 @@ impl std::fmt::Debug for TagResourceInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct RemoveApplicationInstanceInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct RemoveApplicationInstanceInput  {
     /// <p>An application instance ID.</p>
-    #[doc(hidden)]
-    pub application_instance_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub application_instance_id: std::option::Option<std::string::String>,
 }
 impl RemoveApplicationInstanceInput {
     /// <p>An application instance ID.</p>
-    pub fn application_instance_id(&self) -> std::option::Option<&str> {
+    pub fn application_instance_id(&self) -> std::option::Option<& str> {
         self.application_instance_id.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveApplicationInstanceInput {
+impl  std::fmt::Debug for RemoveApplicationInstanceInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveApplicationInstanceInput");
         formatter.field("application_instance_id", &self.application_instance_id);
@@ -6060,40 +4284,34 @@ impl std::fmt::Debug for RemoveApplicationInstanceInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct RegisterPackageVersionInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct RegisterPackageVersionInput  {
     /// <p>An owner account.</p>
-    #[doc(hidden)]
-    pub owner_account: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub owner_account: std::option::Option<std::string::String>,
     /// <p>A package ID.</p>
-    #[doc(hidden)]
-    pub package_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub package_id: std::option::Option<std::string::String>,
     /// <p>A package version.</p>
-    #[doc(hidden)]
-    pub package_version: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub package_version: std::option::Option<std::string::String>,
     /// <p>A patch version.</p>
-    #[doc(hidden)]
-    pub patch_version: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub patch_version: std::option::Option<std::string::String>,
     /// <p>Whether to mark the new version as the latest version.</p>
-    #[doc(hidden)]
-    pub mark_latest: bool,
+    #[doc(hidden)]pub mark_latest: bool,
 }
 impl RegisterPackageVersionInput {
     /// <p>An owner account.</p>
-    pub fn owner_account(&self) -> std::option::Option<&str> {
+    pub fn owner_account(&self) -> std::option::Option<& str> {
         self.owner_account.as_deref()
     }
     /// <p>A package ID.</p>
-    pub fn package_id(&self) -> std::option::Option<&str> {
+    pub fn package_id(&self) -> std::option::Option<& str> {
         self.package_id.as_deref()
     }
     /// <p>A package version.</p>
-    pub fn package_version(&self) -> std::option::Option<&str> {
+    pub fn package_version(&self) -> std::option::Option<& str> {
         self.package_version.as_deref()
     }
     /// <p>A patch version.</p>
-    pub fn patch_version(&self) -> std::option::Option<&str> {
+    pub fn patch_version(&self) -> std::option::Option<& str> {
         self.patch_version.as_deref()
     }
     /// <p>Whether to mark the new version as the latest version.</p>
@@ -6101,7 +4319,7 @@ impl RegisterPackageVersionInput {
         self.mark_latest
     }
 }
-impl std::fmt::Debug for RegisterPackageVersionInput {
+impl  std::fmt::Debug for RegisterPackageVersionInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterPackageVersionInput");
         formatter.field("owner_account", &self.owner_account);
@@ -6114,45 +4332,36 @@ impl std::fmt::Debug for RegisterPackageVersionInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ProvisionDeviceInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ProvisionDeviceInput  {
     /// <p>A name for the device.</p>
-    #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub name: std::option::Option<std::string::String>,
     /// <p>A description for the device.</p>
-    #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub description: std::option::Option<std::string::String>,
     /// <p>Tags for the device.</p>
-    #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[doc(hidden)]pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A networking configuration for the device.</p>
-    #[doc(hidden)]
-    pub networking_configuration: std::option::Option<crate::model::NetworkPayload>,
+    #[doc(hidden)]pub networking_configuration: std::option::Option<crate::model::NetworkPayload>,
 }
 impl ProvisionDeviceInput {
     /// <p>A name for the device.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description for the device.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Tags for the device.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A networking configuration for the device.</p>
-    pub fn networking_configuration(&self) -> std::option::Option<&crate::model::NetworkPayload> {
+    pub fn networking_configuration(&self) -> std::option::Option<& crate::model::NetworkPayload> {
         self.networking_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for ProvisionDeviceInput {
+impl  std::fmt::Debug for ProvisionDeviceInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProvisionDeviceInput");
         formatter.field("name", &self.name);
@@ -6164,20 +4373,18 @@ impl std::fmt::Debug for ProvisionDeviceInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListTagsForResourceInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListTagsForResourceInput  {
     /// <p>The resource's ARN.</p>
-    #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
     /// <p>The resource's ARN.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
+impl  std::fmt::Debug for ListTagsForResourceInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -6186,15 +4393,12 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListPackagesInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListPackagesInput  {
     /// <p>The maximum number of packages to return in one page of results.</p>
-    #[doc(hidden)]
-    pub max_results: i32,
+    #[doc(hidden)]pub max_results: i32,
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPackagesInput {
     /// <p>The maximum number of packages to return in one page of results.</p>
@@ -6202,11 +4406,11 @@ impl ListPackagesInput {
         self.max_results
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListPackagesInput {
+impl  std::fmt::Debug for ListPackagesInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPackagesInput");
         formatter.field("max_results", &self.max_results);
@@ -6216,19 +4420,16 @@ impl std::fmt::Debug for ListPackagesInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListPackageImportJobsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListPackageImportJobsInput  {
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of package import jobs to return in one page of results.</p>
-    #[doc(hidden)]
-    pub max_results: i32,
+    #[doc(hidden)]pub max_results: i32,
 }
 impl ListPackageImportJobsInput {
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of package import jobs to return in one page of results.</p>
@@ -6236,7 +4437,7 @@ impl ListPackageImportJobsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListPackageImportJobsInput {
+impl  std::fmt::Debug for ListPackageImportJobsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPackageImportJobsInput");
         formatter.field("next_token", &self.next_token);
@@ -6246,54 +4447,46 @@ impl std::fmt::Debug for ListPackageImportJobsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListNodesInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListNodesInput  {
     /// <p>Search for nodes by category.</p>
-    #[doc(hidden)]
-    pub category: std::option::Option<crate::model::NodeCategory>,
+    #[doc(hidden)]pub category: std::option::Option<crate::model::NodeCategory>,
     /// <p>Search for nodes by the account ID of the nodes' owner.</p>
-    #[doc(hidden)]
-    pub owner_account: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub owner_account: std::option::Option<std::string::String>,
     /// <p>Search for nodes by name.</p>
-    #[doc(hidden)]
-    pub package_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub package_name: std::option::Option<std::string::String>,
     /// <p>Search for nodes by version.</p>
-    #[doc(hidden)]
-    pub package_version: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub package_version: std::option::Option<std::string::String>,
     /// <p>Search for nodes by patch version.</p>
-    #[doc(hidden)]
-    pub patch_version: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub patch_version: std::option::Option<std::string::String>,
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of nodes to return in one page of results.</p>
-    #[doc(hidden)]
-    pub max_results: i32,
+    #[doc(hidden)]pub max_results: i32,
 }
 impl ListNodesInput {
     /// <p>Search for nodes by category.</p>
-    pub fn category(&self) -> std::option::Option<&crate::model::NodeCategory> {
+    pub fn category(&self) -> std::option::Option<& crate::model::NodeCategory> {
         self.category.as_ref()
     }
     /// <p>Search for nodes by the account ID of the nodes' owner.</p>
-    pub fn owner_account(&self) -> std::option::Option<&str> {
+    pub fn owner_account(&self) -> std::option::Option<& str> {
         self.owner_account.as_deref()
     }
     /// <p>Search for nodes by name.</p>
-    pub fn package_name(&self) -> std::option::Option<&str> {
+    pub fn package_name(&self) -> std::option::Option<& str> {
         self.package_name.as_deref()
     }
     /// <p>Search for nodes by version.</p>
-    pub fn package_version(&self) -> std::option::Option<&str> {
+    pub fn package_version(&self) -> std::option::Option<& str> {
         self.package_version.as_deref()
     }
     /// <p>Search for nodes by patch version.</p>
-    pub fn patch_version(&self) -> std::option::Option<&str> {
+    pub fn patch_version(&self) -> std::option::Option<& str> {
         self.patch_version.as_deref()
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of nodes to return in one page of results.</p>
@@ -6301,7 +4494,7 @@ impl ListNodesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListNodesInput {
+impl  std::fmt::Debug for ListNodesInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListNodesInput");
         formatter.field("category", &self.category);
@@ -6316,19 +4509,16 @@ impl std::fmt::Debug for ListNodesInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListNodeFromTemplateJobsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListNodeFromTemplateJobsInput  {
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of node from template jobs to return in one page of results.</p>
-    #[doc(hidden)]
-    pub max_results: i32,
+    #[doc(hidden)]pub max_results: i32,
 }
 impl ListNodeFromTemplateJobsInput {
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of node from template jobs to return in one page of results.</p>
@@ -6336,7 +4526,7 @@ impl ListNodeFromTemplateJobsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListNodeFromTemplateJobsInput {
+impl  std::fmt::Debug for ListNodeFromTemplateJobsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListNodeFromTemplateJobsInput");
         formatter.field("next_token", &self.next_token);
@@ -6346,26 +4536,22 @@ impl std::fmt::Debug for ListNodeFromTemplateJobsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListDevicesJobsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListDevicesJobsInput  {
     /// <p>Filter results by the job's target device ID.</p>
-    #[doc(hidden)]
-    pub device_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub device_id: std::option::Option<std::string::String>,
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of device jobs to return in one page of results.</p>
-    #[doc(hidden)]
-    pub max_results: i32,
+    #[doc(hidden)]pub max_results: i32,
 }
 impl ListDevicesJobsInput {
     /// <p>Filter results by the job's target device ID.</p>
-    pub fn device_id(&self) -> std::option::Option<&str> {
+    pub fn device_id(&self) -> std::option::Option<& str> {
         self.device_id.as_deref()
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of device jobs to return in one page of results.</p>
@@ -6373,7 +4559,7 @@ impl ListDevicesJobsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDevicesJobsInput {
+impl  std::fmt::Debug for ListDevicesJobsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDevicesJobsInput");
         formatter.field("device_id", &self.device_id);
@@ -6384,31 +4570,24 @@ impl std::fmt::Debug for ListDevicesJobsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListDevicesInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListDevicesInput  {
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of devices to return in one page of results.</p>
-    #[doc(hidden)]
-    pub max_results: i32,
+    #[doc(hidden)]pub max_results: i32,
     /// <p>The target column to be sorted on. Default column sort is CREATED_TIME.</p>
-    #[doc(hidden)]
-    pub sort_by: std::option::Option<crate::model::ListDevicesSortBy>,
+    #[doc(hidden)]pub sort_by: std::option::Option<crate::model::ListDevicesSortBy>,
     /// <p>The sorting order for the returned list. SortOrder is DESCENDING by default based on CREATED_TIME. Otherwise, SortOrder is ASCENDING.</p>
-    #[doc(hidden)]
-    pub sort_order: std::option::Option<crate::model::SortOrder>,
+    #[doc(hidden)]pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>Filter based on device's name. Prefixes supported.</p>
-    #[doc(hidden)]
-    pub name_filter: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub name_filter: std::option::Option<std::string::String>,
     /// <p>Filter based on a device's status.</p>
-    #[doc(hidden)]
-    pub device_aggregated_status_filter: std::option::Option<crate::model::DeviceAggregatedStatus>,
+    #[doc(hidden)]pub device_aggregated_status_filter: std::option::Option<crate::model::DeviceAggregatedStatus>,
 }
 impl ListDevicesInput {
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of devices to return in one page of results.</p>
@@ -6416,25 +4595,23 @@ impl ListDevicesInput {
         self.max_results
     }
     /// <p>The target column to be sorted on. Default column sort is CREATED_TIME.</p>
-    pub fn sort_by(&self) -> std::option::Option<&crate::model::ListDevicesSortBy> {
+    pub fn sort_by(&self) -> std::option::Option<& crate::model::ListDevicesSortBy> {
         self.sort_by.as_ref()
     }
     /// <p>The sorting order for the returned list. SortOrder is DESCENDING by default based on CREATED_TIME. Otherwise, SortOrder is ASCENDING.</p>
-    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+    pub fn sort_order(&self) -> std::option::Option<& crate::model::SortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>Filter based on device's name. Prefixes supported.</p>
-    pub fn name_filter(&self) -> std::option::Option<&str> {
+    pub fn name_filter(&self) -> std::option::Option<& str> {
         self.name_filter.as_deref()
     }
     /// <p>Filter based on a device's status.</p>
-    pub fn device_aggregated_status_filter(
-        &self,
-    ) -> std::option::Option<&crate::model::DeviceAggregatedStatus> {
+    pub fn device_aggregated_status_filter(&self) -> std::option::Option<& crate::model::DeviceAggregatedStatus> {
         self.device_aggregated_status_filter.as_ref()
     }
 }
-impl std::fmt::Debug for ListDevicesInput {
+impl  std::fmt::Debug for ListDevicesInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDevicesInput");
         formatter.field("next_token", &self.next_token);
@@ -6442,38 +4619,30 @@ impl std::fmt::Debug for ListDevicesInput {
         formatter.field("sort_by", &self.sort_by);
         formatter.field("sort_order", &self.sort_order);
         formatter.field("name_filter", &self.name_filter);
-        formatter.field(
-            "device_aggregated_status_filter",
-            &self.device_aggregated_status_filter,
-        );
+        formatter.field("device_aggregated_status_filter", &self.device_aggregated_status_filter);
         formatter.finish()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListApplicationInstancesInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListApplicationInstancesInput  {
     /// <p>The application instances' device ID.</p>
-    #[doc(hidden)]
-    pub device_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub device_id: std::option::Option<std::string::String>,
     /// <p>Only include instances with a specific status.</p>
-    #[doc(hidden)]
-    pub status_filter: std::option::Option<crate::model::StatusFilter>,
+    #[doc(hidden)]pub status_filter: std::option::Option<crate::model::StatusFilter>,
     /// <p>The maximum number of application instances to return in one page of results.</p>
-    #[doc(hidden)]
-    pub max_results: i32,
+    #[doc(hidden)]pub max_results: i32,
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationInstancesInput {
     /// <p>The application instances' device ID.</p>
-    pub fn device_id(&self) -> std::option::Option<&str> {
+    pub fn device_id(&self) -> std::option::Option<& str> {
         self.device_id.as_deref()
     }
     /// <p>Only include instances with a specific status.</p>
-    pub fn status_filter(&self) -> std::option::Option<&crate::model::StatusFilter> {
+    pub fn status_filter(&self) -> std::option::Option<& crate::model::StatusFilter> {
         self.status_filter.as_ref()
     }
     /// <p>The maximum number of application instances to return in one page of results.</p>
@@ -6481,11 +4650,11 @@ impl ListApplicationInstancesInput {
         self.max_results
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListApplicationInstancesInput {
+impl  std::fmt::Debug for ListApplicationInstancesInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListApplicationInstancesInput");
         formatter.field("device_id", &self.device_id);
@@ -6497,22 +4666,18 @@ impl std::fmt::Debug for ListApplicationInstancesInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListApplicationInstanceNodeInstancesInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListApplicationInstanceNodeInstancesInput  {
     /// <p>The node instances' application instance ID.</p>
-    #[doc(hidden)]
-    pub application_instance_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub application_instance_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of node instances to return in one page of results.</p>
-    #[doc(hidden)]
-    pub max_results: i32,
+    #[doc(hidden)]pub max_results: i32,
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationInstanceNodeInstancesInput {
     /// <p>The node instances' application instance ID.</p>
-    pub fn application_instance_id(&self) -> std::option::Option<&str> {
+    pub fn application_instance_id(&self) -> std::option::Option<& str> {
         self.application_instance_id.as_deref()
     }
     /// <p>The maximum number of node instances to return in one page of results.</p>
@@ -6520,11 +4685,11 @@ impl ListApplicationInstanceNodeInstancesInput {
         self.max_results
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListApplicationInstanceNodeInstancesInput {
+impl  std::fmt::Debug for ListApplicationInstanceNodeInstancesInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListApplicationInstanceNodeInstancesInput");
         formatter.field("application_instance_id", &self.application_instance_id);
@@ -6535,22 +4700,18 @@ impl std::fmt::Debug for ListApplicationInstanceNodeInstancesInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListApplicationInstanceDependenciesInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListApplicationInstanceDependenciesInput  {
     /// <p>The application instance's ID.</p>
-    #[doc(hidden)]
-    pub application_instance_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub application_instance_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of application instance dependencies to return in one page of results.</p>
-    #[doc(hidden)]
-    pub max_results: i32,
+    #[doc(hidden)]pub max_results: i32,
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationInstanceDependenciesInput {
     /// <p>The application instance's ID.</p>
-    pub fn application_instance_id(&self) -> std::option::Option<&str> {
+    pub fn application_instance_id(&self) -> std::option::Option<& str> {
         self.application_instance_id.as_deref()
     }
     /// <p>The maximum number of application instance dependencies to return in one page of results.</p>
@@ -6558,11 +4719,11 @@ impl ListApplicationInstanceDependenciesInput {
         self.max_results
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListApplicationInstanceDependenciesInput {
+impl  std::fmt::Debug for ListApplicationInstanceDependenciesInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListApplicationInstanceDependenciesInput");
         formatter.field("application_instance_id", &self.application_instance_id);
@@ -6573,41 +4734,36 @@ impl std::fmt::Debug for ListApplicationInstanceDependenciesInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribePackageVersionInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DescribePackageVersionInput  {
     /// <p>The version's owner account.</p>
-    #[doc(hidden)]
-    pub owner_account: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub owner_account: std::option::Option<std::string::String>,
     /// <p>The version's ID.</p>
-    #[doc(hidden)]
-    pub package_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub package_id: std::option::Option<std::string::String>,
     /// <p>The version's version.</p>
-    #[doc(hidden)]
-    pub package_version: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub package_version: std::option::Option<std::string::String>,
     /// <p>The version's patch version.</p>
-    #[doc(hidden)]
-    pub patch_version: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub patch_version: std::option::Option<std::string::String>,
 }
 impl DescribePackageVersionInput {
     /// <p>The version's owner account.</p>
-    pub fn owner_account(&self) -> std::option::Option<&str> {
+    pub fn owner_account(&self) -> std::option::Option<& str> {
         self.owner_account.as_deref()
     }
     /// <p>The version's ID.</p>
-    pub fn package_id(&self) -> std::option::Option<&str> {
+    pub fn package_id(&self) -> std::option::Option<& str> {
         self.package_id.as_deref()
     }
     /// <p>The version's version.</p>
-    pub fn package_version(&self) -> std::option::Option<&str> {
+    pub fn package_version(&self) -> std::option::Option<& str> {
         self.package_version.as_deref()
     }
     /// <p>The version's patch version.</p>
-    pub fn patch_version(&self) -> std::option::Option<&str> {
+    pub fn patch_version(&self) -> std::option::Option<& str> {
         self.patch_version.as_deref()
     }
 }
-impl std::fmt::Debug for DescribePackageVersionInput {
+impl  std::fmt::Debug for DescribePackageVersionInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePackageVersionInput");
         formatter.field("owner_account", &self.owner_account);
@@ -6619,20 +4775,18 @@ impl std::fmt::Debug for DescribePackageVersionInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribePackageImportJobInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DescribePackageImportJobInput  {
     /// <p>The job's ID.</p>
-    #[doc(hidden)]
-    pub job_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribePackageImportJobInput {
     /// <p>The job's ID.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribePackageImportJobInput {
+impl  std::fmt::Debug for DescribePackageImportJobInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePackageImportJobInput");
         formatter.field("job_id", &self.job_id);
@@ -6641,20 +4795,18 @@ impl std::fmt::Debug for DescribePackageImportJobInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribePackageInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DescribePackageInput  {
     /// <p>The package's ID.</p>
-    #[doc(hidden)]
-    pub package_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub package_id: std::option::Option<std::string::String>,
 }
 impl DescribePackageInput {
     /// <p>The package's ID.</p>
-    pub fn package_id(&self) -> std::option::Option<&str> {
+    pub fn package_id(&self) -> std::option::Option<& str> {
         self.package_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribePackageInput {
+impl  std::fmt::Debug for DescribePackageInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePackageInput");
         formatter.field("package_id", &self.package_id);
@@ -6663,20 +4815,18 @@ impl std::fmt::Debug for DescribePackageInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeNodeFromTemplateJobInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DescribeNodeFromTemplateJobInput  {
     /// <p>The job's ID.</p>
-    #[doc(hidden)]
-    pub job_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribeNodeFromTemplateJobInput {
     /// <p>The job's ID.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeNodeFromTemplateJobInput {
+impl  std::fmt::Debug for DescribeNodeFromTemplateJobInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeNodeFromTemplateJobInput");
         formatter.field("job_id", &self.job_id);
@@ -6685,27 +4835,24 @@ impl std::fmt::Debug for DescribeNodeFromTemplateJobInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeNodeInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DescribeNodeInput  {
     /// <p>The node's ID.</p>
-    #[doc(hidden)]
-    pub node_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub node_id: std::option::Option<std::string::String>,
     /// <p>The account ID of the node's owner.</p>
-    #[doc(hidden)]
-    pub owner_account: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub owner_account: std::option::Option<std::string::String>,
 }
 impl DescribeNodeInput {
     /// <p>The node's ID.</p>
-    pub fn node_id(&self) -> std::option::Option<&str> {
+    pub fn node_id(&self) -> std::option::Option<& str> {
         self.node_id.as_deref()
     }
     /// <p>The account ID of the node's owner.</p>
-    pub fn owner_account(&self) -> std::option::Option<&str> {
+    pub fn owner_account(&self) -> std::option::Option<& str> {
         self.owner_account.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeNodeInput {
+impl  std::fmt::Debug for DescribeNodeInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeNodeInput");
         formatter.field("node_id", &self.node_id);
@@ -6715,20 +4862,18 @@ impl std::fmt::Debug for DescribeNodeInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeDeviceJobInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DescribeDeviceJobInput  {
     /// <p>The job's ID.</p>
-    #[doc(hidden)]
-    pub job_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribeDeviceJobInput {
     /// <p>The job's ID.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDeviceJobInput {
+impl  std::fmt::Debug for DescribeDeviceJobInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDeviceJobInput");
         formatter.field("job_id", &self.job_id);
@@ -6737,20 +4882,18 @@ impl std::fmt::Debug for DescribeDeviceJobInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeDeviceInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DescribeDeviceInput  {
     /// <p>The device's ID.</p>
-    #[doc(hidden)]
-    pub device_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub device_id: std::option::Option<std::string::String>,
 }
 impl DescribeDeviceInput {
     /// <p>The device's ID.</p>
-    pub fn device_id(&self) -> std::option::Option<&str> {
+    pub fn device_id(&self) -> std::option::Option<& str> {
         self.device_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDeviceInput {
+impl  std::fmt::Debug for DescribeDeviceInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDeviceInput");
         formatter.field("device_id", &self.device_id);
@@ -6759,20 +4902,18 @@ impl std::fmt::Debug for DescribeDeviceInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeApplicationInstanceDetailsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DescribeApplicationInstanceDetailsInput  {
     /// <p>The application instance's ID.</p>
-    #[doc(hidden)]
-    pub application_instance_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub application_instance_id: std::option::Option<std::string::String>,
 }
 impl DescribeApplicationInstanceDetailsInput {
     /// <p>The application instance's ID.</p>
-    pub fn application_instance_id(&self) -> std::option::Option<&str> {
+    pub fn application_instance_id(&self) -> std::option::Option<& str> {
         self.application_instance_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeApplicationInstanceDetailsInput {
+impl  std::fmt::Debug for DescribeApplicationInstanceDetailsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeApplicationInstanceDetailsInput");
         formatter.field("application_instance_id", &self.application_instance_id);
@@ -6781,20 +4922,18 @@ impl std::fmt::Debug for DescribeApplicationInstanceDetailsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeApplicationInstanceInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DescribeApplicationInstanceInput  {
     /// <p>The application instance's ID.</p>
-    #[doc(hidden)]
-    pub application_instance_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub application_instance_id: std::option::Option<std::string::String>,
 }
 impl DescribeApplicationInstanceInput {
     /// <p>The application instance's ID.</p>
-    pub fn application_instance_id(&self) -> std::option::Option<&str> {
+    pub fn application_instance_id(&self) -> std::option::Option<& str> {
         self.application_instance_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeApplicationInstanceInput {
+impl  std::fmt::Debug for DescribeApplicationInstanceInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeApplicationInstanceInput");
         formatter.field("application_instance_id", &self.application_instance_id);
@@ -6803,76 +4942,64 @@ impl std::fmt::Debug for DescribeApplicationInstanceInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeregisterPackageVersionInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DeregisterPackageVersionInput  {
     /// <p>An owner account.</p>
-    #[doc(hidden)]
-    pub owner_account: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub owner_account: std::option::Option<std::string::String>,
     /// <p>A package ID.</p>
-    #[doc(hidden)]
-    pub package_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub package_id: std::option::Option<std::string::String>,
     /// <p>A package version.</p>
-    #[doc(hidden)]
-    pub package_version: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub package_version: std::option::Option<std::string::String>,
     /// <p>A patch version.</p>
-    #[doc(hidden)]
-    pub patch_version: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub patch_version: std::option::Option<std::string::String>,
     /// <p>If the version was marked latest, the new version to maker as latest.</p>
-    #[doc(hidden)]
-    pub updated_latest_patch_version: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub updated_latest_patch_version: std::option::Option<std::string::String>,
 }
 impl DeregisterPackageVersionInput {
     /// <p>An owner account.</p>
-    pub fn owner_account(&self) -> std::option::Option<&str> {
+    pub fn owner_account(&self) -> std::option::Option<& str> {
         self.owner_account.as_deref()
     }
     /// <p>A package ID.</p>
-    pub fn package_id(&self) -> std::option::Option<&str> {
+    pub fn package_id(&self) -> std::option::Option<& str> {
         self.package_id.as_deref()
     }
     /// <p>A package version.</p>
-    pub fn package_version(&self) -> std::option::Option<&str> {
+    pub fn package_version(&self) -> std::option::Option<& str> {
         self.package_version.as_deref()
     }
     /// <p>A patch version.</p>
-    pub fn patch_version(&self) -> std::option::Option<&str> {
+    pub fn patch_version(&self) -> std::option::Option<& str> {
         self.patch_version.as_deref()
     }
     /// <p>If the version was marked latest, the new version to maker as latest.</p>
-    pub fn updated_latest_patch_version(&self) -> std::option::Option<&str> {
+    pub fn updated_latest_patch_version(&self) -> std::option::Option<& str> {
         self.updated_latest_patch_version.as_deref()
     }
 }
-impl std::fmt::Debug for DeregisterPackageVersionInput {
+impl  std::fmt::Debug for DeregisterPackageVersionInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeregisterPackageVersionInput");
         formatter.field("owner_account", &self.owner_account);
         formatter.field("package_id", &self.package_id);
         formatter.field("package_version", &self.package_version);
         formatter.field("patch_version", &self.patch_version);
-        formatter.field(
-            "updated_latest_patch_version",
-            &self.updated_latest_patch_version,
-        );
+        formatter.field("updated_latest_patch_version", &self.updated_latest_patch_version);
         formatter.finish()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeletePackageInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DeletePackageInput  {
     /// <p>The package's ID.</p>
-    #[doc(hidden)]
-    pub package_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub package_id: std::option::Option<std::string::String>,
     /// <p>Delete the package even if it has artifacts stored in its access point. Deletes the package's artifacts from Amazon S3.</p>
-    #[doc(hidden)]
-    pub force_delete: bool,
+    #[doc(hidden)]pub force_delete: bool,
 }
 impl DeletePackageInput {
     /// <p>The package's ID.</p>
-    pub fn package_id(&self) -> std::option::Option<&str> {
+    pub fn package_id(&self) -> std::option::Option<& str> {
         self.package_id.as_deref()
     }
     /// <p>Delete the package even if it has artifacts stored in its access point. Deletes the package's artifacts from Amazon S3.</p>
@@ -6880,7 +5007,7 @@ impl DeletePackageInput {
         self.force_delete
     }
 }
-impl std::fmt::Debug for DeletePackageInput {
+impl  std::fmt::Debug for DeletePackageInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeletePackageInput");
         formatter.field("package_id", &self.package_id);
@@ -6890,20 +5017,18 @@ impl std::fmt::Debug for DeletePackageInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteDeviceInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DeleteDeviceInput  {
     /// <p>The device's ID.</p>
-    #[doc(hidden)]
-    pub device_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub device_id: std::option::Option<std::string::String>,
 }
 impl DeleteDeviceInput {
     /// <p>The device's ID.</p>
-    pub fn device_id(&self) -> std::option::Option<&str> {
+    pub fn device_id(&self) -> std::option::Option<& str> {
         self.device_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDeviceInput {
+impl  std::fmt::Debug for DeleteDeviceInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDeviceInput");
         formatter.field("device_id", &self.device_id);
@@ -6912,50 +5037,42 @@ impl std::fmt::Debug for DeleteDeviceInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreatePackageImportJobInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CreatePackageImportJobInput  {
     /// <p>A job type for the package import job.</p>
-    #[doc(hidden)]
-    pub job_type: std::option::Option<crate::model::PackageImportJobType>,
+    #[doc(hidden)]pub job_type: std::option::Option<crate::model::PackageImportJobType>,
     /// <p>An input config for the package import job.</p>
-    #[doc(hidden)]
-    pub input_config: std::option::Option<crate::model::PackageImportJobInputConfig>,
+    #[doc(hidden)]pub input_config: std::option::Option<crate::model::PackageImportJobInputConfig>,
     /// <p>An output config for the package import job.</p>
-    #[doc(hidden)]
-    pub output_config: std::option::Option<crate::model::PackageImportJobOutputConfig>,
+    #[doc(hidden)]pub output_config: std::option::Option<crate::model::PackageImportJobOutputConfig>,
     /// <p>A client token for the package import job.</p>
-    #[doc(hidden)]
-    pub client_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub client_token: std::option::Option<std::string::String>,
     /// <p>Tags for the package import job.</p>
-    #[doc(hidden)]
-    pub job_tags: std::option::Option<std::vec::Vec<crate::model::JobResourceTags>>,
+    #[doc(hidden)]pub job_tags: std::option::Option<std::vec::Vec<crate::model::JobResourceTags>>,
 }
 impl CreatePackageImportJobInput {
     /// <p>A job type for the package import job.</p>
-    pub fn job_type(&self) -> std::option::Option<&crate::model::PackageImportJobType> {
+    pub fn job_type(&self) -> std::option::Option<& crate::model::PackageImportJobType> {
         self.job_type.as_ref()
     }
     /// <p>An input config for the package import job.</p>
-    pub fn input_config(&self) -> std::option::Option<&crate::model::PackageImportJobInputConfig> {
+    pub fn input_config(&self) -> std::option::Option<& crate::model::PackageImportJobInputConfig> {
         self.input_config.as_ref()
     }
     /// <p>An output config for the package import job.</p>
-    pub fn output_config(
-        &self,
-    ) -> std::option::Option<&crate::model::PackageImportJobOutputConfig> {
+    pub fn output_config(&self) -> std::option::Option<& crate::model::PackageImportJobOutputConfig> {
         self.output_config.as_ref()
     }
     /// <p>A client token for the package import job.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Tags for the package import job.</p>
-    pub fn job_tags(&self) -> std::option::Option<&[crate::model::JobResourceTags]> {
+    pub fn job_tags(&self) -> std::option::Option<& [crate::model::JobResourceTags]> {
         self.job_tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreatePackageImportJobInput {
+impl  std::fmt::Debug for CreatePackageImportJobInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePackageImportJobInput");
         formatter.field("job_type", &self.job_type);
@@ -6968,31 +5085,24 @@ impl std::fmt::Debug for CreatePackageImportJobInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreatePackageInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CreatePackageInput  {
     /// <p>A name for the package.</p>
-    #[doc(hidden)]
-    pub package_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub package_name: std::option::Option<std::string::String>,
     /// <p>Tags for the package.</p>
-    #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[doc(hidden)]pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreatePackageInput {
     /// <p>A name for the package.</p>
-    pub fn package_name(&self) -> std::option::Option<&str> {
+    pub fn package_name(&self) -> std::option::Option<& str> {
         self.package_name.as_deref()
     }
     /// <p>Tags for the package.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreatePackageInput {
+impl  std::fmt::Debug for CreatePackageInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePackageInput");
         formatter.field("package_name", &self.package_name);
@@ -7002,66 +5112,54 @@ impl std::fmt::Debug for CreatePackageInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateNodeFromTemplateJobInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CreateNodeFromTemplateJobInput  {
     /// <p>The type of node.</p>
-    #[doc(hidden)]
-    pub template_type: std::option::Option<crate::model::TemplateType>,
+    #[doc(hidden)]pub template_type: std::option::Option<crate::model::TemplateType>,
     /// <p>An output package name for the node.</p>
-    #[doc(hidden)]
-    pub output_package_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub output_package_name: std::option::Option<std::string::String>,
     /// <p>An output package version for the node.</p>
-    #[doc(hidden)]
-    pub output_package_version: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub output_package_version: std::option::Option<std::string::String>,
     /// <p>A name for the node.</p>
-    #[doc(hidden)]
-    pub node_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub node_name: std::option::Option<std::string::String>,
     /// <p>A description for the node.</p>
-    #[doc(hidden)]
-    pub node_description: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub node_description: std::option::Option<std::string::String>,
     /// <p>Template parameters for the node.</p>
-    #[doc(hidden)]
-    pub template_parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[doc(hidden)]pub template_parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Tags for the job.</p>
-    #[doc(hidden)]
-    pub job_tags: std::option::Option<std::vec::Vec<crate::model::JobResourceTags>>,
+    #[doc(hidden)]pub job_tags: std::option::Option<std::vec::Vec<crate::model::JobResourceTags>>,
 }
 impl CreateNodeFromTemplateJobInput {
     /// <p>The type of node.</p>
-    pub fn template_type(&self) -> std::option::Option<&crate::model::TemplateType> {
+    pub fn template_type(&self) -> std::option::Option<& crate::model::TemplateType> {
         self.template_type.as_ref()
     }
     /// <p>An output package name for the node.</p>
-    pub fn output_package_name(&self) -> std::option::Option<&str> {
+    pub fn output_package_name(&self) -> std::option::Option<& str> {
         self.output_package_name.as_deref()
     }
     /// <p>An output package version for the node.</p>
-    pub fn output_package_version(&self) -> std::option::Option<&str> {
+    pub fn output_package_version(&self) -> std::option::Option<& str> {
         self.output_package_version.as_deref()
     }
     /// <p>A name for the node.</p>
-    pub fn node_name(&self) -> std::option::Option<&str> {
+    pub fn node_name(&self) -> std::option::Option<& str> {
         self.node_name.as_deref()
     }
     /// <p>A description for the node.</p>
-    pub fn node_description(&self) -> std::option::Option<&str> {
+    pub fn node_description(&self) -> std::option::Option<& str> {
         self.node_description.as_deref()
     }
     /// <p>Template parameters for the node.</p>
-    pub fn template_parameters(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn template_parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.template_parameters.as_ref()
     }
     /// <p>Tags for the job.</p>
-    pub fn job_tags(&self) -> std::option::Option<&[crate::model::JobResourceTags]> {
+    pub fn job_tags(&self) -> std::option::Option<& [crate::model::JobResourceTags]> {
         self.job_tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateNodeFromTemplateJobInput {
+impl  std::fmt::Debug for CreateNodeFromTemplateJobInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateNodeFromTemplateJobInput");
         formatter.field("template_type", &self.template_type);
@@ -7076,34 +5174,30 @@ impl std::fmt::Debug for CreateNodeFromTemplateJobInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateJobForDevicesInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CreateJobForDevicesInput  {
     /// <p>IDs of target devices.</p>
-    #[doc(hidden)]
-    pub device_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub device_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Configuration settings for the job.</p>
-    #[doc(hidden)]
-    pub device_job_config: std::option::Option<crate::model::DeviceJobConfig>,
+    #[doc(hidden)]pub device_job_config: std::option::Option<crate::model::DeviceJobConfig>,
     /// <p>The type of job to run.</p>
-    #[doc(hidden)]
-    pub job_type: std::option::Option<crate::model::JobType>,
+    #[doc(hidden)]pub job_type: std::option::Option<crate::model::JobType>,
 }
 impl CreateJobForDevicesInput {
     /// <p>IDs of target devices.</p>
-    pub fn device_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn device_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.device_ids.as_deref()
     }
     /// <p>Configuration settings for the job.</p>
-    pub fn device_job_config(&self) -> std::option::Option<&crate::model::DeviceJobConfig> {
+    pub fn device_job_config(&self) -> std::option::Option<& crate::model::DeviceJobConfig> {
         self.device_job_config.as_ref()
     }
     /// <p>The type of job to run.</p>
-    pub fn job_type(&self) -> std::option::Option<&crate::model::JobType> {
+    pub fn job_type(&self) -> std::option::Option<& crate::model::JobType> {
         self.job_type.as_ref()
     }
 }
-impl std::fmt::Debug for CreateJobForDevicesInput {
+impl  std::fmt::Debug for CreateJobForDevicesInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateJobForDevicesInput");
         formatter.field("device_ids", &self.device_ids);
@@ -7114,94 +5208,71 @@ impl std::fmt::Debug for CreateJobForDevicesInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateApplicationInstanceInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CreateApplicationInstanceInput  {
     /// <p>A name for the application instance.</p>
-    #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub name: std::option::Option<std::string::String>,
     /// <p>A description for the application instance.</p>
-    #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub description: std::option::Option<std::string::String>,
     /// <p>The application's manifest document.</p>
-    #[doc(hidden)]
-    pub manifest_payload: std::option::Option<crate::model::ManifestPayload>,
+    #[doc(hidden)]pub manifest_payload: std::option::Option<crate::model::ManifestPayload>,
     /// <p>Setting overrides for the application manifest.</p>
-    #[doc(hidden)]
-    pub manifest_overrides_payload: std::option::Option<crate::model::ManifestOverridesPayload>,
+    #[doc(hidden)]pub manifest_overrides_payload: std::option::Option<crate::model::ManifestOverridesPayload>,
     /// <p>The ID of an application instance to replace with the new instance.</p>
-    #[doc(hidden)]
-    pub application_instance_id_to_replace: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub application_instance_id_to_replace: std::option::Option<std::string::String>,
     /// <p>The ARN of a runtime role for the application instance.</p>
-    #[doc(hidden)]
-    pub runtime_role_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub runtime_role_arn: std::option::Option<std::string::String>,
     /// <p>A device's ID.</p>
-    #[doc(hidden)]
-    pub default_runtime_context_device: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub default_runtime_context_device: std::option::Option<std::string::String>,
     /// <p>Tags for the application instance.</p>
-    #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[doc(hidden)]pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateApplicationInstanceInput {
     /// <p>A name for the application instance.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description for the application instance.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The application's manifest document.</p>
-    pub fn manifest_payload(&self) -> std::option::Option<&crate::model::ManifestPayload> {
+    pub fn manifest_payload(&self) -> std::option::Option<& crate::model::ManifestPayload> {
         self.manifest_payload.as_ref()
     }
     /// <p>Setting overrides for the application manifest.</p>
-    pub fn manifest_overrides_payload(
-        &self,
-    ) -> std::option::Option<&crate::model::ManifestOverridesPayload> {
+    pub fn manifest_overrides_payload(&self) -> std::option::Option<& crate::model::ManifestOverridesPayload> {
         self.manifest_overrides_payload.as_ref()
     }
     /// <p>The ID of an application instance to replace with the new instance.</p>
-    pub fn application_instance_id_to_replace(&self) -> std::option::Option<&str> {
+    pub fn application_instance_id_to_replace(&self) -> std::option::Option<& str> {
         self.application_instance_id_to_replace.as_deref()
     }
     /// <p>The ARN of a runtime role for the application instance.</p>
-    pub fn runtime_role_arn(&self) -> std::option::Option<&str> {
+    pub fn runtime_role_arn(&self) -> std::option::Option<& str> {
         self.runtime_role_arn.as_deref()
     }
     /// <p>A device's ID.</p>
-    pub fn default_runtime_context_device(&self) -> std::option::Option<&str> {
+    pub fn default_runtime_context_device(&self) -> std::option::Option<& str> {
         self.default_runtime_context_device.as_deref()
     }
     /// <p>Tags for the application instance.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateApplicationInstanceInput {
+impl  std::fmt::Debug for CreateApplicationInstanceInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateApplicationInstanceInput");
         formatter.field("name", &self.name);
         formatter.field("description", &self.description);
         formatter.field("manifest_payload", &self.manifest_payload);
-        formatter.field(
-            "manifest_overrides_payload",
-            &self.manifest_overrides_payload,
-        );
-        formatter.field(
-            "application_instance_id_to_replace",
-            &self.application_instance_id_to_replace,
-        );
+        formatter.field("manifest_overrides_payload", &self.manifest_overrides_payload);
+        formatter.field("application_instance_id_to_replace", &self.application_instance_id_to_replace);
         formatter.field("runtime_role_arn", &self.runtime_role_arn);
-        formatter.field(
-            "default_runtime_context_device",
-            &self.default_runtime_context_device,
-        );
+        formatter.field("default_runtime_context_device", &self.default_runtime_context_device);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
+

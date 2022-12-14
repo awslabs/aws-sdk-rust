@@ -3,21 +3,17 @@ use std::fmt::Write;
 
 /// See [`CreateWorkflowInput`](crate::input::CreateWorkflowInput).
 pub mod create_workflow_input {
-
+    
     /// A builder for [`CreateWorkflowInput`](crate::input::CreateWorkflowInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) template_id: std::option::Option<std::string::String>,
         pub(crate) application_configuration_id: std::option::Option<std::string::String>,
-        pub(crate) input_parameters: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::StepInput>,
-        >,
+        pub(crate) input_parameters: std::option::Option<std::collections::HashMap<std::string::String, crate::model::StepInput>>,
         pub(crate) step_targets: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The name of the migration workflow.</p>
@@ -27,8 +23,7 @@ pub mod create_workflow_input {
         }
         /// <p>The name of the migration workflow.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the migration workflow.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -37,8 +32,7 @@ pub mod create_workflow_input {
         }
         /// <p>The description of the migration workflow.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The ID of the template.</p>
         pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -47,49 +41,31 @@ pub mod create_workflow_input {
         }
         /// <p>The ID of the template.</p>
         pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template_id = input;
-            self
+            self.template_id = input; self
         }
         /// <p>The configuration ID of the application configured in Application Discovery Service.</p>
-        pub fn application_configuration_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn application_configuration_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.application_configuration_id = Some(input.into());
             self
         }
         /// <p>The configuration ID of the application configured in Application Discovery Service.</p>
-        pub fn set_application_configuration_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_configuration_id = input;
-            self
+        pub fn set_application_configuration_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_configuration_id = input; self
         }
         /// Adds a key-value pair to `input_parameters`.
         ///
         /// To override the contents of this collection use [`set_input_parameters`](Self::set_input_parameters).
         ///
         /// <p>The input parameters required to create a migration workflow.</p>
-        pub fn input_parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::StepInput,
-        ) -> Self {
+        pub fn input_parameters(mut self, k: impl Into<std::string::String>, v: crate::model::StepInput) -> Self {
             let mut hash_map = self.input_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.input_parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.input_parameters = Some(hash_map);
+                            self
         }
         /// <p>The input parameters required to create a migration workflow.</p>
-        pub fn set_input_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::StepInput>,
-            >,
-        ) -> Self {
-            self.input_parameters = input;
-            self
+        pub fn set_input_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::StepInput>>) -> Self {
+            self.input_parameters = input; self
         }
         /// Appends an item to `step_targets`.
         ///
@@ -98,159 +74,109 @@ pub mod create_workflow_input {
         /// <p>The servers on which a step will be run.</p>
         pub fn step_targets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.step_targets.unwrap_or_default();
-            v.push(input.into());
-            self.step_targets = Some(v);
-            self
+                            v.push(input.into());
+                            self.step_targets = Some(v);
+                            self
         }
         /// <p>The servers on which a step will be run.</p>
-        pub fn set_step_targets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.step_targets = input;
-            self
+        pub fn set_step_targets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.step_targets = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to add on a migration workflow.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags to add on a migration workflow.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateWorkflowInput`](crate::input::CreateWorkflowInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateWorkflowInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::CreateWorkflowInput {
-                name: self.name,
-                description: self.description,
-                template_id: self.template_id,
-                application_configuration_id: self.application_configuration_id,
-                input_parameters: self.input_parameters,
-                step_targets: self.step_targets,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::CreateWorkflowInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CreateWorkflowInput {
+                    name: self.name
+                    ,
+                    description: self.description
+                    ,
+                    template_id: self.template_id
+                    ,
+                    application_configuration_id: self.application_configuration_id
+                    ,
+                    input_parameters: self.input_parameters
+                    ,
+                    step_targets: self.step_targets
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateWorkflowInput {
     /// Consumes the builder and constructs an Operation<[`CreateWorkflow`](crate::operation::CreateWorkflow)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateWorkflow,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateWorkflow, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateWorkflowInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::CreateWorkflowInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/migrationworkflow").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreateWorkflowInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CreateWorkflowInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_workflow(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_workflow(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateWorkflow::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateWorkflow",
-            "migrationhuborchestrator",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateWorkflow::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateWorkflow", "migrationhuborchestrator"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -262,17 +188,16 @@ impl CreateWorkflowInput {
 
 /// See [`CreateWorkflowStepInput`](crate::input::CreateWorkflowStepInput).
 pub mod create_workflow_step_input {
-
+    
     /// A builder for [`CreateWorkflowStepInput`](crate::input::CreateWorkflowStepInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) step_group_id: std::option::Option<std::string::String>,
         pub(crate) workflow_id: std::option::Option<std::string::String>,
         pub(crate) step_action_type: std::option::Option<crate::model::StepActionType>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) workflow_step_automation_configuration:
-            std::option::Option<crate::model::WorkflowStepAutomationConfiguration>,
+        pub(crate) workflow_step_automation_configuration: std::option::Option<crate::model::WorkflowStepAutomationConfiguration>,
         pub(crate) step_target: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) outputs: std::option::Option<std::vec::Vec<crate::model::WorkflowStepOutput>>,
         pub(crate) previous: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -286,8 +211,7 @@ pub mod create_workflow_step_input {
         }
         /// <p>The name of the step.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The ID of the step group.</p>
         pub fn step_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -295,12 +219,8 @@ pub mod create_workflow_step_input {
             self
         }
         /// <p>The ID of the step group.</p>
-        pub fn set_step_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.step_group_id = input;
-            self
+        pub fn set_step_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.step_group_id = input; self
         }
         /// <p>The ID of the migration workflow.</p>
         pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -309,8 +229,7 @@ pub mod create_workflow_step_input {
         }
         /// <p>The ID of the migration workflow.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workflow_id = input;
-            self
+            self.workflow_id = input; self
         }
         /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
         pub fn step_action_type(mut self, input: crate::model::StepActionType) -> Self {
@@ -318,12 +237,8 @@ pub mod create_workflow_step_input {
             self
         }
         /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
-        pub fn set_step_action_type(
-            mut self,
-            input: std::option::Option<crate::model::StepActionType>,
-        ) -> Self {
-            self.step_action_type = input;
-            self
+        pub fn set_step_action_type(mut self, input: std::option::Option<crate::model::StepActionType>) -> Self {
+            self.step_action_type = input; self
         }
         /// <p>The description of the step.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -332,24 +247,16 @@ pub mod create_workflow_step_input {
         }
         /// <p>The description of the step.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The custom script to run tests on source or target environments.</p>
-        pub fn workflow_step_automation_configuration(
-            mut self,
-            input: crate::model::WorkflowStepAutomationConfiguration,
-        ) -> Self {
+        pub fn workflow_step_automation_configuration(mut self, input: crate::model::WorkflowStepAutomationConfiguration) -> Self {
             self.workflow_step_automation_configuration = Some(input);
             self
         }
         /// <p>The custom script to run tests on source or target environments.</p>
-        pub fn set_workflow_step_automation_configuration(
-            mut self,
-            input: std::option::Option<crate::model::WorkflowStepAutomationConfiguration>,
-        ) -> Self {
-            self.workflow_step_automation_configuration = input;
-            self
+        pub fn set_workflow_step_automation_configuration(mut self, input: std::option::Option<crate::model::WorkflowStepAutomationConfiguration>) -> Self {
+            self.workflow_step_automation_configuration = input; self
         }
         /// Appends an item to `step_target`.
         ///
@@ -358,17 +265,13 @@ pub mod create_workflow_step_input {
         /// <p>The servers on which a step will be run.</p>
         pub fn step_target(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.step_target.unwrap_or_default();
-            v.push(input.into());
-            self.step_target = Some(v);
-            self
+                            v.push(input.into());
+                            self.step_target = Some(v);
+                            self
         }
         /// <p>The servers on which a step will be run.</p>
-        pub fn set_step_target(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.step_target = input;
-            self
+        pub fn set_step_target(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.step_target = input; self
         }
         /// Appends an item to `outputs`.
         ///
@@ -377,17 +280,13 @@ pub mod create_workflow_step_input {
         /// <p>The key value pairs added for the expected output.</p>
         pub fn outputs(mut self, input: crate::model::WorkflowStepOutput) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input);
-            self.outputs = Some(v);
-            self
+                            v.push(input);
+                            self.outputs = Some(v);
+                            self
         }
         /// <p>The key value pairs added for the expected output.</p>
-        pub fn set_outputs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::WorkflowStepOutput>>,
-        ) -> Self {
-            self.outputs = input;
-            self
+        pub fn set_outputs(mut self, input: std::option::Option<std::vec::Vec<crate::model::WorkflowStepOutput>>) -> Self {
+            self.outputs = input; self
         }
         /// Appends an item to `previous`.
         ///
@@ -396,17 +295,13 @@ pub mod create_workflow_step_input {
         /// <p>The previous step.</p>
         pub fn previous(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.previous.unwrap_or_default();
-            v.push(input.into());
-            self.previous = Some(v);
-            self
+                            v.push(input.into());
+                            self.previous = Some(v);
+                            self
         }
         /// <p>The previous step.</p>
-        pub fn set_previous(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.previous = input;
-            self
+        pub fn set_previous(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.previous = input; self
         }
         /// Appends an item to `next`.
         ///
@@ -415,137 +310,100 @@ pub mod create_workflow_step_input {
         /// <p>The next step.</p>
         pub fn next(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.next.unwrap_or_default();
-            v.push(input.into());
-            self.next = Some(v);
-            self
+                            v.push(input.into());
+                            self.next = Some(v);
+                            self
         }
         /// <p>The next step.</p>
-        pub fn set_next(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.next = input;
-            self
+        pub fn set_next(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.next = input; self
         }
         /// Consumes the builder and constructs a [`CreateWorkflowStepInput`](crate::input::CreateWorkflowStepInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateWorkflowStepInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::CreateWorkflowStepInput {
-                name: self.name,
-                step_group_id: self.step_group_id,
-                workflow_id: self.workflow_id,
-                step_action_type: self.step_action_type,
-                description: self.description,
-                workflow_step_automation_configuration: self.workflow_step_automation_configuration,
-                step_target: self.step_target,
-                outputs: self.outputs,
-                previous: self.previous,
-                next: self.next,
-            })
+        pub fn build(self) -> Result<crate::input::CreateWorkflowStepInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CreateWorkflowStepInput {
+                    name: self.name
+                    ,
+                    step_group_id: self.step_group_id
+                    ,
+                    workflow_id: self.workflow_id
+                    ,
+                    step_action_type: self.step_action_type
+                    ,
+                    description: self.description
+                    ,
+                    workflow_step_automation_configuration: self.workflow_step_automation_configuration
+                    ,
+                    step_target: self.step_target
+                    ,
+                    outputs: self.outputs
+                    ,
+                    previous: self.previous
+                    ,
+                    next: self.next
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateWorkflowStepInput {
     /// Consumes the builder and constructs an Operation<[`CreateWorkflowStep`](crate::operation::CreateWorkflowStep)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateWorkflowStep,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateWorkflowStep, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateWorkflowStepInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::CreateWorkflowStepInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/workflowstep").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreateWorkflowStepInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CreateWorkflowStepInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_workflow_step(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_workflow_step(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateWorkflowStep::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateWorkflowStep",
-            "migrationhuborchestrator",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateWorkflowStep::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateWorkflowStep", "migrationhuborchestrator"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -557,9 +415,9 @@ impl CreateWorkflowStepInput {
 
 /// See [`CreateWorkflowStepGroupInput`](crate::input::CreateWorkflowStepGroupInput).
 pub mod create_workflow_step_group_input {
-
+    
     /// A builder for [`CreateWorkflowStepGroupInput`](crate::input::CreateWorkflowStepGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -575,8 +433,7 @@ pub mod create_workflow_step_group_input {
         }
         /// <p>The ID of the migration workflow that will contain the step group.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workflow_id = input;
-            self
+            self.workflow_id = input; self
         }
         /// <p>The name of the step group.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -585,8 +442,7 @@ pub mod create_workflow_step_group_input {
         }
         /// <p>The name of the step group.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the step group.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -595,8 +451,7 @@ pub mod create_workflow_step_group_input {
         }
         /// <p>The description of the step group.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Appends an item to `next`.
         ///
@@ -605,17 +460,13 @@ pub mod create_workflow_step_group_input {
         /// <p>The next step group.</p>
         pub fn next(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.next.unwrap_or_default();
-            v.push(input.into());
-            self.next = Some(v);
-            self
+                            v.push(input.into());
+                            self.next = Some(v);
+                            self
         }
         /// <p>The next step group.</p>
-        pub fn set_next(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.next = input;
-            self
+        pub fn set_next(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.next = input; self
         }
         /// Appends an item to `previous`.
         ///
@@ -624,136 +475,90 @@ pub mod create_workflow_step_group_input {
         /// <p>The previous step group.</p>
         pub fn previous(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.previous.unwrap_or_default();
-            v.push(input.into());
-            self.previous = Some(v);
-            self
+                            v.push(input.into());
+                            self.previous = Some(v);
+                            self
         }
         /// <p>The previous step group.</p>
-        pub fn set_previous(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.previous = input;
-            self
+        pub fn set_previous(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.previous = input; self
         }
         /// Consumes the builder and constructs a [`CreateWorkflowStepGroupInput`](crate::input::CreateWorkflowStepGroupInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateWorkflowStepGroupInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::CreateWorkflowStepGroupInput {
-                workflow_id: self.workflow_id,
-                name: self.name,
-                description: self.description,
-                next: self.next,
-                previous: self.previous,
-            })
+        pub fn build(self) -> Result<crate::input::CreateWorkflowStepGroupInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CreateWorkflowStepGroupInput {
+                    workflow_id: self.workflow_id
+                    ,
+                    name: self.name
+                    ,
+                    description: self.description
+                    ,
+                    next: self.next
+                    ,
+                    previous: self.previous
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateWorkflowStepGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateWorkflowStepGroup`](crate::operation::CreateWorkflowStepGroup)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateWorkflowStepGroup,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateWorkflowStepGroup, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateWorkflowStepGroupInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::CreateWorkflowStepGroupInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/workflowstepgroups").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreateWorkflowStepGroupInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CreateWorkflowStepGroupInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_workflow_step_group(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_workflow_step_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateWorkflowStepGroup::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateWorkflowStepGroup",
-            "migrationhuborchestrator",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateWorkflowStepGroup::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateWorkflowStepGroup", "migrationhuborchestrator"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -765,9 +570,9 @@ impl CreateWorkflowStepGroupInput {
 
 /// See [`DeleteWorkflowInput`](crate::input::DeleteWorkflowInput).
 pub mod delete_workflow_input {
-
+    
     /// A builder for [`DeleteWorkflowInput`](crate::input::DeleteWorkflowInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -779,62 +584,39 @@ pub mod delete_workflow_input {
         }
         /// <p>The ID of the migration workflow you want to delete.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteWorkflowInput`](crate::input::DeleteWorkflowInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteWorkflowInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DeleteWorkflowInput { id: self.id })
+        pub fn build(self) -> Result<crate::input::DeleteWorkflowInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DeleteWorkflowInput {
+                    id: self.id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteWorkflowInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWorkflow`](crate::operation::DeleteWorkflow)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteWorkflow,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteWorkflow, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteWorkflowInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteWorkflowInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.id;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })?;
                 let id = aws_smithy_http::label::fmt_string(input_1, false);
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(output, "/migrationworkflow/{id}", id = id)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/migrationworkflow/{id}", id = id).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DeleteWorkflowInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DeleteWorkflowInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -843,54 +625,37 @@ impl DeleteWorkflowInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteWorkflow::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteWorkflow",
-            "migrationhuborchestrator",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteWorkflow::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteWorkflow", "migrationhuborchestrator"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -902,9 +667,9 @@ impl DeleteWorkflowInput {
 
 /// See [`DeleteWorkflowStepInput`](crate::input::DeleteWorkflowStepInput).
 pub mod delete_workflow_step_input {
-
+    
     /// A builder for [`DeleteWorkflowStepInput`](crate::input::DeleteWorkflowStepInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) step_group_id: std::option::Option<std::string::String>,
@@ -918,8 +683,7 @@ pub mod delete_workflow_step_input {
         }
         /// <p>The ID of the step you want to delete.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The ID of the step group that contains the step you want to delete.</p>
         pub fn step_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -927,12 +691,8 @@ pub mod delete_workflow_step_input {
             self
         }
         /// <p>The ID of the step group that contains the step you want to delete.</p>
-        pub fn set_step_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.step_group_id = input;
-            self
+        pub fn set_step_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.step_group_id = input; self
         }
         /// <p>The ID of the migration workflow.</p>
         pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -941,63 +701,40 @@ pub mod delete_workflow_step_input {
         }
         /// <p>The ID of the migration workflow.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workflow_id = input;
-            self
+            self.workflow_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteWorkflowStepInput`](crate::input::DeleteWorkflowStepInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteWorkflowStepInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DeleteWorkflowStepInput {
-                id: self.id,
-                step_group_id: self.step_group_id,
-                workflow_id: self.workflow_id,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteWorkflowStepInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DeleteWorkflowStepInput {
+                    id: self.id
+                    ,
+                    step_group_id: self.step_group_id
+                    ,
+                    workflow_id: self.workflow_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteWorkflowStepInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWorkflowStep`](crate::operation::DeleteWorkflowStep)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteWorkflowStep,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteWorkflowStep, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteWorkflowStepInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteWorkflowStepInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_2 = &_input.id;
-                let input_2 = input_2.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })?;
                 let id = aws_smithy_http::label::fmt_string(input_2, false);
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
-                }
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })
+                            }
                 write!(output, "/workflowstep/{id}", id = id).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::DeleteWorkflowStepInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::DeleteWorkflowStepInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_3) = &_input.step_group_id {
                     query.push_kv("stepGroupId", &aws_smithy_http::query::fmt_string(&inner_3));
@@ -1007,12 +744,10 @@ impl DeleteWorkflowStepInput {
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DeleteWorkflowStepInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DeleteWorkflowStepInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1022,54 +757,37 @@ impl DeleteWorkflowStepInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteWorkflowStep::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteWorkflowStep",
-            "migrationhuborchestrator",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteWorkflowStep::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteWorkflowStep", "migrationhuborchestrator"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1081,9 +799,9 @@ impl DeleteWorkflowStepInput {
 
 /// See [`DeleteWorkflowStepGroupInput`](crate::input::DeleteWorkflowStepGroupInput).
 pub mod delete_workflow_step_group_input {
-
+    
     /// A builder for [`DeleteWorkflowStepGroupInput`](crate::input::DeleteWorkflowStepGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1096,8 +814,7 @@ pub mod delete_workflow_step_group_input {
         }
         /// <p>The ID of the migration workflow.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workflow_id = input;
-            self
+            self.workflow_id = input; self
         }
         /// <p>The ID of the step group you want to delete.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1106,77 +823,48 @@ pub mod delete_workflow_step_group_input {
         }
         /// <p>The ID of the step group you want to delete.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteWorkflowStepGroupInput`](crate::input::DeleteWorkflowStepGroupInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteWorkflowStepGroupInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::DeleteWorkflowStepGroupInput {
-                workflow_id: self.workflow_id,
-                id: self.id,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteWorkflowStepGroupInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DeleteWorkflowStepGroupInput {
+                    workflow_id: self.workflow_id
+                    ,
+                    id: self.id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteWorkflowStepGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWorkflowStepGroup`](crate::operation::DeleteWorkflowStepGroup)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteWorkflowStepGroup,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteWorkflowStepGroup, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteWorkflowStepGroupInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteWorkflowStepGroupInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_5 = &_input.id;
-                let input_5 = input_5.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_5 = input_5.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })?;
                 let id = aws_smithy_http::label::fmt_string(input_5, false);
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(output, "/workflowstepgroup/{id}", id = id)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/workflowstepgroup/{id}", id = id).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::DeleteWorkflowStepGroupInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::DeleteWorkflowStepGroupInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_6) = &_input.workflow_id {
                     query.push_kv("workflowId", &aws_smithy_http::query::fmt_string(&inner_6));
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DeleteWorkflowStepGroupInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DeleteWorkflowStepGroupInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1186,54 +874,37 @@ impl DeleteWorkflowStepGroupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteWorkflowStepGroup::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteWorkflowStepGroup",
-            "migrationhuborchestrator",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteWorkflowStepGroup::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteWorkflowStepGroup", "migrationhuborchestrator"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1245,9 +916,9 @@ impl DeleteWorkflowStepGroupInput {
 
 /// See [`GetTemplateInput`](crate::input::GetTemplateInput).
 pub mod get_template_input {
-
+    
     /// A builder for [`GetTemplateInput`](crate::input::GetTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -1259,62 +930,39 @@ pub mod get_template_input {
         }
         /// <p>The ID of the template.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`GetTemplateInput`](crate::input::GetTemplateInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetTemplateInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::GetTemplateInput { id: self.id })
+        pub fn build(self) -> Result<crate::input::GetTemplateInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::GetTemplateInput {
+                    id: self.id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetTemplateInput {
     /// Consumes the builder and constructs an Operation<[`GetTemplate`](crate::operation::GetTemplate)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetTemplate,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetTemplate, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetTemplateInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::GetTemplateInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_7 = &_input.id;
-                let input_7 = input_7.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_7 = input_7.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })?;
                 let id = aws_smithy_http::label::fmt_string(input_7, false);
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(output, "/migrationworkflowtemplate/{id}", id = id)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/migrationworkflowtemplate/{id}", id = id).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::GetTemplateInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::GetTemplateInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1323,54 +971,37 @@ impl GetTemplateInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetTemplate::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetTemplate",
-            "migrationhuborchestrator",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetTemplate::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetTemplate", "migrationhuborchestrator"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1382,9 +1013,9 @@ impl GetTemplateInput {
 
 /// See [`GetTemplateStepInput`](crate::input::GetTemplateStepInput).
 pub mod get_template_step_input {
-
+    
     /// A builder for [`GetTemplateStepInput`](crate::input::GetTemplateStepInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) template_id: std::option::Option<std::string::String>,
@@ -1398,8 +1029,7 @@ pub mod get_template_step_input {
         }
         /// <p>The ID of the step.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The ID of the template.</p>
         pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1408,8 +1038,7 @@ pub mod get_template_step_input {
         }
         /// <p>The ID of the template.</p>
         pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template_id = input;
-            self
+            self.template_id = input; self
         }
         /// <p>The ID of the step group.</p>
         pub fn step_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1417,85 +1046,54 @@ pub mod get_template_step_input {
             self
         }
         /// <p>The ID of the step group.</p>
-        pub fn set_step_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.step_group_id = input;
-            self
+        pub fn set_step_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.step_group_id = input; self
         }
         /// Consumes the builder and constructs a [`GetTemplateStepInput`](crate::input::GetTemplateStepInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetTemplateStepInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::GetTemplateStepInput {
-                id: self.id,
-                template_id: self.template_id,
-                step_group_id: self.step_group_id,
-            })
+        pub fn build(self) -> Result<crate::input::GetTemplateStepInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::GetTemplateStepInput {
+                    id: self.id
+                    ,
+                    template_id: self.template_id
+                    ,
+                    step_group_id: self.step_group_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetTemplateStepInput {
     /// Consumes the builder and constructs an Operation<[`GetTemplateStep`](crate::operation::GetTemplateStep)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetTemplateStep,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetTemplateStep, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetTemplateStepInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::GetTemplateStepInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_8 = &_input.id;
-                let input_8 = input_8.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_8 = input_8.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })?;
                 let id = aws_smithy_http::label::fmt_string(input_8, false);
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
-                }
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })
+                            }
                 write!(output, "/templatestep/{id}", id = id).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::GetTemplateStepInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::GetTemplateStepInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_9) = &_input.template_id {
                     query.push_kv("templateId", &aws_smithy_http::query::fmt_string(&inner_9));
                 }
                 if let Some(inner_10) = &_input.step_group_id {
-                    query.push_kv(
-                        "stepGroupId",
-                        &aws_smithy_http::query::fmt_string(&inner_10),
-                    );
+                    query.push_kv("stepGroupId", &aws_smithy_http::query::fmt_string(&inner_10));
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::GetTemplateStepInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::GetTemplateStepInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1505,54 +1103,37 @@ impl GetTemplateStepInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetTemplateStep::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetTemplateStep",
-            "migrationhuborchestrator",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetTemplateStep::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetTemplateStep", "migrationhuborchestrator"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1564,9 +1145,9 @@ impl GetTemplateStepInput {
 
 /// See [`GetTemplateStepGroupInput`](crate::input::GetTemplateStepGroupInput).
 pub mod get_template_step_group_input {
-
+    
     /// A builder for [`GetTemplateStepGroupInput`](crate::input::GetTemplateStepGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) template_id: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1579,8 +1160,7 @@ pub mod get_template_step_group_input {
         }
         /// <p>The ID of the template.</p>
         pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template_id = input;
-            self
+            self.template_id = input; self
         }
         /// <p>The ID of the step group.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1589,84 +1169,47 @@ pub mod get_template_step_group_input {
         }
         /// <p>The ID of the step group.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`GetTemplateStepGroupInput`](crate::input::GetTemplateStepGroupInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetTemplateStepGroupInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::GetTemplateStepGroupInput {
-                template_id: self.template_id,
-                id: self.id,
-            })
+        pub fn build(self) -> Result<crate::input::GetTemplateStepGroupInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::GetTemplateStepGroupInput {
+                    template_id: self.template_id
+                    ,
+                    id: self.id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetTemplateStepGroupInput {
     /// Consumes the builder and constructs an Operation<[`GetTemplateStepGroup`](crate::operation::GetTemplateStepGroup)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetTemplateStepGroup,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetTemplateStepGroup, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetTemplateStepGroupInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::GetTemplateStepGroupInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_11 = &_input.template_id;
-                let input_11 = input_11.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "template_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_11 = input_11.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "template_id", details: "cannot be empty or unset" })?;
                 let template_id = aws_smithy_http::label::fmt_string(input_11, false);
                 if template_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "template_id",
-                        details: "cannot be empty or unset",
-                    });
-                }
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "template_id", details: "cannot be empty or unset" })
+                            }
                 let input_12 = &_input.id;
-                let input_12 = input_12.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_12 = input_12.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })?;
                 let id = aws_smithy_http::label::fmt_string(input_12, false);
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/templates/{templateId}/stepgroups/{id}",
-                    templateId = template_id,
-                    id = id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/templates/{templateId}/stepgroups/{id}", templateId = template_id, id = id).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::GetTemplateStepGroupInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::GetTemplateStepGroupInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1675,54 +1218,37 @@ impl GetTemplateStepGroupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetTemplateStepGroup::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetTemplateStepGroup",
-            "migrationhuborchestrator",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetTemplateStepGroup::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetTemplateStepGroup", "migrationhuborchestrator"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1734,9 +1260,9 @@ impl GetTemplateStepGroupInput {
 
 /// See [`GetWorkflowInput`](crate::input::GetWorkflowInput).
 pub mod get_workflow_input {
-
+    
     /// A builder for [`GetWorkflowInput`](crate::input::GetWorkflowInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -1748,62 +1274,39 @@ pub mod get_workflow_input {
         }
         /// <p>The ID of the migration workflow.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`GetWorkflowInput`](crate::input::GetWorkflowInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetWorkflowInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::GetWorkflowInput { id: self.id })
+        pub fn build(self) -> Result<crate::input::GetWorkflowInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::GetWorkflowInput {
+                    id: self.id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetWorkflowInput {
     /// Consumes the builder and constructs an Operation<[`GetWorkflow`](crate::operation::GetWorkflow)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetWorkflow,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetWorkflow, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetWorkflowInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::GetWorkflowInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_13 = &_input.id;
-                let input_13 = input_13.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_13 = input_13.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })?;
                 let id = aws_smithy_http::label::fmt_string(input_13, false);
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(output, "/migrationworkflow/{id}", id = id)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/migrationworkflow/{id}", id = id).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::GetWorkflowInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::GetWorkflowInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1812,54 +1315,37 @@ impl GetWorkflowInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetWorkflow::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetWorkflow",
-            "migrationhuborchestrator",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetWorkflow::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetWorkflow", "migrationhuborchestrator"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1871,9 +1357,9 @@ impl GetWorkflowInput {
 
 /// See [`GetWorkflowStepInput`](crate::input::GetWorkflowStepInput).
 pub mod get_workflow_step_input {
-
+    
     /// A builder for [`GetWorkflowStepInput`](crate::input::GetWorkflowStepInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
         pub(crate) step_group_id: std::option::Option<std::string::String>,
@@ -1887,8 +1373,7 @@ pub mod get_workflow_step_input {
         }
         /// <p>The ID of the migration workflow.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workflow_id = input;
-            self
+            self.workflow_id = input; self
         }
         /// <p>desThe ID of the step group.</p>
         pub fn step_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1896,12 +1381,8 @@ pub mod get_workflow_step_input {
             self
         }
         /// <p>desThe ID of the step group.</p>
-        pub fn set_step_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.step_group_id = input;
-            self
+        pub fn set_step_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.step_group_id = input; self
         }
         /// <p>The ID of the step.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1910,81 +1391,53 @@ pub mod get_workflow_step_input {
         }
         /// <p>The ID of the step.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`GetWorkflowStepInput`](crate::input::GetWorkflowStepInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetWorkflowStepInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::GetWorkflowStepInput {
-                workflow_id: self.workflow_id,
-                step_group_id: self.step_group_id,
-                id: self.id,
-            })
+        pub fn build(self) -> Result<crate::input::GetWorkflowStepInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::GetWorkflowStepInput {
+                    workflow_id: self.workflow_id
+                    ,
+                    step_group_id: self.step_group_id
+                    ,
+                    id: self.id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetWorkflowStepInput {
     /// Consumes the builder and constructs an Operation<[`GetWorkflowStep`](crate::operation::GetWorkflowStep)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetWorkflowStep,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetWorkflowStep, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetWorkflowStepInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::GetWorkflowStepInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_14 = &_input.id;
-                let input_14 = input_14.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_14 = input_14.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })?;
                 let id = aws_smithy_http::label::fmt_string(input_14, false);
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
-                }
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })
+                            }
                 write!(output, "/workflowstep/{id}", id = id).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::GetWorkflowStepInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::GetWorkflowStepInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_15) = &_input.workflow_id {
                     query.push_kv("workflowId", &aws_smithy_http::query::fmt_string(&inner_15));
                 }
                 if let Some(inner_16) = &_input.step_group_id {
-                    query.push_kv(
-                        "stepGroupId",
-                        &aws_smithy_http::query::fmt_string(&inner_16),
-                    );
+                    query.push_kv("stepGroupId", &aws_smithy_http::query::fmt_string(&inner_16));
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::GetWorkflowStepInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::GetWorkflowStepInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1994,54 +1447,37 @@ impl GetWorkflowStepInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetWorkflowStep::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetWorkflowStep",
-            "migrationhuborchestrator",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetWorkflowStep::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetWorkflowStep", "migrationhuborchestrator"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2053,9 +1489,9 @@ impl GetWorkflowStepInput {
 
 /// See [`GetWorkflowStepGroupInput`](crate::input::GetWorkflowStepGroupInput).
 pub mod get_workflow_step_group_input {
-
+    
     /// A builder for [`GetWorkflowStepGroupInput`](crate::input::GetWorkflowStepGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) workflow_id: std::option::Option<std::string::String>,
@@ -2068,8 +1504,7 @@ pub mod get_workflow_step_group_input {
         }
         /// <p>The ID of the step group.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The ID of the migration workflow.</p>
         pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2078,75 +1513,48 @@ pub mod get_workflow_step_group_input {
         }
         /// <p>The ID of the migration workflow.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workflow_id = input;
-            self
+            self.workflow_id = input; self
         }
         /// Consumes the builder and constructs a [`GetWorkflowStepGroupInput`](crate::input::GetWorkflowStepGroupInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetWorkflowStepGroupInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::GetWorkflowStepGroupInput {
-                id: self.id,
-                workflow_id: self.workflow_id,
-            })
+        pub fn build(self) -> Result<crate::input::GetWorkflowStepGroupInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::GetWorkflowStepGroupInput {
+                    id: self.id
+                    ,
+                    workflow_id: self.workflow_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetWorkflowStepGroupInput {
     /// Consumes the builder and constructs an Operation<[`GetWorkflowStepGroup`](crate::operation::GetWorkflowStepGroup)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetWorkflowStepGroup,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetWorkflowStepGroup, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetWorkflowStepGroupInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::GetWorkflowStepGroupInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_17 = &_input.id;
-                let input_17 = input_17.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_17 = input_17.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })?;
                 let id = aws_smithy_http::label::fmt_string(input_17, false);
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(output, "/workflowstepgroup/{id}", id = id)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/workflowstepgroup/{id}", id = id).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::GetWorkflowStepGroupInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::GetWorkflowStepGroupInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_18) = &_input.workflow_id {
                     query.push_kv("workflowId", &aws_smithy_http::query::fmt_string(&inner_18));
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::GetWorkflowStepGroupInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::GetWorkflowStepGroupInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2156,54 +1564,37 @@ impl GetWorkflowStepGroupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetWorkflowStepGroup::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetWorkflowStepGroup",
-            "migrationhuborchestrator",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetWorkflowStepGroup::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetWorkflowStepGroup", "migrationhuborchestrator"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2215,9 +1606,9 @@ impl GetWorkflowStepGroupInput {
 
 /// See [`ListPluginsInput`](crate::input::ListPluginsInput).
 pub mod list_plugins_input {
-
+    
     /// A builder for [`ListPluginsInput`](crate::input::ListPluginsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2230,8 +1621,7 @@ pub mod list_plugins_input {
         }
         /// <p>The maximum number of plugins that can be returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2240,66 +1630,46 @@ pub mod list_plugins_input {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListPluginsInput`](crate::input::ListPluginsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListPluginsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::ListPluginsInput {
-                max_results: self.max_results.unwrap_or_default(),
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListPluginsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListPluginsInput {
+                    max_results: self.max_results
+                        .unwrap_or_default()
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListPluginsInput {
     /// Consumes the builder and constructs an Operation<[`ListPlugins`](crate::operation::ListPlugins)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListPlugins,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListPlugins, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListPluginsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListPluginsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/plugins").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListPluginsInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::ListPluginsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if _input.max_results != 0 {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
+                    query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
                 }
                 if let Some(inner_19) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_19));
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListPluginsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListPluginsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2309,54 +1679,37 @@ impl ListPluginsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListPlugins::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListPlugins",
-            "migrationhuborchestrator",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListPlugins::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListPlugins", "migrationhuborchestrator"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2368,9 +1721,9 @@ impl ListPluginsInput {
 
 /// See [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
 pub mod list_tags_for_resource_input {
-
+    
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -2382,64 +1735,39 @@ pub mod list_tags_for_resource_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::ListTagsForResourceInput {
-                resource_arn: self.resource_arn,
-            })
+        pub fn build(self) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListTagsForResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListTagsForResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListTagsForResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListTagsForResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_20 = &_input.resource_arn;
-                let input_20 = input_20.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_20 = input_20.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
                 let resource_arn = aws_smithy_http::label::fmt_string(input_20, false);
                 if resource_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListTagsForResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListTagsForResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -2448,54 +1776,37 @@ impl ListTagsForResourceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListTagsForResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListTagsForResource",
-            "migrationhuborchestrator",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListTagsForResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListTagsForResource", "migrationhuborchestrator"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2507,9 +1818,9 @@ impl ListTagsForResourceInput {
 
 /// See [`ListTemplatesInput`](crate::input::ListTemplatesInput).
 pub mod list_templates_input {
-
+    
     /// A builder for [`ListTemplatesInput`](crate::input::ListTemplatesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2523,8 +1834,7 @@ pub mod list_templates_input {
         }
         /// <p>The maximum number of results that can be returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2533,8 +1843,7 @@ pub mod list_templates_input {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The name of the template.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2543,55 +1852,38 @@ pub mod list_templates_input {
         }
         /// <p>The name of the template.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`ListTemplatesInput`](crate::input::ListTemplatesInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListTemplatesInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::ListTemplatesInput {
-                max_results: self.max_results.unwrap_or_default(),
-                next_token: self.next_token,
-                name: self.name,
-            })
+        pub fn build(self) -> Result<crate::input::ListTemplatesInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListTemplatesInput {
+                    max_results: self.max_results
+                        .unwrap_or_default()
+                    ,
+                    next_token: self.next_token
+                    ,
+                    name: self.name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListTemplatesInput {
     /// Consumes the builder and constructs an Operation<[`ListTemplates`](crate::operation::ListTemplates)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListTemplates,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListTemplates, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListTemplatesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListTemplatesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/migrationworkflowtemplates").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListTemplatesInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::ListTemplatesInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if _input.max_results != 0 {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
+                    query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
                 }
                 if let Some(inner_21) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_21));
@@ -2601,12 +1893,10 @@ impl ListTemplatesInput {
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListTemplatesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListTemplatesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2616,54 +1906,37 @@ impl ListTemplatesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListTemplates::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListTemplates",
-            "migrationhuborchestrator",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListTemplates::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListTemplates", "migrationhuborchestrator"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2675,9 +1948,9 @@ impl ListTemplatesInput {
 
 /// See [`ListTemplateStepGroupsInput`](crate::input::ListTemplateStepGroupsInput).
 pub mod list_template_step_groups_input {
-
+    
     /// A builder for [`ListTemplateStepGroupsInput`](crate::input::ListTemplateStepGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2691,8 +1964,7 @@ pub mod list_template_step_groups_input {
         }
         /// <p>The maximum number of results that can be returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2701,8 +1973,7 @@ pub mod list_template_step_groups_input {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The ID of the template.</p>
         pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2711,86 +1982,54 @@ pub mod list_template_step_groups_input {
         }
         /// <p>The ID of the template.</p>
         pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template_id = input;
-            self
+            self.template_id = input; self
         }
         /// Consumes the builder and constructs a [`ListTemplateStepGroupsInput`](crate::input::ListTemplateStepGroupsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListTemplateStepGroupsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::ListTemplateStepGroupsInput {
-                max_results: self.max_results.unwrap_or_default(),
-                next_token: self.next_token,
-                template_id: self.template_id,
-            })
+        pub fn build(self) -> Result<crate::input::ListTemplateStepGroupsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListTemplateStepGroupsInput {
+                    max_results: self.max_results
+                        .unwrap_or_default()
+                    ,
+                    next_token: self.next_token
+                    ,
+                    template_id: self.template_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListTemplateStepGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListTemplateStepGroups`](crate::operation::ListTemplateStepGroups)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListTemplateStepGroups,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListTemplateStepGroups, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListTemplateStepGroupsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListTemplateStepGroupsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_23 = &_input.template_id;
-                let input_23 = input_23.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "template_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_23 = input_23.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "template_id", details: "cannot be empty or unset" })?;
                 let template_id = aws_smithy_http::label::fmt_string(input_23, false);
                 if template_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "template_id",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/templatestepgroups/{templateId}",
-                    templateId = template_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "template_id", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/templatestepgroups/{templateId}", templateId = template_id).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListTemplateStepGroupsInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::ListTemplateStepGroupsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if _input.max_results != 0 {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
+                    query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
                 }
                 if let Some(inner_24) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_24));
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListTemplateStepGroupsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListTemplateStepGroupsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2800,54 +2039,37 @@ impl ListTemplateStepGroupsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListTemplateStepGroups::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListTemplateStepGroups",
-            "migrationhuborchestrator",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListTemplateStepGroups::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListTemplateStepGroups", "migrationhuborchestrator"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2859,9 +2081,9 @@ impl ListTemplateStepGroupsInput {
 
 /// See [`ListTemplateStepsInput`](crate::input::ListTemplateStepsInput).
 pub mod list_template_steps_input {
-
+    
     /// A builder for [`ListTemplateStepsInput`](crate::input::ListTemplateStepsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2876,8 +2098,7 @@ pub mod list_template_steps_input {
         }
         /// <p>The maximum number of results that can be returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2886,8 +2107,7 @@ pub mod list_template_steps_input {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The ID of the template.</p>
         pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2896,8 +2116,7 @@ pub mod list_template_steps_input {
         }
         /// <p>The ID of the template.</p>
         pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template_id = input;
-            self
+            self.template_id = input; self
         }
         /// <p>The ID of the step group.</p>
         pub fn step_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2905,60 +2124,41 @@ pub mod list_template_steps_input {
             self
         }
         /// <p>The ID of the step group.</p>
-        pub fn set_step_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.step_group_id = input;
-            self
+        pub fn set_step_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.step_group_id = input; self
         }
         /// Consumes the builder and constructs a [`ListTemplateStepsInput`](crate::input::ListTemplateStepsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListTemplateStepsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::ListTemplateStepsInput {
-                max_results: self.max_results.unwrap_or_default(),
-                next_token: self.next_token,
-                template_id: self.template_id,
-                step_group_id: self.step_group_id,
-            })
+        pub fn build(self) -> Result<crate::input::ListTemplateStepsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListTemplateStepsInput {
+                    max_results: self.max_results
+                        .unwrap_or_default()
+                    ,
+                    next_token: self.next_token
+                    ,
+                    template_id: self.template_id
+                    ,
+                    step_group_id: self.step_group_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListTemplateStepsInput {
     /// Consumes the builder and constructs an Operation<[`ListTemplateSteps`](crate::operation::ListTemplateSteps)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListTemplateSteps,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListTemplateSteps, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListTemplateStepsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListTemplateStepsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/templatesteps").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListTemplateStepsInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::ListTemplateStepsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if _input.max_results != 0 {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
+                    query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
                 }
                 if let Some(inner_25) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_25));
@@ -2967,19 +2167,14 @@ impl ListTemplateStepsInput {
                     query.push_kv("templateId", &aws_smithy_http::query::fmt_string(&inner_26));
                 }
                 if let Some(inner_27) = &_input.step_group_id {
-                    query.push_kv(
-                        "stepGroupId",
-                        &aws_smithy_http::query::fmt_string(&inner_27),
-                    );
+                    query.push_kv("stepGroupId", &aws_smithy_http::query::fmt_string(&inner_27));
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListTemplateStepsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListTemplateStepsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2989,54 +2184,37 @@ impl ListTemplateStepsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListTemplateSteps::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListTemplateSteps",
-            "migrationhuborchestrator",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListTemplateSteps::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListTemplateSteps", "migrationhuborchestrator"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3048,9 +2226,9 @@ impl ListTemplateStepsInput {
 
 /// See [`ListWorkflowsInput`](crate::input::ListWorkflowsInput).
 pub mod list_workflows_input {
-
+    
     /// A builder for [`ListWorkflowsInput`](crate::input::ListWorkflowsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3067,8 +2245,7 @@ pub mod list_workflows_input {
         }
         /// <p>The maximum number of results that can be returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3077,8 +2254,7 @@ pub mod list_workflows_input {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The ID of the template.</p>
         pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3087,24 +2263,16 @@ pub mod list_workflows_input {
         }
         /// <p>The ID of the template.</p>
         pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template_id = input;
-            self
+            self.template_id = input; self
         }
         /// <p>The name of the application configured in Application Discovery Service.</p>
-        pub fn ads_application_configuration_name(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn ads_application_configuration_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.ads_application_configuration_name = Some(input.into());
             self
         }
         /// <p>The name of the application configured in Application Discovery Service.</p>
-        pub fn set_ads_application_configuration_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ads_application_configuration_name = input;
-            self
+        pub fn set_ads_application_configuration_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ads_application_configuration_name = input; self
         }
         /// <p>The status of the migration workflow.</p>
         pub fn status(mut self, input: crate::model::MigrationWorkflowStatusEnum) -> Self {
@@ -3112,12 +2280,8 @@ pub mod list_workflows_input {
             self
         }
         /// <p>The status of the migration workflow.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::MigrationWorkflowStatusEnum>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::MigrationWorkflowStatusEnum>) -> Self {
+            self.status = input; self
         }
         /// <p>The name of the migration workflow.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3126,58 +2290,44 @@ pub mod list_workflows_input {
         }
         /// <p>The name of the migration workflow.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`ListWorkflowsInput`](crate::input::ListWorkflowsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListWorkflowsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::ListWorkflowsInput {
-                max_results: self.max_results.unwrap_or_default(),
-                next_token: self.next_token,
-                template_id: self.template_id,
-                ads_application_configuration_name: self.ads_application_configuration_name,
-                status: self.status,
-                name: self.name,
-            })
+        pub fn build(self) -> Result<crate::input::ListWorkflowsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListWorkflowsInput {
+                    max_results: self.max_results
+                        .unwrap_or_default()
+                    ,
+                    next_token: self.next_token
+                    ,
+                    template_id: self.template_id
+                    ,
+                    ads_application_configuration_name: self.ads_application_configuration_name
+                    ,
+                    status: self.status
+                    ,
+                    name: self.name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListWorkflowsInput {
     /// Consumes the builder and constructs an Operation<[`ListWorkflows`](crate::operation::ListWorkflows)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListWorkflows,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListWorkflows, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListWorkflowsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListWorkflowsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/migrationworkflows").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListWorkflowsInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::ListWorkflowsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if _input.max_results != 0 {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
+                    query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
                 }
                 if let Some(inner_28) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_28));
@@ -3186,10 +2336,7 @@ impl ListWorkflowsInput {
                     query.push_kv("templateId", &aws_smithy_http::query::fmt_string(&inner_29));
                 }
                 if let Some(inner_30) = &_input.ads_application_configuration_name {
-                    query.push_kv(
-                        "adsApplicationConfigurationName",
-                        &aws_smithy_http::query::fmt_string(&inner_30),
-                    );
+                    query.push_kv("adsApplicationConfigurationName", &aws_smithy_http::query::fmt_string(&inner_30));
                 }
                 if let Some(inner_31) = &_input.status {
                     query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_31));
@@ -3199,12 +2346,10 @@ impl ListWorkflowsInput {
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListWorkflowsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListWorkflowsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3214,54 +2359,37 @@ impl ListWorkflowsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListWorkflows::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListWorkflows",
-            "migrationhuborchestrator",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListWorkflows::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListWorkflows", "migrationhuborchestrator"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3273,9 +2401,9 @@ impl ListWorkflowsInput {
 
 /// See [`ListWorkflowStepGroupsInput`](crate::input::ListWorkflowStepGroupsInput).
 pub mod list_workflow_step_groups_input {
-
+    
     /// A builder for [`ListWorkflowStepGroupsInput`](crate::input::ListWorkflowStepGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3289,8 +2417,7 @@ pub mod list_workflow_step_groups_input {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum number of results that can be returned.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -3299,8 +2426,7 @@ pub mod list_workflow_step_groups_input {
         }
         /// <p>The maximum number of results that can be returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>The ID of the migration workflow.</p>
         pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3309,70 +2435,51 @@ pub mod list_workflow_step_groups_input {
         }
         /// <p>The ID of the migration workflow.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workflow_id = input;
-            self
+            self.workflow_id = input; self
         }
         /// Consumes the builder and constructs a [`ListWorkflowStepGroupsInput`](crate::input::ListWorkflowStepGroupsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListWorkflowStepGroupsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::ListWorkflowStepGroupsInput {
-                next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
-                workflow_id: self.workflow_id,
-            })
+        pub fn build(self) -> Result<crate::input::ListWorkflowStepGroupsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListWorkflowStepGroupsInput {
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                        .unwrap_or_default()
+                    ,
+                    workflow_id: self.workflow_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListWorkflowStepGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListWorkflowStepGroups`](crate::operation::ListWorkflowStepGroups)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListWorkflowStepGroups,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListWorkflowStepGroups, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListWorkflowStepGroupsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListWorkflowStepGroupsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/workflowstepgroups").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListWorkflowStepGroupsInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::ListWorkflowStepGroupsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_33) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_33));
                 }
                 if _input.max_results != 0 {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
+                    query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
                 }
                 if let Some(inner_34) = &_input.workflow_id {
                     query.push_kv("workflowId", &aws_smithy_http::query::fmt_string(&inner_34));
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListWorkflowStepGroupsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListWorkflowStepGroupsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3382,54 +2489,37 @@ impl ListWorkflowStepGroupsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListWorkflowStepGroups::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListWorkflowStepGroups",
-            "migrationhuborchestrator",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListWorkflowStepGroups::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListWorkflowStepGroups", "migrationhuborchestrator"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3441,9 +2531,9 @@ impl ListWorkflowStepGroupsInput {
 
 /// See [`ListWorkflowStepsInput`](crate::input::ListWorkflowStepsInput).
 pub mod list_workflow_steps_input {
-
+    
     /// A builder for [`ListWorkflowStepsInput`](crate::input::ListWorkflowStepsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3458,8 +2548,7 @@ pub mod list_workflow_steps_input {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum number of results that can be returned.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -3468,8 +2557,7 @@ pub mod list_workflow_steps_input {
         }
         /// <p>The maximum number of results that can be returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>The ID of the migration workflow.</p>
         pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3478,8 +2566,7 @@ pub mod list_workflow_steps_input {
         }
         /// <p>The ID of the migration workflow.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workflow_id = input;
-            self
+            self.workflow_id = input; self
         }
         /// <p>The ID of the step group.</p>
         pub fn step_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3487,106 +2574,63 @@ pub mod list_workflow_steps_input {
             self
         }
         /// <p>The ID of the step group.</p>
-        pub fn set_step_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.step_group_id = input;
-            self
+        pub fn set_step_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.step_group_id = input; self
         }
         /// Consumes the builder and constructs a [`ListWorkflowStepsInput`](crate::input::ListWorkflowStepsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListWorkflowStepsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::ListWorkflowStepsInput {
-                next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
-                workflow_id: self.workflow_id,
-                step_group_id: self.step_group_id,
-            })
+        pub fn build(self) -> Result<crate::input::ListWorkflowStepsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListWorkflowStepsInput {
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                        .unwrap_or_default()
+                    ,
+                    workflow_id: self.workflow_id
+                    ,
+                    step_group_id: self.step_group_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListWorkflowStepsInput {
     /// Consumes the builder and constructs an Operation<[`ListWorkflowSteps`](crate::operation::ListWorkflowSteps)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListWorkflowSteps,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListWorkflowSteps, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListWorkflowStepsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListWorkflowStepsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_35 = &_input.workflow_id;
-                let input_35 = input_35.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workflow_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_35 = input_35.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workflow_id", details: "cannot be empty or unset" })?;
                 let workflow_id = aws_smithy_http::label::fmt_string(input_35, false);
                 if workflow_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workflow_id",
-                        details: "cannot be empty or unset",
-                    });
-                }
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workflow_id", details: "cannot be empty or unset" })
+                            }
                 let input_36 = &_input.step_group_id;
-                let input_36 = input_36.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "step_group_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_36 = input_36.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "step_group_id", details: "cannot be empty or unset" })?;
                 let step_group_id = aws_smithy_http::label::fmt_string(input_36, false);
                 if step_group_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "step_group_id",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/workflow/{workflowId}/workflowstepgroups/{stepGroupId}/workflowsteps",
-                    workflowId = workflow_id,
-                    stepGroupId = step_group_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "step_group_id", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/workflow/{workflowId}/workflowstepgroups/{stepGroupId}/workflowsteps", workflowId = workflow_id, stepGroupId = step_group_id).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListWorkflowStepsInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::ListWorkflowStepsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_37) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_37));
                 }
                 if _input.max_results != 0 {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
+                    query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListWorkflowStepsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListWorkflowStepsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3596,54 +2640,37 @@ impl ListWorkflowStepsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListWorkflowSteps::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListWorkflowSteps",
-            "migrationhuborchestrator",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListWorkflowSteps::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListWorkflowSteps", "migrationhuborchestrator"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3655,9 +2682,9 @@ impl ListWorkflowStepsInput {
 
 /// See [`RetryWorkflowStepInput`](crate::input::RetryWorkflowStepInput).
 pub mod retry_workflow_step_input {
-
+    
     /// A builder for [`RetryWorkflowStepInput`](crate::input::RetryWorkflowStepInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
         pub(crate) step_group_id: std::option::Option<std::string::String>,
@@ -3671,8 +2698,7 @@ pub mod retry_workflow_step_input {
         }
         /// <p>The ID of the migration workflow.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workflow_id = input;
-            self
+            self.workflow_id = input; self
         }
         /// <p>The ID of the step group.</p>
         pub fn step_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3680,12 +2706,8 @@ pub mod retry_workflow_step_input {
             self
         }
         /// <p>The ID of the step group.</p>
-        pub fn set_step_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.step_group_id = input;
-            self
+        pub fn set_step_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.step_group_id = input; self
         }
         /// <p>The ID of the step.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3694,82 +2716,53 @@ pub mod retry_workflow_step_input {
         }
         /// <p>The ID of the step.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`RetryWorkflowStepInput`](crate::input::RetryWorkflowStepInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::RetryWorkflowStepInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::RetryWorkflowStepInput {
-                workflow_id: self.workflow_id,
-                step_group_id: self.step_group_id,
-                id: self.id,
-            })
+        pub fn build(self) -> Result<crate::input::RetryWorkflowStepInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::RetryWorkflowStepInput {
+                    workflow_id: self.workflow_id
+                    ,
+                    step_group_id: self.step_group_id
+                    ,
+                    id: self.id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl RetryWorkflowStepInput {
     /// Consumes the builder and constructs an Operation<[`RetryWorkflowStep`](crate::operation::RetryWorkflowStep)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::RetryWorkflowStep,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::RetryWorkflowStep, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::RetryWorkflowStepInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::RetryWorkflowStepInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_38 = &_input.id;
-                let input_38 = input_38.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_38 = input_38.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })?;
                 let id = aws_smithy_http::label::fmt_string(input_38, false);
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(output, "/retryworkflowstep/{id}", id = id)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/retryworkflowstep/{id}", id = id).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::RetryWorkflowStepInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::RetryWorkflowStepInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_39) = &_input.workflow_id {
                     query.push_kv("workflowId", &aws_smithy_http::query::fmt_string(&inner_39));
                 }
                 if let Some(inner_40) = &_input.step_group_id {
-                    query.push_kv(
-                        "stepGroupId",
-                        &aws_smithy_http::query::fmt_string(&inner_40),
-                    );
+                    query.push_kv("stepGroupId", &aws_smithy_http::query::fmt_string(&inner_40));
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::RetryWorkflowStepInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::RetryWorkflowStepInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3779,54 +2772,37 @@ impl RetryWorkflowStepInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::RetryWorkflowStep::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "RetryWorkflowStep",
-            "migrationhuborchestrator",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::RetryWorkflowStep::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("RetryWorkflowStep", "migrationhuborchestrator"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3838,9 +2814,9 @@ impl RetryWorkflowStepInput {
 
 /// See [`StartWorkflowInput`](crate::input::StartWorkflowInput).
 pub mod start_workflow_input {
-
+    
     /// A builder for [`StartWorkflowInput`](crate::input::StartWorkflowInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -3852,62 +2828,39 @@ pub mod start_workflow_input {
         }
         /// <p>The ID of the migration workflow.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`StartWorkflowInput`](crate::input::StartWorkflowInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::StartWorkflowInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::StartWorkflowInput { id: self.id })
+        pub fn build(self) -> Result<crate::input::StartWorkflowInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::StartWorkflowInput {
+                    id: self.id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl StartWorkflowInput {
     /// Consumes the builder and constructs an Operation<[`StartWorkflow`](crate::operation::StartWorkflow)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::StartWorkflow,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::StartWorkflow, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::StartWorkflowInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::StartWorkflowInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_41 = &_input.id;
-                let input_41 = input_41.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_41 = input_41.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })?;
                 let id = aws_smithy_http::label::fmt_string(input_41, false);
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(output, "/migrationworkflow/{id}/start", id = id)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/migrationworkflow/{id}/start", id = id).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::StartWorkflowInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::StartWorkflowInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3916,54 +2869,37 @@ impl StartWorkflowInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::StartWorkflow::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "StartWorkflow",
-            "migrationhuborchestrator",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::StartWorkflow::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("StartWorkflow", "migrationhuborchestrator"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3975,9 +2911,9 @@ impl StartWorkflowInput {
 
 /// See [`StopWorkflowInput`](crate::input::StopWorkflowInput).
 pub mod stop_workflow_input {
-
+    
     /// A builder for [`StopWorkflowInput`](crate::input::StopWorkflowInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -3989,62 +2925,39 @@ pub mod stop_workflow_input {
         }
         /// <p>The ID of the migration workflow.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`StopWorkflowInput`](crate::input::StopWorkflowInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::StopWorkflowInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::StopWorkflowInput { id: self.id })
+        pub fn build(self) -> Result<crate::input::StopWorkflowInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::StopWorkflowInput {
+                    id: self.id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl StopWorkflowInput {
     /// Consumes the builder and constructs an Operation<[`StopWorkflow`](crate::operation::StopWorkflow)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::StopWorkflow,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::StopWorkflow, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::StopWorkflowInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::StopWorkflowInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_42 = &_input.id;
-                let input_42 = input_42.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_42 = input_42.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })?;
                 let id = aws_smithy_http::label::fmt_string(input_42, false);
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(output, "/migrationworkflow/{id}/stop", id = id)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/migrationworkflow/{id}/stop", id = id).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::StopWorkflowInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::StopWorkflowInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4053,54 +2966,37 @@ impl StopWorkflowInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::StopWorkflow::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "StopWorkflow",
-            "migrationhuborchestrator",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::StopWorkflow::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("StopWorkflow", "migrationhuborchestrator"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4112,14 +3008,12 @@ impl StopWorkflowInput {
 
 /// See [`TagResourceInput`](crate::input::TagResourceInput).
 pub mod tag_resource_input {
-
+    
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the resource to which you want to add tags.</p>
@@ -4129,160 +3023,99 @@ pub mod tag_resource_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to which you want to add tags.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::TagResourceInput {
-                resource_arn: self.resource_arn,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::TagResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::TagResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::TagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::TagResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_43 = &_input.resource_arn;
-                let input_43 = input_43.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_43 = input_43.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
                 let resource_arn = aws_smithy_http::label::fmt_string(input_43, false);
                 if resource_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::TagResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::TagResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::TagResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "TagResource",
-            "migrationhuborchestrator",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("TagResource", "migrationhuborchestrator"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4294,9 +3127,9 @@ impl TagResourceInput {
 
 /// See [`UntagResourceInput`](crate::input::UntagResourceInput).
 pub mod untag_resource_input {
-
+    
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4309,8 +3142,7 @@ pub mod untag_resource_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource from which you want to remove tags.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Appends an item to `tag_keys`.
         ///
@@ -4319,72 +3151,44 @@ pub mod untag_resource_input {
         /// <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-            v.push(input.into());
-            self.tag_keys = Some(v);
-            self
+                            v.push(input.into());
+                            self.tag_keys = Some(v);
+                            self
         }
         /// <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
-        pub fn set_tag_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.tag_keys = input;
-            self
+        pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.tag_keys = input; self
         }
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::UntagResourceInput {
-                resource_arn: self.resource_arn,
-                tag_keys: self.tag_keys,
-            })
+        pub fn build(self) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::UntagResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                    tag_keys: self.tag_keys
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UntagResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UntagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UntagResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_44 = &_input.resource_arn;
-                let input_44 = input_44.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_44 = input_44.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
                 let resource_arn = aws_smithy_http::label::fmt_string(input_44, false);
                 if resource_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::UntagResourceInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_45) = &_input.tag_keys {
                     for inner_46 in inner_45 {
@@ -4393,12 +3197,10 @@ impl UntagResourceInput {
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::UntagResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::UntagResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4408,54 +3210,37 @@ impl UntagResourceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UntagResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UntagResource",
-            "migrationhuborchestrator",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UntagResource", "migrationhuborchestrator"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4467,16 +3252,14 @@ impl UntagResourceInput {
 
 /// See [`UpdateWorkflowInput`](crate::input::UpdateWorkflowInput).
 pub mod update_workflow_input {
-
+    
     /// A builder for [`UpdateWorkflowInput`](crate::input::UpdateWorkflowInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) input_parameters: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::StepInput>,
-        >,
+        pub(crate) input_parameters: std::option::Option<std::collections::HashMap<std::string::String, crate::model::StepInput>>,
         pub(crate) step_targets: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
@@ -4487,8 +3270,7 @@ pub mod update_workflow_input {
         }
         /// <p>The ID of the migration workflow.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the migration workflow.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4497,8 +3279,7 @@ pub mod update_workflow_input {
         }
         /// <p>The name of the migration workflow.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the migration workflow.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4507,33 +3288,22 @@ pub mod update_workflow_input {
         }
         /// <p>The description of the migration workflow.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Adds a key-value pair to `input_parameters`.
         ///
         /// To override the contents of this collection use [`set_input_parameters`](Self::set_input_parameters).
         ///
         /// <p>The input parameters required to update a migration workflow.</p>
-        pub fn input_parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::StepInput,
-        ) -> Self {
+        pub fn input_parameters(mut self, k: impl Into<std::string::String>, v: crate::model::StepInput) -> Self {
             let mut hash_map = self.input_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.input_parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.input_parameters = Some(hash_map);
+                            self
         }
         /// <p>The input parameters required to update a migration workflow.</p>
-        pub fn set_input_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::StepInput>,
-            >,
-        ) -> Self {
-            self.input_parameters = input;
-            self
+        pub fn set_input_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::StepInput>>) -> Self {
+            self.input_parameters = input; self
         }
         /// Appends an item to `step_targets`.
         ///
@@ -4542,147 +3312,96 @@ pub mod update_workflow_input {
         /// <p>The servers on which a step will be run.</p>
         pub fn step_targets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.step_targets.unwrap_or_default();
-            v.push(input.into());
-            self.step_targets = Some(v);
-            self
+                            v.push(input.into());
+                            self.step_targets = Some(v);
+                            self
         }
         /// <p>The servers on which a step will be run.</p>
-        pub fn set_step_targets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.step_targets = input;
-            self
+        pub fn set_step_targets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.step_targets = input; self
         }
         /// Consumes the builder and constructs a [`UpdateWorkflowInput`](crate::input::UpdateWorkflowInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UpdateWorkflowInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::UpdateWorkflowInput {
-                id: self.id,
-                name: self.name,
-                description: self.description,
-                input_parameters: self.input_parameters,
-                step_targets: self.step_targets,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateWorkflowInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::UpdateWorkflowInput {
+                    id: self.id
+                    ,
+                    name: self.name
+                    ,
+                    description: self.description
+                    ,
+                    input_parameters: self.input_parameters
+                    ,
+                    step_targets: self.step_targets
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateWorkflowInput {
     /// Consumes the builder and constructs an Operation<[`UpdateWorkflow`](crate::operation::UpdateWorkflow)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateWorkflow,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateWorkflow, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateWorkflowInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateWorkflowInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_47 = &_input.id;
-                let input_47 = input_47.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_47 = input_47.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })?;
                 let id = aws_smithy_http::label::fmt_string(input_47, false);
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(output, "/migrationworkflow/{id}", id = id)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/migrationworkflow/{id}", id = id).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::UpdateWorkflowInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::UpdateWorkflowInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_workflow(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_workflow(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateWorkflow::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateWorkflow",
-            "migrationhuborchestrator",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateWorkflow::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateWorkflow", "migrationhuborchestrator"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4694,9 +3413,9 @@ impl UpdateWorkflowInput {
 
 /// See [`UpdateWorkflowStepInput`](crate::input::UpdateWorkflowStepInput).
 pub mod update_workflow_step_input {
-
+    
     /// A builder for [`UpdateWorkflowStepInput`](crate::input::UpdateWorkflowStepInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) step_group_id: std::option::Option<std::string::String>,
@@ -4704,8 +3423,7 @@ pub mod update_workflow_step_input {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) step_action_type: std::option::Option<crate::model::StepActionType>,
-        pub(crate) workflow_step_automation_configuration:
-            std::option::Option<crate::model::WorkflowStepAutomationConfiguration>,
+        pub(crate) workflow_step_automation_configuration: std::option::Option<crate::model::WorkflowStepAutomationConfiguration>,
         pub(crate) step_target: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) outputs: std::option::Option<std::vec::Vec<crate::model::WorkflowStepOutput>>,
         pub(crate) previous: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4720,8 +3438,7 @@ pub mod update_workflow_step_input {
         }
         /// <p>The ID of the step.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The ID of the step group.</p>
         pub fn step_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4729,12 +3446,8 @@ pub mod update_workflow_step_input {
             self
         }
         /// <p>The ID of the step group.</p>
-        pub fn set_step_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.step_group_id = input;
-            self
+        pub fn set_step_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.step_group_id = input; self
         }
         /// <p>The ID of the migration workflow.</p>
         pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4743,8 +3456,7 @@ pub mod update_workflow_step_input {
         }
         /// <p>The ID of the migration workflow.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workflow_id = input;
-            self
+            self.workflow_id = input; self
         }
         /// <p>The name of the step.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4753,8 +3465,7 @@ pub mod update_workflow_step_input {
         }
         /// <p>The name of the step.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the step.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4763,8 +3474,7 @@ pub mod update_workflow_step_input {
         }
         /// <p>The description of the step.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
         pub fn step_action_type(mut self, input: crate::model::StepActionType) -> Self {
@@ -4772,28 +3482,17 @@ pub mod update_workflow_step_input {
             self
         }
         /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
-        pub fn set_step_action_type(
-            mut self,
-            input: std::option::Option<crate::model::StepActionType>,
-        ) -> Self {
-            self.step_action_type = input;
-            self
+        pub fn set_step_action_type(mut self, input: std::option::Option<crate::model::StepActionType>) -> Self {
+            self.step_action_type = input; self
         }
         /// <p>The custom script to run tests on the source and target environments.</p>
-        pub fn workflow_step_automation_configuration(
-            mut self,
-            input: crate::model::WorkflowStepAutomationConfiguration,
-        ) -> Self {
+        pub fn workflow_step_automation_configuration(mut self, input: crate::model::WorkflowStepAutomationConfiguration) -> Self {
             self.workflow_step_automation_configuration = Some(input);
             self
         }
         /// <p>The custom script to run tests on the source and target environments.</p>
-        pub fn set_workflow_step_automation_configuration(
-            mut self,
-            input: std::option::Option<crate::model::WorkflowStepAutomationConfiguration>,
-        ) -> Self {
-            self.workflow_step_automation_configuration = input;
-            self
+        pub fn set_workflow_step_automation_configuration(mut self, input: std::option::Option<crate::model::WorkflowStepAutomationConfiguration>) -> Self {
+            self.workflow_step_automation_configuration = input; self
         }
         /// Appends an item to `step_target`.
         ///
@@ -4802,17 +3501,13 @@ pub mod update_workflow_step_input {
         /// <p>The servers on which a step will be run.</p>
         pub fn step_target(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.step_target.unwrap_or_default();
-            v.push(input.into());
-            self.step_target = Some(v);
-            self
+                            v.push(input.into());
+                            self.step_target = Some(v);
+                            self
         }
         /// <p>The servers on which a step will be run.</p>
-        pub fn set_step_target(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.step_target = input;
-            self
+        pub fn set_step_target(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.step_target = input; self
         }
         /// Appends an item to `outputs`.
         ///
@@ -4821,17 +3516,13 @@ pub mod update_workflow_step_input {
         /// <p>The outputs of a step.</p>
         pub fn outputs(mut self, input: crate::model::WorkflowStepOutput) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input);
-            self.outputs = Some(v);
-            self
+                            v.push(input);
+                            self.outputs = Some(v);
+                            self
         }
         /// <p>The outputs of a step.</p>
-        pub fn set_outputs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::WorkflowStepOutput>>,
-        ) -> Self {
-            self.outputs = input;
-            self
+        pub fn set_outputs(mut self, input: std::option::Option<std::vec::Vec<crate::model::WorkflowStepOutput>>) -> Self {
+            self.outputs = input; self
         }
         /// Appends an item to `previous`.
         ///
@@ -4840,17 +3531,13 @@ pub mod update_workflow_step_input {
         /// <p>The previous step.</p>
         pub fn previous(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.previous.unwrap_or_default();
-            v.push(input.into());
-            self.previous = Some(v);
-            self
+                            v.push(input.into());
+                            self.previous = Some(v);
+                            self
         }
         /// <p>The previous step.</p>
-        pub fn set_previous(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.previous = input;
-            self
+        pub fn set_previous(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.previous = input; self
         }
         /// Appends an item to `next`.
         ///
@@ -4859,17 +3546,13 @@ pub mod update_workflow_step_input {
         /// <p>The next step.</p>
         pub fn next(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.next.unwrap_or_default();
-            v.push(input.into());
-            self.next = Some(v);
-            self
+                            v.push(input.into());
+                            self.next = Some(v);
+                            self
         }
         /// <p>The next step.</p>
-        pub fn set_next(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.next = input;
-            self
+        pub fn set_next(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.next = input; self
         }
         /// <p>The status of the step.</p>
         pub fn status(mut self, input: crate::model::StepStatus) -> Self {
@@ -4878,144 +3561,104 @@ pub mod update_workflow_step_input {
         }
         /// <p>The status of the step.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::StepStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`UpdateWorkflowStepInput`](crate::input::UpdateWorkflowStepInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UpdateWorkflowStepInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::UpdateWorkflowStepInput {
-                id: self.id,
-                step_group_id: self.step_group_id,
-                workflow_id: self.workflow_id,
-                name: self.name,
-                description: self.description,
-                step_action_type: self.step_action_type,
-                workflow_step_automation_configuration: self.workflow_step_automation_configuration,
-                step_target: self.step_target,
-                outputs: self.outputs,
-                previous: self.previous,
-                next: self.next,
-                status: self.status,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateWorkflowStepInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::UpdateWorkflowStepInput {
+                    id: self.id
+                    ,
+                    step_group_id: self.step_group_id
+                    ,
+                    workflow_id: self.workflow_id
+                    ,
+                    name: self.name
+                    ,
+                    description: self.description
+                    ,
+                    step_action_type: self.step_action_type
+                    ,
+                    workflow_step_automation_configuration: self.workflow_step_automation_configuration
+                    ,
+                    step_target: self.step_target
+                    ,
+                    outputs: self.outputs
+                    ,
+                    previous: self.previous
+                    ,
+                    next: self.next
+                    ,
+                    status: self.status
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateWorkflowStepInput {
     /// Consumes the builder and constructs an Operation<[`UpdateWorkflowStep`](crate::operation::UpdateWorkflowStep)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateWorkflowStep,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateWorkflowStep, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateWorkflowStepInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateWorkflowStepInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_48 = &_input.id;
-                let input_48 = input_48.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_48 = input_48.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })?;
                 let id = aws_smithy_http::label::fmt_string(input_48, false);
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
-                }
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })
+                            }
                 write!(output, "/workflowstep/{id}", id = id).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::UpdateWorkflowStepInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::UpdateWorkflowStepInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_workflow_step(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_workflow_step(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateWorkflowStep::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateWorkflowStep",
-            "migrationhuborchestrator",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateWorkflowStep::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateWorkflowStep", "migrationhuborchestrator"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5027,9 +3670,9 @@ impl UpdateWorkflowStepInput {
 
 /// See [`UpdateWorkflowStepGroupInput`](crate::input::UpdateWorkflowStepGroupInput).
 pub mod update_workflow_step_group_input {
-
+    
     /// A builder for [`UpdateWorkflowStepGroupInput`](crate::input::UpdateWorkflowStepGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5046,8 +3689,7 @@ pub mod update_workflow_step_group_input {
         }
         /// <p>The ID of the migration workflow.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workflow_id = input;
-            self
+            self.workflow_id = input; self
         }
         /// <p>The ID of the step group.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5056,8 +3698,7 @@ pub mod update_workflow_step_group_input {
         }
         /// <p>The ID of the step group.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the step group.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5066,8 +3707,7 @@ pub mod update_workflow_step_group_input {
         }
         /// <p>The name of the step group.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the step group.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5076,8 +3716,7 @@ pub mod update_workflow_step_group_input {
         }
         /// <p>The description of the step group.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Appends an item to `next`.
         ///
@@ -5086,17 +3725,13 @@ pub mod update_workflow_step_group_input {
         /// <p>The next step group.</p>
         pub fn next(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.next.unwrap_or_default();
-            v.push(input.into());
-            self.next = Some(v);
-            self
+                            v.push(input.into());
+                            self.next = Some(v);
+                            self
         }
         /// <p>The next step group.</p>
-        pub fn set_next(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.next = input;
-            self
+        pub fn set_next(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.next = input; self
         }
         /// Appends an item to `previous`.
         ///
@@ -5105,163 +3740,106 @@ pub mod update_workflow_step_group_input {
         /// <p>The previous step group.</p>
         pub fn previous(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.previous.unwrap_or_default();
-            v.push(input.into());
-            self.previous = Some(v);
-            self
+                            v.push(input.into());
+                            self.previous = Some(v);
+                            self
         }
         /// <p>The previous step group.</p>
-        pub fn set_previous(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.previous = input;
-            self
+        pub fn set_previous(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.previous = input; self
         }
         /// Consumes the builder and constructs a [`UpdateWorkflowStepGroupInput`](crate::input::UpdateWorkflowStepGroupInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::UpdateWorkflowStepGroupInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::UpdateWorkflowStepGroupInput {
-                workflow_id: self.workflow_id,
-                id: self.id,
-                name: self.name,
-                description: self.description,
-                next: self.next,
-                previous: self.previous,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateWorkflowStepGroupInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::UpdateWorkflowStepGroupInput {
+                    workflow_id: self.workflow_id
+                    ,
+                    id: self.id
+                    ,
+                    name: self.name
+                    ,
+                    description: self.description
+                    ,
+                    next: self.next
+                    ,
+                    previous: self.previous
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateWorkflowStepGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateWorkflowStepGroup`](crate::operation::UpdateWorkflowStepGroup)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateWorkflowStepGroup,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateWorkflowStepGroup, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateWorkflowStepGroupInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateWorkflowStepGroupInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_49 = &_input.id;
-                let input_49 = input_49.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_49 = input_49.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })?;
                 let id = aws_smithy_http::label::fmt_string(input_49, false);
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(output, "/workflowstepgroup/{id}", id = id)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/workflowstepgroup/{id}", id = id).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::UpdateWorkflowStepGroupInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::UpdateWorkflowStepGroupInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_50) = &_input.workflow_id {
                     query.push_kv("workflowId", &aws_smithy_http::query::fmt_string(&inner_50));
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::UpdateWorkflowStepGroupInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::UpdateWorkflowStepGroupInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_workflow_step_group(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_workflow_step_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateWorkflowStepGroup::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateWorkflowStepGroup",
-            "migrationhuborchestrator",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateWorkflowStepGroup::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateWorkflowStepGroup", "migrationhuborchestrator"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5272,22 +3850,18 @@ impl UpdateWorkflowStepGroupInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListWorkflowStepGroupsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListWorkflowStepGroupsInput  {
     /// <p>The pagination token.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results that can be returned.</p>
-    #[doc(hidden)]
-    pub max_results: i32,
+    #[doc(hidden)]pub max_results: i32,
     /// <p>The ID of the migration workflow.</p>
-    #[doc(hidden)]
-    pub workflow_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub workflow_id: std::option::Option<std::string::String>,
 }
 impl ListWorkflowStepGroupsInput {
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results that can be returned.</p>
@@ -5295,11 +3869,11 @@ impl ListWorkflowStepGroupsInput {
         self.max_results
     }
     /// <p>The ID of the migration workflow.</p>
-    pub fn workflow_id(&self) -> std::option::Option<&str> {
+    pub fn workflow_id(&self) -> std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListWorkflowStepGroupsInput {
+impl  std::fmt::Debug for ListWorkflowStepGroupsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListWorkflowStepGroupsInput");
         formatter.field("next_token", &self.next_token);
@@ -5310,48 +3884,42 @@ impl std::fmt::Debug for ListWorkflowStepGroupsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateWorkflowStepGroupInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CreateWorkflowStepGroupInput  {
     /// <p>The ID of the migration workflow that will contain the step group.</p>
-    #[doc(hidden)]
-    pub workflow_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub workflow_id: std::option::Option<std::string::String>,
     /// <p>The name of the step group.</p>
-    #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub name: std::option::Option<std::string::String>,
     /// <p>The description of the step group.</p>
-    #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub description: std::option::Option<std::string::String>,
     /// <p>The next step group.</p>
-    #[doc(hidden)]
-    pub next: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub next: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The previous step group.</p>
-    #[doc(hidden)]
-    pub previous: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub previous: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreateWorkflowStepGroupInput {
     /// <p>The ID of the migration workflow that will contain the step group.</p>
-    pub fn workflow_id(&self) -> std::option::Option<&str> {
+    pub fn workflow_id(&self) -> std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
     /// <p>The name of the step group.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the step group.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The next step group.</p>
-    pub fn next(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn next(&self) -> std::option::Option<& [std::string::String]> {
         self.next.as_deref()
     }
     /// <p>The previous step group.</p>
-    pub fn previous(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn previous(&self) -> std::option::Option<& [std::string::String]> {
         self.previous.as_deref()
     }
 }
-impl std::fmt::Debug for CreateWorkflowStepGroupInput {
+impl  std::fmt::Debug for CreateWorkflowStepGroupInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateWorkflowStepGroupInput");
         formatter.field("workflow_id", &self.workflow_id);
@@ -5364,27 +3932,24 @@ impl std::fmt::Debug for CreateWorkflowStepGroupInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteWorkflowStepGroupInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DeleteWorkflowStepGroupInput  {
     /// <p>The ID of the migration workflow.</p>
-    #[doc(hidden)]
-    pub workflow_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub workflow_id: std::option::Option<std::string::String>,
     /// <p>The ID of the step group you want to delete.</p>
-    #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub id: std::option::Option<std::string::String>,
 }
 impl DeleteWorkflowStepGroupInput {
     /// <p>The ID of the migration workflow.</p>
-    pub fn workflow_id(&self) -> std::option::Option<&str> {
+    pub fn workflow_id(&self) -> std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
     /// <p>The ID of the step group you want to delete.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteWorkflowStepGroupInput {
+impl  std::fmt::Debug for DeleteWorkflowStepGroupInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteWorkflowStepGroupInput");
         formatter.field("workflow_id", &self.workflow_id);
@@ -5394,55 +3959,48 @@ impl std::fmt::Debug for DeleteWorkflowStepGroupInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateWorkflowStepGroupInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct UpdateWorkflowStepGroupInput  {
     /// <p>The ID of the migration workflow.</p>
-    #[doc(hidden)]
-    pub workflow_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub workflow_id: std::option::Option<std::string::String>,
     /// <p>The ID of the step group.</p>
-    #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub id: std::option::Option<std::string::String>,
     /// <p>The name of the step group.</p>
-    #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub name: std::option::Option<std::string::String>,
     /// <p>The description of the step group.</p>
-    #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub description: std::option::Option<std::string::String>,
     /// <p>The next step group.</p>
-    #[doc(hidden)]
-    pub next: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub next: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The previous step group.</p>
-    #[doc(hidden)]
-    pub previous: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub previous: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateWorkflowStepGroupInput {
     /// <p>The ID of the migration workflow.</p>
-    pub fn workflow_id(&self) -> std::option::Option<&str> {
+    pub fn workflow_id(&self) -> std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
     /// <p>The ID of the step group.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the step group.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the step group.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The next step group.</p>
-    pub fn next(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn next(&self) -> std::option::Option<& [std::string::String]> {
         self.next.as_deref()
     }
     /// <p>The previous step group.</p>
-    pub fn previous(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn previous(&self) -> std::option::Option<& [std::string::String]> {
         self.previous.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateWorkflowStepGroupInput {
+impl  std::fmt::Debug for UpdateWorkflowStepGroupInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateWorkflowStepGroupInput");
         formatter.field("workflow_id", &self.workflow_id);
@@ -5456,27 +4014,24 @@ impl std::fmt::Debug for UpdateWorkflowStepGroupInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetWorkflowStepGroupInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct GetWorkflowStepGroupInput  {
     /// <p>The ID of the step group.</p>
-    #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub id: std::option::Option<std::string::String>,
     /// <p>The ID of the migration workflow.</p>
-    #[doc(hidden)]
-    pub workflow_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub workflow_id: std::option::Option<std::string::String>,
 }
 impl GetWorkflowStepGroupInput {
     /// <p>The ID of the step group.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ID of the migration workflow.</p>
-    pub fn workflow_id(&self) -> std::option::Option<&str> {
+    pub fn workflow_id(&self) -> std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetWorkflowStepGroupInput {
+impl  std::fmt::Debug for GetWorkflowStepGroupInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetWorkflowStepGroupInput");
         formatter.field("id", &self.id);
@@ -5486,34 +4041,30 @@ impl std::fmt::Debug for GetWorkflowStepGroupInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct RetryWorkflowStepInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct RetryWorkflowStepInput  {
     /// <p>The ID of the migration workflow.</p>
-    #[doc(hidden)]
-    pub workflow_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub workflow_id: std::option::Option<std::string::String>,
     /// <p>The ID of the step group.</p>
-    #[doc(hidden)]
-    pub step_group_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub step_group_id: std::option::Option<std::string::String>,
     /// <p>The ID of the step.</p>
-    #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub id: std::option::Option<std::string::String>,
 }
 impl RetryWorkflowStepInput {
     /// <p>The ID of the migration workflow.</p>
-    pub fn workflow_id(&self) -> std::option::Option<&str> {
+    pub fn workflow_id(&self) -> std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
     /// <p>The ID of the step group.</p>
-    pub fn step_group_id(&self) -> std::option::Option<&str> {
+    pub fn step_group_id(&self) -> std::option::Option<& str> {
         self.step_group_id.as_deref()
     }
     /// <p>The ID of the step.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for RetryWorkflowStepInput {
+impl  std::fmt::Debug for RetryWorkflowStepInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RetryWorkflowStepInput");
         formatter.field("workflow_id", &self.workflow_id);
@@ -5524,25 +4075,20 @@ impl std::fmt::Debug for RetryWorkflowStepInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListWorkflowStepsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListWorkflowStepsInput  {
     /// <p>The pagination token.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results that can be returned.</p>
-    #[doc(hidden)]
-    pub max_results: i32,
+    #[doc(hidden)]pub max_results: i32,
     /// <p>The ID of the migration workflow.</p>
-    #[doc(hidden)]
-    pub workflow_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub workflow_id: std::option::Option<std::string::String>,
     /// <p>The ID of the step group.</p>
-    #[doc(hidden)]
-    pub step_group_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub step_group_id: std::option::Option<std::string::String>,
 }
 impl ListWorkflowStepsInput {
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results that can be returned.</p>
@@ -5550,15 +4096,15 @@ impl ListWorkflowStepsInput {
         self.max_results
     }
     /// <p>The ID of the migration workflow.</p>
-    pub fn workflow_id(&self) -> std::option::Option<&str> {
+    pub fn workflow_id(&self) -> std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
     /// <p>The ID of the step group.</p>
-    pub fn step_group_id(&self) -> std::option::Option<&str> {
+    pub fn step_group_id(&self) -> std::option::Option<& str> {
         self.step_group_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListWorkflowStepsInput {
+impl  std::fmt::Debug for ListWorkflowStepsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListWorkflowStepsInput");
         formatter.field("next_token", &self.next_token);
@@ -5570,86 +4116,72 @@ impl std::fmt::Debug for ListWorkflowStepsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateWorkflowStepInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CreateWorkflowStepInput  {
     /// <p>The name of the step.</p>
-    #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the step group.</p>
-    #[doc(hidden)]
-    pub step_group_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub step_group_id: std::option::Option<std::string::String>,
     /// <p>The ID of the migration workflow.</p>
-    #[doc(hidden)]
-    pub workflow_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub workflow_id: std::option::Option<std::string::String>,
     /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
-    #[doc(hidden)]
-    pub step_action_type: std::option::Option<crate::model::StepActionType>,
+    #[doc(hidden)]pub step_action_type: std::option::Option<crate::model::StepActionType>,
     /// <p>The description of the step.</p>
-    #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub description: std::option::Option<std::string::String>,
     /// <p>The custom script to run tests on source or target environments.</p>
-    #[doc(hidden)]
-    pub workflow_step_automation_configuration:
-        std::option::Option<crate::model::WorkflowStepAutomationConfiguration>,
+    #[doc(hidden)]pub workflow_step_automation_configuration: std::option::Option<crate::model::WorkflowStepAutomationConfiguration>,
     /// <p>The servers on which a step will be run.</p>
-    #[doc(hidden)]
-    pub step_target: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub step_target: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The key value pairs added for the expected output.</p>
-    #[doc(hidden)]
-    pub outputs: std::option::Option<std::vec::Vec<crate::model::WorkflowStepOutput>>,
+    #[doc(hidden)]pub outputs: std::option::Option<std::vec::Vec<crate::model::WorkflowStepOutput>>,
     /// <p>The previous step.</p>
-    #[doc(hidden)]
-    pub previous: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub previous: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The next step.</p>
-    #[doc(hidden)]
-    pub next: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub next: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreateWorkflowStepInput {
     /// <p>The name of the step.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the step group.</p>
-    pub fn step_group_id(&self) -> std::option::Option<&str> {
+    pub fn step_group_id(&self) -> std::option::Option<& str> {
         self.step_group_id.as_deref()
     }
     /// <p>The ID of the migration workflow.</p>
-    pub fn workflow_id(&self) -> std::option::Option<&str> {
+    pub fn workflow_id(&self) -> std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
     /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
-    pub fn step_action_type(&self) -> std::option::Option<&crate::model::StepActionType> {
+    pub fn step_action_type(&self) -> std::option::Option<& crate::model::StepActionType> {
         self.step_action_type.as_ref()
     }
     /// <p>The description of the step.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The custom script to run tests on source or target environments.</p>
-    pub fn workflow_step_automation_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::WorkflowStepAutomationConfiguration> {
+    pub fn workflow_step_automation_configuration(&self) -> std::option::Option<& crate::model::WorkflowStepAutomationConfiguration> {
         self.workflow_step_automation_configuration.as_ref()
     }
     /// <p>The servers on which a step will be run.</p>
-    pub fn step_target(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn step_target(&self) -> std::option::Option<& [std::string::String]> {
         self.step_target.as_deref()
     }
     /// <p>The key value pairs added for the expected output.</p>
-    pub fn outputs(&self) -> std::option::Option<&[crate::model::WorkflowStepOutput]> {
+    pub fn outputs(&self) -> std::option::Option<& [crate::model::WorkflowStepOutput]> {
         self.outputs.as_deref()
     }
     /// <p>The previous step.</p>
-    pub fn previous(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn previous(&self) -> std::option::Option<& [std::string::String]> {
         self.previous.as_deref()
     }
     /// <p>The next step.</p>
-    pub fn next(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn next(&self) -> std::option::Option<& [std::string::String]> {
         self.next.as_deref()
     }
 }
-impl std::fmt::Debug for CreateWorkflowStepInput {
+impl  std::fmt::Debug for CreateWorkflowStepInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateWorkflowStepInput");
         formatter.field("name", &self.name);
@@ -5657,10 +4189,7 @@ impl std::fmt::Debug for CreateWorkflowStepInput {
         formatter.field("workflow_id", &self.workflow_id);
         formatter.field("step_action_type", &self.step_action_type);
         formatter.field("description", &self.description);
-        formatter.field(
-            "workflow_step_automation_configuration",
-            &self.workflow_step_automation_configuration,
-        );
+        formatter.field("workflow_step_automation_configuration", &self.workflow_step_automation_configuration);
         formatter.field("step_target", &self.step_target);
         formatter.field("outputs", &self.outputs);
         formatter.field("previous", &self.previous);
@@ -5670,34 +4199,30 @@ impl std::fmt::Debug for CreateWorkflowStepInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteWorkflowStepInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DeleteWorkflowStepInput  {
     /// <p>The ID of the step you want to delete.</p>
-    #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub id: std::option::Option<std::string::String>,
     /// <p>The ID of the step group that contains the step you want to delete.</p>
-    #[doc(hidden)]
-    pub step_group_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub step_group_id: std::option::Option<std::string::String>,
     /// <p>The ID of the migration workflow.</p>
-    #[doc(hidden)]
-    pub workflow_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub workflow_id: std::option::Option<std::string::String>,
 }
 impl DeleteWorkflowStepInput {
     /// <p>The ID of the step you want to delete.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ID of the step group that contains the step you want to delete.</p>
-    pub fn step_group_id(&self) -> std::option::Option<&str> {
+    pub fn step_group_id(&self) -> std::option::Option<& str> {
         self.step_group_id.as_deref()
     }
     /// <p>The ID of the migration workflow.</p>
-    pub fn workflow_id(&self) -> std::option::Option<&str> {
+    pub fn workflow_id(&self) -> std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteWorkflowStepInput {
+impl  std::fmt::Debug for DeleteWorkflowStepInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteWorkflowStepInput");
         formatter.field("id", &self.id);
@@ -5708,100 +4233,84 @@ impl std::fmt::Debug for DeleteWorkflowStepInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateWorkflowStepInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct UpdateWorkflowStepInput  {
     /// <p>The ID of the step.</p>
-    #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub id: std::option::Option<std::string::String>,
     /// <p>The ID of the step group.</p>
-    #[doc(hidden)]
-    pub step_group_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub step_group_id: std::option::Option<std::string::String>,
     /// <p>The ID of the migration workflow.</p>
-    #[doc(hidden)]
-    pub workflow_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub workflow_id: std::option::Option<std::string::String>,
     /// <p>The name of the step.</p>
-    #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub name: std::option::Option<std::string::String>,
     /// <p>The description of the step.</p>
-    #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub description: std::option::Option<std::string::String>,
     /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
-    #[doc(hidden)]
-    pub step_action_type: std::option::Option<crate::model::StepActionType>,
+    #[doc(hidden)]pub step_action_type: std::option::Option<crate::model::StepActionType>,
     /// <p>The custom script to run tests on the source and target environments.</p>
-    #[doc(hidden)]
-    pub workflow_step_automation_configuration:
-        std::option::Option<crate::model::WorkflowStepAutomationConfiguration>,
+    #[doc(hidden)]pub workflow_step_automation_configuration: std::option::Option<crate::model::WorkflowStepAutomationConfiguration>,
     /// <p>The servers on which a step will be run.</p>
-    #[doc(hidden)]
-    pub step_target: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub step_target: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The outputs of a step.</p>
-    #[doc(hidden)]
-    pub outputs: std::option::Option<std::vec::Vec<crate::model::WorkflowStepOutput>>,
+    #[doc(hidden)]pub outputs: std::option::Option<std::vec::Vec<crate::model::WorkflowStepOutput>>,
     /// <p>The previous step.</p>
-    #[doc(hidden)]
-    pub previous: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub previous: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The next step.</p>
-    #[doc(hidden)]
-    pub next: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub next: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The status of the step.</p>
-    #[doc(hidden)]
-    pub status: std::option::Option<crate::model::StepStatus>,
+    #[doc(hidden)]pub status: std::option::Option<crate::model::StepStatus>,
 }
 impl UpdateWorkflowStepInput {
     /// <p>The ID of the step.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ID of the step group.</p>
-    pub fn step_group_id(&self) -> std::option::Option<&str> {
+    pub fn step_group_id(&self) -> std::option::Option<& str> {
         self.step_group_id.as_deref()
     }
     /// <p>The ID of the migration workflow.</p>
-    pub fn workflow_id(&self) -> std::option::Option<&str> {
+    pub fn workflow_id(&self) -> std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
     /// <p>The name of the step.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the step.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
-    pub fn step_action_type(&self) -> std::option::Option<&crate::model::StepActionType> {
+    pub fn step_action_type(&self) -> std::option::Option<& crate::model::StepActionType> {
         self.step_action_type.as_ref()
     }
     /// <p>The custom script to run tests on the source and target environments.</p>
-    pub fn workflow_step_automation_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::WorkflowStepAutomationConfiguration> {
+    pub fn workflow_step_automation_configuration(&self) -> std::option::Option<& crate::model::WorkflowStepAutomationConfiguration> {
         self.workflow_step_automation_configuration.as_ref()
     }
     /// <p>The servers on which a step will be run.</p>
-    pub fn step_target(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn step_target(&self) -> std::option::Option<& [std::string::String]> {
         self.step_target.as_deref()
     }
     /// <p>The outputs of a step.</p>
-    pub fn outputs(&self) -> std::option::Option<&[crate::model::WorkflowStepOutput]> {
+    pub fn outputs(&self) -> std::option::Option<& [crate::model::WorkflowStepOutput]> {
         self.outputs.as_deref()
     }
     /// <p>The previous step.</p>
-    pub fn previous(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn previous(&self) -> std::option::Option<& [std::string::String]> {
         self.previous.as_deref()
     }
     /// <p>The next step.</p>
-    pub fn next(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn next(&self) -> std::option::Option<& [std::string::String]> {
         self.next.as_deref()
     }
     /// <p>The status of the step.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::StepStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::StepStatus> {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateWorkflowStepInput {
+impl  std::fmt::Debug for UpdateWorkflowStepInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateWorkflowStepInput");
         formatter.field("id", &self.id);
@@ -5810,10 +4319,7 @@ impl std::fmt::Debug for UpdateWorkflowStepInput {
         formatter.field("name", &self.name);
         formatter.field("description", &self.description);
         formatter.field("step_action_type", &self.step_action_type);
-        formatter.field(
-            "workflow_step_automation_configuration",
-            &self.workflow_step_automation_configuration,
-        );
+        formatter.field("workflow_step_automation_configuration", &self.workflow_step_automation_configuration);
         formatter.field("step_target", &self.step_target);
         formatter.field("outputs", &self.outputs);
         formatter.field("previous", &self.previous);
@@ -5824,34 +4330,30 @@ impl std::fmt::Debug for UpdateWorkflowStepInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetWorkflowStepInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct GetWorkflowStepInput  {
     /// <p>The ID of the migration workflow.</p>
-    #[doc(hidden)]
-    pub workflow_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub workflow_id: std::option::Option<std::string::String>,
     /// <p>desThe ID of the step group.</p>
-    #[doc(hidden)]
-    pub step_group_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub step_group_id: std::option::Option<std::string::String>,
     /// <p>The ID of the step.</p>
-    #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub id: std::option::Option<std::string::String>,
 }
 impl GetWorkflowStepInput {
     /// <p>The ID of the migration workflow.</p>
-    pub fn workflow_id(&self) -> std::option::Option<&str> {
+    pub fn workflow_id(&self) -> std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
     /// <p>desThe ID of the step group.</p>
-    pub fn step_group_id(&self) -> std::option::Option<&str> {
+    pub fn step_group_id(&self) -> std::option::Option<& str> {
         self.step_group_id.as_deref()
     }
     /// <p>The ID of the step.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetWorkflowStepInput {
+impl  std::fmt::Debug for GetWorkflowStepInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetWorkflowStepInput");
         formatter.field("workflow_id", &self.workflow_id);
@@ -5862,18 +4364,14 @@ impl std::fmt::Debug for GetWorkflowStepInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListTemplateStepGroupsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListTemplateStepGroupsInput  {
     /// <p>The maximum number of results that can be returned.</p>
-    #[doc(hidden)]
-    pub max_results: i32,
+    #[doc(hidden)]pub max_results: i32,
     /// <p>The pagination token.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
     /// <p>The ID of the template.</p>
-    #[doc(hidden)]
-    pub template_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub template_id: std::option::Option<std::string::String>,
 }
 impl ListTemplateStepGroupsInput {
     /// <p>The maximum number of results that can be returned.</p>
@@ -5881,15 +4379,15 @@ impl ListTemplateStepGroupsInput {
         self.max_results
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The ID of the template.</p>
-    pub fn template_id(&self) -> std::option::Option<&str> {
+    pub fn template_id(&self) -> std::option::Option<& str> {
         self.template_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListTemplateStepGroupsInput {
+impl  std::fmt::Debug for ListTemplateStepGroupsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTemplateStepGroupsInput");
         formatter.field("max_results", &self.max_results);
@@ -5900,27 +4398,24 @@ impl std::fmt::Debug for ListTemplateStepGroupsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetTemplateStepGroupInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct GetTemplateStepGroupInput  {
     /// <p>The ID of the template.</p>
-    #[doc(hidden)]
-    pub template_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub template_id: std::option::Option<std::string::String>,
     /// <p>The ID of the step group.</p>
-    #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub id: std::option::Option<std::string::String>,
 }
 impl GetTemplateStepGroupInput {
     /// <p>The ID of the template.</p>
-    pub fn template_id(&self) -> std::option::Option<&str> {
+    pub fn template_id(&self) -> std::option::Option<& str> {
         self.template_id.as_deref()
     }
     /// <p>The ID of the step group.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetTemplateStepGroupInput {
+impl  std::fmt::Debug for GetTemplateStepGroupInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTemplateStepGroupInput");
         formatter.field("template_id", &self.template_id);
@@ -5930,21 +4425,16 @@ impl std::fmt::Debug for GetTemplateStepGroupInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListTemplateStepsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListTemplateStepsInput  {
     /// <p>The maximum number of results that can be returned.</p>
-    #[doc(hidden)]
-    pub max_results: i32,
+    #[doc(hidden)]pub max_results: i32,
     /// <p>The pagination token.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
     /// <p>The ID of the template.</p>
-    #[doc(hidden)]
-    pub template_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub template_id: std::option::Option<std::string::String>,
     /// <p>The ID of the step group.</p>
-    #[doc(hidden)]
-    pub step_group_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub step_group_id: std::option::Option<std::string::String>,
 }
 impl ListTemplateStepsInput {
     /// <p>The maximum number of results that can be returned.</p>
@@ -5952,19 +4442,19 @@ impl ListTemplateStepsInput {
         self.max_results
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The ID of the template.</p>
-    pub fn template_id(&self) -> std::option::Option<&str> {
+    pub fn template_id(&self) -> std::option::Option<& str> {
         self.template_id.as_deref()
     }
     /// <p>The ID of the step group.</p>
-    pub fn step_group_id(&self) -> std::option::Option<&str> {
+    pub fn step_group_id(&self) -> std::option::Option<& str> {
         self.step_group_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListTemplateStepsInput {
+impl  std::fmt::Debug for ListTemplateStepsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTemplateStepsInput");
         formatter.field("max_results", &self.max_results);
@@ -5976,34 +4466,30 @@ impl std::fmt::Debug for ListTemplateStepsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetTemplateStepInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct GetTemplateStepInput  {
     /// <p>The ID of the step.</p>
-    #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub id: std::option::Option<std::string::String>,
     /// <p>The ID of the template.</p>
-    #[doc(hidden)]
-    pub template_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub template_id: std::option::Option<std::string::String>,
     /// <p>The ID of the step group.</p>
-    #[doc(hidden)]
-    pub step_group_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub step_group_id: std::option::Option<std::string::String>,
 }
 impl GetTemplateStepInput {
     /// <p>The ID of the step.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ID of the template.</p>
-    pub fn template_id(&self) -> std::option::Option<&str> {
+    pub fn template_id(&self) -> std::option::Option<& str> {
         self.template_id.as_deref()
     }
     /// <p>The ID of the step group.</p>
-    pub fn step_group_id(&self) -> std::option::Option<&str> {
+    pub fn step_group_id(&self) -> std::option::Option<& str> {
         self.step_group_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetTemplateStepInput {
+impl  std::fmt::Debug for GetTemplateStepInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTemplateStepInput");
         formatter.field("id", &self.id);
@@ -6014,15 +4500,12 @@ impl std::fmt::Debug for GetTemplateStepInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListPluginsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListPluginsInput  {
     /// <p>The maximum number of plugins that can be returned.</p>
-    #[doc(hidden)]
-    pub max_results: i32,
+    #[doc(hidden)]pub max_results: i32,
     /// <p>The pagination token.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPluginsInput {
     /// <p>The maximum number of plugins that can be returned.</p>
@@ -6030,11 +4513,11 @@ impl ListPluginsInput {
         self.max_results
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListPluginsInput {
+impl  std::fmt::Debug for ListPluginsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPluginsInput");
         formatter.field("max_results", &self.max_results);
@@ -6044,18 +4527,14 @@ impl std::fmt::Debug for ListPluginsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListTemplatesInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListTemplatesInput  {
     /// <p>The maximum number of results that can be returned.</p>
-    #[doc(hidden)]
-    pub max_results: i32,
+    #[doc(hidden)]pub max_results: i32,
     /// <p>The pagination token.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
     /// <p>The name of the template.</p>
-    #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub name: std::option::Option<std::string::String>,
 }
 impl ListTemplatesInput {
     /// <p>The maximum number of results that can be returned.</p>
@@ -6063,15 +4542,15 @@ impl ListTemplatesInput {
         self.max_results
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The name of the template.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for ListTemplatesInput {
+impl  std::fmt::Debug for ListTemplatesInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTemplatesInput");
         formatter.field("max_results", &self.max_results);
@@ -6082,20 +4561,18 @@ impl std::fmt::Debug for ListTemplatesInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetTemplateInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct GetTemplateInput  {
     /// <p>The ID of the template.</p>
-    #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub id: std::option::Option<std::string::String>,
 }
 impl GetTemplateInput {
     /// <p>The ID of the template.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetTemplateInput {
+impl  std::fmt::Debug for GetTemplateInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTemplateInput");
         formatter.field("id", &self.id);
@@ -6104,20 +4581,18 @@ impl std::fmt::Debug for GetTemplateInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct StopWorkflowInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct StopWorkflowInput  {
     /// <p>The ID of the migration workflow.</p>
-    #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub id: std::option::Option<std::string::String>,
 }
 impl StopWorkflowInput {
     /// <p>The ID of the migration workflow.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for StopWorkflowInput {
+impl  std::fmt::Debug for StopWorkflowInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopWorkflowInput");
         formatter.field("id", &self.id);
@@ -6126,20 +4601,18 @@ impl std::fmt::Debug for StopWorkflowInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct StartWorkflowInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct StartWorkflowInput  {
     /// <p>The ID of the migration workflow.</p>
-    #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub id: std::option::Option<std::string::String>,
 }
 impl StartWorkflowInput {
     /// <p>The ID of the migration workflow.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for StartWorkflowInput {
+impl  std::fmt::Debug for StartWorkflowInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartWorkflowInput");
         formatter.field("id", &self.id);
@@ -6148,27 +4621,20 @@ impl std::fmt::Debug for StartWorkflowInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListWorkflowsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListWorkflowsInput  {
     /// <p>The maximum number of results that can be returned.</p>
-    #[doc(hidden)]
-    pub max_results: i32,
+    #[doc(hidden)]pub max_results: i32,
     /// <p>The pagination token.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
     /// <p>The ID of the template.</p>
-    #[doc(hidden)]
-    pub template_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub template_id: std::option::Option<std::string::String>,
     /// <p>The name of the application configured in Application Discovery Service.</p>
-    #[doc(hidden)]
-    pub ads_application_configuration_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub ads_application_configuration_name: std::option::Option<std::string::String>,
     /// <p>The status of the migration workflow.</p>
-    #[doc(hidden)]
-    pub status: std::option::Option<crate::model::MigrationWorkflowStatusEnum>,
+    #[doc(hidden)]pub status: std::option::Option<crate::model::MigrationWorkflowStatusEnum>,
     /// <p>The name of the migration workflow.</p>
-    #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub name: std::option::Option<std::string::String>,
 }
 impl ListWorkflowsInput {
     /// <p>The maximum number of results that can be returned.</p>
@@ -6176,36 +4642,33 @@ impl ListWorkflowsInput {
         self.max_results
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The ID of the template.</p>
-    pub fn template_id(&self) -> std::option::Option<&str> {
+    pub fn template_id(&self) -> std::option::Option<& str> {
         self.template_id.as_deref()
     }
     /// <p>The name of the application configured in Application Discovery Service.</p>
-    pub fn ads_application_configuration_name(&self) -> std::option::Option<&str> {
+    pub fn ads_application_configuration_name(&self) -> std::option::Option<& str> {
         self.ads_application_configuration_name.as_deref()
     }
     /// <p>The status of the migration workflow.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::MigrationWorkflowStatusEnum> {
+    pub fn status(&self) -> std::option::Option<& crate::model::MigrationWorkflowStatusEnum> {
         self.status.as_ref()
     }
     /// <p>The name of the migration workflow.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for ListWorkflowsInput {
+impl  std::fmt::Debug for ListWorkflowsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListWorkflowsInput");
         formatter.field("max_results", &self.max_results);
         formatter.field("next_token", &self.next_token);
         formatter.field("template_id", &self.template_id);
-        formatter.field(
-            "ads_application_configuration_name",
-            &self.ads_application_configuration_name,
-        );
+        formatter.field("ads_application_configuration_name", &self.ads_application_configuration_name);
         formatter.field("status", &self.status);
         formatter.field("name", &self.name);
         formatter.finish()
@@ -6213,80 +4676,60 @@ impl std::fmt::Debug for ListWorkflowsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateWorkflowInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CreateWorkflowInput  {
     /// <p>The name of the migration workflow.</p>
-    #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub name: std::option::Option<std::string::String>,
     /// <p>The description of the migration workflow.</p>
-    #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub description: std::option::Option<std::string::String>,
     /// <p>The ID of the template.</p>
-    #[doc(hidden)]
-    pub template_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub template_id: std::option::Option<std::string::String>,
     /// <p>The configuration ID of the application configured in Application Discovery Service.</p>
-    #[doc(hidden)]
-    pub application_configuration_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub application_configuration_id: std::option::Option<std::string::String>,
     /// <p>The input parameters required to create a migration workflow.</p>
-    #[doc(hidden)]
-    pub input_parameters: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::StepInput>,
-    >,
+    #[doc(hidden)]pub input_parameters: std::option::Option<std::collections::HashMap<std::string::String, crate::model::StepInput>>,
     /// <p>The servers on which a step will be run.</p>
-    #[doc(hidden)]
-    pub step_targets: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub step_targets: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The tags to add on a migration workflow.</p>
-    #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[doc(hidden)]pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateWorkflowInput {
     /// <p>The name of the migration workflow.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the migration workflow.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ID of the template.</p>
-    pub fn template_id(&self) -> std::option::Option<&str> {
+    pub fn template_id(&self) -> std::option::Option<& str> {
         self.template_id.as_deref()
     }
     /// <p>The configuration ID of the application configured in Application Discovery Service.</p>
-    pub fn application_configuration_id(&self) -> std::option::Option<&str> {
+    pub fn application_configuration_id(&self) -> std::option::Option<& str> {
         self.application_configuration_id.as_deref()
     }
     /// <p>The input parameters required to create a migration workflow.</p>
-    pub fn input_parameters(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::StepInput>>
-    {
+    pub fn input_parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::StepInput>> {
         self.input_parameters.as_ref()
     }
     /// <p>The servers on which a step will be run.</p>
-    pub fn step_targets(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn step_targets(&self) -> std::option::Option<& [std::string::String]> {
         self.step_targets.as_deref()
     }
     /// <p>The tags to add on a migration workflow.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateWorkflowInput {
+impl  std::fmt::Debug for CreateWorkflowInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateWorkflowInput");
         formatter.field("name", &self.name);
         formatter.field("description", &self.description);
         formatter.field("template_id", &self.template_id);
-        formatter.field(
-            "application_configuration_id",
-            &self.application_configuration_id,
-        );
+        formatter.field("application_configuration_id", &self.application_configuration_id);
         formatter.field("input_parameters", &"*** Sensitive Data Redacted ***");
         formatter.field("step_targets", &self.step_targets);
         formatter.field("tags", &self.tags);
@@ -6295,20 +4738,18 @@ impl std::fmt::Debug for CreateWorkflowInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteWorkflowInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DeleteWorkflowInput  {
     /// <p>The ID of the migration workflow you want to delete.</p>
-    #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub id: std::option::Option<std::string::String>,
 }
 impl DeleteWorkflowInput {
     /// <p>The ID of the migration workflow you want to delete.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteWorkflowInput {
+impl  std::fmt::Debug for DeleteWorkflowInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteWorkflowInput");
         formatter.field("id", &self.id);
@@ -6317,53 +4758,42 @@ impl std::fmt::Debug for DeleteWorkflowInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateWorkflowInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct UpdateWorkflowInput  {
     /// <p>The ID of the migration workflow.</p>
-    #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub id: std::option::Option<std::string::String>,
     /// <p>The name of the migration workflow.</p>
-    #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub name: std::option::Option<std::string::String>,
     /// <p>The description of the migration workflow.</p>
-    #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub description: std::option::Option<std::string::String>,
     /// <p>The input parameters required to update a migration workflow.</p>
-    #[doc(hidden)]
-    pub input_parameters: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::StepInput>,
-    >,
+    #[doc(hidden)]pub input_parameters: std::option::Option<std::collections::HashMap<std::string::String, crate::model::StepInput>>,
     /// <p>The servers on which a step will be run.</p>
-    #[doc(hidden)]
-    pub step_targets: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub step_targets: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateWorkflowInput {
     /// <p>The ID of the migration workflow.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the migration workflow.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the migration workflow.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The input parameters required to update a migration workflow.</p>
-    pub fn input_parameters(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::StepInput>>
-    {
+    pub fn input_parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::StepInput>> {
         self.input_parameters.as_ref()
     }
     /// <p>The servers on which a step will be run.</p>
-    pub fn step_targets(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn step_targets(&self) -> std::option::Option<& [std::string::String]> {
         self.step_targets.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateWorkflowInput {
+impl  std::fmt::Debug for UpdateWorkflowInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateWorkflowInput");
         formatter.field("id", &self.id);
@@ -6376,20 +4806,18 @@ impl std::fmt::Debug for UpdateWorkflowInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetWorkflowInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct GetWorkflowInput  {
     /// <p>The ID of the migration workflow.</p>
-    #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub id: std::option::Option<std::string::String>,
 }
 impl GetWorkflowInput {
     /// <p>The ID of the migration workflow.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetWorkflowInput {
+impl  std::fmt::Debug for GetWorkflowInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetWorkflowInput");
         formatter.field("id", &self.id);
@@ -6398,27 +4826,24 @@ impl std::fmt::Debug for GetWorkflowInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UntagResourceInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct UntagResourceInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource from which you want to remove tags.</p>
-    #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
     /// <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
-    #[doc(hidden)]
-    pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource from which you want to remove tags.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
-    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
+impl  std::fmt::Debug for UntagResourceInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -6428,31 +4853,24 @@ impl std::fmt::Debug for UntagResourceInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct TagResourceInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct TagResourceInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource to which you want to add tags.</p>
-    #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
-    #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[doc(hidden)]pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to which you want to add tags.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
+impl  std::fmt::Debug for TagResourceInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -6462,23 +4880,22 @@ impl std::fmt::Debug for TagResourceInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListTagsForResourceInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListTagsForResourceInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
+impl  std::fmt::Debug for ListTagsForResourceInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
         formatter.finish()
     }
 }
+

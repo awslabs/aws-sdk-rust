@@ -3,30 +3,21 @@ use std::fmt::Write;
 
 /// See [`CreateDeliveryStreamInput`](crate::input::CreateDeliveryStreamInput).
 pub mod create_delivery_stream_input {
-
+    
     /// A builder for [`CreateDeliveryStreamInput`](crate::input::CreateDeliveryStreamInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) delivery_stream_name: std::option::Option<std::string::String>,
         pub(crate) delivery_stream_type: std::option::Option<crate::model::DeliveryStreamType>,
-        pub(crate) kinesis_stream_source_configuration:
-            std::option::Option<crate::model::KinesisStreamSourceConfiguration>,
-        pub(crate) delivery_stream_encryption_configuration_input:
-            std::option::Option<crate::model::DeliveryStreamEncryptionConfigurationInput>,
-        pub(crate) s3_destination_configuration:
-            std::option::Option<crate::model::S3DestinationConfiguration>,
-        pub(crate) extended_s3_destination_configuration:
-            std::option::Option<crate::model::ExtendedS3DestinationConfiguration>,
-        pub(crate) redshift_destination_configuration:
-            std::option::Option<crate::model::RedshiftDestinationConfiguration>,
-        pub(crate) elasticsearch_destination_configuration:
-            std::option::Option<crate::model::ElasticsearchDestinationConfiguration>,
-        pub(crate) amazonopensearchservice_destination_configuration:
-            std::option::Option<crate::model::AmazonopensearchserviceDestinationConfiguration>,
-        pub(crate) splunk_destination_configuration:
-            std::option::Option<crate::model::SplunkDestinationConfiguration>,
-        pub(crate) http_endpoint_destination_configuration:
-            std::option::Option<crate::model::HttpEndpointDestinationConfiguration>,
+        pub(crate) kinesis_stream_source_configuration: std::option::Option<crate::model::KinesisStreamSourceConfiguration>,
+        pub(crate) delivery_stream_encryption_configuration_input: std::option::Option<crate::model::DeliveryStreamEncryptionConfigurationInput>,
+        pub(crate) s3_destination_configuration: std::option::Option<crate::model::S3DestinationConfiguration>,
+        pub(crate) extended_s3_destination_configuration: std::option::Option<crate::model::ExtendedS3DestinationConfiguration>,
+        pub(crate) redshift_destination_configuration: std::option::Option<crate::model::RedshiftDestinationConfiguration>,
+        pub(crate) elasticsearch_destination_configuration: std::option::Option<crate::model::ElasticsearchDestinationConfiguration>,
+        pub(crate) amazonopensearchservice_destination_configuration: std::option::Option<crate::model::AmazonopensearchserviceDestinationConfiguration>,
+        pub(crate) splunk_destination_configuration: std::option::Option<crate::model::SplunkDestinationConfiguration>,
+        pub(crate) http_endpoint_destination_configuration: std::option::Option<crate::model::HttpEndpointDestinationConfiguration>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
@@ -36,335 +27,219 @@ pub mod create_delivery_stream_input {
             self
         }
         /// <p>The name of the delivery stream. This name must be unique per AWS account in the same AWS Region. If the delivery streams are in different accounts or different Regions, you can have multiple delivery streams with the same name.</p>
-        pub fn set_delivery_stream_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.delivery_stream_name = input;
-            self
+        pub fn set_delivery_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.delivery_stream_name = input; self
         }
-        /// <p>The delivery stream type. This parameter can be one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li>
-        /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>
+        /// <p>The delivery stream type. This parameter can be one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li> 
+        /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li> 
         /// </ul>
         pub fn delivery_stream_type(mut self, input: crate::model::DeliveryStreamType) -> Self {
             self.delivery_stream_type = Some(input);
             self
         }
-        /// <p>The delivery stream type. This parameter can be one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li>
-        /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>
+        /// <p>The delivery stream type. This parameter can be one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li> 
+        /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li> 
         /// </ul>
-        pub fn set_delivery_stream_type(
-            mut self,
-            input: std::option::Option<crate::model::DeliveryStreamType>,
-        ) -> Self {
-            self.delivery_stream_type = input;
-            self
+        pub fn set_delivery_stream_type(mut self, input: std::option::Option<crate::model::DeliveryStreamType>) -> Self {
+            self.delivery_stream_type = input; self
         }
         /// <p>When a Kinesis data stream is used as the source for the delivery stream, a <code>KinesisStreamSourceConfiguration</code> containing the Kinesis data stream Amazon Resource Name (ARN) and the role ARN for the source stream.</p>
-        pub fn kinesis_stream_source_configuration(
-            mut self,
-            input: crate::model::KinesisStreamSourceConfiguration,
-        ) -> Self {
+        pub fn kinesis_stream_source_configuration(mut self, input: crate::model::KinesisStreamSourceConfiguration) -> Self {
             self.kinesis_stream_source_configuration = Some(input);
             self
         }
         /// <p>When a Kinesis data stream is used as the source for the delivery stream, a <code>KinesisStreamSourceConfiguration</code> containing the Kinesis data stream Amazon Resource Name (ARN) and the role ARN for the source stream.</p>
-        pub fn set_kinesis_stream_source_configuration(
-            mut self,
-            input: std::option::Option<crate::model::KinesisStreamSourceConfiguration>,
-        ) -> Self {
-            self.kinesis_stream_source_configuration = input;
-            self
+        pub fn set_kinesis_stream_source_configuration(mut self, input: std::option::Option<crate::model::KinesisStreamSourceConfiguration>) -> Self {
+            self.kinesis_stream_source_configuration = input; self
         }
         /// <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).</p>
-        pub fn delivery_stream_encryption_configuration_input(
-            mut self,
-            input: crate::model::DeliveryStreamEncryptionConfigurationInput,
-        ) -> Self {
+        pub fn delivery_stream_encryption_configuration_input(mut self, input: crate::model::DeliveryStreamEncryptionConfigurationInput) -> Self {
             self.delivery_stream_encryption_configuration_input = Some(input);
             self
         }
         /// <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).</p>
-        pub fn set_delivery_stream_encryption_configuration_input(
-            mut self,
-            input: std::option::Option<crate::model::DeliveryStreamEncryptionConfigurationInput>,
-        ) -> Self {
-            self.delivery_stream_encryption_configuration_input = input;
-            self
+        pub fn set_delivery_stream_encryption_configuration_input(mut self, input: std::option::Option<crate::model::DeliveryStreamEncryptionConfigurationInput>) -> Self {
+            self.delivery_stream_encryption_configuration_input = input; self
         }
         /// <p>[Deprecated] The destination in Amazon S3. You can specify only one destination.</p>
-        #[deprecated]
-        pub fn s3_destination_configuration(
-            mut self,
-            input: crate::model::S3DestinationConfiguration,
-        ) -> Self {
+        #[deprecated]pub fn s3_destination_configuration(mut self, input: crate::model::S3DestinationConfiguration) -> Self {
             self.s3_destination_configuration = Some(input);
             self
         }
         /// <p>[Deprecated] The destination in Amazon S3. You can specify only one destination.</p>
-        #[deprecated]
-        pub fn set_s3_destination_configuration(
-            mut self,
-            input: std::option::Option<crate::model::S3DestinationConfiguration>,
-        ) -> Self {
-            self.s3_destination_configuration = input;
-            self
+        #[deprecated]pub fn set_s3_destination_configuration(mut self, input: std::option::Option<crate::model::S3DestinationConfiguration>) -> Self {
+            self.s3_destination_configuration = input; self
         }
         /// <p>The destination in Amazon S3. You can specify only one destination.</p>
-        pub fn extended_s3_destination_configuration(
-            mut self,
-            input: crate::model::ExtendedS3DestinationConfiguration,
-        ) -> Self {
+        pub fn extended_s3_destination_configuration(mut self, input: crate::model::ExtendedS3DestinationConfiguration) -> Self {
             self.extended_s3_destination_configuration = Some(input);
             self
         }
         /// <p>The destination in Amazon S3. You can specify only one destination.</p>
-        pub fn set_extended_s3_destination_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ExtendedS3DestinationConfiguration>,
-        ) -> Self {
-            self.extended_s3_destination_configuration = input;
-            self
+        pub fn set_extended_s3_destination_configuration(mut self, input: std::option::Option<crate::model::ExtendedS3DestinationConfiguration>) -> Self {
+            self.extended_s3_destination_configuration = input; self
         }
         /// <p>The destination in Amazon Redshift. You can specify only one destination.</p>
-        pub fn redshift_destination_configuration(
-            mut self,
-            input: crate::model::RedshiftDestinationConfiguration,
-        ) -> Self {
+        pub fn redshift_destination_configuration(mut self, input: crate::model::RedshiftDestinationConfiguration) -> Self {
             self.redshift_destination_configuration = Some(input);
             self
         }
         /// <p>The destination in Amazon Redshift. You can specify only one destination.</p>
-        pub fn set_redshift_destination_configuration(
-            mut self,
-            input: std::option::Option<crate::model::RedshiftDestinationConfiguration>,
-        ) -> Self {
-            self.redshift_destination_configuration = input;
-            self
+        pub fn set_redshift_destination_configuration(mut self, input: std::option::Option<crate::model::RedshiftDestinationConfiguration>) -> Self {
+            self.redshift_destination_configuration = input; self
         }
         /// <p>The destination in Amazon ES. You can specify only one destination.</p>
-        pub fn elasticsearch_destination_configuration(
-            mut self,
-            input: crate::model::ElasticsearchDestinationConfiguration,
-        ) -> Self {
+        pub fn elasticsearch_destination_configuration(mut self, input: crate::model::ElasticsearchDestinationConfiguration) -> Self {
             self.elasticsearch_destination_configuration = Some(input);
             self
         }
         /// <p>The destination in Amazon ES. You can specify only one destination.</p>
-        pub fn set_elasticsearch_destination_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ElasticsearchDestinationConfiguration>,
-        ) -> Self {
-            self.elasticsearch_destination_configuration = input;
-            self
+        pub fn set_elasticsearch_destination_configuration(mut self, input: std::option::Option<crate::model::ElasticsearchDestinationConfiguration>) -> Self {
+            self.elasticsearch_destination_configuration = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn amazonopensearchservice_destination_configuration(
-            mut self,
-            input: crate::model::AmazonopensearchserviceDestinationConfiguration,
-        ) -> Self {
+        pub fn amazonopensearchservice_destination_configuration(mut self, input: crate::model::AmazonopensearchserviceDestinationConfiguration) -> Self {
             self.amazonopensearchservice_destination_configuration = Some(input);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_amazonopensearchservice_destination_configuration(
-            mut self,
-            input: std::option::Option<
-                crate::model::AmazonopensearchserviceDestinationConfiguration,
-            >,
-        ) -> Self {
-            self.amazonopensearchservice_destination_configuration = input;
-            self
+        pub fn set_amazonopensearchservice_destination_configuration(mut self, input: std::option::Option<crate::model::AmazonopensearchserviceDestinationConfiguration>) -> Self {
+            self.amazonopensearchservice_destination_configuration = input; self
         }
         /// <p>The destination in Splunk. You can specify only one destination.</p>
-        pub fn splunk_destination_configuration(
-            mut self,
-            input: crate::model::SplunkDestinationConfiguration,
-        ) -> Self {
+        pub fn splunk_destination_configuration(mut self, input: crate::model::SplunkDestinationConfiguration) -> Self {
             self.splunk_destination_configuration = Some(input);
             self
         }
         /// <p>The destination in Splunk. You can specify only one destination.</p>
-        pub fn set_splunk_destination_configuration(
-            mut self,
-            input: std::option::Option<crate::model::SplunkDestinationConfiguration>,
-        ) -> Self {
-            self.splunk_destination_configuration = input;
-            self
+        pub fn set_splunk_destination_configuration(mut self, input: std::option::Option<crate::model::SplunkDestinationConfiguration>) -> Self {
+            self.splunk_destination_configuration = input; self
         }
         /// <p>Enables configuring Kinesis Firehose to deliver data to any HTTP endpoint destination. You can specify only one destination.</p>
-        pub fn http_endpoint_destination_configuration(
-            mut self,
-            input: crate::model::HttpEndpointDestinationConfiguration,
-        ) -> Self {
+        pub fn http_endpoint_destination_configuration(mut self, input: crate::model::HttpEndpointDestinationConfiguration) -> Self {
             self.http_endpoint_destination_configuration = Some(input);
             self
         }
         /// <p>Enables configuring Kinesis Firehose to deliver data to any HTTP endpoint destination. You can specify only one destination.</p>
-        pub fn set_http_endpoint_destination_configuration(
-            mut self,
-            input: std::option::Option<crate::model::HttpEndpointDestinationConfiguration>,
-        ) -> Self {
-            self.http_endpoint_destination_configuration = input;
-            self
+        pub fn set_http_endpoint_destination_configuration(mut self, input: std::option::Option<crate::model::HttpEndpointDestinationConfiguration>) -> Self {
+            self.http_endpoint_destination_configuration = input; self
         }
         /// Appends an item to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign to AWS resources. Tags are metadata. For example, you can add friendly names and descriptions or other types of information that can help you distinguish the delivery stream. For more information about tags, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the AWS Billing and Cost Management User Guide.</p>
+        /// <p>A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign to AWS resources. Tags are metadata. For example, you can add friendly names and descriptions or other types of information that can help you distinguish the delivery stream. For more information about tags, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the AWS Billing and Cost Management User Guide.</p> 
         /// <p>You can specify up to 50 tags when creating a delivery stream.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
-        /// <p>A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign to AWS resources. Tags are metadata. For example, you can add friendly names and descriptions or other types of information that can help you distinguish the delivery stream. For more information about tags, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the AWS Billing and Cost Management User Guide.</p>
+        /// <p>A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign to AWS resources. Tags are metadata. For example, you can add friendly names and descriptions or other types of information that can help you distinguish the delivery stream. For more information about tags, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the AWS Billing and Cost Management User Guide.</p> 
         /// <p>You can specify up to 50 tags when creating a delivery stream.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateDeliveryStreamInput`](crate::input::CreateDeliveryStreamInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateDeliveryStreamInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::CreateDeliveryStreamInput {
-                delivery_stream_name: self.delivery_stream_name,
-                delivery_stream_type: self.delivery_stream_type,
-                kinesis_stream_source_configuration: self.kinesis_stream_source_configuration,
-                delivery_stream_encryption_configuration_input: self
-                    .delivery_stream_encryption_configuration_input,
-                s3_destination_configuration: self.s3_destination_configuration,
-                extended_s3_destination_configuration: self.extended_s3_destination_configuration,
-                redshift_destination_configuration: self.redshift_destination_configuration,
-                elasticsearch_destination_configuration: self
-                    .elasticsearch_destination_configuration,
-                amazonopensearchservice_destination_configuration: self
-                    .amazonopensearchservice_destination_configuration,
-                splunk_destination_configuration: self.splunk_destination_configuration,
-                http_endpoint_destination_configuration: self
-                    .http_endpoint_destination_configuration,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::CreateDeliveryStreamInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CreateDeliveryStreamInput {
+                    delivery_stream_name: self.delivery_stream_name
+                    ,
+                    delivery_stream_type: self.delivery_stream_type
+                    ,
+                    kinesis_stream_source_configuration: self.kinesis_stream_source_configuration
+                    ,
+                    delivery_stream_encryption_configuration_input: self.delivery_stream_encryption_configuration_input
+                    ,
+                    s3_destination_configuration: self.s3_destination_configuration
+                    ,
+                    extended_s3_destination_configuration: self.extended_s3_destination_configuration
+                    ,
+                    redshift_destination_configuration: self.redshift_destination_configuration
+                    ,
+                    elasticsearch_destination_configuration: self.elasticsearch_destination_configuration
+                    ,
+                    amazonopensearchservice_destination_configuration: self.amazonopensearchservice_destination_configuration
+                    ,
+                    splunk_destination_configuration: self.splunk_destination_configuration
+                    ,
+                    http_endpoint_destination_configuration: self.http_endpoint_destination_configuration
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateDeliveryStreamInput {
     /// Consumes the builder and constructs an Operation<[`CreateDeliveryStream`](crate::operation::CreateDeliveryStream)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateDeliveryStream,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateDeliveryStream, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateDeliveryStreamInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::CreateDeliveryStreamInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreateDeliveryStreamInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CreateDeliveryStreamInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "Firehose_20150804.CreateDeliveryStream",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "Firehose_20150804.CreateDeliveryStream"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_delivery_stream(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_delivery_stream(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateDeliveryStream::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateDeliveryStream",
-            "firehose",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateDeliveryStream::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateDeliveryStream", "firehose"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -376,9 +251,9 @@ impl CreateDeliveryStreamInput {
 
 /// See [`DeleteDeliveryStreamInput`](crate::input::DeleteDeliveryStreamInput).
 pub mod delete_delivery_stream_input {
-
+    
     /// A builder for [`DeleteDeliveryStreamInput`](crate::input::DeleteDeliveryStreamInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) delivery_stream_name: std::option::Option<std::string::String>,
         pub(crate) allow_force_delete: std::option::Option<bool>,
@@ -390,143 +265,95 @@ pub mod delete_delivery_stream_input {
             self
         }
         /// <p>The name of the delivery stream.</p>
-        pub fn set_delivery_stream_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.delivery_stream_name = input;
-            self
+        pub fn set_delivery_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.delivery_stream_name = input; self
         }
-        /// <p>Set this to true if you want to delete the delivery stream even if Kinesis Data Firehose is unable to retire the grant for the CMK. Kinesis Data Firehose might be unable to retire the grant due to a customer error, such as when the CMK or the grant are in an invalid state. If you force deletion, you can then use the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> operation to revoke the grant you gave to Kinesis Data Firehose. If a failure to retire the grant happens due to an AWS KMS issue, Kinesis Data Firehose keeps retrying the delete operation.</p>
+        /// <p>Set this to true if you want to delete the delivery stream even if Kinesis Data Firehose is unable to retire the grant for the CMK. Kinesis Data Firehose might be unable to retire the grant due to a customer error, such as when the CMK or the grant are in an invalid state. If you force deletion, you can then use the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> operation to revoke the grant you gave to Kinesis Data Firehose. If a failure to retire the grant happens due to an AWS KMS issue, Kinesis Data Firehose keeps retrying the delete operation.</p> 
         /// <p>The default value is false.</p>
         pub fn allow_force_delete(mut self, input: bool) -> Self {
             self.allow_force_delete = Some(input);
             self
         }
-        /// <p>Set this to true if you want to delete the delivery stream even if Kinesis Data Firehose is unable to retire the grant for the CMK. Kinesis Data Firehose might be unable to retire the grant due to a customer error, such as when the CMK or the grant are in an invalid state. If you force deletion, you can then use the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> operation to revoke the grant you gave to Kinesis Data Firehose. If a failure to retire the grant happens due to an AWS KMS issue, Kinesis Data Firehose keeps retrying the delete operation.</p>
+        /// <p>Set this to true if you want to delete the delivery stream even if Kinesis Data Firehose is unable to retire the grant for the CMK. Kinesis Data Firehose might be unable to retire the grant due to a customer error, such as when the CMK or the grant are in an invalid state. If you force deletion, you can then use the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> operation to revoke the grant you gave to Kinesis Data Firehose. If a failure to retire the grant happens due to an AWS KMS issue, Kinesis Data Firehose keeps retrying the delete operation.</p> 
         /// <p>The default value is false.</p>
         pub fn set_allow_force_delete(mut self, input: std::option::Option<bool>) -> Self {
-            self.allow_force_delete = input;
-            self
+            self.allow_force_delete = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDeliveryStreamInput`](crate::input::DeleteDeliveryStreamInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteDeliveryStreamInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DeleteDeliveryStreamInput {
-                delivery_stream_name: self.delivery_stream_name,
-                allow_force_delete: self.allow_force_delete,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteDeliveryStreamInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DeleteDeliveryStreamInput {
+                    delivery_stream_name: self.delivery_stream_name
+                    ,
+                    allow_force_delete: self.allow_force_delete
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteDeliveryStreamInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDeliveryStream`](crate::operation::DeleteDeliveryStream)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteDeliveryStream,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteDeliveryStream, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteDeliveryStreamInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteDeliveryStreamInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DeleteDeliveryStreamInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DeleteDeliveryStreamInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "Firehose_20150804.DeleteDeliveryStream",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "Firehose_20150804.DeleteDeliveryStream"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_delivery_stream(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_delivery_stream(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteDeliveryStream::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteDeliveryStream",
-            "firehose",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteDeliveryStream::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteDeliveryStream", "firehose"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -538,9 +365,9 @@ impl DeleteDeliveryStreamInput {
 
 /// See [`DescribeDeliveryStreamInput`](crate::input::DescribeDeliveryStreamInput).
 pub mod describe_delivery_stream_input {
-
+    
     /// A builder for [`DescribeDeliveryStreamInput`](crate::input::DescribeDeliveryStreamInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) delivery_stream_name: std::option::Option<std::string::String>,
         pub(crate) limit: std::option::Option<i32>,
@@ -553,12 +380,8 @@ pub mod describe_delivery_stream_input {
             self
         }
         /// <p>The name of the delivery stream.</p>
-        pub fn set_delivery_stream_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.delivery_stream_name = input;
-            self
+        pub fn set_delivery_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.delivery_stream_name = input; self
         }
         /// <p>The limit on the number of destinations to return. You can have one destination per delivery stream.</p>
         pub fn limit(mut self, input: i32) -> Self {
@@ -567,144 +390,94 @@ pub mod describe_delivery_stream_input {
         }
         /// <p>The limit on the number of destinations to return. You can have one destination per delivery stream.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-            self.limit = input;
-            self
+            self.limit = input; self
         }
         /// <p>The ID of the destination to start returning the destination information. Kinesis Data Firehose supports one destination per delivery stream.</p>
-        pub fn exclusive_start_destination_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn exclusive_start_destination_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.exclusive_start_destination_id = Some(input.into());
             self
         }
         /// <p>The ID of the destination to start returning the destination information. Kinesis Data Firehose supports one destination per delivery stream.</p>
-        pub fn set_exclusive_start_destination_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.exclusive_start_destination_id = input;
-            self
+        pub fn set_exclusive_start_destination_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.exclusive_start_destination_id = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDeliveryStreamInput`](crate::input::DescribeDeliveryStreamInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DescribeDeliveryStreamInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DescribeDeliveryStreamInput {
-                delivery_stream_name: self.delivery_stream_name,
-                limit: self.limit,
-                exclusive_start_destination_id: self.exclusive_start_destination_id,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeDeliveryStreamInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DescribeDeliveryStreamInput {
+                    delivery_stream_name: self.delivery_stream_name
+                    ,
+                    limit: self.limit
+                    ,
+                    exclusive_start_destination_id: self.exclusive_start_destination_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeDeliveryStreamInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDeliveryStream`](crate::operation::DescribeDeliveryStream)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeDeliveryStream,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeDeliveryStream, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeDeliveryStreamInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeDeliveryStreamInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribeDeliveryStreamInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DescribeDeliveryStreamInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "Firehose_20150804.DescribeDeliveryStream",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "Firehose_20150804.DescribeDeliveryStream"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_delivery_stream(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_delivery_stream(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeDeliveryStream::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeDeliveryStream",
-            "firehose",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeDeliveryStream::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeDeliveryStream", "firehose"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -716,9 +489,9 @@ impl DescribeDeliveryStreamInput {
 
 /// See [`ListDeliveryStreamsInput`](crate::input::ListDeliveryStreamsInput).
 pub mod list_delivery_streams_input {
-
+    
     /// A builder for [`ListDeliveryStreamsInput`](crate::input::ListDeliveryStreamsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) limit: std::option::Option<i32>,
         pub(crate) delivery_stream_type: std::option::Option<crate::model::DeliveryStreamType>,
@@ -732,165 +505,113 @@ pub mod list_delivery_streams_input {
         }
         /// <p>The maximum number of delivery streams to list. The default value is 10.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-            self.limit = input;
-            self
+            self.limit = input; self
         }
-        /// <p>The delivery stream type. This can be one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li>
-        /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>
-        /// </ul>
+        /// <p>The delivery stream type. This can be one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li> 
+        /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li> 
+        /// </ul> 
         /// <p>This parameter is optional. If this parameter is omitted, delivery streams of all types are returned.</p>
         pub fn delivery_stream_type(mut self, input: crate::model::DeliveryStreamType) -> Self {
             self.delivery_stream_type = Some(input);
             self
         }
-        /// <p>The delivery stream type. This can be one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li>
-        /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>
-        /// </ul>
+        /// <p>The delivery stream type. This can be one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li> 
+        /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li> 
+        /// </ul> 
         /// <p>This parameter is optional. If this parameter is omitted, delivery streams of all types are returned.</p>
-        pub fn set_delivery_stream_type(
-            mut self,
-            input: std::option::Option<crate::model::DeliveryStreamType>,
-        ) -> Self {
-            self.delivery_stream_type = input;
-            self
+        pub fn set_delivery_stream_type(mut self, input: std::option::Option<crate::model::DeliveryStreamType>) -> Self {
+            self.delivery_stream_type = input; self
         }
         /// <p>The list of delivery streams returned by this call to <code>ListDeliveryStreams</code> will start with the delivery stream whose name comes alphabetically immediately after the name you specify in <code>ExclusiveStartDeliveryStreamName</code>.</p>
-        pub fn exclusive_start_delivery_stream_name(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn exclusive_start_delivery_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.exclusive_start_delivery_stream_name = Some(input.into());
             self
         }
         /// <p>The list of delivery streams returned by this call to <code>ListDeliveryStreams</code> will start with the delivery stream whose name comes alphabetically immediately after the name you specify in <code>ExclusiveStartDeliveryStreamName</code>.</p>
-        pub fn set_exclusive_start_delivery_stream_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.exclusive_start_delivery_stream_name = input;
-            self
+        pub fn set_exclusive_start_delivery_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.exclusive_start_delivery_stream_name = input; self
         }
         /// Consumes the builder and constructs a [`ListDeliveryStreamsInput`](crate::input::ListDeliveryStreamsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListDeliveryStreamsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::ListDeliveryStreamsInput {
-                limit: self.limit,
-                delivery_stream_type: self.delivery_stream_type,
-                exclusive_start_delivery_stream_name: self.exclusive_start_delivery_stream_name,
-            })
+        pub fn build(self) -> Result<crate::input::ListDeliveryStreamsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListDeliveryStreamsInput {
+                    limit: self.limit
+                    ,
+                    delivery_stream_type: self.delivery_stream_type
+                    ,
+                    exclusive_start_delivery_stream_name: self.exclusive_start_delivery_stream_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListDeliveryStreamsInput {
     /// Consumes the builder and constructs an Operation<[`ListDeliveryStreams`](crate::operation::ListDeliveryStreams)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListDeliveryStreams,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListDeliveryStreams, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListDeliveryStreamsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListDeliveryStreamsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListDeliveryStreamsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListDeliveryStreamsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "Firehose_20150804.ListDeliveryStreams",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "Firehose_20150804.ListDeliveryStreams"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_delivery_streams(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_delivery_streams(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListDeliveryStreams::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListDeliveryStreams",
-            "firehose",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListDeliveryStreams::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListDeliveryStreams", "firehose"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -902,9 +623,9 @@ impl ListDeliveryStreamsInput {
 
 /// See [`ListTagsForDeliveryStreamInput`](crate::input::ListTagsForDeliveryStreamInput).
 pub mod list_tags_for_delivery_stream_input {
-
+    
     /// A builder for [`ListTagsForDeliveryStreamInput`](crate::input::ListTagsForDeliveryStreamInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) delivery_stream_name: std::option::Option<std::string::String>,
         pub(crate) exclusive_start_tag_key: std::option::Option<std::string::String>,
@@ -917,12 +638,8 @@ pub mod list_tags_for_delivery_stream_input {
             self
         }
         /// <p>The name of the delivery stream whose tags you want to list.</p>
-        pub fn set_delivery_stream_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.delivery_stream_name = input;
-            self
+        pub fn set_delivery_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.delivery_stream_name = input; self
         }
         /// <p>The key to use as the starting point for the list of tags. If you set this parameter, <code>ListTagsForDeliveryStream</code> gets all tags that occur after <code>ExclusiveStartTagKey</code>.</p>
         pub fn exclusive_start_tag_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -930,12 +647,8 @@ pub mod list_tags_for_delivery_stream_input {
             self
         }
         /// <p>The key to use as the starting point for the list of tags. If you set this parameter, <code>ListTagsForDeliveryStream</code> gets all tags that occur after <code>ExclusiveStartTagKey</code>.</p>
-        pub fn set_exclusive_start_tag_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.exclusive_start_tag_key = input;
-            self
+        pub fn set_exclusive_start_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.exclusive_start_tag_key = input; self
         }
         /// <p>The number of tags to return. If this number is less than the total number of tags associated with the delivery stream, <code>HasMoreTags</code> is set to <code>true</code> in the response. To list additional tags, set <code>ExclusiveStartTagKey</code> to the last key in the response. </p>
         pub fn limit(mut self, input: i32) -> Self {
@@ -944,68 +657,48 @@ pub mod list_tags_for_delivery_stream_input {
         }
         /// <p>The number of tags to return. If this number is less than the total number of tags associated with the delivery stream, <code>HasMoreTags</code> is set to <code>true</code> in the response. To list additional tags, set <code>ExclusiveStartTagKey</code> to the last key in the response. </p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-            self.limit = input;
-            self
+            self.limit = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForDeliveryStreamInput`](crate::input::ListTagsForDeliveryStreamInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListTagsForDeliveryStreamInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::ListTagsForDeliveryStreamInput {
-                delivery_stream_name: self.delivery_stream_name,
-                exclusive_start_tag_key: self.exclusive_start_tag_key,
-                limit: self.limit,
-            })
+        pub fn build(self) -> Result<crate::input::ListTagsForDeliveryStreamInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListTagsForDeliveryStreamInput {
+                    delivery_stream_name: self.delivery_stream_name
+                    ,
+                    exclusive_start_tag_key: self.exclusive_start_tag_key
+                    ,
+                    limit: self.limit
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListTagsForDeliveryStreamInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForDeliveryStream`](crate::operation::ListTagsForDeliveryStream)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListTagsForDeliveryStream,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListTagsForDeliveryStream, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListTagsForDeliveryStreamInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListTagsForDeliveryStreamInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListTagsForDeliveryStreamInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListTagsForDeliveryStreamInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "Firehose_20150804.ListTagsForDeliveryStream",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "Firehose_20150804.ListTagsForDeliveryStream"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -1013,58 +706,36 @@ impl ListTagsForDeliveryStreamInput {
             crate::operation_ser::serialize_operation_crate_operation_list_tags_for_delivery_stream(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListTagsForDeliveryStream::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListTagsForDeliveryStream",
-            "firehose",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListTagsForDeliveryStream::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListTagsForDeliveryStream", "firehose"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1076,9 +747,9 @@ impl ListTagsForDeliveryStreamInput {
 
 /// See [`PutRecordInput`](crate::input::PutRecordInput).
 pub mod put_record_input {
-
+    
     /// A builder for [`PutRecordInput`](crate::input::PutRecordInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) delivery_stream_name: std::option::Option<std::string::String>,
         pub(crate) record: std::option::Option<crate::model::Record>,
@@ -1090,12 +761,8 @@ pub mod put_record_input {
             self
         }
         /// <p>The name of the delivery stream.</p>
-        pub fn set_delivery_stream_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.delivery_stream_name = input;
-            self
+        pub fn set_delivery_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.delivery_stream_name = input; self
         }
         /// <p>The record.</p>
         pub fn record(mut self, input: crate::model::Record) -> Self {
@@ -1104,122 +771,83 @@ pub mod put_record_input {
         }
         /// <p>The record.</p>
         pub fn set_record(mut self, input: std::option::Option<crate::model::Record>) -> Self {
-            self.record = input;
-            self
+            self.record = input; self
         }
         /// Consumes the builder and constructs a [`PutRecordInput`](crate::input::PutRecordInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::PutRecordInput, aws_smithy_http::operation::BuildError> {
-            Ok(crate::input::PutRecordInput {
-                delivery_stream_name: self.delivery_stream_name,
-                record: self.record,
-            })
+        pub fn build(self) -> Result<crate::input::PutRecordInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::PutRecordInput {
+                    delivery_stream_name: self.delivery_stream_name
+                    ,
+                    record: self.record
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl PutRecordInput {
     /// Consumes the builder and constructs an Operation<[`PutRecord`](crate::operation::PutRecord)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::PutRecord,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PutRecord, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::PutRecordInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::PutRecordInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::PutRecordInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::PutRecordInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "Firehose_20150804.PutRecord",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "Firehose_20150804.PutRecord"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_record(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_put_record(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op =
-            aws_smithy_http::operation::Operation::new(request, crate::operation::PutRecord::new())
-                .with_metadata(aws_smithy_http::operation::Metadata::new(
-                    "PutRecord",
-                    "firehose",
-                ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PutRecord::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("PutRecord", "firehose"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1231,9 +859,9 @@ impl PutRecordInput {
 
 /// See [`PutRecordBatchInput`](crate::input::PutRecordBatchInput).
 pub mod put_record_batch_input {
-
+    
     /// A builder for [`PutRecordBatchInput`](crate::input::PutRecordBatchInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) delivery_stream_name: std::option::Option<std::string::String>,
         pub(crate) records: std::option::Option<std::vec::Vec<crate::model::Record>>,
@@ -1245,12 +873,8 @@ pub mod put_record_batch_input {
             self
         }
         /// <p>The name of the delivery stream.</p>
-        pub fn set_delivery_stream_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.delivery_stream_name = input;
-            self
+        pub fn set_delivery_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.delivery_stream_name = input; self
         }
         /// Appends an item to `records`.
         ///
@@ -1259,134 +883,89 @@ pub mod put_record_batch_input {
         /// <p>One or more records.</p>
         pub fn records(mut self, input: crate::model::Record) -> Self {
             let mut v = self.records.unwrap_or_default();
-            v.push(input);
-            self.records = Some(v);
-            self
+                            v.push(input);
+                            self.records = Some(v);
+                            self
         }
         /// <p>One or more records.</p>
-        pub fn set_records(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Record>>,
-        ) -> Self {
-            self.records = input;
-            self
+        pub fn set_records(mut self, input: std::option::Option<std::vec::Vec<crate::model::Record>>) -> Self {
+            self.records = input; self
         }
         /// Consumes the builder and constructs a [`PutRecordBatchInput`](crate::input::PutRecordBatchInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::PutRecordBatchInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::PutRecordBatchInput {
-                delivery_stream_name: self.delivery_stream_name,
-                records: self.records,
-            })
+        pub fn build(self) -> Result<crate::input::PutRecordBatchInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::PutRecordBatchInput {
+                    delivery_stream_name: self.delivery_stream_name
+                    ,
+                    records: self.records
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl PutRecordBatchInput {
     /// Consumes the builder and constructs an Operation<[`PutRecordBatch`](crate::operation::PutRecordBatch)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::PutRecordBatch,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PutRecordBatch, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::PutRecordBatchInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::PutRecordBatchInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::PutRecordBatchInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::PutRecordBatchInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "Firehose_20150804.PutRecordBatch",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "Firehose_20150804.PutRecordBatch"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_record_batch(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_put_record_batch(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::PutRecordBatch::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "PutRecordBatch",
-            "firehose",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PutRecordBatch::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("PutRecordBatch", "firehose"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1398,13 +977,12 @@ impl PutRecordBatchInput {
 
 /// See [`StartDeliveryStreamEncryptionInput`](crate::input::StartDeliveryStreamEncryptionInput).
 pub mod start_delivery_stream_encryption_input {
-
+    
     /// A builder for [`StartDeliveryStreamEncryptionInput`](crate::input::StartDeliveryStreamEncryptionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) delivery_stream_name: std::option::Option<std::string::String>,
-        pub(crate) delivery_stream_encryption_configuration_input:
-            std::option::Option<crate::model::DeliveryStreamEncryptionConfigurationInput>,
+        pub(crate) delivery_stream_encryption_configuration_input: std::option::Option<crate::model::DeliveryStreamEncryptionConfigurationInput>,
     }
     impl Builder {
         /// <p>The name of the delivery stream for which you want to enable server-side encryption (SSE).</p>
@@ -1413,88 +991,56 @@ pub mod start_delivery_stream_encryption_input {
             self
         }
         /// <p>The name of the delivery stream for which you want to enable server-side encryption (SSE).</p>
-        pub fn set_delivery_stream_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.delivery_stream_name = input;
-            self
+        pub fn set_delivery_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.delivery_stream_name = input; self
         }
         /// <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).</p>
-        pub fn delivery_stream_encryption_configuration_input(
-            mut self,
-            input: crate::model::DeliveryStreamEncryptionConfigurationInput,
-        ) -> Self {
+        pub fn delivery_stream_encryption_configuration_input(mut self, input: crate::model::DeliveryStreamEncryptionConfigurationInput) -> Self {
             self.delivery_stream_encryption_configuration_input = Some(input);
             self
         }
         /// <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).</p>
-        pub fn set_delivery_stream_encryption_configuration_input(
-            mut self,
-            input: std::option::Option<crate::model::DeliveryStreamEncryptionConfigurationInput>,
-        ) -> Self {
-            self.delivery_stream_encryption_configuration_input = input;
-            self
+        pub fn set_delivery_stream_encryption_configuration_input(mut self, input: std::option::Option<crate::model::DeliveryStreamEncryptionConfigurationInput>) -> Self {
+            self.delivery_stream_encryption_configuration_input = input; self
         }
         /// Consumes the builder and constructs a [`StartDeliveryStreamEncryptionInput`](crate::input::StartDeliveryStreamEncryptionInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::StartDeliveryStreamEncryptionInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::StartDeliveryStreamEncryptionInput {
-                delivery_stream_name: self.delivery_stream_name,
-                delivery_stream_encryption_configuration_input: self
-                    .delivery_stream_encryption_configuration_input,
-            })
+        pub fn build(self) -> Result<crate::input::StartDeliveryStreamEncryptionInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::StartDeliveryStreamEncryptionInput {
+                    delivery_stream_name: self.delivery_stream_name
+                    ,
+                    delivery_stream_encryption_configuration_input: self.delivery_stream_encryption_configuration_input
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl StartDeliveryStreamEncryptionInput {
     /// Consumes the builder and constructs an Operation<[`StartDeliveryStreamEncryption`](crate::operation::StartDeliveryStreamEncryption)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::StartDeliveryStreamEncryption,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::StartDeliveryStreamEncryption, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::StartDeliveryStreamEncryptionInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::StartDeliveryStreamEncryptionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::StartDeliveryStreamEncryptionInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::StartDeliveryStreamEncryptionInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "Firehose_20150804.StartDeliveryStreamEncryption",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "Firehose_20150804.StartDeliveryStreamEncryption"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -1502,58 +1048,36 @@ impl StartDeliveryStreamEncryptionInput {
             crate::operation_ser::serialize_operation_crate_operation_start_delivery_stream_encryption(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::StartDeliveryStreamEncryption::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "StartDeliveryStreamEncryption",
-            "firehose",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::StartDeliveryStreamEncryption::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("StartDeliveryStreamEncryption", "firehose"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1565,9 +1089,9 @@ impl StartDeliveryStreamEncryptionInput {
 
 /// See [`StopDeliveryStreamEncryptionInput`](crate::input::StopDeliveryStreamEncryptionInput).
 pub mod stop_delivery_stream_encryption_input {
-
+    
     /// A builder for [`StopDeliveryStreamEncryptionInput`](crate::input::StopDeliveryStreamEncryptionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) delivery_stream_name: std::option::Option<std::string::String>,
     }
@@ -1578,70 +1102,45 @@ pub mod stop_delivery_stream_encryption_input {
             self
         }
         /// <p>The name of the delivery stream for which you want to disable server-side encryption (SSE).</p>
-        pub fn set_delivery_stream_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.delivery_stream_name = input;
-            self
+        pub fn set_delivery_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.delivery_stream_name = input; self
         }
         /// Consumes the builder and constructs a [`StopDeliveryStreamEncryptionInput`](crate::input::StopDeliveryStreamEncryptionInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::StopDeliveryStreamEncryptionInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::StopDeliveryStreamEncryptionInput {
-                delivery_stream_name: self.delivery_stream_name,
-            })
+        pub fn build(self) -> Result<crate::input::StopDeliveryStreamEncryptionInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::StopDeliveryStreamEncryptionInput {
+                    delivery_stream_name: self.delivery_stream_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl StopDeliveryStreamEncryptionInput {
     /// Consumes the builder and constructs an Operation<[`StopDeliveryStreamEncryption`](crate::operation::StopDeliveryStreamEncryption)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::StopDeliveryStreamEncryption,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::StopDeliveryStreamEncryption, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::StopDeliveryStreamEncryptionInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::StopDeliveryStreamEncryptionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::StopDeliveryStreamEncryptionInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::StopDeliveryStreamEncryptionInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "Firehose_20150804.StopDeliveryStreamEncryption",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "Firehose_20150804.StopDeliveryStreamEncryption"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -1649,58 +1148,36 @@ impl StopDeliveryStreamEncryptionInput {
             crate::operation_ser::serialize_operation_crate_operation_stop_delivery_stream_encryption(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::StopDeliveryStreamEncryption::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "StopDeliveryStreamEncryption",
-            "firehose",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::StopDeliveryStreamEncryption::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("StopDeliveryStreamEncryption", "firehose"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1712,9 +1189,9 @@ impl StopDeliveryStreamEncryptionInput {
 
 /// See [`TagDeliveryStreamInput`](crate::input::TagDeliveryStreamInput).
 pub mod tag_delivery_stream_input {
-
+    
     /// A builder for [`TagDeliveryStreamInput`](crate::input::TagDeliveryStreamInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) delivery_stream_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1726,12 +1203,8 @@ pub mod tag_delivery_stream_input {
             self
         }
         /// <p>The name of the delivery stream to which you want to add the tags.</p>
-        pub fn set_delivery_stream_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.delivery_stream_name = input;
-            self
+        pub fn set_delivery_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.delivery_stream_name = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -1740,134 +1213,89 @@ pub mod tag_delivery_stream_input {
         /// <p>A set of key-value pairs to use to create the tags.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>A set of key-value pairs to use to create the tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`TagDeliveryStreamInput`](crate::input::TagDeliveryStreamInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::TagDeliveryStreamInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::TagDeliveryStreamInput {
-                delivery_stream_name: self.delivery_stream_name,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::TagDeliveryStreamInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::TagDeliveryStreamInput {
+                    delivery_stream_name: self.delivery_stream_name
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl TagDeliveryStreamInput {
     /// Consumes the builder and constructs an Operation<[`TagDeliveryStream`](crate::operation::TagDeliveryStream)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::TagDeliveryStream,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::TagDeliveryStream, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::TagDeliveryStreamInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::TagDeliveryStreamInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::TagDeliveryStreamInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::TagDeliveryStreamInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "Firehose_20150804.TagDeliveryStream",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "Firehose_20150804.TagDeliveryStream"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_tag_delivery_stream(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_tag_delivery_stream(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::TagDeliveryStream::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "TagDeliveryStream",
-            "firehose",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::TagDeliveryStream::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("TagDeliveryStream", "firehose"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1879,9 +1307,9 @@ impl TagDeliveryStreamInput {
 
 /// See [`UntagDeliveryStreamInput`](crate::input::UntagDeliveryStreamInput).
 pub mod untag_delivery_stream_input {
-
+    
     /// A builder for [`UntagDeliveryStreamInput`](crate::input::UntagDeliveryStreamInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) delivery_stream_name: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1893,12 +1321,8 @@ pub mod untag_delivery_stream_input {
             self
         }
         /// <p>The name of the delivery stream.</p>
-        pub fn set_delivery_stream_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.delivery_stream_name = input;
-            self
+        pub fn set_delivery_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.delivery_stream_name = input; self
         }
         /// Appends an item to `tag_keys`.
         ///
@@ -1907,134 +1331,89 @@ pub mod untag_delivery_stream_input {
         /// <p>A list of tag keys. Each corresponding tag is removed from the delivery stream.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-            v.push(input.into());
-            self.tag_keys = Some(v);
-            self
+                            v.push(input.into());
+                            self.tag_keys = Some(v);
+                            self
         }
         /// <p>A list of tag keys. Each corresponding tag is removed from the delivery stream.</p>
-        pub fn set_tag_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.tag_keys = input;
-            self
+        pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.tag_keys = input; self
         }
         /// Consumes the builder and constructs a [`UntagDeliveryStreamInput`](crate::input::UntagDeliveryStreamInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UntagDeliveryStreamInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::UntagDeliveryStreamInput {
-                delivery_stream_name: self.delivery_stream_name,
-                tag_keys: self.tag_keys,
-            })
+        pub fn build(self) -> Result<crate::input::UntagDeliveryStreamInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::UntagDeliveryStreamInput {
+                    delivery_stream_name: self.delivery_stream_name
+                    ,
+                    tag_keys: self.tag_keys
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UntagDeliveryStreamInput {
     /// Consumes the builder and constructs an Operation<[`UntagDeliveryStream`](crate::operation::UntagDeliveryStream)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UntagDeliveryStream,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UntagDeliveryStream, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UntagDeliveryStreamInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::UntagDeliveryStreamInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::UntagDeliveryStreamInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::UntagDeliveryStreamInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "Firehose_20150804.UntagDeliveryStream",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "Firehose_20150804.UntagDeliveryStream"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_untag_delivery_stream(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_untag_delivery_stream(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UntagDeliveryStream::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UntagDeliveryStream",
-            "firehose",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UntagDeliveryStream::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UntagDeliveryStream", "firehose"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2046,26 +1425,20 @@ impl UntagDeliveryStreamInput {
 
 /// See [`UpdateDestinationInput`](crate::input::UpdateDestinationInput).
 pub mod update_destination_input {
-
+    
     /// A builder for [`UpdateDestinationInput`](crate::input::UpdateDestinationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) delivery_stream_name: std::option::Option<std::string::String>,
         pub(crate) current_delivery_stream_version_id: std::option::Option<std::string::String>,
         pub(crate) destination_id: std::option::Option<std::string::String>,
         pub(crate) s3_destination_update: std::option::Option<crate::model::S3DestinationUpdate>,
-        pub(crate) extended_s3_destination_update:
-            std::option::Option<crate::model::ExtendedS3DestinationUpdate>,
-        pub(crate) redshift_destination_update:
-            std::option::Option<crate::model::RedshiftDestinationUpdate>,
-        pub(crate) elasticsearch_destination_update:
-            std::option::Option<crate::model::ElasticsearchDestinationUpdate>,
-        pub(crate) amazonopensearchservice_destination_update:
-            std::option::Option<crate::model::AmazonopensearchserviceDestinationUpdate>,
-        pub(crate) splunk_destination_update:
-            std::option::Option<crate::model::SplunkDestinationUpdate>,
-        pub(crate) http_endpoint_destination_update:
-            std::option::Option<crate::model::HttpEndpointDestinationUpdate>,
+        pub(crate) extended_s3_destination_update: std::option::Option<crate::model::ExtendedS3DestinationUpdate>,
+        pub(crate) redshift_destination_update: std::option::Option<crate::model::RedshiftDestinationUpdate>,
+        pub(crate) elasticsearch_destination_update: std::option::Option<crate::model::ElasticsearchDestinationUpdate>,
+        pub(crate) amazonopensearchservice_destination_update: std::option::Option<crate::model::AmazonopensearchserviceDestinationUpdate>,
+        pub(crate) splunk_destination_update: std::option::Option<crate::model::SplunkDestinationUpdate>,
+        pub(crate) http_endpoint_destination_update: std::option::Option<crate::model::HttpEndpointDestinationUpdate>,
     }
     impl Builder {
         /// <p>The name of the delivery stream.</p>
@@ -2074,28 +1447,17 @@ pub mod update_destination_input {
             self
         }
         /// <p>The name of the delivery stream.</p>
-        pub fn set_delivery_stream_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.delivery_stream_name = input;
-            self
+        pub fn set_delivery_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.delivery_stream_name = input; self
         }
         /// <p>Obtain this value from the <code>VersionId</code> result of <code>DeliveryStreamDescription</code>. This value is required, and helps the service perform conditional operations. For example, if there is an interleaving update and this value is null, then the update destination fails. After the update is successful, the <code>VersionId</code> value is updated. The service then performs a merge of the old configuration with the new configuration.</p>
-        pub fn current_delivery_stream_version_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn current_delivery_stream_version_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.current_delivery_stream_version_id = Some(input.into());
             self
         }
         /// <p>Obtain this value from the <code>VersionId</code> result of <code>DeliveryStreamDescription</code>. This value is required, and helps the service perform conditional operations. For example, if there is an interleaving update and this value is null, then the update destination fails. After the update is successful, the <code>VersionId</code> value is updated. The service then performs a merge of the old configuration with the new configuration.</p>
-        pub fn set_current_delivery_stream_version_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.current_delivery_stream_version_id = input;
-            self
+        pub fn set_current_delivery_stream_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.current_delivery_stream_version_id = input; self
         }
         /// <p>The ID of the destination.</p>
         pub fn destination_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2103,249 +1465,163 @@ pub mod update_destination_input {
             self
         }
         /// <p>The ID of the destination.</p>
-        pub fn set_destination_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.destination_id = input;
-            self
+        pub fn set_destination_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.destination_id = input; self
         }
         /// <p>[Deprecated] Describes an update for a destination in Amazon S3.</p>
-        #[deprecated]
-        pub fn s3_destination_update(mut self, input: crate::model::S3DestinationUpdate) -> Self {
+        #[deprecated]pub fn s3_destination_update(mut self, input: crate::model::S3DestinationUpdate) -> Self {
             self.s3_destination_update = Some(input);
             self
         }
         /// <p>[Deprecated] Describes an update for a destination in Amazon S3.</p>
-        #[deprecated]
-        pub fn set_s3_destination_update(
-            mut self,
-            input: std::option::Option<crate::model::S3DestinationUpdate>,
-        ) -> Self {
-            self.s3_destination_update = input;
-            self
+        #[deprecated]pub fn set_s3_destination_update(mut self, input: std::option::Option<crate::model::S3DestinationUpdate>) -> Self {
+            self.s3_destination_update = input; self
         }
         /// <p>Describes an update for a destination in Amazon S3.</p>
-        pub fn extended_s3_destination_update(
-            mut self,
-            input: crate::model::ExtendedS3DestinationUpdate,
-        ) -> Self {
+        pub fn extended_s3_destination_update(mut self, input: crate::model::ExtendedS3DestinationUpdate) -> Self {
             self.extended_s3_destination_update = Some(input);
             self
         }
         /// <p>Describes an update for a destination in Amazon S3.</p>
-        pub fn set_extended_s3_destination_update(
-            mut self,
-            input: std::option::Option<crate::model::ExtendedS3DestinationUpdate>,
-        ) -> Self {
-            self.extended_s3_destination_update = input;
-            self
+        pub fn set_extended_s3_destination_update(mut self, input: std::option::Option<crate::model::ExtendedS3DestinationUpdate>) -> Self {
+            self.extended_s3_destination_update = input; self
         }
         /// <p>Describes an update for a destination in Amazon Redshift.</p>
-        pub fn redshift_destination_update(
-            mut self,
-            input: crate::model::RedshiftDestinationUpdate,
-        ) -> Self {
+        pub fn redshift_destination_update(mut self, input: crate::model::RedshiftDestinationUpdate) -> Self {
             self.redshift_destination_update = Some(input);
             self
         }
         /// <p>Describes an update for a destination in Amazon Redshift.</p>
-        pub fn set_redshift_destination_update(
-            mut self,
-            input: std::option::Option<crate::model::RedshiftDestinationUpdate>,
-        ) -> Self {
-            self.redshift_destination_update = input;
-            self
+        pub fn set_redshift_destination_update(mut self, input: std::option::Option<crate::model::RedshiftDestinationUpdate>) -> Self {
+            self.redshift_destination_update = input; self
         }
         /// <p>Describes an update for a destination in Amazon ES.</p>
-        pub fn elasticsearch_destination_update(
-            mut self,
-            input: crate::model::ElasticsearchDestinationUpdate,
-        ) -> Self {
+        pub fn elasticsearch_destination_update(mut self, input: crate::model::ElasticsearchDestinationUpdate) -> Self {
             self.elasticsearch_destination_update = Some(input);
             self
         }
         /// <p>Describes an update for a destination in Amazon ES.</p>
-        pub fn set_elasticsearch_destination_update(
-            mut self,
-            input: std::option::Option<crate::model::ElasticsearchDestinationUpdate>,
-        ) -> Self {
-            self.elasticsearch_destination_update = input;
-            self
+        pub fn set_elasticsearch_destination_update(mut self, input: std::option::Option<crate::model::ElasticsearchDestinationUpdate>) -> Self {
+            self.elasticsearch_destination_update = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn amazonopensearchservice_destination_update(
-            mut self,
-            input: crate::model::AmazonopensearchserviceDestinationUpdate,
-        ) -> Self {
+        pub fn amazonopensearchservice_destination_update(mut self, input: crate::model::AmazonopensearchserviceDestinationUpdate) -> Self {
             self.amazonopensearchservice_destination_update = Some(input);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_amazonopensearchservice_destination_update(
-            mut self,
-            input: std::option::Option<crate::model::AmazonopensearchserviceDestinationUpdate>,
-        ) -> Self {
-            self.amazonopensearchservice_destination_update = input;
-            self
+        pub fn set_amazonopensearchservice_destination_update(mut self, input: std::option::Option<crate::model::AmazonopensearchserviceDestinationUpdate>) -> Self {
+            self.amazonopensearchservice_destination_update = input; self
         }
         /// <p>Describes an update for a destination in Splunk.</p>
-        pub fn splunk_destination_update(
-            mut self,
-            input: crate::model::SplunkDestinationUpdate,
-        ) -> Self {
+        pub fn splunk_destination_update(mut self, input: crate::model::SplunkDestinationUpdate) -> Self {
             self.splunk_destination_update = Some(input);
             self
         }
         /// <p>Describes an update for a destination in Splunk.</p>
-        pub fn set_splunk_destination_update(
-            mut self,
-            input: std::option::Option<crate::model::SplunkDestinationUpdate>,
-        ) -> Self {
-            self.splunk_destination_update = input;
-            self
+        pub fn set_splunk_destination_update(mut self, input: std::option::Option<crate::model::SplunkDestinationUpdate>) -> Self {
+            self.splunk_destination_update = input; self
         }
         /// <p>Describes an update to the specified HTTP endpoint destination.</p>
-        pub fn http_endpoint_destination_update(
-            mut self,
-            input: crate::model::HttpEndpointDestinationUpdate,
-        ) -> Self {
+        pub fn http_endpoint_destination_update(mut self, input: crate::model::HttpEndpointDestinationUpdate) -> Self {
             self.http_endpoint_destination_update = Some(input);
             self
         }
         /// <p>Describes an update to the specified HTTP endpoint destination.</p>
-        pub fn set_http_endpoint_destination_update(
-            mut self,
-            input: std::option::Option<crate::model::HttpEndpointDestinationUpdate>,
-        ) -> Self {
-            self.http_endpoint_destination_update = input;
-            self
+        pub fn set_http_endpoint_destination_update(mut self, input: std::option::Option<crate::model::HttpEndpointDestinationUpdate>) -> Self {
+            self.http_endpoint_destination_update = input; self
         }
         /// Consumes the builder and constructs a [`UpdateDestinationInput`](crate::input::UpdateDestinationInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UpdateDestinationInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::UpdateDestinationInput {
-                delivery_stream_name: self.delivery_stream_name,
-                current_delivery_stream_version_id: self.current_delivery_stream_version_id,
-                destination_id: self.destination_id,
-                s3_destination_update: self.s3_destination_update,
-                extended_s3_destination_update: self.extended_s3_destination_update,
-                redshift_destination_update: self.redshift_destination_update,
-                elasticsearch_destination_update: self.elasticsearch_destination_update,
-                amazonopensearchservice_destination_update: self
-                    .amazonopensearchservice_destination_update,
-                splunk_destination_update: self.splunk_destination_update,
-                http_endpoint_destination_update: self.http_endpoint_destination_update,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateDestinationInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::UpdateDestinationInput {
+                    delivery_stream_name: self.delivery_stream_name
+                    ,
+                    current_delivery_stream_version_id: self.current_delivery_stream_version_id
+                    ,
+                    destination_id: self.destination_id
+                    ,
+                    s3_destination_update: self.s3_destination_update
+                    ,
+                    extended_s3_destination_update: self.extended_s3_destination_update
+                    ,
+                    redshift_destination_update: self.redshift_destination_update
+                    ,
+                    elasticsearch_destination_update: self.elasticsearch_destination_update
+                    ,
+                    amazonopensearchservice_destination_update: self.amazonopensearchservice_destination_update
+                    ,
+                    splunk_destination_update: self.splunk_destination_update
+                    ,
+                    http_endpoint_destination_update: self.http_endpoint_destination_update
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateDestinationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDestination`](crate::operation::UpdateDestination)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateDestination,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateDestination, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateDestinationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateDestinationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::UpdateDestinationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::UpdateDestinationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "Firehose_20150804.UpdateDestination",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "Firehose_20150804.UpdateDestination"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_destination(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_destination(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateDestination::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateDestination",
-            "firehose",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateDestination::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateDestination", "firehose"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2356,157 +1632,107 @@ impl UpdateDestinationInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateDestinationInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct UpdateDestinationInput  {
     /// <p>The name of the delivery stream.</p>
-    #[doc(hidden)]
-    pub delivery_stream_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub delivery_stream_name: std::option::Option<std::string::String>,
     /// <p>Obtain this value from the <code>VersionId</code> result of <code>DeliveryStreamDescription</code>. This value is required, and helps the service perform conditional operations. For example, if there is an interleaving update and this value is null, then the update destination fails. After the update is successful, the <code>VersionId</code> value is updated. The service then performs a merge of the old configuration with the new configuration.</p>
-    #[doc(hidden)]
-    pub current_delivery_stream_version_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub current_delivery_stream_version_id: std::option::Option<std::string::String>,
     /// <p>The ID of the destination.</p>
-    #[doc(hidden)]
-    pub destination_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub destination_id: std::option::Option<std::string::String>,
     /// <p>[Deprecated] Describes an update for a destination in Amazon S3.</p>
-    #[deprecated]
-    #[doc(hidden)]
-    pub s3_destination_update: std::option::Option<crate::model::S3DestinationUpdate>,
+    #[deprecated]#[doc(hidden)]pub s3_destination_update: std::option::Option<crate::model::S3DestinationUpdate>,
     /// <p>Describes an update for a destination in Amazon S3.</p>
-    #[doc(hidden)]
-    pub extended_s3_destination_update:
-        std::option::Option<crate::model::ExtendedS3DestinationUpdate>,
+    #[doc(hidden)]pub extended_s3_destination_update: std::option::Option<crate::model::ExtendedS3DestinationUpdate>,
     /// <p>Describes an update for a destination in Amazon Redshift.</p>
-    #[doc(hidden)]
-    pub redshift_destination_update: std::option::Option<crate::model::RedshiftDestinationUpdate>,
+    #[doc(hidden)]pub redshift_destination_update: std::option::Option<crate::model::RedshiftDestinationUpdate>,
     /// <p>Describes an update for a destination in Amazon ES.</p>
-    #[doc(hidden)]
-    pub elasticsearch_destination_update:
-        std::option::Option<crate::model::ElasticsearchDestinationUpdate>,
+    #[doc(hidden)]pub elasticsearch_destination_update: std::option::Option<crate::model::ElasticsearchDestinationUpdate>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub amazonopensearchservice_destination_update:
-        std::option::Option<crate::model::AmazonopensearchserviceDestinationUpdate>,
+    #[doc(hidden)]pub amazonopensearchservice_destination_update: std::option::Option<crate::model::AmazonopensearchserviceDestinationUpdate>,
     /// <p>Describes an update for a destination in Splunk.</p>
-    #[doc(hidden)]
-    pub splunk_destination_update: std::option::Option<crate::model::SplunkDestinationUpdate>,
+    #[doc(hidden)]pub splunk_destination_update: std::option::Option<crate::model::SplunkDestinationUpdate>,
     /// <p>Describes an update to the specified HTTP endpoint destination.</p>
-    #[doc(hidden)]
-    pub http_endpoint_destination_update:
-        std::option::Option<crate::model::HttpEndpointDestinationUpdate>,
+    #[doc(hidden)]pub http_endpoint_destination_update: std::option::Option<crate::model::HttpEndpointDestinationUpdate>,
 }
 impl UpdateDestinationInput {
     /// <p>The name of the delivery stream.</p>
-    pub fn delivery_stream_name(&self) -> std::option::Option<&str> {
+    pub fn delivery_stream_name(&self) -> std::option::Option<& str> {
         self.delivery_stream_name.as_deref()
     }
     /// <p>Obtain this value from the <code>VersionId</code> result of <code>DeliveryStreamDescription</code>. This value is required, and helps the service perform conditional operations. For example, if there is an interleaving update and this value is null, then the update destination fails. After the update is successful, the <code>VersionId</code> value is updated. The service then performs a merge of the old configuration with the new configuration.</p>
-    pub fn current_delivery_stream_version_id(&self) -> std::option::Option<&str> {
+    pub fn current_delivery_stream_version_id(&self) -> std::option::Option<& str> {
         self.current_delivery_stream_version_id.as_deref()
     }
     /// <p>The ID of the destination.</p>
-    pub fn destination_id(&self) -> std::option::Option<&str> {
+    pub fn destination_id(&self) -> std::option::Option<& str> {
         self.destination_id.as_deref()
     }
     /// <p>[Deprecated] Describes an update for a destination in Amazon S3.</p>
-    #[deprecated]
-    pub fn s3_destination_update(&self) -> std::option::Option<&crate::model::S3DestinationUpdate> {
+    #[deprecated]pub fn s3_destination_update(&self) -> std::option::Option<& crate::model::S3DestinationUpdate> {
         self.s3_destination_update.as_ref()
     }
     /// <p>Describes an update for a destination in Amazon S3.</p>
-    pub fn extended_s3_destination_update(
-        &self,
-    ) -> std::option::Option<&crate::model::ExtendedS3DestinationUpdate> {
+    pub fn extended_s3_destination_update(&self) -> std::option::Option<& crate::model::ExtendedS3DestinationUpdate> {
         self.extended_s3_destination_update.as_ref()
     }
     /// <p>Describes an update for a destination in Amazon Redshift.</p>
-    pub fn redshift_destination_update(
-        &self,
-    ) -> std::option::Option<&crate::model::RedshiftDestinationUpdate> {
+    pub fn redshift_destination_update(&self) -> std::option::Option<& crate::model::RedshiftDestinationUpdate> {
         self.redshift_destination_update.as_ref()
     }
     /// <p>Describes an update for a destination in Amazon ES.</p>
-    pub fn elasticsearch_destination_update(
-        &self,
-    ) -> std::option::Option<&crate::model::ElasticsearchDestinationUpdate> {
+    pub fn elasticsearch_destination_update(&self) -> std::option::Option<& crate::model::ElasticsearchDestinationUpdate> {
         self.elasticsearch_destination_update.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn amazonopensearchservice_destination_update(
-        &self,
-    ) -> std::option::Option<&crate::model::AmazonopensearchserviceDestinationUpdate> {
+    pub fn amazonopensearchservice_destination_update(&self) -> std::option::Option<& crate::model::AmazonopensearchserviceDestinationUpdate> {
         self.amazonopensearchservice_destination_update.as_ref()
     }
     /// <p>Describes an update for a destination in Splunk.</p>
-    pub fn splunk_destination_update(
-        &self,
-    ) -> std::option::Option<&crate::model::SplunkDestinationUpdate> {
+    pub fn splunk_destination_update(&self) -> std::option::Option<& crate::model::SplunkDestinationUpdate> {
         self.splunk_destination_update.as_ref()
     }
     /// <p>Describes an update to the specified HTTP endpoint destination.</p>
-    pub fn http_endpoint_destination_update(
-        &self,
-    ) -> std::option::Option<&crate::model::HttpEndpointDestinationUpdate> {
+    pub fn http_endpoint_destination_update(&self) -> std::option::Option<& crate::model::HttpEndpointDestinationUpdate> {
         self.http_endpoint_destination_update.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateDestinationInput {
+impl  std::fmt::Debug for UpdateDestinationInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDestinationInput");
         formatter.field("delivery_stream_name", &self.delivery_stream_name);
-        formatter.field(
-            "current_delivery_stream_version_id",
-            &self.current_delivery_stream_version_id,
-        );
+        formatter.field("current_delivery_stream_version_id", &self.current_delivery_stream_version_id);
         formatter.field("destination_id", &self.destination_id);
         formatter.field("s3_destination_update", &self.s3_destination_update);
-        formatter.field(
-            "extended_s3_destination_update",
-            &self.extended_s3_destination_update,
-        );
-        formatter.field(
-            "redshift_destination_update",
-            &self.redshift_destination_update,
-        );
-        formatter.field(
-            "elasticsearch_destination_update",
-            &self.elasticsearch_destination_update,
-        );
-        formatter.field(
-            "amazonopensearchservice_destination_update",
-            &self.amazonopensearchservice_destination_update,
-        );
+        formatter.field("extended_s3_destination_update", &self.extended_s3_destination_update);
+        formatter.field("redshift_destination_update", &self.redshift_destination_update);
+        formatter.field("elasticsearch_destination_update", &self.elasticsearch_destination_update);
+        formatter.field("amazonopensearchservice_destination_update", &self.amazonopensearchservice_destination_update);
         formatter.field("splunk_destination_update", &self.splunk_destination_update);
-        formatter.field(
-            "http_endpoint_destination_update",
-            &self.http_endpoint_destination_update,
-        );
+        formatter.field("http_endpoint_destination_update", &self.http_endpoint_destination_update);
         formatter.finish()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UntagDeliveryStreamInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct UntagDeliveryStreamInput  {
     /// <p>The name of the delivery stream.</p>
-    #[doc(hidden)]
-    pub delivery_stream_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub delivery_stream_name: std::option::Option<std::string::String>,
     /// <p>A list of tag keys. Each corresponding tag is removed from the delivery stream.</p>
-    #[doc(hidden)]
-    pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagDeliveryStreamInput {
     /// <p>The name of the delivery stream.</p>
-    pub fn delivery_stream_name(&self) -> std::option::Option<&str> {
+    pub fn delivery_stream_name(&self) -> std::option::Option<& str> {
         self.delivery_stream_name.as_deref()
     }
     /// <p>A list of tag keys. Each corresponding tag is removed from the delivery stream.</p>
-    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagDeliveryStreamInput {
+impl  std::fmt::Debug for UntagDeliveryStreamInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagDeliveryStreamInput");
         formatter.field("delivery_stream_name", &self.delivery_stream_name);
@@ -2516,27 +1742,24 @@ impl std::fmt::Debug for UntagDeliveryStreamInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct TagDeliveryStreamInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct TagDeliveryStreamInput  {
     /// <p>The name of the delivery stream to which you want to add the tags.</p>
-    #[doc(hidden)]
-    pub delivery_stream_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub delivery_stream_name: std::option::Option<std::string::String>,
     /// <p>A set of key-value pairs to use to create the tags.</p>
-    #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagDeliveryStreamInput {
     /// <p>The name of the delivery stream to which you want to add the tags.</p>
-    pub fn delivery_stream_name(&self) -> std::option::Option<&str> {
+    pub fn delivery_stream_name(&self) -> std::option::Option<& str> {
         self.delivery_stream_name.as_deref()
     }
     /// <p>A set of key-value pairs to use to create the tags.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagDeliveryStreamInput {
+impl  std::fmt::Debug for TagDeliveryStreamInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagDeliveryStreamInput");
         formatter.field("delivery_stream_name", &self.delivery_stream_name);
@@ -2546,20 +1769,18 @@ impl std::fmt::Debug for TagDeliveryStreamInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct StopDeliveryStreamEncryptionInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct StopDeliveryStreamEncryptionInput  {
     /// <p>The name of the delivery stream for which you want to disable server-side encryption (SSE).</p>
-    #[doc(hidden)]
-    pub delivery_stream_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub delivery_stream_name: std::option::Option<std::string::String>,
 }
 impl StopDeliveryStreamEncryptionInput {
     /// <p>The name of the delivery stream for which you want to disable server-side encryption (SSE).</p>
-    pub fn delivery_stream_name(&self) -> std::option::Option<&str> {
+    pub fn delivery_stream_name(&self) -> std::option::Option<& str> {
         self.delivery_stream_name.as_deref()
     }
 }
-impl std::fmt::Debug for StopDeliveryStreamEncryptionInput {
+impl  std::fmt::Debug for StopDeliveryStreamEncryptionInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopDeliveryStreamEncryptionInput");
         formatter.field("delivery_stream_name", &self.delivery_stream_name);
@@ -2568,63 +1789,51 @@ impl std::fmt::Debug for StopDeliveryStreamEncryptionInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct StartDeliveryStreamEncryptionInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct StartDeliveryStreamEncryptionInput  {
     /// <p>The name of the delivery stream for which you want to enable server-side encryption (SSE).</p>
-    #[doc(hidden)]
-    pub delivery_stream_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub delivery_stream_name: std::option::Option<std::string::String>,
     /// <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).</p>
-    #[doc(hidden)]
-    pub delivery_stream_encryption_configuration_input:
-        std::option::Option<crate::model::DeliveryStreamEncryptionConfigurationInput>,
+    #[doc(hidden)]pub delivery_stream_encryption_configuration_input: std::option::Option<crate::model::DeliveryStreamEncryptionConfigurationInput>,
 }
 impl StartDeliveryStreamEncryptionInput {
     /// <p>The name of the delivery stream for which you want to enable server-side encryption (SSE).</p>
-    pub fn delivery_stream_name(&self) -> std::option::Option<&str> {
+    pub fn delivery_stream_name(&self) -> std::option::Option<& str> {
         self.delivery_stream_name.as_deref()
     }
     /// <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).</p>
-    pub fn delivery_stream_encryption_configuration_input(
-        &self,
-    ) -> std::option::Option<&crate::model::DeliveryStreamEncryptionConfigurationInput> {
+    pub fn delivery_stream_encryption_configuration_input(&self) -> std::option::Option<& crate::model::DeliveryStreamEncryptionConfigurationInput> {
         self.delivery_stream_encryption_configuration_input.as_ref()
     }
 }
-impl std::fmt::Debug for StartDeliveryStreamEncryptionInput {
+impl  std::fmt::Debug for StartDeliveryStreamEncryptionInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartDeliveryStreamEncryptionInput");
         formatter.field("delivery_stream_name", &self.delivery_stream_name);
-        formatter.field(
-            "delivery_stream_encryption_configuration_input",
-            &self.delivery_stream_encryption_configuration_input,
-        );
+        formatter.field("delivery_stream_encryption_configuration_input", &self.delivery_stream_encryption_configuration_input);
         formatter.finish()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PutRecordBatchInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct PutRecordBatchInput  {
     /// <p>The name of the delivery stream.</p>
-    #[doc(hidden)]
-    pub delivery_stream_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub delivery_stream_name: std::option::Option<std::string::String>,
     /// <p>One or more records.</p>
-    #[doc(hidden)]
-    pub records: std::option::Option<std::vec::Vec<crate::model::Record>>,
+    #[doc(hidden)]pub records: std::option::Option<std::vec::Vec<crate::model::Record>>,
 }
 impl PutRecordBatchInput {
     /// <p>The name of the delivery stream.</p>
-    pub fn delivery_stream_name(&self) -> std::option::Option<&str> {
+    pub fn delivery_stream_name(&self) -> std::option::Option<& str> {
         self.delivery_stream_name.as_deref()
     }
     /// <p>One or more records.</p>
-    pub fn records(&self) -> std::option::Option<&[crate::model::Record]> {
+    pub fn records(&self) -> std::option::Option<& [crate::model::Record]> {
         self.records.as_deref()
     }
 }
-impl std::fmt::Debug for PutRecordBatchInput {
+impl  std::fmt::Debug for PutRecordBatchInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutRecordBatchInput");
         formatter.field("delivery_stream_name", &self.delivery_stream_name);
@@ -2634,27 +1843,24 @@ impl std::fmt::Debug for PutRecordBatchInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PutRecordInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct PutRecordInput  {
     /// <p>The name of the delivery stream.</p>
-    #[doc(hidden)]
-    pub delivery_stream_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub delivery_stream_name: std::option::Option<std::string::String>,
     /// <p>The record.</p>
-    #[doc(hidden)]
-    pub record: std::option::Option<crate::model::Record>,
+    #[doc(hidden)]pub record: std::option::Option<crate::model::Record>,
 }
 impl PutRecordInput {
     /// <p>The name of the delivery stream.</p>
-    pub fn delivery_stream_name(&self) -> std::option::Option<&str> {
+    pub fn delivery_stream_name(&self) -> std::option::Option<& str> {
         self.delivery_stream_name.as_deref()
     }
     /// <p>The record.</p>
-    pub fn record(&self) -> std::option::Option<&crate::model::Record> {
+    pub fn record(&self) -> std::option::Option<& crate::model::Record> {
         self.record.as_ref()
     }
 }
-impl std::fmt::Debug for PutRecordInput {
+impl  std::fmt::Debug for PutRecordInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutRecordInput");
         formatter.field("delivery_stream_name", &self.delivery_stream_name);
@@ -2664,26 +1870,22 @@ impl std::fmt::Debug for PutRecordInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListTagsForDeliveryStreamInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListTagsForDeliveryStreamInput  {
     /// <p>The name of the delivery stream whose tags you want to list.</p>
-    #[doc(hidden)]
-    pub delivery_stream_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub delivery_stream_name: std::option::Option<std::string::String>,
     /// <p>The key to use as the starting point for the list of tags. If you set this parameter, <code>ListTagsForDeliveryStream</code> gets all tags that occur after <code>ExclusiveStartTagKey</code>.</p>
-    #[doc(hidden)]
-    pub exclusive_start_tag_key: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub exclusive_start_tag_key: std::option::Option<std::string::String>,
     /// <p>The number of tags to return. If this number is less than the total number of tags associated with the delivery stream, <code>HasMoreTags</code> is set to <code>true</code> in the response. To list additional tags, set <code>ExclusiveStartTagKey</code> to the last key in the response. </p>
-    #[doc(hidden)]
-    pub limit: std::option::Option<i32>,
+    #[doc(hidden)]pub limit: std::option::Option<i32>,
 }
 impl ListTagsForDeliveryStreamInput {
     /// <p>The name of the delivery stream whose tags you want to list.</p>
-    pub fn delivery_stream_name(&self) -> std::option::Option<&str> {
+    pub fn delivery_stream_name(&self) -> std::option::Option<& str> {
         self.delivery_stream_name.as_deref()
     }
     /// <p>The key to use as the starting point for the list of tags. If you set this parameter, <code>ListTagsForDeliveryStream</code> gets all tags that occur after <code>ExclusiveStartTagKey</code>.</p>
-    pub fn exclusive_start_tag_key(&self) -> std::option::Option<&str> {
+    pub fn exclusive_start_tag_key(&self) -> std::option::Option<& str> {
         self.exclusive_start_tag_key.as_deref()
     }
     /// <p>The number of tags to return. If this number is less than the total number of tags associated with the delivery stream, <code>HasMoreTags</code> is set to <code>true</code> in the response. To list additional tags, set <code>ExclusiveStartTagKey</code> to the last key in the response. </p>
@@ -2691,7 +1893,7 @@ impl ListTagsForDeliveryStreamInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListTagsForDeliveryStreamInput {
+impl  std::fmt::Debug for ListTagsForDeliveryStreamInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForDeliveryStreamInput");
         formatter.field("delivery_stream_name", &self.delivery_stream_name);
@@ -2702,73 +1904,62 @@ impl std::fmt::Debug for ListTagsForDeliveryStreamInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListDeliveryStreamsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListDeliveryStreamsInput  {
     /// <p>The maximum number of delivery streams to list. The default value is 10.</p>
-    #[doc(hidden)]
-    pub limit: std::option::Option<i32>,
-    /// <p>The delivery stream type. This can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li>
-    /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>
-    /// </ul>
+    #[doc(hidden)]pub limit: std::option::Option<i32>,
+    /// <p>The delivery stream type. This can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li> 
+    /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li> 
+    /// </ul> 
     /// <p>This parameter is optional. If this parameter is omitted, delivery streams of all types are returned.</p>
-    #[doc(hidden)]
-    pub delivery_stream_type: std::option::Option<crate::model::DeliveryStreamType>,
+    #[doc(hidden)]pub delivery_stream_type: std::option::Option<crate::model::DeliveryStreamType>,
     /// <p>The list of delivery streams returned by this call to <code>ListDeliveryStreams</code> will start with the delivery stream whose name comes alphabetically immediately after the name you specify in <code>ExclusiveStartDeliveryStreamName</code>.</p>
-    #[doc(hidden)]
-    pub exclusive_start_delivery_stream_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub exclusive_start_delivery_stream_name: std::option::Option<std::string::String>,
 }
 impl ListDeliveryStreamsInput {
     /// <p>The maximum number of delivery streams to list. The default value is 10.</p>
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>The delivery stream type. This can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li>
-    /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>
-    /// </ul>
+    /// <p>The delivery stream type. This can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li> 
+    /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li> 
+    /// </ul> 
     /// <p>This parameter is optional. If this parameter is omitted, delivery streams of all types are returned.</p>
-    pub fn delivery_stream_type(&self) -> std::option::Option<&crate::model::DeliveryStreamType> {
+    pub fn delivery_stream_type(&self) -> std::option::Option<& crate::model::DeliveryStreamType> {
         self.delivery_stream_type.as_ref()
     }
     /// <p>The list of delivery streams returned by this call to <code>ListDeliveryStreams</code> will start with the delivery stream whose name comes alphabetically immediately after the name you specify in <code>ExclusiveStartDeliveryStreamName</code>.</p>
-    pub fn exclusive_start_delivery_stream_name(&self) -> std::option::Option<&str> {
+    pub fn exclusive_start_delivery_stream_name(&self) -> std::option::Option<& str> {
         self.exclusive_start_delivery_stream_name.as_deref()
     }
 }
-impl std::fmt::Debug for ListDeliveryStreamsInput {
+impl  std::fmt::Debug for ListDeliveryStreamsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDeliveryStreamsInput");
         formatter.field("limit", &self.limit);
         formatter.field("delivery_stream_type", &self.delivery_stream_type);
-        formatter.field(
-            "exclusive_start_delivery_stream_name",
-            &self.exclusive_start_delivery_stream_name,
-        );
+        formatter.field("exclusive_start_delivery_stream_name", &self.exclusive_start_delivery_stream_name);
         formatter.finish()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeDeliveryStreamInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DescribeDeliveryStreamInput  {
     /// <p>The name of the delivery stream.</p>
-    #[doc(hidden)]
-    pub delivery_stream_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub delivery_stream_name: std::option::Option<std::string::String>,
     /// <p>The limit on the number of destinations to return. You can have one destination per delivery stream.</p>
-    #[doc(hidden)]
-    pub limit: std::option::Option<i32>,
+    #[doc(hidden)]pub limit: std::option::Option<i32>,
     /// <p>The ID of the destination to start returning the destination information. Kinesis Data Firehose supports one destination per delivery stream.</p>
-    #[doc(hidden)]
-    pub exclusive_start_destination_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub exclusive_start_destination_id: std::option::Option<std::string::String>,
 }
 impl DescribeDeliveryStreamInput {
     /// <p>The name of the delivery stream.</p>
-    pub fn delivery_stream_name(&self) -> std::option::Option<&str> {
+    pub fn delivery_stream_name(&self) -> std::option::Option<& str> {
         self.delivery_stream_name.as_deref()
     }
     /// <p>The limit on the number of destinations to return. You can have one destination per delivery stream.</p>
@@ -2776,47 +1967,41 @@ impl DescribeDeliveryStreamInput {
         self.limit
     }
     /// <p>The ID of the destination to start returning the destination information. Kinesis Data Firehose supports one destination per delivery stream.</p>
-    pub fn exclusive_start_destination_id(&self) -> std::option::Option<&str> {
+    pub fn exclusive_start_destination_id(&self) -> std::option::Option<& str> {
         self.exclusive_start_destination_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDeliveryStreamInput {
+impl  std::fmt::Debug for DescribeDeliveryStreamInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDeliveryStreamInput");
         formatter.field("delivery_stream_name", &self.delivery_stream_name);
         formatter.field("limit", &self.limit);
-        formatter.field(
-            "exclusive_start_destination_id",
-            &self.exclusive_start_destination_id,
-        );
+        formatter.field("exclusive_start_destination_id", &self.exclusive_start_destination_id);
         formatter.finish()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteDeliveryStreamInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DeleteDeliveryStreamInput  {
     /// <p>The name of the delivery stream.</p>
-    #[doc(hidden)]
-    pub delivery_stream_name: std::option::Option<std::string::String>,
-    /// <p>Set this to true if you want to delete the delivery stream even if Kinesis Data Firehose is unable to retire the grant for the CMK. Kinesis Data Firehose might be unable to retire the grant due to a customer error, such as when the CMK or the grant are in an invalid state. If you force deletion, you can then use the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> operation to revoke the grant you gave to Kinesis Data Firehose. If a failure to retire the grant happens due to an AWS KMS issue, Kinesis Data Firehose keeps retrying the delete operation.</p>
+    #[doc(hidden)]pub delivery_stream_name: std::option::Option<std::string::String>,
+    /// <p>Set this to true if you want to delete the delivery stream even if Kinesis Data Firehose is unable to retire the grant for the CMK. Kinesis Data Firehose might be unable to retire the grant due to a customer error, such as when the CMK or the grant are in an invalid state. If you force deletion, you can then use the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> operation to revoke the grant you gave to Kinesis Data Firehose. If a failure to retire the grant happens due to an AWS KMS issue, Kinesis Data Firehose keeps retrying the delete operation.</p> 
     /// <p>The default value is false.</p>
-    #[doc(hidden)]
-    pub allow_force_delete: std::option::Option<bool>,
+    #[doc(hidden)]pub allow_force_delete: std::option::Option<bool>,
 }
 impl DeleteDeliveryStreamInput {
     /// <p>The name of the delivery stream.</p>
-    pub fn delivery_stream_name(&self) -> std::option::Option<&str> {
+    pub fn delivery_stream_name(&self) -> std::option::Option<& str> {
         self.delivery_stream_name.as_deref()
     }
-    /// <p>Set this to true if you want to delete the delivery stream even if Kinesis Data Firehose is unable to retire the grant for the CMK. Kinesis Data Firehose might be unable to retire the grant due to a customer error, such as when the CMK or the grant are in an invalid state. If you force deletion, you can then use the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> operation to revoke the grant you gave to Kinesis Data Firehose. If a failure to retire the grant happens due to an AWS KMS issue, Kinesis Data Firehose keeps retrying the delete operation.</p>
+    /// <p>Set this to true if you want to delete the delivery stream even if Kinesis Data Firehose is unable to retire the grant for the CMK. Kinesis Data Firehose might be unable to retire the grant due to a customer error, such as when the CMK or the grant are in an invalid state. If you force deletion, you can then use the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> operation to revoke the grant you gave to Kinesis Data Firehose. If a failure to retire the grant happens due to an AWS KMS issue, Kinesis Data Firehose keeps retrying the delete operation.</p> 
     /// <p>The default value is false.</p>
     pub fn allow_force_delete(&self) -> std::option::Option<bool> {
         self.allow_force_delete
     }
 }
-impl std::fmt::Debug for DeleteDeliveryStreamInput {
+impl  std::fmt::Debug for DeleteDeliveryStreamInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDeliveryStreamInput");
         formatter.field("delivery_stream_name", &self.delivery_stream_name);
@@ -2826,177 +2011,109 @@ impl std::fmt::Debug for DeleteDeliveryStreamInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateDeliveryStreamInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CreateDeliveryStreamInput  {
     /// <p>The name of the delivery stream. This name must be unique per AWS account in the same AWS Region. If the delivery streams are in different accounts or different Regions, you can have multiple delivery streams with the same name.</p>
-    #[doc(hidden)]
-    pub delivery_stream_name: std::option::Option<std::string::String>,
-    /// <p>The delivery stream type. This parameter can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li>
-    /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>
+    #[doc(hidden)]pub delivery_stream_name: std::option::Option<std::string::String>,
+    /// <p>The delivery stream type. This parameter can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li> 
+    /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li> 
     /// </ul>
-    #[doc(hidden)]
-    pub delivery_stream_type: std::option::Option<crate::model::DeliveryStreamType>,
+    #[doc(hidden)]pub delivery_stream_type: std::option::Option<crate::model::DeliveryStreamType>,
     /// <p>When a Kinesis data stream is used as the source for the delivery stream, a <code>KinesisStreamSourceConfiguration</code> containing the Kinesis data stream Amazon Resource Name (ARN) and the role ARN for the source stream.</p>
-    #[doc(hidden)]
-    pub kinesis_stream_source_configuration:
-        std::option::Option<crate::model::KinesisStreamSourceConfiguration>,
+    #[doc(hidden)]pub kinesis_stream_source_configuration: std::option::Option<crate::model::KinesisStreamSourceConfiguration>,
     /// <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).</p>
-    #[doc(hidden)]
-    pub delivery_stream_encryption_configuration_input:
-        std::option::Option<crate::model::DeliveryStreamEncryptionConfigurationInput>,
+    #[doc(hidden)]pub delivery_stream_encryption_configuration_input: std::option::Option<crate::model::DeliveryStreamEncryptionConfigurationInput>,
     /// <p>[Deprecated] The destination in Amazon S3. You can specify only one destination.</p>
-    #[deprecated]
-    #[doc(hidden)]
-    pub s3_destination_configuration: std::option::Option<crate::model::S3DestinationConfiguration>,
+    #[deprecated]#[doc(hidden)]pub s3_destination_configuration: std::option::Option<crate::model::S3DestinationConfiguration>,
     /// <p>The destination in Amazon S3. You can specify only one destination.</p>
-    #[doc(hidden)]
-    pub extended_s3_destination_configuration:
-        std::option::Option<crate::model::ExtendedS3DestinationConfiguration>,
+    #[doc(hidden)]pub extended_s3_destination_configuration: std::option::Option<crate::model::ExtendedS3DestinationConfiguration>,
     /// <p>The destination in Amazon Redshift. You can specify only one destination.</p>
-    #[doc(hidden)]
-    pub redshift_destination_configuration:
-        std::option::Option<crate::model::RedshiftDestinationConfiguration>,
+    #[doc(hidden)]pub redshift_destination_configuration: std::option::Option<crate::model::RedshiftDestinationConfiguration>,
     /// <p>The destination in Amazon ES. You can specify only one destination.</p>
-    #[doc(hidden)]
-    pub elasticsearch_destination_configuration:
-        std::option::Option<crate::model::ElasticsearchDestinationConfiguration>,
+    #[doc(hidden)]pub elasticsearch_destination_configuration: std::option::Option<crate::model::ElasticsearchDestinationConfiguration>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub amazonopensearchservice_destination_configuration:
-        std::option::Option<crate::model::AmazonopensearchserviceDestinationConfiguration>,
+    #[doc(hidden)]pub amazonopensearchservice_destination_configuration: std::option::Option<crate::model::AmazonopensearchserviceDestinationConfiguration>,
     /// <p>The destination in Splunk. You can specify only one destination.</p>
-    #[doc(hidden)]
-    pub splunk_destination_configuration:
-        std::option::Option<crate::model::SplunkDestinationConfiguration>,
+    #[doc(hidden)]pub splunk_destination_configuration: std::option::Option<crate::model::SplunkDestinationConfiguration>,
     /// <p>Enables configuring Kinesis Firehose to deliver data to any HTTP endpoint destination. You can specify only one destination.</p>
-    #[doc(hidden)]
-    pub http_endpoint_destination_configuration:
-        std::option::Option<crate::model::HttpEndpointDestinationConfiguration>,
-    /// <p>A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign to AWS resources. Tags are metadata. For example, you can add friendly names and descriptions or other types of information that can help you distinguish the delivery stream. For more information about tags, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the AWS Billing and Cost Management User Guide.</p>
+    #[doc(hidden)]pub http_endpoint_destination_configuration: std::option::Option<crate::model::HttpEndpointDestinationConfiguration>,
+    /// <p>A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign to AWS resources. Tags are metadata. For example, you can add friendly names and descriptions or other types of information that can help you distinguish the delivery stream. For more information about tags, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the AWS Billing and Cost Management User Guide.</p> 
     /// <p>You can specify up to 50 tags when creating a delivery stream.</p>
-    #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateDeliveryStreamInput {
     /// <p>The name of the delivery stream. This name must be unique per AWS account in the same AWS Region. If the delivery streams are in different accounts or different Regions, you can have multiple delivery streams with the same name.</p>
-    pub fn delivery_stream_name(&self) -> std::option::Option<&str> {
+    pub fn delivery_stream_name(&self) -> std::option::Option<& str> {
         self.delivery_stream_name.as_deref()
     }
-    /// <p>The delivery stream type. This parameter can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li>
-    /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>
+    /// <p>The delivery stream type. This parameter can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li> 
+    /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li> 
     /// </ul>
-    pub fn delivery_stream_type(&self) -> std::option::Option<&crate::model::DeliveryStreamType> {
+    pub fn delivery_stream_type(&self) -> std::option::Option<& crate::model::DeliveryStreamType> {
         self.delivery_stream_type.as_ref()
     }
     /// <p>When a Kinesis data stream is used as the source for the delivery stream, a <code>KinesisStreamSourceConfiguration</code> containing the Kinesis data stream Amazon Resource Name (ARN) and the role ARN for the source stream.</p>
-    pub fn kinesis_stream_source_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::KinesisStreamSourceConfiguration> {
+    pub fn kinesis_stream_source_configuration(&self) -> std::option::Option<& crate::model::KinesisStreamSourceConfiguration> {
         self.kinesis_stream_source_configuration.as_ref()
     }
     /// <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).</p>
-    pub fn delivery_stream_encryption_configuration_input(
-        &self,
-    ) -> std::option::Option<&crate::model::DeliveryStreamEncryptionConfigurationInput> {
+    pub fn delivery_stream_encryption_configuration_input(&self) -> std::option::Option<& crate::model::DeliveryStreamEncryptionConfigurationInput> {
         self.delivery_stream_encryption_configuration_input.as_ref()
     }
     /// <p>[Deprecated] The destination in Amazon S3. You can specify only one destination.</p>
-    #[deprecated]
-    pub fn s3_destination_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::S3DestinationConfiguration> {
+    #[deprecated]pub fn s3_destination_configuration(&self) -> std::option::Option<& crate::model::S3DestinationConfiguration> {
         self.s3_destination_configuration.as_ref()
     }
     /// <p>The destination in Amazon S3. You can specify only one destination.</p>
-    pub fn extended_s3_destination_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::ExtendedS3DestinationConfiguration> {
+    pub fn extended_s3_destination_configuration(&self) -> std::option::Option<& crate::model::ExtendedS3DestinationConfiguration> {
         self.extended_s3_destination_configuration.as_ref()
     }
     /// <p>The destination in Amazon Redshift. You can specify only one destination.</p>
-    pub fn redshift_destination_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::RedshiftDestinationConfiguration> {
+    pub fn redshift_destination_configuration(&self) -> std::option::Option<& crate::model::RedshiftDestinationConfiguration> {
         self.redshift_destination_configuration.as_ref()
     }
     /// <p>The destination in Amazon ES. You can specify only one destination.</p>
-    pub fn elasticsearch_destination_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::ElasticsearchDestinationConfiguration> {
+    pub fn elasticsearch_destination_configuration(&self) -> std::option::Option<& crate::model::ElasticsearchDestinationConfiguration> {
         self.elasticsearch_destination_configuration.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn amazonopensearchservice_destination_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::AmazonopensearchserviceDestinationConfiguration> {
-        self.amazonopensearchservice_destination_configuration
-            .as_ref()
+    pub fn amazonopensearchservice_destination_configuration(&self) -> std::option::Option<& crate::model::AmazonopensearchserviceDestinationConfiguration> {
+        self.amazonopensearchservice_destination_configuration.as_ref()
     }
     /// <p>The destination in Splunk. You can specify only one destination.</p>
-    pub fn splunk_destination_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::SplunkDestinationConfiguration> {
+    pub fn splunk_destination_configuration(&self) -> std::option::Option<& crate::model::SplunkDestinationConfiguration> {
         self.splunk_destination_configuration.as_ref()
     }
     /// <p>Enables configuring Kinesis Firehose to deliver data to any HTTP endpoint destination. You can specify only one destination.</p>
-    pub fn http_endpoint_destination_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::HttpEndpointDestinationConfiguration> {
+    pub fn http_endpoint_destination_configuration(&self) -> std::option::Option<& crate::model::HttpEndpointDestinationConfiguration> {
         self.http_endpoint_destination_configuration.as_ref()
     }
-    /// <p>A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign to AWS resources. Tags are metadata. For example, you can add friendly names and descriptions or other types of information that can help you distinguish the delivery stream. For more information about tags, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the AWS Billing and Cost Management User Guide.</p>
+    /// <p>A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign to AWS resources. Tags are metadata. For example, you can add friendly names and descriptions or other types of information that can help you distinguish the delivery stream. For more information about tags, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the AWS Billing and Cost Management User Guide.</p> 
     /// <p>You can specify up to 50 tags when creating a delivery stream.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDeliveryStreamInput {
+impl  std::fmt::Debug for CreateDeliveryStreamInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDeliveryStreamInput");
         formatter.field("delivery_stream_name", &self.delivery_stream_name);
         formatter.field("delivery_stream_type", &self.delivery_stream_type);
-        formatter.field(
-            "kinesis_stream_source_configuration",
-            &self.kinesis_stream_source_configuration,
-        );
-        formatter.field(
-            "delivery_stream_encryption_configuration_input",
-            &self.delivery_stream_encryption_configuration_input,
-        );
-        formatter.field(
-            "s3_destination_configuration",
-            &self.s3_destination_configuration,
-        );
-        formatter.field(
-            "extended_s3_destination_configuration",
-            &self.extended_s3_destination_configuration,
-        );
-        formatter.field(
-            "redshift_destination_configuration",
-            &self.redshift_destination_configuration,
-        );
-        formatter.field(
-            "elasticsearch_destination_configuration",
-            &self.elasticsearch_destination_configuration,
-        );
-        formatter.field(
-            "amazonopensearchservice_destination_configuration",
-            &self.amazonopensearchservice_destination_configuration,
-        );
-        formatter.field(
-            "splunk_destination_configuration",
-            &self.splunk_destination_configuration,
-        );
-        formatter.field(
-            "http_endpoint_destination_configuration",
-            &self.http_endpoint_destination_configuration,
-        );
+        formatter.field("kinesis_stream_source_configuration", &self.kinesis_stream_source_configuration);
+        formatter.field("delivery_stream_encryption_configuration_input", &self.delivery_stream_encryption_configuration_input);
+        formatter.field("s3_destination_configuration", &self.s3_destination_configuration);
+        formatter.field("extended_s3_destination_configuration", &self.extended_s3_destination_configuration);
+        formatter.field("redshift_destination_configuration", &self.redshift_destination_configuration);
+        formatter.field("elasticsearch_destination_configuration", &self.elasticsearch_destination_configuration);
+        formatter.field("amazonopensearchservice_destination_configuration", &self.amazonopensearchservice_destination_configuration);
+        formatter.field("splunk_destination_configuration", &self.splunk_destination_configuration);
+        formatter.field("http_endpoint_destination_configuration", &self.http_endpoint_destination_configuration);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
+

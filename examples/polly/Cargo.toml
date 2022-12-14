@@ -14,7 +14,7 @@ version = "0.51.0"
 
 [dependencies.aws-sdk-polly]
 path = "../../sdk/polly"
-version = "0.21.0"
+version = "0.22.0"
 
 [dependencies.tokio]
 version = "1.20.1"

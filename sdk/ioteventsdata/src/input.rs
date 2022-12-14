@@ -3,12 +3,11 @@ use std::fmt::Write;
 
 /// See [`BatchAcknowledgeAlarmInput`](crate::input::BatchAcknowledgeAlarmInput).
 pub mod batch_acknowledge_alarm_input {
-
+    
     /// A builder for [`BatchAcknowledgeAlarmInput`](crate::input::BatchAcknowledgeAlarmInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
-        pub(crate) acknowledge_action_requests:
-            std::option::Option<std::vec::Vec<crate::model::AcknowledgeAlarmActionRequest>>,
+        pub(crate) acknowledge_action_requests: std::option::Option<std::vec::Vec<crate::model::AcknowledgeAlarmActionRequest>>,
     }
     impl Builder {
         /// Appends an item to `acknowledge_action_requests`.
@@ -16,135 +15,84 @@ pub mod batch_acknowledge_alarm_input {
         /// To override the contents of this collection use [`set_acknowledge_action_requests`](Self::set_acknowledge_action_requests).
         ///
         /// <p>The list of acknowledge action requests. You can specify up to 10 requests per operation.</p>
-        pub fn acknowledge_action_requests(
-            mut self,
-            input: crate::model::AcknowledgeAlarmActionRequest,
-        ) -> Self {
+        pub fn acknowledge_action_requests(mut self, input: crate::model::AcknowledgeAlarmActionRequest) -> Self {
             let mut v = self.acknowledge_action_requests.unwrap_or_default();
-            v.push(input);
-            self.acknowledge_action_requests = Some(v);
-            self
+                            v.push(input);
+                            self.acknowledge_action_requests = Some(v);
+                            self
         }
         /// <p>The list of acknowledge action requests. You can specify up to 10 requests per operation.</p>
-        pub fn set_acknowledge_action_requests(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AcknowledgeAlarmActionRequest>>,
-        ) -> Self {
-            self.acknowledge_action_requests = input;
-            self
+        pub fn set_acknowledge_action_requests(mut self, input: std::option::Option<std::vec::Vec<crate::model::AcknowledgeAlarmActionRequest>>) -> Self {
+            self.acknowledge_action_requests = input; self
         }
         /// Consumes the builder and constructs a [`BatchAcknowledgeAlarmInput`](crate::input::BatchAcknowledgeAlarmInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::BatchAcknowledgeAlarmInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::BatchAcknowledgeAlarmInput {
-                acknowledge_action_requests: self.acknowledge_action_requests,
-            })
+        pub fn build(self) -> Result<crate::input::BatchAcknowledgeAlarmInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::BatchAcknowledgeAlarmInput {
+                    acknowledge_action_requests: self.acknowledge_action_requests
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl BatchAcknowledgeAlarmInput {
     /// Consumes the builder and constructs an Operation<[`BatchAcknowledgeAlarm`](crate::operation::BatchAcknowledgeAlarm)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::BatchAcknowledgeAlarm,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::BatchAcknowledgeAlarm, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::BatchAcknowledgeAlarmInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::BatchAcknowledgeAlarmInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/alarms/acknowledge").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::BatchAcknowledgeAlarmInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::BatchAcknowledgeAlarmInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_batch_acknowledge_alarm(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_batch_acknowledge_alarm(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::BatchAcknowledgeAlarm::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "BatchAcknowledgeAlarm",
-            "ioteventsdata",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::BatchAcknowledgeAlarm::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("BatchAcknowledgeAlarm", "ioteventsdata"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -156,12 +104,11 @@ impl BatchAcknowledgeAlarmInput {
 
 /// See [`BatchDeleteDetectorInput`](crate::input::BatchDeleteDetectorInput).
 pub mod batch_delete_detector_input {
-
+    
     /// A builder for [`BatchDeleteDetectorInput`](crate::input::BatchDeleteDetectorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
-        pub(crate) detectors:
-            std::option::Option<std::vec::Vec<crate::model::DeleteDetectorRequest>>,
+        pub(crate) detectors: std::option::Option<std::vec::Vec<crate::model::DeleteDetectorRequest>>,
     }
     impl Builder {
         /// Appends an item to `detectors`.
@@ -171,128 +118,82 @@ pub mod batch_delete_detector_input {
         /// <p>The list of one or more detectors to be deleted.</p>
         pub fn detectors(mut self, input: crate::model::DeleteDetectorRequest) -> Self {
             let mut v = self.detectors.unwrap_or_default();
-            v.push(input);
-            self.detectors = Some(v);
-            self
+                            v.push(input);
+                            self.detectors = Some(v);
+                            self
         }
         /// <p>The list of one or more detectors to be deleted.</p>
-        pub fn set_detectors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DeleteDetectorRequest>>,
-        ) -> Self {
-            self.detectors = input;
-            self
+        pub fn set_detectors(mut self, input: std::option::Option<std::vec::Vec<crate::model::DeleteDetectorRequest>>) -> Self {
+            self.detectors = input; self
         }
         /// Consumes the builder and constructs a [`BatchDeleteDetectorInput`](crate::input::BatchDeleteDetectorInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::BatchDeleteDetectorInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::BatchDeleteDetectorInput {
-                detectors: self.detectors,
-            })
+        pub fn build(self) -> Result<crate::input::BatchDeleteDetectorInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::BatchDeleteDetectorInput {
+                    detectors: self.detectors
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl BatchDeleteDetectorInput {
     /// Consumes the builder and constructs an Operation<[`BatchDeleteDetector`](crate::operation::BatchDeleteDetector)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::BatchDeleteDetector,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::BatchDeleteDetector, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::BatchDeleteDetectorInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::BatchDeleteDetectorInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/detectors/delete").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::BatchDeleteDetectorInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::BatchDeleteDetectorInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_batch_delete_detector(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_batch_delete_detector(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::BatchDeleteDetector::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "BatchDeleteDetector",
-            "ioteventsdata",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::BatchDeleteDetector::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("BatchDeleteDetector", "ioteventsdata"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -304,12 +205,11 @@ impl BatchDeleteDetectorInput {
 
 /// See [`BatchDisableAlarmInput`](crate::input::BatchDisableAlarmInput).
 pub mod batch_disable_alarm_input {
-
+    
     /// A builder for [`BatchDisableAlarmInput`](crate::input::BatchDisableAlarmInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
-        pub(crate) disable_action_requests:
-            std::option::Option<std::vec::Vec<crate::model::DisableAlarmActionRequest>>,
+        pub(crate) disable_action_requests: std::option::Option<std::vec::Vec<crate::model::DisableAlarmActionRequest>>,
     }
     impl Builder {
         /// Appends an item to `disable_action_requests`.
@@ -317,133 +217,84 @@ pub mod batch_disable_alarm_input {
         /// To override the contents of this collection use [`set_disable_action_requests`](Self::set_disable_action_requests).
         ///
         /// <p>The list of disable action requests. You can specify up to 10 requests per operation.</p>
-        pub fn disable_action_requests(
-            mut self,
-            input: crate::model::DisableAlarmActionRequest,
-        ) -> Self {
+        pub fn disable_action_requests(mut self, input: crate::model::DisableAlarmActionRequest) -> Self {
             let mut v = self.disable_action_requests.unwrap_or_default();
-            v.push(input);
-            self.disable_action_requests = Some(v);
-            self
+                            v.push(input);
+                            self.disable_action_requests = Some(v);
+                            self
         }
         /// <p>The list of disable action requests. You can specify up to 10 requests per operation.</p>
-        pub fn set_disable_action_requests(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DisableAlarmActionRequest>>,
-        ) -> Self {
-            self.disable_action_requests = input;
-            self
+        pub fn set_disable_action_requests(mut self, input: std::option::Option<std::vec::Vec<crate::model::DisableAlarmActionRequest>>) -> Self {
+            self.disable_action_requests = input; self
         }
         /// Consumes the builder and constructs a [`BatchDisableAlarmInput`](crate::input::BatchDisableAlarmInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::BatchDisableAlarmInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::BatchDisableAlarmInput {
-                disable_action_requests: self.disable_action_requests,
-            })
+        pub fn build(self) -> Result<crate::input::BatchDisableAlarmInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::BatchDisableAlarmInput {
+                    disable_action_requests: self.disable_action_requests
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl BatchDisableAlarmInput {
     /// Consumes the builder and constructs an Operation<[`BatchDisableAlarm`](crate::operation::BatchDisableAlarm)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::BatchDisableAlarm,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::BatchDisableAlarm, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::BatchDisableAlarmInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::BatchDisableAlarmInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/alarms/disable").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::BatchDisableAlarmInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::BatchDisableAlarmInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_batch_disable_alarm(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_batch_disable_alarm(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::BatchDisableAlarm::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "BatchDisableAlarm",
-            "ioteventsdata",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::BatchDisableAlarm::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("BatchDisableAlarm", "ioteventsdata"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -455,12 +306,11 @@ impl BatchDisableAlarmInput {
 
 /// See [`BatchEnableAlarmInput`](crate::input::BatchEnableAlarmInput).
 pub mod batch_enable_alarm_input {
-
+    
     /// A builder for [`BatchEnableAlarmInput`](crate::input::BatchEnableAlarmInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
-        pub(crate) enable_action_requests:
-            std::option::Option<std::vec::Vec<crate::model::EnableAlarmActionRequest>>,
+        pub(crate) enable_action_requests: std::option::Option<std::vec::Vec<crate::model::EnableAlarmActionRequest>>,
     }
     impl Builder {
         /// Appends an item to `enable_action_requests`.
@@ -468,133 +318,84 @@ pub mod batch_enable_alarm_input {
         /// To override the contents of this collection use [`set_enable_action_requests`](Self::set_enable_action_requests).
         ///
         /// <p>The list of enable action requests. You can specify up to 10 requests per operation.</p>
-        pub fn enable_action_requests(
-            mut self,
-            input: crate::model::EnableAlarmActionRequest,
-        ) -> Self {
+        pub fn enable_action_requests(mut self, input: crate::model::EnableAlarmActionRequest) -> Self {
             let mut v = self.enable_action_requests.unwrap_or_default();
-            v.push(input);
-            self.enable_action_requests = Some(v);
-            self
+                            v.push(input);
+                            self.enable_action_requests = Some(v);
+                            self
         }
         /// <p>The list of enable action requests. You can specify up to 10 requests per operation.</p>
-        pub fn set_enable_action_requests(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EnableAlarmActionRequest>>,
-        ) -> Self {
-            self.enable_action_requests = input;
-            self
+        pub fn set_enable_action_requests(mut self, input: std::option::Option<std::vec::Vec<crate::model::EnableAlarmActionRequest>>) -> Self {
+            self.enable_action_requests = input; self
         }
         /// Consumes the builder and constructs a [`BatchEnableAlarmInput`](crate::input::BatchEnableAlarmInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::BatchEnableAlarmInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::BatchEnableAlarmInput {
-                enable_action_requests: self.enable_action_requests,
-            })
+        pub fn build(self) -> Result<crate::input::BatchEnableAlarmInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::BatchEnableAlarmInput {
+                    enable_action_requests: self.enable_action_requests
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl BatchEnableAlarmInput {
     /// Consumes the builder and constructs an Operation<[`BatchEnableAlarm`](crate::operation::BatchEnableAlarm)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::BatchEnableAlarm,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::BatchEnableAlarm, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::BatchEnableAlarmInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::BatchEnableAlarmInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/alarms/enable").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::BatchEnableAlarmInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::BatchEnableAlarmInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_batch_enable_alarm(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_batch_enable_alarm(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::BatchEnableAlarm::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "BatchEnableAlarm",
-            "ioteventsdata",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::BatchEnableAlarm::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("BatchEnableAlarm", "ioteventsdata"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -606,9 +407,9 @@ impl BatchEnableAlarmInput {
 
 /// See [`BatchPutMessageInput`](crate::input::BatchPutMessageInput).
 pub mod batch_put_message_input {
-
+    
     /// A builder for [`BatchPutMessageInput`](crate::input::BatchPutMessageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) messages: std::option::Option<std::vec::Vec<crate::model::Message>>,
     }
@@ -620,128 +421,82 @@ pub mod batch_put_message_input {
         /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code> </p>
         pub fn messages(mut self, input: crate::model::Message) -> Self {
             let mut v = self.messages.unwrap_or_default();
-            v.push(input);
-            self.messages = Some(v);
-            self
+                            v.push(input);
+                            self.messages = Some(v);
+                            self
         }
         /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code> </p>
-        pub fn set_messages(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Message>>,
-        ) -> Self {
-            self.messages = input;
-            self
+        pub fn set_messages(mut self, input: std::option::Option<std::vec::Vec<crate::model::Message>>) -> Self {
+            self.messages = input; self
         }
         /// Consumes the builder and constructs a [`BatchPutMessageInput`](crate::input::BatchPutMessageInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::BatchPutMessageInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::BatchPutMessageInput {
-                messages: self.messages,
-            })
+        pub fn build(self) -> Result<crate::input::BatchPutMessageInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::BatchPutMessageInput {
+                    messages: self.messages
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl BatchPutMessageInput {
     /// Consumes the builder and constructs an Operation<[`BatchPutMessage`](crate::operation::BatchPutMessage)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::BatchPutMessage,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::BatchPutMessage, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::BatchPutMessageInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::BatchPutMessageInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/inputs/messages").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::BatchPutMessageInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::BatchPutMessageInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_batch_put_message(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_batch_put_message(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::BatchPutMessage::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "BatchPutMessage",
-            "ioteventsdata",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::BatchPutMessage::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("BatchPutMessage", "ioteventsdata"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -753,12 +508,11 @@ impl BatchPutMessageInput {
 
 /// See [`BatchResetAlarmInput`](crate::input::BatchResetAlarmInput).
 pub mod batch_reset_alarm_input {
-
+    
     /// A builder for [`BatchResetAlarmInput`](crate::input::BatchResetAlarmInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
-        pub(crate) reset_action_requests:
-            std::option::Option<std::vec::Vec<crate::model::ResetAlarmActionRequest>>,
+        pub(crate) reset_action_requests: std::option::Option<std::vec::Vec<crate::model::ResetAlarmActionRequest>>,
     }
     impl Builder {
         /// Appends an item to `reset_action_requests`.
@@ -766,133 +520,84 @@ pub mod batch_reset_alarm_input {
         /// To override the contents of this collection use [`set_reset_action_requests`](Self::set_reset_action_requests).
         ///
         /// <p>The list of reset action requests. You can specify up to 10 requests per operation.</p>
-        pub fn reset_action_requests(
-            mut self,
-            input: crate::model::ResetAlarmActionRequest,
-        ) -> Self {
+        pub fn reset_action_requests(mut self, input: crate::model::ResetAlarmActionRequest) -> Self {
             let mut v = self.reset_action_requests.unwrap_or_default();
-            v.push(input);
-            self.reset_action_requests = Some(v);
-            self
+                            v.push(input);
+                            self.reset_action_requests = Some(v);
+                            self
         }
         /// <p>The list of reset action requests. You can specify up to 10 requests per operation.</p>
-        pub fn set_reset_action_requests(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResetAlarmActionRequest>>,
-        ) -> Self {
-            self.reset_action_requests = input;
-            self
+        pub fn set_reset_action_requests(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResetAlarmActionRequest>>) -> Self {
+            self.reset_action_requests = input; self
         }
         /// Consumes the builder and constructs a [`BatchResetAlarmInput`](crate::input::BatchResetAlarmInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::BatchResetAlarmInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::BatchResetAlarmInput {
-                reset_action_requests: self.reset_action_requests,
-            })
+        pub fn build(self) -> Result<crate::input::BatchResetAlarmInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::BatchResetAlarmInput {
+                    reset_action_requests: self.reset_action_requests
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl BatchResetAlarmInput {
     /// Consumes the builder and constructs an Operation<[`BatchResetAlarm`](crate::operation::BatchResetAlarm)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::BatchResetAlarm,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::BatchResetAlarm, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::BatchResetAlarmInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::BatchResetAlarmInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/alarms/reset").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::BatchResetAlarmInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::BatchResetAlarmInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_batch_reset_alarm(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_batch_reset_alarm(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::BatchResetAlarm::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "BatchResetAlarm",
-            "ioteventsdata",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::BatchResetAlarm::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("BatchResetAlarm", "ioteventsdata"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -904,12 +609,11 @@ impl BatchResetAlarmInput {
 
 /// See [`BatchSnoozeAlarmInput`](crate::input::BatchSnoozeAlarmInput).
 pub mod batch_snooze_alarm_input {
-
+    
     /// A builder for [`BatchSnoozeAlarmInput`](crate::input::BatchSnoozeAlarmInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
-        pub(crate) snooze_action_requests:
-            std::option::Option<std::vec::Vec<crate::model::SnoozeAlarmActionRequest>>,
+        pub(crate) snooze_action_requests: std::option::Option<std::vec::Vec<crate::model::SnoozeAlarmActionRequest>>,
     }
     impl Builder {
         /// Appends an item to `snooze_action_requests`.
@@ -917,133 +621,84 @@ pub mod batch_snooze_alarm_input {
         /// To override the contents of this collection use [`set_snooze_action_requests`](Self::set_snooze_action_requests).
         ///
         /// <p>The list of snooze action requests. You can specify up to 10 requests per operation.</p>
-        pub fn snooze_action_requests(
-            mut self,
-            input: crate::model::SnoozeAlarmActionRequest,
-        ) -> Self {
+        pub fn snooze_action_requests(mut self, input: crate::model::SnoozeAlarmActionRequest) -> Self {
             let mut v = self.snooze_action_requests.unwrap_or_default();
-            v.push(input);
-            self.snooze_action_requests = Some(v);
-            self
+                            v.push(input);
+                            self.snooze_action_requests = Some(v);
+                            self
         }
         /// <p>The list of snooze action requests. You can specify up to 10 requests per operation.</p>
-        pub fn set_snooze_action_requests(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SnoozeAlarmActionRequest>>,
-        ) -> Self {
-            self.snooze_action_requests = input;
-            self
+        pub fn set_snooze_action_requests(mut self, input: std::option::Option<std::vec::Vec<crate::model::SnoozeAlarmActionRequest>>) -> Self {
+            self.snooze_action_requests = input; self
         }
         /// Consumes the builder and constructs a [`BatchSnoozeAlarmInput`](crate::input::BatchSnoozeAlarmInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::BatchSnoozeAlarmInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::BatchSnoozeAlarmInput {
-                snooze_action_requests: self.snooze_action_requests,
-            })
+        pub fn build(self) -> Result<crate::input::BatchSnoozeAlarmInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::BatchSnoozeAlarmInput {
+                    snooze_action_requests: self.snooze_action_requests
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl BatchSnoozeAlarmInput {
     /// Consumes the builder and constructs an Operation<[`BatchSnoozeAlarm`](crate::operation::BatchSnoozeAlarm)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::BatchSnoozeAlarm,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::BatchSnoozeAlarm, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::BatchSnoozeAlarmInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::BatchSnoozeAlarmInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/alarms/snooze").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::BatchSnoozeAlarmInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::BatchSnoozeAlarmInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_batch_snooze_alarm(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_batch_snooze_alarm(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::BatchSnoozeAlarm::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "BatchSnoozeAlarm",
-            "ioteventsdata",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::BatchSnoozeAlarm::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("BatchSnoozeAlarm", "ioteventsdata"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1055,12 +710,11 @@ impl BatchSnoozeAlarmInput {
 
 /// See [`BatchUpdateDetectorInput`](crate::input::BatchUpdateDetectorInput).
 pub mod batch_update_detector_input {
-
+    
     /// A builder for [`BatchUpdateDetectorInput`](crate::input::BatchUpdateDetectorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
-        pub(crate) detectors:
-            std::option::Option<std::vec::Vec<crate::model::UpdateDetectorRequest>>,
+        pub(crate) detectors: std::option::Option<std::vec::Vec<crate::model::UpdateDetectorRequest>>,
     }
     impl Builder {
         /// Appends an item to `detectors`.
@@ -1070,128 +724,82 @@ pub mod batch_update_detector_input {
         /// <p>The list of detectors (instances) to update, along with the values to update.</p>
         pub fn detectors(mut self, input: crate::model::UpdateDetectorRequest) -> Self {
             let mut v = self.detectors.unwrap_or_default();
-            v.push(input);
-            self.detectors = Some(v);
-            self
+                            v.push(input);
+                            self.detectors = Some(v);
+                            self
         }
         /// <p>The list of detectors (instances) to update, along with the values to update.</p>
-        pub fn set_detectors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::UpdateDetectorRequest>>,
-        ) -> Self {
-            self.detectors = input;
-            self
+        pub fn set_detectors(mut self, input: std::option::Option<std::vec::Vec<crate::model::UpdateDetectorRequest>>) -> Self {
+            self.detectors = input; self
         }
         /// Consumes the builder and constructs a [`BatchUpdateDetectorInput`](crate::input::BatchUpdateDetectorInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::BatchUpdateDetectorInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::BatchUpdateDetectorInput {
-                detectors: self.detectors,
-            })
+        pub fn build(self) -> Result<crate::input::BatchUpdateDetectorInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::BatchUpdateDetectorInput {
+                    detectors: self.detectors
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl BatchUpdateDetectorInput {
     /// Consumes the builder and constructs an Operation<[`BatchUpdateDetector`](crate::operation::BatchUpdateDetector)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::BatchUpdateDetector,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::BatchUpdateDetector, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::BatchUpdateDetectorInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::BatchUpdateDetectorInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/detectors").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::BatchUpdateDetectorInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::BatchUpdateDetectorInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_batch_update_detector(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_batch_update_detector(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::BatchUpdateDetector::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "BatchUpdateDetector",
-            "ioteventsdata",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::BatchUpdateDetector::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("BatchUpdateDetector", "ioteventsdata"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1203,9 +811,9 @@ impl BatchUpdateDetectorInput {
 
 /// See [`DescribeAlarmInput`](crate::input::DescribeAlarmInput).
 pub mod describe_alarm_input {
-
+    
     /// A builder for [`DescribeAlarmInput`](crate::input::DescribeAlarmInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) alarm_model_name: std::option::Option<std::string::String>,
         pub(crate) key_value: std::option::Option<std::string::String>,
@@ -1217,12 +825,8 @@ pub mod describe_alarm_input {
             self
         }
         /// <p>The name of the alarm model.</p>
-        pub fn set_alarm_model_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.alarm_model_name = input;
-            self
+        pub fn set_alarm_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alarm_model_name = input; self
         }
         /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
         pub fn key_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1231,79 +835,48 @@ pub mod describe_alarm_input {
         }
         /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
         pub fn set_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key_value = input;
-            self
+            self.key_value = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAlarmInput`](crate::input::DescribeAlarmInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DescribeAlarmInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DescribeAlarmInput {
-                alarm_model_name: self.alarm_model_name,
-                key_value: self.key_value,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeAlarmInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DescribeAlarmInput {
+                    alarm_model_name: self.alarm_model_name
+                    ,
+                    key_value: self.key_value
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeAlarmInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAlarm`](crate::operation::DescribeAlarm)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeAlarm,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeAlarm, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeAlarmInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeAlarmInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.alarm_model_name;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "alarm_model_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "alarm_model_name", details: "cannot be empty or unset" })?;
                 let alarm_model_name = aws_smithy_http::label::fmt_string(input_1, false);
                 if alarm_model_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "alarm_model_name",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/alarms/{alarmModelName}/keyValues",
-                    alarmModelName = alarm_model_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "alarm_model_name", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/alarms/{alarmModelName}/keyValues", alarmModelName = alarm_model_name).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::DescribeAlarmInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::DescribeAlarmInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_2) = &_input.key_value {
                     query.push_kv("keyValue", &aws_smithy_http::query::fmt_string(&inner_2));
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribeAlarmInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DescribeAlarmInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1313,54 +886,37 @@ impl DescribeAlarmInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeAlarm::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeAlarm",
-            "ioteventsdata",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeAlarm::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeAlarm", "ioteventsdata"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1372,9 +928,9 @@ impl DescribeAlarmInput {
 
 /// See [`DescribeDetectorInput`](crate::input::DescribeDetectorInput).
 pub mod describe_detector_input {
-
+    
     /// A builder for [`DescribeDetectorInput`](crate::input::DescribeDetectorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) detector_model_name: std::option::Option<std::string::String>,
         pub(crate) key_value: std::option::Option<std::string::String>,
@@ -1386,12 +942,8 @@ pub mod describe_detector_input {
             self
         }
         /// <p>The name of the detector model whose detectors (instances) you want information about.</p>
-        pub fn set_detector_model_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.detector_model_name = input;
-            self
+        pub fn set_detector_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.detector_model_name = input; self
         }
         /// <p>A filter used to limit results to detectors (instances) created because of the given key ID.</p>
         pub fn key_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1400,79 +952,48 @@ pub mod describe_detector_input {
         }
         /// <p>A filter used to limit results to detectors (instances) created because of the given key ID.</p>
         pub fn set_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key_value = input;
-            self
+            self.key_value = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDetectorInput`](crate::input::DescribeDetectorInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DescribeDetectorInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DescribeDetectorInput {
-                detector_model_name: self.detector_model_name,
-                key_value: self.key_value,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeDetectorInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DescribeDetectorInput {
+                    detector_model_name: self.detector_model_name
+                    ,
+                    key_value: self.key_value
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeDetectorInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDetector`](crate::operation::DescribeDetector)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeDetector,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeDetector, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeDetectorInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeDetectorInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_3 = &_input.detector_model_name;
-                let input_3 = input_3.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "detector_model_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "detector_model_name", details: "cannot be empty or unset" })?;
                 let detector_model_name = aws_smithy_http::label::fmt_string(input_3, false);
                 if detector_model_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "detector_model_name",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/detectors/{detectorModelName}/keyValues",
-                    detectorModelName = detector_model_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "detector_model_name", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/detectors/{detectorModelName}/keyValues", detectorModelName = detector_model_name).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::DescribeDetectorInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::DescribeDetectorInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_4) = &_input.key_value {
                     query.push_kv("keyValue", &aws_smithy_http::query::fmt_string(&inner_4));
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribeDetectorInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DescribeDetectorInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1482,54 +1003,37 @@ impl DescribeDetectorInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeDetector::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeDetector",
-            "ioteventsdata",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeDetector::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeDetector", "ioteventsdata"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1541,9 +1045,9 @@ impl DescribeDetectorInput {
 
 /// See [`ListAlarmsInput`](crate::input::ListAlarmsInput).
 pub mod list_alarms_input {
-
+    
     /// A builder for [`ListAlarmsInput`](crate::input::ListAlarmsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) alarm_model_name: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1556,12 +1060,8 @@ pub mod list_alarms_input {
             self
         }
         /// <p>The name of the alarm model.</p>
-        pub fn set_alarm_model_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.alarm_model_name = input;
-            self
+        pub fn set_alarm_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alarm_model_name = input; self
         }
         /// <p>The token that you can use to return the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1570,8 +1070,7 @@ pub mod list_alarms_input {
         }
         /// <p>The token that you can use to return the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum number of results to be returned per request.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -1580,85 +1079,53 @@ pub mod list_alarms_input {
         }
         /// <p>The maximum number of results to be returned per request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`ListAlarmsInput`](crate::input::ListAlarmsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListAlarmsInput, aws_smithy_http::operation::BuildError> {
-            Ok(crate::input::ListAlarmsInput {
-                alarm_model_name: self.alarm_model_name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            })
+        pub fn build(self) -> Result<crate::input::ListAlarmsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListAlarmsInput {
+                    alarm_model_name: self.alarm_model_name
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListAlarmsInput {
     /// Consumes the builder and constructs an Operation<[`ListAlarms`](crate::operation::ListAlarms)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListAlarms,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListAlarms, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListAlarmsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListAlarmsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_5 = &_input.alarm_model_name;
-                let input_5 = input_5.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "alarm_model_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_5 = input_5.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "alarm_model_name", details: "cannot be empty or unset" })?;
                 let alarm_model_name = aws_smithy_http::label::fmt_string(input_5, false);
                 if alarm_model_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "alarm_model_name",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/alarms/{alarmModelName}",
-                    alarmModelName = alarm_model_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "alarm_model_name", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/alarms/{alarmModelName}", alarmModelName = alarm_model_name).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListAlarmsInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::ListAlarmsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_6) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_6));
                 }
                 if let Some(inner_7) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_7).encode(),
-                    );
+                    query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(*inner_7).encode());
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListAlarmsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListAlarmsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1668,54 +1135,37 @@ impl ListAlarmsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListAlarms::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListAlarms",
-            "ioteventsdata",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListAlarms::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListAlarms", "ioteventsdata"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1727,9 +1177,9 @@ impl ListAlarmsInput {
 
 /// See [`ListDetectorsInput`](crate::input::ListDetectorsInput).
 pub mod list_detectors_input {
-
+    
     /// A builder for [`ListDetectorsInput`](crate::input::ListDetectorsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) detector_model_name: std::option::Option<std::string::String>,
         pub(crate) state_name: std::option::Option<std::string::String>,
@@ -1743,12 +1193,8 @@ pub mod list_detectors_input {
             self
         }
         /// <p>The name of the detector model whose detectors (instances) are listed.</p>
-        pub fn set_detector_model_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.detector_model_name = input;
-            self
+        pub fn set_detector_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.detector_model_name = input; self
         }
         /// <p>A filter that limits results to those detectors (instances) in the given state.</p>
         pub fn state_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1757,8 +1203,7 @@ pub mod list_detectors_input {
         }
         /// <p>A filter that limits results to those detectors (instances) in the given state.</p>
         pub fn set_state_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.state_name = input;
-            self
+            self.state_name = input; self
         }
         /// <p>The token that you can use to return the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1767,8 +1212,7 @@ pub mod list_detectors_input {
         }
         /// <p>The token that you can use to return the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum number of results to be returned per request.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -1777,69 +1221,42 @@ pub mod list_detectors_input {
         }
         /// <p>The maximum number of results to be returned per request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`ListDetectorsInput`](crate::input::ListDetectorsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListDetectorsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::ListDetectorsInput {
-                detector_model_name: self.detector_model_name,
-                state_name: self.state_name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            })
+        pub fn build(self) -> Result<crate::input::ListDetectorsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListDetectorsInput {
+                    detector_model_name: self.detector_model_name
+                    ,
+                    state_name: self.state_name
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListDetectorsInput {
     /// Consumes the builder and constructs an Operation<[`ListDetectors`](crate::operation::ListDetectors)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListDetectors,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListDetectors, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListDetectorsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListDetectorsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_8 = &_input.detector_model_name;
-                let input_8 = input_8.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "detector_model_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_8 = input_8.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "detector_model_name", details: "cannot be empty or unset" })?;
                 let detector_model_name = aws_smithy_http::label::fmt_string(input_8, false);
                 if detector_model_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "detector_model_name",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/detectors/{detectorModelName}",
-                    detectorModelName = detector_model_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "detector_model_name", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/detectors/{detectorModelName}", detectorModelName = detector_model_name).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListDetectorsInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::ListDetectorsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_9) = &_input.state_name {
                     query.push_kv("stateName", &aws_smithy_http::query::fmt_string(&inner_9));
@@ -1848,19 +1265,14 @@ impl ListDetectorsInput {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_10));
                 }
                 if let Some(inner_11) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_11).encode(),
-                    );
+                    query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(*inner_11).encode());
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListDetectorsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListDetectorsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1870,54 +1282,37 @@ impl ListDetectorsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListDetectors::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListDetectors",
-            "ioteventsdata",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListDetectors::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListDetectors", "ioteventsdata"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1928,33 +1323,28 @@ impl ListDetectorsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListDetectorsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListDetectorsInput  {
     /// <p>The name of the detector model whose detectors (instances) are listed.</p>
-    #[doc(hidden)]
-    pub detector_model_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub detector_model_name: std::option::Option<std::string::String>,
     /// <p>A filter that limits results to those detectors (instances) in the given state.</p>
-    #[doc(hidden)]
-    pub state_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub state_name: std::option::Option<std::string::String>,
     /// <p>The token that you can use to return the next set of results.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be returned per request.</p>
-    #[doc(hidden)]
-    pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]pub max_results: std::option::Option<i32>,
 }
 impl ListDetectorsInput {
     /// <p>The name of the detector model whose detectors (instances) are listed.</p>
-    pub fn detector_model_name(&self) -> std::option::Option<&str> {
+    pub fn detector_model_name(&self) -> std::option::Option<& str> {
         self.detector_model_name.as_deref()
     }
     /// <p>A filter that limits results to those detectors (instances) in the given state.</p>
-    pub fn state_name(&self) -> std::option::Option<&str> {
+    pub fn state_name(&self) -> std::option::Option<& str> {
         self.state_name.as_deref()
     }
     /// <p>The token that you can use to return the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to be returned per request.</p>
@@ -1962,7 +1352,7 @@ impl ListDetectorsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDetectorsInput {
+impl  std::fmt::Debug for ListDetectorsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDetectorsInput");
         formatter.field("detector_model_name", &self.detector_model_name);
@@ -1974,26 +1364,22 @@ impl std::fmt::Debug for ListDetectorsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListAlarmsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListAlarmsInput  {
     /// <p>The name of the alarm model.</p>
-    #[doc(hidden)]
-    pub alarm_model_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub alarm_model_name: std::option::Option<std::string::String>,
     /// <p>The token that you can use to return the next set of results.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be returned per request.</p>
-    #[doc(hidden)]
-    pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]pub max_results: std::option::Option<i32>,
 }
 impl ListAlarmsInput {
     /// <p>The name of the alarm model.</p>
-    pub fn alarm_model_name(&self) -> std::option::Option<&str> {
+    pub fn alarm_model_name(&self) -> std::option::Option<& str> {
         self.alarm_model_name.as_deref()
     }
     /// <p>The token that you can use to return the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to be returned per request.</p>
@@ -2001,7 +1387,7 @@ impl ListAlarmsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAlarmsInput {
+impl  std::fmt::Debug for ListAlarmsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAlarmsInput");
         formatter.field("alarm_model_name", &self.alarm_model_name);
@@ -2012,27 +1398,24 @@ impl std::fmt::Debug for ListAlarmsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeDetectorInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DescribeDetectorInput  {
     /// <p>The name of the detector model whose detectors (instances) you want information about.</p>
-    #[doc(hidden)]
-    pub detector_model_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub detector_model_name: std::option::Option<std::string::String>,
     /// <p>A filter used to limit results to detectors (instances) created because of the given key ID.</p>
-    #[doc(hidden)]
-    pub key_value: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub key_value: std::option::Option<std::string::String>,
 }
 impl DescribeDetectorInput {
     /// <p>The name of the detector model whose detectors (instances) you want information about.</p>
-    pub fn detector_model_name(&self) -> std::option::Option<&str> {
+    pub fn detector_model_name(&self) -> std::option::Option<& str> {
         self.detector_model_name.as_deref()
     }
     /// <p>A filter used to limit results to detectors (instances) created because of the given key ID.</p>
-    pub fn key_value(&self) -> std::option::Option<&str> {
+    pub fn key_value(&self) -> std::option::Option<& str> {
         self.key_value.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDetectorInput {
+impl  std::fmt::Debug for DescribeDetectorInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDetectorInput");
         formatter.field("detector_model_name", &self.detector_model_name);
@@ -2042,27 +1425,24 @@ impl std::fmt::Debug for DescribeDetectorInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeAlarmInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DescribeAlarmInput  {
     /// <p>The name of the alarm model.</p>
-    #[doc(hidden)]
-    pub alarm_model_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub alarm_model_name: std::option::Option<std::string::String>,
     /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
-    #[doc(hidden)]
-    pub key_value: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub key_value: std::option::Option<std::string::String>,
 }
 impl DescribeAlarmInput {
     /// <p>The name of the alarm model.</p>
-    pub fn alarm_model_name(&self) -> std::option::Option<&str> {
+    pub fn alarm_model_name(&self) -> std::option::Option<& str> {
         self.alarm_model_name.as_deref()
     }
     /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
-    pub fn key_value(&self) -> std::option::Option<&str> {
+    pub fn key_value(&self) -> std::option::Option<& str> {
         self.key_value.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAlarmInput {
+impl  std::fmt::Debug for DescribeAlarmInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAlarmInput");
         formatter.field("alarm_model_name", &self.alarm_model_name);
@@ -2072,20 +1452,18 @@ impl std::fmt::Debug for DescribeAlarmInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct BatchUpdateDetectorInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct BatchUpdateDetectorInput  {
     /// <p>The list of detectors (instances) to update, along with the values to update.</p>
-    #[doc(hidden)]
-    pub detectors: std::option::Option<std::vec::Vec<crate::model::UpdateDetectorRequest>>,
+    #[doc(hidden)]pub detectors: std::option::Option<std::vec::Vec<crate::model::UpdateDetectorRequest>>,
 }
 impl BatchUpdateDetectorInput {
     /// <p>The list of detectors (instances) to update, along with the values to update.</p>
-    pub fn detectors(&self) -> std::option::Option<&[crate::model::UpdateDetectorRequest]> {
+    pub fn detectors(&self) -> std::option::Option<& [crate::model::UpdateDetectorRequest]> {
         self.detectors.as_deref()
     }
 }
-impl std::fmt::Debug for BatchUpdateDetectorInput {
+impl  std::fmt::Debug for BatchUpdateDetectorInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchUpdateDetectorInput");
         formatter.field("detectors", &self.detectors);
@@ -2094,23 +1472,18 @@ impl std::fmt::Debug for BatchUpdateDetectorInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct BatchSnoozeAlarmInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct BatchSnoozeAlarmInput  {
     /// <p>The list of snooze action requests. You can specify up to 10 requests per operation.</p>
-    #[doc(hidden)]
-    pub snooze_action_requests:
-        std::option::Option<std::vec::Vec<crate::model::SnoozeAlarmActionRequest>>,
+    #[doc(hidden)]pub snooze_action_requests: std::option::Option<std::vec::Vec<crate::model::SnoozeAlarmActionRequest>>,
 }
 impl BatchSnoozeAlarmInput {
     /// <p>The list of snooze action requests. You can specify up to 10 requests per operation.</p>
-    pub fn snooze_action_requests(
-        &self,
-    ) -> std::option::Option<&[crate::model::SnoozeAlarmActionRequest]> {
+    pub fn snooze_action_requests(&self) -> std::option::Option<& [crate::model::SnoozeAlarmActionRequest]> {
         self.snooze_action_requests.as_deref()
     }
 }
-impl std::fmt::Debug for BatchSnoozeAlarmInput {
+impl  std::fmt::Debug for BatchSnoozeAlarmInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchSnoozeAlarmInput");
         formatter.field("snooze_action_requests", &self.snooze_action_requests);
@@ -2119,23 +1492,18 @@ impl std::fmt::Debug for BatchSnoozeAlarmInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct BatchResetAlarmInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct BatchResetAlarmInput  {
     /// <p>The list of reset action requests. You can specify up to 10 requests per operation.</p>
-    #[doc(hidden)]
-    pub reset_action_requests:
-        std::option::Option<std::vec::Vec<crate::model::ResetAlarmActionRequest>>,
+    #[doc(hidden)]pub reset_action_requests: std::option::Option<std::vec::Vec<crate::model::ResetAlarmActionRequest>>,
 }
 impl BatchResetAlarmInput {
     /// <p>The list of reset action requests. You can specify up to 10 requests per operation.</p>
-    pub fn reset_action_requests(
-        &self,
-    ) -> std::option::Option<&[crate::model::ResetAlarmActionRequest]> {
+    pub fn reset_action_requests(&self) -> std::option::Option<& [crate::model::ResetAlarmActionRequest]> {
         self.reset_action_requests.as_deref()
     }
 }
-impl std::fmt::Debug for BatchResetAlarmInput {
+impl  std::fmt::Debug for BatchResetAlarmInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchResetAlarmInput");
         formatter.field("reset_action_requests", &self.reset_action_requests);
@@ -2144,20 +1512,18 @@ impl std::fmt::Debug for BatchResetAlarmInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct BatchPutMessageInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct BatchPutMessageInput  {
     /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code> </p>
-    #[doc(hidden)]
-    pub messages: std::option::Option<std::vec::Vec<crate::model::Message>>,
+    #[doc(hidden)]pub messages: std::option::Option<std::vec::Vec<crate::model::Message>>,
 }
 impl BatchPutMessageInput {
     /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code> </p>
-    pub fn messages(&self) -> std::option::Option<&[crate::model::Message]> {
+    pub fn messages(&self) -> std::option::Option<& [crate::model::Message]> {
         self.messages.as_deref()
     }
 }
-impl std::fmt::Debug for BatchPutMessageInput {
+impl  std::fmt::Debug for BatchPutMessageInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchPutMessageInput");
         formatter.field("messages", &self.messages);
@@ -2166,23 +1532,18 @@ impl std::fmt::Debug for BatchPutMessageInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct BatchEnableAlarmInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct BatchEnableAlarmInput  {
     /// <p>The list of enable action requests. You can specify up to 10 requests per operation.</p>
-    #[doc(hidden)]
-    pub enable_action_requests:
-        std::option::Option<std::vec::Vec<crate::model::EnableAlarmActionRequest>>,
+    #[doc(hidden)]pub enable_action_requests: std::option::Option<std::vec::Vec<crate::model::EnableAlarmActionRequest>>,
 }
 impl BatchEnableAlarmInput {
     /// <p>The list of enable action requests. You can specify up to 10 requests per operation.</p>
-    pub fn enable_action_requests(
-        &self,
-    ) -> std::option::Option<&[crate::model::EnableAlarmActionRequest]> {
+    pub fn enable_action_requests(&self) -> std::option::Option<& [crate::model::EnableAlarmActionRequest]> {
         self.enable_action_requests.as_deref()
     }
 }
-impl std::fmt::Debug for BatchEnableAlarmInput {
+impl  std::fmt::Debug for BatchEnableAlarmInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchEnableAlarmInput");
         formatter.field("enable_action_requests", &self.enable_action_requests);
@@ -2191,23 +1552,18 @@ impl std::fmt::Debug for BatchEnableAlarmInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct BatchDisableAlarmInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct BatchDisableAlarmInput  {
     /// <p>The list of disable action requests. You can specify up to 10 requests per operation.</p>
-    #[doc(hidden)]
-    pub disable_action_requests:
-        std::option::Option<std::vec::Vec<crate::model::DisableAlarmActionRequest>>,
+    #[doc(hidden)]pub disable_action_requests: std::option::Option<std::vec::Vec<crate::model::DisableAlarmActionRequest>>,
 }
 impl BatchDisableAlarmInput {
     /// <p>The list of disable action requests. You can specify up to 10 requests per operation.</p>
-    pub fn disable_action_requests(
-        &self,
-    ) -> std::option::Option<&[crate::model::DisableAlarmActionRequest]> {
+    pub fn disable_action_requests(&self) -> std::option::Option<& [crate::model::DisableAlarmActionRequest]> {
         self.disable_action_requests.as_deref()
     }
 }
-impl std::fmt::Debug for BatchDisableAlarmInput {
+impl  std::fmt::Debug for BatchDisableAlarmInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDisableAlarmInput");
         formatter.field("disable_action_requests", &self.disable_action_requests);
@@ -2216,20 +1572,18 @@ impl std::fmt::Debug for BatchDisableAlarmInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct BatchDeleteDetectorInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct BatchDeleteDetectorInput  {
     /// <p>The list of one or more detectors to be deleted.</p>
-    #[doc(hidden)]
-    pub detectors: std::option::Option<std::vec::Vec<crate::model::DeleteDetectorRequest>>,
+    #[doc(hidden)]pub detectors: std::option::Option<std::vec::Vec<crate::model::DeleteDetectorRequest>>,
 }
 impl BatchDeleteDetectorInput {
     /// <p>The list of one or more detectors to be deleted.</p>
-    pub fn detectors(&self) -> std::option::Option<&[crate::model::DeleteDetectorRequest]> {
+    pub fn detectors(&self) -> std::option::Option<& [crate::model::DeleteDetectorRequest]> {
         self.detectors.as_deref()
     }
 }
-impl std::fmt::Debug for BatchDeleteDetectorInput {
+impl  std::fmt::Debug for BatchDeleteDetectorInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDeleteDetectorInput");
         formatter.field("detectors", &self.detectors);
@@ -2238,29 +1592,22 @@ impl std::fmt::Debug for BatchDeleteDetectorInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct BatchAcknowledgeAlarmInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct BatchAcknowledgeAlarmInput  {
     /// <p>The list of acknowledge action requests. You can specify up to 10 requests per operation.</p>
-    #[doc(hidden)]
-    pub acknowledge_action_requests:
-        std::option::Option<std::vec::Vec<crate::model::AcknowledgeAlarmActionRequest>>,
+    #[doc(hidden)]pub acknowledge_action_requests: std::option::Option<std::vec::Vec<crate::model::AcknowledgeAlarmActionRequest>>,
 }
 impl BatchAcknowledgeAlarmInput {
     /// <p>The list of acknowledge action requests. You can specify up to 10 requests per operation.</p>
-    pub fn acknowledge_action_requests(
-        &self,
-    ) -> std::option::Option<&[crate::model::AcknowledgeAlarmActionRequest]> {
+    pub fn acknowledge_action_requests(&self) -> std::option::Option<& [crate::model::AcknowledgeAlarmActionRequest]> {
         self.acknowledge_action_requests.as_deref()
     }
 }
-impl std::fmt::Debug for BatchAcknowledgeAlarmInput {
+impl  std::fmt::Debug for BatchAcknowledgeAlarmInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchAcknowledgeAlarmInput");
-        formatter.field(
-            "acknowledge_action_requests",
-            &self.acknowledge_action_requests,
-        );
+        formatter.field("acknowledge_action_requests", &self.acknowledge_action_requests);
         formatter.finish()
     }
 }
+

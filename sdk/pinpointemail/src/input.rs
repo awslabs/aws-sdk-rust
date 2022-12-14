@@ -3,9 +3,9 @@ use std::fmt::Write;
 
 /// See [`CreateConfigurationSetInput`](crate::input::CreateConfigurationSetInput).
 pub mod create_configuration_set_input {
-
+    
     /// A builder for [`CreateConfigurationSetInput`](crate::input::CreateConfigurationSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
         pub(crate) tracking_options: std::option::Option<crate::model::TrackingOptions>,
@@ -21,12 +21,8 @@ pub mod create_configuration_set_input {
             self
         }
         /// <p>The name of the configuration set.</p>
-        pub fn set_configuration_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_name = input;
-            self
+        pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_name = input; self
         }
         /// <p>An object that defines the open and click tracking options for emails that you send using the configuration set.</p>
         pub fn tracking_options(mut self, input: crate::model::TrackingOptions) -> Self {
@@ -34,12 +30,8 @@ pub mod create_configuration_set_input {
             self
         }
         /// <p>An object that defines the open and click tracking options for emails that you send using the configuration set.</p>
-        pub fn set_tracking_options(
-            mut self,
-            input: std::option::Option<crate::model::TrackingOptions>,
-        ) -> Self {
-            self.tracking_options = input;
-            self
+        pub fn set_tracking_options(mut self, input: std::option::Option<crate::model::TrackingOptions>) -> Self {
+            self.tracking_options = input; self
         }
         /// <p>An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.</p>
         pub fn delivery_options(mut self, input: crate::model::DeliveryOptions) -> Self {
@@ -47,12 +39,8 @@ pub mod create_configuration_set_input {
             self
         }
         /// <p>An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.</p>
-        pub fn set_delivery_options(
-            mut self,
-            input: std::option::Option<crate::model::DeliveryOptions>,
-        ) -> Self {
-            self.delivery_options = input;
-            self
+        pub fn set_delivery_options(mut self, input: std::option::Option<crate::model::DeliveryOptions>) -> Self {
+            self.delivery_options = input; self
         }
         /// <p>An object that defines whether or not Amazon Pinpoint collects reputation metrics for the emails that you send that use the configuration set.</p>
         pub fn reputation_options(mut self, input: crate::model::ReputationOptions) -> Self {
@@ -60,12 +48,8 @@ pub mod create_configuration_set_input {
             self
         }
         /// <p>An object that defines whether or not Amazon Pinpoint collects reputation metrics for the emails that you send that use the configuration set.</p>
-        pub fn set_reputation_options(
-            mut self,
-            input: std::option::Option<crate::model::ReputationOptions>,
-        ) -> Self {
-            self.reputation_options = input;
-            self
+        pub fn set_reputation_options(mut self, input: std::option::Option<crate::model::ReputationOptions>) -> Self {
+            self.reputation_options = input; self
         }
         /// <p>An object that defines whether or not Amazon Pinpoint can send email that you send using the configuration set.</p>
         pub fn sending_options(mut self, input: crate::model::SendingOptions) -> Self {
@@ -73,12 +57,8 @@ pub mod create_configuration_set_input {
             self
         }
         /// <p>An object that defines whether or not Amazon Pinpoint can send email that you send using the configuration set.</p>
-        pub fn set_sending_options(
-            mut self,
-            input: std::option::Option<crate::model::SendingOptions>,
-        ) -> Self {
-            self.sending_options = input;
-            self
+        pub fn set_sending_options(mut self, input: std::option::Option<crate::model::SendingOptions>) -> Self {
+            self.sending_options = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -87,135 +67,92 @@ pub mod create_configuration_set_input {
         /// <p>An array of objects that define the tags (keys and values) that you want to associate with the configuration set.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>An array of objects that define the tags (keys and values) that you want to associate with the configuration set.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateConfigurationSetInput`](crate::input::CreateConfigurationSetInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateConfigurationSetInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::CreateConfigurationSetInput {
-                configuration_set_name: self.configuration_set_name,
-                tracking_options: self.tracking_options,
-                delivery_options: self.delivery_options,
-                reputation_options: self.reputation_options,
-                sending_options: self.sending_options,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::CreateConfigurationSetInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CreateConfigurationSetInput {
+                    configuration_set_name: self.configuration_set_name
+                    ,
+                    tracking_options: self.tracking_options
+                    ,
+                    delivery_options: self.delivery_options
+                    ,
+                    reputation_options: self.reputation_options
+                    ,
+                    sending_options: self.sending_options
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateConfigurationSetInput {
     /// Consumes the builder and constructs an Operation<[`CreateConfigurationSet`](crate::operation::CreateConfigurationSet)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateConfigurationSet,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateConfigurationSet, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateConfigurationSetInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::CreateConfigurationSetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/email/configuration-sets").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreateConfigurationSetInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CreateConfigurationSetInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_configuration_set(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_configuration_set(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateConfigurationSet::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateConfigurationSet",
-            "pinpointemail",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateConfigurationSet::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateConfigurationSet", "pinpointemail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -227,9 +164,9 @@ impl CreateConfigurationSetInput {
 
 /// See [`CreateConfigurationSetEventDestinationInput`](crate::input::CreateConfigurationSetEventDestinationInput).
 pub mod create_configuration_set_event_destination_input {
-
+    
     /// A builder for [`CreateConfigurationSetEventDestinationInput`](crate::input::CreateConfigurationSetEventDestinationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
         pub(crate) event_destination_name: std::option::Option<std::string::String>,
@@ -242,12 +179,8 @@ pub mod create_configuration_set_event_destination_input {
             self
         }
         /// <p>The name of the configuration set that you want to add an event destination to.</p>
-        pub fn set_configuration_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_name = input;
-            self
+        pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_name = input; self
         }
         /// <p>A name that identifies the event destination within the configuration set.</p>
         pub fn event_destination_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -255,102 +188,59 @@ pub mod create_configuration_set_event_destination_input {
             self
         }
         /// <p>A name that identifies the event destination within the configuration set.</p>
-        pub fn set_event_destination_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.event_destination_name = input;
-            self
+        pub fn set_event_destination_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_destination_name = input; self
         }
         /// <p>An object that defines the event destination.</p>
-        pub fn event_destination(
-            mut self,
-            input: crate::model::EventDestinationDefinition,
-        ) -> Self {
+        pub fn event_destination(mut self, input: crate::model::EventDestinationDefinition) -> Self {
             self.event_destination = Some(input);
             self
         }
         /// <p>An object that defines the event destination.</p>
-        pub fn set_event_destination(
-            mut self,
-            input: std::option::Option<crate::model::EventDestinationDefinition>,
-        ) -> Self {
-            self.event_destination = input;
-            self
+        pub fn set_event_destination(mut self, input: std::option::Option<crate::model::EventDestinationDefinition>) -> Self {
+            self.event_destination = input; self
         }
         /// Consumes the builder and constructs a [`CreateConfigurationSetEventDestinationInput`](crate::input::CreateConfigurationSetEventDestinationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateConfigurationSetEventDestinationInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::CreateConfigurationSetEventDestinationInput {
-                configuration_set_name: self.configuration_set_name,
-                event_destination_name: self.event_destination_name,
-                event_destination: self.event_destination,
-            })
+        pub fn build(self) -> Result<crate::input::CreateConfigurationSetEventDestinationInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CreateConfigurationSetEventDestinationInput {
+                    configuration_set_name: self.configuration_set_name
+                    ,
+                    event_destination_name: self.event_destination_name
+                    ,
+                    event_destination: self.event_destination
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateConfigurationSetEventDestinationInput {
     /// Consumes the builder and constructs an Operation<[`CreateConfigurationSetEventDestination`](crate::operation::CreateConfigurationSetEventDestination)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateConfigurationSetEventDestination,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateConfigurationSetEventDestination, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateConfigurationSetEventDestinationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::CreateConfigurationSetEventDestinationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.configuration_set_name;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "configuration_set_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "configuration_set_name", details: "cannot be empty or unset" })?;
                 let configuration_set_name = aws_smithy_http::label::fmt_string(input_1, false);
                 if configuration_set_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "configuration_set_name",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/v1/email/configuration-sets/{ConfigurationSetName}/event-destinations",
-                    ConfigurationSetName = configuration_set_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "configuration_set_name", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/v1/email/configuration-sets/{ConfigurationSetName}/event-destinations", ConfigurationSetName = configuration_set_name).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreateConfigurationSetEventDestinationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CreateConfigurationSetEventDestinationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -358,58 +248,36 @@ impl CreateConfigurationSetEventDestinationInput {
             crate::operation_ser::serialize_operation_crate_operation_create_configuration_set_event_destination(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateConfigurationSetEventDestination::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateConfigurationSetEventDestination",
-            "pinpointemail",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateConfigurationSetEventDestination::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateConfigurationSetEventDestination", "pinpointemail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -421,9 +289,9 @@ impl CreateConfigurationSetEventDestinationInput {
 
 /// See [`CreateDedicatedIpPoolInput`](crate::input::CreateDedicatedIpPoolInput).
 pub mod create_dedicated_ip_pool_input {
-
+    
     /// A builder for [`CreateDedicatedIpPoolInput`](crate::input::CreateDedicatedIpPoolInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) pool_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -436,8 +304,7 @@ pub mod create_dedicated_ip_pool_input {
         }
         /// <p>The name of the dedicated IP pool.</p>
         pub fn set_pool_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pool_name = input;
-            self
+            self.pool_name = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -446,131 +313,84 @@ pub mod create_dedicated_ip_pool_input {
         /// <p>An object that defines the tags (keys and values) that you want to associate with the pool.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>An object that defines the tags (keys and values) that you want to associate with the pool.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateDedicatedIpPoolInput`](crate::input::CreateDedicatedIpPoolInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateDedicatedIpPoolInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::CreateDedicatedIpPoolInput {
-                pool_name: self.pool_name,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::CreateDedicatedIpPoolInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CreateDedicatedIpPoolInput {
+                    pool_name: self.pool_name
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateDedicatedIpPoolInput {
     /// Consumes the builder and constructs an Operation<[`CreateDedicatedIpPool`](crate::operation::CreateDedicatedIpPool)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateDedicatedIpPool,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateDedicatedIpPool, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateDedicatedIpPoolInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::CreateDedicatedIpPoolInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/email/dedicated-ip-pools").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreateDedicatedIpPoolInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CreateDedicatedIpPoolInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_dedicated_ip_pool(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_dedicated_ip_pool(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateDedicatedIpPool::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateDedicatedIpPool",
-            "pinpointemail",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateDedicatedIpPool::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateDedicatedIpPool", "pinpointemail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -582,9 +402,9 @@ impl CreateDedicatedIpPoolInput {
 
 /// See [`CreateDeliverabilityTestReportInput`](crate::input::CreateDeliverabilityTestReportInput).
 pub mod create_deliverability_test_report_input {
-
+    
     /// A builder for [`CreateDeliverabilityTestReportInput`](crate::input::CreateDeliverabilityTestReportInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) report_name: std::option::Option<std::string::String>,
         pub(crate) from_email_address: std::option::Option<std::string::String>,
@@ -599,8 +419,7 @@ pub mod create_deliverability_test_report_input {
         }
         /// <p>A unique name that helps you to identify the predictive inbox placement test when you retrieve the results.</p>
         pub fn set_report_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.report_name = input;
-            self
+            self.report_name = input; self
         }
         /// <p>The email address that the predictive inbox placement test email was sent from.</p>
         pub fn from_email_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -608,12 +427,8 @@ pub mod create_deliverability_test_report_input {
             self
         }
         /// <p>The email address that the predictive inbox placement test email was sent from.</p>
-        pub fn set_from_email_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.from_email_address = input;
-            self
+        pub fn set_from_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.from_email_address = input; self
         }
         /// <p>The HTML body of the message that you sent when you performed the predictive inbox placement test.</p>
         pub fn content(mut self, input: crate::model::EmailContent) -> Self {
@@ -621,12 +436,8 @@ pub mod create_deliverability_test_report_input {
             self
         }
         /// <p>The HTML body of the message that you sent when you performed the predictive inbox placement test.</p>
-        pub fn set_content(
-            mut self,
-            input: std::option::Option<crate::model::EmailContent>,
-        ) -> Self {
-            self.content = input;
-            self
+        pub fn set_content(mut self, input: std::option::Option<crate::model::EmailContent>) -> Self {
+            self.content = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -635,74 +446,51 @@ pub mod create_deliverability_test_report_input {
         /// <p>An array of objects that define the tags (keys and values) that you want to associate with the predictive inbox placement test.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>An array of objects that define the tags (keys and values) that you want to associate with the predictive inbox placement test.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateDeliverabilityTestReportInput`](crate::input::CreateDeliverabilityTestReportInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateDeliverabilityTestReportInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::CreateDeliverabilityTestReportInput {
-                report_name: self.report_name,
-                from_email_address: self.from_email_address,
-                content: self.content,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::CreateDeliverabilityTestReportInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CreateDeliverabilityTestReportInput {
+                    report_name: self.report_name
+                    ,
+                    from_email_address: self.from_email_address
+                    ,
+                    content: self.content
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateDeliverabilityTestReportInput {
     /// Consumes the builder and constructs an Operation<[`CreateDeliverabilityTestReport`](crate::operation::CreateDeliverabilityTestReport)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateDeliverabilityTestReport,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateDeliverabilityTestReport, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateDeliverabilityTestReportInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                write!(output, "/v1/email/deliverability-dashboard/test")
-                    .expect("formatting should succeed");
+            fn uri_base(_input: &crate::input::CreateDeliverabilityTestReportInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/v1/email/deliverability-dashboard/test").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreateDeliverabilityTestReportInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CreateDeliverabilityTestReportInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -710,58 +498,36 @@ impl CreateDeliverabilityTestReportInput {
             crate::operation_ser::serialize_operation_crate_operation_create_deliverability_test_report(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateDeliverabilityTestReport::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateDeliverabilityTestReport",
-            "pinpointemail",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateDeliverabilityTestReport::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateDeliverabilityTestReport", "pinpointemail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -773,9 +539,9 @@ impl CreateDeliverabilityTestReportInput {
 
 /// See [`CreateEmailIdentityInput`](crate::input::CreateEmailIdentityInput).
 pub mod create_email_identity_input {
-
+    
     /// A builder for [`CreateEmailIdentityInput`](crate::input::CreateEmailIdentityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) email_identity: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -787,12 +553,8 @@ pub mod create_email_identity_input {
             self
         }
         /// <p>The email address or domain that you want to verify.</p>
-        pub fn set_email_identity(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.email_identity = input;
-            self
+        pub fn set_email_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.email_identity = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -801,129 +563,84 @@ pub mod create_email_identity_input {
         /// <p>An array of objects that define the tags (keys and values) that you want to associate with the email identity.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>An array of objects that define the tags (keys and values) that you want to associate with the email identity.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateEmailIdentityInput`](crate::input::CreateEmailIdentityInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateEmailIdentityInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::CreateEmailIdentityInput {
-                email_identity: self.email_identity,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::CreateEmailIdentityInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CreateEmailIdentityInput {
+                    email_identity: self.email_identity
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateEmailIdentityInput {
     /// Consumes the builder and constructs an Operation<[`CreateEmailIdentity`](crate::operation::CreateEmailIdentity)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateEmailIdentity,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateEmailIdentity, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateEmailIdentityInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::CreateEmailIdentityInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/email/identities").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreateEmailIdentityInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CreateEmailIdentityInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_email_identity(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_email_identity(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateEmailIdentity::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateEmailIdentity",
-            "pinpointemail",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateEmailIdentity::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateEmailIdentity", "pinpointemail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -935,9 +652,9 @@ impl CreateEmailIdentityInput {
 
 /// See [`DeleteConfigurationSetInput`](crate::input::DeleteConfigurationSetInput).
 pub mod delete_configuration_set_input {
-
+    
     /// A builder for [`DeleteConfigurationSetInput`](crate::input::DeleteConfigurationSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
     }
@@ -948,72 +665,40 @@ pub mod delete_configuration_set_input {
             self
         }
         /// <p>The name of the configuration set that you want to delete.</p>
-        pub fn set_configuration_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_name = input;
-            self
+        pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_name = input; self
         }
         /// Consumes the builder and constructs a [`DeleteConfigurationSetInput`](crate::input::DeleteConfigurationSetInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteConfigurationSetInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DeleteConfigurationSetInput {
-                configuration_set_name: self.configuration_set_name,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteConfigurationSetInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DeleteConfigurationSetInput {
+                    configuration_set_name: self.configuration_set_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteConfigurationSetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConfigurationSet`](crate::operation::DeleteConfigurationSet)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteConfigurationSet,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteConfigurationSet, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteConfigurationSetInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteConfigurationSetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_2 = &_input.configuration_set_name;
-                let input_2 = input_2.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "configuration_set_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "configuration_set_name", details: "cannot be empty or unset" })?;
                 let configuration_set_name = aws_smithy_http::label::fmt_string(input_2, false);
                 if configuration_set_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "configuration_set_name",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/v1/email/configuration-sets/{ConfigurationSetName}",
-                    ConfigurationSetName = configuration_set_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "configuration_set_name", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/v1/email/configuration-sets/{ConfigurationSetName}", ConfigurationSetName = configuration_set_name).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DeleteConfigurationSetInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DeleteConfigurationSetInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -1022,54 +707,37 @@ impl DeleteConfigurationSetInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteConfigurationSet::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteConfigurationSet",
-            "pinpointemail",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteConfigurationSet::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteConfigurationSet", "pinpointemail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1081,9 +749,9 @@ impl DeleteConfigurationSetInput {
 
 /// See [`DeleteConfigurationSetEventDestinationInput`](crate::input::DeleteConfigurationSetEventDestinationInput).
 pub mod delete_configuration_set_event_destination_input {
-
+    
     /// A builder for [`DeleteConfigurationSetEventDestinationInput`](crate::input::DeleteConfigurationSetEventDestinationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
         pub(crate) event_destination_name: std::option::Option<std::string::String>,
@@ -1095,12 +763,8 @@ pub mod delete_configuration_set_event_destination_input {
             self
         }
         /// <p>The name of the configuration set that contains the event destination that you want to delete.</p>
-        pub fn set_configuration_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_name = input;
-            self
+        pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_name = input; self
         }
         /// <p>The name of the event destination that you want to delete.</p>
         pub fn event_destination_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1108,84 +772,48 @@ pub mod delete_configuration_set_event_destination_input {
             self
         }
         /// <p>The name of the event destination that you want to delete.</p>
-        pub fn set_event_destination_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.event_destination_name = input;
-            self
+        pub fn set_event_destination_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_destination_name = input; self
         }
         /// Consumes the builder and constructs a [`DeleteConfigurationSetEventDestinationInput`](crate::input::DeleteConfigurationSetEventDestinationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteConfigurationSetEventDestinationInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::DeleteConfigurationSetEventDestinationInput {
-                configuration_set_name: self.configuration_set_name,
-                event_destination_name: self.event_destination_name,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteConfigurationSetEventDestinationInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DeleteConfigurationSetEventDestinationInput {
+                    configuration_set_name: self.configuration_set_name
+                    ,
+                    event_destination_name: self.event_destination_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteConfigurationSetEventDestinationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConfigurationSetEventDestination`](crate::operation::DeleteConfigurationSetEventDestination)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteConfigurationSetEventDestination,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteConfigurationSetEventDestination, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteConfigurationSetEventDestinationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteConfigurationSetEventDestinationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_3 = &_input.configuration_set_name;
-                let input_3 = input_3.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "configuration_set_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "configuration_set_name", details: "cannot be empty or unset" })?;
                 let configuration_set_name = aws_smithy_http::label::fmt_string(input_3, false);
                 if configuration_set_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "configuration_set_name",
-                        details: "cannot be empty or unset",
-                    });
-                }
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "configuration_set_name", details: "cannot be empty or unset" })
+                            }
                 let input_4 = &_input.event_destination_name;
-                let input_4 = input_4.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "event_destination_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_4 = input_4.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "event_destination_name", details: "cannot be empty or unset" })?;
                 let event_destination_name = aws_smithy_http::label::fmt_string(input_4, false);
                 if event_destination_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "event_destination_name",
-                        details: "cannot be empty or unset",
-                    });
-                }
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "event_destination_name", details: "cannot be empty or unset" })
+                            }
                 write!(output, "/v1/email/configuration-sets/{ConfigurationSetName}/event-destinations/{EventDestinationName}", ConfigurationSetName = configuration_set_name, EventDestinationName = event_destination_name).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DeleteConfigurationSetEventDestinationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DeleteConfigurationSetEventDestinationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -1194,54 +822,37 @@ impl DeleteConfigurationSetEventDestinationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteConfigurationSetEventDestination::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteConfigurationSetEventDestination",
-            "pinpointemail",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteConfigurationSetEventDestination::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteConfigurationSetEventDestination", "pinpointemail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1253,9 +864,9 @@ impl DeleteConfigurationSetEventDestinationInput {
 
 /// See [`DeleteDedicatedIpPoolInput`](crate::input::DeleteDedicatedIpPoolInput).
 pub mod delete_dedicated_ip_pool_input {
-
+    
     /// A builder for [`DeleteDedicatedIpPoolInput`](crate::input::DeleteDedicatedIpPoolInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) pool_name: std::option::Option<std::string::String>,
     }
@@ -1267,68 +878,39 @@ pub mod delete_dedicated_ip_pool_input {
         }
         /// <p>The name of the dedicated IP pool that you want to delete.</p>
         pub fn set_pool_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pool_name = input;
-            self
+            self.pool_name = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDedicatedIpPoolInput`](crate::input::DeleteDedicatedIpPoolInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteDedicatedIpPoolInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DeleteDedicatedIpPoolInput {
-                pool_name: self.pool_name,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteDedicatedIpPoolInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DeleteDedicatedIpPoolInput {
+                    pool_name: self.pool_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteDedicatedIpPoolInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDedicatedIpPool`](crate::operation::DeleteDedicatedIpPool)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteDedicatedIpPool,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteDedicatedIpPool, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteDedicatedIpPoolInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteDedicatedIpPoolInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_5 = &_input.pool_name;
-                let input_5 = input_5.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "pool_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_5 = input_5.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "pool_name", details: "cannot be empty or unset" })?;
                 let pool_name = aws_smithy_http::label::fmt_string(input_5, false);
                 if pool_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "pool_name",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/v1/email/dedicated-ip-pools/{PoolName}",
-                    PoolName = pool_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "pool_name", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/v1/email/dedicated-ip-pools/{PoolName}", PoolName = pool_name).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DeleteDedicatedIpPoolInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DeleteDedicatedIpPoolInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -1337,54 +919,37 @@ impl DeleteDedicatedIpPoolInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteDedicatedIpPool::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteDedicatedIpPool",
-            "pinpointemail",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteDedicatedIpPool::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteDedicatedIpPool", "pinpointemail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1396,9 +961,9 @@ impl DeleteDedicatedIpPoolInput {
 
 /// See [`DeleteEmailIdentityInput`](crate::input::DeleteEmailIdentityInput).
 pub mod delete_email_identity_input {
-
+    
     /// A builder for [`DeleteEmailIdentityInput`](crate::input::DeleteEmailIdentityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) email_identity: std::option::Option<std::string::String>,
     }
@@ -1409,72 +974,40 @@ pub mod delete_email_identity_input {
             self
         }
         /// <p>The identity (that is, the email address or domain) that you want to delete from your Amazon Pinpoint account.</p>
-        pub fn set_email_identity(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.email_identity = input;
-            self
+        pub fn set_email_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.email_identity = input; self
         }
         /// Consumes the builder and constructs a [`DeleteEmailIdentityInput`](crate::input::DeleteEmailIdentityInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteEmailIdentityInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DeleteEmailIdentityInput {
-                email_identity: self.email_identity,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteEmailIdentityInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DeleteEmailIdentityInput {
+                    email_identity: self.email_identity
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteEmailIdentityInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEmailIdentity`](crate::operation::DeleteEmailIdentity)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteEmailIdentity,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteEmailIdentity, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteEmailIdentityInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteEmailIdentityInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_6 = &_input.email_identity;
-                let input_6 = input_6.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "email_identity",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_6 = input_6.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "email_identity", details: "cannot be empty or unset" })?;
                 let email_identity = aws_smithy_http::label::fmt_string(input_6, false);
                 if email_identity.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "email_identity",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/v1/email/identities/{EmailIdentity}",
-                    EmailIdentity = email_identity
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "email_identity", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/v1/email/identities/{EmailIdentity}", EmailIdentity = email_identity).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DeleteEmailIdentityInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DeleteEmailIdentityInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -1483,54 +1016,37 @@ impl DeleteEmailIdentityInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteEmailIdentity::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteEmailIdentity",
-            "pinpointemail",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteEmailIdentity::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteEmailIdentity", "pinpointemail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1542,48 +1058,35 @@ impl DeleteEmailIdentityInput {
 
 /// See [`GetAccountInput`](crate::input::GetAccountInput).
 pub mod get_account_input {
-
+    
     /// A builder for [`GetAccountInput`](crate::input::GetAccountInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {}
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`GetAccountInput`](crate::input::GetAccountInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetAccountInput, aws_smithy_http::operation::BuildError> {
-            Ok(crate::input::GetAccountInput {})
+        pub fn build(self) -> Result<crate::input::GetAccountInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::GetAccountInput {
+                }
+            )
         }
     }
+    
+    
 }
 impl GetAccountInput {
     /// Consumes the builder and constructs an Operation<[`GetAccount`](crate::operation::GetAccount)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetAccount,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetAccount, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetAccountInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::GetAccountInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/email/account").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::GetAccountInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::GetAccountInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1592,54 +1095,37 @@ impl GetAccountInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetAccount::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetAccount",
-            "pinpointemail",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetAccount::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetAccount", "pinpointemail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1651,9 +1137,9 @@ impl GetAccountInput {
 
 /// See [`GetBlacklistReportsInput`](crate::input::GetBlacklistReportsInput).
 pub mod get_blacklist_reports_input {
-
+    
     /// A builder for [`GetBlacklistReportsInput`](crate::input::GetBlacklistReportsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) blacklist_item_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -1665,77 +1151,48 @@ pub mod get_blacklist_reports_input {
         /// <p>A list of IP addresses that you want to retrieve blacklist information about. You can only specify the dedicated IP addresses that you use to send email using Amazon Pinpoint or Amazon SES.</p>
         pub fn blacklist_item_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.blacklist_item_names.unwrap_or_default();
-            v.push(input.into());
-            self.blacklist_item_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.blacklist_item_names = Some(v);
+                            self
         }
         /// <p>A list of IP addresses that you want to retrieve blacklist information about. You can only specify the dedicated IP addresses that you use to send email using Amazon Pinpoint or Amazon SES.</p>
-        pub fn set_blacklist_item_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.blacklist_item_names = input;
-            self
+        pub fn set_blacklist_item_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.blacklist_item_names = input; self
         }
         /// Consumes the builder and constructs a [`GetBlacklistReportsInput`](crate::input::GetBlacklistReportsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetBlacklistReportsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::GetBlacklistReportsInput {
-                blacklist_item_names: self.blacklist_item_names,
-            })
+        pub fn build(self) -> Result<crate::input::GetBlacklistReportsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::GetBlacklistReportsInput {
+                    blacklist_item_names: self.blacklist_item_names
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetBlacklistReportsInput {
     /// Consumes the builder and constructs an Operation<[`GetBlacklistReports`](crate::operation::GetBlacklistReports)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetBlacklistReports,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetBlacklistReports, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetBlacklistReportsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                write!(
-                    output,
-                    "/v1/email/deliverability-dashboard/blacklist-report"
-                )
-                .expect("formatting should succeed");
+            fn uri_base(_input: &crate::input::GetBlacklistReportsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/v1/email/deliverability-dashboard/blacklist-report").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::GetBlacklistReportsInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::GetBlacklistReportsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_7) = &_input.blacklist_item_names {
                     for inner_8 in inner_7 {
-                        query.push_kv(
-                            "BlacklistItemNames",
-                            &aws_smithy_http::query::fmt_string(&inner_8),
-                        );
+                        query.push_kv("BlacklistItemNames", &aws_smithy_http::query::fmt_string(&inner_8));
                     }
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::GetBlacklistReportsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::GetBlacklistReportsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1745,54 +1202,37 @@ impl GetBlacklistReportsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetBlacklistReports::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetBlacklistReports",
-            "pinpointemail",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetBlacklistReports::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetBlacklistReports", "pinpointemail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1804,9 +1244,9 @@ impl GetBlacklistReportsInput {
 
 /// See [`GetConfigurationSetInput`](crate::input::GetConfigurationSetInput).
 pub mod get_configuration_set_input {
-
+    
     /// A builder for [`GetConfigurationSetInput`](crate::input::GetConfigurationSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
     }
@@ -1817,72 +1257,40 @@ pub mod get_configuration_set_input {
             self
         }
         /// <p>The name of the configuration set that you want to obtain more information about.</p>
-        pub fn set_configuration_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_name = input;
-            self
+        pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_name = input; self
         }
         /// Consumes the builder and constructs a [`GetConfigurationSetInput`](crate::input::GetConfigurationSetInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetConfigurationSetInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::GetConfigurationSetInput {
-                configuration_set_name: self.configuration_set_name,
-            })
+        pub fn build(self) -> Result<crate::input::GetConfigurationSetInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::GetConfigurationSetInput {
+                    configuration_set_name: self.configuration_set_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetConfigurationSetInput {
     /// Consumes the builder and constructs an Operation<[`GetConfigurationSet`](crate::operation::GetConfigurationSet)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetConfigurationSet,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetConfigurationSet, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetConfigurationSetInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::GetConfigurationSetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_9 = &_input.configuration_set_name;
-                let input_9 = input_9.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "configuration_set_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_9 = input_9.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "configuration_set_name", details: "cannot be empty or unset" })?;
                 let configuration_set_name = aws_smithy_http::label::fmt_string(input_9, false);
                 if configuration_set_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "configuration_set_name",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/v1/email/configuration-sets/{ConfigurationSetName}",
-                    ConfigurationSetName = configuration_set_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "configuration_set_name", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/v1/email/configuration-sets/{ConfigurationSetName}", ConfigurationSetName = configuration_set_name).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::GetConfigurationSetInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::GetConfigurationSetInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1891,54 +1299,37 @@ impl GetConfigurationSetInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetConfigurationSet::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetConfigurationSet",
-            "pinpointemail",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetConfigurationSet::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetConfigurationSet", "pinpointemail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1950,9 +1341,9 @@ impl GetConfigurationSetInput {
 
 /// See [`GetConfigurationSetEventDestinationsInput`](crate::input::GetConfigurationSetEventDestinationsInput).
 pub mod get_configuration_set_event_destinations_input {
-
+    
     /// A builder for [`GetConfigurationSetEventDestinationsInput`](crate::input::GetConfigurationSetEventDestinationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
     }
@@ -1963,74 +1354,40 @@ pub mod get_configuration_set_event_destinations_input {
             self
         }
         /// <p>The name of the configuration set that contains the event destination.</p>
-        pub fn set_configuration_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_name = input;
-            self
+        pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_name = input; self
         }
         /// Consumes the builder and constructs a [`GetConfigurationSetEventDestinationsInput`](crate::input::GetConfigurationSetEventDestinationsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetConfigurationSetEventDestinationsInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::GetConfigurationSetEventDestinationsInput {
-                configuration_set_name: self.configuration_set_name,
-            })
+        pub fn build(self) -> Result<crate::input::GetConfigurationSetEventDestinationsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::GetConfigurationSetEventDestinationsInput {
+                    configuration_set_name: self.configuration_set_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetConfigurationSetEventDestinationsInput {
     /// Consumes the builder and constructs an Operation<[`GetConfigurationSetEventDestinations`](crate::operation::GetConfigurationSetEventDestinations)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetConfigurationSetEventDestinations,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetConfigurationSetEventDestinations, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetConfigurationSetEventDestinationsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::GetConfigurationSetEventDestinationsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_10 = &_input.configuration_set_name;
-                let input_10 = input_10.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "configuration_set_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_10 = input_10.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "configuration_set_name", details: "cannot be empty or unset" })?;
                 let configuration_set_name = aws_smithy_http::label::fmt_string(input_10, false);
                 if configuration_set_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "configuration_set_name",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/v1/email/configuration-sets/{ConfigurationSetName}/event-destinations",
-                    ConfigurationSetName = configuration_set_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "configuration_set_name", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/v1/email/configuration-sets/{ConfigurationSetName}/event-destinations", ConfigurationSetName = configuration_set_name).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::GetConfigurationSetEventDestinationsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::GetConfigurationSetEventDestinationsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -2039,54 +1396,37 @@ impl GetConfigurationSetEventDestinationsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetConfigurationSetEventDestinations::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetConfigurationSetEventDestinations",
-            "pinpointemail",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetConfigurationSetEventDestinations::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetConfigurationSetEventDestinations", "pinpointemail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2098,9 +1438,9 @@ impl GetConfigurationSetEventDestinationsInput {
 
 /// See [`GetDedicatedIpInput`](crate::input::GetDedicatedIpInput).
 pub mod get_dedicated_ip_input {
-
+    
     /// A builder for [`GetDedicatedIpInput`](crate::input::GetDedicatedIpInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) ip: std::option::Option<std::string::String>,
     }
@@ -2112,62 +1452,39 @@ pub mod get_dedicated_ip_input {
         }
         /// <p>The IP address that you want to obtain more information about. The value you specify has to be a dedicated IP address that's assocaited with your Amazon Pinpoint account.</p>
         pub fn set_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ip = input;
-            self
+            self.ip = input; self
         }
         /// Consumes the builder and constructs a [`GetDedicatedIpInput`](crate::input::GetDedicatedIpInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetDedicatedIpInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::GetDedicatedIpInput { ip: self.ip })
+        pub fn build(self) -> Result<crate::input::GetDedicatedIpInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::GetDedicatedIpInput {
+                    ip: self.ip
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetDedicatedIpInput {
     /// Consumes the builder and constructs an Operation<[`GetDedicatedIp`](crate::operation::GetDedicatedIp)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetDedicatedIp,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetDedicatedIp, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetDedicatedIpInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::GetDedicatedIpInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_11 = &_input.ip;
-                let input_11 = input_11.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "ip",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_11 = input_11.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "ip", details: "cannot be empty or unset" })?;
                 let ip = aws_smithy_http::label::fmt_string(input_11, false);
                 if ip.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "ip",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(output, "/v1/email/dedicated-ips/{Ip}", Ip = ip)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "ip", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/v1/email/dedicated-ips/{Ip}", Ip = ip).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::GetDedicatedIpInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::GetDedicatedIpInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -2176,54 +1493,37 @@ impl GetDedicatedIpInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetDedicatedIp::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetDedicatedIp",
-            "pinpointemail",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetDedicatedIp::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetDedicatedIp", "pinpointemail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2235,9 +1535,9 @@ impl GetDedicatedIpInput {
 
 /// See [`GetDedicatedIpsInput`](crate::input::GetDedicatedIpsInput).
 pub mod get_dedicated_ips_input {
-
+    
     /// A builder for [`GetDedicatedIpsInput`](crate::input::GetDedicatedIpsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) pool_name: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2251,8 +1551,7 @@ pub mod get_dedicated_ips_input {
         }
         /// <p>The name of the IP pool that the dedicated IP address is associated with.</p>
         pub fn set_pool_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pool_name = input;
-            self
+            self.pool_name = input; self
         }
         /// <p>A token returned from a previous call to <code>GetDedicatedIps</code> to indicate the position of the dedicated IP pool in the list of IP pools.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2261,8 +1560,7 @@ pub mod get_dedicated_ips_input {
         }
         /// <p>A token returned from a previous call to <code>GetDedicatedIps</code> to indicate the position of the dedicated IP pool in the list of IP pools.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The number of results to show in a single call to <code>GetDedicatedIpsRequest</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         pub fn page_size(mut self, input: i32) -> Self {
@@ -2271,49 +1569,34 @@ pub mod get_dedicated_ips_input {
         }
         /// <p>The number of results to show in a single call to <code>GetDedicatedIpsRequest</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.page_size = input;
-            self
+            self.page_size = input; self
         }
         /// Consumes the builder and constructs a [`GetDedicatedIpsInput`](crate::input::GetDedicatedIpsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetDedicatedIpsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::GetDedicatedIpsInput {
-                pool_name: self.pool_name,
-                next_token: self.next_token,
-                page_size: self.page_size,
-            })
+        pub fn build(self) -> Result<crate::input::GetDedicatedIpsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::GetDedicatedIpsInput {
+                    pool_name: self.pool_name
+                    ,
+                    next_token: self.next_token
+                    ,
+                    page_size: self.page_size
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetDedicatedIpsInput {
     /// Consumes the builder and constructs an Operation<[`GetDedicatedIps`](crate::operation::GetDedicatedIps)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetDedicatedIps,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetDedicatedIps, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetDedicatedIpsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::GetDedicatedIpsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/email/dedicated-ips").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::GetDedicatedIpsInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::GetDedicatedIpsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_12) = &_input.pool_name {
                     query.push_kv("PoolName", &aws_smithy_http::query::fmt_string(&inner_12));
@@ -2322,19 +1605,14 @@ impl GetDedicatedIpsInput {
                     query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_13));
                 }
                 if let Some(inner_14) = &_input.page_size {
-                    query.push_kv(
-                        "PageSize",
-                        aws_smithy_types::primitive::Encoder::from(*inner_14).encode(),
-                    );
+                    query.push_kv("PageSize", aws_smithy_types::primitive::Encoder::from(*inner_14).encode());
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::GetDedicatedIpsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::GetDedicatedIpsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2344,54 +1622,37 @@ impl GetDedicatedIpsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetDedicatedIps::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetDedicatedIps",
-            "pinpointemail",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetDedicatedIps::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetDedicatedIps", "pinpointemail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2403,52 +1664,35 @@ impl GetDedicatedIpsInput {
 
 /// See [`GetDeliverabilityDashboardOptionsInput`](crate::input::GetDeliverabilityDashboardOptionsInput).
 pub mod get_deliverability_dashboard_options_input {
-
+    
     /// A builder for [`GetDeliverabilityDashboardOptionsInput`](crate::input::GetDeliverabilityDashboardOptionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {}
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`GetDeliverabilityDashboardOptionsInput`](crate::input::GetDeliverabilityDashboardOptionsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetDeliverabilityDashboardOptionsInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::GetDeliverabilityDashboardOptionsInput {})
+        pub fn build(self) -> Result<crate::input::GetDeliverabilityDashboardOptionsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::GetDeliverabilityDashboardOptionsInput {
+                }
+            )
         }
     }
+    
+    
 }
 impl GetDeliverabilityDashboardOptionsInput {
     /// Consumes the builder and constructs an Operation<[`GetDeliverabilityDashboardOptions`](crate::operation::GetDeliverabilityDashboardOptions)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetDeliverabilityDashboardOptions,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetDeliverabilityDashboardOptions, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetDeliverabilityDashboardOptionsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                write!(output, "/v1/email/deliverability-dashboard")
-                    .expect("formatting should succeed");
+            fn uri_base(_input: &crate::input::GetDeliverabilityDashboardOptionsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/v1/email/deliverability-dashboard").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::GetDeliverabilityDashboardOptionsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::GetDeliverabilityDashboardOptionsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -2457,54 +1701,37 @@ impl GetDeliverabilityDashboardOptionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetDeliverabilityDashboardOptions::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetDeliverabilityDashboardOptions",
-            "pinpointemail",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetDeliverabilityDashboardOptions::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetDeliverabilityDashboardOptions", "pinpointemail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2516,9 +1743,9 @@ impl GetDeliverabilityDashboardOptionsInput {
 
 /// See [`GetDeliverabilityTestReportInput`](crate::input::GetDeliverabilityTestReportInput).
 pub mod get_deliverability_test_report_input {
-
+    
     /// A builder for [`GetDeliverabilityTestReportInput`](crate::input::GetDeliverabilityTestReportInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) report_id: std::option::Option<std::string::String>,
     }
@@ -2530,70 +1757,39 @@ pub mod get_deliverability_test_report_input {
         }
         /// <p>A unique string that identifies the predictive inbox placement test.</p>
         pub fn set_report_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.report_id = input;
-            self
+            self.report_id = input; self
         }
         /// Consumes the builder and constructs a [`GetDeliverabilityTestReportInput`](crate::input::GetDeliverabilityTestReportInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetDeliverabilityTestReportInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::GetDeliverabilityTestReportInput {
-                report_id: self.report_id,
-            })
+        pub fn build(self) -> Result<crate::input::GetDeliverabilityTestReportInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::GetDeliverabilityTestReportInput {
+                    report_id: self.report_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetDeliverabilityTestReportInput {
     /// Consumes the builder and constructs an Operation<[`GetDeliverabilityTestReport`](crate::operation::GetDeliverabilityTestReport)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetDeliverabilityTestReport,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetDeliverabilityTestReport, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetDeliverabilityTestReportInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::GetDeliverabilityTestReportInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_15 = &_input.report_id;
-                let input_15 = input_15.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "report_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_15 = input_15.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "report_id", details: "cannot be empty or unset" })?;
                 let report_id = aws_smithy_http::label::fmt_string(input_15, false);
                 if report_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "report_id",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/v1/email/deliverability-dashboard/test-reports/{ReportId}",
-                    ReportId = report_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "report_id", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/v1/email/deliverability-dashboard/test-reports/{ReportId}", ReportId = report_id).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::GetDeliverabilityTestReportInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::GetDeliverabilityTestReportInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -2602,54 +1798,37 @@ impl GetDeliverabilityTestReportInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetDeliverabilityTestReport::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetDeliverabilityTestReport",
-            "pinpointemail",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetDeliverabilityTestReport::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetDeliverabilityTestReport", "pinpointemail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2661,9 +1840,9 @@ impl GetDeliverabilityTestReportInput {
 
 /// See [`GetDomainDeliverabilityCampaignInput`](crate::input::GetDomainDeliverabilityCampaignInput).
 pub mod get_domain_deliverability_campaign_input {
-
+    
     /// A builder for [`GetDomainDeliverabilityCampaignInput`](crate::input::GetDomainDeliverabilityCampaignInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) campaign_id: std::option::Option<std::string::String>,
     }
@@ -2675,70 +1854,39 @@ pub mod get_domain_deliverability_campaign_input {
         }
         /// <p>The unique identifier for the campaign. Amazon Pinpoint automatically generates and assigns this identifier to a campaign. This value is not the same as the campaign identifier that Amazon Pinpoint assigns to campaigns that you create and manage by using the Amazon Pinpoint API or the Amazon Pinpoint console.</p>
         pub fn set_campaign_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.campaign_id = input;
-            self
+            self.campaign_id = input; self
         }
         /// Consumes the builder and constructs a [`GetDomainDeliverabilityCampaignInput`](crate::input::GetDomainDeliverabilityCampaignInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetDomainDeliverabilityCampaignInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::GetDomainDeliverabilityCampaignInput {
-                campaign_id: self.campaign_id,
-            })
+        pub fn build(self) -> Result<crate::input::GetDomainDeliverabilityCampaignInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::GetDomainDeliverabilityCampaignInput {
+                    campaign_id: self.campaign_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetDomainDeliverabilityCampaignInput {
     /// Consumes the builder and constructs an Operation<[`GetDomainDeliverabilityCampaign`](crate::operation::GetDomainDeliverabilityCampaign)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetDomainDeliverabilityCampaign,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetDomainDeliverabilityCampaign, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetDomainDeliverabilityCampaignInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::GetDomainDeliverabilityCampaignInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_16 = &_input.campaign_id;
-                let input_16 = input_16.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "campaign_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_16 = input_16.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "campaign_id", details: "cannot be empty or unset" })?;
                 let campaign_id = aws_smithy_http::label::fmt_string(input_16, false);
                 if campaign_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "campaign_id",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/v1/email/deliverability-dashboard/campaigns/{CampaignId}",
-                    CampaignId = campaign_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "campaign_id", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/v1/email/deliverability-dashboard/campaigns/{CampaignId}", CampaignId = campaign_id).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::GetDomainDeliverabilityCampaignInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::GetDomainDeliverabilityCampaignInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -2747,54 +1895,37 @@ impl GetDomainDeliverabilityCampaignInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetDomainDeliverabilityCampaign::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetDomainDeliverabilityCampaign",
-            "pinpointemail",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetDomainDeliverabilityCampaign::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetDomainDeliverabilityCampaign", "pinpointemail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2806,9 +1937,9 @@ impl GetDomainDeliverabilityCampaignInput {
 
 /// See [`GetDomainStatisticsReportInput`](crate::input::GetDomainStatisticsReportInput).
 pub mod get_domain_statistics_report_input {
-
+    
     /// A builder for [`GetDomainStatisticsReportInput`](crate::input::GetDomainStatisticsReportInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) start_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -2822,8 +1953,7 @@ pub mod get_domain_statistics_report_input {
         }
         /// <p>The domain that you want to obtain deliverability metrics for.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
         /// <p>The first day (in Unix time) that you want to obtain domain deliverability metrics for.</p>
         pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2831,12 +1961,8 @@ pub mod get_domain_statistics_report_input {
             self
         }
         /// <p>The first day (in Unix time) that you want to obtain domain deliverability metrics for.</p>
-        pub fn set_start_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_date = input;
-            self
+        pub fn set_start_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_date = input; self
         }
         /// <p>The last day (in Unix time) that you want to obtain domain deliverability metrics for. The <code>EndDate</code> that you specify has to be less than or equal to 30 days after the <code>StartDate</code>.</p>
         pub fn end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2844,101 +1970,54 @@ pub mod get_domain_statistics_report_input {
             self
         }
         /// <p>The last day (in Unix time) that you want to obtain domain deliverability metrics for. The <code>EndDate</code> that you specify has to be less than or equal to 30 days after the <code>StartDate</code>.</p>
-        pub fn set_end_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_date = input;
-            self
+        pub fn set_end_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_date = input; self
         }
         /// Consumes the builder and constructs a [`GetDomainStatisticsReportInput`](crate::input::GetDomainStatisticsReportInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetDomainStatisticsReportInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::GetDomainStatisticsReportInput {
-                domain: self.domain,
-                start_date: self.start_date,
-                end_date: self.end_date,
-            })
+        pub fn build(self) -> Result<crate::input::GetDomainStatisticsReportInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::GetDomainStatisticsReportInput {
+                    domain: self.domain
+                    ,
+                    start_date: self.start_date
+                    ,
+                    end_date: self.end_date
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetDomainStatisticsReportInput {
     /// Consumes the builder and constructs an Operation<[`GetDomainStatisticsReport`](crate::operation::GetDomainStatisticsReport)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetDomainStatisticsReport,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetDomainStatisticsReport, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetDomainStatisticsReportInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::GetDomainStatisticsReportInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_17 = &_input.domain;
-                let input_17 = input_17.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "domain",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_17 = input_17.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "domain", details: "cannot be empty or unset" })?;
                 let domain = aws_smithy_http::label::fmt_string(input_17, false);
                 if domain.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "domain",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/v1/email/deliverability-dashboard/statistics-report/{Domain}",
-                    Domain = domain
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "domain", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/v1/email/deliverability-dashboard/statistics-report/{Domain}", Domain = domain).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::GetDomainStatisticsReportInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::GetDomainStatisticsReportInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_18) = &_input.start_date {
-                    query.push_kv(
-                        "StartDate",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_18,
-                            aws_smithy_types::date_time::Format::DateTime,
-                        )?,
-                    );
+                    query.push_kv("StartDate", &aws_smithy_http::query::fmt_timestamp(inner_18, aws_smithy_types::date_time::Format::DateTime)?);
                 }
                 if let Some(inner_19) = &_input.end_date {
-                    query.push_kv(
-                        "EndDate",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_19,
-                            aws_smithy_types::date_time::Format::DateTime,
-                        )?,
-                    );
+                    query.push_kv("EndDate", &aws_smithy_http::query::fmt_timestamp(inner_19, aws_smithy_types::date_time::Format::DateTime)?);
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::GetDomainStatisticsReportInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::GetDomainStatisticsReportInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2948,54 +2027,37 @@ impl GetDomainStatisticsReportInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetDomainStatisticsReport::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetDomainStatisticsReport",
-            "pinpointemail",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetDomainStatisticsReport::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetDomainStatisticsReport", "pinpointemail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3007,9 +2069,9 @@ impl GetDomainStatisticsReportInput {
 
 /// See [`GetEmailIdentityInput`](crate::input::GetEmailIdentityInput).
 pub mod get_email_identity_input {
-
+    
     /// A builder for [`GetEmailIdentityInput`](crate::input::GetEmailIdentityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) email_identity: std::option::Option<std::string::String>,
     }
@@ -3020,72 +2082,40 @@ pub mod get_email_identity_input {
             self
         }
         /// <p>The email identity that you want to retrieve details for.</p>
-        pub fn set_email_identity(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.email_identity = input;
-            self
+        pub fn set_email_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.email_identity = input; self
         }
         /// Consumes the builder and constructs a [`GetEmailIdentityInput`](crate::input::GetEmailIdentityInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetEmailIdentityInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::GetEmailIdentityInput {
-                email_identity: self.email_identity,
-            })
+        pub fn build(self) -> Result<crate::input::GetEmailIdentityInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::GetEmailIdentityInput {
+                    email_identity: self.email_identity
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetEmailIdentityInput {
     /// Consumes the builder and constructs an Operation<[`GetEmailIdentity`](crate::operation::GetEmailIdentity)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetEmailIdentity,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetEmailIdentity, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetEmailIdentityInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::GetEmailIdentityInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_20 = &_input.email_identity;
-                let input_20 = input_20.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "email_identity",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_20 = input_20.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "email_identity", details: "cannot be empty or unset" })?;
                 let email_identity = aws_smithy_http::label::fmt_string(input_20, false);
                 if email_identity.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "email_identity",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/v1/email/identities/{EmailIdentity}",
-                    EmailIdentity = email_identity
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "email_identity", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/v1/email/identities/{EmailIdentity}", EmailIdentity = email_identity).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::GetEmailIdentityInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::GetEmailIdentityInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -3094,54 +2124,37 @@ impl GetEmailIdentityInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetEmailIdentity::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetEmailIdentity",
-            "pinpointemail",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetEmailIdentity::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetEmailIdentity", "pinpointemail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3153,9 +2166,9 @@ impl GetEmailIdentityInput {
 
 /// See [`ListConfigurationSetsInput`](crate::input::ListConfigurationSetsInput).
 pub mod list_configuration_sets_input {
-
+    
     /// A builder for [`ListConfigurationSetsInput`](crate::input::ListConfigurationSetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) page_size: std::option::Option<i32>,
@@ -3168,8 +2181,7 @@ pub mod list_configuration_sets_input {
         }
         /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to indicate the position in the list of configuration sets.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The number of results to show in a single call to <code>ListConfigurationSets</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         pub fn page_size(mut self, input: i32) -> Self {
@@ -3178,66 +2190,45 @@ pub mod list_configuration_sets_input {
         }
         /// <p>The number of results to show in a single call to <code>ListConfigurationSets</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.page_size = input;
-            self
+            self.page_size = input; self
         }
         /// Consumes the builder and constructs a [`ListConfigurationSetsInput`](crate::input::ListConfigurationSetsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListConfigurationSetsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::ListConfigurationSetsInput {
-                next_token: self.next_token,
-                page_size: self.page_size,
-            })
+        pub fn build(self) -> Result<crate::input::ListConfigurationSetsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListConfigurationSetsInput {
+                    next_token: self.next_token
+                    ,
+                    page_size: self.page_size
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListConfigurationSetsInput {
     /// Consumes the builder and constructs an Operation<[`ListConfigurationSets`](crate::operation::ListConfigurationSets)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListConfigurationSets,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListConfigurationSets, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListConfigurationSetsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListConfigurationSetsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/email/configuration-sets").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListConfigurationSetsInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::ListConfigurationSetsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_21) = &_input.next_token {
                     query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_21));
                 }
                 if let Some(inner_22) = &_input.page_size {
-                    query.push_kv(
-                        "PageSize",
-                        aws_smithy_types::primitive::Encoder::from(*inner_22).encode(),
-                    );
+                    query.push_kv("PageSize", aws_smithy_types::primitive::Encoder::from(*inner_22).encode());
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListConfigurationSetsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListConfigurationSetsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3247,54 +2238,37 @@ impl ListConfigurationSetsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListConfigurationSets::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListConfigurationSets",
-            "pinpointemail",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListConfigurationSets::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListConfigurationSets", "pinpointemail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3306,9 +2280,9 @@ impl ListConfigurationSetsInput {
 
 /// See [`ListDedicatedIpPoolsInput`](crate::input::ListDedicatedIpPoolsInput).
 pub mod list_dedicated_ip_pools_input {
-
+    
     /// A builder for [`ListDedicatedIpPoolsInput`](crate::input::ListDedicatedIpPoolsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) page_size: std::option::Option<i32>,
@@ -3321,8 +2295,7 @@ pub mod list_dedicated_ip_pools_input {
         }
         /// <p>A token returned from a previous call to <code>ListDedicatedIpPools</code> to indicate the position in the list of dedicated IP pools.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The number of results to show in a single call to <code>ListDedicatedIpPools</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         pub fn page_size(mut self, input: i32) -> Self {
@@ -3331,66 +2304,45 @@ pub mod list_dedicated_ip_pools_input {
         }
         /// <p>The number of results to show in a single call to <code>ListDedicatedIpPools</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.page_size = input;
-            self
+            self.page_size = input; self
         }
         /// Consumes the builder and constructs a [`ListDedicatedIpPoolsInput`](crate::input::ListDedicatedIpPoolsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListDedicatedIpPoolsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::ListDedicatedIpPoolsInput {
-                next_token: self.next_token,
-                page_size: self.page_size,
-            })
+        pub fn build(self) -> Result<crate::input::ListDedicatedIpPoolsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListDedicatedIpPoolsInput {
+                    next_token: self.next_token
+                    ,
+                    page_size: self.page_size
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListDedicatedIpPoolsInput {
     /// Consumes the builder and constructs an Operation<[`ListDedicatedIpPools`](crate::operation::ListDedicatedIpPools)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListDedicatedIpPools,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListDedicatedIpPools, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListDedicatedIpPoolsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListDedicatedIpPoolsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/email/dedicated-ip-pools").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListDedicatedIpPoolsInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::ListDedicatedIpPoolsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_23) = &_input.next_token {
                     query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_23));
                 }
                 if let Some(inner_24) = &_input.page_size {
-                    query.push_kv(
-                        "PageSize",
-                        aws_smithy_types::primitive::Encoder::from(*inner_24).encode(),
-                    );
+                    query.push_kv("PageSize", aws_smithy_types::primitive::Encoder::from(*inner_24).encode());
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListDedicatedIpPoolsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListDedicatedIpPoolsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3400,54 +2352,37 @@ impl ListDedicatedIpPoolsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListDedicatedIpPools::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListDedicatedIpPools",
-            "pinpointemail",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListDedicatedIpPools::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListDedicatedIpPools", "pinpointemail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3459,9 +2394,9 @@ impl ListDedicatedIpPoolsInput {
 
 /// See [`ListDeliverabilityTestReportsInput`](crate::input::ListDeliverabilityTestReportsInput).
 pub mod list_deliverability_test_reports_input {
-
+    
     /// A builder for [`ListDeliverabilityTestReportsInput`](crate::input::ListDeliverabilityTestReportsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) page_size: std::option::Option<i32>,
@@ -3474,81 +2409,56 @@ pub mod list_deliverability_test_reports_input {
         }
         /// <p>A token returned from a previous call to <code>ListDeliverabilityTestReports</code> to indicate the position in the list of predictive inbox placement tests.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
-        /// <p>The number of results to show in a single call to <code>ListDeliverabilityTestReports</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
+        /// <p>The number of results to show in a single call to <code>ListDeliverabilityTestReports</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p> 
         /// <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
         pub fn page_size(mut self, input: i32) -> Self {
             self.page_size = Some(input);
             self
         }
-        /// <p>The number of results to show in a single call to <code>ListDeliverabilityTestReports</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
+        /// <p>The number of results to show in a single call to <code>ListDeliverabilityTestReports</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p> 
         /// <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.page_size = input;
-            self
+            self.page_size = input; self
         }
         /// Consumes the builder and constructs a [`ListDeliverabilityTestReportsInput`](crate::input::ListDeliverabilityTestReportsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListDeliverabilityTestReportsInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::ListDeliverabilityTestReportsInput {
-                next_token: self.next_token,
-                page_size: self.page_size,
-            })
+        pub fn build(self) -> Result<crate::input::ListDeliverabilityTestReportsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListDeliverabilityTestReportsInput {
+                    next_token: self.next_token
+                    ,
+                    page_size: self.page_size
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListDeliverabilityTestReportsInput {
     /// Consumes the builder and constructs an Operation<[`ListDeliverabilityTestReports`](crate::operation::ListDeliverabilityTestReports)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListDeliverabilityTestReports,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListDeliverabilityTestReports, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListDeliverabilityTestReportsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                write!(output, "/v1/email/deliverability-dashboard/test-reports")
-                    .expect("formatting should succeed");
+            fn uri_base(_input: &crate::input::ListDeliverabilityTestReportsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/v1/email/deliverability-dashboard/test-reports").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListDeliverabilityTestReportsInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::ListDeliverabilityTestReportsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_25) = &_input.next_token {
                     query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_25));
                 }
                 if let Some(inner_26) = &_input.page_size {
-                    query.push_kv(
-                        "PageSize",
-                        aws_smithy_types::primitive::Encoder::from(*inner_26).encode(),
-                    );
+                    query.push_kv("PageSize", aws_smithy_types::primitive::Encoder::from(*inner_26).encode());
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListDeliverabilityTestReportsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListDeliverabilityTestReportsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3558,54 +2468,37 @@ impl ListDeliverabilityTestReportsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListDeliverabilityTestReports::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListDeliverabilityTestReports",
-            "pinpointemail",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListDeliverabilityTestReports::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListDeliverabilityTestReports", "pinpointemail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3617,9 +2510,9 @@ impl ListDeliverabilityTestReportsInput {
 
 /// See [`ListDomainDeliverabilityCampaignsInput`](crate::input::ListDomainDeliverabilityCampaignsInput).
 pub mod list_domain_deliverability_campaigns_input {
-
+    
     /// A builder for [`ListDomainDeliverabilityCampaignsInput`](crate::input::ListDomainDeliverabilityCampaignsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) start_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) end_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -3634,12 +2527,8 @@ pub mod list_domain_deliverability_campaigns_input {
             self
         }
         /// <p>The first day, in Unix time format, that you want to obtain deliverability data for.</p>
-        pub fn set_start_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_date = input;
-            self
+        pub fn set_start_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_date = input; self
         }
         /// <p>The last day, in Unix time format, that you want to obtain deliverability data for. This value has to be less than or equal to 30 days after the value of the <code>StartDate</code> parameter.</p>
         pub fn end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3647,12 +2536,8 @@ pub mod list_domain_deliverability_campaigns_input {
             self
         }
         /// <p>The last day, in Unix time format, that you want to obtain deliverability data for. This value has to be less than or equal to 30 days after the value of the <code>StartDate</code> parameter.</p>
-        pub fn set_end_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_date = input;
-            self
+        pub fn set_end_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_date = input; self
         }
         /// <p>The domain to obtain deliverability data for.</p>
         pub fn subscribed_domain(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3660,12 +2545,8 @@ pub mod list_domain_deliverability_campaigns_input {
             self
         }
         /// <p>The domain to obtain deliverability data for.</p>
-        pub fn set_subscribed_domain(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.subscribed_domain = input;
-            self
+        pub fn set_subscribed_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.subscribed_domain = input; self
         }
         /// <p>A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of a campaign in the list of campaigns.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3674,8 +2555,7 @@ pub mod list_domain_deliverability_campaigns_input {
         }
         /// <p>A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of a campaign in the list of campaigns.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum number of results to include in response to a single call to the <code>ListDomainDeliverabilityCampaigns</code> operation. If the number of results is larger than the number that you specify in this parameter, the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         pub fn page_size(mut self, input: i32) -> Self {
@@ -3684,108 +2564,63 @@ pub mod list_domain_deliverability_campaigns_input {
         }
         /// <p>The maximum number of results to include in response to a single call to the <code>ListDomainDeliverabilityCampaigns</code> operation. If the number of results is larger than the number that you specify in this parameter, the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.page_size = input;
-            self
+            self.page_size = input; self
         }
         /// Consumes the builder and constructs a [`ListDomainDeliverabilityCampaignsInput`](crate::input::ListDomainDeliverabilityCampaignsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListDomainDeliverabilityCampaignsInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::ListDomainDeliverabilityCampaignsInput {
-                start_date: self.start_date,
-                end_date: self.end_date,
-                subscribed_domain: self.subscribed_domain,
-                next_token: self.next_token,
-                page_size: self.page_size,
-            })
+        pub fn build(self) -> Result<crate::input::ListDomainDeliverabilityCampaignsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListDomainDeliverabilityCampaignsInput {
+                    start_date: self.start_date
+                    ,
+                    end_date: self.end_date
+                    ,
+                    subscribed_domain: self.subscribed_domain
+                    ,
+                    next_token: self.next_token
+                    ,
+                    page_size: self.page_size
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListDomainDeliverabilityCampaignsInput {
     /// Consumes the builder and constructs an Operation<[`ListDomainDeliverabilityCampaigns`](crate::operation::ListDomainDeliverabilityCampaigns)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListDomainDeliverabilityCampaigns,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListDomainDeliverabilityCampaigns, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListDomainDeliverabilityCampaignsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListDomainDeliverabilityCampaignsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_27 = &_input.subscribed_domain;
-                let input_27 = input_27.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "subscribed_domain",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_27 = input_27.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "subscribed_domain", details: "cannot be empty or unset" })?;
                 let subscribed_domain = aws_smithy_http::label::fmt_string(input_27, false);
                 if subscribed_domain.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "subscribed_domain",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/v1/email/deliverability-dashboard/domains/{SubscribedDomain}/campaigns",
-                    SubscribedDomain = subscribed_domain
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "subscribed_domain", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/v1/email/deliverability-dashboard/domains/{SubscribedDomain}/campaigns", SubscribedDomain = subscribed_domain).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListDomainDeliverabilityCampaignsInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::ListDomainDeliverabilityCampaignsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_28) = &_input.start_date {
-                    query.push_kv(
-                        "StartDate",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_28,
-                            aws_smithy_types::date_time::Format::DateTime,
-                        )?,
-                    );
+                    query.push_kv("StartDate", &aws_smithy_http::query::fmt_timestamp(inner_28, aws_smithy_types::date_time::Format::DateTime)?);
                 }
                 if let Some(inner_29) = &_input.end_date {
-                    query.push_kv(
-                        "EndDate",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_29,
-                            aws_smithy_types::date_time::Format::DateTime,
-                        )?,
-                    );
+                    query.push_kv("EndDate", &aws_smithy_http::query::fmt_timestamp(inner_29, aws_smithy_types::date_time::Format::DateTime)?);
                 }
                 if let Some(inner_30) = &_input.next_token {
                     query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_30));
                 }
                 if let Some(inner_31) = &_input.page_size {
-                    query.push_kv(
-                        "PageSize",
-                        aws_smithy_types::primitive::Encoder::from(*inner_31).encode(),
-                    );
+                    query.push_kv("PageSize", aws_smithy_types::primitive::Encoder::from(*inner_31).encode());
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListDomainDeliverabilityCampaignsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListDomainDeliverabilityCampaignsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3795,54 +2630,37 @@ impl ListDomainDeliverabilityCampaignsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListDomainDeliverabilityCampaigns::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListDomainDeliverabilityCampaigns",
-            "pinpointemail",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListDomainDeliverabilityCampaigns::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListDomainDeliverabilityCampaigns", "pinpointemail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3854,9 +2672,9 @@ impl ListDomainDeliverabilityCampaignsInput {
 
 /// See [`ListEmailIdentitiesInput`](crate::input::ListEmailIdentitiesInput).
 pub mod list_email_identities_input {
-
+    
     /// A builder for [`ListEmailIdentitiesInput`](crate::input::ListEmailIdentitiesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) page_size: std::option::Option<i32>,
@@ -3869,78 +2687,56 @@ pub mod list_email_identities_input {
         }
         /// <p>A token returned from a previous call to <code>ListEmailIdentities</code> to indicate the position in the list of identities.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
-        /// <p>The number of results to show in a single call to <code>ListEmailIdentities</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
+        /// <p>The number of results to show in a single call to <code>ListEmailIdentities</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p> 
         /// <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
         pub fn page_size(mut self, input: i32) -> Self {
             self.page_size = Some(input);
             self
         }
-        /// <p>The number of results to show in a single call to <code>ListEmailIdentities</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
+        /// <p>The number of results to show in a single call to <code>ListEmailIdentities</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p> 
         /// <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.page_size = input;
-            self
+            self.page_size = input; self
         }
         /// Consumes the builder and constructs a [`ListEmailIdentitiesInput`](crate::input::ListEmailIdentitiesInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListEmailIdentitiesInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::ListEmailIdentitiesInput {
-                next_token: self.next_token,
-                page_size: self.page_size,
-            })
+        pub fn build(self) -> Result<crate::input::ListEmailIdentitiesInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListEmailIdentitiesInput {
+                    next_token: self.next_token
+                    ,
+                    page_size: self.page_size
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListEmailIdentitiesInput {
     /// Consumes the builder and constructs an Operation<[`ListEmailIdentities`](crate::operation::ListEmailIdentities)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListEmailIdentities,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListEmailIdentities, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListEmailIdentitiesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListEmailIdentitiesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/email/identities").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListEmailIdentitiesInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::ListEmailIdentitiesInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_32) = &_input.next_token {
                     query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_32));
                 }
                 if let Some(inner_33) = &_input.page_size {
-                    query.push_kv(
-                        "PageSize",
-                        aws_smithy_types::primitive::Encoder::from(*inner_33).encode(),
-                    );
+                    query.push_kv("PageSize", aws_smithy_types::primitive::Encoder::from(*inner_33).encode());
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListEmailIdentitiesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListEmailIdentitiesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3950,54 +2746,37 @@ impl ListEmailIdentitiesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListEmailIdentities::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListEmailIdentities",
-            "pinpointemail",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListEmailIdentities::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListEmailIdentities", "pinpointemail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4009,9 +2788,9 @@ impl ListEmailIdentitiesInput {
 
 /// See [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
 pub mod list_tags_for_resource_input {
-
+    
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -4023,62 +2802,40 @@ pub mod list_tags_for_resource_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tag information for.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::ListTagsForResourceInput {
-                resource_arn: self.resource_arn,
-            })
+        pub fn build(self) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListTagsForResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListTagsForResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListTagsForResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListTagsForResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/email/tags").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListTagsForResourceInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::ListTagsForResourceInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_34) = &_input.resource_arn {
-                    query.push_kv(
-                        "ResourceArn",
-                        &aws_smithy_http::query::fmt_string(&inner_34),
-                    );
+                    query.push_kv("ResourceArn", &aws_smithy_http::query::fmt_string(&inner_34));
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListTagsForResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListTagsForResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4088,54 +2845,37 @@ impl ListTagsForResourceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListTagsForResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListTagsForResource",
-            "pinpointemail",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListTagsForResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListTagsForResource", "pinpointemail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4147,9 +2887,9 @@ impl ListTagsForResourceInput {
 
 /// See [`PutAccountDedicatedIpWarmupAttributesInput`](crate::input::PutAccountDedicatedIpWarmupAttributesInput).
 pub mod put_account_dedicated_ip_warmup_attributes_input {
-
+    
     /// A builder for [`PutAccountDedicatedIpWarmupAttributesInput`](crate::input::PutAccountDedicatedIpWarmupAttributesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) auto_warmup_enabled: std::option::Option<bool>,
     }
@@ -4161,62 +2901,40 @@ pub mod put_account_dedicated_ip_warmup_attributes_input {
         }
         /// <p>Enables or disables the automatic warm-up feature for dedicated IP addresses that are associated with your Amazon Pinpoint account in the current AWS Region. Set to <code>true</code> to enable the automatic warm-up feature, or set to <code>false</code> to disable it.</p>
         pub fn set_auto_warmup_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.auto_warmup_enabled = input;
-            self
+            self.auto_warmup_enabled = input; self
         }
         /// Consumes the builder and constructs a [`PutAccountDedicatedIpWarmupAttributesInput`](crate::input::PutAccountDedicatedIpWarmupAttributesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::PutAccountDedicatedIpWarmupAttributesInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::PutAccountDedicatedIpWarmupAttributesInput {
-                auto_warmup_enabled: self.auto_warmup_enabled.unwrap_or_default(),
-            })
+        pub fn build(self) -> Result<crate::input::PutAccountDedicatedIpWarmupAttributesInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::PutAccountDedicatedIpWarmupAttributesInput {
+                    auto_warmup_enabled: self.auto_warmup_enabled
+                        .unwrap_or_default()
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl PutAccountDedicatedIpWarmupAttributesInput {
     /// Consumes the builder and constructs an Operation<[`PutAccountDedicatedIpWarmupAttributes`](crate::operation::PutAccountDedicatedIpWarmupAttributes)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::PutAccountDedicatedIpWarmupAttributes,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PutAccountDedicatedIpWarmupAttributes, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::PutAccountDedicatedIpWarmupAttributesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                write!(output, "/v1/email/account/dedicated-ips/warmup")
-                    .expect("formatting should succeed");
+            fn uri_base(_input: &crate::input::PutAccountDedicatedIpWarmupAttributesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/v1/email/account/dedicated-ips/warmup").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::PutAccountDedicatedIpWarmupAttributesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::PutAccountDedicatedIpWarmupAttributesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -4224,58 +2942,36 @@ impl PutAccountDedicatedIpWarmupAttributesInput {
             crate::operation_ser::serialize_operation_crate_operation_put_account_dedicated_ip_warmup_attributes(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::PutAccountDedicatedIpWarmupAttributes::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "PutAccountDedicatedIpWarmupAttributes",
-            "pinpointemail",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PutAccountDedicatedIpWarmupAttributes::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("PutAccountDedicatedIpWarmupAttributes", "pinpointemail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4287,79 +2983,58 @@ impl PutAccountDedicatedIpWarmupAttributesInput {
 
 /// See [`PutAccountSendingAttributesInput`](crate::input::PutAccountSendingAttributesInput).
 pub mod put_account_sending_attributes_input {
-
+    
     /// A builder for [`PutAccountSendingAttributesInput`](crate::input::PutAccountSendingAttributesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) sending_enabled: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Enables or disables your account's ability to send email. Set to <code>true</code> to enable email sending, or set to <code>false</code> to disable email sending.</p> <note>
-        /// <p>If AWS paused your account's ability to send email, you can't use this operation to resume your account's ability to send email.</p>
+        /// <p>Enables or disables your account's ability to send email. Set to <code>true</code> to enable email sending, or set to <code>false</code> to disable email sending.</p> <note> 
+        /// <p>If AWS paused your account's ability to send email, you can't use this operation to resume your account's ability to send email.</p> 
         /// </note>
         pub fn sending_enabled(mut self, input: bool) -> Self {
             self.sending_enabled = Some(input);
             self
         }
-        /// <p>Enables or disables your account's ability to send email. Set to <code>true</code> to enable email sending, or set to <code>false</code> to disable email sending.</p> <note>
-        /// <p>If AWS paused your account's ability to send email, you can't use this operation to resume your account's ability to send email.</p>
+        /// <p>Enables or disables your account's ability to send email. Set to <code>true</code> to enable email sending, or set to <code>false</code> to disable email sending.</p> <note> 
+        /// <p>If AWS paused your account's ability to send email, you can't use this operation to resume your account's ability to send email.</p> 
         /// </note>
         pub fn set_sending_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.sending_enabled = input;
-            self
+            self.sending_enabled = input; self
         }
         /// Consumes the builder and constructs a [`PutAccountSendingAttributesInput`](crate::input::PutAccountSendingAttributesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::PutAccountSendingAttributesInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::PutAccountSendingAttributesInput {
-                sending_enabled: self.sending_enabled.unwrap_or_default(),
-            })
+        pub fn build(self) -> Result<crate::input::PutAccountSendingAttributesInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::PutAccountSendingAttributesInput {
+                    sending_enabled: self.sending_enabled
+                        .unwrap_or_default()
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl PutAccountSendingAttributesInput {
     /// Consumes the builder and constructs an Operation<[`PutAccountSendingAttributes`](crate::operation::PutAccountSendingAttributes)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::PutAccountSendingAttributes,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PutAccountSendingAttributes, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::PutAccountSendingAttributesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::PutAccountSendingAttributesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/email/account/sending").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::PutAccountSendingAttributesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::PutAccountSendingAttributesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -4367,58 +3042,36 @@ impl PutAccountSendingAttributesInput {
             crate::operation_ser::serialize_operation_crate_operation_put_account_sending_attributes(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::PutAccountSendingAttributes::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "PutAccountSendingAttributes",
-            "pinpointemail",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PutAccountSendingAttributes::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("PutAccountSendingAttributes", "pinpointemail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4430,9 +3083,9 @@ impl PutAccountSendingAttributesInput {
 
 /// See [`PutConfigurationSetDeliveryOptionsInput`](crate::input::PutConfigurationSetDeliveryOptionsInput).
 pub mod put_configuration_set_delivery_options_input {
-
+    
     /// A builder for [`PutConfigurationSetDeliveryOptionsInput`](crate::input::PutConfigurationSetDeliveryOptionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
         pub(crate) tls_policy: std::option::Option<crate::model::TlsPolicy>,
@@ -4445,12 +3098,8 @@ pub mod put_configuration_set_delivery_options_input {
             self
         }
         /// <p>The name of the configuration set that you want to associate with a dedicated IP pool.</p>
-        pub fn set_configuration_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_name = input;
-            self
+        pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_name = input; self
         }
         /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
         pub fn tls_policy(mut self, input: crate::model::TlsPolicy) -> Self {
@@ -4458,12 +3107,8 @@ pub mod put_configuration_set_delivery_options_input {
             self
         }
         /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
-        pub fn set_tls_policy(
-            mut self,
-            input: std::option::Option<crate::model::TlsPolicy>,
-        ) -> Self {
-            self.tls_policy = input;
-            self
+        pub fn set_tls_policy(mut self, input: std::option::Option<crate::model::TlsPolicy>) -> Self {
+            self.tls_policy = input; self
         }
         /// <p>The name of the dedicated IP pool that you want to associate with the configuration set.</p>
         pub fn sending_pool_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4471,86 +3116,50 @@ pub mod put_configuration_set_delivery_options_input {
             self
         }
         /// <p>The name of the dedicated IP pool that you want to associate with the configuration set.</p>
-        pub fn set_sending_pool_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sending_pool_name = input;
-            self
+        pub fn set_sending_pool_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sending_pool_name = input; self
         }
         /// Consumes the builder and constructs a [`PutConfigurationSetDeliveryOptionsInput`](crate::input::PutConfigurationSetDeliveryOptionsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::PutConfigurationSetDeliveryOptionsInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::PutConfigurationSetDeliveryOptionsInput {
-                configuration_set_name: self.configuration_set_name,
-                tls_policy: self.tls_policy,
-                sending_pool_name: self.sending_pool_name,
-            })
+        pub fn build(self) -> Result<crate::input::PutConfigurationSetDeliveryOptionsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::PutConfigurationSetDeliveryOptionsInput {
+                    configuration_set_name: self.configuration_set_name
+                    ,
+                    tls_policy: self.tls_policy
+                    ,
+                    sending_pool_name: self.sending_pool_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl PutConfigurationSetDeliveryOptionsInput {
     /// Consumes the builder and constructs an Operation<[`PutConfigurationSetDeliveryOptions`](crate::operation::PutConfigurationSetDeliveryOptions)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::PutConfigurationSetDeliveryOptions,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PutConfigurationSetDeliveryOptions, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::PutConfigurationSetDeliveryOptionsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::PutConfigurationSetDeliveryOptionsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_35 = &_input.configuration_set_name;
-                let input_35 = input_35.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "configuration_set_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_35 = input_35.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "configuration_set_name", details: "cannot be empty or unset" })?;
                 let configuration_set_name = aws_smithy_http::label::fmt_string(input_35, false);
                 if configuration_set_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "configuration_set_name",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/v1/email/configuration-sets/{ConfigurationSetName}/delivery-options",
-                    ConfigurationSetName = configuration_set_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "configuration_set_name", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/v1/email/configuration-sets/{ConfigurationSetName}/delivery-options", ConfigurationSetName = configuration_set_name).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::PutConfigurationSetDeliveryOptionsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::PutConfigurationSetDeliveryOptionsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -4558,58 +3167,36 @@ impl PutConfigurationSetDeliveryOptionsInput {
             crate::operation_ser::serialize_operation_crate_operation_put_configuration_set_delivery_options(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::PutConfigurationSetDeliveryOptions::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "PutConfigurationSetDeliveryOptions",
-            "pinpointemail",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PutConfigurationSetDeliveryOptions::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("PutConfigurationSetDeliveryOptions", "pinpointemail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4621,9 +3208,9 @@ impl PutConfigurationSetDeliveryOptionsInput {
 
 /// See [`PutConfigurationSetReputationOptionsInput`](crate::input::PutConfigurationSetReputationOptionsInput).
 pub mod put_configuration_set_reputation_options_input {
-
+    
     /// A builder for [`PutConfigurationSetReputationOptionsInput`](crate::input::PutConfigurationSetReputationOptionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
         pub(crate) reputation_metrics_enabled: std::option::Option<bool>,
@@ -4635,12 +3222,8 @@ pub mod put_configuration_set_reputation_options_input {
             self
         }
         /// <p>The name of the configuration set that you want to enable or disable reputation metric tracking for.</p>
-        pub fn set_configuration_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_name = input;
-            self
+        pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_name = input; self
         }
         /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration set. If <code>false</code>, tracking of reputation metrics is disabled for the configuration set.</p>
         pub fn reputation_metrics_enabled(mut self, input: bool) -> Self {
@@ -4649,81 +3232,48 @@ pub mod put_configuration_set_reputation_options_input {
         }
         /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration set. If <code>false</code>, tracking of reputation metrics is disabled for the configuration set.</p>
         pub fn set_reputation_metrics_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.reputation_metrics_enabled = input;
-            self
+            self.reputation_metrics_enabled = input; self
         }
         /// Consumes the builder and constructs a [`PutConfigurationSetReputationOptionsInput`](crate::input::PutConfigurationSetReputationOptionsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::PutConfigurationSetReputationOptionsInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::PutConfigurationSetReputationOptionsInput {
-                configuration_set_name: self.configuration_set_name,
-                reputation_metrics_enabled: self.reputation_metrics_enabled.unwrap_or_default(),
-            })
+        pub fn build(self) -> Result<crate::input::PutConfigurationSetReputationOptionsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::PutConfigurationSetReputationOptionsInput {
+                    configuration_set_name: self.configuration_set_name
+                    ,
+                    reputation_metrics_enabled: self.reputation_metrics_enabled
+                        .unwrap_or_default()
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl PutConfigurationSetReputationOptionsInput {
     /// Consumes the builder and constructs an Operation<[`PutConfigurationSetReputationOptions`](crate::operation::PutConfigurationSetReputationOptions)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::PutConfigurationSetReputationOptions,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PutConfigurationSetReputationOptions, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::PutConfigurationSetReputationOptionsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::PutConfigurationSetReputationOptionsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_36 = &_input.configuration_set_name;
-                let input_36 = input_36.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "configuration_set_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_36 = input_36.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "configuration_set_name", details: "cannot be empty or unset" })?;
                 let configuration_set_name = aws_smithy_http::label::fmt_string(input_36, false);
                 if configuration_set_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "configuration_set_name",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/v1/email/configuration-sets/{ConfigurationSetName}/reputation-options",
-                    ConfigurationSetName = configuration_set_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "configuration_set_name", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/v1/email/configuration-sets/{ConfigurationSetName}/reputation-options", ConfigurationSetName = configuration_set_name).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::PutConfigurationSetReputationOptionsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::PutConfigurationSetReputationOptionsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -4731,58 +3281,36 @@ impl PutConfigurationSetReputationOptionsInput {
             crate::operation_ser::serialize_operation_crate_operation_put_configuration_set_reputation_options(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::PutConfigurationSetReputationOptions::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "PutConfigurationSetReputationOptions",
-            "pinpointemail",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PutConfigurationSetReputationOptions::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("PutConfigurationSetReputationOptions", "pinpointemail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4794,9 +3322,9 @@ impl PutConfigurationSetReputationOptionsInput {
 
 /// See [`PutConfigurationSetSendingOptionsInput`](crate::input::PutConfigurationSetSendingOptionsInput).
 pub mod put_configuration_set_sending_options_input {
-
+    
     /// A builder for [`PutConfigurationSetSendingOptionsInput`](crate::input::PutConfigurationSetSendingOptionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
         pub(crate) sending_enabled: std::option::Option<bool>,
@@ -4808,12 +3336,8 @@ pub mod put_configuration_set_sending_options_input {
             self
         }
         /// <p>The name of the configuration set that you want to enable or disable email sending for.</p>
-        pub fn set_configuration_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_name = input;
-            self
+        pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_name = input; self
         }
         /// <p>If <code>true</code>, email sending is enabled for the configuration set. If <code>false</code>, email sending is disabled for the configuration set.</p>
         pub fn sending_enabled(mut self, input: bool) -> Self {
@@ -4822,81 +3346,48 @@ pub mod put_configuration_set_sending_options_input {
         }
         /// <p>If <code>true</code>, email sending is enabled for the configuration set. If <code>false</code>, email sending is disabled for the configuration set.</p>
         pub fn set_sending_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.sending_enabled = input;
-            self
+            self.sending_enabled = input; self
         }
         /// Consumes the builder and constructs a [`PutConfigurationSetSendingOptionsInput`](crate::input::PutConfigurationSetSendingOptionsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::PutConfigurationSetSendingOptionsInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::PutConfigurationSetSendingOptionsInput {
-                configuration_set_name: self.configuration_set_name,
-                sending_enabled: self.sending_enabled.unwrap_or_default(),
-            })
+        pub fn build(self) -> Result<crate::input::PutConfigurationSetSendingOptionsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::PutConfigurationSetSendingOptionsInput {
+                    configuration_set_name: self.configuration_set_name
+                    ,
+                    sending_enabled: self.sending_enabled
+                        .unwrap_or_default()
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl PutConfigurationSetSendingOptionsInput {
     /// Consumes the builder and constructs an Operation<[`PutConfigurationSetSendingOptions`](crate::operation::PutConfigurationSetSendingOptions)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::PutConfigurationSetSendingOptions,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PutConfigurationSetSendingOptions, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::PutConfigurationSetSendingOptionsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::PutConfigurationSetSendingOptionsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_37 = &_input.configuration_set_name;
-                let input_37 = input_37.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "configuration_set_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_37 = input_37.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "configuration_set_name", details: "cannot be empty or unset" })?;
                 let configuration_set_name = aws_smithy_http::label::fmt_string(input_37, false);
                 if configuration_set_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "configuration_set_name",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/v1/email/configuration-sets/{ConfigurationSetName}/sending",
-                    ConfigurationSetName = configuration_set_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "configuration_set_name", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/v1/email/configuration-sets/{ConfigurationSetName}/sending", ConfigurationSetName = configuration_set_name).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::PutConfigurationSetSendingOptionsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::PutConfigurationSetSendingOptionsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -4904,58 +3395,36 @@ impl PutConfigurationSetSendingOptionsInput {
             crate::operation_ser::serialize_operation_crate_operation_put_configuration_set_sending_options(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::PutConfigurationSetSendingOptions::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "PutConfigurationSetSendingOptions",
-            "pinpointemail",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PutConfigurationSetSendingOptions::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("PutConfigurationSetSendingOptions", "pinpointemail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4967,9 +3436,9 @@ impl PutConfigurationSetSendingOptionsInput {
 
 /// See [`PutConfigurationSetTrackingOptionsInput`](crate::input::PutConfigurationSetTrackingOptionsInput).
 pub mod put_configuration_set_tracking_options_input {
-
+    
     /// A builder for [`PutConfigurationSetTrackingOptionsInput`](crate::input::PutConfigurationSetTrackingOptionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
         pub(crate) custom_redirect_domain: std::option::Option<std::string::String>,
@@ -4981,12 +3450,8 @@ pub mod put_configuration_set_tracking_options_input {
             self
         }
         /// <p>The name of the configuration set that you want to add a custom tracking domain to.</p>
-        pub fn set_configuration_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_name = input;
-            self
+        pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_name = input; self
         }
         /// <p>The domain that you want to use to track open and click events.</p>
         pub fn custom_redirect_domain(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4994,85 +3459,48 @@ pub mod put_configuration_set_tracking_options_input {
             self
         }
         /// <p>The domain that you want to use to track open and click events.</p>
-        pub fn set_custom_redirect_domain(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.custom_redirect_domain = input;
-            self
+        pub fn set_custom_redirect_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.custom_redirect_domain = input; self
         }
         /// Consumes the builder and constructs a [`PutConfigurationSetTrackingOptionsInput`](crate::input::PutConfigurationSetTrackingOptionsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::PutConfigurationSetTrackingOptionsInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::PutConfigurationSetTrackingOptionsInput {
-                configuration_set_name: self.configuration_set_name,
-                custom_redirect_domain: self.custom_redirect_domain,
-            })
+        pub fn build(self) -> Result<crate::input::PutConfigurationSetTrackingOptionsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::PutConfigurationSetTrackingOptionsInput {
+                    configuration_set_name: self.configuration_set_name
+                    ,
+                    custom_redirect_domain: self.custom_redirect_domain
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl PutConfigurationSetTrackingOptionsInput {
     /// Consumes the builder and constructs an Operation<[`PutConfigurationSetTrackingOptions`](crate::operation::PutConfigurationSetTrackingOptions)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::PutConfigurationSetTrackingOptions,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PutConfigurationSetTrackingOptions, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::PutConfigurationSetTrackingOptionsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::PutConfigurationSetTrackingOptionsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_38 = &_input.configuration_set_name;
-                let input_38 = input_38.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "configuration_set_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_38 = input_38.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "configuration_set_name", details: "cannot be empty or unset" })?;
                 let configuration_set_name = aws_smithy_http::label::fmt_string(input_38, false);
                 if configuration_set_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "configuration_set_name",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/v1/email/configuration-sets/{ConfigurationSetName}/tracking-options",
-                    ConfigurationSetName = configuration_set_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "configuration_set_name", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/v1/email/configuration-sets/{ConfigurationSetName}/tracking-options", ConfigurationSetName = configuration_set_name).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::PutConfigurationSetTrackingOptionsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::PutConfigurationSetTrackingOptionsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -5080,58 +3508,36 @@ impl PutConfigurationSetTrackingOptionsInput {
             crate::operation_ser::serialize_operation_crate_operation_put_configuration_set_tracking_options(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::PutConfigurationSetTrackingOptions::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "PutConfigurationSetTrackingOptions",
-            "pinpointemail",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PutConfigurationSetTrackingOptions::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("PutConfigurationSetTrackingOptions", "pinpointemail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5143,9 +3549,9 @@ impl PutConfigurationSetTrackingOptionsInput {
 
 /// See [`PutDedicatedIpInPoolInput`](crate::input::PutDedicatedIpInPoolInput).
 pub mod put_dedicated_ip_in_pool_input {
-
+    
     /// A builder for [`PutDedicatedIpInPoolInput`](crate::input::PutDedicatedIpInPoolInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) ip: std::option::Option<std::string::String>,
         pub(crate) destination_pool_name: std::option::Option<std::string::String>,
@@ -5158,8 +3564,7 @@ pub mod put_dedicated_ip_in_pool_input {
         }
         /// <p>The IP address that you want to move to the dedicated IP pool. The value you specify has to be a dedicated IP address that's associated with your Amazon Pinpoint account.</p>
         pub fn set_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ip = input;
-            self
+            self.ip = input; self
         }
         /// <p>The name of the IP pool that you want to add the dedicated IP address to. You have to specify an IP pool that already exists.</p>
         pub fn destination_pool_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5167,141 +3572,85 @@ pub mod put_dedicated_ip_in_pool_input {
             self
         }
         /// <p>The name of the IP pool that you want to add the dedicated IP address to. You have to specify an IP pool that already exists.</p>
-        pub fn set_destination_pool_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.destination_pool_name = input;
-            self
+        pub fn set_destination_pool_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.destination_pool_name = input; self
         }
         /// Consumes the builder and constructs a [`PutDedicatedIpInPoolInput`](crate::input::PutDedicatedIpInPoolInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::PutDedicatedIpInPoolInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::PutDedicatedIpInPoolInput {
-                ip: self.ip,
-                destination_pool_name: self.destination_pool_name,
-            })
+        pub fn build(self) -> Result<crate::input::PutDedicatedIpInPoolInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::PutDedicatedIpInPoolInput {
+                    ip: self.ip
+                    ,
+                    destination_pool_name: self.destination_pool_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl PutDedicatedIpInPoolInput {
     /// Consumes the builder and constructs an Operation<[`PutDedicatedIpInPool`](crate::operation::PutDedicatedIpInPool)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::PutDedicatedIpInPool,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PutDedicatedIpInPool, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::PutDedicatedIpInPoolInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::PutDedicatedIpInPoolInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_39 = &_input.ip;
-                let input_39 = input_39.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "ip",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_39 = input_39.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "ip", details: "cannot be empty or unset" })?;
                 let ip = aws_smithy_http::label::fmt_string(input_39, false);
                 if ip.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "ip",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(output, "/v1/email/dedicated-ips/{Ip}/pool", Ip = ip)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "ip", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/v1/email/dedicated-ips/{Ip}/pool", Ip = ip).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::PutDedicatedIpInPoolInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::PutDedicatedIpInPoolInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_dedicated_ip_in_pool(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_put_dedicated_ip_in_pool(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::PutDedicatedIpInPool::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "PutDedicatedIpInPool",
-            "pinpointemail",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PutDedicatedIpInPool::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("PutDedicatedIpInPool", "pinpointemail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5313,9 +3662,9 @@ impl PutDedicatedIpInPoolInput {
 
 /// See [`PutDedicatedIpWarmupAttributesInput`](crate::input::PutDedicatedIpWarmupAttributesInput).
 pub mod put_dedicated_ip_warmup_attributes_input {
-
+    
     /// A builder for [`PutDedicatedIpWarmupAttributesInput`](crate::input::PutDedicatedIpWarmupAttributesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) ip: std::option::Option<std::string::String>,
         pub(crate) warmup_percentage: std::option::Option<i32>,
@@ -5328,8 +3677,7 @@ pub mod put_dedicated_ip_warmup_attributes_input {
         }
         /// <p>The dedicated IP address that you want to update the warm-up attributes for.</p>
         pub fn set_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ip = input;
-            self
+            self.ip = input; self
         }
         /// <p>The warm-up percentage that you want to associate with the dedicated IP address.</p>
         pub fn warmup_percentage(mut self, input: i32) -> Self {
@@ -5338,77 +3686,47 @@ pub mod put_dedicated_ip_warmup_attributes_input {
         }
         /// <p>The warm-up percentage that you want to associate with the dedicated IP address.</p>
         pub fn set_warmup_percentage(mut self, input: std::option::Option<i32>) -> Self {
-            self.warmup_percentage = input;
-            self
+            self.warmup_percentage = input; self
         }
         /// Consumes the builder and constructs a [`PutDedicatedIpWarmupAttributesInput`](crate::input::PutDedicatedIpWarmupAttributesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::PutDedicatedIpWarmupAttributesInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::PutDedicatedIpWarmupAttributesInput {
-                ip: self.ip,
-                warmup_percentage: self.warmup_percentage,
-            })
+        pub fn build(self) -> Result<crate::input::PutDedicatedIpWarmupAttributesInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::PutDedicatedIpWarmupAttributesInput {
+                    ip: self.ip
+                    ,
+                    warmup_percentage: self.warmup_percentage
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl PutDedicatedIpWarmupAttributesInput {
     /// Consumes the builder and constructs an Operation<[`PutDedicatedIpWarmupAttributes`](crate::operation::PutDedicatedIpWarmupAttributes)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::PutDedicatedIpWarmupAttributes,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PutDedicatedIpWarmupAttributes, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::PutDedicatedIpWarmupAttributesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::PutDedicatedIpWarmupAttributesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_40 = &_input.ip;
-                let input_40 = input_40.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "ip",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_40 = input_40.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "ip", details: "cannot be empty or unset" })?;
                 let ip = aws_smithy_http::label::fmt_string(input_40, false);
                 if ip.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "ip",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(output, "/v1/email/dedicated-ips/{Ip}/warmup", Ip = ip)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "ip", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/v1/email/dedicated-ips/{Ip}/warmup", Ip = ip).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::PutDedicatedIpWarmupAttributesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::PutDedicatedIpWarmupAttributesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -5416,58 +3734,36 @@ impl PutDedicatedIpWarmupAttributesInput {
             crate::operation_ser::serialize_operation_crate_operation_put_dedicated_ip_warmup_attributes(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::PutDedicatedIpWarmupAttributes::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "PutDedicatedIpWarmupAttributes",
-            "pinpointemail",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PutDedicatedIpWarmupAttributes::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("PutDedicatedIpWarmupAttributes", "pinpointemail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5479,13 +3775,12 @@ impl PutDedicatedIpWarmupAttributesInput {
 
 /// See [`PutDeliverabilityDashboardOptionInput`](crate::input::PutDeliverabilityDashboardOptionInput).
 pub mod put_deliverability_dashboard_option_input {
-
+    
     /// A builder for [`PutDeliverabilityDashboardOptionInput`](crate::input::PutDeliverabilityDashboardOptionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) dashboard_enabled: std::option::Option<bool>,
-        pub(crate) subscribed_domains:
-            std::option::Option<std::vec::Vec<crate::model::DomainDeliverabilityTrackingOption>>,
+        pub(crate) subscribed_domains: std::option::Option<std::vec::Vec<crate::model::DomainDeliverabilityTrackingOption>>,
     }
     impl Builder {
         /// <p>Specifies whether to enable the Deliverability dashboard for your Amazon Pinpoint account. To enable the dashboard, set this value to <code>true</code>.</p>
@@ -5495,87 +3790,57 @@ pub mod put_deliverability_dashboard_option_input {
         }
         /// <p>Specifies whether to enable the Deliverability dashboard for your Amazon Pinpoint account. To enable the dashboard, set this value to <code>true</code>.</p>
         pub fn set_dashboard_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.dashboard_enabled = input;
-            self
+            self.dashboard_enabled = input; self
         }
         /// Appends an item to `subscribed_domains`.
         ///
         /// To override the contents of this collection use [`set_subscribed_domains`](Self::set_subscribed_domains).
         ///
         /// <p>An array of objects, one for each verified domain that you use to send email and enabled the Deliverability dashboard for.</p>
-        pub fn subscribed_domains(
-            mut self,
-            input: crate::model::DomainDeliverabilityTrackingOption,
-        ) -> Self {
+        pub fn subscribed_domains(mut self, input: crate::model::DomainDeliverabilityTrackingOption) -> Self {
             let mut v = self.subscribed_domains.unwrap_or_default();
-            v.push(input);
-            self.subscribed_domains = Some(v);
-            self
+                            v.push(input);
+                            self.subscribed_domains = Some(v);
+                            self
         }
         /// <p>An array of objects, one for each verified domain that you use to send email and enabled the Deliverability dashboard for.</p>
-        pub fn set_subscribed_domains(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::DomainDeliverabilityTrackingOption>,
-            >,
-        ) -> Self {
-            self.subscribed_domains = input;
-            self
+        pub fn set_subscribed_domains(mut self, input: std::option::Option<std::vec::Vec<crate::model::DomainDeliverabilityTrackingOption>>) -> Self {
+            self.subscribed_domains = input; self
         }
         /// Consumes the builder and constructs a [`PutDeliverabilityDashboardOptionInput`](crate::input::PutDeliverabilityDashboardOptionInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::PutDeliverabilityDashboardOptionInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::PutDeliverabilityDashboardOptionInput {
-                dashboard_enabled: self.dashboard_enabled.unwrap_or_default(),
-                subscribed_domains: self.subscribed_domains,
-            })
+        pub fn build(self) -> Result<crate::input::PutDeliverabilityDashboardOptionInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::PutDeliverabilityDashboardOptionInput {
+                    dashboard_enabled: self.dashboard_enabled
+                        .unwrap_or_default()
+                    ,
+                    subscribed_domains: self.subscribed_domains
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl PutDeliverabilityDashboardOptionInput {
     /// Consumes the builder and constructs an Operation<[`PutDeliverabilityDashboardOption`](crate::operation::PutDeliverabilityDashboardOption)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::PutDeliverabilityDashboardOption,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PutDeliverabilityDashboardOption, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::PutDeliverabilityDashboardOptionInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                write!(output, "/v1/email/deliverability-dashboard")
-                    .expect("formatting should succeed");
+            fn uri_base(_input: &crate::input::PutDeliverabilityDashboardOptionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/v1/email/deliverability-dashboard").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::PutDeliverabilityDashboardOptionInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::PutDeliverabilityDashboardOptionInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -5583,58 +3848,36 @@ impl PutDeliverabilityDashboardOptionInput {
             crate::operation_ser::serialize_operation_crate_operation_put_deliverability_dashboard_option(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::PutDeliverabilityDashboardOption::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "PutDeliverabilityDashboardOption",
-            "pinpointemail",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PutDeliverabilityDashboardOption::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("PutDeliverabilityDashboardOption", "pinpointemail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5646,9 +3889,9 @@ impl PutDeliverabilityDashboardOptionInput {
 
 /// See [`PutEmailIdentityDkimAttributesInput`](crate::input::PutEmailIdentityDkimAttributesInput).
 pub mod put_email_identity_dkim_attributes_input {
-
+    
     /// A builder for [`PutEmailIdentityDkimAttributesInput`](crate::input::PutEmailIdentityDkimAttributesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) email_identity: std::option::Option<std::string::String>,
         pub(crate) signing_enabled: std::option::Option<bool>,
@@ -5660,97 +3903,60 @@ pub mod put_email_identity_dkim_attributes_input {
             self
         }
         /// <p>The email identity that you want to change the DKIM settings for.</p>
-        pub fn set_email_identity(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.email_identity = input;
-            self
+        pub fn set_email_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.email_identity = input; self
         }
-        /// <p>Sets the DKIM signing configuration for the identity.</p>
+        /// <p>Sets the DKIM signing configuration for the identity.</p> 
         /// <p>When you set this value <code>true</code>, then the messages that Amazon Pinpoint sends from the identity are DKIM-signed. When you set this value to <code>false</code>, then the messages that Amazon Pinpoint sends from the identity aren't DKIM-signed.</p>
         pub fn signing_enabled(mut self, input: bool) -> Self {
             self.signing_enabled = Some(input);
             self
         }
-        /// <p>Sets the DKIM signing configuration for the identity.</p>
+        /// <p>Sets the DKIM signing configuration for the identity.</p> 
         /// <p>When you set this value <code>true</code>, then the messages that Amazon Pinpoint sends from the identity are DKIM-signed. When you set this value to <code>false</code>, then the messages that Amazon Pinpoint sends from the identity aren't DKIM-signed.</p>
         pub fn set_signing_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.signing_enabled = input;
-            self
+            self.signing_enabled = input; self
         }
         /// Consumes the builder and constructs a [`PutEmailIdentityDkimAttributesInput`](crate::input::PutEmailIdentityDkimAttributesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::PutEmailIdentityDkimAttributesInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::PutEmailIdentityDkimAttributesInput {
-                email_identity: self.email_identity,
-                signing_enabled: self.signing_enabled.unwrap_or_default(),
-            })
+        pub fn build(self) -> Result<crate::input::PutEmailIdentityDkimAttributesInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::PutEmailIdentityDkimAttributesInput {
+                    email_identity: self.email_identity
+                    ,
+                    signing_enabled: self.signing_enabled
+                        .unwrap_or_default()
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl PutEmailIdentityDkimAttributesInput {
     /// Consumes the builder and constructs an Operation<[`PutEmailIdentityDkimAttributes`](crate::operation::PutEmailIdentityDkimAttributes)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::PutEmailIdentityDkimAttributes,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PutEmailIdentityDkimAttributes, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::PutEmailIdentityDkimAttributesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::PutEmailIdentityDkimAttributesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_41 = &_input.email_identity;
-                let input_41 = input_41.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "email_identity",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_41 = input_41.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "email_identity", details: "cannot be empty or unset" })?;
                 let email_identity = aws_smithy_http::label::fmt_string(input_41, false);
                 if email_identity.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "email_identity",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/v1/email/identities/{EmailIdentity}/dkim",
-                    EmailIdentity = email_identity
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "email_identity", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/v1/email/identities/{EmailIdentity}/dkim", EmailIdentity = email_identity).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::PutEmailIdentityDkimAttributesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::PutEmailIdentityDkimAttributesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -5758,58 +3964,36 @@ impl PutEmailIdentityDkimAttributesInput {
             crate::operation_ser::serialize_operation_crate_operation_put_email_identity_dkim_attributes(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::PutEmailIdentityDkimAttributes::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "PutEmailIdentityDkimAttributes",
-            "pinpointemail",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PutEmailIdentityDkimAttributes::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("PutEmailIdentityDkimAttributes", "pinpointemail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5821,9 +4005,9 @@ impl PutEmailIdentityDkimAttributesInput {
 
 /// See [`PutEmailIdentityFeedbackAttributesInput`](crate::input::PutEmailIdentityFeedbackAttributesInput).
 pub mod put_email_identity_feedback_attributes_input {
-
+    
     /// A builder for [`PutEmailIdentityFeedbackAttributesInput`](crate::input::PutEmailIdentityFeedbackAttributesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) email_identity: std::option::Option<std::string::String>,
         pub(crate) email_forwarding_enabled: std::option::Option<bool>,
@@ -5835,99 +4019,62 @@ pub mod put_email_identity_feedback_attributes_input {
             self
         }
         /// <p>The email identity that you want to configure bounce and complaint feedback forwarding for.</p>
-        pub fn set_email_identity(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.email_identity = input;
-            self
+        pub fn set_email_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.email_identity = input; self
         }
-        /// <p>Sets the feedback forwarding configuration for the identity.</p>
-        /// <p>If the value is <code>true</code>, Amazon Pinpoint sends you email notifications when bounce or complaint events occur. Amazon Pinpoint sends this notification to the address that you specified in the Return-Path header of the original email.</p>
+        /// <p>Sets the feedback forwarding configuration for the identity.</p> 
+        /// <p>If the value is <code>true</code>, Amazon Pinpoint sends you email notifications when bounce or complaint events occur. Amazon Pinpoint sends this notification to the address that you specified in the Return-Path header of the original email.</p> 
         /// <p>When you set this value to <code>false</code>, Amazon Pinpoint sends notifications through other mechanisms, such as by notifying an Amazon SNS topic or another event destination. You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications, Amazon Pinpoint sends an email notification when these events occur (even if this setting is disabled).</p>
         pub fn email_forwarding_enabled(mut self, input: bool) -> Self {
             self.email_forwarding_enabled = Some(input);
             self
         }
-        /// <p>Sets the feedback forwarding configuration for the identity.</p>
-        /// <p>If the value is <code>true</code>, Amazon Pinpoint sends you email notifications when bounce or complaint events occur. Amazon Pinpoint sends this notification to the address that you specified in the Return-Path header of the original email.</p>
+        /// <p>Sets the feedback forwarding configuration for the identity.</p> 
+        /// <p>If the value is <code>true</code>, Amazon Pinpoint sends you email notifications when bounce or complaint events occur. Amazon Pinpoint sends this notification to the address that you specified in the Return-Path header of the original email.</p> 
         /// <p>When you set this value to <code>false</code>, Amazon Pinpoint sends notifications through other mechanisms, such as by notifying an Amazon SNS topic or another event destination. You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications, Amazon Pinpoint sends an email notification when these events occur (even if this setting is disabled).</p>
         pub fn set_email_forwarding_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.email_forwarding_enabled = input;
-            self
+            self.email_forwarding_enabled = input; self
         }
         /// Consumes the builder and constructs a [`PutEmailIdentityFeedbackAttributesInput`](crate::input::PutEmailIdentityFeedbackAttributesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::PutEmailIdentityFeedbackAttributesInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::PutEmailIdentityFeedbackAttributesInput {
-                email_identity: self.email_identity,
-                email_forwarding_enabled: self.email_forwarding_enabled.unwrap_or_default(),
-            })
+        pub fn build(self) -> Result<crate::input::PutEmailIdentityFeedbackAttributesInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::PutEmailIdentityFeedbackAttributesInput {
+                    email_identity: self.email_identity
+                    ,
+                    email_forwarding_enabled: self.email_forwarding_enabled
+                        .unwrap_or_default()
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl PutEmailIdentityFeedbackAttributesInput {
     /// Consumes the builder and constructs an Operation<[`PutEmailIdentityFeedbackAttributes`](crate::operation::PutEmailIdentityFeedbackAttributes)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::PutEmailIdentityFeedbackAttributes,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PutEmailIdentityFeedbackAttributes, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::PutEmailIdentityFeedbackAttributesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::PutEmailIdentityFeedbackAttributesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_42 = &_input.email_identity;
-                let input_42 = input_42.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "email_identity",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_42 = input_42.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "email_identity", details: "cannot be empty or unset" })?;
                 let email_identity = aws_smithy_http::label::fmt_string(input_42, false);
                 if email_identity.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "email_identity",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/v1/email/identities/{EmailIdentity}/feedback",
-                    EmailIdentity = email_identity
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "email_identity", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/v1/email/identities/{EmailIdentity}/feedback", EmailIdentity = email_identity).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::PutEmailIdentityFeedbackAttributesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::PutEmailIdentityFeedbackAttributesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -5935,58 +4082,36 @@ impl PutEmailIdentityFeedbackAttributesInput {
             crate::operation_ser::serialize_operation_crate_operation_put_email_identity_feedback_attributes(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::PutEmailIdentityFeedbackAttributes::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "PutEmailIdentityFeedbackAttributes",
-            "pinpointemail",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PutEmailIdentityFeedbackAttributes::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("PutEmailIdentityFeedbackAttributes", "pinpointemail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5998,9 +4123,9 @@ impl PutEmailIdentityFeedbackAttributesInput {
 
 /// See [`PutEmailIdentityMailFromAttributesInput`](crate::input::PutEmailIdentityMailFromAttributesInput).
 pub mod put_email_identity_mail_from_attributes_input {
-
+    
     /// A builder for [`PutEmailIdentityMailFromAttributesInput`](crate::input::PutEmailIdentityMailFromAttributesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) email_identity: std::option::Option<std::string::String>,
         pub(crate) mail_from_domain: std::option::Option<std::string::String>,
@@ -6013,124 +4138,80 @@ pub mod put_email_identity_mail_from_attributes_input {
             self
         }
         /// <p>The verified email identity that you want to set up the custom MAIL FROM domain for.</p>
-        pub fn set_email_identity(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.email_identity = input;
-            self
+        pub fn set_email_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.email_identity = input; self
         }
-        /// <p> The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must meet the following criteria:</p>
-        /// <ul>
-        /// <li> <p>It has to be a subdomain of the verified identity.</p> </li>
-        /// <li> <p>It can't be used to receive email.</p> </li>
-        /// <li> <p>It can't be used in a "From" address if the MAIL FROM domain is a destination for feedback forwarding emails.</p> </li>
+        /// <p> The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must meet the following criteria:</p> 
+        /// <ul> 
+        /// <li> <p>It has to be a subdomain of the verified identity.</p> </li> 
+        /// <li> <p>It can't be used to receive email.</p> </li> 
+        /// <li> <p>It can't be used in a "From" address if the MAIL FROM domain is a destination for feedback forwarding emails.</p> </li> 
         /// </ul>
         pub fn mail_from_domain(mut self, input: impl Into<std::string::String>) -> Self {
             self.mail_from_domain = Some(input.into());
             self
         }
-        /// <p> The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must meet the following criteria:</p>
-        /// <ul>
-        /// <li> <p>It has to be a subdomain of the verified identity.</p> </li>
-        /// <li> <p>It can't be used to receive email.</p> </li>
-        /// <li> <p>It can't be used in a "From" address if the MAIL FROM domain is a destination for feedback forwarding emails.</p> </li>
+        /// <p> The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must meet the following criteria:</p> 
+        /// <ul> 
+        /// <li> <p>It has to be a subdomain of the verified identity.</p> </li> 
+        /// <li> <p>It can't be used to receive email.</p> </li> 
+        /// <li> <p>It can't be used in a "From" address if the MAIL FROM domain is a destination for feedback forwarding emails.</p> </li> 
         /// </ul>
-        pub fn set_mail_from_domain(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.mail_from_domain = input;
-            self
+        pub fn set_mail_from_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.mail_from_domain = input; self
         }
-        /// <p>The action that you want Amazon Pinpoint to take if it can't read the required MX record when you send an email. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>
+        /// <p>The action that you want Amazon Pinpoint to take if it can't read the required MX record when you send an email. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p> 
         /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
         pub fn behavior_on_mx_failure(mut self, input: crate::model::BehaviorOnMxFailure) -> Self {
             self.behavior_on_mx_failure = Some(input);
             self
         }
-        /// <p>The action that you want Amazon Pinpoint to take if it can't read the required MX record when you send an email. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>
+        /// <p>The action that you want Amazon Pinpoint to take if it can't read the required MX record when you send an email. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p> 
         /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
-        pub fn set_behavior_on_mx_failure(
-            mut self,
-            input: std::option::Option<crate::model::BehaviorOnMxFailure>,
-        ) -> Self {
-            self.behavior_on_mx_failure = input;
-            self
+        pub fn set_behavior_on_mx_failure(mut self, input: std::option::Option<crate::model::BehaviorOnMxFailure>) -> Self {
+            self.behavior_on_mx_failure = input; self
         }
         /// Consumes the builder and constructs a [`PutEmailIdentityMailFromAttributesInput`](crate::input::PutEmailIdentityMailFromAttributesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::PutEmailIdentityMailFromAttributesInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::PutEmailIdentityMailFromAttributesInput {
-                email_identity: self.email_identity,
-                mail_from_domain: self.mail_from_domain,
-                behavior_on_mx_failure: self.behavior_on_mx_failure,
-            })
+        pub fn build(self) -> Result<crate::input::PutEmailIdentityMailFromAttributesInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::PutEmailIdentityMailFromAttributesInput {
+                    email_identity: self.email_identity
+                    ,
+                    mail_from_domain: self.mail_from_domain
+                    ,
+                    behavior_on_mx_failure: self.behavior_on_mx_failure
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl PutEmailIdentityMailFromAttributesInput {
     /// Consumes the builder and constructs an Operation<[`PutEmailIdentityMailFromAttributes`](crate::operation::PutEmailIdentityMailFromAttributes)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::PutEmailIdentityMailFromAttributes,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PutEmailIdentityMailFromAttributes, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::PutEmailIdentityMailFromAttributesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::PutEmailIdentityMailFromAttributesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_43 = &_input.email_identity;
-                let input_43 = input_43.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "email_identity",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_43 = input_43.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "email_identity", details: "cannot be empty or unset" })?;
                 let email_identity = aws_smithy_http::label::fmt_string(input_43, false);
                 if email_identity.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "email_identity",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/v1/email/identities/{EmailIdentity}/mail-from",
-                    EmailIdentity = email_identity
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "email_identity", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/v1/email/identities/{EmailIdentity}/mail-from", EmailIdentity = email_identity).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::PutEmailIdentityMailFromAttributesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::PutEmailIdentityMailFromAttributesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -6138,58 +4219,36 @@ impl PutEmailIdentityMailFromAttributesInput {
             crate::operation_ser::serialize_operation_crate_operation_put_email_identity_mail_from_attributes(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::PutEmailIdentityMailFromAttributes::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "PutEmailIdentityMailFromAttributes",
-            "pinpointemail",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PutEmailIdentityMailFromAttributes::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("PutEmailIdentityMailFromAttributes", "pinpointemail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6201,9 +4260,9 @@ impl PutEmailIdentityMailFromAttributesInput {
 
 /// See [`SendEmailInput`](crate::input::SendEmailInput).
 pub mod send_email_input {
-
+    
     /// A builder for [`SendEmailInput`](crate::input::SendEmailInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) from_email_address: std::option::Option<std::string::String>,
         pub(crate) destination: std::option::Option<crate::model::Destination>,
@@ -6220,12 +4279,8 @@ pub mod send_email_input {
             self
         }
         /// <p>The email address that you want to use as the "From" address for the email. The address that you specify has to be verified. </p>
-        pub fn set_from_email_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.from_email_address = input;
-            self
+        pub fn set_from_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.from_email_address = input; self
         }
         /// <p>An object that contains the recipients of the email message.</p>
         pub fn destination(mut self, input: crate::model::Destination) -> Self {
@@ -6233,12 +4288,8 @@ pub mod send_email_input {
             self
         }
         /// <p>An object that contains the recipients of the email message.</p>
-        pub fn set_destination(
-            mut self,
-            input: std::option::Option<crate::model::Destination>,
-        ) -> Self {
-            self.destination = input;
-            self
+        pub fn set_destination(mut self, input: std::option::Option<crate::model::Destination>) -> Self {
+            self.destination = input; self
         }
         /// Appends an item to `reply_to_addresses`.
         ///
@@ -6247,33 +4298,22 @@ pub mod send_email_input {
         /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
         pub fn reply_to_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.reply_to_addresses.unwrap_or_default();
-            v.push(input.into());
-            self.reply_to_addresses = Some(v);
-            self
+                            v.push(input.into());
+                            self.reply_to_addresses = Some(v);
+                            self
         }
         /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
-        pub fn set_reply_to_addresses(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.reply_to_addresses = input;
-            self
+        pub fn set_reply_to_addresses(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.reply_to_addresses = input; self
         }
         /// <p>The address that Amazon Pinpoint should send bounce and complaint notifications to.</p>
-        pub fn feedback_forwarding_email_address(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn feedback_forwarding_email_address(mut self, input: impl Into<std::string::String>) -> Self {
             self.feedback_forwarding_email_address = Some(input.into());
             self
         }
         /// <p>The address that Amazon Pinpoint should send bounce and complaint notifications to.</p>
-        pub fn set_feedback_forwarding_email_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.feedback_forwarding_email_address = input;
-            self
+        pub fn set_feedback_forwarding_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.feedback_forwarding_email_address = input; self
         }
         /// <p>An object that contains the body of the message. You can send either a Simple message or a Raw message.</p>
         pub fn content(mut self, input: crate::model::EmailContent) -> Self {
@@ -6281,12 +4321,8 @@ pub mod send_email_input {
             self
         }
         /// <p>An object that contains the body of the message. You can send either a Simple message or a Raw message.</p>
-        pub fn set_content(
-            mut self,
-            input: std::option::Option<crate::model::EmailContent>,
-        ) -> Self {
-            self.content = input;
-            self
+        pub fn set_content(mut self, input: std::option::Option<crate::model::EmailContent>) -> Self {
+            self.content = input; self
         }
         /// Appends an item to `email_tags`.
         ///
@@ -6295,17 +4331,13 @@ pub mod send_email_input {
         /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events. </p>
         pub fn email_tags(mut self, input: crate::model::MessageTag) -> Self {
             let mut v = self.email_tags.unwrap_or_default();
-            v.push(input);
-            self.email_tags = Some(v);
-            self
+                            v.push(input);
+                            self.email_tags = Some(v);
+                            self
         }
         /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events. </p>
-        pub fn set_email_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MessageTag>>,
-        ) -> Self {
-            self.email_tags = input;
-            self
+        pub fn set_email_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::MessageTag>>) -> Self {
+            self.email_tags = input; self
         }
         /// <p>The name of the configuration set that you want to use when sending the email.</p>
         pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6313,126 +4345,89 @@ pub mod send_email_input {
             self
         }
         /// <p>The name of the configuration set that you want to use when sending the email.</p>
-        pub fn set_configuration_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_name = input;
-            self
+        pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_name = input; self
         }
         /// Consumes the builder and constructs a [`SendEmailInput`](crate::input::SendEmailInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::SendEmailInput, aws_smithy_http::operation::BuildError> {
-            Ok(crate::input::SendEmailInput {
-                from_email_address: self.from_email_address,
-                destination: self.destination,
-                reply_to_addresses: self.reply_to_addresses,
-                feedback_forwarding_email_address: self.feedback_forwarding_email_address,
-                content: self.content,
-                email_tags: self.email_tags,
-                configuration_set_name: self.configuration_set_name,
-            })
+        pub fn build(self) -> Result<crate::input::SendEmailInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::SendEmailInput {
+                    from_email_address: self.from_email_address
+                    ,
+                    destination: self.destination
+                    ,
+                    reply_to_addresses: self.reply_to_addresses
+                    ,
+                    feedback_forwarding_email_address: self.feedback_forwarding_email_address
+                    ,
+                    content: self.content
+                    ,
+                    email_tags: self.email_tags
+                    ,
+                    configuration_set_name: self.configuration_set_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl SendEmailInput {
     /// Consumes the builder and constructs an Operation<[`SendEmail`](crate::operation::SendEmail)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::SendEmail,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::SendEmail, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::SendEmailInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::SendEmailInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/email/outbound-emails").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::SendEmailInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::SendEmailInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_send_email(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_send_email(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op =
-            aws_smithy_http::operation::Operation::new(request, crate::operation::SendEmail::new())
-                .with_metadata(aws_smithy_http::operation::Metadata::new(
-                    "SendEmail",
-                    "pinpointemail",
-                ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::SendEmail::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("SendEmail", "pinpointemail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6444,9 +4439,9 @@ impl SendEmailInput {
 
 /// See [`TagResourceInput`](crate::input::TagResourceInput).
 pub mod tag_resource_input {
-
+    
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -6459,8 +4454,7 @@ pub mod tag_resource_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to add one or more tags to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -6469,129 +4463,84 @@ pub mod tag_resource_input {
         /// <p>A list of the tags that you want to add to the resource. A tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>A list of the tags that you want to add to the resource. A tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::TagResourceInput {
-                resource_arn: self.resource_arn,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::TagResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::TagResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::TagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::TagResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/email/tags").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::TagResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::TagResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::TagResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "TagResource",
-            "pinpointemail",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("TagResource", "pinpointemail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6603,9 +4552,9 @@ impl TagResourceInput {
 
 /// See [`UntagResourceInput`](crate::input::UntagResourceInput).
 pub mod untag_resource_input {
-
+    
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6618,75 +4567,52 @@ pub mod untag_resource_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove one or more tags from.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Appends an item to `tag_keys`.
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag key, the action removes both that key and its associated tag value.</p>
+        /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag key, the action removes both that key and its associated tag value.</p> 
         /// <p>To remove more than one tag from the resource, append the <code>TagKeys</code> parameter and argument for each additional tag to remove, separated by an ampersand. For example: <code>/v1/email/tags?ResourceArn=ResourceArn&amp;TagKeys=Key1&amp;TagKeys=Key2</code> </p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-            v.push(input.into());
-            self.tag_keys = Some(v);
-            self
+                            v.push(input.into());
+                            self.tag_keys = Some(v);
+                            self
         }
-        /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag key, the action removes both that key and its associated tag value.</p>
+        /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag key, the action removes both that key and its associated tag value.</p> 
         /// <p>To remove more than one tag from the resource, append the <code>TagKeys</code> parameter and argument for each additional tag to remove, separated by an ampersand. For example: <code>/v1/email/tags?ResourceArn=ResourceArn&amp;TagKeys=Key1&amp;TagKeys=Key2</code> </p>
-        pub fn set_tag_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.tag_keys = input;
-            self
+        pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.tag_keys = input; self
         }
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::UntagResourceInput {
-                resource_arn: self.resource_arn,
-                tag_keys: self.tag_keys,
-            })
+        pub fn build(self) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::UntagResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                    tag_keys: self.tag_keys
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UntagResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UntagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UntagResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/email/tags").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::UntagResourceInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_44) = &_input.resource_arn {
-                    query.push_kv(
-                        "ResourceArn",
-                        &aws_smithy_http::query::fmt_string(&inner_44),
-                    );
+                    query.push_kv("ResourceArn", &aws_smithy_http::query::fmt_string(&inner_44));
                 }
                 if let Some(inner_45) = &_input.tag_keys {
                     for inner_46 in inner_45 {
@@ -6695,12 +4621,10 @@ impl UntagResourceInput {
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::UntagResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::UntagResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -6710,54 +4634,37 @@ impl UntagResourceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UntagResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UntagResource",
-            "pinpointemail",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UntagResource", "pinpointemail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6769,9 +4676,9 @@ impl UntagResourceInput {
 
 /// See [`UpdateConfigurationSetEventDestinationInput`](crate::input::UpdateConfigurationSetEventDestinationInput).
 pub mod update_configuration_set_event_destination_input {
-
+    
     /// A builder for [`UpdateConfigurationSetEventDestinationInput`](crate::input::UpdateConfigurationSetEventDestinationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
         pub(crate) event_destination_name: std::option::Option<std::string::String>,
@@ -6784,12 +4691,8 @@ pub mod update_configuration_set_event_destination_input {
             self
         }
         /// <p>The name of the configuration set that contains the event destination that you want to modify.</p>
-        pub fn set_configuration_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_name = input;
-            self
+        pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_name = input; self
         }
         /// <p>The name of the event destination that you want to modify.</p>
         pub fn event_destination_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6797,111 +4700,65 @@ pub mod update_configuration_set_event_destination_input {
             self
         }
         /// <p>The name of the event destination that you want to modify.</p>
-        pub fn set_event_destination_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.event_destination_name = input;
-            self
+        pub fn set_event_destination_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_destination_name = input; self
         }
         /// <p>An object that defines the event destination.</p>
-        pub fn event_destination(
-            mut self,
-            input: crate::model::EventDestinationDefinition,
-        ) -> Self {
+        pub fn event_destination(mut self, input: crate::model::EventDestinationDefinition) -> Self {
             self.event_destination = Some(input);
             self
         }
         /// <p>An object that defines the event destination.</p>
-        pub fn set_event_destination(
-            mut self,
-            input: std::option::Option<crate::model::EventDestinationDefinition>,
-        ) -> Self {
-            self.event_destination = input;
-            self
+        pub fn set_event_destination(mut self, input: std::option::Option<crate::model::EventDestinationDefinition>) -> Self {
+            self.event_destination = input; self
         }
         /// Consumes the builder and constructs a [`UpdateConfigurationSetEventDestinationInput`](crate::input::UpdateConfigurationSetEventDestinationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::UpdateConfigurationSetEventDestinationInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::UpdateConfigurationSetEventDestinationInput {
-                configuration_set_name: self.configuration_set_name,
-                event_destination_name: self.event_destination_name,
-                event_destination: self.event_destination,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateConfigurationSetEventDestinationInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::UpdateConfigurationSetEventDestinationInput {
+                    configuration_set_name: self.configuration_set_name
+                    ,
+                    event_destination_name: self.event_destination_name
+                    ,
+                    event_destination: self.event_destination
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateConfigurationSetEventDestinationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateConfigurationSetEventDestination`](crate::operation::UpdateConfigurationSetEventDestination)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateConfigurationSetEventDestination,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateConfigurationSetEventDestination, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateConfigurationSetEventDestinationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateConfigurationSetEventDestinationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_47 = &_input.configuration_set_name;
-                let input_47 = input_47.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "configuration_set_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_47 = input_47.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "configuration_set_name", details: "cannot be empty or unset" })?;
                 let configuration_set_name = aws_smithy_http::label::fmt_string(input_47, false);
                 if configuration_set_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "configuration_set_name",
-                        details: "cannot be empty or unset",
-                    });
-                }
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "configuration_set_name", details: "cannot be empty or unset" })
+                            }
                 let input_48 = &_input.event_destination_name;
-                let input_48 = input_48.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "event_destination_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_48 = input_48.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "event_destination_name", details: "cannot be empty or unset" })?;
                 let event_destination_name = aws_smithy_http::label::fmt_string(input_48, false);
                 if event_destination_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "event_destination_name",
-                        details: "cannot be empty or unset",
-                    });
-                }
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "event_destination_name", details: "cannot be empty or unset" })
+                            }
                 write!(output, "/v1/email/configuration-sets/{ConfigurationSetName}/event-destinations/{EventDestinationName}", ConfigurationSetName = configuration_set_name, EventDestinationName = event_destination_name).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::UpdateConfigurationSetEventDestinationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::UpdateConfigurationSetEventDestinationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -6909,58 +4766,36 @@ impl UpdateConfigurationSetEventDestinationInput {
             crate::operation_ser::serialize_operation_crate_operation_update_configuration_set_event_destination(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateConfigurationSetEventDestination::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateConfigurationSetEventDestination",
-            "pinpointemail",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateConfigurationSetEventDestination::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateConfigurationSetEventDestination", "pinpointemail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6971,36 +4806,30 @@ impl UpdateConfigurationSetEventDestinationInput {
 }
 
 /// <p>A request to change the settings for an event destination for a configuration set.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateConfigurationSetEventDestinationInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct UpdateConfigurationSetEventDestinationInput  {
     /// <p>The name of the configuration set that contains the event destination that you want to modify.</p>
-    #[doc(hidden)]
-    pub configuration_set_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>The name of the event destination that you want to modify.</p>
-    #[doc(hidden)]
-    pub event_destination_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub event_destination_name: std::option::Option<std::string::String>,
     /// <p>An object that defines the event destination.</p>
-    #[doc(hidden)]
-    pub event_destination: std::option::Option<crate::model::EventDestinationDefinition>,
+    #[doc(hidden)]pub event_destination: std::option::Option<crate::model::EventDestinationDefinition>,
 }
 impl UpdateConfigurationSetEventDestinationInput {
     /// <p>The name of the configuration set that contains the event destination that you want to modify.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>The name of the event destination that you want to modify.</p>
-    pub fn event_destination_name(&self) -> std::option::Option<&str> {
+    pub fn event_destination_name(&self) -> std::option::Option<& str> {
         self.event_destination_name.as_deref()
     }
     /// <p>An object that defines the event destination.</p>
-    pub fn event_destination(
-        &self,
-    ) -> std::option::Option<&crate::model::EventDestinationDefinition> {
+    pub fn event_destination(&self) -> std::option::Option<& crate::model::EventDestinationDefinition> {
         self.event_destination.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateConfigurationSetEventDestinationInput {
+impl  std::fmt::Debug for UpdateConfigurationSetEventDestinationInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateConfigurationSetEventDestinationInput");
         formatter.field("configuration_set_name", &self.configuration_set_name);
@@ -7011,29 +4840,26 @@ impl std::fmt::Debug for UpdateConfigurationSetEventDestinationInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UntagResourceInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct UntagResourceInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove one or more tags from.</p>
-    #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag key, the action removes both that key and its associated tag value.</p>
+    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag key, the action removes both that key and its associated tag value.</p> 
     /// <p>To remove more than one tag from the resource, append the <code>TagKeys</code> parameter and argument for each additional tag to remove, separated by an ampersand. For example: <code>/v1/email/tags?ResourceArn=ResourceArn&amp;TagKeys=Key1&amp;TagKeys=Key2</code> </p>
-    #[doc(hidden)]
-    pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove one or more tags from.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag key, the action removes both that key and its associated tag value.</p>
+    /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag key, the action removes both that key and its associated tag value.</p> 
     /// <p>To remove more than one tag from the resource, append the <code>TagKeys</code> parameter and argument for each additional tag to remove, separated by an ampersand. For example: <code>/v1/email/tags?ResourceArn=ResourceArn&amp;TagKeys=Key1&amp;TagKeys=Key2</code> </p>
-    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
+impl  std::fmt::Debug for UntagResourceInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -7043,27 +4869,24 @@ impl std::fmt::Debug for UntagResourceInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct TagResourceInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct TagResourceInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to add one or more tags to.</p>
-    #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of the tags that you want to add to the resource. A tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to add one or more tags to.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>A list of the tags that you want to add to the resource. A tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
+impl  std::fmt::Debug for TagResourceInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -7073,71 +4896,60 @@ impl std::fmt::Debug for TagResourceInput {
 }
 
 /// <p>A request to send an email message.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SendEmailInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct SendEmailInput  {
     /// <p>The email address that you want to use as the "From" address for the email. The address that you specify has to be verified. </p>
-    #[doc(hidden)]
-    pub from_email_address: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub from_email_address: std::option::Option<std::string::String>,
     /// <p>An object that contains the recipients of the email message.</p>
-    #[doc(hidden)]
-    pub destination: std::option::Option<crate::model::Destination>,
+    #[doc(hidden)]pub destination: std::option::Option<crate::model::Destination>,
     /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
-    #[doc(hidden)]
-    pub reply_to_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub reply_to_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The address that Amazon Pinpoint should send bounce and complaint notifications to.</p>
-    #[doc(hidden)]
-    pub feedback_forwarding_email_address: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub feedback_forwarding_email_address: std::option::Option<std::string::String>,
     /// <p>An object that contains the body of the message. You can send either a Simple message or a Raw message.</p>
-    #[doc(hidden)]
-    pub content: std::option::Option<crate::model::EmailContent>,
+    #[doc(hidden)]pub content: std::option::Option<crate::model::EmailContent>,
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events. </p>
-    #[doc(hidden)]
-    pub email_tags: std::option::Option<std::vec::Vec<crate::model::MessageTag>>,
+    #[doc(hidden)]pub email_tags: std::option::Option<std::vec::Vec<crate::model::MessageTag>>,
     /// <p>The name of the configuration set that you want to use when sending the email.</p>
-    #[doc(hidden)]
-    pub configuration_set_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub configuration_set_name: std::option::Option<std::string::String>,
 }
 impl SendEmailInput {
     /// <p>The email address that you want to use as the "From" address for the email. The address that you specify has to be verified. </p>
-    pub fn from_email_address(&self) -> std::option::Option<&str> {
+    pub fn from_email_address(&self) -> std::option::Option<& str> {
         self.from_email_address.as_deref()
     }
     /// <p>An object that contains the recipients of the email message.</p>
-    pub fn destination(&self) -> std::option::Option<&crate::model::Destination> {
+    pub fn destination(&self) -> std::option::Option<& crate::model::Destination> {
         self.destination.as_ref()
     }
     /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
-    pub fn reply_to_addresses(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn reply_to_addresses(&self) -> std::option::Option<& [std::string::String]> {
         self.reply_to_addresses.as_deref()
     }
     /// <p>The address that Amazon Pinpoint should send bounce and complaint notifications to.</p>
-    pub fn feedback_forwarding_email_address(&self) -> std::option::Option<&str> {
+    pub fn feedback_forwarding_email_address(&self) -> std::option::Option<& str> {
         self.feedback_forwarding_email_address.as_deref()
     }
     /// <p>An object that contains the body of the message. You can send either a Simple message or a Raw message.</p>
-    pub fn content(&self) -> std::option::Option<&crate::model::EmailContent> {
+    pub fn content(&self) -> std::option::Option<& crate::model::EmailContent> {
         self.content.as_ref()
     }
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events. </p>
-    pub fn email_tags(&self) -> std::option::Option<&[crate::model::MessageTag]> {
+    pub fn email_tags(&self) -> std::option::Option<& [crate::model::MessageTag]> {
         self.email_tags.as_deref()
     }
     /// <p>The name of the configuration set that you want to use when sending the email.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
 }
-impl std::fmt::Debug for SendEmailInput {
+impl  std::fmt::Debug for SendEmailInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendEmailInput");
         formatter.field("from_email_address", &self.from_email_address);
         formatter.field("destination", &self.destination);
         formatter.field("reply_to_addresses", &self.reply_to_addresses);
-        formatter.field(
-            "feedback_forwarding_email_address",
-            &self.feedback_forwarding_email_address,
-        );
+        formatter.field("feedback_forwarding_email_address", &self.feedback_forwarding_email_address);
         formatter.field("content", &self.content);
         formatter.field("email_tags", &self.email_tags);
         formatter.field("configuration_set_name", &self.configuration_set_name);
@@ -7146,48 +4958,42 @@ impl std::fmt::Debug for SendEmailInput {
 }
 
 /// <p>A request to configure the custom MAIL FROM domain for a verified identity.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PutEmailIdentityMailFromAttributesInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct PutEmailIdentityMailFromAttributesInput  {
     /// <p>The verified email identity that you want to set up the custom MAIL FROM domain for.</p>
-    #[doc(hidden)]
-    pub email_identity: std::option::Option<std::string::String>,
-    /// <p> The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must meet the following criteria:</p>
-    /// <ul>
-    /// <li> <p>It has to be a subdomain of the verified identity.</p> </li>
-    /// <li> <p>It can't be used to receive email.</p> </li>
-    /// <li> <p>It can't be used in a "From" address if the MAIL FROM domain is a destination for feedback forwarding emails.</p> </li>
+    #[doc(hidden)]pub email_identity: std::option::Option<std::string::String>,
+    /// <p> The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must meet the following criteria:</p> 
+    /// <ul> 
+    /// <li> <p>It has to be a subdomain of the verified identity.</p> </li> 
+    /// <li> <p>It can't be used to receive email.</p> </li> 
+    /// <li> <p>It can't be used in a "From" address if the MAIL FROM domain is a destination for feedback forwarding emails.</p> </li> 
     /// </ul>
-    #[doc(hidden)]
-    pub mail_from_domain: std::option::Option<std::string::String>,
-    /// <p>The action that you want Amazon Pinpoint to take if it can't read the required MX record when you send an email. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>
+    #[doc(hidden)]pub mail_from_domain: std::option::Option<std::string::String>,
+    /// <p>The action that you want Amazon Pinpoint to take if it can't read the required MX record when you send an email. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p> 
     /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
-    #[doc(hidden)]
-    pub behavior_on_mx_failure: std::option::Option<crate::model::BehaviorOnMxFailure>,
+    #[doc(hidden)]pub behavior_on_mx_failure: std::option::Option<crate::model::BehaviorOnMxFailure>,
 }
 impl PutEmailIdentityMailFromAttributesInput {
     /// <p>The verified email identity that you want to set up the custom MAIL FROM domain for.</p>
-    pub fn email_identity(&self) -> std::option::Option<&str> {
+    pub fn email_identity(&self) -> std::option::Option<& str> {
         self.email_identity.as_deref()
     }
-    /// <p> The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must meet the following criteria:</p>
-    /// <ul>
-    /// <li> <p>It has to be a subdomain of the verified identity.</p> </li>
-    /// <li> <p>It can't be used to receive email.</p> </li>
-    /// <li> <p>It can't be used in a "From" address if the MAIL FROM domain is a destination for feedback forwarding emails.</p> </li>
+    /// <p> The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must meet the following criteria:</p> 
+    /// <ul> 
+    /// <li> <p>It has to be a subdomain of the verified identity.</p> </li> 
+    /// <li> <p>It can't be used to receive email.</p> </li> 
+    /// <li> <p>It can't be used in a "From" address if the MAIL FROM domain is a destination for feedback forwarding emails.</p> </li> 
     /// </ul>
-    pub fn mail_from_domain(&self) -> std::option::Option<&str> {
+    pub fn mail_from_domain(&self) -> std::option::Option<& str> {
         self.mail_from_domain.as_deref()
     }
-    /// <p>The action that you want Amazon Pinpoint to take if it can't read the required MX record when you send an email. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>
+    /// <p>The action that you want Amazon Pinpoint to take if it can't read the required MX record when you send an email. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p> 
     /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
-    pub fn behavior_on_mx_failure(
-        &self,
-    ) -> std::option::Option<&crate::model::BehaviorOnMxFailure> {
+    pub fn behavior_on_mx_failure(&self) -> std::option::Option<& crate::model::BehaviorOnMxFailure> {
         self.behavior_on_mx_failure.as_ref()
     }
 }
-impl std::fmt::Debug for PutEmailIdentityMailFromAttributesInput {
+impl  std::fmt::Debug for PutEmailIdentityMailFromAttributesInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutEmailIdentityMailFromAttributesInput");
         formatter.field("email_identity", &self.email_identity);
@@ -7198,31 +5004,28 @@ impl std::fmt::Debug for PutEmailIdentityMailFromAttributesInput {
 }
 
 /// <p>A request to set the attributes that control how bounce and complaint events are processed.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PutEmailIdentityFeedbackAttributesInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct PutEmailIdentityFeedbackAttributesInput  {
     /// <p>The email identity that you want to configure bounce and complaint feedback forwarding for.</p>
-    #[doc(hidden)]
-    pub email_identity: std::option::Option<std::string::String>,
-    /// <p>Sets the feedback forwarding configuration for the identity.</p>
-    /// <p>If the value is <code>true</code>, Amazon Pinpoint sends you email notifications when bounce or complaint events occur. Amazon Pinpoint sends this notification to the address that you specified in the Return-Path header of the original email.</p>
+    #[doc(hidden)]pub email_identity: std::option::Option<std::string::String>,
+    /// <p>Sets the feedback forwarding configuration for the identity.</p> 
+    /// <p>If the value is <code>true</code>, Amazon Pinpoint sends you email notifications when bounce or complaint events occur. Amazon Pinpoint sends this notification to the address that you specified in the Return-Path header of the original email.</p> 
     /// <p>When you set this value to <code>false</code>, Amazon Pinpoint sends notifications through other mechanisms, such as by notifying an Amazon SNS topic or another event destination. You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications, Amazon Pinpoint sends an email notification when these events occur (even if this setting is disabled).</p>
-    #[doc(hidden)]
-    pub email_forwarding_enabled: bool,
+    #[doc(hidden)]pub email_forwarding_enabled: bool,
 }
 impl PutEmailIdentityFeedbackAttributesInput {
     /// <p>The email identity that you want to configure bounce and complaint feedback forwarding for.</p>
-    pub fn email_identity(&self) -> std::option::Option<&str> {
+    pub fn email_identity(&self) -> std::option::Option<& str> {
         self.email_identity.as_deref()
     }
-    /// <p>Sets the feedback forwarding configuration for the identity.</p>
-    /// <p>If the value is <code>true</code>, Amazon Pinpoint sends you email notifications when bounce or complaint events occur. Amazon Pinpoint sends this notification to the address that you specified in the Return-Path header of the original email.</p>
+    /// <p>Sets the feedback forwarding configuration for the identity.</p> 
+    /// <p>If the value is <code>true</code>, Amazon Pinpoint sends you email notifications when bounce or complaint events occur. Amazon Pinpoint sends this notification to the address that you specified in the Return-Path header of the original email.</p> 
     /// <p>When you set this value to <code>false</code>, Amazon Pinpoint sends notifications through other mechanisms, such as by notifying an Amazon SNS topic or another event destination. You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications, Amazon Pinpoint sends an email notification when these events occur (even if this setting is disabled).</p>
     pub fn email_forwarding_enabled(&self) -> bool {
         self.email_forwarding_enabled
     }
 }
-impl std::fmt::Debug for PutEmailIdentityFeedbackAttributesInput {
+impl  std::fmt::Debug for PutEmailIdentityFeedbackAttributesInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutEmailIdentityFeedbackAttributesInput");
         formatter.field("email_identity", &self.email_identity);
@@ -7232,29 +5035,26 @@ impl std::fmt::Debug for PutEmailIdentityFeedbackAttributesInput {
 }
 
 /// <p>A request to enable or disable DKIM signing of email that you send from an email identity.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PutEmailIdentityDkimAttributesInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct PutEmailIdentityDkimAttributesInput  {
     /// <p>The email identity that you want to change the DKIM settings for.</p>
-    #[doc(hidden)]
-    pub email_identity: std::option::Option<std::string::String>,
-    /// <p>Sets the DKIM signing configuration for the identity.</p>
+    #[doc(hidden)]pub email_identity: std::option::Option<std::string::String>,
+    /// <p>Sets the DKIM signing configuration for the identity.</p> 
     /// <p>When you set this value <code>true</code>, then the messages that Amazon Pinpoint sends from the identity are DKIM-signed. When you set this value to <code>false</code>, then the messages that Amazon Pinpoint sends from the identity aren't DKIM-signed.</p>
-    #[doc(hidden)]
-    pub signing_enabled: bool,
+    #[doc(hidden)]pub signing_enabled: bool,
 }
 impl PutEmailIdentityDkimAttributesInput {
     /// <p>The email identity that you want to change the DKIM settings for.</p>
-    pub fn email_identity(&self) -> std::option::Option<&str> {
+    pub fn email_identity(&self) -> std::option::Option<& str> {
         self.email_identity.as_deref()
     }
-    /// <p>Sets the DKIM signing configuration for the identity.</p>
+    /// <p>Sets the DKIM signing configuration for the identity.</p> 
     /// <p>When you set this value <code>true</code>, then the messages that Amazon Pinpoint sends from the identity are DKIM-signed. When you set this value to <code>false</code>, then the messages that Amazon Pinpoint sends from the identity aren't DKIM-signed.</p>
     pub fn signing_enabled(&self) -> bool {
         self.signing_enabled
     }
 }
-impl std::fmt::Debug for PutEmailIdentityDkimAttributesInput {
+impl  std::fmt::Debug for PutEmailIdentityDkimAttributesInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutEmailIdentityDkimAttributesInput");
         formatter.field("email_identity", &self.email_identity);
@@ -7263,18 +5063,14 @@ impl std::fmt::Debug for PutEmailIdentityDkimAttributesInput {
     }
 }
 
-/// <p>Enable or disable the Deliverability dashboard for your Amazon Pinpoint account. When you enable the Deliverability dashboard, you gain access to reputation, deliverability, and other metrics for the domains that you use to send email using Amazon Pinpoint. You also gain the ability to perform predictive inbox placement tests.</p>
+/// <p>Enable or disable the Deliverability dashboard for your Amazon Pinpoint account. When you enable the Deliverability dashboard, you gain access to reputation, deliverability, and other metrics for the domains that you use to send email using Amazon Pinpoint. You also gain the ability to perform predictive inbox placement tests.</p> 
 /// <p>When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon Pinpoint. For more information about the features and cost of a Deliverability dashboard subscription, see <a href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint Pricing</a>.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PutDeliverabilityDashboardOptionInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct PutDeliverabilityDashboardOptionInput  {
     /// <p>Specifies whether to enable the Deliverability dashboard for your Amazon Pinpoint account. To enable the dashboard, set this value to <code>true</code>.</p>
-    #[doc(hidden)]
-    pub dashboard_enabled: bool,
+    #[doc(hidden)]pub dashboard_enabled: bool,
     /// <p>An array of objects, one for each verified domain that you use to send email and enabled the Deliverability dashboard for.</p>
-    #[doc(hidden)]
-    pub subscribed_domains:
-        std::option::Option<std::vec::Vec<crate::model::DomainDeliverabilityTrackingOption>>,
+    #[doc(hidden)]pub subscribed_domains: std::option::Option<std::vec::Vec<crate::model::DomainDeliverabilityTrackingOption>>,
 }
 impl PutDeliverabilityDashboardOptionInput {
     /// <p>Specifies whether to enable the Deliverability dashboard for your Amazon Pinpoint account. To enable the dashboard, set this value to <code>true</code>.</p>
@@ -7282,13 +5078,11 @@ impl PutDeliverabilityDashboardOptionInput {
         self.dashboard_enabled
     }
     /// <p>An array of objects, one for each verified domain that you use to send email and enabled the Deliverability dashboard for.</p>
-    pub fn subscribed_domains(
-        &self,
-    ) -> std::option::Option<&[crate::model::DomainDeliverabilityTrackingOption]> {
+    pub fn subscribed_domains(&self) -> std::option::Option<& [crate::model::DomainDeliverabilityTrackingOption]> {
         self.subscribed_domains.as_deref()
     }
 }
-impl std::fmt::Debug for PutDeliverabilityDashboardOptionInput {
+impl  std::fmt::Debug for PutDeliverabilityDashboardOptionInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutDeliverabilityDashboardOptionInput");
         formatter.field("dashboard_enabled", &self.dashboard_enabled);
@@ -7298,19 +5092,16 @@ impl std::fmt::Debug for PutDeliverabilityDashboardOptionInput {
 }
 
 /// <p>A request to change the warm-up attributes for a dedicated IP address. This operation is useful when you want to resume the warm-up process for an existing IP address.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PutDedicatedIpWarmupAttributesInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct PutDedicatedIpWarmupAttributesInput  {
     /// <p>The dedicated IP address that you want to update the warm-up attributes for.</p>
-    #[doc(hidden)]
-    pub ip: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub ip: std::option::Option<std::string::String>,
     /// <p>The warm-up percentage that you want to associate with the dedicated IP address.</p>
-    #[doc(hidden)]
-    pub warmup_percentage: std::option::Option<i32>,
+    #[doc(hidden)]pub warmup_percentage: std::option::Option<i32>,
 }
 impl PutDedicatedIpWarmupAttributesInput {
     /// <p>The dedicated IP address that you want to update the warm-up attributes for.</p>
-    pub fn ip(&self) -> std::option::Option<&str> {
+    pub fn ip(&self) -> std::option::Option<& str> {
         self.ip.as_deref()
     }
     /// <p>The warm-up percentage that you want to associate with the dedicated IP address.</p>
@@ -7318,7 +5109,7 @@ impl PutDedicatedIpWarmupAttributesInput {
         self.warmup_percentage
     }
 }
-impl std::fmt::Debug for PutDedicatedIpWarmupAttributesInput {
+impl  std::fmt::Debug for PutDedicatedIpWarmupAttributesInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutDedicatedIpWarmupAttributesInput");
         formatter.field("ip", &self.ip);
@@ -7328,27 +5119,24 @@ impl std::fmt::Debug for PutDedicatedIpWarmupAttributesInput {
 }
 
 /// <p>A request to move a dedicated IP address to a dedicated IP pool.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PutDedicatedIpInPoolInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct PutDedicatedIpInPoolInput  {
     /// <p>The IP address that you want to move to the dedicated IP pool. The value you specify has to be a dedicated IP address that's associated with your Amazon Pinpoint account.</p>
-    #[doc(hidden)]
-    pub ip: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub ip: std::option::Option<std::string::String>,
     /// <p>The name of the IP pool that you want to add the dedicated IP address to. You have to specify an IP pool that already exists.</p>
-    #[doc(hidden)]
-    pub destination_pool_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub destination_pool_name: std::option::Option<std::string::String>,
 }
 impl PutDedicatedIpInPoolInput {
     /// <p>The IP address that you want to move to the dedicated IP pool. The value you specify has to be a dedicated IP address that's associated with your Amazon Pinpoint account.</p>
-    pub fn ip(&self) -> std::option::Option<&str> {
+    pub fn ip(&self) -> std::option::Option<& str> {
         self.ip.as_deref()
     }
     /// <p>The name of the IP pool that you want to add the dedicated IP address to. You have to specify an IP pool that already exists.</p>
-    pub fn destination_pool_name(&self) -> std::option::Option<&str> {
+    pub fn destination_pool_name(&self) -> std::option::Option<& str> {
         self.destination_pool_name.as_deref()
     }
 }
-impl std::fmt::Debug for PutDedicatedIpInPoolInput {
+impl  std::fmt::Debug for PutDedicatedIpInPoolInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutDedicatedIpInPoolInput");
         formatter.field("ip", &self.ip);
@@ -7358,27 +5146,24 @@ impl std::fmt::Debug for PutDedicatedIpInPoolInput {
 }
 
 /// <p>A request to add a custom domain for tracking open and click events to a configuration set.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PutConfigurationSetTrackingOptionsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct PutConfigurationSetTrackingOptionsInput  {
     /// <p>The name of the configuration set that you want to add a custom tracking domain to.</p>
-    #[doc(hidden)]
-    pub configuration_set_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>The domain that you want to use to track open and click events.</p>
-    #[doc(hidden)]
-    pub custom_redirect_domain: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub custom_redirect_domain: std::option::Option<std::string::String>,
 }
 impl PutConfigurationSetTrackingOptionsInput {
     /// <p>The name of the configuration set that you want to add a custom tracking domain to.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>The domain that you want to use to track open and click events.</p>
-    pub fn custom_redirect_domain(&self) -> std::option::Option<&str> {
+    pub fn custom_redirect_domain(&self) -> std::option::Option<& str> {
         self.custom_redirect_domain.as_deref()
     }
 }
-impl std::fmt::Debug for PutConfigurationSetTrackingOptionsInput {
+impl  std::fmt::Debug for PutConfigurationSetTrackingOptionsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutConfigurationSetTrackingOptionsInput");
         formatter.field("configuration_set_name", &self.configuration_set_name);
@@ -7388,19 +5173,16 @@ impl std::fmt::Debug for PutConfigurationSetTrackingOptionsInput {
 }
 
 /// <p>A request to enable or disable the ability of Amazon Pinpoint to send emails that use a specific configuration set.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PutConfigurationSetSendingOptionsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct PutConfigurationSetSendingOptionsInput  {
     /// <p>The name of the configuration set that you want to enable or disable email sending for.</p>
-    #[doc(hidden)]
-    pub configuration_set_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>If <code>true</code>, email sending is enabled for the configuration set. If <code>false</code>, email sending is disabled for the configuration set.</p>
-    #[doc(hidden)]
-    pub sending_enabled: bool,
+    #[doc(hidden)]pub sending_enabled: bool,
 }
 impl PutConfigurationSetSendingOptionsInput {
     /// <p>The name of the configuration set that you want to enable or disable email sending for.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>If <code>true</code>, email sending is enabled for the configuration set. If <code>false</code>, email sending is disabled for the configuration set.</p>
@@ -7408,7 +5190,7 @@ impl PutConfigurationSetSendingOptionsInput {
         self.sending_enabled
     }
 }
-impl std::fmt::Debug for PutConfigurationSetSendingOptionsInput {
+impl  std::fmt::Debug for PutConfigurationSetSendingOptionsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutConfigurationSetSendingOptionsInput");
         formatter.field("configuration_set_name", &self.configuration_set_name);
@@ -7418,19 +5200,16 @@ impl std::fmt::Debug for PutConfigurationSetSendingOptionsInput {
 }
 
 /// <p>A request to enable or disable tracking of reputation metrics for a configuration set.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PutConfigurationSetReputationOptionsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct PutConfigurationSetReputationOptionsInput  {
     /// <p>The name of the configuration set that you want to enable or disable reputation metric tracking for.</p>
-    #[doc(hidden)]
-    pub configuration_set_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration set. If <code>false</code>, tracking of reputation metrics is disabled for the configuration set.</p>
-    #[doc(hidden)]
-    pub reputation_metrics_enabled: bool,
+    #[doc(hidden)]pub reputation_metrics_enabled: bool,
 }
 impl PutConfigurationSetReputationOptionsInput {
     /// <p>The name of the configuration set that you want to enable or disable reputation metric tracking for.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration set. If <code>false</code>, tracking of reputation metrics is disabled for the configuration set.</p>
@@ -7438,47 +5217,40 @@ impl PutConfigurationSetReputationOptionsInput {
         self.reputation_metrics_enabled
     }
 }
-impl std::fmt::Debug for PutConfigurationSetReputationOptionsInput {
+impl  std::fmt::Debug for PutConfigurationSetReputationOptionsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutConfigurationSetReputationOptionsInput");
         formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.field(
-            "reputation_metrics_enabled",
-            &self.reputation_metrics_enabled,
-        );
+        formatter.field("reputation_metrics_enabled", &self.reputation_metrics_enabled);
         formatter.finish()
     }
 }
 
 /// <p>A request to associate a configuration set with a dedicated IP pool.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PutConfigurationSetDeliveryOptionsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct PutConfigurationSetDeliveryOptionsInput  {
     /// <p>The name of the configuration set that you want to associate with a dedicated IP pool.</p>
-    #[doc(hidden)]
-    pub configuration_set_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
-    #[doc(hidden)]
-    pub tls_policy: std::option::Option<crate::model::TlsPolicy>,
+    #[doc(hidden)]pub tls_policy: std::option::Option<crate::model::TlsPolicy>,
     /// <p>The name of the dedicated IP pool that you want to associate with the configuration set.</p>
-    #[doc(hidden)]
-    pub sending_pool_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub sending_pool_name: std::option::Option<std::string::String>,
 }
 impl PutConfigurationSetDeliveryOptionsInput {
     /// <p>The name of the configuration set that you want to associate with a dedicated IP pool.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
-    pub fn tls_policy(&self) -> std::option::Option<&crate::model::TlsPolicy> {
+    pub fn tls_policy(&self) -> std::option::Option<& crate::model::TlsPolicy> {
         self.tls_policy.as_ref()
     }
     /// <p>The name of the dedicated IP pool that you want to associate with the configuration set.</p>
-    pub fn sending_pool_name(&self) -> std::option::Option<&str> {
+    pub fn sending_pool_name(&self) -> std::option::Option<& str> {
         self.sending_pool_name.as_deref()
     }
 }
-impl std::fmt::Debug for PutConfigurationSetDeliveryOptionsInput {
+impl  std::fmt::Debug for PutConfigurationSetDeliveryOptionsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutConfigurationSetDeliveryOptionsInput");
         formatter.field("configuration_set_name", &self.configuration_set_name);
@@ -7489,24 +5261,22 @@ impl std::fmt::Debug for PutConfigurationSetDeliveryOptionsInput {
 }
 
 /// <p>A request to change the ability of your account to send email.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PutAccountSendingAttributesInput {
-    /// <p>Enables or disables your account's ability to send email. Set to <code>true</code> to enable email sending, or set to <code>false</code> to disable email sending.</p> <note>
-    /// <p>If AWS paused your account's ability to send email, you can't use this operation to resume your account's ability to send email.</p>
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct PutAccountSendingAttributesInput  {
+    /// <p>Enables or disables your account's ability to send email. Set to <code>true</code> to enable email sending, or set to <code>false</code> to disable email sending.</p> <note> 
+    /// <p>If AWS paused your account's ability to send email, you can't use this operation to resume your account's ability to send email.</p> 
     /// </note>
-    #[doc(hidden)]
-    pub sending_enabled: bool,
+    #[doc(hidden)]pub sending_enabled: bool,
 }
 impl PutAccountSendingAttributesInput {
-    /// <p>Enables or disables your account's ability to send email. Set to <code>true</code> to enable email sending, or set to <code>false</code> to disable email sending.</p> <note>
-    /// <p>If AWS paused your account's ability to send email, you can't use this operation to resume your account's ability to send email.</p>
+    /// <p>Enables or disables your account's ability to send email. Set to <code>true</code> to enable email sending, or set to <code>false</code> to disable email sending.</p> <note> 
+    /// <p>If AWS paused your account's ability to send email, you can't use this operation to resume your account's ability to send email.</p> 
     /// </note>
     pub fn sending_enabled(&self) -> bool {
         self.sending_enabled
     }
 }
-impl std::fmt::Debug for PutAccountSendingAttributesInput {
+impl  std::fmt::Debug for PutAccountSendingAttributesInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutAccountSendingAttributesInput");
         formatter.field("sending_enabled", &self.sending_enabled);
@@ -7515,12 +5285,10 @@ impl std::fmt::Debug for PutAccountSendingAttributesInput {
 }
 
 /// <p>A request to enable or disable the automatic IP address warm-up feature.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PutAccountDedicatedIpWarmupAttributesInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct PutAccountDedicatedIpWarmupAttributesInput  {
     /// <p>Enables or disables the automatic warm-up feature for dedicated IP addresses that are associated with your Amazon Pinpoint account in the current AWS Region. Set to <code>true</code> to enable the automatic warm-up feature, or set to <code>false</code> to disable it.</p>
-    #[doc(hidden)]
-    pub auto_warmup_enabled: bool,
+    #[doc(hidden)]pub auto_warmup_enabled: bool,
 }
 impl PutAccountDedicatedIpWarmupAttributesInput {
     /// <p>Enables or disables the automatic warm-up feature for dedicated IP addresses that are associated with your Amazon Pinpoint account in the current AWS Region. Set to <code>true</code> to enable the automatic warm-up feature, or set to <code>false</code> to disable it.</p>
@@ -7528,7 +5296,7 @@ impl PutAccountDedicatedIpWarmupAttributesInput {
         self.auto_warmup_enabled
     }
 }
-impl std::fmt::Debug for PutAccountDedicatedIpWarmupAttributesInput {
+impl  std::fmt::Debug for PutAccountDedicatedIpWarmupAttributesInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutAccountDedicatedIpWarmupAttributesInput");
         formatter.field("auto_warmup_enabled", &self.auto_warmup_enabled);
@@ -7537,20 +5305,18 @@ impl std::fmt::Debug for PutAccountDedicatedIpWarmupAttributesInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListTagsForResourceInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListTagsForResourceInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tag information for.</p>
-    #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tag information for.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
+impl  std::fmt::Debug for ListTagsForResourceInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -7559,29 +5325,26 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 }
 
 /// <p>A request to list all of the email identities associated with your Amazon Pinpoint account. This list includes identities that you've already verified, identities that are unverified, and identities that were verified in the past, but are no longer verified.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListEmailIdentitiesInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListEmailIdentitiesInput  {
     /// <p>A token returned from a previous call to <code>ListEmailIdentities</code> to indicate the position in the list of identities.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
-    /// <p>The number of results to show in a single call to <code>ListEmailIdentities</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    /// <p>The number of results to show in a single call to <code>ListEmailIdentities</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p> 
     /// <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
-    #[doc(hidden)]
-    pub page_size: std::option::Option<i32>,
+    #[doc(hidden)]pub page_size: std::option::Option<i32>,
 }
 impl ListEmailIdentitiesInput {
     /// <p>A token returned from a previous call to <code>ListEmailIdentities</code> to indicate the position in the list of identities.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
-    /// <p>The number of results to show in a single call to <code>ListEmailIdentities</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
+    /// <p>The number of results to show in a single call to <code>ListEmailIdentities</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p> 
     /// <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
     pub fn page_size(&self) -> std::option::Option<i32> {
         self.page_size
     }
 }
-impl std::fmt::Debug for ListEmailIdentitiesInput {
+impl  std::fmt::Debug for ListEmailIdentitiesInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEmailIdentitiesInput");
         formatter.field("next_token", &self.next_token);
@@ -7591,40 +5354,34 @@ impl std::fmt::Debug for ListEmailIdentitiesInput {
 }
 
 /// <p>Retrieve deliverability data for all the campaigns that used a specific domain to send email during a specified time range. This data is available for a domain only if you enabled the Deliverability dashboard (<code>PutDeliverabilityDashboardOption</code> operation) for the domain.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListDomainDeliverabilityCampaignsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListDomainDeliverabilityCampaignsInput  {
     /// <p>The first day, in Unix time format, that you want to obtain deliverability data for.</p>
-    #[doc(hidden)]
-    pub start_date: std::option::Option<aws_smithy_types::DateTime>,
+    #[doc(hidden)]pub start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last day, in Unix time format, that you want to obtain deliverability data for. This value has to be less than or equal to 30 days after the value of the <code>StartDate</code> parameter.</p>
-    #[doc(hidden)]
-    pub end_date: std::option::Option<aws_smithy_types::DateTime>,
+    #[doc(hidden)]pub end_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The domain to obtain deliverability data for.</p>
-    #[doc(hidden)]
-    pub subscribed_domain: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub subscribed_domain: std::option::Option<std::string::String>,
     /// <p>A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of a campaign in the list of campaigns.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to include in response to a single call to the <code>ListDomainDeliverabilityCampaigns</code> operation. If the number of results is larger than the number that you specify in this parameter, the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
-    #[doc(hidden)]
-    pub page_size: std::option::Option<i32>,
+    #[doc(hidden)]pub page_size: std::option::Option<i32>,
 }
 impl ListDomainDeliverabilityCampaignsInput {
     /// <p>The first day, in Unix time format, that you want to obtain deliverability data for.</p>
-    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
     /// <p>The last day, in Unix time format, that you want to obtain deliverability data for. This value has to be less than or equal to 30 days after the value of the <code>StartDate</code> parameter.</p>
-    pub fn end_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_date.as_ref()
     }
     /// <p>The domain to obtain deliverability data for.</p>
-    pub fn subscribed_domain(&self) -> std::option::Option<&str> {
+    pub fn subscribed_domain(&self) -> std::option::Option<& str> {
         self.subscribed_domain.as_deref()
     }
     /// <p>A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of a campaign in the list of campaigns.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to include in response to a single call to the <code>ListDomainDeliverabilityCampaigns</code> operation. If the number of results is larger than the number that you specify in this parameter, the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
@@ -7632,7 +5389,7 @@ impl ListDomainDeliverabilityCampaignsInput {
         self.page_size
     }
 }
-impl std::fmt::Debug for ListDomainDeliverabilityCampaignsInput {
+impl  std::fmt::Debug for ListDomainDeliverabilityCampaignsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDomainDeliverabilityCampaignsInput");
         formatter.field("start_date", &self.start_date);
@@ -7645,29 +5402,26 @@ impl std::fmt::Debug for ListDomainDeliverabilityCampaignsInput {
 }
 
 /// <p>A request to list all of the predictive inbox placement tests that you've performed.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListDeliverabilityTestReportsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListDeliverabilityTestReportsInput  {
     /// <p>A token returned from a previous call to <code>ListDeliverabilityTestReports</code> to indicate the position in the list of predictive inbox placement tests.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
-    /// <p>The number of results to show in a single call to <code>ListDeliverabilityTestReports</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    /// <p>The number of results to show in a single call to <code>ListDeliverabilityTestReports</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p> 
     /// <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
-    #[doc(hidden)]
-    pub page_size: std::option::Option<i32>,
+    #[doc(hidden)]pub page_size: std::option::Option<i32>,
 }
 impl ListDeliverabilityTestReportsInput {
     /// <p>A token returned from a previous call to <code>ListDeliverabilityTestReports</code> to indicate the position in the list of predictive inbox placement tests.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
-    /// <p>The number of results to show in a single call to <code>ListDeliverabilityTestReports</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
+    /// <p>The number of results to show in a single call to <code>ListDeliverabilityTestReports</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p> 
     /// <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
     pub fn page_size(&self) -> std::option::Option<i32> {
         self.page_size
     }
 }
-impl std::fmt::Debug for ListDeliverabilityTestReportsInput {
+impl  std::fmt::Debug for ListDeliverabilityTestReportsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDeliverabilityTestReportsInput");
         formatter.field("next_token", &self.next_token);
@@ -7677,19 +5431,16 @@ impl std::fmt::Debug for ListDeliverabilityTestReportsInput {
 }
 
 /// <p>A request to obtain a list of dedicated IP pools.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListDedicatedIpPoolsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListDedicatedIpPoolsInput  {
     /// <p>A token returned from a previous call to <code>ListDedicatedIpPools</code> to indicate the position in the list of dedicated IP pools.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of results to show in a single call to <code>ListDedicatedIpPools</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
-    #[doc(hidden)]
-    pub page_size: std::option::Option<i32>,
+    #[doc(hidden)]pub page_size: std::option::Option<i32>,
 }
 impl ListDedicatedIpPoolsInput {
     /// <p>A token returned from a previous call to <code>ListDedicatedIpPools</code> to indicate the position in the list of dedicated IP pools.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The number of results to show in a single call to <code>ListDedicatedIpPools</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
@@ -7697,7 +5448,7 @@ impl ListDedicatedIpPoolsInput {
         self.page_size
     }
 }
-impl std::fmt::Debug for ListDedicatedIpPoolsInput {
+impl  std::fmt::Debug for ListDedicatedIpPoolsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDedicatedIpPoolsInput");
         formatter.field("next_token", &self.next_token);
@@ -7707,19 +5458,16 @@ impl std::fmt::Debug for ListDedicatedIpPoolsInput {
 }
 
 /// <p>A request to obtain a list of configuration sets for your Amazon Pinpoint account in the current AWS Region.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListConfigurationSetsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListConfigurationSetsInput  {
     /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to indicate the position in the list of configuration sets.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of results to show in a single call to <code>ListConfigurationSets</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
-    #[doc(hidden)]
-    pub page_size: std::option::Option<i32>,
+    #[doc(hidden)]pub page_size: std::option::Option<i32>,
 }
 impl ListConfigurationSetsInput {
     /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to indicate the position in the list of configuration sets.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The number of results to show in a single call to <code>ListConfigurationSets</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
@@ -7727,7 +5475,7 @@ impl ListConfigurationSetsInput {
         self.page_size
     }
 }
-impl std::fmt::Debug for ListConfigurationSetsInput {
+impl  std::fmt::Debug for ListConfigurationSetsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListConfigurationSetsInput");
         formatter.field("next_token", &self.next_token);
@@ -7737,20 +5485,18 @@ impl std::fmt::Debug for ListConfigurationSetsInput {
 }
 
 /// <p>A request to return details about an email identity.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetEmailIdentityInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct GetEmailIdentityInput  {
     /// <p>The email identity that you want to retrieve details for.</p>
-    #[doc(hidden)]
-    pub email_identity: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub email_identity: std::option::Option<std::string::String>,
 }
 impl GetEmailIdentityInput {
     /// <p>The email identity that you want to retrieve details for.</p>
-    pub fn email_identity(&self) -> std::option::Option<&str> {
+    pub fn email_identity(&self) -> std::option::Option<& str> {
         self.email_identity.as_deref()
     }
 }
-impl std::fmt::Debug for GetEmailIdentityInput {
+impl  std::fmt::Debug for GetEmailIdentityInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEmailIdentityInput");
         formatter.field("email_identity", &self.email_identity);
@@ -7759,34 +5505,30 @@ impl std::fmt::Debug for GetEmailIdentityInput {
 }
 
 /// <p>A request to obtain deliverability metrics for a domain.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetDomainStatisticsReportInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct GetDomainStatisticsReportInput  {
     /// <p>The domain that you want to obtain deliverability metrics for.</p>
-    #[doc(hidden)]
-    pub domain: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub domain: std::option::Option<std::string::String>,
     /// <p>The first day (in Unix time) that you want to obtain domain deliverability metrics for.</p>
-    #[doc(hidden)]
-    pub start_date: std::option::Option<aws_smithy_types::DateTime>,
+    #[doc(hidden)]pub start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last day (in Unix time) that you want to obtain domain deliverability metrics for. The <code>EndDate</code> that you specify has to be less than or equal to 30 days after the <code>StartDate</code>.</p>
-    #[doc(hidden)]
-    pub end_date: std::option::Option<aws_smithy_types::DateTime>,
+    #[doc(hidden)]pub end_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetDomainStatisticsReportInput {
     /// <p>The domain that you want to obtain deliverability metrics for.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The first day (in Unix time) that you want to obtain domain deliverability metrics for.</p>
-    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
     /// <p>The last day (in Unix time) that you want to obtain domain deliverability metrics for. The <code>EndDate</code> that you specify has to be less than or equal to 30 days after the <code>StartDate</code>.</p>
-    pub fn end_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_date.as_ref()
     }
 }
-impl std::fmt::Debug for GetDomainStatisticsReportInput {
+impl  std::fmt::Debug for GetDomainStatisticsReportInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDomainStatisticsReportInput");
         formatter.field("domain", &self.domain);
@@ -7797,20 +5539,18 @@ impl std::fmt::Debug for GetDomainStatisticsReportInput {
 }
 
 /// <p>Retrieve all the deliverability data for a specific campaign. This data is available for a campaign only if the campaign sent email by using a domain that the Deliverability dashboard is enabled for (<code>PutDeliverabilityDashboardOption</code> operation).</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetDomainDeliverabilityCampaignInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct GetDomainDeliverabilityCampaignInput  {
     /// <p>The unique identifier for the campaign. Amazon Pinpoint automatically generates and assigns this identifier to a campaign. This value is not the same as the campaign identifier that Amazon Pinpoint assigns to campaigns that you create and manage by using the Amazon Pinpoint API or the Amazon Pinpoint console.</p>
-    #[doc(hidden)]
-    pub campaign_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub campaign_id: std::option::Option<std::string::String>,
 }
 impl GetDomainDeliverabilityCampaignInput {
     /// <p>The unique identifier for the campaign. Amazon Pinpoint automatically generates and assigns this identifier to a campaign. This value is not the same as the campaign identifier that Amazon Pinpoint assigns to campaigns that you create and manage by using the Amazon Pinpoint API or the Amazon Pinpoint console.</p>
-    pub fn campaign_id(&self) -> std::option::Option<&str> {
+    pub fn campaign_id(&self) -> std::option::Option<& str> {
         self.campaign_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetDomainDeliverabilityCampaignInput {
+impl  std::fmt::Debug for GetDomainDeliverabilityCampaignInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDomainDeliverabilityCampaignInput");
         formatter.field("campaign_id", &self.campaign_id);
@@ -7819,20 +5559,18 @@ impl std::fmt::Debug for GetDomainDeliverabilityCampaignInput {
 }
 
 /// <p>A request to retrieve the results of a predictive inbox placement test.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetDeliverabilityTestReportInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct GetDeliverabilityTestReportInput  {
     /// <p>A unique string that identifies the predictive inbox placement test.</p>
-    #[doc(hidden)]
-    pub report_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub report_id: std::option::Option<std::string::String>,
 }
 impl GetDeliverabilityTestReportInput {
     /// <p>A unique string that identifies the predictive inbox placement test.</p>
-    pub fn report_id(&self) -> std::option::Option<&str> {
+    pub fn report_id(&self) -> std::option::Option<& str> {
         self.report_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetDeliverabilityTestReportInput {
+impl  std::fmt::Debug for GetDeliverabilityTestReportInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDeliverabilityTestReportInput");
         formatter.field("report_id", &self.report_id);
@@ -7840,12 +5578,12 @@ impl std::fmt::Debug for GetDeliverabilityTestReportInput {
     }
 }
 
-/// <p>Retrieve information about the status of the Deliverability dashboard for your Amazon Pinpoint account. When the Deliverability dashboard is enabled, you gain access to reputation, deliverability, and other metrics for the domains that you use to send email using Amazon Pinpoint. You also gain the ability to perform predictive inbox placement tests.</p>
+/// <p>Retrieve information about the status of the Deliverability dashboard for your Amazon Pinpoint account. When the Deliverability dashboard is enabled, you gain access to reputation, deliverability, and other metrics for the domains that you use to send email using Amazon Pinpoint. You also gain the ability to perform predictive inbox placement tests.</p> 
 /// <p>When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon Pinpoint. For more information about the features and cost of a Deliverability dashboard subscription, see <a href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint Pricing</a>.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetDeliverabilityDashboardOptionsInput {}
-impl std::fmt::Debug for GetDeliverabilityDashboardOptionsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct GetDeliverabilityDashboardOptionsInput  {
+}
+impl  std::fmt::Debug for GetDeliverabilityDashboardOptionsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDeliverabilityDashboardOptionsInput");
         formatter.finish()
@@ -7853,26 +5591,22 @@ impl std::fmt::Debug for GetDeliverabilityDashboardOptionsInput {
 }
 
 /// <p>A request to obtain more information about dedicated IP pools.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetDedicatedIpsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct GetDedicatedIpsInput  {
     /// <p>The name of the IP pool that the dedicated IP address is associated with.</p>
-    #[doc(hidden)]
-    pub pool_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub pool_name: std::option::Option<std::string::String>,
     /// <p>A token returned from a previous call to <code>GetDedicatedIps</code> to indicate the position of the dedicated IP pool in the list of IP pools.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of results to show in a single call to <code>GetDedicatedIpsRequest</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
-    #[doc(hidden)]
-    pub page_size: std::option::Option<i32>,
+    #[doc(hidden)]pub page_size: std::option::Option<i32>,
 }
 impl GetDedicatedIpsInput {
     /// <p>The name of the IP pool that the dedicated IP address is associated with.</p>
-    pub fn pool_name(&self) -> std::option::Option<&str> {
+    pub fn pool_name(&self) -> std::option::Option<& str> {
         self.pool_name.as_deref()
     }
     /// <p>A token returned from a previous call to <code>GetDedicatedIps</code> to indicate the position of the dedicated IP pool in the list of IP pools.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The number of results to show in a single call to <code>GetDedicatedIpsRequest</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
@@ -7880,7 +5614,7 @@ impl GetDedicatedIpsInput {
         self.page_size
     }
 }
-impl std::fmt::Debug for GetDedicatedIpsInput {
+impl  std::fmt::Debug for GetDedicatedIpsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDedicatedIpsInput");
         formatter.field("pool_name", &self.pool_name);
@@ -7891,20 +5625,18 @@ impl std::fmt::Debug for GetDedicatedIpsInput {
 }
 
 /// <p>A request to obtain more information about a dedicated IP address.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetDedicatedIpInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct GetDedicatedIpInput  {
     /// <p>The IP address that you want to obtain more information about. The value you specify has to be a dedicated IP address that's assocaited with your Amazon Pinpoint account.</p>
-    #[doc(hidden)]
-    pub ip: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub ip: std::option::Option<std::string::String>,
 }
 impl GetDedicatedIpInput {
     /// <p>The IP address that you want to obtain more information about. The value you specify has to be a dedicated IP address that's assocaited with your Amazon Pinpoint account.</p>
-    pub fn ip(&self) -> std::option::Option<&str> {
+    pub fn ip(&self) -> std::option::Option<& str> {
         self.ip.as_deref()
     }
 }
-impl std::fmt::Debug for GetDedicatedIpInput {
+impl  std::fmt::Debug for GetDedicatedIpInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDedicatedIpInput");
         formatter.field("ip", &self.ip);
@@ -7913,20 +5645,18 @@ impl std::fmt::Debug for GetDedicatedIpInput {
 }
 
 /// <p>A request to obtain information about the event destinations for a configuration set.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetConfigurationSetEventDestinationsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct GetConfigurationSetEventDestinationsInput  {
     /// <p>The name of the configuration set that contains the event destination.</p>
-    #[doc(hidden)]
-    pub configuration_set_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub configuration_set_name: std::option::Option<std::string::String>,
 }
 impl GetConfigurationSetEventDestinationsInput {
     /// <p>The name of the configuration set that contains the event destination.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetConfigurationSetEventDestinationsInput {
+impl  std::fmt::Debug for GetConfigurationSetEventDestinationsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetConfigurationSetEventDestinationsInput");
         formatter.field("configuration_set_name", &self.configuration_set_name);
@@ -7935,20 +5665,18 @@ impl std::fmt::Debug for GetConfigurationSetEventDestinationsInput {
 }
 
 /// <p>A request to obtain information about a configuration set.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetConfigurationSetInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct GetConfigurationSetInput  {
     /// <p>The name of the configuration set that you want to obtain more information about.</p>
-    #[doc(hidden)]
-    pub configuration_set_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub configuration_set_name: std::option::Option<std::string::String>,
 }
 impl GetConfigurationSetInput {
     /// <p>The name of the configuration set that you want to obtain more information about.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetConfigurationSetInput {
+impl  std::fmt::Debug for GetConfigurationSetInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetConfigurationSetInput");
         formatter.field("configuration_set_name", &self.configuration_set_name);
@@ -7957,20 +5685,18 @@ impl std::fmt::Debug for GetConfigurationSetInput {
 }
 
 /// <p>A request to retrieve a list of the blacklists that your dedicated IP addresses appear on.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetBlacklistReportsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct GetBlacklistReportsInput  {
     /// <p>A list of IP addresses that you want to retrieve blacklist information about. You can only specify the dedicated IP addresses that you use to send email using Amazon Pinpoint or Amazon SES.</p>
-    #[doc(hidden)]
-    pub blacklist_item_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub blacklist_item_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetBlacklistReportsInput {
     /// <p>A list of IP addresses that you want to retrieve blacklist information about. You can only specify the dedicated IP addresses that you use to send email using Amazon Pinpoint or Amazon SES.</p>
-    pub fn blacklist_item_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn blacklist_item_names(&self) -> std::option::Option<& [std::string::String]> {
         self.blacklist_item_names.as_deref()
     }
 }
-impl std::fmt::Debug for GetBlacklistReportsInput {
+impl  std::fmt::Debug for GetBlacklistReportsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetBlacklistReportsInput");
         formatter.field("blacklist_item_names", &self.blacklist_item_names);
@@ -7979,10 +5705,10 @@ impl std::fmt::Debug for GetBlacklistReportsInput {
 }
 
 /// <p>A request to obtain information about the email-sending capabilities of your Amazon Pinpoint account.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetAccountInput {}
-impl std::fmt::Debug for GetAccountInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct GetAccountInput  {
+}
+impl  std::fmt::Debug for GetAccountInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAccountInput");
         formatter.finish()
@@ -7990,20 +5716,18 @@ impl std::fmt::Debug for GetAccountInput {
 }
 
 /// <p>A request to delete an existing email identity. When you delete an identity, you lose the ability to use Amazon Pinpoint to send email from that identity. You can restore your ability to send email by completing the verification process for the identity again.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteEmailIdentityInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DeleteEmailIdentityInput  {
     /// <p>The identity (that is, the email address or domain) that you want to delete from your Amazon Pinpoint account.</p>
-    #[doc(hidden)]
-    pub email_identity: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub email_identity: std::option::Option<std::string::String>,
 }
 impl DeleteEmailIdentityInput {
     /// <p>The identity (that is, the email address or domain) that you want to delete from your Amazon Pinpoint account.</p>
-    pub fn email_identity(&self) -> std::option::Option<&str> {
+    pub fn email_identity(&self) -> std::option::Option<& str> {
         self.email_identity.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteEmailIdentityInput {
+impl  std::fmt::Debug for DeleteEmailIdentityInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteEmailIdentityInput");
         formatter.field("email_identity", &self.email_identity);
@@ -8012,20 +5736,18 @@ impl std::fmt::Debug for DeleteEmailIdentityInput {
 }
 
 /// <p>A request to delete a dedicated IP pool.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteDedicatedIpPoolInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DeleteDedicatedIpPoolInput  {
     /// <p>The name of the dedicated IP pool that you want to delete.</p>
-    #[doc(hidden)]
-    pub pool_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub pool_name: std::option::Option<std::string::String>,
 }
 impl DeleteDedicatedIpPoolInput {
     /// <p>The name of the dedicated IP pool that you want to delete.</p>
-    pub fn pool_name(&self) -> std::option::Option<&str> {
+    pub fn pool_name(&self) -> std::option::Option<& str> {
         self.pool_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDedicatedIpPoolInput {
+impl  std::fmt::Debug for DeleteDedicatedIpPoolInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDedicatedIpPoolInput");
         formatter.field("pool_name", &self.pool_name);
@@ -8034,27 +5756,24 @@ impl std::fmt::Debug for DeleteDedicatedIpPoolInput {
 }
 
 /// <p>A request to delete an event destination from a configuration set.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteConfigurationSetEventDestinationInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DeleteConfigurationSetEventDestinationInput  {
     /// <p>The name of the configuration set that contains the event destination that you want to delete.</p>
-    #[doc(hidden)]
-    pub configuration_set_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>The name of the event destination that you want to delete.</p>
-    #[doc(hidden)]
-    pub event_destination_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub event_destination_name: std::option::Option<std::string::String>,
 }
 impl DeleteConfigurationSetEventDestinationInput {
     /// <p>The name of the configuration set that contains the event destination that you want to delete.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>The name of the event destination that you want to delete.</p>
-    pub fn event_destination_name(&self) -> std::option::Option<&str> {
+    pub fn event_destination_name(&self) -> std::option::Option<& str> {
         self.event_destination_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteConfigurationSetEventDestinationInput {
+impl  std::fmt::Debug for DeleteConfigurationSetEventDestinationInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteConfigurationSetEventDestinationInput");
         formatter.field("configuration_set_name", &self.configuration_set_name);
@@ -8064,20 +5783,18 @@ impl std::fmt::Debug for DeleteConfigurationSetEventDestinationInput {
 }
 
 /// <p>A request to delete a configuration set.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteConfigurationSetInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DeleteConfigurationSetInput  {
     /// <p>The name of the configuration set that you want to delete.</p>
-    #[doc(hidden)]
-    pub configuration_set_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub configuration_set_name: std::option::Option<std::string::String>,
 }
 impl DeleteConfigurationSetInput {
     /// <p>The name of the configuration set that you want to delete.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteConfigurationSetInput {
+impl  std::fmt::Debug for DeleteConfigurationSetInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteConfigurationSetInput");
         formatter.field("configuration_set_name", &self.configuration_set_name);
@@ -8086,27 +5803,24 @@ impl std::fmt::Debug for DeleteConfigurationSetInput {
 }
 
 /// <p>A request to begin the verification process for an email identity (an email address or domain).</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateEmailIdentityInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CreateEmailIdentityInput  {
     /// <p>The email address or domain that you want to verify.</p>
-    #[doc(hidden)]
-    pub email_identity: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub email_identity: std::option::Option<std::string::String>,
     /// <p>An array of objects that define the tags (keys and values) that you want to associate with the email identity.</p>
-    #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateEmailIdentityInput {
     /// <p>The email address or domain that you want to verify.</p>
-    pub fn email_identity(&self) -> std::option::Option<&str> {
+    pub fn email_identity(&self) -> std::option::Option<& str> {
         self.email_identity.as_deref()
     }
     /// <p>An array of objects that define the tags (keys and values) that you want to associate with the email identity.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateEmailIdentityInput {
+impl  std::fmt::Debug for CreateEmailIdentityInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateEmailIdentityInput");
         formatter.field("email_identity", &self.email_identity);
@@ -8116,41 +5830,36 @@ impl std::fmt::Debug for CreateEmailIdentityInput {
 }
 
 /// <p>A request to perform a predictive inbox placement test. Predictive inbox placement tests can help you predict how your messages will be handled by various email providers around the world. When you perform a predictive inbox placement test, you provide a sample message that contains the content that you plan to send to your customers. Amazon Pinpoint then sends that message to special email addresses spread across several major email providers. After about 24 hours, the test is complete, and you can use the <code>GetDeliverabilityTestReport</code> operation to view the results of the test.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateDeliverabilityTestReportInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CreateDeliverabilityTestReportInput  {
     /// <p>A unique name that helps you to identify the predictive inbox placement test when you retrieve the results.</p>
-    #[doc(hidden)]
-    pub report_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub report_name: std::option::Option<std::string::String>,
     /// <p>The email address that the predictive inbox placement test email was sent from.</p>
-    #[doc(hidden)]
-    pub from_email_address: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub from_email_address: std::option::Option<std::string::String>,
     /// <p>The HTML body of the message that you sent when you performed the predictive inbox placement test.</p>
-    #[doc(hidden)]
-    pub content: std::option::Option<crate::model::EmailContent>,
+    #[doc(hidden)]pub content: std::option::Option<crate::model::EmailContent>,
     /// <p>An array of objects that define the tags (keys and values) that you want to associate with the predictive inbox placement test.</p>
-    #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateDeliverabilityTestReportInput {
     /// <p>A unique name that helps you to identify the predictive inbox placement test when you retrieve the results.</p>
-    pub fn report_name(&self) -> std::option::Option<&str> {
+    pub fn report_name(&self) -> std::option::Option<& str> {
         self.report_name.as_deref()
     }
     /// <p>The email address that the predictive inbox placement test email was sent from.</p>
-    pub fn from_email_address(&self) -> std::option::Option<&str> {
+    pub fn from_email_address(&self) -> std::option::Option<& str> {
         self.from_email_address.as_deref()
     }
     /// <p>The HTML body of the message that you sent when you performed the predictive inbox placement test.</p>
-    pub fn content(&self) -> std::option::Option<&crate::model::EmailContent> {
+    pub fn content(&self) -> std::option::Option<& crate::model::EmailContent> {
         self.content.as_ref()
     }
     /// <p>An array of objects that define the tags (keys and values) that you want to associate with the predictive inbox placement test.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDeliverabilityTestReportInput {
+impl  std::fmt::Debug for CreateDeliverabilityTestReportInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDeliverabilityTestReportInput");
         formatter.field("report_name", &self.report_name);
@@ -8162,27 +5871,24 @@ impl std::fmt::Debug for CreateDeliverabilityTestReportInput {
 }
 
 /// <p>A request to create a new dedicated IP pool.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateDedicatedIpPoolInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CreateDedicatedIpPoolInput  {
     /// <p>The name of the dedicated IP pool.</p>
-    #[doc(hidden)]
-    pub pool_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub pool_name: std::option::Option<std::string::String>,
     /// <p>An object that defines the tags (keys and values) that you want to associate with the pool.</p>
-    #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateDedicatedIpPoolInput {
     /// <p>The name of the dedicated IP pool.</p>
-    pub fn pool_name(&self) -> std::option::Option<&str> {
+    pub fn pool_name(&self) -> std::option::Option<& str> {
         self.pool_name.as_deref()
     }
     /// <p>An object that defines the tags (keys and values) that you want to associate with the pool.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDedicatedIpPoolInput {
+impl  std::fmt::Debug for CreateDedicatedIpPoolInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDedicatedIpPoolInput");
         formatter.field("pool_name", &self.pool_name);
@@ -8192,36 +5898,30 @@ impl std::fmt::Debug for CreateDedicatedIpPoolInput {
 }
 
 /// <p>A request to add an event destination to a configuration set.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateConfigurationSetEventDestinationInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CreateConfigurationSetEventDestinationInput  {
     /// <p>The name of the configuration set that you want to add an event destination to.</p>
-    #[doc(hidden)]
-    pub configuration_set_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>A name that identifies the event destination within the configuration set.</p>
-    #[doc(hidden)]
-    pub event_destination_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub event_destination_name: std::option::Option<std::string::String>,
     /// <p>An object that defines the event destination.</p>
-    #[doc(hidden)]
-    pub event_destination: std::option::Option<crate::model::EventDestinationDefinition>,
+    #[doc(hidden)]pub event_destination: std::option::Option<crate::model::EventDestinationDefinition>,
 }
 impl CreateConfigurationSetEventDestinationInput {
     /// <p>The name of the configuration set that you want to add an event destination to.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>A name that identifies the event destination within the configuration set.</p>
-    pub fn event_destination_name(&self) -> std::option::Option<&str> {
+    pub fn event_destination_name(&self) -> std::option::Option<& str> {
         self.event_destination_name.as_deref()
     }
     /// <p>An object that defines the event destination.</p>
-    pub fn event_destination(
-        &self,
-    ) -> std::option::Option<&crate::model::EventDestinationDefinition> {
+    pub fn event_destination(&self) -> std::option::Option<& crate::model::EventDestinationDefinition> {
         self.event_destination.as_ref()
     }
 }
-impl std::fmt::Debug for CreateConfigurationSetEventDestinationInput {
+impl  std::fmt::Debug for CreateConfigurationSetEventDestinationInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateConfigurationSetEventDestinationInput");
         formatter.field("configuration_set_name", &self.configuration_set_name);
@@ -8232,55 +5932,48 @@ impl std::fmt::Debug for CreateConfigurationSetEventDestinationInput {
 }
 
 /// <p>A request to create a configuration set.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateConfigurationSetInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CreateConfigurationSetInput  {
     /// <p>The name of the configuration set.</p>
-    #[doc(hidden)]
-    pub configuration_set_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>An object that defines the open and click tracking options for emails that you send using the configuration set.</p>
-    #[doc(hidden)]
-    pub tracking_options: std::option::Option<crate::model::TrackingOptions>,
+    #[doc(hidden)]pub tracking_options: std::option::Option<crate::model::TrackingOptions>,
     /// <p>An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.</p>
-    #[doc(hidden)]
-    pub delivery_options: std::option::Option<crate::model::DeliveryOptions>,
+    #[doc(hidden)]pub delivery_options: std::option::Option<crate::model::DeliveryOptions>,
     /// <p>An object that defines whether or not Amazon Pinpoint collects reputation metrics for the emails that you send that use the configuration set.</p>
-    #[doc(hidden)]
-    pub reputation_options: std::option::Option<crate::model::ReputationOptions>,
+    #[doc(hidden)]pub reputation_options: std::option::Option<crate::model::ReputationOptions>,
     /// <p>An object that defines whether or not Amazon Pinpoint can send email that you send using the configuration set.</p>
-    #[doc(hidden)]
-    pub sending_options: std::option::Option<crate::model::SendingOptions>,
+    #[doc(hidden)]pub sending_options: std::option::Option<crate::model::SendingOptions>,
     /// <p>An array of objects that define the tags (keys and values) that you want to associate with the configuration set.</p>
-    #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateConfigurationSetInput {
     /// <p>The name of the configuration set.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>An object that defines the open and click tracking options for emails that you send using the configuration set.</p>
-    pub fn tracking_options(&self) -> std::option::Option<&crate::model::TrackingOptions> {
+    pub fn tracking_options(&self) -> std::option::Option<& crate::model::TrackingOptions> {
         self.tracking_options.as_ref()
     }
     /// <p>An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.</p>
-    pub fn delivery_options(&self) -> std::option::Option<&crate::model::DeliveryOptions> {
+    pub fn delivery_options(&self) -> std::option::Option<& crate::model::DeliveryOptions> {
         self.delivery_options.as_ref()
     }
     /// <p>An object that defines whether or not Amazon Pinpoint collects reputation metrics for the emails that you send that use the configuration set.</p>
-    pub fn reputation_options(&self) -> std::option::Option<&crate::model::ReputationOptions> {
+    pub fn reputation_options(&self) -> std::option::Option<& crate::model::ReputationOptions> {
         self.reputation_options.as_ref()
     }
     /// <p>An object that defines whether or not Amazon Pinpoint can send email that you send using the configuration set.</p>
-    pub fn sending_options(&self) -> std::option::Option<&crate::model::SendingOptions> {
+    pub fn sending_options(&self) -> std::option::Option<& crate::model::SendingOptions> {
         self.sending_options.as_ref()
     }
     /// <p>An array of objects that define the tags (keys and values) that you want to associate with the configuration set.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateConfigurationSetInput {
+impl  std::fmt::Debug for CreateConfigurationSetInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateConfigurationSetInput");
         formatter.field("configuration_set_name", &self.configuration_set_name);
@@ -8292,3 +5985,4 @@ impl std::fmt::Debug for CreateConfigurationSetInput {
         formatter.finish()
     }
 }
+

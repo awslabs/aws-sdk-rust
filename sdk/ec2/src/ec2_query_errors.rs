@@ -126,3 +126,4 @@ mod test {
         assert_eq!(keys, vec!["Code", "Message", "AnotherSetting", "Ignore"])
     }
 }
+

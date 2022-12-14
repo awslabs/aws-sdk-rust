@@ -3,9 +3,9 @@ use std::fmt::Write;
 
 /// See [`AddTagsInput`](crate::input::AddTagsInput).
 pub mod add_tags_input {
-
+    
     /// A builder for [`AddTagsInput`](crate::input::AddTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -19,17 +19,13 @@ pub mod add_tags_input {
         /// <p>The key-value pairs to use to create tags. If you specify a key without specifying a value, Amazon ML creates a tag with the specified key and a value of null.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The key-value pairs to use to create tags. If you specify a key without specifying a value, Amazon ML creates a tag with the specified key and a value of null.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The ID of the ML object to tag. For example, <code>exampleModelId</code>.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -38,8 +34,7 @@ pub mod add_tags_input {
         }
         /// <p>The ID of the ML object to tag. For example, <code>exampleModelId</code>.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_id = input;
-            self
+            self.resource_id = input; self
         }
         /// <p>The type of the ML object to tag.</p>
         pub fn resource_type(mut self, input: crate::model::TaggableResourceType) -> Self {
@@ -47,127 +42,86 @@ pub mod add_tags_input {
             self
         }
         /// <p>The type of the ML object to tag.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<crate::model::TaggableResourceType>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<crate::model::TaggableResourceType>) -> Self {
+            self.resource_type = input; self
         }
         /// Consumes the builder and constructs a [`AddTagsInput`](crate::input::AddTagsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::AddTagsInput, aws_smithy_http::operation::BuildError> {
-            Ok(crate::input::AddTagsInput {
-                tags: self.tags,
-                resource_id: self.resource_id,
-                resource_type: self.resource_type,
-            })
+        pub fn build(self) -> Result<crate::input::AddTagsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::AddTagsInput {
+                    tags: self.tags
+                    ,
+                    resource_id: self.resource_id
+                    ,
+                    resource_type: self.resource_type
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl AddTagsInput {
     /// Consumes the builder and constructs an Operation<[`AddTags`](crate::operation::AddTags)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::AddTags,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::AddTags, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::AddTagsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::AddTagsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::AddTagsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::AddTagsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AmazonML_20141212.AddTags",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AmazonML_20141212.AddTags"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_add_tags(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_add_tags(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op =
-            aws_smithy_http::operation::Operation::new(request, crate::operation::AddTags::new())
-                .with_metadata(aws_smithy_http::operation::Metadata::new(
-                    "AddTags",
-                    "machinelearning",
-                ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::AddTags::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("AddTags", "machinelearning"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -179,9 +133,9 @@ impl AddTagsInput {
 
 /// See [`CreateBatchPredictionInput`](crate::input::CreateBatchPredictionInput).
 pub mod create_batch_prediction_input {
-
+    
     /// A builder for [`CreateBatchPredictionInput`](crate::input::CreateBatchPredictionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) batch_prediction_id: std::option::Option<std::string::String>,
         pub(crate) batch_prediction_name: std::option::Option<std::string::String>,
@@ -196,12 +150,8 @@ pub mod create_batch_prediction_input {
             self
         }
         /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
-        pub fn set_batch_prediction_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.batch_prediction_id = input;
-            self
+        pub fn set_batch_prediction_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.batch_prediction_id = input; self
         }
         /// <p>A user-supplied name or description of the <code>BatchPrediction</code>. <code>BatchPredictionName</code> can only use the UTF-8 character set.</p>
         pub fn batch_prediction_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -209,12 +159,8 @@ pub mod create_batch_prediction_input {
             self
         }
         /// <p>A user-supplied name or description of the <code>BatchPrediction</code>. <code>BatchPredictionName</code> can only use the UTF-8 character set.</p>
-        pub fn set_batch_prediction_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.batch_prediction_name = input;
-            self
+        pub fn set_batch_prediction_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.batch_prediction_name = input; self
         }
         /// <p>The ID of the <code>MLModel</code> that will generate predictions for the group of observations. </p>
         pub fn ml_model_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -223,158 +169,109 @@ pub mod create_batch_prediction_input {
         }
         /// <p>The ID of the <code>MLModel</code> that will generate predictions for the group of observations. </p>
         pub fn set_ml_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ml_model_id = input;
-            self
+            self.ml_model_id = input; self
         }
         /// <p>The ID of the <code>DataSource</code> that points to the group of observations to predict.</p>
-        pub fn batch_prediction_data_source_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn batch_prediction_data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.batch_prediction_data_source_id = Some(input.into());
             self
         }
         /// <p>The ID of the <code>DataSource</code> that points to the group of observations to predict.</p>
-        pub fn set_batch_prediction_data_source_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.batch_prediction_data_source_id = input;
-            self
+        pub fn set_batch_prediction_data_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.batch_prediction_data_source_id = input; self
         }
-        /// <p>The location of an Amazon Simple Storage Service (Amazon S3) bucket or directory to store the batch prediction results. The following substrings are not allowed in the <code>s3 key</code> portion of the <code>outputURI</code> field: ':', '//', '/./', '/../'.</p>
+        /// <p>The location of an Amazon Simple Storage Service (Amazon S3) bucket or directory to store the batch prediction results. The following substrings are not allowed in the <code>s3 key</code> portion of the <code>outputURI</code> field: ':', '//', '/./', '/../'.</p> 
         /// <p>Amazon ML needs permissions to store and retrieve the logs on your behalf. For information about how to set permissions, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.</p>
         pub fn output_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.output_uri = Some(input.into());
             self
         }
-        /// <p>The location of an Amazon Simple Storage Service (Amazon S3) bucket or directory to store the batch prediction results. The following substrings are not allowed in the <code>s3 key</code> portion of the <code>outputURI</code> field: ':', '//', '/./', '/../'.</p>
+        /// <p>The location of an Amazon Simple Storage Service (Amazon S3) bucket or directory to store the batch prediction results. The following substrings are not allowed in the <code>s3 key</code> portion of the <code>outputURI</code> field: ':', '//', '/./', '/../'.</p> 
         /// <p>Amazon ML needs permissions to store and retrieve the logs on your behalf. For information about how to set permissions, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.</p>
         pub fn set_output_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.output_uri = input;
-            self
+            self.output_uri = input; self
         }
         /// Consumes the builder and constructs a [`CreateBatchPredictionInput`](crate::input::CreateBatchPredictionInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateBatchPredictionInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::CreateBatchPredictionInput {
-                batch_prediction_id: self.batch_prediction_id,
-                batch_prediction_name: self.batch_prediction_name,
-                ml_model_id: self.ml_model_id,
-                batch_prediction_data_source_id: self.batch_prediction_data_source_id,
-                output_uri: self.output_uri,
-            })
+        pub fn build(self) -> Result<crate::input::CreateBatchPredictionInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CreateBatchPredictionInput {
+                    batch_prediction_id: self.batch_prediction_id
+                    ,
+                    batch_prediction_name: self.batch_prediction_name
+                    ,
+                    ml_model_id: self.ml_model_id
+                    ,
+                    batch_prediction_data_source_id: self.batch_prediction_data_source_id
+                    ,
+                    output_uri: self.output_uri
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateBatchPredictionInput {
     /// Consumes the builder and constructs an Operation<[`CreateBatchPrediction`](crate::operation::CreateBatchPrediction)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateBatchPrediction,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateBatchPrediction, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateBatchPredictionInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::CreateBatchPredictionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreateBatchPredictionInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CreateBatchPredictionInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AmazonML_20141212.CreateBatchPrediction",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AmazonML_20141212.CreateBatchPrediction"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_batch_prediction(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_batch_prediction(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateBatchPrediction::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateBatchPrediction",
-            "machinelearning",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateBatchPrediction::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateBatchPrediction", "machinelearning"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -386,9 +283,9 @@ impl CreateBatchPredictionInput {
 
 /// See [`CreateDataSourceFromRdsInput`](crate::input::CreateDataSourceFromRdsInput).
 pub mod create_data_source_from_rds_input {
-
+    
     /// A builder for [`CreateDataSourceFromRdsInput`](crate::input::CreateDataSourceFromRdsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) data_source_id: std::option::Option<std::string::String>,
         pub(crate) data_source_name: std::option::Option<std::string::String>,
@@ -403,12 +300,8 @@ pub mod create_data_source_from_rds_input {
             self
         }
         /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. Typically, an Amazon Resource Number (ARN) becomes the ID for a <code>DataSource</code>.</p>
-        pub fn set_data_source_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_source_id = input;
-            self
+        pub fn set_data_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_source_id = input; self
         }
         /// <p>A user-supplied name or description of the <code>DataSource</code>.</p>
         pub fn data_source_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -416,69 +309,60 @@ pub mod create_data_source_from_rds_input {
             self
         }
         /// <p>A user-supplied name or description of the <code>DataSource</code>.</p>
-        pub fn set_data_source_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_source_name = input;
-            self
+        pub fn set_data_source_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_source_name = input; self
         }
-        /// <p>The data specification of an Amazon RDS <code>DataSource</code>:</p>
-        /// <ul>
-        /// <li> <p>DatabaseInformation -</p>
-        /// <ul>
-        /// <li> <p> <code>DatabaseName</code> - The name of the Amazon RDS database.</p> </li>
-        /// <li> <p> <code>InstanceIdentifier </code> - A unique identifier for the Amazon RDS database instance.</p> </li>
-        /// </ul> </li>
-        /// <li> <p>DatabaseCredentials - AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon RDS database.</p> </li>
-        /// <li> <p>ResourceRole - A role (DataPipelineDefaultResourceRole) assumed by an EC2 instance to carry out the copy task from Amazon RDS to Amazon Simple Storage Service (Amazon S3). For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p> </li>
-        /// <li> <p>ServiceRole - A role (DataPipelineDefaultRole) assumed by the AWS Data Pipeline service to monitor the progress of the copy task from Amazon RDS to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p> </li>
-        /// <li> <p>SecurityInfo - The security information to use to access an RDS DB instance. You need to set up appropriate ingress rules for the security entity IDs provided to allow access to the Amazon RDS instance. Specify a [<code>SubnetId</code>, <code>SecurityGroupIds</code>] pair for a VPC-based RDS DB instance.</p> </li>
-        /// <li> <p>SelectSqlQuery - A query that is used to retrieve the observation data for the <code>Datasource</code>.</p> </li>
-        /// <li> <p>S3StagingLocation - The Amazon S3 location for staging Amazon RDS data. The data retrieved from Amazon RDS using <code>SelectSqlQuery</code> is stored in this location.</p> </li>
-        /// <li> <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p> </li>
-        /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>
-        /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
+        /// <p>The data specification of an Amazon RDS <code>DataSource</code>:</p> 
+        /// <ul> 
+        /// <li> <p>DatabaseInformation -</p> 
+        /// <ul> 
+        /// <li> <p> <code>DatabaseName</code> - The name of the Amazon RDS database.</p> </li> 
+        /// <li> <p> <code>InstanceIdentifier </code> - A unique identifier for the Amazon RDS database instance.</p> </li> 
+        /// </ul> </li> 
+        /// <li> <p>DatabaseCredentials - AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon RDS database.</p> </li> 
+        /// <li> <p>ResourceRole - A role (DataPipelineDefaultResourceRole) assumed by an EC2 instance to carry out the copy task from Amazon RDS to Amazon Simple Storage Service (Amazon S3). For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p> </li> 
+        /// <li> <p>ServiceRole - A role (DataPipelineDefaultRole) assumed by the AWS Data Pipeline service to monitor the progress of the copy task from Amazon RDS to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p> </li> 
+        /// <li> <p>SecurityInfo - The security information to use to access an RDS DB instance. You need to set up appropriate ingress rules for the security entity IDs provided to allow access to the Amazon RDS instance. Specify a [<code>SubnetId</code>, <code>SecurityGroupIds</code>] pair for a VPC-based RDS DB instance.</p> </li> 
+        /// <li> <p>SelectSqlQuery - A query that is used to retrieve the observation data for the <code>Datasource</code>.</p> </li> 
+        /// <li> <p>S3StagingLocation - The Amazon S3 location for staging Amazon RDS data. The data retrieved from Amazon RDS using <code>SelectSqlQuery</code> is stored in this location.</p> </li> 
+        /// <li> <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p> </li> 
+        /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li> 
+        /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li> 
         /// </ul>
         pub fn rds_data(mut self, input: crate::model::RdsDataSpec) -> Self {
             self.rds_data = Some(input);
             self
         }
-        /// <p>The data specification of an Amazon RDS <code>DataSource</code>:</p>
-        /// <ul>
-        /// <li> <p>DatabaseInformation -</p>
-        /// <ul>
-        /// <li> <p> <code>DatabaseName</code> - The name of the Amazon RDS database.</p> </li>
-        /// <li> <p> <code>InstanceIdentifier </code> - A unique identifier for the Amazon RDS database instance.</p> </li>
-        /// </ul> </li>
-        /// <li> <p>DatabaseCredentials - AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon RDS database.</p> </li>
-        /// <li> <p>ResourceRole - A role (DataPipelineDefaultResourceRole) assumed by an EC2 instance to carry out the copy task from Amazon RDS to Amazon Simple Storage Service (Amazon S3). For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p> </li>
-        /// <li> <p>ServiceRole - A role (DataPipelineDefaultRole) assumed by the AWS Data Pipeline service to monitor the progress of the copy task from Amazon RDS to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p> </li>
-        /// <li> <p>SecurityInfo - The security information to use to access an RDS DB instance. You need to set up appropriate ingress rules for the security entity IDs provided to allow access to the Amazon RDS instance. Specify a [<code>SubnetId</code>, <code>SecurityGroupIds</code>] pair for a VPC-based RDS DB instance.</p> </li>
-        /// <li> <p>SelectSqlQuery - A query that is used to retrieve the observation data for the <code>Datasource</code>.</p> </li>
-        /// <li> <p>S3StagingLocation - The Amazon S3 location for staging Amazon RDS data. The data retrieved from Amazon RDS using <code>SelectSqlQuery</code> is stored in this location.</p> </li>
-        /// <li> <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p> </li>
-        /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>
-        /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
+        /// <p>The data specification of an Amazon RDS <code>DataSource</code>:</p> 
+        /// <ul> 
+        /// <li> <p>DatabaseInformation -</p> 
+        /// <ul> 
+        /// <li> <p> <code>DatabaseName</code> - The name of the Amazon RDS database.</p> </li> 
+        /// <li> <p> <code>InstanceIdentifier </code> - A unique identifier for the Amazon RDS database instance.</p> </li> 
+        /// </ul> </li> 
+        /// <li> <p>DatabaseCredentials - AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon RDS database.</p> </li> 
+        /// <li> <p>ResourceRole - A role (DataPipelineDefaultResourceRole) assumed by an EC2 instance to carry out the copy task from Amazon RDS to Amazon Simple Storage Service (Amazon S3). For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p> </li> 
+        /// <li> <p>ServiceRole - A role (DataPipelineDefaultRole) assumed by the AWS Data Pipeline service to monitor the progress of the copy task from Amazon RDS to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p> </li> 
+        /// <li> <p>SecurityInfo - The security information to use to access an RDS DB instance. You need to set up appropriate ingress rules for the security entity IDs provided to allow access to the Amazon RDS instance. Specify a [<code>SubnetId</code>, <code>SecurityGroupIds</code>] pair for a VPC-based RDS DB instance.</p> </li> 
+        /// <li> <p>SelectSqlQuery - A query that is used to retrieve the observation data for the <code>Datasource</code>.</p> </li> 
+        /// <li> <p>S3StagingLocation - The Amazon S3 location for staging Amazon RDS data. The data retrieved from Amazon RDS using <code>SelectSqlQuery</code> is stored in this location.</p> </li> 
+        /// <li> <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p> </li> 
+        /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li> 
+        /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li> 
         /// </ul>
-        pub fn set_rds_data(
-            mut self,
-            input: std::option::Option<crate::model::RdsDataSpec>,
-        ) -> Self {
-            self.rds_data = input;
-            self
+        pub fn set_rds_data(mut self, input: std::option::Option<crate::model::RdsDataSpec>) -> Self {
+            self.rds_data = input; self
         }
-        /// <p>The role that Amazon ML assumes on behalf of the user to create and activate a data pipeline in the user's account and copy data using the <code>SelectSqlQuery</code> query from Amazon RDS to Amazon S3.</p>
+        /// <p>The role that Amazon ML assumes on behalf of the user to create and activate a data pipeline in the user's account and copy data using the <code>SelectSqlQuery</code> query from Amazon RDS to Amazon S3.</p> 
         /// <p></p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The role that Amazon ML assumes on behalf of the user to create and activate a data pipeline in the user's account and copy data using the <code>SelectSqlQuery</code> query from Amazon RDS to Amazon S3.</p>
+        /// <p>The role that Amazon ML assumes on behalf of the user to create and activate a data pipeline in the user's account and copy data using the <code>SelectSqlQuery</code> query from Amazon RDS to Amazon S3.</p> 
         /// <p></p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training. </p>
         pub fn compute_statistics(mut self, input: bool) -> Self {
@@ -487,132 +371,90 @@ pub mod create_data_source_from_rds_input {
         }
         /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training. </p>
         pub fn set_compute_statistics(mut self, input: std::option::Option<bool>) -> Self {
-            self.compute_statistics = input;
-            self
+            self.compute_statistics = input; self
         }
         /// Consumes the builder and constructs a [`CreateDataSourceFromRdsInput`](crate::input::CreateDataSourceFromRdsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateDataSourceFromRdsInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::CreateDataSourceFromRdsInput {
-                data_source_id: self.data_source_id,
-                data_source_name: self.data_source_name,
-                rds_data: self.rds_data,
-                role_arn: self.role_arn,
-                compute_statistics: self.compute_statistics.unwrap_or_default(),
-            })
+        pub fn build(self) -> Result<crate::input::CreateDataSourceFromRdsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CreateDataSourceFromRdsInput {
+                    data_source_id: self.data_source_id
+                    ,
+                    data_source_name: self.data_source_name
+                    ,
+                    rds_data: self.rds_data
+                    ,
+                    role_arn: self.role_arn
+                    ,
+                    compute_statistics: self.compute_statistics
+                        .unwrap_or_default()
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateDataSourceFromRdsInput {
     /// Consumes the builder and constructs an Operation<[`CreateDataSourceFromRDS`](crate::operation::CreateDataSourceFromRDS)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateDataSourceFromRDS,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateDataSourceFromRDS, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateDataSourceFromRdsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::CreateDataSourceFromRdsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreateDataSourceFromRdsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CreateDataSourceFromRdsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AmazonML_20141212.CreateDataSourceFromRDS",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AmazonML_20141212.CreateDataSourceFromRDS"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_data_source_from_rds(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_data_source_from_rds(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateDataSourceFromRDS::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateDataSourceFromRDS",
-            "machinelearning",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateDataSourceFromRDS::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateDataSourceFromRDS", "machinelearning"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -624,9 +466,9 @@ impl CreateDataSourceFromRdsInput {
 
 /// See [`CreateDataSourceFromRedshiftInput`](crate::input::CreateDataSourceFromRedshiftInput).
 pub mod create_data_source_from_redshift_input {
-
+    
     /// A builder for [`CreateDataSourceFromRedshiftInput`](crate::input::CreateDataSourceFromRedshiftInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) data_source_id: std::option::Option<std::string::String>,
         pub(crate) data_source_name: std::option::Option<std::string::String>,
@@ -641,12 +483,8 @@ pub mod create_data_source_from_redshift_input {
             self
         }
         /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
-        pub fn set_data_source_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_source_id = input;
-            self
+        pub fn set_data_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_source_id = input; self
         }
         /// <p>A user-supplied name or description of the <code>DataSource</code>. </p>
         pub fn data_source_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -654,69 +492,60 @@ pub mod create_data_source_from_redshift_input {
             self
         }
         /// <p>A user-supplied name or description of the <code>DataSource</code>. </p>
-        pub fn set_data_source_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_source_name = input;
-            self
+        pub fn set_data_source_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_source_name = input; self
         }
-        /// <p>The data specification of an Amazon Redshift <code>DataSource</code>:</p>
-        /// <ul>
-        /// <li> <p>DatabaseInformation -</p>
-        /// <ul>
-        /// <li> <p> <code>DatabaseName</code> - The name of the Amazon Redshift database.</p> </li>
-        /// <li> <p> <code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.</p> </li>
-        /// </ul> </li>
-        /// <li> <p>DatabaseCredentials - The AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon Redshift database.</p> </li>
-        /// <li> <p>SelectSqlQuery - The query that is used to retrieve the observation data for the <code>Datasource</code>.</p> </li>
-        /// <li> <p>S3StagingLocation - The Amazon Simple Storage Service (Amazon S3) location for staging Amazon Redshift data. The data retrieved from Amazon Redshift using the <code>SelectSqlQuery</code> query is stored in this location.</p> </li>
-        /// <li> <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p> </li>
-        /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>
-        /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>DataSource</code>.</p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
+        /// <p>The data specification of an Amazon Redshift <code>DataSource</code>:</p> 
+        /// <ul> 
+        /// <li> <p>DatabaseInformation -</p> 
+        /// <ul> 
+        /// <li> <p> <code>DatabaseName</code> - The name of the Amazon Redshift database.</p> </li> 
+        /// <li> <p> <code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.</p> </li> 
+        /// </ul> </li> 
+        /// <li> <p>DatabaseCredentials - The AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon Redshift database.</p> </li> 
+        /// <li> <p>SelectSqlQuery - The query that is used to retrieve the observation data for the <code>Datasource</code>.</p> </li> 
+        /// <li> <p>S3StagingLocation - The Amazon Simple Storage Service (Amazon S3) location for staging Amazon Redshift data. The data retrieved from Amazon Redshift using the <code>SelectSqlQuery</code> query is stored in this location.</p> </li> 
+        /// <li> <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p> </li> 
+        /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li> 
+        /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>DataSource</code>.</p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li> 
         /// </ul>
         pub fn data_spec(mut self, input: crate::model::RedshiftDataSpec) -> Self {
             self.data_spec = Some(input);
             self
         }
-        /// <p>The data specification of an Amazon Redshift <code>DataSource</code>:</p>
-        /// <ul>
-        /// <li> <p>DatabaseInformation -</p>
-        /// <ul>
-        /// <li> <p> <code>DatabaseName</code> - The name of the Amazon Redshift database.</p> </li>
-        /// <li> <p> <code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.</p> </li>
-        /// </ul> </li>
-        /// <li> <p>DatabaseCredentials - The AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon Redshift database.</p> </li>
-        /// <li> <p>SelectSqlQuery - The query that is used to retrieve the observation data for the <code>Datasource</code>.</p> </li>
-        /// <li> <p>S3StagingLocation - The Amazon Simple Storage Service (Amazon S3) location for staging Amazon Redshift data. The data retrieved from Amazon Redshift using the <code>SelectSqlQuery</code> query is stored in this location.</p> </li>
-        /// <li> <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p> </li>
-        /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>
-        /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>DataSource</code>.</p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
+        /// <p>The data specification of an Amazon Redshift <code>DataSource</code>:</p> 
+        /// <ul> 
+        /// <li> <p>DatabaseInformation -</p> 
+        /// <ul> 
+        /// <li> <p> <code>DatabaseName</code> - The name of the Amazon Redshift database.</p> </li> 
+        /// <li> <p> <code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.</p> </li> 
+        /// </ul> </li> 
+        /// <li> <p>DatabaseCredentials - The AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon Redshift database.</p> </li> 
+        /// <li> <p>SelectSqlQuery - The query that is used to retrieve the observation data for the <code>Datasource</code>.</p> </li> 
+        /// <li> <p>S3StagingLocation - The Amazon Simple Storage Service (Amazon S3) location for staging Amazon Redshift data. The data retrieved from Amazon Redshift using the <code>SelectSqlQuery</code> query is stored in this location.</p> </li> 
+        /// <li> <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p> </li> 
+        /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li> 
+        /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>DataSource</code>.</p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li> 
         /// </ul>
-        pub fn set_data_spec(
-            mut self,
-            input: std::option::Option<crate::model::RedshiftDataSpec>,
-        ) -> Self {
-            self.data_spec = input;
-            self
+        pub fn set_data_spec(mut self, input: std::option::Option<crate::model::RedshiftDataSpec>) -> Self {
+            self.data_spec = input; self
         }
-        /// <p>A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role on behalf of the user to create the following:</p>
-        /// <ul>
-        /// <li> <p>A security group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an Amazon Redshift cluster</p> </li>
-        /// <li> <p>An Amazon S3 bucket policy to grant Amazon ML read/write permissions on the <code>S3StagingLocation</code> </p> </li>
+        /// <p>A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role on behalf of the user to create the following:</p> 
+        /// <ul> 
+        /// <li> <p>A security group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an Amazon Redshift cluster</p> </li> 
+        /// <li> <p>An Amazon S3 bucket policy to grant Amazon ML read/write permissions on the <code>S3StagingLocation</code> </p> </li> 
         /// </ul>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role on behalf of the user to create the following:</p>
-        /// <ul>
-        /// <li> <p>A security group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an Amazon Redshift cluster</p> </li>
-        /// <li> <p>An Amazon S3 bucket policy to grant Amazon ML read/write permissions on the <code>S3StagingLocation</code> </p> </li>
+        /// <p>A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role on behalf of the user to create the following:</p> 
+        /// <ul> 
+        /// <li> <p>A security group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an Amazon Redshift cluster</p> </li> 
+        /// <li> <p>An Amazon S3 bucket policy to grant Amazon ML read/write permissions on the <code>S3StagingLocation</code> </p> </li> 
         /// </ul>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code>DataSource</code> needs to be used for <code>MLModel</code> training.</p>
         pub fn compute_statistics(mut self, input: bool) -> Self {
@@ -725,70 +554,53 @@ pub mod create_data_source_from_redshift_input {
         }
         /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code>DataSource</code> needs to be used for <code>MLModel</code> training.</p>
         pub fn set_compute_statistics(mut self, input: std::option::Option<bool>) -> Self {
-            self.compute_statistics = input;
-            self
+            self.compute_statistics = input; self
         }
         /// Consumes the builder and constructs a [`CreateDataSourceFromRedshiftInput`](crate::input::CreateDataSourceFromRedshiftInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateDataSourceFromRedshiftInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::CreateDataSourceFromRedshiftInput {
-                data_source_id: self.data_source_id,
-                data_source_name: self.data_source_name,
-                data_spec: self.data_spec,
-                role_arn: self.role_arn,
-                compute_statistics: self.compute_statistics.unwrap_or_default(),
-            })
+        pub fn build(self) -> Result<crate::input::CreateDataSourceFromRedshiftInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CreateDataSourceFromRedshiftInput {
+                    data_source_id: self.data_source_id
+                    ,
+                    data_source_name: self.data_source_name
+                    ,
+                    data_spec: self.data_spec
+                    ,
+                    role_arn: self.role_arn
+                    ,
+                    compute_statistics: self.compute_statistics
+                        .unwrap_or_default()
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateDataSourceFromRedshiftInput {
     /// Consumes the builder and constructs an Operation<[`CreateDataSourceFromRedshift`](crate::operation::CreateDataSourceFromRedshift)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateDataSourceFromRedshift,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateDataSourceFromRedshift, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateDataSourceFromRedshiftInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::CreateDataSourceFromRedshiftInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreateDataSourceFromRedshiftInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CreateDataSourceFromRedshiftInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AmazonML_20141212.CreateDataSourceFromRedshift",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AmazonML_20141212.CreateDataSourceFromRedshift"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -796,58 +608,36 @@ impl CreateDataSourceFromRedshiftInput {
             crate::operation_ser::serialize_operation_crate_operation_create_data_source_from_redshift(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateDataSourceFromRedshift::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateDataSourceFromRedshift",
-            "machinelearning",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateDataSourceFromRedshift::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateDataSourceFromRedshift", "machinelearning"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -859,9 +649,9 @@ impl CreateDataSourceFromRedshiftInput {
 
 /// See [`CreateDataSourceFromS3Input`](crate::input::CreateDataSourceFromS3Input).
 pub mod create_data_source_from_s3_input {
-
+    
     /// A builder for [`CreateDataSourceFromS3Input`](crate::input::CreateDataSourceFromS3Input).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) data_source_id: std::option::Option<std::string::String>,
         pub(crate) data_source_name: std::option::Option<std::string::String>,
@@ -875,12 +665,8 @@ pub mod create_data_source_from_s3_input {
             self
         }
         /// <p>A user-supplied identifier that uniquely identifies the <code>DataSource</code>. </p>
-        pub fn set_data_source_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_source_id = input;
-            self
+        pub fn set_data_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_source_id = input; self
         }
         /// <p>A user-supplied name or description of the <code>DataSource</code>. </p>
         pub fn data_source_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -888,37 +674,29 @@ pub mod create_data_source_from_s3_input {
             self
         }
         /// <p>A user-supplied name or description of the <code>DataSource</code>. </p>
-        pub fn set_data_source_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_source_name = input;
-            self
+        pub fn set_data_source_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_source_name = input; self
         }
-        /// <p>The data specification of a <code>DataSource</code>:</p>
-        /// <ul>
-        /// <li> <p>DataLocationS3 - The Amazon S3 location of the observation data.</p> </li>
-        /// <li> <p>DataSchemaLocationS3 - The Amazon S3 location of the <code>DataSchema</code>.</p> </li>
-        /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>
-        /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
+        /// <p>The data specification of a <code>DataSource</code>:</p> 
+        /// <ul> 
+        /// <li> <p>DataLocationS3 - The Amazon S3 location of the observation data.</p> </li> 
+        /// <li> <p>DataSchemaLocationS3 - The Amazon S3 location of the <code>DataSchema</code>.</p> </li> 
+        /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li> 
+        /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li> 
         /// </ul>
         pub fn data_spec(mut self, input: crate::model::S3DataSpec) -> Self {
             self.data_spec = Some(input);
             self
         }
-        /// <p>The data specification of a <code>DataSource</code>:</p>
-        /// <ul>
-        /// <li> <p>DataLocationS3 - The Amazon S3 location of the observation data.</p> </li>
-        /// <li> <p>DataSchemaLocationS3 - The Amazon S3 location of the <code>DataSchema</code>.</p> </li>
-        /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>
-        /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
+        /// <p>The data specification of a <code>DataSource</code>:</p> 
+        /// <ul> 
+        /// <li> <p>DataLocationS3 - The Amazon S3 location of the observation data.</p> </li> 
+        /// <li> <p>DataSchemaLocationS3 - The Amazon S3 location of the <code>DataSchema</code>.</p> </li> 
+        /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li> 
+        /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li> 
         /// </ul>
-        pub fn set_data_spec(
-            mut self,
-            input: std::option::Option<crate::model::S3DataSpec>,
-        ) -> Self {
-            self.data_spec = input;
-            self
+        pub fn set_data_spec(mut self, input: std::option::Option<crate::model::S3DataSpec>) -> Self {
+            self.data_spec = input; self
         }
         /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training.</p>
         pub fn compute_statistics(mut self, input: bool) -> Self {
@@ -927,129 +705,88 @@ pub mod create_data_source_from_s3_input {
         }
         /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training.</p>
         pub fn set_compute_statistics(mut self, input: std::option::Option<bool>) -> Self {
-            self.compute_statistics = input;
-            self
+            self.compute_statistics = input; self
         }
         /// Consumes the builder and constructs a [`CreateDataSourceFromS3Input`](crate::input::CreateDataSourceFromS3Input).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateDataSourceFromS3Input, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::CreateDataSourceFromS3Input {
-                data_source_id: self.data_source_id,
-                data_source_name: self.data_source_name,
-                data_spec: self.data_spec,
-                compute_statistics: self.compute_statistics.unwrap_or_default(),
-            })
+        pub fn build(self) -> Result<crate::input::CreateDataSourceFromS3Input, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CreateDataSourceFromS3Input {
+                    data_source_id: self.data_source_id
+                    ,
+                    data_source_name: self.data_source_name
+                    ,
+                    data_spec: self.data_spec
+                    ,
+                    compute_statistics: self.compute_statistics
+                        .unwrap_or_default()
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateDataSourceFromS3Input {
     /// Consumes the builder and constructs an Operation<[`CreateDataSourceFromS3`](crate::operation::CreateDataSourceFromS3)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateDataSourceFromS3,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateDataSourceFromS3, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateDataSourceFromS3Input,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::CreateDataSourceFromS3Input, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreateDataSourceFromS3Input,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CreateDataSourceFromS3Input,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AmazonML_20141212.CreateDataSourceFromS3",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AmazonML_20141212.CreateDataSourceFromS3"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_data_source_from_s3(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_data_source_from_s3(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateDataSourceFromS3::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateDataSourceFromS3",
-            "machinelearning",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateDataSourceFromS3::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateDataSourceFromS3", "machinelearning"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1061,9 +798,9 @@ impl CreateDataSourceFromS3Input {
 
 /// See [`CreateEvaluationInput`](crate::input::CreateEvaluationInput).
 pub mod create_evaluation_input {
-
+    
     /// A builder for [`CreateEvaluationInput`](crate::input::CreateEvaluationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) evaluation_id: std::option::Option<std::string::String>,
         pub(crate) evaluation_name: std::option::Option<std::string::String>,
@@ -1077,12 +814,8 @@ pub mod create_evaluation_input {
             self
         }
         /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>.</p>
-        pub fn set_evaluation_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.evaluation_id = input;
-            self
+        pub fn set_evaluation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.evaluation_id = input; self
         }
         /// <p>A user-supplied name or description of the <code>Evaluation</code>.</p>
         pub fn evaluation_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1090,24 +823,19 @@ pub mod create_evaluation_input {
             self
         }
         /// <p>A user-supplied name or description of the <code>Evaluation</code>.</p>
-        pub fn set_evaluation_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.evaluation_name = input;
-            self
+        pub fn set_evaluation_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.evaluation_name = input; self
         }
-        /// <p>The ID of the <code>MLModel</code> to evaluate.</p>
+        /// <p>The ID of the <code>MLModel</code> to evaluate.</p> 
         /// <p>The schema used in creating the <code>MLModel</code> must match the schema of the <code>DataSource</code> used in the <code>Evaluation</code>.</p>
         pub fn ml_model_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ml_model_id = Some(input.into());
             self
         }
-        /// <p>The ID of the <code>MLModel</code> to evaluate.</p>
+        /// <p>The ID of the <code>MLModel</code> to evaluate.</p> 
         /// <p>The schema used in creating the <code>MLModel</code> must match the schema of the <code>DataSource</code> used in the <code>Evaluation</code>.</p>
         pub fn set_ml_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ml_model_id = input;
-            self
+            self.ml_model_id = input; self
         }
         /// <p>The ID of the <code>DataSource</code> for the evaluation. The schema of the <code>DataSource</code> must match the schema used to create the <code>MLModel</code>.</p>
         pub fn evaluation_data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1115,131 +843,88 @@ pub mod create_evaluation_input {
             self
         }
         /// <p>The ID of the <code>DataSource</code> for the evaluation. The schema of the <code>DataSource</code> must match the schema used to create the <code>MLModel</code>.</p>
-        pub fn set_evaluation_data_source_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.evaluation_data_source_id = input;
-            self
+        pub fn set_evaluation_data_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.evaluation_data_source_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateEvaluationInput`](crate::input::CreateEvaluationInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateEvaluationInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::CreateEvaluationInput {
-                evaluation_id: self.evaluation_id,
-                evaluation_name: self.evaluation_name,
-                ml_model_id: self.ml_model_id,
-                evaluation_data_source_id: self.evaluation_data_source_id,
-            })
+        pub fn build(self) -> Result<crate::input::CreateEvaluationInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CreateEvaluationInput {
+                    evaluation_id: self.evaluation_id
+                    ,
+                    evaluation_name: self.evaluation_name
+                    ,
+                    ml_model_id: self.ml_model_id
+                    ,
+                    evaluation_data_source_id: self.evaluation_data_source_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateEvaluationInput {
     /// Consumes the builder and constructs an Operation<[`CreateEvaluation`](crate::operation::CreateEvaluation)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateEvaluation,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateEvaluation, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateEvaluationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::CreateEvaluationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreateEvaluationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CreateEvaluationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AmazonML_20141212.CreateEvaluation",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AmazonML_20141212.CreateEvaluation"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_evaluation(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_evaluation(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateEvaluation::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateEvaluation",
-            "machinelearning",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateEvaluation::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateEvaluation", "machinelearning"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1251,16 +936,14 @@ impl CreateEvaluationInput {
 
 /// See [`CreateMlModelInput`](crate::input::CreateMlModelInput).
 pub mod create_ml_model_input {
-
+    
     /// A builder for [`CreateMlModelInput`](crate::input::CreateMlModelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) ml_model_id: std::option::Option<std::string::String>,
         pub(crate) ml_model_name: std::option::Option<std::string::String>,
         pub(crate) ml_model_type: std::option::Option<crate::model::MlModelType>,
-        pub(crate) parameters: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) training_data_source_id: std::option::Option<std::string::String>,
         pub(crate) recipe: std::option::Option<std::string::String>,
         pub(crate) recipe_uri: std::option::Option<std::string::String>,
@@ -1273,8 +956,7 @@ pub mod create_ml_model_input {
         }
         /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</p>
         pub fn set_ml_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ml_model_id = input;
-            self
+            self.ml_model_id = input; self
         }
         /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
         pub fn ml_model_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1282,78 +964,60 @@ pub mod create_ml_model_input {
             self
         }
         /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
-        pub fn set_ml_model_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ml_model_name = input;
-            self
+        pub fn set_ml_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ml_model_name = input; self
         }
-        /// <p>The category of supervised learning that this <code>MLModel</code> will address. Choose from the following types:</p>
-        /// <ul>
-        /// <li> <p>Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.</p> </li>
-        /// <li> <p>Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.</p> </li>
-        /// <li> <p>Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.</p> </li>
-        /// </ul>
+        /// <p>The category of supervised learning that this <code>MLModel</code> will address. Choose from the following types:</p> 
+        /// <ul> 
+        /// <li> <p>Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.</p> </li> 
+        /// <li> <p>Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.</p> </li> 
+        /// <li> <p>Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.</p> </li> 
+        /// </ul> 
         /// <p> For more information, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.</p>
         pub fn ml_model_type(mut self, input: crate::model::MlModelType) -> Self {
             self.ml_model_type = Some(input);
             self
         }
-        /// <p>The category of supervised learning that this <code>MLModel</code> will address. Choose from the following types:</p>
-        /// <ul>
-        /// <li> <p>Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.</p> </li>
-        /// <li> <p>Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.</p> </li>
-        /// <li> <p>Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.</p> </li>
-        /// </ul>
+        /// <p>The category of supervised learning that this <code>MLModel</code> will address. Choose from the following types:</p> 
+        /// <ul> 
+        /// <li> <p>Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.</p> </li> 
+        /// <li> <p>Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.</p> </li> 
+        /// <li> <p>Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.</p> </li> 
+        /// </ul> 
         /// <p> For more information, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.</p>
-        pub fn set_ml_model_type(
-            mut self,
-            input: std::option::Option<crate::model::MlModelType>,
-        ) -> Self {
-            self.ml_model_type = input;
-            self
+        pub fn set_ml_model_type(mut self, input: std::option::Option<crate::model::MlModelType>) -> Self {
+            self.ml_model_type = input; self
         }
         /// Adds a key-value pair to `parameters`.
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as a map of key-value pairs.</p>
-        /// <p>The following is the current set of training parameters:</p>
-        /// <ul>
-        /// <li> <p> <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending on the input data, the size of the model might affect its performance.</p> <p> The value is an integer that ranges from <code>100000</code> to <code>2147483648</code>. The default value is <code>33554432</code>.</p> </li>
-        /// <li> <p> <code>sgd.maxPasses</code> - The number of times that the training process traverses the observations to build the <code>MLModel</code>. The value is an integer that ranges from <code>1</code> to <code>10000</code>. The default value is <code>10</code>.</p> </li>
-        /// <li> <p> <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling the data improves a model's ability to find the optimal solution for a variety of data types. The valid values are <code>auto</code> and <code>none</code>. The default value is <code>none</code>. We strongly recommend that you shuffle your data.</p> </li>
-        /// <li> <p> <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to zero, resulting in a sparse feature set. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1 normalization. This parameter can't be used when <code>L2</code> is specified. Use this parameter sparingly.</p> </li>
-        /// <li> <p> <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to small, nonzero values. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This parameter can't be used when <code>L1</code> is specified. Use this parameter sparingly.</p> </li>
+        /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as a map of key-value pairs.</p> 
+        /// <p>The following is the current set of training parameters:</p> 
+        /// <ul> 
+        /// <li> <p> <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending on the input data, the size of the model might affect its performance.</p> <p> The value is an integer that ranges from <code>100000</code> to <code>2147483648</code>. The default value is <code>33554432</code>.</p> </li> 
+        /// <li> <p> <code>sgd.maxPasses</code> - The number of times that the training process traverses the observations to build the <code>MLModel</code>. The value is an integer that ranges from <code>1</code> to <code>10000</code>. The default value is <code>10</code>.</p> </li> 
+        /// <li> <p> <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling the data improves a model's ability to find the optimal solution for a variety of data types. The valid values are <code>auto</code> and <code>none</code>. The default value is <code>none</code>. We strongly recommend that you shuffle your data.</p> </li> 
+        /// <li> <p> <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to zero, resulting in a sparse feature set. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1 normalization. This parameter can't be used when <code>L2</code> is specified. Use this parameter sparingly.</p> </li> 
+        /// <li> <p> <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to small, nonzero values. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This parameter can't be used when <code>L1</code> is specified. Use this parameter sparingly.</p> </li> 
         /// </ul>
-        pub fn parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn parameters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.parameters = Some(hash_map);
+                            self
         }
-        /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as a map of key-value pairs.</p>
-        /// <p>The following is the current set of training parameters:</p>
-        /// <ul>
-        /// <li> <p> <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending on the input data, the size of the model might affect its performance.</p> <p> The value is an integer that ranges from <code>100000</code> to <code>2147483648</code>. The default value is <code>33554432</code>.</p> </li>
-        /// <li> <p> <code>sgd.maxPasses</code> - The number of times that the training process traverses the observations to build the <code>MLModel</code>. The value is an integer that ranges from <code>1</code> to <code>10000</code>. The default value is <code>10</code>.</p> </li>
-        /// <li> <p> <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling the data improves a model's ability to find the optimal solution for a variety of data types. The valid values are <code>auto</code> and <code>none</code>. The default value is <code>none</code>. We strongly recommend that you shuffle your data.</p> </li>
-        /// <li> <p> <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to zero, resulting in a sparse feature set. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1 normalization. This parameter can't be used when <code>L2</code> is specified. Use this parameter sparingly.</p> </li>
-        /// <li> <p> <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to small, nonzero values. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This parameter can't be used when <code>L1</code> is specified. Use this parameter sparingly.</p> </li>
+        /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as a map of key-value pairs.</p> 
+        /// <p>The following is the current set of training parameters:</p> 
+        /// <ul> 
+        /// <li> <p> <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending on the input data, the size of the model might affect its performance.</p> <p> The value is an integer that ranges from <code>100000</code> to <code>2147483648</code>. The default value is <code>33554432</code>.</p> </li> 
+        /// <li> <p> <code>sgd.maxPasses</code> - The number of times that the training process traverses the observations to build the <code>MLModel</code>. The value is an integer that ranges from <code>1</code> to <code>10000</code>. The default value is <code>10</code>.</p> </li> 
+        /// <li> <p> <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling the data improves a model's ability to find the optimal solution for a variety of data types. The valid values are <code>auto</code> and <code>none</code>. The default value is <code>none</code>. We strongly recommend that you shuffle your data.</p> </li> 
+        /// <li> <p> <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to zero, resulting in a sparse feature set. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1 normalization. This parameter can't be used when <code>L2</code> is specified. Use this parameter sparingly.</p> </li> 
+        /// <li> <p> <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to small, nonzero values. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This parameter can't be used when <code>L1</code> is specified. Use this parameter sparingly.</p> </li> 
         /// </ul>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.parameters = input; self
         }
         /// <p>The <code>DataSource</code> that points to the training data.</p>
         pub fn training_data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1361,12 +1025,8 @@ pub mod create_ml_model_input {
             self
         }
         /// <p>The <code>DataSource</code> that points to the training data.</p>
-        pub fn set_training_data_source_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.training_data_source_id = input;
-            self
+        pub fn set_training_data_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.training_data_source_id = input; self
         }
         /// <p>The data recipe for creating the <code>MLModel</code>. You must specify either the recipe or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
         pub fn recipe(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1375,8 +1035,7 @@ pub mod create_ml_model_input {
         }
         /// <p>The data recipe for creating the <code>MLModel</code>. You must specify either the recipe or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
         pub fn set_recipe(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.recipe = input;
-            self
+            self.recipe = input; self
         }
         /// <p>The Amazon Simple Storage Service (Amazon S3) location and file name that contains the <code>MLModel</code> recipe. You must specify either the recipe or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
         pub fn recipe_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1385,130 +1044,93 @@ pub mod create_ml_model_input {
         }
         /// <p>The Amazon Simple Storage Service (Amazon S3) location and file name that contains the <code>MLModel</code> recipe. You must specify either the recipe or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
         pub fn set_recipe_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.recipe_uri = input;
-            self
+            self.recipe_uri = input; self
         }
         /// Consumes the builder and constructs a [`CreateMlModelInput`](crate::input::CreateMlModelInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateMlModelInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::CreateMlModelInput {
-                ml_model_id: self.ml_model_id,
-                ml_model_name: self.ml_model_name,
-                ml_model_type: self.ml_model_type,
-                parameters: self.parameters,
-                training_data_source_id: self.training_data_source_id,
-                recipe: self.recipe,
-                recipe_uri: self.recipe_uri,
-            })
+        pub fn build(self) -> Result<crate::input::CreateMlModelInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CreateMlModelInput {
+                    ml_model_id: self.ml_model_id
+                    ,
+                    ml_model_name: self.ml_model_name
+                    ,
+                    ml_model_type: self.ml_model_type
+                    ,
+                    parameters: self.parameters
+                    ,
+                    training_data_source_id: self.training_data_source_id
+                    ,
+                    recipe: self.recipe
+                    ,
+                    recipe_uri: self.recipe_uri
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateMlModelInput {
     /// Consumes the builder and constructs an Operation<[`CreateMLModel`](crate::operation::CreateMLModel)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateMLModel,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateMLModel, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateMlModelInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::CreateMlModelInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreateMlModelInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CreateMlModelInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AmazonML_20141212.CreateMLModel",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AmazonML_20141212.CreateMLModel"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_ml_model(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_ml_model(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateMLModel::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateMLModel",
-            "machinelearning",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateMLModel::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateMLModel", "machinelearning"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1520,9 +1142,9 @@ impl CreateMlModelInput {
 
 /// See [`CreateRealtimeEndpointInput`](crate::input::CreateRealtimeEndpointInput).
 pub mod create_realtime_endpoint_input {
-
+    
     /// A builder for [`CreateRealtimeEndpointInput`](crate::input::CreateRealtimeEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) ml_model_id: std::option::Option<std::string::String>,
     }
@@ -1534,126 +1156,81 @@ pub mod create_realtime_endpoint_input {
         }
         /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
         pub fn set_ml_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ml_model_id = input;
-            self
+            self.ml_model_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateRealtimeEndpointInput`](crate::input::CreateRealtimeEndpointInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateRealtimeEndpointInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::CreateRealtimeEndpointInput {
-                ml_model_id: self.ml_model_id,
-            })
+        pub fn build(self) -> Result<crate::input::CreateRealtimeEndpointInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CreateRealtimeEndpointInput {
+                    ml_model_id: self.ml_model_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateRealtimeEndpointInput {
     /// Consumes the builder and constructs an Operation<[`CreateRealtimeEndpoint`](crate::operation::CreateRealtimeEndpoint)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateRealtimeEndpoint,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateRealtimeEndpoint, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateRealtimeEndpointInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::CreateRealtimeEndpointInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreateRealtimeEndpointInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CreateRealtimeEndpointInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AmazonML_20141212.CreateRealtimeEndpoint",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AmazonML_20141212.CreateRealtimeEndpoint"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_realtime_endpoint(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_realtime_endpoint(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateRealtimeEndpoint::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateRealtimeEndpoint",
-            "machinelearning",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateRealtimeEndpoint::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateRealtimeEndpoint", "machinelearning"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1665,9 +1242,9 @@ impl CreateRealtimeEndpointInput {
 
 /// See [`DeleteBatchPredictionInput`](crate::input::DeleteBatchPredictionInput).
 pub mod delete_batch_prediction_input {
-
+    
     /// A builder for [`DeleteBatchPredictionInput`](crate::input::DeleteBatchPredictionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) batch_prediction_id: std::option::Option<std::string::String>,
     }
@@ -1678,130 +1255,82 @@ pub mod delete_batch_prediction_input {
             self
         }
         /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
-        pub fn set_batch_prediction_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.batch_prediction_id = input;
-            self
+        pub fn set_batch_prediction_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.batch_prediction_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteBatchPredictionInput`](crate::input::DeleteBatchPredictionInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteBatchPredictionInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DeleteBatchPredictionInput {
-                batch_prediction_id: self.batch_prediction_id,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteBatchPredictionInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DeleteBatchPredictionInput {
+                    batch_prediction_id: self.batch_prediction_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteBatchPredictionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBatchPrediction`](crate::operation::DeleteBatchPrediction)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteBatchPrediction,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteBatchPrediction, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteBatchPredictionInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteBatchPredictionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DeleteBatchPredictionInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DeleteBatchPredictionInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AmazonML_20141212.DeleteBatchPrediction",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AmazonML_20141212.DeleteBatchPrediction"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_batch_prediction(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_batch_prediction(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteBatchPrediction::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteBatchPrediction",
-            "machinelearning",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteBatchPrediction::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteBatchPrediction", "machinelearning"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1813,9 +1342,9 @@ impl DeleteBatchPredictionInput {
 
 /// See [`DeleteDataSourceInput`](crate::input::DeleteDataSourceInput).
 pub mod delete_data_source_input {
-
+    
     /// A builder for [`DeleteDataSourceInput`](crate::input::DeleteDataSourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) data_source_id: std::option::Option<std::string::String>,
     }
@@ -1826,128 +1355,82 @@ pub mod delete_data_source_input {
             self
         }
         /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
-        pub fn set_data_source_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_source_id = input;
-            self
+        pub fn set_data_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_source_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDataSourceInput`](crate::input::DeleteDataSourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteDataSourceInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DeleteDataSourceInput {
-                data_source_id: self.data_source_id,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteDataSourceInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DeleteDataSourceInput {
+                    data_source_id: self.data_source_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteDataSourceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDataSource`](crate::operation::DeleteDataSource)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteDataSource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteDataSource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteDataSourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteDataSourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DeleteDataSourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DeleteDataSourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AmazonML_20141212.DeleteDataSource",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AmazonML_20141212.DeleteDataSource"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_data_source(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_data_source(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteDataSource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteDataSource",
-            "machinelearning",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteDataSource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteDataSource", "machinelearning"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1959,9 +1442,9 @@ impl DeleteDataSourceInput {
 
 /// See [`DeleteEvaluationInput`](crate::input::DeleteEvaluationInput).
 pub mod delete_evaluation_input {
-
+    
     /// A builder for [`DeleteEvaluationInput`](crate::input::DeleteEvaluationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) evaluation_id: std::option::Option<std::string::String>,
     }
@@ -1972,128 +1455,82 @@ pub mod delete_evaluation_input {
             self
         }
         /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code> to delete.</p>
-        pub fn set_evaluation_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.evaluation_id = input;
-            self
+        pub fn set_evaluation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.evaluation_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteEvaluationInput`](crate::input::DeleteEvaluationInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteEvaluationInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DeleteEvaluationInput {
-                evaluation_id: self.evaluation_id,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteEvaluationInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DeleteEvaluationInput {
+                    evaluation_id: self.evaluation_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteEvaluationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEvaluation`](crate::operation::DeleteEvaluation)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteEvaluation,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteEvaluation, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteEvaluationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteEvaluationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DeleteEvaluationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DeleteEvaluationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AmazonML_20141212.DeleteEvaluation",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AmazonML_20141212.DeleteEvaluation"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_evaluation(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_evaluation(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteEvaluation::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteEvaluation",
-            "machinelearning",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteEvaluation::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteEvaluation", "machinelearning"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2105,9 +1542,9 @@ impl DeleteEvaluationInput {
 
 /// See [`DeleteMlModelInput`](crate::input::DeleteMlModelInput).
 pub mod delete_ml_model_input {
-
+    
     /// A builder for [`DeleteMlModelInput`](crate::input::DeleteMlModelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) ml_model_id: std::option::Option<std::string::String>,
     }
@@ -2119,124 +1556,81 @@ pub mod delete_ml_model_input {
         }
         /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</p>
         pub fn set_ml_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ml_model_id = input;
-            self
+            self.ml_model_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteMlModelInput`](crate::input::DeleteMlModelInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteMlModelInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DeleteMlModelInput {
-                ml_model_id: self.ml_model_id,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteMlModelInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DeleteMlModelInput {
+                    ml_model_id: self.ml_model_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteMlModelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMLModel`](crate::operation::DeleteMLModel)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteMLModel,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteMLModel, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteMlModelInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteMlModelInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DeleteMlModelInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DeleteMlModelInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AmazonML_20141212.DeleteMLModel",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AmazonML_20141212.DeleteMLModel"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_ml_model(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_ml_model(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteMLModel::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteMLModel",
-            "machinelearning",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteMLModel::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteMLModel", "machinelearning"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2248,9 +1642,9 @@ impl DeleteMlModelInput {
 
 /// See [`DeleteRealtimeEndpointInput`](crate::input::DeleteRealtimeEndpointInput).
 pub mod delete_realtime_endpoint_input {
-
+    
     /// A builder for [`DeleteRealtimeEndpointInput`](crate::input::DeleteRealtimeEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) ml_model_id: std::option::Option<std::string::String>,
     }
@@ -2262,126 +1656,81 @@ pub mod delete_realtime_endpoint_input {
         }
         /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
         pub fn set_ml_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ml_model_id = input;
-            self
+            self.ml_model_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteRealtimeEndpointInput`](crate::input::DeleteRealtimeEndpointInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteRealtimeEndpointInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DeleteRealtimeEndpointInput {
-                ml_model_id: self.ml_model_id,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteRealtimeEndpointInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DeleteRealtimeEndpointInput {
+                    ml_model_id: self.ml_model_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteRealtimeEndpointInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRealtimeEndpoint`](crate::operation::DeleteRealtimeEndpoint)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteRealtimeEndpoint,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteRealtimeEndpoint, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteRealtimeEndpointInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteRealtimeEndpointInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DeleteRealtimeEndpointInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DeleteRealtimeEndpointInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AmazonML_20141212.DeleteRealtimeEndpoint",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AmazonML_20141212.DeleteRealtimeEndpoint"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_realtime_endpoint(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_realtime_endpoint(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteRealtimeEndpoint::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteRealtimeEndpoint",
-            "machinelearning",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteRealtimeEndpoint::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteRealtimeEndpoint", "machinelearning"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2393,9 +1742,9 @@ impl DeleteRealtimeEndpointInput {
 
 /// See [`DeleteTagsInput`](crate::input::DeleteTagsInput).
 pub mod delete_tags_input {
-
+    
     /// A builder for [`DeleteTagsInput`](crate::input::DeleteTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -2409,17 +1758,13 @@ pub mod delete_tags_input {
         /// <p>One or more tags to delete.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-            v.push(input.into());
-            self.tag_keys = Some(v);
-            self
+                            v.push(input.into());
+                            self.tag_keys = Some(v);
+                            self
         }
         /// <p>One or more tags to delete.</p>
-        pub fn set_tag_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.tag_keys = input;
-            self
+        pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.tag_keys = input; self
         }
         /// <p>The ID of the tagged ML object. For example, <code>exampleModelId</code>.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2428,8 +1773,7 @@ pub mod delete_tags_input {
         }
         /// <p>The ID of the tagged ML object. For example, <code>exampleModelId</code>.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_id = input;
-            self
+            self.resource_id = input; self
         }
         /// <p>The type of the tagged ML object.</p>
         pub fn resource_type(mut self, input: crate::model::TaggableResourceType) -> Self {
@@ -2437,129 +1781,86 @@ pub mod delete_tags_input {
             self
         }
         /// <p>The type of the tagged ML object.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<crate::model::TaggableResourceType>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<crate::model::TaggableResourceType>) -> Self {
+            self.resource_type = input; self
         }
         /// Consumes the builder and constructs a [`DeleteTagsInput`](crate::input::DeleteTagsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteTagsInput, aws_smithy_http::operation::BuildError> {
-            Ok(crate::input::DeleteTagsInput {
-                tag_keys: self.tag_keys,
-                resource_id: self.resource_id,
-                resource_type: self.resource_type,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteTagsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DeleteTagsInput {
+                    tag_keys: self.tag_keys
+                    ,
+                    resource_id: self.resource_id
+                    ,
+                    resource_type: self.resource_type
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteTagsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTags`](crate::operation::DeleteTags)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteTags,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteTags, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteTagsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteTagsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DeleteTagsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DeleteTagsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AmazonML_20141212.DeleteTags",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AmazonML_20141212.DeleteTags"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_tags(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_tags(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteTags::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteTags",
-            "machinelearning",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteTags::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteTags", "machinelearning"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2571,12 +1872,11 @@ impl DeleteTagsInput {
 
 /// See [`DescribeBatchPredictionsInput`](crate::input::DescribeBatchPredictionsInput).
 pub mod describe_batch_predictions_input {
-
+    
     /// A builder for [`DescribeBatchPredictionsInput`](crate::input::DescribeBatchPredictionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
-        pub(crate) filter_variable:
-            std::option::Option<crate::model::BatchPredictionFilterVariable>,
+        pub(crate) filter_variable: std::option::Option<crate::model::BatchPredictionFilterVariable>,
         pub(crate) eq: std::option::Option<std::string::String>,
         pub(crate) gt: std::option::Option<std::string::String>,
         pub(crate) lt: std::option::Option<std::string::String>,
@@ -2589,39 +1889,32 @@ pub mod describe_batch_predictions_input {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Use one of the following variables to filter a list of <code>BatchPrediction</code>:</p>
-        /// <ul>
-        /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to the <code>BatchPrediction</code> creation date.</p> </li>
-        /// <li> <p> <code>Status</code> - Sets the search criteria to the <code>BatchPrediction</code> status.</p> </li>
-        /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of the <code>BatchPrediction</code> <b> </b> <code>Name</code>.</p> </li>
-        /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>BatchPrediction</code> creation.</p> </li>
-        /// <li> <p> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> used in the <code>BatchPrediction</code>.</p> </li>
-        /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in the <code>BatchPrediction</code>.</p> </li>
-        /// <li> <p> <code>DataURI</code> - Sets the search criteria to the data file(s) used in the <code>BatchPrediction</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li>
+        /// <p>Use one of the following variables to filter a list of <code>BatchPrediction</code>:</p> 
+        /// <ul> 
+        /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to the <code>BatchPrediction</code> creation date.</p> </li> 
+        /// <li> <p> <code>Status</code> - Sets the search criteria to the <code>BatchPrediction</code> status.</p> </li> 
+        /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of the <code>BatchPrediction</code> <b> </b> <code>Name</code>.</p> </li> 
+        /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>BatchPrediction</code> creation.</p> </li> 
+        /// <li> <p> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> used in the <code>BatchPrediction</code>.</p> </li> 
+        /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in the <code>BatchPrediction</code>.</p> </li> 
+        /// <li> <p> <code>DataURI</code> - Sets the search criteria to the data file(s) used in the <code>BatchPrediction</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li> 
         /// </ul>
-        pub fn filter_variable(
-            mut self,
-            input: crate::model::BatchPredictionFilterVariable,
-        ) -> Self {
+        pub fn filter_variable(mut self, input: crate::model::BatchPredictionFilterVariable) -> Self {
             self.filter_variable = Some(input);
             self
         }
-        /// <p>Use one of the following variables to filter a list of <code>BatchPrediction</code>:</p>
-        /// <ul>
-        /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to the <code>BatchPrediction</code> creation date.</p> </li>
-        /// <li> <p> <code>Status</code> - Sets the search criteria to the <code>BatchPrediction</code> status.</p> </li>
-        /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of the <code>BatchPrediction</code> <b> </b> <code>Name</code>.</p> </li>
-        /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>BatchPrediction</code> creation.</p> </li>
-        /// <li> <p> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> used in the <code>BatchPrediction</code>.</p> </li>
-        /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in the <code>BatchPrediction</code>.</p> </li>
-        /// <li> <p> <code>DataURI</code> - Sets the search criteria to the data file(s) used in the <code>BatchPrediction</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li>
+        /// <p>Use one of the following variables to filter a list of <code>BatchPrediction</code>:</p> 
+        /// <ul> 
+        /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to the <code>BatchPrediction</code> creation date.</p> </li> 
+        /// <li> <p> <code>Status</code> - Sets the search criteria to the <code>BatchPrediction</code> status.</p> </li> 
+        /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of the <code>BatchPrediction</code> <b> </b> <code>Name</code>.</p> </li> 
+        /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>BatchPrediction</code> creation.</p> </li> 
+        /// <li> <p> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> used in the <code>BatchPrediction</code>.</p> </li> 
+        /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in the <code>BatchPrediction</code>.</p> </li> 
+        /// <li> <p> <code>DataURI</code> - Sets the search criteria to the data file(s) used in the <code>BatchPrediction</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li> 
         /// </ul>
-        pub fn set_filter_variable(
-            mut self,
-            input: std::option::Option<crate::model::BatchPredictionFilterVariable>,
-        ) -> Self {
-            self.filter_variable = input;
-            self
+        pub fn set_filter_variable(mut self, input: std::option::Option<crate::model::BatchPredictionFilterVariable>) -> Self {
+            self.filter_variable = input; self
         }
         /// <p>The equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
         pub fn eq(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2630,8 +1923,7 @@ pub mod describe_batch_predictions_input {
         }
         /// <p>The equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
         pub fn set_eq(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.eq = input;
-            self
+            self.eq = input; self
         }
         /// <p>The greater than operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
         pub fn gt(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2640,8 +1932,7 @@ pub mod describe_batch_predictions_input {
         }
         /// <p>The greater than operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
         pub fn set_gt(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.gt = input;
-            self
+            self.gt = input; self
         }
         /// <p>The less than operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
         pub fn lt(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2650,8 +1941,7 @@ pub mod describe_batch_predictions_input {
         }
         /// <p>The less than operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
         pub fn set_lt(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lt = input;
-            self
+            self.lt = input; self
         }
         /// <p>The greater than or equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
         pub fn ge(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2660,8 +1950,7 @@ pub mod describe_batch_predictions_input {
         }
         /// <p>The greater than or equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
         pub fn set_ge(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ge = input;
-            self
+            self.ge = input; self
         }
         /// <p>The less than or equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
         pub fn le(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2670,8 +1959,7 @@ pub mod describe_batch_predictions_input {
         }
         /// <p>The less than or equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
         pub fn set_le(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.le = input;
-            self
+            self.le = input; self
         }
         /// <p>The not equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
         pub fn ne(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2680,53 +1968,47 @@ pub mod describe_batch_predictions_input {
         }
         /// <p>The not equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
         pub fn set_ne(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ne = input;
-            self
+            self.ne = input; self
         }
-        /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-        /// <p>For example, a <code>Batch Prediction</code> operation could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>BatchPrediction</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
-        /// <ul>
-        /// <li> <p>2014-09</p> </li>
-        /// <li> <p>2014-09-09</p> </li>
-        /// <li> <p>2014-09-09-Holiday</p> </li>
+        /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p> 
+        /// <p>For example, a <code>Batch Prediction</code> operation could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>BatchPrediction</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p> 
+        /// <ul> 
+        /// <li> <p>2014-09</p> </li> 
+        /// <li> <p>2014-09-09</p> </li> 
+        /// <li> <p>2014-09-09-Holiday</p> </li> 
         /// </ul>
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.prefix = Some(input.into());
             self
         }
-        /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-        /// <p>For example, a <code>Batch Prediction</code> operation could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>BatchPrediction</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
-        /// <ul>
-        /// <li> <p>2014-09</p> </li>
-        /// <li> <p>2014-09-09</p> </li>
-        /// <li> <p>2014-09-09-Holiday</p> </li>
+        /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p> 
+        /// <p>For example, a <code>Batch Prediction</code> operation could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>BatchPrediction</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p> 
+        /// <ul> 
+        /// <li> <p>2014-09</p> </li> 
+        /// <li> <p>2014-09-09</p> </li> 
+        /// <li> <p>2014-09-09-Holiday</p> </li> 
         /// </ul>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.prefix = input;
-            self
+            self.prefix = input; self
         }
-        /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>s.</p>
-        /// <ul>
-        /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
-        /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
-        /// </ul>
+        /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>s.</p> 
+        /// <ul> 
+        /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li> 
+        /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li> 
+        /// </ul> 
         /// <p>Results are sorted by <code>FilterVariable</code>.</p>
         pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
             self.sort_order = Some(input);
             self
         }
-        /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>s.</p>
-        /// <ul>
-        /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
-        /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
-        /// </ul>
+        /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>s.</p> 
+        /// <ul> 
+        /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li> 
+        /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li> 
+        /// </ul> 
         /// <p>Results are sorted by <code>FilterVariable</code>.</p>
-        pub fn set_sort_order(
-            mut self,
-            input: std::option::Option<crate::model::SortOrder>,
-        ) -> Self {
-            self.sort_order = input;
-            self
+        pub fn set_sort_order(mut self, input: std::option::Option<crate::model::SortOrder>) -> Self {
+            self.sort_order = input; self
         }
         /// <p>An ID of the page in the paginated results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2735,8 +2017,7 @@ pub mod describe_batch_predictions_input {
         }
         /// <p>An ID of the page in the paginated results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The number of pages of information to include in the result. The range of acceptable values is <code>1</code> through <code>100</code>. The default value is <code>100</code>.</p>
         pub fn limit(mut self, input: i32) -> Self {
@@ -2745,138 +2026,101 @@ pub mod describe_batch_predictions_input {
         }
         /// <p>The number of pages of information to include in the result. The range of acceptable values is <code>1</code> through <code>100</code>. The default value is <code>100</code>.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-            self.limit = input;
-            self
+            self.limit = input; self
         }
         /// Consumes the builder and constructs a [`DescribeBatchPredictionsInput`](crate::input::DescribeBatchPredictionsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeBatchPredictionsInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::DescribeBatchPredictionsInput {
-                filter_variable: self.filter_variable,
-                eq: self.eq,
-                gt: self.gt,
-                lt: self.lt,
-                ge: self.ge,
-                le: self.le,
-                ne: self.ne,
-                prefix: self.prefix,
-                sort_order: self.sort_order,
-                next_token: self.next_token,
-                limit: self.limit,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeBatchPredictionsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DescribeBatchPredictionsInput {
+                    filter_variable: self.filter_variable
+                    ,
+                    eq: self.eq
+                    ,
+                    gt: self.gt
+                    ,
+                    lt: self.lt
+                    ,
+                    ge: self.ge
+                    ,
+                    le: self.le
+                    ,
+                    ne: self.ne
+                    ,
+                    prefix: self.prefix
+                    ,
+                    sort_order: self.sort_order
+                    ,
+                    next_token: self.next_token
+                    ,
+                    limit: self.limit
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeBatchPredictionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBatchPredictions`](crate::operation::DescribeBatchPredictions)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeBatchPredictions,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeBatchPredictions, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeBatchPredictionsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeBatchPredictionsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribeBatchPredictionsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DescribeBatchPredictionsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AmazonML_20141212.DescribeBatchPredictions",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AmazonML_20141212.DescribeBatchPredictions"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_batch_predictions(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_batch_predictions(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeBatchPredictions::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeBatchPredictions",
-            "machinelearning",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeBatchPredictions::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeBatchPredictions", "machinelearning"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2888,9 +2132,9 @@ impl DescribeBatchPredictionsInput {
 
 /// See [`DescribeDataSourcesInput`](crate::input::DescribeDataSourcesInput).
 pub mod describe_data_sources_input {
-
+    
     /// A builder for [`DescribeDataSourcesInput`](crate::input::DescribeDataSourcesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) filter_variable: std::option::Option<crate::model::DataSourceFilterVariable>,
         pub(crate) eq: std::option::Option<std::string::String>,
@@ -2905,32 +2149,28 @@ pub mod describe_data_sources_input {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Use one of the following variables to filter a list of <code>DataSource</code>:</p>
-        /// <ul>
-        /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</p> </li>
-        /// <li> <p> <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</p> </li>
-        /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.</p> </li>
-        /// <li> <p> <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li>
-        /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p> </li>
+        /// <p>Use one of the following variables to filter a list of <code>DataSource</code>:</p> 
+        /// <ul> 
+        /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</p> </li> 
+        /// <li> <p> <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</p> </li> 
+        /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.</p> </li> 
+        /// <li> <p> <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li> 
+        /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p> </li> 
         /// </ul>
         pub fn filter_variable(mut self, input: crate::model::DataSourceFilterVariable) -> Self {
             self.filter_variable = Some(input);
             self
         }
-        /// <p>Use one of the following variables to filter a list of <code>DataSource</code>:</p>
-        /// <ul>
-        /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</p> </li>
-        /// <li> <p> <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</p> </li>
-        /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.</p> </li>
-        /// <li> <p> <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li>
-        /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p> </li>
+        /// <p>Use one of the following variables to filter a list of <code>DataSource</code>:</p> 
+        /// <ul> 
+        /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</p> </li> 
+        /// <li> <p> <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</p> </li> 
+        /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.</p> </li> 
+        /// <li> <p> <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li> 
+        /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p> </li> 
         /// </ul>
-        pub fn set_filter_variable(
-            mut self,
-            input: std::option::Option<crate::model::DataSourceFilterVariable>,
-        ) -> Self {
-            self.filter_variable = input;
-            self
+        pub fn set_filter_variable(mut self, input: std::option::Option<crate::model::DataSourceFilterVariable>) -> Self {
+            self.filter_variable = input; self
         }
         /// <p>The equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
         pub fn eq(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2939,8 +2179,7 @@ pub mod describe_data_sources_input {
         }
         /// <p>The equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
         pub fn set_eq(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.eq = input;
-            self
+            self.eq = input; self
         }
         /// <p>The greater than operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
         pub fn gt(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2949,8 +2188,7 @@ pub mod describe_data_sources_input {
         }
         /// <p>The greater than operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
         pub fn set_gt(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.gt = input;
-            self
+            self.gt = input; self
         }
         /// <p>The less than operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
         pub fn lt(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2959,8 +2197,7 @@ pub mod describe_data_sources_input {
         }
         /// <p>The less than operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
         pub fn set_lt(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lt = input;
-            self
+            self.lt = input; self
         }
         /// <p>The greater than or equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
         pub fn ge(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2969,8 +2206,7 @@ pub mod describe_data_sources_input {
         }
         /// <p>The greater than or equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
         pub fn set_ge(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ge = input;
-            self
+            self.ge = input; self
         }
         /// <p>The less than or equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
         pub fn le(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2979,8 +2215,7 @@ pub mod describe_data_sources_input {
         }
         /// <p>The less than or equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
         pub fn set_le(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.le = input;
-            self
+            self.le = input; self
         }
         /// <p>The not equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
         pub fn ne(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2989,53 +2224,47 @@ pub mod describe_data_sources_input {
         }
         /// <p>The not equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
         pub fn set_ne(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ne = input;
-            self
+            self.ne = input; self
         }
-        /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-        /// <p>For example, a <code>DataSource</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>DataSource</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
-        /// <ul>
-        /// <li> <p>2014-09</p> </li>
-        /// <li> <p>2014-09-09</p> </li>
-        /// <li> <p>2014-09-09-Holiday</p> </li>
+        /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p> 
+        /// <p>For example, a <code>DataSource</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>DataSource</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p> 
+        /// <ul> 
+        /// <li> <p>2014-09</p> </li> 
+        /// <li> <p>2014-09-09</p> </li> 
+        /// <li> <p>2014-09-09-Holiday</p> </li> 
         /// </ul>
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.prefix = Some(input.into());
             self
         }
-        /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-        /// <p>For example, a <code>DataSource</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>DataSource</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
-        /// <ul>
-        /// <li> <p>2014-09</p> </li>
-        /// <li> <p>2014-09-09</p> </li>
-        /// <li> <p>2014-09-09-Holiday</p> </li>
+        /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p> 
+        /// <p>For example, a <code>DataSource</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>DataSource</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p> 
+        /// <ul> 
+        /// <li> <p>2014-09</p> </li> 
+        /// <li> <p>2014-09-09</p> </li> 
+        /// <li> <p>2014-09-09-Holiday</p> </li> 
         /// </ul>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.prefix = input;
-            self
+            self.prefix = input; self
         }
-        /// <p>A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.</p>
-        /// <ul>
-        /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
-        /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
-        /// </ul>
+        /// <p>A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.</p> 
+        /// <ul> 
+        /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li> 
+        /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li> 
+        /// </ul> 
         /// <p>Results are sorted by <code>FilterVariable</code>.</p>
         pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
             self.sort_order = Some(input);
             self
         }
-        /// <p>A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.</p>
-        /// <ul>
-        /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
-        /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
-        /// </ul>
+        /// <p>A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.</p> 
+        /// <ul> 
+        /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li> 
+        /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li> 
+        /// </ul> 
         /// <p>Results are sorted by <code>FilterVariable</code>.</p>
-        pub fn set_sort_order(
-            mut self,
-            input: std::option::Option<crate::model::SortOrder>,
-        ) -> Self {
-            self.sort_order = input;
-            self
+        pub fn set_sort_order(mut self, input: std::option::Option<crate::model::SortOrder>) -> Self {
+            self.sort_order = input; self
         }
         /// <p>The ID of the page in the paginated results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3044,8 +2273,7 @@ pub mod describe_data_sources_input {
         }
         /// <p>The ID of the page in the paginated results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p> The maximum number of <code>DataSource</code> to include in the result.</p>
         pub fn limit(mut self, input: i32) -> Self {
@@ -3054,134 +2282,101 @@ pub mod describe_data_sources_input {
         }
         /// <p> The maximum number of <code>DataSource</code> to include in the result.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-            self.limit = input;
-            self
+            self.limit = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDataSourcesInput`](crate::input::DescribeDataSourcesInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DescribeDataSourcesInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DescribeDataSourcesInput {
-                filter_variable: self.filter_variable,
-                eq: self.eq,
-                gt: self.gt,
-                lt: self.lt,
-                ge: self.ge,
-                le: self.le,
-                ne: self.ne,
-                prefix: self.prefix,
-                sort_order: self.sort_order,
-                next_token: self.next_token,
-                limit: self.limit,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeDataSourcesInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DescribeDataSourcesInput {
+                    filter_variable: self.filter_variable
+                    ,
+                    eq: self.eq
+                    ,
+                    gt: self.gt
+                    ,
+                    lt: self.lt
+                    ,
+                    ge: self.ge
+                    ,
+                    le: self.le
+                    ,
+                    ne: self.ne
+                    ,
+                    prefix: self.prefix
+                    ,
+                    sort_order: self.sort_order
+                    ,
+                    next_token: self.next_token
+                    ,
+                    limit: self.limit
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeDataSourcesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDataSources`](crate::operation::DescribeDataSources)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeDataSources,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeDataSources, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeDataSourcesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeDataSourcesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribeDataSourcesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DescribeDataSourcesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AmazonML_20141212.DescribeDataSources",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AmazonML_20141212.DescribeDataSources"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_data_sources(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_data_sources(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeDataSources::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeDataSources",
-            "machinelearning",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeDataSources::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeDataSources", "machinelearning"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3193,9 +2388,9 @@ impl DescribeDataSourcesInput {
 
 /// See [`DescribeEvaluationsInput`](crate::input::DescribeEvaluationsInput).
 pub mod describe_evaluations_input {
-
+    
     /// A builder for [`DescribeEvaluationsInput`](crate::input::DescribeEvaluationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) filter_variable: std::option::Option<crate::model::EvaluationFilterVariable>,
         pub(crate) eq: std::option::Option<std::string::String>,
@@ -3210,36 +2405,32 @@ pub mod describe_evaluations_input {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Use one of the following variable to filter a list of <code>Evaluation</code> objects:</p>
-        /// <ul>
-        /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</p> </li>
-        /// <li> <p> <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</p> </li>
-        /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b> <code>Name</code>.</p> </li>
-        /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.</p> </li>
-        /// <li> <p> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</p> </li>
-        /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in <code>Evaluation</code>.</p> </li>
-        /// <li> <p> <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li>
+        /// <p>Use one of the following variable to filter a list of <code>Evaluation</code> objects:</p> 
+        /// <ul> 
+        /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</p> </li> 
+        /// <li> <p> <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</p> </li> 
+        /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b> <code>Name</code>.</p> </li> 
+        /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.</p> </li> 
+        /// <li> <p> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</p> </li> 
+        /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in <code>Evaluation</code>.</p> </li> 
+        /// <li> <p> <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li> 
         /// </ul>
         pub fn filter_variable(mut self, input: crate::model::EvaluationFilterVariable) -> Self {
             self.filter_variable = Some(input);
             self
         }
-        /// <p>Use one of the following variable to filter a list of <code>Evaluation</code> objects:</p>
-        /// <ul>
-        /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</p> </li>
-        /// <li> <p> <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</p> </li>
-        /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b> <code>Name</code>.</p> </li>
-        /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.</p> </li>
-        /// <li> <p> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</p> </li>
-        /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in <code>Evaluation</code>.</p> </li>
-        /// <li> <p> <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li>
+        /// <p>Use one of the following variable to filter a list of <code>Evaluation</code> objects:</p> 
+        /// <ul> 
+        /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</p> </li> 
+        /// <li> <p> <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</p> </li> 
+        /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b> <code>Name</code>.</p> </li> 
+        /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.</p> </li> 
+        /// <li> <p> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</p> </li> 
+        /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in <code>Evaluation</code>.</p> </li> 
+        /// <li> <p> <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li> 
         /// </ul>
-        pub fn set_filter_variable(
-            mut self,
-            input: std::option::Option<crate::model::EvaluationFilterVariable>,
-        ) -> Self {
-            self.filter_variable = input;
-            self
+        pub fn set_filter_variable(mut self, input: std::option::Option<crate::model::EvaluationFilterVariable>) -> Self {
+            self.filter_variable = input; self
         }
         /// <p>The equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
         pub fn eq(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3248,8 +2439,7 @@ pub mod describe_evaluations_input {
         }
         /// <p>The equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
         pub fn set_eq(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.eq = input;
-            self
+            self.eq = input; self
         }
         /// <p>The greater than operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
         pub fn gt(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3258,8 +2448,7 @@ pub mod describe_evaluations_input {
         }
         /// <p>The greater than operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
         pub fn set_gt(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.gt = input;
-            self
+            self.gt = input; self
         }
         /// <p>The less than operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
         pub fn lt(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3268,8 +2457,7 @@ pub mod describe_evaluations_input {
         }
         /// <p>The less than operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
         pub fn set_lt(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lt = input;
-            self
+            self.lt = input; self
         }
         /// <p>The greater than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
         pub fn ge(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3278,8 +2466,7 @@ pub mod describe_evaluations_input {
         }
         /// <p>The greater than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
         pub fn set_ge(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ge = input;
-            self
+            self.ge = input; self
         }
         /// <p>The less than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
         pub fn le(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3288,8 +2475,7 @@ pub mod describe_evaluations_input {
         }
         /// <p>The less than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
         pub fn set_le(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.le = input;
-            self
+            self.le = input; self
         }
         /// <p>The not equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
         pub fn ne(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3298,53 +2484,47 @@ pub mod describe_evaluations_input {
         }
         /// <p>The not equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
         pub fn set_ne(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ne = input;
-            self
+            self.ne = input; self
         }
-        /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-        /// <p>For example, an <code>Evaluation</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>Evaluation</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
-        /// <ul>
-        /// <li> <p>2014-09</p> </li>
-        /// <li> <p>2014-09-09</p> </li>
-        /// <li> <p>2014-09-09-Holiday</p> </li>
+        /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p> 
+        /// <p>For example, an <code>Evaluation</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>Evaluation</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p> 
+        /// <ul> 
+        /// <li> <p>2014-09</p> </li> 
+        /// <li> <p>2014-09-09</p> </li> 
+        /// <li> <p>2014-09-09-Holiday</p> </li> 
         /// </ul>
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.prefix = Some(input.into());
             self
         }
-        /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-        /// <p>For example, an <code>Evaluation</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>Evaluation</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
-        /// <ul>
-        /// <li> <p>2014-09</p> </li>
-        /// <li> <p>2014-09-09</p> </li>
-        /// <li> <p>2014-09-09-Holiday</p> </li>
+        /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p> 
+        /// <p>For example, an <code>Evaluation</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>Evaluation</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p> 
+        /// <ul> 
+        /// <li> <p>2014-09</p> </li> 
+        /// <li> <p>2014-09-09</p> </li> 
+        /// <li> <p>2014-09-09-Holiday</p> </li> 
         /// </ul>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.prefix = input;
-            self
+            self.prefix = input; self
         }
-        /// <p>A two-value parameter that determines the sequence of the resulting list of <code>Evaluation</code>.</p>
-        /// <ul>
-        /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
-        /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
-        /// </ul>
+        /// <p>A two-value parameter that determines the sequence of the resulting list of <code>Evaluation</code>.</p> 
+        /// <ul> 
+        /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li> 
+        /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li> 
+        /// </ul> 
         /// <p>Results are sorted by <code>FilterVariable</code>.</p>
         pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
             self.sort_order = Some(input);
             self
         }
-        /// <p>A two-value parameter that determines the sequence of the resulting list of <code>Evaluation</code>.</p>
-        /// <ul>
-        /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
-        /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
-        /// </ul>
+        /// <p>A two-value parameter that determines the sequence of the resulting list of <code>Evaluation</code>.</p> 
+        /// <ul> 
+        /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li> 
+        /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li> 
+        /// </ul> 
         /// <p>Results are sorted by <code>FilterVariable</code>.</p>
-        pub fn set_sort_order(
-            mut self,
-            input: std::option::Option<crate::model::SortOrder>,
-        ) -> Self {
-            self.sort_order = input;
-            self
+        pub fn set_sort_order(mut self, input: std::option::Option<crate::model::SortOrder>) -> Self {
+            self.sort_order = input; self
         }
         /// <p>The ID of the page in the paginated results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3353,8 +2533,7 @@ pub mod describe_evaluations_input {
         }
         /// <p>The ID of the page in the paginated results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p> The maximum number of <code>Evaluation</code> to include in the result.</p>
         pub fn limit(mut self, input: i32) -> Self {
@@ -3363,134 +2542,101 @@ pub mod describe_evaluations_input {
         }
         /// <p> The maximum number of <code>Evaluation</code> to include in the result.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-            self.limit = input;
-            self
+            self.limit = input; self
         }
         /// Consumes the builder and constructs a [`DescribeEvaluationsInput`](crate::input::DescribeEvaluationsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DescribeEvaluationsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DescribeEvaluationsInput {
-                filter_variable: self.filter_variable,
-                eq: self.eq,
-                gt: self.gt,
-                lt: self.lt,
-                ge: self.ge,
-                le: self.le,
-                ne: self.ne,
-                prefix: self.prefix,
-                sort_order: self.sort_order,
-                next_token: self.next_token,
-                limit: self.limit,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeEvaluationsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DescribeEvaluationsInput {
+                    filter_variable: self.filter_variable
+                    ,
+                    eq: self.eq
+                    ,
+                    gt: self.gt
+                    ,
+                    lt: self.lt
+                    ,
+                    ge: self.ge
+                    ,
+                    le: self.le
+                    ,
+                    ne: self.ne
+                    ,
+                    prefix: self.prefix
+                    ,
+                    sort_order: self.sort_order
+                    ,
+                    next_token: self.next_token
+                    ,
+                    limit: self.limit
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeEvaluationsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEvaluations`](crate::operation::DescribeEvaluations)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeEvaluations,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeEvaluations, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeEvaluationsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeEvaluationsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribeEvaluationsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DescribeEvaluationsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AmazonML_20141212.DescribeEvaluations",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AmazonML_20141212.DescribeEvaluations"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_evaluations(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_evaluations(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeEvaluations::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeEvaluations",
-            "machinelearning",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeEvaluations::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeEvaluations", "machinelearning"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3502,9 +2648,9 @@ impl DescribeEvaluationsInput {
 
 /// See [`DescribeMlModelsInput`](crate::input::DescribeMlModelsInput).
 pub mod describe_ml_models_input {
-
+    
     /// A builder for [`DescribeMlModelsInput`](crate::input::DescribeMlModelsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) filter_variable: std::option::Option<crate::model::MlModelFilterVariable>,
         pub(crate) eq: std::option::Option<std::string::String>,
@@ -3519,40 +2665,36 @@ pub mod describe_ml_models_input {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Use one of the following variables to filter a list of <code>MLModel</code>:</p>
-        /// <ul>
-        /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.</p> </li>
-        /// <li> <p> <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.</p> </li>
-        /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code> <b> </b> <code>Name</code>.</p> </li>
-        /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code> creation.</p> </li>
-        /// <li> <p> <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train one or more <code>MLModel</code>.</p> </li>
-        /// <li> <p> <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time endpoint status.</p> </li>
-        /// <li> <p> <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or multi-class.</p> </li>
-        /// <li> <p> <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.</p> </li>
-        /// <li> <p> <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li>
+        /// <p>Use one of the following variables to filter a list of <code>MLModel</code>:</p> 
+        /// <ul> 
+        /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.</p> </li> 
+        /// <li> <p> <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.</p> </li> 
+        /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code> <b> </b> <code>Name</code>.</p> </li> 
+        /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code> creation.</p> </li> 
+        /// <li> <p> <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train one or more <code>MLModel</code>.</p> </li> 
+        /// <li> <p> <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time endpoint status.</p> </li> 
+        /// <li> <p> <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or multi-class.</p> </li> 
+        /// <li> <p> <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.</p> </li> 
+        /// <li> <p> <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li> 
         /// </ul>
         pub fn filter_variable(mut self, input: crate::model::MlModelFilterVariable) -> Self {
             self.filter_variable = Some(input);
             self
         }
-        /// <p>Use one of the following variables to filter a list of <code>MLModel</code>:</p>
-        /// <ul>
-        /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.</p> </li>
-        /// <li> <p> <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.</p> </li>
-        /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code> <b> </b> <code>Name</code>.</p> </li>
-        /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code> creation.</p> </li>
-        /// <li> <p> <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train one or more <code>MLModel</code>.</p> </li>
-        /// <li> <p> <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time endpoint status.</p> </li>
-        /// <li> <p> <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or multi-class.</p> </li>
-        /// <li> <p> <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.</p> </li>
-        /// <li> <p> <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li>
+        /// <p>Use one of the following variables to filter a list of <code>MLModel</code>:</p> 
+        /// <ul> 
+        /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.</p> </li> 
+        /// <li> <p> <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.</p> </li> 
+        /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code> <b> </b> <code>Name</code>.</p> </li> 
+        /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code> creation.</p> </li> 
+        /// <li> <p> <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train one or more <code>MLModel</code>.</p> </li> 
+        /// <li> <p> <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time endpoint status.</p> </li> 
+        /// <li> <p> <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or multi-class.</p> </li> 
+        /// <li> <p> <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.</p> </li> 
+        /// <li> <p> <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li> 
         /// </ul>
-        pub fn set_filter_variable(
-            mut self,
-            input: std::option::Option<crate::model::MlModelFilterVariable>,
-        ) -> Self {
-            self.filter_variable = input;
-            self
+        pub fn set_filter_variable(mut self, input: std::option::Option<crate::model::MlModelFilterVariable>) -> Self {
+            self.filter_variable = input; self
         }
         /// <p>The equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
         pub fn eq(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3561,8 +2703,7 @@ pub mod describe_ml_models_input {
         }
         /// <p>The equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
         pub fn set_eq(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.eq = input;
-            self
+            self.eq = input; self
         }
         /// <p>The greater than operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
         pub fn gt(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3571,8 +2712,7 @@ pub mod describe_ml_models_input {
         }
         /// <p>The greater than operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
         pub fn set_gt(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.gt = input;
-            self
+            self.gt = input; self
         }
         /// <p>The less than operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
         pub fn lt(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3581,8 +2721,7 @@ pub mod describe_ml_models_input {
         }
         /// <p>The less than operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
         pub fn set_lt(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lt = input;
-            self
+            self.lt = input; self
         }
         /// <p>The greater than or equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
         pub fn ge(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3591,8 +2730,7 @@ pub mod describe_ml_models_input {
         }
         /// <p>The greater than or equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
         pub fn set_ge(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ge = input;
-            self
+            self.ge = input; self
         }
         /// <p>The less than or equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
         pub fn le(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3601,8 +2739,7 @@ pub mod describe_ml_models_input {
         }
         /// <p>The less than or equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
         pub fn set_le(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.le = input;
-            self
+            self.le = input; self
         }
         /// <p>The not equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
         pub fn ne(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3611,53 +2748,47 @@ pub mod describe_ml_models_input {
         }
         /// <p>The not equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
         pub fn set_ne(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ne = input;
-            self
+            self.ne = input; self
         }
-        /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-        /// <p>For example, an <code>MLModel</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>MLModel</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
-        /// <ul>
-        /// <li> <p>2014-09</p> </li>
-        /// <li> <p>2014-09-09</p> </li>
-        /// <li> <p>2014-09-09-Holiday</p> </li>
+        /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p> 
+        /// <p>For example, an <code>MLModel</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>MLModel</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p> 
+        /// <ul> 
+        /// <li> <p>2014-09</p> </li> 
+        /// <li> <p>2014-09-09</p> </li> 
+        /// <li> <p>2014-09-09-Holiday</p> </li> 
         /// </ul>
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.prefix = Some(input.into());
             self
         }
-        /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-        /// <p>For example, an <code>MLModel</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>MLModel</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
-        /// <ul>
-        /// <li> <p>2014-09</p> </li>
-        /// <li> <p>2014-09-09</p> </li>
-        /// <li> <p>2014-09-09-Holiday</p> </li>
+        /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p> 
+        /// <p>For example, an <code>MLModel</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>MLModel</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p> 
+        /// <ul> 
+        /// <li> <p>2014-09</p> </li> 
+        /// <li> <p>2014-09-09</p> </li> 
+        /// <li> <p>2014-09-09-Holiday</p> </li> 
         /// </ul>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.prefix = input;
-            self
+            self.prefix = input; self
         }
-        /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>.</p>
-        /// <ul>
-        /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
-        /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
-        /// </ul>
+        /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>.</p> 
+        /// <ul> 
+        /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li> 
+        /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li> 
+        /// </ul> 
         /// <p>Results are sorted by <code>FilterVariable</code>.</p>
         pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
             self.sort_order = Some(input);
             self
         }
-        /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>.</p>
-        /// <ul>
-        /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
-        /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
-        /// </ul>
+        /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>.</p> 
+        /// <ul> 
+        /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li> 
+        /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li> 
+        /// </ul> 
         /// <p>Results are sorted by <code>FilterVariable</code>.</p>
-        pub fn set_sort_order(
-            mut self,
-            input: std::option::Option<crate::model::SortOrder>,
-        ) -> Self {
-            self.sort_order = input;
-            self
+        pub fn set_sort_order(mut self, input: std::option::Option<crate::model::SortOrder>) -> Self {
+            self.sort_order = input; self
         }
         /// <p>The ID of the page in the paginated results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3666,8 +2797,7 @@ pub mod describe_ml_models_input {
         }
         /// <p>The ID of the page in the paginated results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The number of pages of information to include in the result. The range of acceptable values is <code>1</code> through <code>100</code>. The default value is <code>100</code>.</p>
         pub fn limit(mut self, input: i32) -> Self {
@@ -3676,134 +2806,101 @@ pub mod describe_ml_models_input {
         }
         /// <p>The number of pages of information to include in the result. The range of acceptable values is <code>1</code> through <code>100</code>. The default value is <code>100</code>.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-            self.limit = input;
-            self
+            self.limit = input; self
         }
         /// Consumes the builder and constructs a [`DescribeMlModelsInput`](crate::input::DescribeMlModelsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DescribeMlModelsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DescribeMlModelsInput {
-                filter_variable: self.filter_variable,
-                eq: self.eq,
-                gt: self.gt,
-                lt: self.lt,
-                ge: self.ge,
-                le: self.le,
-                ne: self.ne,
-                prefix: self.prefix,
-                sort_order: self.sort_order,
-                next_token: self.next_token,
-                limit: self.limit,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeMlModelsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DescribeMlModelsInput {
+                    filter_variable: self.filter_variable
+                    ,
+                    eq: self.eq
+                    ,
+                    gt: self.gt
+                    ,
+                    lt: self.lt
+                    ,
+                    ge: self.ge
+                    ,
+                    le: self.le
+                    ,
+                    ne: self.ne
+                    ,
+                    prefix: self.prefix
+                    ,
+                    sort_order: self.sort_order
+                    ,
+                    next_token: self.next_token
+                    ,
+                    limit: self.limit
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeMlModelsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeMLModels`](crate::operation::DescribeMLModels)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeMLModels,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeMLModels, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeMlModelsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeMlModelsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribeMlModelsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DescribeMlModelsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AmazonML_20141212.DescribeMLModels",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AmazonML_20141212.DescribeMLModels"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_ml_models(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_ml_models(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeMLModels::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeMLModels",
-            "machinelearning",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeMLModels::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeMLModels", "machinelearning"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3815,9 +2912,9 @@ impl DescribeMlModelsInput {
 
 /// See [`DescribeTagsInput`](crate::input::DescribeTagsInput).
 pub mod describe_tags_input {
-
+    
     /// A builder for [`DescribeTagsInput`](crate::input::DescribeTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<crate::model::TaggableResourceType>,
@@ -3830,8 +2927,7 @@ pub mod describe_tags_input {
         }
         /// <p>The ID of the ML object. For example, <code>exampleModelId</code>. </p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_id = input;
-            self
+            self.resource_id = input; self
         }
         /// <p>The type of the ML object.</p>
         pub fn resource_type(mut self, input: crate::model::TaggableResourceType) -> Self {
@@ -3839,129 +2935,84 @@ pub mod describe_tags_input {
             self
         }
         /// <p>The type of the ML object.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<crate::model::TaggableResourceType>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<crate::model::TaggableResourceType>) -> Self {
+            self.resource_type = input; self
         }
         /// Consumes the builder and constructs a [`DescribeTagsInput`](crate::input::DescribeTagsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DescribeTagsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DescribeTagsInput {
-                resource_id: self.resource_id,
-                resource_type: self.resource_type,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeTagsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DescribeTagsInput {
+                    resource_id: self.resource_id
+                    ,
+                    resource_type: self.resource_type
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeTagsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTags`](crate::operation::DescribeTags)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeTags,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeTags, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeTagsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeTagsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribeTagsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DescribeTagsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AmazonML_20141212.DescribeTags",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AmazonML_20141212.DescribeTags"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_tags(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_tags(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeTags::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeTags",
-            "machinelearning",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeTags::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeTags", "machinelearning"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3973,9 +3024,9 @@ impl DescribeTagsInput {
 
 /// See [`GetBatchPredictionInput`](crate::input::GetBatchPredictionInput).
 pub mod get_batch_prediction_input {
-
+    
     /// A builder for [`GetBatchPredictionInput`](crate::input::GetBatchPredictionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) batch_prediction_id: std::option::Option<std::string::String>,
     }
@@ -3986,128 +3037,82 @@ pub mod get_batch_prediction_input {
             self
         }
         /// <p>An ID assigned to the <code>BatchPrediction</code> at creation.</p>
-        pub fn set_batch_prediction_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.batch_prediction_id = input;
-            self
+        pub fn set_batch_prediction_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.batch_prediction_id = input; self
         }
         /// Consumes the builder and constructs a [`GetBatchPredictionInput`](crate::input::GetBatchPredictionInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetBatchPredictionInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::GetBatchPredictionInput {
-                batch_prediction_id: self.batch_prediction_id,
-            })
+        pub fn build(self) -> Result<crate::input::GetBatchPredictionInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::GetBatchPredictionInput {
+                    batch_prediction_id: self.batch_prediction_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetBatchPredictionInput {
     /// Consumes the builder and constructs an Operation<[`GetBatchPrediction`](crate::operation::GetBatchPrediction)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetBatchPrediction,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetBatchPrediction, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetBatchPredictionInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::GetBatchPredictionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::GetBatchPredictionInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::GetBatchPredictionInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AmazonML_20141212.GetBatchPrediction",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AmazonML_20141212.GetBatchPrediction"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_batch_prediction(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_batch_prediction(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetBatchPrediction::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetBatchPrediction",
-            "machinelearning",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetBatchPrediction::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetBatchPrediction", "machinelearning"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4119,9 +3124,9 @@ impl GetBatchPredictionInput {
 
 /// See [`GetDataSourceInput`](crate::input::GetDataSourceInput).
 pub mod get_data_source_input {
-
+    
     /// A builder for [`GetDataSourceInput`](crate::input::GetDataSourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) data_source_id: std::option::Option<std::string::String>,
         pub(crate) verbose: std::option::Option<bool>,
@@ -4133,143 +3138,98 @@ pub mod get_data_source_input {
             self
         }
         /// <p>The ID assigned to the <code>DataSource</code> at creation.</p>
-        pub fn set_data_source_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_source_id = input;
-            self
+        pub fn set_data_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_source_id = input; self
         }
-        /// <p>Specifies whether the <code>GetDataSource</code> operation should return <code>DataSourceSchema</code>.</p>
-        /// <p>If true, <code>DataSourceSchema</code> is returned.</p>
+        /// <p>Specifies whether the <code>GetDataSource</code> operation should return <code>DataSourceSchema</code>.</p> 
+        /// <p>If true, <code>DataSourceSchema</code> is returned.</p> 
         /// <p>If false, <code>DataSourceSchema</code> is not returned.</p>
         pub fn verbose(mut self, input: bool) -> Self {
             self.verbose = Some(input);
             self
         }
-        /// <p>Specifies whether the <code>GetDataSource</code> operation should return <code>DataSourceSchema</code>.</p>
-        /// <p>If true, <code>DataSourceSchema</code> is returned.</p>
+        /// <p>Specifies whether the <code>GetDataSource</code> operation should return <code>DataSourceSchema</code>.</p> 
+        /// <p>If true, <code>DataSourceSchema</code> is returned.</p> 
         /// <p>If false, <code>DataSourceSchema</code> is not returned.</p>
         pub fn set_verbose(mut self, input: std::option::Option<bool>) -> Self {
-            self.verbose = input;
-            self
+            self.verbose = input; self
         }
         /// Consumes the builder and constructs a [`GetDataSourceInput`](crate::input::GetDataSourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetDataSourceInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::GetDataSourceInput {
-                data_source_id: self.data_source_id,
-                verbose: self.verbose.unwrap_or_default(),
-            })
+        pub fn build(self) -> Result<crate::input::GetDataSourceInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::GetDataSourceInput {
+                    data_source_id: self.data_source_id
+                    ,
+                    verbose: self.verbose
+                        .unwrap_or_default()
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetDataSourceInput {
     /// Consumes the builder and constructs an Operation<[`GetDataSource`](crate::operation::GetDataSource)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetDataSource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetDataSource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetDataSourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::GetDataSourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::GetDataSourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::GetDataSourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AmazonML_20141212.GetDataSource",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AmazonML_20141212.GetDataSource"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_data_source(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_data_source(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetDataSource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetDataSource",
-            "machinelearning",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetDataSource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetDataSource", "machinelearning"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4281,9 +3241,9 @@ impl GetDataSourceInput {
 
 /// See [`GetEvaluationInput`](crate::input::GetEvaluationInput).
 pub mod get_evaluation_input {
-
+    
     /// A builder for [`GetEvaluationInput`](crate::input::GetEvaluationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) evaluation_id: std::option::Option<std::string::String>,
     }
@@ -4294,128 +3254,82 @@ pub mod get_evaluation_input {
             self
         }
         /// <p>The ID of the <code>Evaluation</code> to retrieve. The evaluation of each <code>MLModel</code> is recorded and cataloged. The ID provides the means to access the information. </p>
-        pub fn set_evaluation_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.evaluation_id = input;
-            self
+        pub fn set_evaluation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.evaluation_id = input; self
         }
         /// Consumes the builder and constructs a [`GetEvaluationInput`](crate::input::GetEvaluationInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetEvaluationInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::GetEvaluationInput {
-                evaluation_id: self.evaluation_id,
-            })
+        pub fn build(self) -> Result<crate::input::GetEvaluationInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::GetEvaluationInput {
+                    evaluation_id: self.evaluation_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetEvaluationInput {
     /// Consumes the builder and constructs an Operation<[`GetEvaluation`](crate::operation::GetEvaluation)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetEvaluation,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetEvaluation, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetEvaluationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::GetEvaluationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::GetEvaluationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::GetEvaluationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AmazonML_20141212.GetEvaluation",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AmazonML_20141212.GetEvaluation"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_evaluation(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_evaluation(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetEvaluation::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetEvaluation",
-            "machinelearning",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetEvaluation::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetEvaluation", "machinelearning"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4427,9 +3341,9 @@ impl GetEvaluationInput {
 
 /// See [`GetMlModelInput`](crate::input::GetMlModelInput).
 pub mod get_ml_model_input {
-
+    
     /// A builder for [`GetMlModelInput`](crate::input::GetMlModelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) ml_model_id: std::option::Option<std::string::String>,
         pub(crate) verbose: std::option::Option<bool>,
@@ -4442,138 +3356,97 @@ pub mod get_ml_model_input {
         }
         /// <p>The ID assigned to the <code>MLModel</code> at creation.</p>
         pub fn set_ml_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ml_model_id = input;
-            self
+            self.ml_model_id = input; self
         }
-        /// <p>Specifies whether the <code>GetMLModel</code> operation should return <code>Recipe</code>.</p>
-        /// <p>If true, <code>Recipe</code> is returned.</p>
+        /// <p>Specifies whether the <code>GetMLModel</code> operation should return <code>Recipe</code>.</p> 
+        /// <p>If true, <code>Recipe</code> is returned.</p> 
         /// <p>If false, <code>Recipe</code> is not returned.</p>
         pub fn verbose(mut self, input: bool) -> Self {
             self.verbose = Some(input);
             self
         }
-        /// <p>Specifies whether the <code>GetMLModel</code> operation should return <code>Recipe</code>.</p>
-        /// <p>If true, <code>Recipe</code> is returned.</p>
+        /// <p>Specifies whether the <code>GetMLModel</code> operation should return <code>Recipe</code>.</p> 
+        /// <p>If true, <code>Recipe</code> is returned.</p> 
         /// <p>If false, <code>Recipe</code> is not returned.</p>
         pub fn set_verbose(mut self, input: std::option::Option<bool>) -> Self {
-            self.verbose = input;
-            self
+            self.verbose = input; self
         }
         /// Consumes the builder and constructs a [`GetMlModelInput`](crate::input::GetMlModelInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetMlModelInput, aws_smithy_http::operation::BuildError> {
-            Ok(crate::input::GetMlModelInput {
-                ml_model_id: self.ml_model_id,
-                verbose: self.verbose.unwrap_or_default(),
-            })
+        pub fn build(self) -> Result<crate::input::GetMlModelInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::GetMlModelInput {
+                    ml_model_id: self.ml_model_id
+                    ,
+                    verbose: self.verbose
+                        .unwrap_or_default()
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetMlModelInput {
     /// Consumes the builder and constructs an Operation<[`GetMLModel`](crate::operation::GetMLModel)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetMLModel,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetMLModel, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetMlModelInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::GetMlModelInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::GetMlModelInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::GetMlModelInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AmazonML_20141212.GetMLModel",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AmazonML_20141212.GetMLModel"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_ml_model(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_ml_model(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetMLModel::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetMLModel",
-            "machinelearning",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetMLModel::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetMLModel", "machinelearning"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4585,14 +3458,12 @@ impl GetMlModelInput {
 
 /// See [`PredictInput`](crate::input::PredictInput).
 pub mod predict_input {
-
+    
     /// A builder for [`PredictInput`](crate::input::PredictInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) ml_model_id: std::option::Option<std::string::String>,
-        pub(crate) record: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) record: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) predict_endpoint: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -4603,33 +3474,22 @@ pub mod predict_input {
         }
         /// <p>A unique identifier of the <code>MLModel</code>.</p>
         pub fn set_ml_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ml_model_id = input;
-            self
+            self.ml_model_id = input; self
         }
         /// Adds a key-value pair to `record`.
         ///
         /// To override the contents of this collection use [`set_record`](Self::set_record).
         ///
         /// <p>A map of variable name-value pairs that represent an observation.</p>
-        pub fn record(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn record(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.record.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.record = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.record = Some(hash_map);
+                            self
         }
         /// <p>A map of variable name-value pairs that represent an observation.</p>
-        pub fn set_record(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.record = input;
-            self
+        pub fn set_record(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.record = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn predict_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4637,127 +3497,86 @@ pub mod predict_input {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_predict_endpoint(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.predict_endpoint = input;
-            self
+        pub fn set_predict_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.predict_endpoint = input; self
         }
         /// Consumes the builder and constructs a [`PredictInput`](crate::input::PredictInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::PredictInput, aws_smithy_http::operation::BuildError> {
-            Ok(crate::input::PredictInput {
-                ml_model_id: self.ml_model_id,
-                record: self.record,
-                predict_endpoint: self.predict_endpoint,
-            })
+        pub fn build(self) -> Result<crate::input::PredictInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::PredictInput {
+                    ml_model_id: self.ml_model_id
+                    ,
+                    record: self.record
+                    ,
+                    predict_endpoint: self.predict_endpoint
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl PredictInput {
     /// Consumes the builder and constructs an Operation<[`Predict`](crate::operation::Predict)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::Predict,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::Predict, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::PredictInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::PredictInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::PredictInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::PredictInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AmazonML_20141212.Predict",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AmazonML_20141212.Predict"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_predict(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_predict(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op =
-            aws_smithy_http::operation::Operation::new(request, crate::operation::Predict::new())
-                .with_metadata(aws_smithy_http::operation::Metadata::new(
-                    "Predict",
-                    "machinelearning",
-                ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::Predict::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("Predict", "machinelearning"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4769,9 +3588,9 @@ impl PredictInput {
 
 /// See [`UpdateBatchPredictionInput`](crate::input::UpdateBatchPredictionInput).
 pub mod update_batch_prediction_input {
-
+    
     /// A builder for [`UpdateBatchPredictionInput`](crate::input::UpdateBatchPredictionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) batch_prediction_id: std::option::Option<std::string::String>,
         pub(crate) batch_prediction_name: std::option::Option<std::string::String>,
@@ -4783,12 +3602,8 @@ pub mod update_batch_prediction_input {
             self
         }
         /// <p>The ID assigned to the <code>BatchPrediction</code> during creation.</p>
-        pub fn set_batch_prediction_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.batch_prediction_id = input;
-            self
+        pub fn set_batch_prediction_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.batch_prediction_id = input; self
         }
         /// <p>A new user-supplied name or description of the <code>BatchPrediction</code>.</p>
         pub fn batch_prediction_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4796,131 +3611,84 @@ pub mod update_batch_prediction_input {
             self
         }
         /// <p>A new user-supplied name or description of the <code>BatchPrediction</code>.</p>
-        pub fn set_batch_prediction_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.batch_prediction_name = input;
-            self
+        pub fn set_batch_prediction_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.batch_prediction_name = input; self
         }
         /// Consumes the builder and constructs a [`UpdateBatchPredictionInput`](crate::input::UpdateBatchPredictionInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UpdateBatchPredictionInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::UpdateBatchPredictionInput {
-                batch_prediction_id: self.batch_prediction_id,
-                batch_prediction_name: self.batch_prediction_name,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateBatchPredictionInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::UpdateBatchPredictionInput {
+                    batch_prediction_id: self.batch_prediction_id
+                    ,
+                    batch_prediction_name: self.batch_prediction_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateBatchPredictionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBatchPrediction`](crate::operation::UpdateBatchPrediction)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateBatchPrediction,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateBatchPrediction, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateBatchPredictionInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateBatchPredictionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::UpdateBatchPredictionInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::UpdateBatchPredictionInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AmazonML_20141212.UpdateBatchPrediction",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AmazonML_20141212.UpdateBatchPrediction"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_batch_prediction(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_batch_prediction(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateBatchPrediction::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateBatchPrediction",
-            "machinelearning",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateBatchPrediction::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateBatchPrediction", "machinelearning"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4932,9 +3700,9 @@ impl UpdateBatchPredictionInput {
 
 /// See [`UpdateDataSourceInput`](crate::input::UpdateDataSourceInput).
 pub mod update_data_source_input {
-
+    
     /// A builder for [`UpdateDataSourceInput`](crate::input::UpdateDataSourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) data_source_id: std::option::Option<std::string::String>,
         pub(crate) data_source_name: std::option::Option<std::string::String>,
@@ -4946,12 +3714,8 @@ pub mod update_data_source_input {
             self
         }
         /// <p>The ID assigned to the <code>DataSource</code> during creation.</p>
-        pub fn set_data_source_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_source_id = input;
-            self
+        pub fn set_data_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_source_id = input; self
         }
         /// <p>A new user-supplied name or description of the <code>DataSource</code> that will replace the current description. </p>
         pub fn data_source_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4959,129 +3723,84 @@ pub mod update_data_source_input {
             self
         }
         /// <p>A new user-supplied name or description of the <code>DataSource</code> that will replace the current description. </p>
-        pub fn set_data_source_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_source_name = input;
-            self
+        pub fn set_data_source_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_source_name = input; self
         }
         /// Consumes the builder and constructs a [`UpdateDataSourceInput`](crate::input::UpdateDataSourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UpdateDataSourceInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::UpdateDataSourceInput {
-                data_source_id: self.data_source_id,
-                data_source_name: self.data_source_name,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateDataSourceInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::UpdateDataSourceInput {
+                    data_source_id: self.data_source_id
+                    ,
+                    data_source_name: self.data_source_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateDataSourceInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDataSource`](crate::operation::UpdateDataSource)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateDataSource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateDataSource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateDataSourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateDataSourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::UpdateDataSourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::UpdateDataSourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AmazonML_20141212.UpdateDataSource",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AmazonML_20141212.UpdateDataSource"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_data_source(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_data_source(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateDataSource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateDataSource",
-            "machinelearning",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateDataSource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateDataSource", "machinelearning"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5093,9 +3812,9 @@ impl UpdateDataSourceInput {
 
 /// See [`UpdateEvaluationInput`](crate::input::UpdateEvaluationInput).
 pub mod update_evaluation_input {
-
+    
     /// A builder for [`UpdateEvaluationInput`](crate::input::UpdateEvaluationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) evaluation_id: std::option::Option<std::string::String>,
         pub(crate) evaluation_name: std::option::Option<std::string::String>,
@@ -5107,12 +3826,8 @@ pub mod update_evaluation_input {
             self
         }
         /// <p>The ID assigned to the <code>Evaluation</code> during creation.</p>
-        pub fn set_evaluation_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.evaluation_id = input;
-            self
+        pub fn set_evaluation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.evaluation_id = input; self
         }
         /// <p>A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content. </p>
         pub fn evaluation_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5120,129 +3835,84 @@ pub mod update_evaluation_input {
             self
         }
         /// <p>A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content. </p>
-        pub fn set_evaluation_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.evaluation_name = input;
-            self
+        pub fn set_evaluation_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.evaluation_name = input; self
         }
         /// Consumes the builder and constructs a [`UpdateEvaluationInput`](crate::input::UpdateEvaluationInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UpdateEvaluationInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::UpdateEvaluationInput {
-                evaluation_id: self.evaluation_id,
-                evaluation_name: self.evaluation_name,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateEvaluationInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::UpdateEvaluationInput {
+                    evaluation_id: self.evaluation_id
+                    ,
+                    evaluation_name: self.evaluation_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateEvaluationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateEvaluation`](crate::operation::UpdateEvaluation)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateEvaluation,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateEvaluation, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateEvaluationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateEvaluationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::UpdateEvaluationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::UpdateEvaluationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AmazonML_20141212.UpdateEvaluation",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AmazonML_20141212.UpdateEvaluation"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_evaluation(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_evaluation(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateEvaluation::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateEvaluation",
-            "machinelearning",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateEvaluation::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateEvaluation", "machinelearning"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5254,9 +3924,9 @@ impl UpdateEvaluationInput {
 
 /// See [`UpdateMlModelInput`](crate::input::UpdateMlModelInput).
 pub mod update_ml_model_input {
-
+    
     /// A builder for [`UpdateMlModelInput`](crate::input::UpdateMlModelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) ml_model_id: std::option::Option<std::string::String>,
         pub(crate) ml_model_name: std::option::Option<std::string::String>,
@@ -5270,8 +3940,7 @@ pub mod update_ml_model_input {
         }
         /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
         pub fn set_ml_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ml_model_id = input;
-            self
+            self.ml_model_id = input; self
         }
         /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
         pub fn ml_model_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5279,142 +3948,97 @@ pub mod update_ml_model_input {
             self
         }
         /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
-        pub fn set_ml_model_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ml_model_name = input;
-            self
+        pub fn set_ml_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ml_model_name = input; self
         }
-        /// <p>The <code>ScoreThreshold</code> used in binary classification <code>MLModel</code> that marks the boundary between a positive prediction and a negative prediction.</p>
+        /// <p>The <code>ScoreThreshold</code> used in binary classification <code>MLModel</code> that marks the boundary between a positive prediction and a negative prediction.</p> 
         /// <p>Output values greater than or equal to the <code>ScoreThreshold</code> receive a positive result from the <code>MLModel</code>, such as <code>true</code>. Output values less than the <code>ScoreThreshold</code> receive a negative response from the <code>MLModel</code>, such as <code>false</code>.</p>
         pub fn score_threshold(mut self, input: f32) -> Self {
             self.score_threshold = Some(input);
             self
         }
-        /// <p>The <code>ScoreThreshold</code> used in binary classification <code>MLModel</code> that marks the boundary between a positive prediction and a negative prediction.</p>
+        /// <p>The <code>ScoreThreshold</code> used in binary classification <code>MLModel</code> that marks the boundary between a positive prediction and a negative prediction.</p> 
         /// <p>Output values greater than or equal to the <code>ScoreThreshold</code> receive a positive result from the <code>MLModel</code>, such as <code>true</code>. Output values less than the <code>ScoreThreshold</code> receive a negative response from the <code>MLModel</code>, such as <code>false</code>.</p>
         pub fn set_score_threshold(mut self, input: std::option::Option<f32>) -> Self {
-            self.score_threshold = input;
-            self
+            self.score_threshold = input; self
         }
         /// Consumes the builder and constructs a [`UpdateMlModelInput`](crate::input::UpdateMlModelInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UpdateMlModelInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::UpdateMlModelInput {
-                ml_model_id: self.ml_model_id,
-                ml_model_name: self.ml_model_name,
-                score_threshold: self.score_threshold,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateMlModelInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::UpdateMlModelInput {
+                    ml_model_id: self.ml_model_id
+                    ,
+                    ml_model_name: self.ml_model_name
+                    ,
+                    score_threshold: self.score_threshold
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateMlModelInput {
     /// Consumes the builder and constructs an Operation<[`UpdateMLModel`](crate::operation::UpdateMLModel)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateMLModel,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateMLModel, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateMlModelInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateMlModelInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::UpdateMlModelInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::UpdateMlModelInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AmazonML_20141212.UpdateMLModel",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AmazonML_20141212.UpdateMLModel"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_ml_model(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_ml_model(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateMLModel::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateMLModel",
-            "machinelearning",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateMLModel::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateMLModel", "machinelearning"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5425,36 +4049,32 @@ impl UpdateMlModelInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateMlModelInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct UpdateMlModelInput  {
     /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
-    #[doc(hidden)]
-    pub ml_model_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub ml_model_id: std::option::Option<std::string::String>,
     /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
-    #[doc(hidden)]
-    pub ml_model_name: std::option::Option<std::string::String>,
-    /// <p>The <code>ScoreThreshold</code> used in binary classification <code>MLModel</code> that marks the boundary between a positive prediction and a negative prediction.</p>
+    #[doc(hidden)]pub ml_model_name: std::option::Option<std::string::String>,
+    /// <p>The <code>ScoreThreshold</code> used in binary classification <code>MLModel</code> that marks the boundary between a positive prediction and a negative prediction.</p> 
     /// <p>Output values greater than or equal to the <code>ScoreThreshold</code> receive a positive result from the <code>MLModel</code>, such as <code>true</code>. Output values less than the <code>ScoreThreshold</code> receive a negative response from the <code>MLModel</code>, such as <code>false</code>.</p>
-    #[doc(hidden)]
-    pub score_threshold: std::option::Option<f32>,
+    #[doc(hidden)]pub score_threshold: std::option::Option<f32>,
 }
 impl UpdateMlModelInput {
     /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
-    pub fn ml_model_id(&self) -> std::option::Option<&str> {
+    pub fn ml_model_id(&self) -> std::option::Option<& str> {
         self.ml_model_id.as_deref()
     }
     /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
-    pub fn ml_model_name(&self) -> std::option::Option<&str> {
+    pub fn ml_model_name(&self) -> std::option::Option<& str> {
         self.ml_model_name.as_deref()
     }
-    /// <p>The <code>ScoreThreshold</code> used in binary classification <code>MLModel</code> that marks the boundary between a positive prediction and a negative prediction.</p>
+    /// <p>The <code>ScoreThreshold</code> used in binary classification <code>MLModel</code> that marks the boundary between a positive prediction and a negative prediction.</p> 
     /// <p>Output values greater than or equal to the <code>ScoreThreshold</code> receive a positive result from the <code>MLModel</code>, such as <code>true</code>. Output values less than the <code>ScoreThreshold</code> receive a negative response from the <code>MLModel</code>, such as <code>false</code>.</p>
     pub fn score_threshold(&self) -> std::option::Option<f32> {
         self.score_threshold
     }
 }
-impl std::fmt::Debug for UpdateMlModelInput {
+impl  std::fmt::Debug for UpdateMlModelInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateMlModelInput");
         formatter.field("ml_model_id", &self.ml_model_id);
@@ -5465,27 +4085,24 @@ impl std::fmt::Debug for UpdateMlModelInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateEvaluationInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct UpdateEvaluationInput  {
     /// <p>The ID assigned to the <code>Evaluation</code> during creation.</p>
-    #[doc(hidden)]
-    pub evaluation_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub evaluation_id: std::option::Option<std::string::String>,
     /// <p>A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content. </p>
-    #[doc(hidden)]
-    pub evaluation_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub evaluation_name: std::option::Option<std::string::String>,
 }
 impl UpdateEvaluationInput {
     /// <p>The ID assigned to the <code>Evaluation</code> during creation.</p>
-    pub fn evaluation_id(&self) -> std::option::Option<&str> {
+    pub fn evaluation_id(&self) -> std::option::Option<& str> {
         self.evaluation_id.as_deref()
     }
     /// <p>A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content. </p>
-    pub fn evaluation_name(&self) -> std::option::Option<&str> {
+    pub fn evaluation_name(&self) -> std::option::Option<& str> {
         self.evaluation_name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateEvaluationInput {
+impl  std::fmt::Debug for UpdateEvaluationInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateEvaluationInput");
         formatter.field("evaluation_id", &self.evaluation_id);
@@ -5495,27 +4112,24 @@ impl std::fmt::Debug for UpdateEvaluationInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateDataSourceInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct UpdateDataSourceInput  {
     /// <p>The ID assigned to the <code>DataSource</code> during creation.</p>
-    #[doc(hidden)]
-    pub data_source_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub data_source_id: std::option::Option<std::string::String>,
     /// <p>A new user-supplied name or description of the <code>DataSource</code> that will replace the current description. </p>
-    #[doc(hidden)]
-    pub data_source_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub data_source_name: std::option::Option<std::string::String>,
 }
 impl UpdateDataSourceInput {
     /// <p>The ID assigned to the <code>DataSource</code> during creation.</p>
-    pub fn data_source_id(&self) -> std::option::Option<&str> {
+    pub fn data_source_id(&self) -> std::option::Option<& str> {
         self.data_source_id.as_deref()
     }
     /// <p>A new user-supplied name or description of the <code>DataSource</code> that will replace the current description. </p>
-    pub fn data_source_name(&self) -> std::option::Option<&str> {
+    pub fn data_source_name(&self) -> std::option::Option<& str> {
         self.data_source_name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateDataSourceInput {
+impl  std::fmt::Debug for UpdateDataSourceInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDataSourceInput");
         formatter.field("data_source_id", &self.data_source_id);
@@ -5525,27 +4139,24 @@ impl std::fmt::Debug for UpdateDataSourceInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateBatchPredictionInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct UpdateBatchPredictionInput  {
     /// <p>The ID assigned to the <code>BatchPrediction</code> during creation.</p>
-    #[doc(hidden)]
-    pub batch_prediction_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub batch_prediction_id: std::option::Option<std::string::String>,
     /// <p>A new user-supplied name or description of the <code>BatchPrediction</code>.</p>
-    #[doc(hidden)]
-    pub batch_prediction_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub batch_prediction_name: std::option::Option<std::string::String>,
 }
 impl UpdateBatchPredictionInput {
     /// <p>The ID assigned to the <code>BatchPrediction</code> during creation.</p>
-    pub fn batch_prediction_id(&self) -> std::option::Option<&str> {
+    pub fn batch_prediction_id(&self) -> std::option::Option<& str> {
         self.batch_prediction_id.as_deref()
     }
     /// <p>A new user-supplied name or description of the <code>BatchPrediction</code>.</p>
-    pub fn batch_prediction_name(&self) -> std::option::Option<&str> {
+    pub fn batch_prediction_name(&self) -> std::option::Option<& str> {
         self.batch_prediction_name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateBatchPredictionInput {
+impl  std::fmt::Debug for UpdateBatchPredictionInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateBatchPredictionInput");
         formatter.field("batch_prediction_id", &self.batch_prediction_id);
@@ -5555,38 +4166,30 @@ impl std::fmt::Debug for UpdateBatchPredictionInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PredictInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct PredictInput  {
     /// <p>A unique identifier of the <code>MLModel</code>.</p>
-    #[doc(hidden)]
-    pub ml_model_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub ml_model_id: std::option::Option<std::string::String>,
     /// <p>A map of variable name-value pairs that represent an observation.</p>
-    #[doc(hidden)]
-    pub record:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[doc(hidden)]pub record: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub predict_endpoint: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub predict_endpoint: std::option::Option<std::string::String>,
 }
 impl PredictInput {
     /// <p>A unique identifier of the <code>MLModel</code>.</p>
-    pub fn ml_model_id(&self) -> std::option::Option<&str> {
+    pub fn ml_model_id(&self) -> std::option::Option<& str> {
         self.ml_model_id.as_deref()
     }
     /// <p>A map of variable name-value pairs that represent an observation.</p>
-    pub fn record(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn record(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.record.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn predict_endpoint(&self) -> std::option::Option<&str> {
+    pub fn predict_endpoint(&self) -> std::option::Option<& str> {
         self.predict_endpoint.as_deref()
     }
 }
-impl std::fmt::Debug for PredictInput {
+impl  std::fmt::Debug for PredictInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PredictInput");
         formatter.field("ml_model_id", &self.ml_model_id);
@@ -5597,31 +4200,28 @@ impl std::fmt::Debug for PredictInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetMlModelInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct GetMlModelInput  {
     /// <p>The ID assigned to the <code>MLModel</code> at creation.</p>
-    #[doc(hidden)]
-    pub ml_model_id: std::option::Option<std::string::String>,
-    /// <p>Specifies whether the <code>GetMLModel</code> operation should return <code>Recipe</code>.</p>
-    /// <p>If true, <code>Recipe</code> is returned.</p>
+    #[doc(hidden)]pub ml_model_id: std::option::Option<std::string::String>,
+    /// <p>Specifies whether the <code>GetMLModel</code> operation should return <code>Recipe</code>.</p> 
+    /// <p>If true, <code>Recipe</code> is returned.</p> 
     /// <p>If false, <code>Recipe</code> is not returned.</p>
-    #[doc(hidden)]
-    pub verbose: bool,
+    #[doc(hidden)]pub verbose: bool,
 }
 impl GetMlModelInput {
     /// <p>The ID assigned to the <code>MLModel</code> at creation.</p>
-    pub fn ml_model_id(&self) -> std::option::Option<&str> {
+    pub fn ml_model_id(&self) -> std::option::Option<& str> {
         self.ml_model_id.as_deref()
     }
-    /// <p>Specifies whether the <code>GetMLModel</code> operation should return <code>Recipe</code>.</p>
-    /// <p>If true, <code>Recipe</code> is returned.</p>
+    /// <p>Specifies whether the <code>GetMLModel</code> operation should return <code>Recipe</code>.</p> 
+    /// <p>If true, <code>Recipe</code> is returned.</p> 
     /// <p>If false, <code>Recipe</code> is not returned.</p>
     pub fn verbose(&self) -> bool {
         self.verbose
     }
 }
-impl std::fmt::Debug for GetMlModelInput {
+impl  std::fmt::Debug for GetMlModelInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMlModelInput");
         formatter.field("ml_model_id", &self.ml_model_id);
@@ -5631,20 +4231,18 @@ impl std::fmt::Debug for GetMlModelInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetEvaluationInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct GetEvaluationInput  {
     /// <p>The ID of the <code>Evaluation</code> to retrieve. The evaluation of each <code>MLModel</code> is recorded and cataloged. The ID provides the means to access the information. </p>
-    #[doc(hidden)]
-    pub evaluation_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub evaluation_id: std::option::Option<std::string::String>,
 }
 impl GetEvaluationInput {
     /// <p>The ID of the <code>Evaluation</code> to retrieve. The evaluation of each <code>MLModel</code> is recorded and cataloged. The ID provides the means to access the information. </p>
-    pub fn evaluation_id(&self) -> std::option::Option<&str> {
+    pub fn evaluation_id(&self) -> std::option::Option<& str> {
         self.evaluation_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetEvaluationInput {
+impl  std::fmt::Debug for GetEvaluationInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEvaluationInput");
         formatter.field("evaluation_id", &self.evaluation_id);
@@ -5653,31 +4251,28 @@ impl std::fmt::Debug for GetEvaluationInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetDataSourceInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct GetDataSourceInput  {
     /// <p>The ID assigned to the <code>DataSource</code> at creation.</p>
-    #[doc(hidden)]
-    pub data_source_id: std::option::Option<std::string::String>,
-    /// <p>Specifies whether the <code>GetDataSource</code> operation should return <code>DataSourceSchema</code>.</p>
-    /// <p>If true, <code>DataSourceSchema</code> is returned.</p>
+    #[doc(hidden)]pub data_source_id: std::option::Option<std::string::String>,
+    /// <p>Specifies whether the <code>GetDataSource</code> operation should return <code>DataSourceSchema</code>.</p> 
+    /// <p>If true, <code>DataSourceSchema</code> is returned.</p> 
     /// <p>If false, <code>DataSourceSchema</code> is not returned.</p>
-    #[doc(hidden)]
-    pub verbose: bool,
+    #[doc(hidden)]pub verbose: bool,
 }
 impl GetDataSourceInput {
     /// <p>The ID assigned to the <code>DataSource</code> at creation.</p>
-    pub fn data_source_id(&self) -> std::option::Option<&str> {
+    pub fn data_source_id(&self) -> std::option::Option<& str> {
         self.data_source_id.as_deref()
     }
-    /// <p>Specifies whether the <code>GetDataSource</code> operation should return <code>DataSourceSchema</code>.</p>
-    /// <p>If true, <code>DataSourceSchema</code> is returned.</p>
+    /// <p>Specifies whether the <code>GetDataSource</code> operation should return <code>DataSourceSchema</code>.</p> 
+    /// <p>If true, <code>DataSourceSchema</code> is returned.</p> 
     /// <p>If false, <code>DataSourceSchema</code> is not returned.</p>
     pub fn verbose(&self) -> bool {
         self.verbose
     }
 }
-impl std::fmt::Debug for GetDataSourceInput {
+impl  std::fmt::Debug for GetDataSourceInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDataSourceInput");
         formatter.field("data_source_id", &self.data_source_id);
@@ -5687,20 +4282,18 @@ impl std::fmt::Debug for GetDataSourceInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetBatchPredictionInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct GetBatchPredictionInput  {
     /// <p>An ID assigned to the <code>BatchPrediction</code> at creation.</p>
-    #[doc(hidden)]
-    pub batch_prediction_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub batch_prediction_id: std::option::Option<std::string::String>,
 }
 impl GetBatchPredictionInput {
     /// <p>An ID assigned to the <code>BatchPrediction</code> at creation.</p>
-    pub fn batch_prediction_id(&self) -> std::option::Option<&str> {
+    pub fn batch_prediction_id(&self) -> std::option::Option<& str> {
         self.batch_prediction_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetBatchPredictionInput {
+impl  std::fmt::Debug for GetBatchPredictionInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetBatchPredictionInput");
         formatter.field("batch_prediction_id", &self.batch_prediction_id);
@@ -5709,27 +4302,24 @@ impl std::fmt::Debug for GetBatchPredictionInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeTagsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DescribeTagsInput  {
     /// <p>The ID of the ML object. For example, <code>exampleModelId</code>. </p>
-    #[doc(hidden)]
-    pub resource_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub resource_id: std::option::Option<std::string::String>,
     /// <p>The type of the ML object.</p>
-    #[doc(hidden)]
-    pub resource_type: std::option::Option<crate::model::TaggableResourceType>,
+    #[doc(hidden)]pub resource_type: std::option::Option<crate::model::TaggableResourceType>,
 }
 impl DescribeTagsInput {
     /// <p>The ID of the ML object. For example, <code>exampleModelId</code>. </p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The type of the ML object.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::model::TaggableResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::model::TaggableResourceType> {
         self.resource_type.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeTagsInput {
+impl  std::fmt::Debug for DescribeTagsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTagsInput");
         formatter.field("resource_id", &self.resource_id);
@@ -5739,126 +4329,114 @@ impl std::fmt::Debug for DescribeTagsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeMlModelsInput {
-    /// <p>Use one of the following variables to filter a list of <code>MLModel</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.</p> </li>
-    /// <li> <p> <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.</p> </li>
-    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code> <b> </b> <code>Name</code>.</p> </li>
-    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code> creation.</p> </li>
-    /// <li> <p> <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train one or more <code>MLModel</code>.</p> </li>
-    /// <li> <p> <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time endpoint status.</p> </li>
-    /// <li> <p> <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or multi-class.</p> </li>
-    /// <li> <p> <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.</p> </li>
-    /// <li> <p> <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li>
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DescribeMlModelsInput  {
+    /// <p>Use one of the following variables to filter a list of <code>MLModel</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.</p> </li> 
+    /// <li> <p> <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.</p> </li> 
+    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code> <b> </b> <code>Name</code>.</p> </li> 
+    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code> creation.</p> </li> 
+    /// <li> <p> <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train one or more <code>MLModel</code>.</p> </li> 
+    /// <li> <p> <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time endpoint status.</p> </li> 
+    /// <li> <p> <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or multi-class.</p> </li> 
+    /// <li> <p> <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.</p> </li> 
+    /// <li> <p> <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li> 
     /// </ul>
-    #[doc(hidden)]
-    pub filter_variable: std::option::Option<crate::model::MlModelFilterVariable>,
+    #[doc(hidden)]pub filter_variable: std::option::Option<crate::model::MlModelFilterVariable>,
     /// <p>The equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
-    #[doc(hidden)]
-    pub eq: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub eq: std::option::Option<std::string::String>,
     /// <p>The greater than operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
-    #[doc(hidden)]
-    pub gt: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub gt: std::option::Option<std::string::String>,
     /// <p>The less than operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
-    #[doc(hidden)]
-    pub lt: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub lt: std::option::Option<std::string::String>,
     /// <p>The greater than or equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
-    #[doc(hidden)]
-    pub ge: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub ge: std::option::Option<std::string::String>,
     /// <p>The less than or equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
-    #[doc(hidden)]
-    pub le: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub le: std::option::Option<std::string::String>,
     /// <p>The not equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
-    #[doc(hidden)]
-    pub ne: std::option::Option<std::string::String>,
-    /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-    /// <p>For example, an <code>MLModel</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>MLModel</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
-    /// <ul>
-    /// <li> <p>2014-09</p> </li>
-    /// <li> <p>2014-09-09</p> </li>
-    /// <li> <p>2014-09-09-Holiday</p> </li>
+    #[doc(hidden)]pub ne: std::option::Option<std::string::String>,
+    /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p> 
+    /// <p>For example, an <code>MLModel</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>MLModel</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p> 
+    /// <ul> 
+    /// <li> <p>2014-09</p> </li> 
+    /// <li> <p>2014-09-09</p> </li> 
+    /// <li> <p>2014-09-09-Holiday</p> </li> 
     /// </ul>
-    #[doc(hidden)]
-    pub prefix: std::option::Option<std::string::String>,
-    /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>.</p>
-    /// <ul>
-    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
-    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
-    /// </ul>
+    #[doc(hidden)]pub prefix: std::option::Option<std::string::String>,
+    /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>.</p> 
+    /// <ul> 
+    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li> 
+    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li> 
+    /// </ul> 
     /// <p>Results are sorted by <code>FilterVariable</code>.</p>
-    #[doc(hidden)]
-    pub sort_order: std::option::Option<crate::model::SortOrder>,
+    #[doc(hidden)]pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>The ID of the page in the paginated results.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of pages of information to include in the result. The range of acceptable values is <code>1</code> through <code>100</code>. The default value is <code>100</code>.</p>
-    #[doc(hidden)]
-    pub limit: std::option::Option<i32>,
+    #[doc(hidden)]pub limit: std::option::Option<i32>,
 }
 impl DescribeMlModelsInput {
-    /// <p>Use one of the following variables to filter a list of <code>MLModel</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.</p> </li>
-    /// <li> <p> <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.</p> </li>
-    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code> <b> </b> <code>Name</code>.</p> </li>
-    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code> creation.</p> </li>
-    /// <li> <p> <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train one or more <code>MLModel</code>.</p> </li>
-    /// <li> <p> <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time endpoint status.</p> </li>
-    /// <li> <p> <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or multi-class.</p> </li>
-    /// <li> <p> <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.</p> </li>
-    /// <li> <p> <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li>
+    /// <p>Use one of the following variables to filter a list of <code>MLModel</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.</p> </li> 
+    /// <li> <p> <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.</p> </li> 
+    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code> <b> </b> <code>Name</code>.</p> </li> 
+    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code> creation.</p> </li> 
+    /// <li> <p> <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train one or more <code>MLModel</code>.</p> </li> 
+    /// <li> <p> <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time endpoint status.</p> </li> 
+    /// <li> <p> <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or multi-class.</p> </li> 
+    /// <li> <p> <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.</p> </li> 
+    /// <li> <p> <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li> 
     /// </ul>
-    pub fn filter_variable(&self) -> std::option::Option<&crate::model::MlModelFilterVariable> {
+    pub fn filter_variable(&self) -> std::option::Option<& crate::model::MlModelFilterVariable> {
         self.filter_variable.as_ref()
     }
     /// <p>The equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
-    pub fn eq(&self) -> std::option::Option<&str> {
+    pub fn eq(&self) -> std::option::Option<& str> {
         self.eq.as_deref()
     }
     /// <p>The greater than operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
-    pub fn gt(&self) -> std::option::Option<&str> {
+    pub fn gt(&self) -> std::option::Option<& str> {
         self.gt.as_deref()
     }
     /// <p>The less than operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
-    pub fn lt(&self) -> std::option::Option<&str> {
+    pub fn lt(&self) -> std::option::Option<& str> {
         self.lt.as_deref()
     }
     /// <p>The greater than or equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
-    pub fn ge(&self) -> std::option::Option<&str> {
+    pub fn ge(&self) -> std::option::Option<& str> {
         self.ge.as_deref()
     }
     /// <p>The less than or equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
-    pub fn le(&self) -> std::option::Option<&str> {
+    pub fn le(&self) -> std::option::Option<& str> {
         self.le.as_deref()
     }
     /// <p>The not equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
-    pub fn ne(&self) -> std::option::Option<&str> {
+    pub fn ne(&self) -> std::option::Option<& str> {
         self.ne.as_deref()
     }
-    /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-    /// <p>For example, an <code>MLModel</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>MLModel</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
-    /// <ul>
-    /// <li> <p>2014-09</p> </li>
-    /// <li> <p>2014-09-09</p> </li>
-    /// <li> <p>2014-09-09-Holiday</p> </li>
+    /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p> 
+    /// <p>For example, an <code>MLModel</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>MLModel</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p> 
+    /// <ul> 
+    /// <li> <p>2014-09</p> </li> 
+    /// <li> <p>2014-09-09</p> </li> 
+    /// <li> <p>2014-09-09-Holiday</p> </li> 
     /// </ul>
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> std::option::Option<& str> {
         self.prefix.as_deref()
     }
-    /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>.</p>
-    /// <ul>
-    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
-    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
-    /// </ul>
+    /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>.</p> 
+    /// <ul> 
+    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li> 
+    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li> 
+    /// </ul> 
     /// <p>Results are sorted by <code>FilterVariable</code>.</p>
-    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+    pub fn sort_order(&self) -> std::option::Option<& crate::model::SortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>The ID of the page in the paginated results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The number of pages of information to include in the result. The range of acceptable values is <code>1</code> through <code>100</code>. The default value is <code>100</code>.</p>
@@ -5866,7 +4444,7 @@ impl DescribeMlModelsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for DescribeMlModelsInput {
+impl  std::fmt::Debug for DescribeMlModelsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeMlModelsInput");
         formatter.field("filter_variable", &self.filter_variable);
@@ -5885,122 +4463,110 @@ impl std::fmt::Debug for DescribeMlModelsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeEvaluationsInput {
-    /// <p>Use one of the following variable to filter a list of <code>Evaluation</code> objects:</p>
-    /// <ul>
-    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</p> </li>
-    /// <li> <p> <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</p> </li>
-    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b> <code>Name</code>.</p> </li>
-    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.</p> </li>
-    /// <li> <p> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</p> </li>
-    /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in <code>Evaluation</code>.</p> </li>
-    /// <li> <p> <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li>
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DescribeEvaluationsInput  {
+    /// <p>Use one of the following variable to filter a list of <code>Evaluation</code> objects:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</p> </li> 
+    /// <li> <p> <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</p> </li> 
+    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b> <code>Name</code>.</p> </li> 
+    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.</p> </li> 
+    /// <li> <p> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</p> </li> 
+    /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in <code>Evaluation</code>.</p> </li> 
+    /// <li> <p> <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li> 
     /// </ul>
-    #[doc(hidden)]
-    pub filter_variable: std::option::Option<crate::model::EvaluationFilterVariable>,
+    #[doc(hidden)]pub filter_variable: std::option::Option<crate::model::EvaluationFilterVariable>,
     /// <p>The equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
-    #[doc(hidden)]
-    pub eq: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub eq: std::option::Option<std::string::String>,
     /// <p>The greater than operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
-    #[doc(hidden)]
-    pub gt: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub gt: std::option::Option<std::string::String>,
     /// <p>The less than operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
-    #[doc(hidden)]
-    pub lt: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub lt: std::option::Option<std::string::String>,
     /// <p>The greater than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
-    #[doc(hidden)]
-    pub ge: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub ge: std::option::Option<std::string::String>,
     /// <p>The less than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
-    #[doc(hidden)]
-    pub le: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub le: std::option::Option<std::string::String>,
     /// <p>The not equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
-    #[doc(hidden)]
-    pub ne: std::option::Option<std::string::String>,
-    /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-    /// <p>For example, an <code>Evaluation</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>Evaluation</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
-    /// <ul>
-    /// <li> <p>2014-09</p> </li>
-    /// <li> <p>2014-09-09</p> </li>
-    /// <li> <p>2014-09-09-Holiday</p> </li>
+    #[doc(hidden)]pub ne: std::option::Option<std::string::String>,
+    /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p> 
+    /// <p>For example, an <code>Evaluation</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>Evaluation</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p> 
+    /// <ul> 
+    /// <li> <p>2014-09</p> </li> 
+    /// <li> <p>2014-09-09</p> </li> 
+    /// <li> <p>2014-09-09-Holiday</p> </li> 
     /// </ul>
-    #[doc(hidden)]
-    pub prefix: std::option::Option<std::string::String>,
-    /// <p>A two-value parameter that determines the sequence of the resulting list of <code>Evaluation</code>.</p>
-    /// <ul>
-    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
-    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
-    /// </ul>
+    #[doc(hidden)]pub prefix: std::option::Option<std::string::String>,
+    /// <p>A two-value parameter that determines the sequence of the resulting list of <code>Evaluation</code>.</p> 
+    /// <ul> 
+    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li> 
+    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li> 
+    /// </ul> 
     /// <p>Results are sorted by <code>FilterVariable</code>.</p>
-    #[doc(hidden)]
-    pub sort_order: std::option::Option<crate::model::SortOrder>,
+    #[doc(hidden)]pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>The ID of the page in the paginated results.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
     /// <p> The maximum number of <code>Evaluation</code> to include in the result.</p>
-    #[doc(hidden)]
-    pub limit: std::option::Option<i32>,
+    #[doc(hidden)]pub limit: std::option::Option<i32>,
 }
 impl DescribeEvaluationsInput {
-    /// <p>Use one of the following variable to filter a list of <code>Evaluation</code> objects:</p>
-    /// <ul>
-    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</p> </li>
-    /// <li> <p> <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</p> </li>
-    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b> <code>Name</code>.</p> </li>
-    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.</p> </li>
-    /// <li> <p> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</p> </li>
-    /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in <code>Evaluation</code>.</p> </li>
-    /// <li> <p> <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li>
+    /// <p>Use one of the following variable to filter a list of <code>Evaluation</code> objects:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</p> </li> 
+    /// <li> <p> <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</p> </li> 
+    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b> <code>Name</code>.</p> </li> 
+    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.</p> </li> 
+    /// <li> <p> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</p> </li> 
+    /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in <code>Evaluation</code>.</p> </li> 
+    /// <li> <p> <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li> 
     /// </ul>
-    pub fn filter_variable(&self) -> std::option::Option<&crate::model::EvaluationFilterVariable> {
+    pub fn filter_variable(&self) -> std::option::Option<& crate::model::EvaluationFilterVariable> {
         self.filter_variable.as_ref()
     }
     /// <p>The equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
-    pub fn eq(&self) -> std::option::Option<&str> {
+    pub fn eq(&self) -> std::option::Option<& str> {
         self.eq.as_deref()
     }
     /// <p>The greater than operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
-    pub fn gt(&self) -> std::option::Option<&str> {
+    pub fn gt(&self) -> std::option::Option<& str> {
         self.gt.as_deref()
     }
     /// <p>The less than operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
-    pub fn lt(&self) -> std::option::Option<&str> {
+    pub fn lt(&self) -> std::option::Option<& str> {
         self.lt.as_deref()
     }
     /// <p>The greater than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
-    pub fn ge(&self) -> std::option::Option<&str> {
+    pub fn ge(&self) -> std::option::Option<& str> {
         self.ge.as_deref()
     }
     /// <p>The less than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
-    pub fn le(&self) -> std::option::Option<&str> {
+    pub fn le(&self) -> std::option::Option<& str> {
         self.le.as_deref()
     }
     /// <p>The not equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
-    pub fn ne(&self) -> std::option::Option<&str> {
+    pub fn ne(&self) -> std::option::Option<& str> {
         self.ne.as_deref()
     }
-    /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-    /// <p>For example, an <code>Evaluation</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>Evaluation</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
-    /// <ul>
-    /// <li> <p>2014-09</p> </li>
-    /// <li> <p>2014-09-09</p> </li>
-    /// <li> <p>2014-09-09-Holiday</p> </li>
+    /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p> 
+    /// <p>For example, an <code>Evaluation</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>Evaluation</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p> 
+    /// <ul> 
+    /// <li> <p>2014-09</p> </li> 
+    /// <li> <p>2014-09-09</p> </li> 
+    /// <li> <p>2014-09-09-Holiday</p> </li> 
     /// </ul>
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> std::option::Option<& str> {
         self.prefix.as_deref()
     }
-    /// <p>A two-value parameter that determines the sequence of the resulting list of <code>Evaluation</code>.</p>
-    /// <ul>
-    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
-    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
-    /// </ul>
+    /// <p>A two-value parameter that determines the sequence of the resulting list of <code>Evaluation</code>.</p> 
+    /// <ul> 
+    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li> 
+    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li> 
+    /// </ul> 
     /// <p>Results are sorted by <code>FilterVariable</code>.</p>
-    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+    pub fn sort_order(&self) -> std::option::Option<& crate::model::SortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>The ID of the page in the paginated results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> The maximum number of <code>Evaluation</code> to include in the result.</p>
@@ -6008,7 +4574,7 @@ impl DescribeEvaluationsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for DescribeEvaluationsInput {
+impl  std::fmt::Debug for DescribeEvaluationsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEvaluationsInput");
         formatter.field("filter_variable", &self.filter_variable);
@@ -6027,118 +4593,106 @@ impl std::fmt::Debug for DescribeEvaluationsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeDataSourcesInput {
-    /// <p>Use one of the following variables to filter a list of <code>DataSource</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</p> </li>
-    /// <li> <p> <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</p> </li>
-    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.</p> </li>
-    /// <li> <p> <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li>
-    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p> </li>
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DescribeDataSourcesInput  {
+    /// <p>Use one of the following variables to filter a list of <code>DataSource</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</p> </li> 
+    /// <li> <p> <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</p> </li> 
+    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.</p> </li> 
+    /// <li> <p> <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li> 
+    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p> </li> 
     /// </ul>
-    #[doc(hidden)]
-    pub filter_variable: std::option::Option<crate::model::DataSourceFilterVariable>,
+    #[doc(hidden)]pub filter_variable: std::option::Option<crate::model::DataSourceFilterVariable>,
     /// <p>The equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
-    #[doc(hidden)]
-    pub eq: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub eq: std::option::Option<std::string::String>,
     /// <p>The greater than operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
-    #[doc(hidden)]
-    pub gt: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub gt: std::option::Option<std::string::String>,
     /// <p>The less than operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
-    #[doc(hidden)]
-    pub lt: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub lt: std::option::Option<std::string::String>,
     /// <p>The greater than or equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
-    #[doc(hidden)]
-    pub ge: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub ge: std::option::Option<std::string::String>,
     /// <p>The less than or equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
-    #[doc(hidden)]
-    pub le: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub le: std::option::Option<std::string::String>,
     /// <p>The not equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
-    #[doc(hidden)]
-    pub ne: std::option::Option<std::string::String>,
-    /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-    /// <p>For example, a <code>DataSource</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>DataSource</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
-    /// <ul>
-    /// <li> <p>2014-09</p> </li>
-    /// <li> <p>2014-09-09</p> </li>
-    /// <li> <p>2014-09-09-Holiday</p> </li>
+    #[doc(hidden)]pub ne: std::option::Option<std::string::String>,
+    /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p> 
+    /// <p>For example, a <code>DataSource</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>DataSource</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p> 
+    /// <ul> 
+    /// <li> <p>2014-09</p> </li> 
+    /// <li> <p>2014-09-09</p> </li> 
+    /// <li> <p>2014-09-09-Holiday</p> </li> 
     /// </ul>
-    #[doc(hidden)]
-    pub prefix: std::option::Option<std::string::String>,
-    /// <p>A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.</p>
-    /// <ul>
-    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
-    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
-    /// </ul>
+    #[doc(hidden)]pub prefix: std::option::Option<std::string::String>,
+    /// <p>A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.</p> 
+    /// <ul> 
+    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li> 
+    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li> 
+    /// </ul> 
     /// <p>Results are sorted by <code>FilterVariable</code>.</p>
-    #[doc(hidden)]
-    pub sort_order: std::option::Option<crate::model::SortOrder>,
+    #[doc(hidden)]pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>The ID of the page in the paginated results.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
     /// <p> The maximum number of <code>DataSource</code> to include in the result.</p>
-    #[doc(hidden)]
-    pub limit: std::option::Option<i32>,
+    #[doc(hidden)]pub limit: std::option::Option<i32>,
 }
 impl DescribeDataSourcesInput {
-    /// <p>Use one of the following variables to filter a list of <code>DataSource</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</p> </li>
-    /// <li> <p> <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</p> </li>
-    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.</p> </li>
-    /// <li> <p> <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li>
-    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p> </li>
+    /// <p>Use one of the following variables to filter a list of <code>DataSource</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</p> </li> 
+    /// <li> <p> <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</p> </li> 
+    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.</p> </li> 
+    /// <li> <p> <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li> 
+    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p> </li> 
     /// </ul>
-    pub fn filter_variable(&self) -> std::option::Option<&crate::model::DataSourceFilterVariable> {
+    pub fn filter_variable(&self) -> std::option::Option<& crate::model::DataSourceFilterVariable> {
         self.filter_variable.as_ref()
     }
     /// <p>The equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
-    pub fn eq(&self) -> std::option::Option<&str> {
+    pub fn eq(&self) -> std::option::Option<& str> {
         self.eq.as_deref()
     }
     /// <p>The greater than operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
-    pub fn gt(&self) -> std::option::Option<&str> {
+    pub fn gt(&self) -> std::option::Option<& str> {
         self.gt.as_deref()
     }
     /// <p>The less than operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
-    pub fn lt(&self) -> std::option::Option<&str> {
+    pub fn lt(&self) -> std::option::Option<& str> {
         self.lt.as_deref()
     }
     /// <p>The greater than or equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
-    pub fn ge(&self) -> std::option::Option<&str> {
+    pub fn ge(&self) -> std::option::Option<& str> {
         self.ge.as_deref()
     }
     /// <p>The less than or equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
-    pub fn le(&self) -> std::option::Option<&str> {
+    pub fn le(&self) -> std::option::Option<& str> {
         self.le.as_deref()
     }
     /// <p>The not equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
-    pub fn ne(&self) -> std::option::Option<&str> {
+    pub fn ne(&self) -> std::option::Option<& str> {
         self.ne.as_deref()
     }
-    /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-    /// <p>For example, a <code>DataSource</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>DataSource</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
-    /// <ul>
-    /// <li> <p>2014-09</p> </li>
-    /// <li> <p>2014-09-09</p> </li>
-    /// <li> <p>2014-09-09-Holiday</p> </li>
+    /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p> 
+    /// <p>For example, a <code>DataSource</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>DataSource</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p> 
+    /// <ul> 
+    /// <li> <p>2014-09</p> </li> 
+    /// <li> <p>2014-09-09</p> </li> 
+    /// <li> <p>2014-09-09-Holiday</p> </li> 
     /// </ul>
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> std::option::Option<& str> {
         self.prefix.as_deref()
     }
-    /// <p>A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.</p>
-    /// <ul>
-    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
-    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
-    /// </ul>
+    /// <p>A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.</p> 
+    /// <ul> 
+    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li> 
+    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li> 
+    /// </ul> 
     /// <p>Results are sorted by <code>FilterVariable</code>.</p>
-    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+    pub fn sort_order(&self) -> std::option::Option<& crate::model::SortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>The ID of the page in the paginated results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> The maximum number of <code>DataSource</code> to include in the result.</p>
@@ -6146,7 +4700,7 @@ impl DescribeDataSourcesInput {
         self.limit
     }
 }
-impl std::fmt::Debug for DescribeDataSourcesInput {
+impl  std::fmt::Debug for DescribeDataSourcesInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDataSourcesInput");
         formatter.field("filter_variable", &self.filter_variable);
@@ -6165,124 +4719,110 @@ impl std::fmt::Debug for DescribeDataSourcesInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeBatchPredictionsInput {
-    /// <p>Use one of the following variables to filter a list of <code>BatchPrediction</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to the <code>BatchPrediction</code> creation date.</p> </li>
-    /// <li> <p> <code>Status</code> - Sets the search criteria to the <code>BatchPrediction</code> status.</p> </li>
-    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of the <code>BatchPrediction</code> <b> </b> <code>Name</code>.</p> </li>
-    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>BatchPrediction</code> creation.</p> </li>
-    /// <li> <p> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> used in the <code>BatchPrediction</code>.</p> </li>
-    /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in the <code>BatchPrediction</code>.</p> </li>
-    /// <li> <p> <code>DataURI</code> - Sets the search criteria to the data file(s) used in the <code>BatchPrediction</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li>
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DescribeBatchPredictionsInput  {
+    /// <p>Use one of the following variables to filter a list of <code>BatchPrediction</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to the <code>BatchPrediction</code> creation date.</p> </li> 
+    /// <li> <p> <code>Status</code> - Sets the search criteria to the <code>BatchPrediction</code> status.</p> </li> 
+    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of the <code>BatchPrediction</code> <b> </b> <code>Name</code>.</p> </li> 
+    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>BatchPrediction</code> creation.</p> </li> 
+    /// <li> <p> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> used in the <code>BatchPrediction</code>.</p> </li> 
+    /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in the <code>BatchPrediction</code>.</p> </li> 
+    /// <li> <p> <code>DataURI</code> - Sets the search criteria to the data file(s) used in the <code>BatchPrediction</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li> 
     /// </ul>
-    #[doc(hidden)]
-    pub filter_variable: std::option::Option<crate::model::BatchPredictionFilterVariable>,
+    #[doc(hidden)]pub filter_variable: std::option::Option<crate::model::BatchPredictionFilterVariable>,
     /// <p>The equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
-    #[doc(hidden)]
-    pub eq: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub eq: std::option::Option<std::string::String>,
     /// <p>The greater than operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
-    #[doc(hidden)]
-    pub gt: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub gt: std::option::Option<std::string::String>,
     /// <p>The less than operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
-    #[doc(hidden)]
-    pub lt: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub lt: std::option::Option<std::string::String>,
     /// <p>The greater than or equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
-    #[doc(hidden)]
-    pub ge: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub ge: std::option::Option<std::string::String>,
     /// <p>The less than or equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
-    #[doc(hidden)]
-    pub le: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub le: std::option::Option<std::string::String>,
     /// <p>The not equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
-    #[doc(hidden)]
-    pub ne: std::option::Option<std::string::String>,
-    /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-    /// <p>For example, a <code>Batch Prediction</code> operation could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>BatchPrediction</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
-    /// <ul>
-    /// <li> <p>2014-09</p> </li>
-    /// <li> <p>2014-09-09</p> </li>
-    /// <li> <p>2014-09-09-Holiday</p> </li>
+    #[doc(hidden)]pub ne: std::option::Option<std::string::String>,
+    /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p> 
+    /// <p>For example, a <code>Batch Prediction</code> operation could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>BatchPrediction</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p> 
+    /// <ul> 
+    /// <li> <p>2014-09</p> </li> 
+    /// <li> <p>2014-09-09</p> </li> 
+    /// <li> <p>2014-09-09-Holiday</p> </li> 
     /// </ul>
-    #[doc(hidden)]
-    pub prefix: std::option::Option<std::string::String>,
-    /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>s.</p>
-    /// <ul>
-    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
-    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
-    /// </ul>
+    #[doc(hidden)]pub prefix: std::option::Option<std::string::String>,
+    /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>s.</p> 
+    /// <ul> 
+    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li> 
+    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li> 
+    /// </ul> 
     /// <p>Results are sorted by <code>FilterVariable</code>.</p>
-    #[doc(hidden)]
-    pub sort_order: std::option::Option<crate::model::SortOrder>,
+    #[doc(hidden)]pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>An ID of the page in the paginated results.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of pages of information to include in the result. The range of acceptable values is <code>1</code> through <code>100</code>. The default value is <code>100</code>.</p>
-    #[doc(hidden)]
-    pub limit: std::option::Option<i32>,
+    #[doc(hidden)]pub limit: std::option::Option<i32>,
 }
 impl DescribeBatchPredictionsInput {
-    /// <p>Use one of the following variables to filter a list of <code>BatchPrediction</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to the <code>BatchPrediction</code> creation date.</p> </li>
-    /// <li> <p> <code>Status</code> - Sets the search criteria to the <code>BatchPrediction</code> status.</p> </li>
-    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of the <code>BatchPrediction</code> <b> </b> <code>Name</code>.</p> </li>
-    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>BatchPrediction</code> creation.</p> </li>
-    /// <li> <p> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> used in the <code>BatchPrediction</code>.</p> </li>
-    /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in the <code>BatchPrediction</code>.</p> </li>
-    /// <li> <p> <code>DataURI</code> - Sets the search criteria to the data file(s) used in the <code>BatchPrediction</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li>
+    /// <p>Use one of the following variables to filter a list of <code>BatchPrediction</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to the <code>BatchPrediction</code> creation date.</p> </li> 
+    /// <li> <p> <code>Status</code> - Sets the search criteria to the <code>BatchPrediction</code> status.</p> </li> 
+    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of the <code>BatchPrediction</code> <b> </b> <code>Name</code>.</p> </li> 
+    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>BatchPrediction</code> creation.</p> </li> 
+    /// <li> <p> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> used in the <code>BatchPrediction</code>.</p> </li> 
+    /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in the <code>BatchPrediction</code>.</p> </li> 
+    /// <li> <p> <code>DataURI</code> - Sets the search criteria to the data file(s) used in the <code>BatchPrediction</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li> 
     /// </ul>
-    pub fn filter_variable(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchPredictionFilterVariable> {
+    pub fn filter_variable(&self) -> std::option::Option<& crate::model::BatchPredictionFilterVariable> {
         self.filter_variable.as_ref()
     }
     /// <p>The equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
-    pub fn eq(&self) -> std::option::Option<&str> {
+    pub fn eq(&self) -> std::option::Option<& str> {
         self.eq.as_deref()
     }
     /// <p>The greater than operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
-    pub fn gt(&self) -> std::option::Option<&str> {
+    pub fn gt(&self) -> std::option::Option<& str> {
         self.gt.as_deref()
     }
     /// <p>The less than operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
-    pub fn lt(&self) -> std::option::Option<&str> {
+    pub fn lt(&self) -> std::option::Option<& str> {
         self.lt.as_deref()
     }
     /// <p>The greater than or equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
-    pub fn ge(&self) -> std::option::Option<&str> {
+    pub fn ge(&self) -> std::option::Option<& str> {
         self.ge.as_deref()
     }
     /// <p>The less than or equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
-    pub fn le(&self) -> std::option::Option<&str> {
+    pub fn le(&self) -> std::option::Option<& str> {
         self.le.as_deref()
     }
     /// <p>The not equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
-    pub fn ne(&self) -> std::option::Option<&str> {
+    pub fn ne(&self) -> std::option::Option<& str> {
         self.ne.as_deref()
     }
-    /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-    /// <p>For example, a <code>Batch Prediction</code> operation could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>BatchPrediction</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
-    /// <ul>
-    /// <li> <p>2014-09</p> </li>
-    /// <li> <p>2014-09-09</p> </li>
-    /// <li> <p>2014-09-09-Holiday</p> </li>
+    /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p> 
+    /// <p>For example, a <code>Batch Prediction</code> operation could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>BatchPrediction</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p> 
+    /// <ul> 
+    /// <li> <p>2014-09</p> </li> 
+    /// <li> <p>2014-09-09</p> </li> 
+    /// <li> <p>2014-09-09-Holiday</p> </li> 
     /// </ul>
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> std::option::Option<& str> {
         self.prefix.as_deref()
     }
-    /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>s.</p>
-    /// <ul>
-    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
-    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
-    /// </ul>
+    /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>s.</p> 
+    /// <ul> 
+    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li> 
+    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li> 
+    /// </ul> 
     /// <p>Results are sorted by <code>FilterVariable</code>.</p>
-    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+    pub fn sort_order(&self) -> std::option::Option<& crate::model::SortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>An ID of the page in the paginated results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The number of pages of information to include in the result. The range of acceptable values is <code>1</code> through <code>100</code>. The default value is <code>100</code>.</p>
@@ -6290,7 +4830,7 @@ impl DescribeBatchPredictionsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for DescribeBatchPredictionsInput {
+impl  std::fmt::Debug for DescribeBatchPredictionsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeBatchPredictionsInput");
         formatter.field("filter_variable", &self.filter_variable);
@@ -6309,34 +4849,30 @@ impl std::fmt::Debug for DescribeBatchPredictionsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteTagsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DeleteTagsInput  {
     /// <p>One or more tags to delete.</p>
-    #[doc(hidden)]
-    pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ID of the tagged ML object. For example, <code>exampleModelId</code>.</p>
-    #[doc(hidden)]
-    pub resource_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub resource_id: std::option::Option<std::string::String>,
     /// <p>The type of the tagged ML object.</p>
-    #[doc(hidden)]
-    pub resource_type: std::option::Option<crate::model::TaggableResourceType>,
+    #[doc(hidden)]pub resource_type: std::option::Option<crate::model::TaggableResourceType>,
 }
 impl DeleteTagsInput {
     /// <p>One or more tags to delete.</p>
-    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
         self.tag_keys.as_deref()
     }
     /// <p>The ID of the tagged ML object. For example, <code>exampleModelId</code>.</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The type of the tagged ML object.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::model::TaggableResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::model::TaggableResourceType> {
         self.resource_type.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteTagsInput {
+impl  std::fmt::Debug for DeleteTagsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteTagsInput");
         formatter.field("tag_keys", &self.tag_keys);
@@ -6347,20 +4883,18 @@ impl std::fmt::Debug for DeleteTagsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteRealtimeEndpointInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DeleteRealtimeEndpointInput  {
     /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
-    #[doc(hidden)]
-    pub ml_model_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub ml_model_id: std::option::Option<std::string::String>,
 }
 impl DeleteRealtimeEndpointInput {
     /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
-    pub fn ml_model_id(&self) -> std::option::Option<&str> {
+    pub fn ml_model_id(&self) -> std::option::Option<& str> {
         self.ml_model_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRealtimeEndpointInput {
+impl  std::fmt::Debug for DeleteRealtimeEndpointInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRealtimeEndpointInput");
         formatter.field("ml_model_id", &self.ml_model_id);
@@ -6369,20 +4903,18 @@ impl std::fmt::Debug for DeleteRealtimeEndpointInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteMlModelInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DeleteMlModelInput  {
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</p>
-    #[doc(hidden)]
-    pub ml_model_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub ml_model_id: std::option::Option<std::string::String>,
 }
 impl DeleteMlModelInput {
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</p>
-    pub fn ml_model_id(&self) -> std::option::Option<&str> {
+    pub fn ml_model_id(&self) -> std::option::Option<& str> {
         self.ml_model_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteMlModelInput {
+impl  std::fmt::Debug for DeleteMlModelInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteMlModelInput");
         formatter.field("ml_model_id", &self.ml_model_id);
@@ -6391,20 +4923,18 @@ impl std::fmt::Debug for DeleteMlModelInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteEvaluationInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DeleteEvaluationInput  {
     /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code> to delete.</p>
-    #[doc(hidden)]
-    pub evaluation_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub evaluation_id: std::option::Option<std::string::String>,
 }
 impl DeleteEvaluationInput {
     /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code> to delete.</p>
-    pub fn evaluation_id(&self) -> std::option::Option<&str> {
+    pub fn evaluation_id(&self) -> std::option::Option<& str> {
         self.evaluation_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteEvaluationInput {
+impl  std::fmt::Debug for DeleteEvaluationInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteEvaluationInput");
         formatter.field("evaluation_id", &self.evaluation_id);
@@ -6413,20 +4943,18 @@ impl std::fmt::Debug for DeleteEvaluationInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteDataSourceInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DeleteDataSourceInput  {
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
-    #[doc(hidden)]
-    pub data_source_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub data_source_id: std::option::Option<std::string::String>,
 }
 impl DeleteDataSourceInput {
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
-    pub fn data_source_id(&self) -> std::option::Option<&str> {
+    pub fn data_source_id(&self) -> std::option::Option<& str> {
         self.data_source_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDataSourceInput {
+impl  std::fmt::Debug for DeleteDataSourceInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDataSourceInput");
         formatter.field("data_source_id", &self.data_source_id);
@@ -6435,20 +4963,18 @@ impl std::fmt::Debug for DeleteDataSourceInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteBatchPredictionInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DeleteBatchPredictionInput  {
     /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
-    #[doc(hidden)]
-    pub batch_prediction_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub batch_prediction_id: std::option::Option<std::string::String>,
 }
 impl DeleteBatchPredictionInput {
     /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
-    pub fn batch_prediction_id(&self) -> std::option::Option<&str> {
+    pub fn batch_prediction_id(&self) -> std::option::Option<& str> {
         self.batch_prediction_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBatchPredictionInput {
+impl  std::fmt::Debug for DeleteBatchPredictionInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteBatchPredictionInput");
         formatter.field("batch_prediction_id", &self.batch_prediction_id);
@@ -6457,20 +4983,18 @@ impl std::fmt::Debug for DeleteBatchPredictionInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateRealtimeEndpointInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CreateRealtimeEndpointInput  {
     /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
-    #[doc(hidden)]
-    pub ml_model_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub ml_model_id: std::option::Option<std::string::String>,
 }
 impl CreateRealtimeEndpointInput {
     /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
-    pub fn ml_model_id(&self) -> std::option::Option<&str> {
+    pub fn ml_model_id(&self) -> std::option::Option<& str> {
         self.ml_model_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateRealtimeEndpointInput {
+impl  std::fmt::Debug for CreateRealtimeEndpointInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRealtimeEndpointInput");
         formatter.field("ml_model_id", &self.ml_model_id);
@@ -6479,94 +5003,82 @@ impl std::fmt::Debug for CreateRealtimeEndpointInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateMlModelInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CreateMlModelInput  {
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</p>
-    #[doc(hidden)]
-    pub ml_model_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub ml_model_id: std::option::Option<std::string::String>,
     /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
-    #[doc(hidden)]
-    pub ml_model_name: std::option::Option<std::string::String>,
-    /// <p>The category of supervised learning that this <code>MLModel</code> will address. Choose from the following types:</p>
-    /// <ul>
-    /// <li> <p>Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.</p> </li>
-    /// <li> <p>Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.</p> </li>
-    /// <li> <p>Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.</p> </li>
-    /// </ul>
+    #[doc(hidden)]pub ml_model_name: std::option::Option<std::string::String>,
+    /// <p>The category of supervised learning that this <code>MLModel</code> will address. Choose from the following types:</p> 
+    /// <ul> 
+    /// <li> <p>Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.</p> </li> 
+    /// <li> <p>Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.</p> </li> 
+    /// <li> <p>Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.</p> </li> 
+    /// </ul> 
     /// <p> For more information, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.</p>
-    #[doc(hidden)]
-    pub ml_model_type: std::option::Option<crate::model::MlModelType>,
-    /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as a map of key-value pairs.</p>
-    /// <p>The following is the current set of training parameters:</p>
-    /// <ul>
-    /// <li> <p> <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending on the input data, the size of the model might affect its performance.</p> <p> The value is an integer that ranges from <code>100000</code> to <code>2147483648</code>. The default value is <code>33554432</code>.</p> </li>
-    /// <li> <p> <code>sgd.maxPasses</code> - The number of times that the training process traverses the observations to build the <code>MLModel</code>. The value is an integer that ranges from <code>1</code> to <code>10000</code>. The default value is <code>10</code>.</p> </li>
-    /// <li> <p> <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling the data improves a model's ability to find the optimal solution for a variety of data types. The valid values are <code>auto</code> and <code>none</code>. The default value is <code>none</code>. We strongly recommend that you shuffle your data.</p> </li>
-    /// <li> <p> <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to zero, resulting in a sparse feature set. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1 normalization. This parameter can't be used when <code>L2</code> is specified. Use this parameter sparingly.</p> </li>
-    /// <li> <p> <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to small, nonzero values. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This parameter can't be used when <code>L1</code> is specified. Use this parameter sparingly.</p> </li>
+    #[doc(hidden)]pub ml_model_type: std::option::Option<crate::model::MlModelType>,
+    /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as a map of key-value pairs.</p> 
+    /// <p>The following is the current set of training parameters:</p> 
+    /// <ul> 
+    /// <li> <p> <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending on the input data, the size of the model might affect its performance.</p> <p> The value is an integer that ranges from <code>100000</code> to <code>2147483648</code>. The default value is <code>33554432</code>.</p> </li> 
+    /// <li> <p> <code>sgd.maxPasses</code> - The number of times that the training process traverses the observations to build the <code>MLModel</code>. The value is an integer that ranges from <code>1</code> to <code>10000</code>. The default value is <code>10</code>.</p> </li> 
+    /// <li> <p> <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling the data improves a model's ability to find the optimal solution for a variety of data types. The valid values are <code>auto</code> and <code>none</code>. The default value is <code>none</code>. We strongly recommend that you shuffle your data.</p> </li> 
+    /// <li> <p> <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to zero, resulting in a sparse feature set. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1 normalization. This parameter can't be used when <code>L2</code> is specified. Use this parameter sparingly.</p> </li> 
+    /// <li> <p> <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to small, nonzero values. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This parameter can't be used when <code>L1</code> is specified. Use this parameter sparingly.</p> </li> 
     /// </ul>
-    #[doc(hidden)]
-    pub parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[doc(hidden)]pub parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The <code>DataSource</code> that points to the training data.</p>
-    #[doc(hidden)]
-    pub training_data_source_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub training_data_source_id: std::option::Option<std::string::String>,
     /// <p>The data recipe for creating the <code>MLModel</code>. You must specify either the recipe or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
-    #[doc(hidden)]
-    pub recipe: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub recipe: std::option::Option<std::string::String>,
     /// <p>The Amazon Simple Storage Service (Amazon S3) location and file name that contains the <code>MLModel</code> recipe. You must specify either the recipe or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
-    #[doc(hidden)]
-    pub recipe_uri: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub recipe_uri: std::option::Option<std::string::String>,
 }
 impl CreateMlModelInput {
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</p>
-    pub fn ml_model_id(&self) -> std::option::Option<&str> {
+    pub fn ml_model_id(&self) -> std::option::Option<& str> {
         self.ml_model_id.as_deref()
     }
     /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
-    pub fn ml_model_name(&self) -> std::option::Option<&str> {
+    pub fn ml_model_name(&self) -> std::option::Option<& str> {
         self.ml_model_name.as_deref()
     }
-    /// <p>The category of supervised learning that this <code>MLModel</code> will address. Choose from the following types:</p>
-    /// <ul>
-    /// <li> <p>Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.</p> </li>
-    /// <li> <p>Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.</p> </li>
-    /// <li> <p>Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.</p> </li>
-    /// </ul>
+    /// <p>The category of supervised learning that this <code>MLModel</code> will address. Choose from the following types:</p> 
+    /// <ul> 
+    /// <li> <p>Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.</p> </li> 
+    /// <li> <p>Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.</p> </li> 
+    /// <li> <p>Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.</p> </li> 
+    /// </ul> 
     /// <p> For more information, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.</p>
-    pub fn ml_model_type(&self) -> std::option::Option<&crate::model::MlModelType> {
+    pub fn ml_model_type(&self) -> std::option::Option<& crate::model::MlModelType> {
         self.ml_model_type.as_ref()
     }
-    /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as a map of key-value pairs.</p>
-    /// <p>The following is the current set of training parameters:</p>
-    /// <ul>
-    /// <li> <p> <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending on the input data, the size of the model might affect its performance.</p> <p> The value is an integer that ranges from <code>100000</code> to <code>2147483648</code>. The default value is <code>33554432</code>.</p> </li>
-    /// <li> <p> <code>sgd.maxPasses</code> - The number of times that the training process traverses the observations to build the <code>MLModel</code>. The value is an integer that ranges from <code>1</code> to <code>10000</code>. The default value is <code>10</code>.</p> </li>
-    /// <li> <p> <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling the data improves a model's ability to find the optimal solution for a variety of data types. The valid values are <code>auto</code> and <code>none</code>. The default value is <code>none</code>. We strongly recommend that you shuffle your data.</p> </li>
-    /// <li> <p> <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to zero, resulting in a sparse feature set. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1 normalization. This parameter can't be used when <code>L2</code> is specified. Use this parameter sparingly.</p> </li>
-    /// <li> <p> <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to small, nonzero values. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This parameter can't be used when <code>L1</code> is specified. Use this parameter sparingly.</p> </li>
+    /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as a map of key-value pairs.</p> 
+    /// <p>The following is the current set of training parameters:</p> 
+    /// <ul> 
+    /// <li> <p> <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending on the input data, the size of the model might affect its performance.</p> <p> The value is an integer that ranges from <code>100000</code> to <code>2147483648</code>. The default value is <code>33554432</code>.</p> </li> 
+    /// <li> <p> <code>sgd.maxPasses</code> - The number of times that the training process traverses the observations to build the <code>MLModel</code>. The value is an integer that ranges from <code>1</code> to <code>10000</code>. The default value is <code>10</code>.</p> </li> 
+    /// <li> <p> <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling the data improves a model's ability to find the optimal solution for a variety of data types. The valid values are <code>auto</code> and <code>none</code>. The default value is <code>none</code>. We strongly recommend that you shuffle your data.</p> </li> 
+    /// <li> <p> <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to zero, resulting in a sparse feature set. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1 normalization. This parameter can't be used when <code>L2</code> is specified. Use this parameter sparingly.</p> </li> 
+    /// <li> <p> <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to small, nonzero values. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This parameter can't be used when <code>L1</code> is specified. Use this parameter sparingly.</p> </li> 
     /// </ul>
-    pub fn parameters(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.parameters.as_ref()
     }
     /// <p>The <code>DataSource</code> that points to the training data.</p>
-    pub fn training_data_source_id(&self) -> std::option::Option<&str> {
+    pub fn training_data_source_id(&self) -> std::option::Option<& str> {
         self.training_data_source_id.as_deref()
     }
     /// <p>The data recipe for creating the <code>MLModel</code>. You must specify either the recipe or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
-    pub fn recipe(&self) -> std::option::Option<&str> {
+    pub fn recipe(&self) -> std::option::Option<& str> {
         self.recipe.as_deref()
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) location and file name that contains the <code>MLModel</code> recipe. You must specify either the recipe or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
-    pub fn recipe_uri(&self) -> std::option::Option<&str> {
+    pub fn recipe_uri(&self) -> std::option::Option<& str> {
         self.recipe_uri.as_deref()
     }
 }
-impl std::fmt::Debug for CreateMlModelInput {
+impl  std::fmt::Debug for CreateMlModelInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMlModelInput");
         formatter.field("ml_model_id", &self.ml_model_id);
@@ -6581,43 +5093,38 @@ impl std::fmt::Debug for CreateMlModelInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateEvaluationInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CreateEvaluationInput  {
     /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>.</p>
-    #[doc(hidden)]
-    pub evaluation_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub evaluation_id: std::option::Option<std::string::String>,
     /// <p>A user-supplied name or description of the <code>Evaluation</code>.</p>
-    #[doc(hidden)]
-    pub evaluation_name: std::option::Option<std::string::String>,
-    /// <p>The ID of the <code>MLModel</code> to evaluate.</p>
+    #[doc(hidden)]pub evaluation_name: std::option::Option<std::string::String>,
+    /// <p>The ID of the <code>MLModel</code> to evaluate.</p> 
     /// <p>The schema used in creating the <code>MLModel</code> must match the schema of the <code>DataSource</code> used in the <code>Evaluation</code>.</p>
-    #[doc(hidden)]
-    pub ml_model_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub ml_model_id: std::option::Option<std::string::String>,
     /// <p>The ID of the <code>DataSource</code> for the evaluation. The schema of the <code>DataSource</code> must match the schema used to create the <code>MLModel</code>.</p>
-    #[doc(hidden)]
-    pub evaluation_data_source_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub evaluation_data_source_id: std::option::Option<std::string::String>,
 }
 impl CreateEvaluationInput {
     /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>.</p>
-    pub fn evaluation_id(&self) -> std::option::Option<&str> {
+    pub fn evaluation_id(&self) -> std::option::Option<& str> {
         self.evaluation_id.as_deref()
     }
     /// <p>A user-supplied name or description of the <code>Evaluation</code>.</p>
-    pub fn evaluation_name(&self) -> std::option::Option<&str> {
+    pub fn evaluation_name(&self) -> std::option::Option<& str> {
         self.evaluation_name.as_deref()
     }
-    /// <p>The ID of the <code>MLModel</code> to evaluate.</p>
+    /// <p>The ID of the <code>MLModel</code> to evaluate.</p> 
     /// <p>The schema used in creating the <code>MLModel</code> must match the schema of the <code>DataSource</code> used in the <code>Evaluation</code>.</p>
-    pub fn ml_model_id(&self) -> std::option::Option<&str> {
+    pub fn ml_model_id(&self) -> std::option::Option<& str> {
         self.ml_model_id.as_deref()
     }
     /// <p>The ID of the <code>DataSource</code> for the evaluation. The schema of the <code>DataSource</code> must match the schema used to create the <code>MLModel</code>.</p>
-    pub fn evaluation_data_source_id(&self) -> std::option::Option<&str> {
+    pub fn evaluation_data_source_id(&self) -> std::option::Option<& str> {
         self.evaluation_data_source_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateEvaluationInput {
+impl  std::fmt::Debug for CreateEvaluationInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateEvaluationInput");
         formatter.field("evaluation_id", &self.evaluation_id);
@@ -6629,45 +5136,40 @@ impl std::fmt::Debug for CreateEvaluationInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateDataSourceFromS3Input {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CreateDataSourceFromS3Input  {
     /// <p>A user-supplied identifier that uniquely identifies the <code>DataSource</code>. </p>
-    #[doc(hidden)]
-    pub data_source_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub data_source_id: std::option::Option<std::string::String>,
     /// <p>A user-supplied name or description of the <code>DataSource</code>. </p>
-    #[doc(hidden)]
-    pub data_source_name: std::option::Option<std::string::String>,
-    /// <p>The data specification of a <code>DataSource</code>:</p>
-    /// <ul>
-    /// <li> <p>DataLocationS3 - The Amazon S3 location of the observation data.</p> </li>
-    /// <li> <p>DataSchemaLocationS3 - The Amazon S3 location of the <code>DataSchema</code>.</p> </li>
-    /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>
-    /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
+    #[doc(hidden)]pub data_source_name: std::option::Option<std::string::String>,
+    /// <p>The data specification of a <code>DataSource</code>:</p> 
+    /// <ul> 
+    /// <li> <p>DataLocationS3 - The Amazon S3 location of the observation data.</p> </li> 
+    /// <li> <p>DataSchemaLocationS3 - The Amazon S3 location of the <code>DataSchema</code>.</p> </li> 
+    /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li> 
+    /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li> 
     /// </ul>
-    #[doc(hidden)]
-    pub data_spec: std::option::Option<crate::model::S3DataSpec>,
+    #[doc(hidden)]pub data_spec: std::option::Option<crate::model::S3DataSpec>,
     /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training.</p>
-    #[doc(hidden)]
-    pub compute_statistics: bool,
+    #[doc(hidden)]pub compute_statistics: bool,
 }
 impl CreateDataSourceFromS3Input {
     /// <p>A user-supplied identifier that uniquely identifies the <code>DataSource</code>. </p>
-    pub fn data_source_id(&self) -> std::option::Option<&str> {
+    pub fn data_source_id(&self) -> std::option::Option<& str> {
         self.data_source_id.as_deref()
     }
     /// <p>A user-supplied name or description of the <code>DataSource</code>. </p>
-    pub fn data_source_name(&self) -> std::option::Option<&str> {
+    pub fn data_source_name(&self) -> std::option::Option<& str> {
         self.data_source_name.as_deref()
     }
-    /// <p>The data specification of a <code>DataSource</code>:</p>
-    /// <ul>
-    /// <li> <p>DataLocationS3 - The Amazon S3 location of the observation data.</p> </li>
-    /// <li> <p>DataSchemaLocationS3 - The Amazon S3 location of the <code>DataSchema</code>.</p> </li>
-    /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>
-    /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
+    /// <p>The data specification of a <code>DataSource</code>:</p> 
+    /// <ul> 
+    /// <li> <p>DataLocationS3 - The Amazon S3 location of the observation data.</p> </li> 
+    /// <li> <p>DataSchemaLocationS3 - The Amazon S3 location of the <code>DataSchema</code>.</p> </li> 
+    /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li> 
+    /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li> 
     /// </ul>
-    pub fn data_spec(&self) -> std::option::Option<&crate::model::S3DataSpec> {
+    pub fn data_spec(&self) -> std::option::Option<& crate::model::S3DataSpec> {
         self.data_spec.as_ref()
     }
     /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training.</p>
@@ -6675,7 +5177,7 @@ impl CreateDataSourceFromS3Input {
         self.compute_statistics
     }
 }
-impl std::fmt::Debug for CreateDataSourceFromS3Input {
+impl  std::fmt::Debug for CreateDataSourceFromS3Input  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDataSourceFromS3Input");
         formatter.field("data_source_id", &self.data_source_id);
@@ -6687,74 +5189,68 @@ impl std::fmt::Debug for CreateDataSourceFromS3Input {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateDataSourceFromRedshiftInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CreateDataSourceFromRedshiftInput  {
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
-    #[doc(hidden)]
-    pub data_source_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub data_source_id: std::option::Option<std::string::String>,
     /// <p>A user-supplied name or description of the <code>DataSource</code>. </p>
-    #[doc(hidden)]
-    pub data_source_name: std::option::Option<std::string::String>,
-    /// <p>The data specification of an Amazon Redshift <code>DataSource</code>:</p>
-    /// <ul>
-    /// <li> <p>DatabaseInformation -</p>
-    /// <ul>
-    /// <li> <p> <code>DatabaseName</code> - The name of the Amazon Redshift database.</p> </li>
-    /// <li> <p> <code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.</p> </li>
-    /// </ul> </li>
-    /// <li> <p>DatabaseCredentials - The AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon Redshift database.</p> </li>
-    /// <li> <p>SelectSqlQuery - The query that is used to retrieve the observation data for the <code>Datasource</code>.</p> </li>
-    /// <li> <p>S3StagingLocation - The Amazon Simple Storage Service (Amazon S3) location for staging Amazon Redshift data. The data retrieved from Amazon Redshift using the <code>SelectSqlQuery</code> query is stored in this location.</p> </li>
-    /// <li> <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p> </li>
-    /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>
-    /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>DataSource</code>.</p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
+    #[doc(hidden)]pub data_source_name: std::option::Option<std::string::String>,
+    /// <p>The data specification of an Amazon Redshift <code>DataSource</code>:</p> 
+    /// <ul> 
+    /// <li> <p>DatabaseInformation -</p> 
+    /// <ul> 
+    /// <li> <p> <code>DatabaseName</code> - The name of the Amazon Redshift database.</p> </li> 
+    /// <li> <p> <code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>DatabaseCredentials - The AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon Redshift database.</p> </li> 
+    /// <li> <p>SelectSqlQuery - The query that is used to retrieve the observation data for the <code>Datasource</code>.</p> </li> 
+    /// <li> <p>S3StagingLocation - The Amazon Simple Storage Service (Amazon S3) location for staging Amazon Redshift data. The data retrieved from Amazon Redshift using the <code>SelectSqlQuery</code> query is stored in this location.</p> </li> 
+    /// <li> <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p> </li> 
+    /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li> 
+    /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>DataSource</code>.</p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li> 
     /// </ul>
-    #[doc(hidden)]
-    pub data_spec: std::option::Option<crate::model::RedshiftDataSpec>,
-    /// <p>A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role on behalf of the user to create the following:</p>
-    /// <ul>
-    /// <li> <p>A security group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an Amazon Redshift cluster</p> </li>
-    /// <li> <p>An Amazon S3 bucket policy to grant Amazon ML read/write permissions on the <code>S3StagingLocation</code> </p> </li>
+    #[doc(hidden)]pub data_spec: std::option::Option<crate::model::RedshiftDataSpec>,
+    /// <p>A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role on behalf of the user to create the following:</p> 
+    /// <ul> 
+    /// <li> <p>A security group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an Amazon Redshift cluster</p> </li> 
+    /// <li> <p>An Amazon S3 bucket policy to grant Amazon ML read/write permissions on the <code>S3StagingLocation</code> </p> </li> 
     /// </ul>
-    #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub role_arn: std::option::Option<std::string::String>,
     /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code>DataSource</code> needs to be used for <code>MLModel</code> training.</p>
-    #[doc(hidden)]
-    pub compute_statistics: bool,
+    #[doc(hidden)]pub compute_statistics: bool,
 }
 impl CreateDataSourceFromRedshiftInput {
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
-    pub fn data_source_id(&self) -> std::option::Option<&str> {
+    pub fn data_source_id(&self) -> std::option::Option<& str> {
         self.data_source_id.as_deref()
     }
     /// <p>A user-supplied name or description of the <code>DataSource</code>. </p>
-    pub fn data_source_name(&self) -> std::option::Option<&str> {
+    pub fn data_source_name(&self) -> std::option::Option<& str> {
         self.data_source_name.as_deref()
     }
-    /// <p>The data specification of an Amazon Redshift <code>DataSource</code>:</p>
-    /// <ul>
-    /// <li> <p>DatabaseInformation -</p>
-    /// <ul>
-    /// <li> <p> <code>DatabaseName</code> - The name of the Amazon Redshift database.</p> </li>
-    /// <li> <p> <code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.</p> </li>
-    /// </ul> </li>
-    /// <li> <p>DatabaseCredentials - The AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon Redshift database.</p> </li>
-    /// <li> <p>SelectSqlQuery - The query that is used to retrieve the observation data for the <code>Datasource</code>.</p> </li>
-    /// <li> <p>S3StagingLocation - The Amazon Simple Storage Service (Amazon S3) location for staging Amazon Redshift data. The data retrieved from Amazon Redshift using the <code>SelectSqlQuery</code> query is stored in this location.</p> </li>
-    /// <li> <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p> </li>
-    /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>
-    /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>DataSource</code>.</p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
+    /// <p>The data specification of an Amazon Redshift <code>DataSource</code>:</p> 
+    /// <ul> 
+    /// <li> <p>DatabaseInformation -</p> 
+    /// <ul> 
+    /// <li> <p> <code>DatabaseName</code> - The name of the Amazon Redshift database.</p> </li> 
+    /// <li> <p> <code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>DatabaseCredentials - The AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon Redshift database.</p> </li> 
+    /// <li> <p>SelectSqlQuery - The query that is used to retrieve the observation data for the <code>Datasource</code>.</p> </li> 
+    /// <li> <p>S3StagingLocation - The Amazon Simple Storage Service (Amazon S3) location for staging Amazon Redshift data. The data retrieved from Amazon Redshift using the <code>SelectSqlQuery</code> query is stored in this location.</p> </li> 
+    /// <li> <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p> </li> 
+    /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li> 
+    /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>DataSource</code>.</p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li> 
     /// </ul>
-    pub fn data_spec(&self) -> std::option::Option<&crate::model::RedshiftDataSpec> {
+    pub fn data_spec(&self) -> std::option::Option<& crate::model::RedshiftDataSpec> {
         self.data_spec.as_ref()
     }
-    /// <p>A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role on behalf of the user to create the following:</p>
-    /// <ul>
-    /// <li> <p>A security group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an Amazon Redshift cluster</p> </li>
-    /// <li> <p>An Amazon S3 bucket policy to grant Amazon ML read/write permissions on the <code>S3StagingLocation</code> </p> </li>
+    /// <p>A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role on behalf of the user to create the following:</p> 
+    /// <ul> 
+    /// <li> <p>A security group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an Amazon Redshift cluster</p> </li> 
+    /// <li> <p>An Amazon S3 bucket policy to grant Amazon ML read/write permissions on the <code>S3StagingLocation</code> </p> </li> 
     /// </ul>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code>DataSource</code> needs to be used for <code>MLModel</code> training.</p>
@@ -6762,7 +5258,7 @@ impl CreateDataSourceFromRedshiftInput {
         self.compute_statistics
     }
 }
-impl std::fmt::Debug for CreateDataSourceFromRedshiftInput {
+impl  std::fmt::Debug for CreateDataSourceFromRedshiftInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDataSourceFromRedshiftInput");
         formatter.field("data_source_id", &self.data_source_id);
@@ -6775,74 +5271,68 @@ impl std::fmt::Debug for CreateDataSourceFromRedshiftInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateDataSourceFromRdsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CreateDataSourceFromRdsInput  {
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. Typically, an Amazon Resource Number (ARN) becomes the ID for a <code>DataSource</code>.</p>
-    #[doc(hidden)]
-    pub data_source_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub data_source_id: std::option::Option<std::string::String>,
     /// <p>A user-supplied name or description of the <code>DataSource</code>.</p>
-    #[doc(hidden)]
-    pub data_source_name: std::option::Option<std::string::String>,
-    /// <p>The data specification of an Amazon RDS <code>DataSource</code>:</p>
-    /// <ul>
-    /// <li> <p>DatabaseInformation -</p>
-    /// <ul>
-    /// <li> <p> <code>DatabaseName</code> - The name of the Amazon RDS database.</p> </li>
-    /// <li> <p> <code>InstanceIdentifier </code> - A unique identifier for the Amazon RDS database instance.</p> </li>
-    /// </ul> </li>
-    /// <li> <p>DatabaseCredentials - AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon RDS database.</p> </li>
-    /// <li> <p>ResourceRole - A role (DataPipelineDefaultResourceRole) assumed by an EC2 instance to carry out the copy task from Amazon RDS to Amazon Simple Storage Service (Amazon S3). For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p> </li>
-    /// <li> <p>ServiceRole - A role (DataPipelineDefaultRole) assumed by the AWS Data Pipeline service to monitor the progress of the copy task from Amazon RDS to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p> </li>
-    /// <li> <p>SecurityInfo - The security information to use to access an RDS DB instance. You need to set up appropriate ingress rules for the security entity IDs provided to allow access to the Amazon RDS instance. Specify a [<code>SubnetId</code>, <code>SecurityGroupIds</code>] pair for a VPC-based RDS DB instance.</p> </li>
-    /// <li> <p>SelectSqlQuery - A query that is used to retrieve the observation data for the <code>Datasource</code>.</p> </li>
-    /// <li> <p>S3StagingLocation - The Amazon S3 location for staging Amazon RDS data. The data retrieved from Amazon RDS using <code>SelectSqlQuery</code> is stored in this location.</p> </li>
-    /// <li> <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p> </li>
-    /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>
-    /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
+    #[doc(hidden)]pub data_source_name: std::option::Option<std::string::String>,
+    /// <p>The data specification of an Amazon RDS <code>DataSource</code>:</p> 
+    /// <ul> 
+    /// <li> <p>DatabaseInformation -</p> 
+    /// <ul> 
+    /// <li> <p> <code>DatabaseName</code> - The name of the Amazon RDS database.</p> </li> 
+    /// <li> <p> <code>InstanceIdentifier </code> - A unique identifier for the Amazon RDS database instance.</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>DatabaseCredentials - AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon RDS database.</p> </li> 
+    /// <li> <p>ResourceRole - A role (DataPipelineDefaultResourceRole) assumed by an EC2 instance to carry out the copy task from Amazon RDS to Amazon Simple Storage Service (Amazon S3). For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p> </li> 
+    /// <li> <p>ServiceRole - A role (DataPipelineDefaultRole) assumed by the AWS Data Pipeline service to monitor the progress of the copy task from Amazon RDS to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p> </li> 
+    /// <li> <p>SecurityInfo - The security information to use to access an RDS DB instance. You need to set up appropriate ingress rules for the security entity IDs provided to allow access to the Amazon RDS instance. Specify a [<code>SubnetId</code>, <code>SecurityGroupIds</code>] pair for a VPC-based RDS DB instance.</p> </li> 
+    /// <li> <p>SelectSqlQuery - A query that is used to retrieve the observation data for the <code>Datasource</code>.</p> </li> 
+    /// <li> <p>S3StagingLocation - The Amazon S3 location for staging Amazon RDS data. The data retrieved from Amazon RDS using <code>SelectSqlQuery</code> is stored in this location.</p> </li> 
+    /// <li> <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p> </li> 
+    /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li> 
+    /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li> 
     /// </ul>
-    #[doc(hidden)]
-    pub rds_data: std::option::Option<crate::model::RdsDataSpec>,
-    /// <p>The role that Amazon ML assumes on behalf of the user to create and activate a data pipeline in the user's account and copy data using the <code>SelectSqlQuery</code> query from Amazon RDS to Amazon S3.</p>
+    #[doc(hidden)]pub rds_data: std::option::Option<crate::model::RdsDataSpec>,
+    /// <p>The role that Amazon ML assumes on behalf of the user to create and activate a data pipeline in the user's account and copy data using the <code>SelectSqlQuery</code> query from Amazon RDS to Amazon S3.</p> 
     /// <p></p>
-    #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub role_arn: std::option::Option<std::string::String>,
     /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training. </p>
-    #[doc(hidden)]
-    pub compute_statistics: bool,
+    #[doc(hidden)]pub compute_statistics: bool,
 }
 impl CreateDataSourceFromRdsInput {
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. Typically, an Amazon Resource Number (ARN) becomes the ID for a <code>DataSource</code>.</p>
-    pub fn data_source_id(&self) -> std::option::Option<&str> {
+    pub fn data_source_id(&self) -> std::option::Option<& str> {
         self.data_source_id.as_deref()
     }
     /// <p>A user-supplied name or description of the <code>DataSource</code>.</p>
-    pub fn data_source_name(&self) -> std::option::Option<&str> {
+    pub fn data_source_name(&self) -> std::option::Option<& str> {
         self.data_source_name.as_deref()
     }
-    /// <p>The data specification of an Amazon RDS <code>DataSource</code>:</p>
-    /// <ul>
-    /// <li> <p>DatabaseInformation -</p>
-    /// <ul>
-    /// <li> <p> <code>DatabaseName</code> - The name of the Amazon RDS database.</p> </li>
-    /// <li> <p> <code>InstanceIdentifier </code> - A unique identifier for the Amazon RDS database instance.</p> </li>
-    /// </ul> </li>
-    /// <li> <p>DatabaseCredentials - AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon RDS database.</p> </li>
-    /// <li> <p>ResourceRole - A role (DataPipelineDefaultResourceRole) assumed by an EC2 instance to carry out the copy task from Amazon RDS to Amazon Simple Storage Service (Amazon S3). For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p> </li>
-    /// <li> <p>ServiceRole - A role (DataPipelineDefaultRole) assumed by the AWS Data Pipeline service to monitor the progress of the copy task from Amazon RDS to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p> </li>
-    /// <li> <p>SecurityInfo - The security information to use to access an RDS DB instance. You need to set up appropriate ingress rules for the security entity IDs provided to allow access to the Amazon RDS instance. Specify a [<code>SubnetId</code>, <code>SecurityGroupIds</code>] pair for a VPC-based RDS DB instance.</p> </li>
-    /// <li> <p>SelectSqlQuery - A query that is used to retrieve the observation data for the <code>Datasource</code>.</p> </li>
-    /// <li> <p>S3StagingLocation - The Amazon S3 location for staging Amazon RDS data. The data retrieved from Amazon RDS using <code>SelectSqlQuery</code> is stored in this location.</p> </li>
-    /// <li> <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p> </li>
-    /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>
-    /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
+    /// <p>The data specification of an Amazon RDS <code>DataSource</code>:</p> 
+    /// <ul> 
+    /// <li> <p>DatabaseInformation -</p> 
+    /// <ul> 
+    /// <li> <p> <code>DatabaseName</code> - The name of the Amazon RDS database.</p> </li> 
+    /// <li> <p> <code>InstanceIdentifier </code> - A unique identifier for the Amazon RDS database instance.</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>DatabaseCredentials - AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon RDS database.</p> </li> 
+    /// <li> <p>ResourceRole - A role (DataPipelineDefaultResourceRole) assumed by an EC2 instance to carry out the copy task from Amazon RDS to Amazon Simple Storage Service (Amazon S3). For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p> </li> 
+    /// <li> <p>ServiceRole - A role (DataPipelineDefaultRole) assumed by the AWS Data Pipeline service to monitor the progress of the copy task from Amazon RDS to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p> </li> 
+    /// <li> <p>SecurityInfo - The security information to use to access an RDS DB instance. You need to set up appropriate ingress rules for the security entity IDs provided to allow access to the Amazon RDS instance. Specify a [<code>SubnetId</code>, <code>SecurityGroupIds</code>] pair for a VPC-based RDS DB instance.</p> </li> 
+    /// <li> <p>SelectSqlQuery - A query that is used to retrieve the observation data for the <code>Datasource</code>.</p> </li> 
+    /// <li> <p>S3StagingLocation - The Amazon S3 location for staging Amazon RDS data. The data retrieved from Amazon RDS using <code>SelectSqlQuery</code> is stored in this location.</p> </li> 
+    /// <li> <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p> </li> 
+    /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li> 
+    /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li> 
     /// </ul>
-    pub fn rds_data(&self) -> std::option::Option<&crate::model::RdsDataSpec> {
+    pub fn rds_data(&self) -> std::option::Option<& crate::model::RdsDataSpec> {
         self.rds_data.as_ref()
     }
-    /// <p>The role that Amazon ML assumes on behalf of the user to create and activate a data pipeline in the user's account and copy data using the <code>SelectSqlQuery</code> query from Amazon RDS to Amazon S3.</p>
+    /// <p>The role that Amazon ML assumes on behalf of the user to create and activate a data pipeline in the user's account and copy data using the <code>SelectSqlQuery</code> query from Amazon RDS to Amazon S3.</p> 
     /// <p></p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training. </p>
@@ -6850,7 +5340,7 @@ impl CreateDataSourceFromRdsInput {
         self.compute_statistics
     }
 }
-impl std::fmt::Debug for CreateDataSourceFromRdsInput {
+impl  std::fmt::Debug for CreateDataSourceFromRdsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDataSourceFromRdsInput");
         formatter.field("data_source_id", &self.data_source_id);
@@ -6863,93 +5353,80 @@ impl std::fmt::Debug for CreateDataSourceFromRdsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateBatchPredictionInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CreateBatchPredictionInput  {
     /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
-    #[doc(hidden)]
-    pub batch_prediction_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub batch_prediction_id: std::option::Option<std::string::String>,
     /// <p>A user-supplied name or description of the <code>BatchPrediction</code>. <code>BatchPredictionName</code> can only use the UTF-8 character set.</p>
-    #[doc(hidden)]
-    pub batch_prediction_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub batch_prediction_name: std::option::Option<std::string::String>,
     /// <p>The ID of the <code>MLModel</code> that will generate predictions for the group of observations. </p>
-    #[doc(hidden)]
-    pub ml_model_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub ml_model_id: std::option::Option<std::string::String>,
     /// <p>The ID of the <code>DataSource</code> that points to the group of observations to predict.</p>
-    #[doc(hidden)]
-    pub batch_prediction_data_source_id: std::option::Option<std::string::String>,
-    /// <p>The location of an Amazon Simple Storage Service (Amazon S3) bucket or directory to store the batch prediction results. The following substrings are not allowed in the <code>s3 key</code> portion of the <code>outputURI</code> field: ':', '//', '/./', '/../'.</p>
+    #[doc(hidden)]pub batch_prediction_data_source_id: std::option::Option<std::string::String>,
+    /// <p>The location of an Amazon Simple Storage Service (Amazon S3) bucket or directory to store the batch prediction results. The following substrings are not allowed in the <code>s3 key</code> portion of the <code>outputURI</code> field: ':', '//', '/./', '/../'.</p> 
     /// <p>Amazon ML needs permissions to store and retrieve the logs on your behalf. For information about how to set permissions, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.</p>
-    #[doc(hidden)]
-    pub output_uri: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub output_uri: std::option::Option<std::string::String>,
 }
 impl CreateBatchPredictionInput {
     /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
-    pub fn batch_prediction_id(&self) -> std::option::Option<&str> {
+    pub fn batch_prediction_id(&self) -> std::option::Option<& str> {
         self.batch_prediction_id.as_deref()
     }
     /// <p>A user-supplied name or description of the <code>BatchPrediction</code>. <code>BatchPredictionName</code> can only use the UTF-8 character set.</p>
-    pub fn batch_prediction_name(&self) -> std::option::Option<&str> {
+    pub fn batch_prediction_name(&self) -> std::option::Option<& str> {
         self.batch_prediction_name.as_deref()
     }
     /// <p>The ID of the <code>MLModel</code> that will generate predictions for the group of observations. </p>
-    pub fn ml_model_id(&self) -> std::option::Option<&str> {
+    pub fn ml_model_id(&self) -> std::option::Option<& str> {
         self.ml_model_id.as_deref()
     }
     /// <p>The ID of the <code>DataSource</code> that points to the group of observations to predict.</p>
-    pub fn batch_prediction_data_source_id(&self) -> std::option::Option<&str> {
+    pub fn batch_prediction_data_source_id(&self) -> std::option::Option<& str> {
         self.batch_prediction_data_source_id.as_deref()
     }
-    /// <p>The location of an Amazon Simple Storage Service (Amazon S3) bucket or directory to store the batch prediction results. The following substrings are not allowed in the <code>s3 key</code> portion of the <code>outputURI</code> field: ':', '//', '/./', '/../'.</p>
+    /// <p>The location of an Amazon Simple Storage Service (Amazon S3) bucket or directory to store the batch prediction results. The following substrings are not allowed in the <code>s3 key</code> portion of the <code>outputURI</code> field: ':', '//', '/./', '/../'.</p> 
     /// <p>Amazon ML needs permissions to store and retrieve the logs on your behalf. For information about how to set permissions, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.</p>
-    pub fn output_uri(&self) -> std::option::Option<&str> {
+    pub fn output_uri(&self) -> std::option::Option<& str> {
         self.output_uri.as_deref()
     }
 }
-impl std::fmt::Debug for CreateBatchPredictionInput {
+impl  std::fmt::Debug for CreateBatchPredictionInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateBatchPredictionInput");
         formatter.field("batch_prediction_id", &self.batch_prediction_id);
         formatter.field("batch_prediction_name", &self.batch_prediction_name);
         formatter.field("ml_model_id", &self.ml_model_id);
-        formatter.field(
-            "batch_prediction_data_source_id",
-            &self.batch_prediction_data_source_id,
-        );
+        formatter.field("batch_prediction_data_source_id", &self.batch_prediction_data_source_id);
         formatter.field("output_uri", &self.output_uri);
         formatter.finish()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AddTagsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct AddTagsInput  {
     /// <p>The key-value pairs to use to create tags. If you specify a key without specifying a value, Amazon ML creates a tag with the specified key and a value of null.</p>
-    #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The ID of the ML object to tag. For example, <code>exampleModelId</code>.</p>
-    #[doc(hidden)]
-    pub resource_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub resource_id: std::option::Option<std::string::String>,
     /// <p>The type of the ML object to tag.</p>
-    #[doc(hidden)]
-    pub resource_type: std::option::Option<crate::model::TaggableResourceType>,
+    #[doc(hidden)]pub resource_type: std::option::Option<crate::model::TaggableResourceType>,
 }
 impl AddTagsInput {
     /// <p>The key-value pairs to use to create tags. If you specify a key without specifying a value, Amazon ML creates a tag with the specified key and a value of null.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The ID of the ML object to tag. For example, <code>exampleModelId</code>.</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The type of the ML object to tag.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::model::TaggableResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::model::TaggableResourceType> {
         self.resource_type.as_ref()
     }
 }
-impl std::fmt::Debug for AddTagsInput {
+impl  std::fmt::Debug for AddTagsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddTagsInput");
         formatter.field("tags", &self.tags);
@@ -6958,3 +5435,4 @@ impl std::fmt::Debug for AddTagsInput {
         formatter.finish()
     }
 }
+

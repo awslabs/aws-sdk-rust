@@ -24,7 +24,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = "0.51.0"
-aws-sdk-costandusagereport = "0.21.0"
+aws-sdk-costandusagereport = "0.22.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

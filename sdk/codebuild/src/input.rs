@@ -3,9 +3,9 @@ use std::fmt::Write;
 
 /// See [`BatchDeleteBuildsInput`](crate::input::BatchDeleteBuildsInput).
 pub mod batch_delete_builds_input {
-
+    
     /// A builder for [`BatchDeleteBuildsInput`](crate::input::BatchDeleteBuildsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -17,131 +17,87 @@ pub mod batch_delete_builds_input {
         /// <p>The IDs of the builds to delete.</p>
         pub fn ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ids.unwrap_or_default();
-            v.push(input.into());
-            self.ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.ids = Some(v);
+                            self
         }
         /// <p>The IDs of the builds to delete.</p>
-        pub fn set_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.ids = input;
-            self
+        pub fn set_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.ids = input; self
         }
         /// Consumes the builder and constructs a [`BatchDeleteBuildsInput`](crate::input::BatchDeleteBuildsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::BatchDeleteBuildsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::BatchDeleteBuildsInput { ids: self.ids })
+        pub fn build(self) -> Result<crate::input::BatchDeleteBuildsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::BatchDeleteBuildsInput {
+                    ids: self.ids
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl BatchDeleteBuildsInput {
     /// Consumes the builder and constructs an Operation<[`BatchDeleteBuilds`](crate::operation::BatchDeleteBuilds)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::BatchDeleteBuilds,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::BatchDeleteBuilds, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::BatchDeleteBuildsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::BatchDeleteBuildsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::BatchDeleteBuildsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::BatchDeleteBuildsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.BatchDeleteBuilds",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.BatchDeleteBuilds"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_batch_delete_builds(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_batch_delete_builds(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::BatchDeleteBuilds::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "BatchDeleteBuilds",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::BatchDeleteBuilds::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("BatchDeleteBuilds", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -153,9 +109,9 @@ impl BatchDeleteBuildsInput {
 
 /// See [`BatchGetBuildBatchesInput`](crate::input::BatchGetBuildBatchesInput).
 pub mod batch_get_build_batches_input {
-
+    
     /// A builder for [`BatchGetBuildBatchesInput`](crate::input::BatchGetBuildBatchesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -167,133 +123,87 @@ pub mod batch_get_build_batches_input {
         /// <p>An array that contains the batch build identifiers to retrieve.</p>
         pub fn ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ids.unwrap_or_default();
-            v.push(input.into());
-            self.ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.ids = Some(v);
+                            self
         }
         /// <p>An array that contains the batch build identifiers to retrieve.</p>
-        pub fn set_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.ids = input;
-            self
+        pub fn set_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.ids = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetBuildBatchesInput`](crate::input::BatchGetBuildBatchesInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::BatchGetBuildBatchesInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::BatchGetBuildBatchesInput { ids: self.ids })
+        pub fn build(self) -> Result<crate::input::BatchGetBuildBatchesInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::BatchGetBuildBatchesInput {
+                    ids: self.ids
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl BatchGetBuildBatchesInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetBuildBatches`](crate::operation::BatchGetBuildBatches)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::BatchGetBuildBatches,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::BatchGetBuildBatches, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::BatchGetBuildBatchesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::BatchGetBuildBatchesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::BatchGetBuildBatchesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::BatchGetBuildBatchesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.BatchGetBuildBatches",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.BatchGetBuildBatches"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_batch_get_build_batches(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_batch_get_build_batches(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::BatchGetBuildBatches::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "BatchGetBuildBatches",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::BatchGetBuildBatches::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("BatchGetBuildBatches", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -305,9 +215,9 @@ impl BatchGetBuildBatchesInput {
 
 /// See [`BatchGetBuildsInput`](crate::input::BatchGetBuildsInput).
 pub mod batch_get_builds_input {
-
+    
     /// A builder for [`BatchGetBuildsInput`](crate::input::BatchGetBuildsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -319,131 +229,87 @@ pub mod batch_get_builds_input {
         /// <p>The IDs of the builds.</p>
         pub fn ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ids.unwrap_or_default();
-            v.push(input.into());
-            self.ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.ids = Some(v);
+                            self
         }
         /// <p>The IDs of the builds.</p>
-        pub fn set_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.ids = input;
-            self
+        pub fn set_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.ids = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetBuildsInput`](crate::input::BatchGetBuildsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::BatchGetBuildsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::BatchGetBuildsInput { ids: self.ids })
+        pub fn build(self) -> Result<crate::input::BatchGetBuildsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::BatchGetBuildsInput {
+                    ids: self.ids
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl BatchGetBuildsInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetBuilds`](crate::operation::BatchGetBuilds)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::BatchGetBuilds,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::BatchGetBuilds, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::BatchGetBuildsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::BatchGetBuildsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::BatchGetBuildsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::BatchGetBuildsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.BatchGetBuilds",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.BatchGetBuilds"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_batch_get_builds(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_batch_get_builds(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::BatchGetBuilds::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "BatchGetBuilds",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::BatchGetBuilds::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("BatchGetBuilds", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -455,9 +321,9 @@ impl BatchGetBuildsInput {
 
 /// See [`BatchGetProjectsInput`](crate::input::BatchGetProjectsInput).
 pub mod batch_get_projects_input {
-
+    
     /// A builder for [`BatchGetProjectsInput`](crate::input::BatchGetProjectsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -469,131 +335,87 @@ pub mod batch_get_projects_input {
         /// <p>The names or ARNs of the build projects. To get information about a project shared with your Amazon Web Services account, its ARN must be specified. You cannot specify a shared project using its name.</p>
         pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.names.unwrap_or_default();
-            v.push(input.into());
-            self.names = Some(v);
-            self
+                            v.push(input.into());
+                            self.names = Some(v);
+                            self
         }
         /// <p>The names or ARNs of the build projects. To get information about a project shared with your Amazon Web Services account, its ARN must be specified. You cannot specify a shared project using its name.</p>
-        pub fn set_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.names = input;
-            self
+        pub fn set_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.names = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetProjectsInput`](crate::input::BatchGetProjectsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::BatchGetProjectsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::BatchGetProjectsInput { names: self.names })
+        pub fn build(self) -> Result<crate::input::BatchGetProjectsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::BatchGetProjectsInput {
+                    names: self.names
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl BatchGetProjectsInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetProjects`](crate::operation::BatchGetProjects)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::BatchGetProjects,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::BatchGetProjects, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::BatchGetProjectsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::BatchGetProjectsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::BatchGetProjectsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::BatchGetProjectsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.BatchGetProjects",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.BatchGetProjects"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_batch_get_projects(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_batch_get_projects(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::BatchGetProjects::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "BatchGetProjects",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::BatchGetProjects::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("BatchGetProjects", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -605,9 +427,9 @@ impl BatchGetProjectsInput {
 
 /// See [`BatchGetReportGroupsInput`](crate::input::BatchGetReportGroupsInput).
 pub mod batch_get_report_groups_input {
-
+    
     /// A builder for [`BatchGetReportGroupsInput`](crate::input::BatchGetReportGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) report_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -619,135 +441,87 @@ pub mod batch_get_report_groups_input {
         /// <p> An array of report group ARNs that identify the report groups to return. </p>
         pub fn report_group_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.report_group_arns.unwrap_or_default();
-            v.push(input.into());
-            self.report_group_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.report_group_arns = Some(v);
+                            self
         }
         /// <p> An array of report group ARNs that identify the report groups to return. </p>
-        pub fn set_report_group_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.report_group_arns = input;
-            self
+        pub fn set_report_group_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.report_group_arns = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetReportGroupsInput`](crate::input::BatchGetReportGroupsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::BatchGetReportGroupsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::BatchGetReportGroupsInput {
-                report_group_arns: self.report_group_arns,
-            })
+        pub fn build(self) -> Result<crate::input::BatchGetReportGroupsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::BatchGetReportGroupsInput {
+                    report_group_arns: self.report_group_arns
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl BatchGetReportGroupsInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetReportGroups`](crate::operation::BatchGetReportGroups)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::BatchGetReportGroups,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::BatchGetReportGroups, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::BatchGetReportGroupsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::BatchGetReportGroupsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::BatchGetReportGroupsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::BatchGetReportGroupsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.BatchGetReportGroups",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.BatchGetReportGroups"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_batch_get_report_groups(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_batch_get_report_groups(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::BatchGetReportGroups::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "BatchGetReportGroups",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::BatchGetReportGroups::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("BatchGetReportGroups", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -759,9 +533,9 @@ impl BatchGetReportGroupsInput {
 
 /// See [`BatchGetReportsInput`](crate::input::BatchGetReportsInput).
 pub mod batch_get_reports_input {
-
+    
     /// A builder for [`BatchGetReportsInput`](crate::input::BatchGetReportsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) report_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -773,133 +547,87 @@ pub mod batch_get_reports_input {
         /// <p> An array of ARNs that identify the <code>Report</code> objects to return. </p>
         pub fn report_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.report_arns.unwrap_or_default();
-            v.push(input.into());
-            self.report_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.report_arns = Some(v);
+                            self
         }
         /// <p> An array of ARNs that identify the <code>Report</code> objects to return. </p>
-        pub fn set_report_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.report_arns = input;
-            self
+        pub fn set_report_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.report_arns = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetReportsInput`](crate::input::BatchGetReportsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::BatchGetReportsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::BatchGetReportsInput {
-                report_arns: self.report_arns,
-            })
+        pub fn build(self) -> Result<crate::input::BatchGetReportsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::BatchGetReportsInput {
+                    report_arns: self.report_arns
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl BatchGetReportsInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetReports`](crate::operation::BatchGetReports)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::BatchGetReports,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::BatchGetReports, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::BatchGetReportsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::BatchGetReportsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::BatchGetReportsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::BatchGetReportsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.BatchGetReports",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.BatchGetReports"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_batch_get_reports(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_batch_get_reports(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::BatchGetReports::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "BatchGetReports",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::BatchGetReports::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("BatchGetReports", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -911,21 +639,18 @@ impl BatchGetReportsInput {
 
 /// See [`CreateProjectInput`](crate::input::CreateProjectInput).
 pub mod create_project_input {
-
+    
     /// A builder for [`CreateProjectInput`](crate::input::CreateProjectInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) source: std::option::Option<crate::model::ProjectSource>,
-        pub(crate) secondary_sources:
-            std::option::Option<std::vec::Vec<crate::model::ProjectSource>>,
+        pub(crate) secondary_sources: std::option::Option<std::vec::Vec<crate::model::ProjectSource>>,
         pub(crate) source_version: std::option::Option<std::string::String>,
-        pub(crate) secondary_source_versions:
-            std::option::Option<std::vec::Vec<crate::model::ProjectSourceVersion>>,
+        pub(crate) secondary_source_versions: std::option::Option<std::vec::Vec<crate::model::ProjectSourceVersion>>,
         pub(crate) artifacts: std::option::Option<crate::model::ProjectArtifacts>,
-        pub(crate) secondary_artifacts:
-            std::option::Option<std::vec::Vec<crate::model::ProjectArtifacts>>,
+        pub(crate) secondary_artifacts: std::option::Option<std::vec::Vec<crate::model::ProjectArtifacts>>,
         pub(crate) cache: std::option::Option<crate::model::ProjectCache>,
         pub(crate) environment: std::option::Option<crate::model::ProjectEnvironment>,
         pub(crate) service_role: std::option::Option<std::string::String>,
@@ -936,8 +661,7 @@ pub mod create_project_input {
         pub(crate) vpc_config: std::option::Option<crate::model::VpcConfig>,
         pub(crate) badge_enabled: std::option::Option<bool>,
         pub(crate) logs_config: std::option::Option<crate::model::LogsConfig>,
-        pub(crate) file_system_locations:
-            std::option::Option<std::vec::Vec<crate::model::ProjectFileSystemLocation>>,
+        pub(crate) file_system_locations: std::option::Option<std::vec::Vec<crate::model::ProjectFileSystemLocation>>,
         pub(crate) build_batch_config: std::option::Option<crate::model::ProjectBuildBatchConfig>,
         pub(crate) concurrent_build_limit: std::option::Option<i32>,
     }
@@ -949,8 +673,7 @@ pub mod create_project_input {
         }
         /// <p>The name of the build project.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A description that makes the build project easy to identify.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -959,8 +682,7 @@ pub mod create_project_input {
         }
         /// <p>A description that makes the build project easy to identify.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Information about the build input source code for the build project.</p>
         pub fn source(mut self, input: crate::model::ProjectSource) -> Self {
@@ -968,12 +690,8 @@ pub mod create_project_input {
             self
         }
         /// <p>Information about the build input source code for the build project.</p>
-        pub fn set_source(
-            mut self,
-            input: std::option::Option<crate::model::ProjectSource>,
-        ) -> Self {
-            self.source = input;
-            self
+        pub fn set_source(mut self, input: std::option::Option<crate::model::ProjectSource>) -> Self {
+            self.source = input; self
         }
         /// Appends an item to `secondary_sources`.
         ///
@@ -982,68 +700,53 @@ pub mod create_project_input {
         /// <p>An array of <code>ProjectSource</code> objects. </p>
         pub fn secondary_sources(mut self, input: crate::model::ProjectSource) -> Self {
             let mut v = self.secondary_sources.unwrap_or_default();
-            v.push(input);
-            self.secondary_sources = Some(v);
-            self
+                            v.push(input);
+                            self.secondary_sources = Some(v);
+                            self
         }
         /// <p>An array of <code>ProjectSource</code> objects. </p>
-        pub fn set_secondary_sources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProjectSource>>,
-        ) -> Self {
-            self.secondary_sources = input;
-            self
+        pub fn set_secondary_sources(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProjectSource>>) -> Self {
+            self.secondary_sources = input; self
         }
-        /// <p>A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of: </p>
-        /// <ul>
-        /// <li> <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p> </li>
-        /// <li> <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
-        /// <li> <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
-        /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li>
-        /// </ul>
-        /// <p>If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level). </p>
+        /// <p>A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of: </p> 
+        /// <ul> 
+        /// <li> <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p> </li> 
+        /// <li> <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li> 
+        /// <li> <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li> 
+        /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li> 
+        /// </ul> 
+        /// <p>If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level). </p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
         pub fn source_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_version = Some(input.into());
             self
         }
-        /// <p>A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of: </p>
-        /// <ul>
-        /// <li> <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p> </li>
-        /// <li> <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
-        /// <li> <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
-        /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li>
-        /// </ul>
-        /// <p>If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level). </p>
+        /// <p>A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of: </p> 
+        /// <ul> 
+        /// <li> <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p> </li> 
+        /// <li> <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li> 
+        /// <li> <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li> 
+        /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li> 
+        /// </ul> 
+        /// <p>If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level). </p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
-        pub fn set_source_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_version = input;
-            self
+        pub fn set_source_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_version = input; self
         }
         /// Appends an item to `secondary_source_versions`.
         ///
         /// To override the contents of this collection use [`set_secondary_source_versions`](Self::set_secondary_source_versions).
         ///
         /// <p>An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at the build level, then they take precedence over these <code>secondarySourceVersions</code> (at the project level). </p>
-        pub fn secondary_source_versions(
-            mut self,
-            input: crate::model::ProjectSourceVersion,
-        ) -> Self {
+        pub fn secondary_source_versions(mut self, input: crate::model::ProjectSourceVersion) -> Self {
             let mut v = self.secondary_source_versions.unwrap_or_default();
-            v.push(input);
-            self.secondary_source_versions = Some(v);
-            self
+                            v.push(input);
+                            self.secondary_source_versions = Some(v);
+                            self
         }
         /// <p>An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at the build level, then they take precedence over these <code>secondarySourceVersions</code> (at the project level). </p>
-        pub fn set_secondary_source_versions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProjectSourceVersion>>,
-        ) -> Self {
-            self.secondary_source_versions = input;
-            self
+        pub fn set_secondary_source_versions(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProjectSourceVersion>>) -> Self {
+            self.secondary_source_versions = input; self
         }
         /// <p>Information about the build output artifacts for the build project.</p>
         pub fn artifacts(mut self, input: crate::model::ProjectArtifacts) -> Self {
@@ -1051,12 +754,8 @@ pub mod create_project_input {
             self
         }
         /// <p>Information about the build output artifacts for the build project.</p>
-        pub fn set_artifacts(
-            mut self,
-            input: std::option::Option<crate::model::ProjectArtifacts>,
-        ) -> Self {
-            self.artifacts = input;
-            self
+        pub fn set_artifacts(mut self, input: std::option::Option<crate::model::ProjectArtifacts>) -> Self {
+            self.artifacts = input; self
         }
         /// Appends an item to `secondary_artifacts`.
         ///
@@ -1065,17 +764,13 @@ pub mod create_project_input {
         /// <p>An array of <code>ProjectArtifacts</code> objects. </p>
         pub fn secondary_artifacts(mut self, input: crate::model::ProjectArtifacts) -> Self {
             let mut v = self.secondary_artifacts.unwrap_or_default();
-            v.push(input);
-            self.secondary_artifacts = Some(v);
-            self
+                            v.push(input);
+                            self.secondary_artifacts = Some(v);
+                            self
         }
         /// <p>An array of <code>ProjectArtifacts</code> objects. </p>
-        pub fn set_secondary_artifacts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProjectArtifacts>>,
-        ) -> Self {
-            self.secondary_artifacts = input;
-            self
+        pub fn set_secondary_artifacts(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProjectArtifacts>>) -> Self {
+            self.secondary_artifacts = input; self
         }
         /// <p>Stores recently used information so that it can be quickly accessed at a later time.</p>
         pub fn cache(mut self, input: crate::model::ProjectCache) -> Self {
@@ -1084,8 +779,7 @@ pub mod create_project_input {
         }
         /// <p>Stores recently used information so that it can be quickly accessed at a later time.</p>
         pub fn set_cache(mut self, input: std::option::Option<crate::model::ProjectCache>) -> Self {
-            self.cache = input;
-            self
+            self.cache = input; self
         }
         /// <p>Information about the build environment for the build project.</p>
         pub fn environment(mut self, input: crate::model::ProjectEnvironment) -> Self {
@@ -1093,12 +787,8 @@ pub mod create_project_input {
             self
         }
         /// <p>Information about the build environment for the build project.</p>
-        pub fn set_environment(
-            mut self,
-            input: std::option::Option<crate::model::ProjectEnvironment>,
-        ) -> Self {
-            self.environment = input;
-            self
+        pub fn set_environment(mut self, input: std::option::Option<crate::model::ProjectEnvironment>) -> Self {
+            self.environment = input; self
         }
         /// <p>The ARN of the IAM role that enables CodeBuild to interact with dependent Amazon Web Services services on behalf of the Amazon Web Services account.</p>
         pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1107,8 +797,7 @@ pub mod create_project_input {
         }
         /// <p>The ARN of the IAM role that enables CodeBuild to interact with dependent Amazon Web Services services on behalf of the Amazon Web Services account.</p>
         pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service_role = input;
-            self
+            self.service_role = input; self
         }
         /// <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before it times out any build that has not been marked as completed. The default is 60 minutes.</p>
         pub fn timeout_in_minutes(mut self, input: i32) -> Self {
@@ -1117,8 +806,7 @@ pub mod create_project_input {
         }
         /// <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before it times out any build that has not been marked as completed. The default is 60 minutes.</p>
         pub fn set_timeout_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
-            self.timeout_in_minutes = input;
-            self
+            self.timeout_in_minutes = input; self
         }
         /// <p>The number of minutes a build is allowed to be queued before it times out. </p>
         pub fn queued_timeout_in_minutes(mut self, input: i32) -> Self {
@@ -1127,50 +815,41 @@ pub mod create_project_input {
         }
         /// <p>The number of minutes a build is allowed to be queued before it times out. </p>
         pub fn set_queued_timeout_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
-            self.queued_timeout_in_minutes = input;
-            self
+            self.queued_timeout_in_minutes = input; self
         }
-        /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note>
-        /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
-        /// </note>
+        /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note> 
+        /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p> 
+        /// </note> 
         /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
         /// <alias-name></alias-name></code>). </p>
         pub fn encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.encryption_key = Some(input.into());
             self
         }
-        /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note>
-        /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
-        /// </note>
+        /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note> 
+        /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p> 
+        /// </note> 
         /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
         /// <alias-name></alias-name></code>). </p>
-        pub fn set_encryption_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.encryption_key = input;
-            self
+        pub fn set_encryption_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.encryption_key = input; self
         }
         /// Appends an item to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tag key and value pairs associated with this build project.</p>
+        /// <p>A list of tag key and value pairs associated with this build project.</p> 
         /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
-        /// <p>A list of tag key and value pairs associated with this build project.</p>
+        /// <p>A list of tag key and value pairs associated with this build project.</p> 
         /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
@@ -1178,12 +857,8 @@ pub mod create_project_input {
             self
         }
         /// <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
-        pub fn set_vpc_config(
-            mut self,
-            input: std::option::Option<crate::model::VpcConfig>,
-        ) -> Self {
-            self.vpc_config = input;
-            self
+        pub fn set_vpc_config(mut self, input: std::option::Option<crate::model::VpcConfig>) -> Self {
+            self.vpc_config = input; self
         }
         /// <p>Set this to true to generate a publicly accessible URL for your project's build badge.</p>
         pub fn badge_enabled(mut self, input: bool) -> Self {
@@ -1192,8 +867,7 @@ pub mod create_project_input {
         }
         /// <p>Set this to true to generate a publicly accessible URL for your project's build badge.</p>
         pub fn set_badge_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.badge_enabled = input;
-            self
+            self.badge_enabled = input; self
         }
         /// <p>Information about logs for the build project. These can be logs in CloudWatch Logs, logs uploaded to a specified S3 bucket, or both. </p>
         pub fn logs_config(mut self, input: crate::model::LogsConfig) -> Self {
@@ -1201,34 +875,23 @@ pub mod create_project_input {
             self
         }
         /// <p>Information about logs for the build project. These can be logs in CloudWatch Logs, logs uploaded to a specified S3 bucket, or both. </p>
-        pub fn set_logs_config(
-            mut self,
-            input: std::option::Option<crate::model::LogsConfig>,
-        ) -> Self {
-            self.logs_config = input;
-            self
+        pub fn set_logs_config(mut self, input: std::option::Option<crate::model::LogsConfig>) -> Self {
+            self.logs_config = input; self
         }
         /// Appends an item to `file_system_locations`.
         ///
         /// To override the contents of this collection use [`set_file_system_locations`](Self::set_file_system_locations).
         ///
         /// <p> An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System. </p>
-        pub fn file_system_locations(
-            mut self,
-            input: crate::model::ProjectFileSystemLocation,
-        ) -> Self {
+        pub fn file_system_locations(mut self, input: crate::model::ProjectFileSystemLocation) -> Self {
             let mut v = self.file_system_locations.unwrap_or_default();
-            v.push(input);
-            self.file_system_locations = Some(v);
-            self
+                            v.push(input);
+                            self.file_system_locations = Some(v);
+                            self
         }
         /// <p> An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System. </p>
-        pub fn set_file_system_locations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProjectFileSystemLocation>>,
-        ) -> Self {
-            self.file_system_locations = input;
-            self
+        pub fn set_file_system_locations(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProjectFileSystemLocation>>) -> Self {
+            self.file_system_locations = input; self
         }
         /// <p>A <code>ProjectBuildBatchConfig</code> object that defines the batch build options for the project.</p>
         pub fn build_batch_config(mut self, input: crate::model::ProjectBuildBatchConfig) -> Self {
@@ -1236,160 +899,133 @@ pub mod create_project_input {
             self
         }
         /// <p>A <code>ProjectBuildBatchConfig</code> object that defines the batch build options for the project.</p>
-        pub fn set_build_batch_config(
-            mut self,
-            input: std::option::Option<crate::model::ProjectBuildBatchConfig>,
-        ) -> Self {
-            self.build_batch_config = input;
-            self
+        pub fn set_build_batch_config(mut self, input: std::option::Option<crate::model::ProjectBuildBatchConfig>) -> Self {
+            self.build_batch_config = input; self
         }
-        /// <p>The maximum number of concurrent builds that are allowed for this project.</p>
+        /// <p>The maximum number of concurrent builds that are allowed for this project.</p> 
         /// <p>New builds are only started if the current number of builds is less than or equal to this limit. If the current build count meets this limit, new builds are throttled and are not run.</p>
         pub fn concurrent_build_limit(mut self, input: i32) -> Self {
             self.concurrent_build_limit = Some(input);
             self
         }
-        /// <p>The maximum number of concurrent builds that are allowed for this project.</p>
+        /// <p>The maximum number of concurrent builds that are allowed for this project.</p> 
         /// <p>New builds are only started if the current number of builds is less than or equal to this limit. If the current build count meets this limit, new builds are throttled and are not run.</p>
         pub fn set_concurrent_build_limit(mut self, input: std::option::Option<i32>) -> Self {
-            self.concurrent_build_limit = input;
-            self
+            self.concurrent_build_limit = input; self
         }
         /// Consumes the builder and constructs a [`CreateProjectInput`](crate::input::CreateProjectInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateProjectInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::CreateProjectInput {
-                name: self.name,
-                description: self.description,
-                source: self.source,
-                secondary_sources: self.secondary_sources,
-                source_version: self.source_version,
-                secondary_source_versions: self.secondary_source_versions,
-                artifacts: self.artifacts,
-                secondary_artifacts: self.secondary_artifacts,
-                cache: self.cache,
-                environment: self.environment,
-                service_role: self.service_role,
-                timeout_in_minutes: self.timeout_in_minutes,
-                queued_timeout_in_minutes: self.queued_timeout_in_minutes,
-                encryption_key: self.encryption_key,
-                tags: self.tags,
-                vpc_config: self.vpc_config,
-                badge_enabled: self.badge_enabled,
-                logs_config: self.logs_config,
-                file_system_locations: self.file_system_locations,
-                build_batch_config: self.build_batch_config,
-                concurrent_build_limit: self.concurrent_build_limit,
-            })
+        pub fn build(self) -> Result<crate::input::CreateProjectInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CreateProjectInput {
+                    name: self.name
+                    ,
+                    description: self.description
+                    ,
+                    source: self.source
+                    ,
+                    secondary_sources: self.secondary_sources
+                    ,
+                    source_version: self.source_version
+                    ,
+                    secondary_source_versions: self.secondary_source_versions
+                    ,
+                    artifacts: self.artifacts
+                    ,
+                    secondary_artifacts: self.secondary_artifacts
+                    ,
+                    cache: self.cache
+                    ,
+                    environment: self.environment
+                    ,
+                    service_role: self.service_role
+                    ,
+                    timeout_in_minutes: self.timeout_in_minutes
+                    ,
+                    queued_timeout_in_minutes: self.queued_timeout_in_minutes
+                    ,
+                    encryption_key: self.encryption_key
+                    ,
+                    tags: self.tags
+                    ,
+                    vpc_config: self.vpc_config
+                    ,
+                    badge_enabled: self.badge_enabled
+                    ,
+                    logs_config: self.logs_config
+                    ,
+                    file_system_locations: self.file_system_locations
+                    ,
+                    build_batch_config: self.build_batch_config
+                    ,
+                    concurrent_build_limit: self.concurrent_build_limit
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateProjectInput {
     /// Consumes the builder and constructs an Operation<[`CreateProject`](crate::operation::CreateProject)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateProject,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateProject, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateProjectInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::CreateProjectInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreateProjectInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CreateProjectInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.CreateProject",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.CreateProject"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_project(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_project(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateProject::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateProject",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateProject::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateProject", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1401,9 +1037,9 @@ impl CreateProjectInput {
 
 /// See [`CreateReportGroupInput`](crate::input::CreateReportGroupInput).
 pub mod create_report_group_input {
-
+    
     /// A builder for [`CreateReportGroupInput`](crate::input::CreateReportGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::ReportType>,
@@ -1418,8 +1054,7 @@ pub mod create_report_group_input {
         }
         /// <p> The name of the report group. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p> The type of report group. </p>
         pub fn r#type(mut self, input: crate::model::ReportType) -> Self {
@@ -1428,8 +1063,7 @@ pub mod create_report_group_input {
         }
         /// <p> The type of report group. </p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ReportType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p> A <code>ReportExportConfig</code> object that contains information about where the report group test results are exported. </p>
         pub fn export_config(mut self, input: crate::model::ReportExportConfig) -> Self {
@@ -1437,152 +1071,105 @@ pub mod create_report_group_input {
             self
         }
         /// <p> A <code>ReportExportConfig</code> object that contains information about where the report group test results are exported. </p>
-        pub fn set_export_config(
-            mut self,
-            input: std::option::Option<crate::model::ReportExportConfig>,
-        ) -> Self {
-            self.export_config = input;
-            self
+        pub fn set_export_config(mut self, input: std::option::Option<crate::model::ReportExportConfig>) -> Self {
+            self.export_config = input; self
         }
         /// Appends an item to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p> A list of tag key and value pairs associated with this report group. </p>
+        /// <p> A list of tag key and value pairs associated with this report group. </p> 
         /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
-        /// <p> A list of tag key and value pairs associated with this report group. </p>
+        /// <p> A list of tag key and value pairs associated with this report group. </p> 
         /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateReportGroupInput`](crate::input::CreateReportGroupInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateReportGroupInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::CreateReportGroupInput {
-                name: self.name,
-                r#type: self.r#type,
-                export_config: self.export_config,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::CreateReportGroupInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CreateReportGroupInput {
+                    name: self.name
+                    ,
+                    r#type: self.r#type
+                    ,
+                    export_config: self.export_config
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateReportGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateReportGroup`](crate::operation::CreateReportGroup)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateReportGroup,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateReportGroup, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateReportGroupInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::CreateReportGroupInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreateReportGroupInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CreateReportGroupInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.CreateReportGroup",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.CreateReportGroup"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_report_group(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_report_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateReportGroup::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateReportGroup",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateReportGroup::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateReportGroup", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1594,14 +1181,13 @@ impl CreateReportGroupInput {
 
 /// See [`CreateWebhookInput`](crate::input::CreateWebhookInput).
 pub mod create_webhook_input {
-
+    
     /// A builder for [`CreateWebhookInput`](crate::input::CreateWebhookInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
         pub(crate) branch_filter: std::option::Option<std::string::String>,
-        pub(crate) filter_groups:
-            std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::WebhookFilter>>>,
+        pub(crate) filter_groups: std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::WebhookFilter>>>,
         pub(crate) build_type: std::option::Option<crate::model::WebhookBuildType>,
     }
     impl Builder {
@@ -1612,46 +1198,37 @@ pub mod create_webhook_input {
         }
         /// <p>The name of the CodeBuild project.</p>
         pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.project_name = input;
-            self
+            self.project_name = input; self
         }
-        /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
-        /// <p>It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p>
+        /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note> 
+        /// <p>It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p> 
         /// </note>
         pub fn branch_filter(mut self, input: impl Into<std::string::String>) -> Self {
             self.branch_filter = Some(input.into());
             self
         }
-        /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
-        /// <p>It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p>
+        /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note> 
+        /// <p>It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p> 
         /// </note>
-        pub fn set_branch_filter(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.branch_filter = input;
-            self
+        pub fn set_branch_filter(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.branch_filter = input; self
         }
         /// Appends an item to `filter_groups`.
         ///
         /// To override the contents of this collection use [`set_filter_groups`](Self::set_filter_groups).
         ///
-        /// <p>An array of arrays of <code>WebhookFilter</code> objects used to determine which webhooks are triggered. At least one <code>WebhookFilter</code> in the array must specify <code>EVENT</code> as its <code>type</code>. </p>
+        /// <p>An array of arrays of <code>WebhookFilter</code> objects used to determine which webhooks are triggered. At least one <code>WebhookFilter</code> in the array must specify <code>EVENT</code> as its <code>type</code>. </p> 
         /// <p>For a build to be triggered, at least one filter group in the <code>filterGroups</code> array must pass. For a filter group to pass, each of its filters must pass. </p>
         pub fn filter_groups(mut self, input: std::vec::Vec<crate::model::WebhookFilter>) -> Self {
             let mut v = self.filter_groups.unwrap_or_default();
-            v.push(input);
-            self.filter_groups = Some(v);
-            self
+                            v.push(input);
+                            self.filter_groups = Some(v);
+                            self
         }
-        /// <p>An array of arrays of <code>WebhookFilter</code> objects used to determine which webhooks are triggered. At least one <code>WebhookFilter</code> in the array must specify <code>EVENT</code> as its <code>type</code>. </p>
+        /// <p>An array of arrays of <code>WebhookFilter</code> objects used to determine which webhooks are triggered. At least one <code>WebhookFilter</code> in the array must specify <code>EVENT</code> as its <code>type</code>. </p> 
         /// <p>For a build to be triggered, at least one filter group in the <code>filterGroups</code> array must pass. For a filter group to pass, each of its filters must pass. </p>
-        pub fn set_filter_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::WebhookFilter>>>,
-        ) -> Self {
-            self.filter_groups = input;
-            self
+        pub fn set_filter_groups(mut self, input: std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::WebhookFilter>>>) -> Self {
+            self.filter_groups = input; self
         }
         /// <p>Specifies the type of build this webhook will trigger.</p>
         pub fn build_type(mut self, input: crate::model::WebhookBuildType) -> Self {
@@ -1659,131 +1236,88 @@ pub mod create_webhook_input {
             self
         }
         /// <p>Specifies the type of build this webhook will trigger.</p>
-        pub fn set_build_type(
-            mut self,
-            input: std::option::Option<crate::model::WebhookBuildType>,
-        ) -> Self {
-            self.build_type = input;
-            self
+        pub fn set_build_type(mut self, input: std::option::Option<crate::model::WebhookBuildType>) -> Self {
+            self.build_type = input; self
         }
         /// Consumes the builder and constructs a [`CreateWebhookInput`](crate::input::CreateWebhookInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateWebhookInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::CreateWebhookInput {
-                project_name: self.project_name,
-                branch_filter: self.branch_filter,
-                filter_groups: self.filter_groups,
-                build_type: self.build_type,
-            })
+        pub fn build(self) -> Result<crate::input::CreateWebhookInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CreateWebhookInput {
+                    project_name: self.project_name
+                    ,
+                    branch_filter: self.branch_filter
+                    ,
+                    filter_groups: self.filter_groups
+                    ,
+                    build_type: self.build_type
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateWebhookInput {
     /// Consumes the builder and constructs an Operation<[`CreateWebhook`](crate::operation::CreateWebhook)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateWebhook,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateWebhook, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateWebhookInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::CreateWebhookInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreateWebhookInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CreateWebhookInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.CreateWebhook",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.CreateWebhook"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_webhook(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_webhook(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateWebhook::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateWebhook",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateWebhook::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateWebhook", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1795,9 +1329,9 @@ impl CreateWebhookInput {
 
 /// See [`DeleteBuildBatchInput`](crate::input::DeleteBuildBatchInput).
 pub mod delete_build_batch_input {
-
+    
     /// A builder for [`DeleteBuildBatchInput`](crate::input::DeleteBuildBatchInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -1809,122 +1343,81 @@ pub mod delete_build_batch_input {
         }
         /// <p>The identifier of the batch build to delete.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteBuildBatchInput`](crate::input::DeleteBuildBatchInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteBuildBatchInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DeleteBuildBatchInput { id: self.id })
+        pub fn build(self) -> Result<crate::input::DeleteBuildBatchInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DeleteBuildBatchInput {
+                    id: self.id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteBuildBatchInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBuildBatch`](crate::operation::DeleteBuildBatch)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteBuildBatch,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteBuildBatch, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteBuildBatchInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteBuildBatchInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DeleteBuildBatchInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DeleteBuildBatchInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.DeleteBuildBatch",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.DeleteBuildBatch"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_build_batch(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_build_batch(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteBuildBatch::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteBuildBatch",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteBuildBatch::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteBuildBatch", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1936,9 +1429,9 @@ impl DeleteBuildBatchInput {
 
 /// See [`DeleteProjectInput`](crate::input::DeleteProjectInput).
 pub mod delete_project_input {
-
+    
     /// A builder for [`DeleteProjectInput`](crate::input::DeleteProjectInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -1950,122 +1443,81 @@ pub mod delete_project_input {
         }
         /// <p>The name of the build project.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`DeleteProjectInput`](crate::input::DeleteProjectInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteProjectInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DeleteProjectInput { name: self.name })
+        pub fn build(self) -> Result<crate::input::DeleteProjectInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DeleteProjectInput {
+                    name: self.name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteProjectInput {
     /// Consumes the builder and constructs an Operation<[`DeleteProject`](crate::operation::DeleteProject)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteProject,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteProject, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteProjectInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteProjectInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DeleteProjectInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DeleteProjectInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.DeleteProject",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.DeleteProject"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_project(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_project(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteProject::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteProject",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteProject::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteProject", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2077,9 +1529,9 @@ impl DeleteProjectInput {
 
 /// See [`DeleteReportInput`](crate::input::DeleteReportInput).
 pub mod delete_report_input {
-
+    
     /// A builder for [`DeleteReportInput`](crate::input::DeleteReportInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
@@ -2091,122 +1543,81 @@ pub mod delete_report_input {
         }
         /// <p> The ARN of the report to delete. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`DeleteReportInput`](crate::input::DeleteReportInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteReportInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DeleteReportInput { arn: self.arn })
+        pub fn build(self) -> Result<crate::input::DeleteReportInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DeleteReportInput {
+                    arn: self.arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteReportInput {
     /// Consumes the builder and constructs an Operation<[`DeleteReport`](crate::operation::DeleteReport)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteReport,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteReport, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteReportInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteReportInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DeleteReportInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DeleteReportInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.DeleteReport",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.DeleteReport"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_report(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_report(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteReport::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteReport",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteReport::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteReport", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2218,9 +1629,9 @@ impl DeleteReportInput {
 
 /// See [`DeleteReportGroupInput`](crate::input::DeleteReportGroupInput).
 pub mod delete_report_group_input {
-
+    
     /// A builder for [`DeleteReportGroupInput`](crate::input::DeleteReportGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) delete_reports: std::option::Option<bool>,
@@ -2233,137 +1644,95 @@ pub mod delete_report_group_input {
         }
         /// <p>The ARN of the report group to delete. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
-        /// <p>If <code>true</code>, deletes any reports that belong to a report group before deleting the report group. </p>
+        /// <p>If <code>true</code>, deletes any reports that belong to a report group before deleting the report group. </p> 
         /// <p>If <code>false</code>, you must delete any reports in the report group. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListReportsForReportGroup.html">ListReportsForReportGroup</a> to get the reports in a report group. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteReport.html">DeleteReport</a> to delete the reports. If you call <code>DeleteReportGroup</code> for a report group that contains one or more reports, an exception is thrown. </p>
         pub fn delete_reports(mut self, input: bool) -> Self {
             self.delete_reports = Some(input);
             self
         }
-        /// <p>If <code>true</code>, deletes any reports that belong to a report group before deleting the report group. </p>
+        /// <p>If <code>true</code>, deletes any reports that belong to a report group before deleting the report group. </p> 
         /// <p>If <code>false</code>, you must delete any reports in the report group. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListReportsForReportGroup.html">ListReportsForReportGroup</a> to get the reports in a report group. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteReport.html">DeleteReport</a> to delete the reports. If you call <code>DeleteReportGroup</code> for a report group that contains one or more reports, an exception is thrown. </p>
         pub fn set_delete_reports(mut self, input: std::option::Option<bool>) -> Self {
-            self.delete_reports = input;
-            self
+            self.delete_reports = input; self
         }
         /// Consumes the builder and constructs a [`DeleteReportGroupInput`](crate::input::DeleteReportGroupInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteReportGroupInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DeleteReportGroupInput {
-                arn: self.arn,
-                delete_reports: self.delete_reports.unwrap_or_default(),
-            })
+        pub fn build(self) -> Result<crate::input::DeleteReportGroupInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DeleteReportGroupInput {
+                    arn: self.arn
+                    ,
+                    delete_reports: self.delete_reports
+                        .unwrap_or_default()
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteReportGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteReportGroup`](crate::operation::DeleteReportGroup)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteReportGroup,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteReportGroup, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteReportGroupInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteReportGroupInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DeleteReportGroupInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DeleteReportGroupInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.DeleteReportGroup",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.DeleteReportGroup"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_report_group(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_report_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteReportGroup::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteReportGroup",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteReportGroup::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteReportGroup", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2375,9 +1744,9 @@ impl DeleteReportGroupInput {
 
 /// See [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput).
 pub mod delete_resource_policy_input {
-
+    
     /// A builder for [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -2389,126 +1758,81 @@ pub mod delete_resource_policy_input {
         }
         /// <p> The ARN of the resource that is associated with the resource policy. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Consumes the builder and constructs a [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteResourcePolicyInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DeleteResourcePolicyInput {
-                resource_arn: self.resource_arn,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteResourcePolicyInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DeleteResourcePolicyInput {
+                    resource_arn: self.resource_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteResourcePolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteResourcePolicy`](crate::operation::DeleteResourcePolicy)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteResourcePolicy,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteResourcePolicy, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteResourcePolicyInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteResourcePolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DeleteResourcePolicyInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DeleteResourcePolicyInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.DeleteResourcePolicy",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.DeleteResourcePolicy"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_resource_policy(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_resource_policy(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteResourcePolicy::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteResourcePolicy",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteResourcePolicy::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteResourcePolicy", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2520,9 +1844,9 @@ impl DeleteResourcePolicyInput {
 
 /// See [`DeleteSourceCredentialsInput`](crate::input::DeleteSourceCredentialsInput).
 pub mod delete_source_credentials_input {
-
+    
     /// A builder for [`DeleteSourceCredentialsInput`](crate::input::DeleteSourceCredentialsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
@@ -2534,126 +1858,81 @@ pub mod delete_source_credentials_input {
         }
         /// <p> The Amazon Resource Name (ARN) of the token.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`DeleteSourceCredentialsInput`](crate::input::DeleteSourceCredentialsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteSourceCredentialsInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::DeleteSourceCredentialsInput { arn: self.arn })
+        pub fn build(self) -> Result<crate::input::DeleteSourceCredentialsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DeleteSourceCredentialsInput {
+                    arn: self.arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteSourceCredentialsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSourceCredentials`](crate::operation::DeleteSourceCredentials)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteSourceCredentials,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteSourceCredentials, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteSourceCredentialsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteSourceCredentialsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DeleteSourceCredentialsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DeleteSourceCredentialsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.DeleteSourceCredentials",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.DeleteSourceCredentials"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_source_credentials(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_source_credentials(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteSourceCredentials::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteSourceCredentials",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteSourceCredentials::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteSourceCredentials", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2665,9 +1944,9 @@ impl DeleteSourceCredentialsInput {
 
 /// See [`DeleteWebhookInput`](crate::input::DeleteWebhookInput).
 pub mod delete_webhook_input {
-
+    
     /// A builder for [`DeleteWebhookInput`](crate::input::DeleteWebhookInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
     }
@@ -2679,124 +1958,81 @@ pub mod delete_webhook_input {
         }
         /// <p>The name of the CodeBuild project.</p>
         pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.project_name = input;
-            self
+            self.project_name = input; self
         }
         /// Consumes the builder and constructs a [`DeleteWebhookInput`](crate::input::DeleteWebhookInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteWebhookInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DeleteWebhookInput {
-                project_name: self.project_name,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteWebhookInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DeleteWebhookInput {
+                    project_name: self.project_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteWebhookInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWebhook`](crate::operation::DeleteWebhook)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteWebhook,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteWebhook, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteWebhookInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteWebhookInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DeleteWebhookInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DeleteWebhookInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.DeleteWebhook",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.DeleteWebhook"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_webhook(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_webhook(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteWebhook::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteWebhook",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteWebhook::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteWebhook", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2808,9 +2044,9 @@ impl DeleteWebhookInput {
 
 /// See [`DescribeCodeCoveragesInput`](crate::input::DescribeCodeCoveragesInput).
 pub mod describe_code_coverages_input {
-
+    
     /// A builder for [`DescribeCodeCoveragesInput`](crate::input::DescribeCodeCoveragesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) report_arn: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2828,8 +2064,7 @@ pub mod describe_code_coverages_input {
         }
         /// <p> The ARN of the report for which test cases are returned. </p>
         pub fn set_report_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.report_arn = input;
-            self
+            self.report_arn = input; self
         }
         /// <p>The <code>nextToken</code> value returned from a previous call to <code>DescribeCodeCoverages</code>. This specifies the next item to return. To return the beginning of the list, exclude this parameter.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2838,8 +2073,7 @@ pub mod describe_code_coverages_input {
         }
         /// <p>The <code>nextToken</code> value returned from a previous call to <code>DescribeCodeCoverages</code>. This specifies the next item to return. To return the beginning of the list, exclude this parameter.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum number of results to return.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -2848,8 +2082,7 @@ pub mod describe_code_coverages_input {
         }
         /// <p>The maximum number of results to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>Specifies if the results are sorted in ascending or descending order.</p>
         pub fn sort_order(mut self, input: crate::model::SortOrderType) -> Self {
@@ -2857,53 +2090,45 @@ pub mod describe_code_coverages_input {
             self
         }
         /// <p>Specifies if the results are sorted in ascending or descending order.</p>
-        pub fn set_sort_order(
-            mut self,
-            input: std::option::Option<crate::model::SortOrderType>,
-        ) -> Self {
-            self.sort_order = input;
-            self
+        pub fn set_sort_order(mut self, input: std::option::Option<crate::model::SortOrderType>) -> Self {
+            self.sort_order = input; self
         }
-        /// <p>Specifies how the results are sorted. Possible values are:</p>
-        /// <dl>
+        /// <p>Specifies how the results are sorted. Possible values are:</p> 
+        /// <dl> 
         /// <dt>
         /// FILE_PATH
-        /// </dt>
-        /// <dd>
-        /// <p>The results are sorted by file path.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The results are sorted by file path.</p> 
+        /// </dd> 
         /// <dt>
         /// LINE_COVERAGE_PERCENTAGE
-        /// </dt>
-        /// <dd>
-        /// <p>The results are sorted by the percentage of lines that are covered.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The results are sorted by the percentage of lines that are covered.</p> 
+        /// </dd> 
         /// </dl>
         pub fn sort_by(mut self, input: crate::model::ReportCodeCoverageSortByType) -> Self {
             self.sort_by = Some(input);
             self
         }
-        /// <p>Specifies how the results are sorted. Possible values are:</p>
-        /// <dl>
+        /// <p>Specifies how the results are sorted. Possible values are:</p> 
+        /// <dl> 
         /// <dt>
         /// FILE_PATH
-        /// </dt>
-        /// <dd>
-        /// <p>The results are sorted by file path.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The results are sorted by file path.</p> 
+        /// </dd> 
         /// <dt>
         /// LINE_COVERAGE_PERCENTAGE
-        /// </dt>
-        /// <dd>
-        /// <p>The results are sorted by the percentage of lines that are covered.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The results are sorted by the percentage of lines that are covered.</p> 
+        /// </dd> 
         /// </dl>
-        pub fn set_sort_by(
-            mut self,
-            input: std::option::Option<crate::model::ReportCodeCoverageSortByType>,
-        ) -> Self {
-            self.sort_by = input;
-            self
+        pub fn set_sort_by(mut self, input: std::option::Option<crate::model::ReportCodeCoverageSortByType>) -> Self {
+            self.sort_by = input; self
         }
         /// <p>The minimum line coverage percentage to report.</p>
         pub fn min_line_coverage_percentage(mut self, input: f64) -> Self {
@@ -2912,8 +2137,7 @@ pub mod describe_code_coverages_input {
         }
         /// <p>The minimum line coverage percentage to report.</p>
         pub fn set_min_line_coverage_percentage(mut self, input: std::option::Option<f64>) -> Self {
-            self.min_line_coverage_percentage = input;
-            self
+            self.min_line_coverage_percentage = input; self
         }
         /// <p>The maximum line coverage percentage to report.</p>
         pub fn max_line_coverage_percentage(mut self, input: f64) -> Self {
@@ -2922,132 +2146,93 @@ pub mod describe_code_coverages_input {
         }
         /// <p>The maximum line coverage percentage to report.</p>
         pub fn set_max_line_coverage_percentage(mut self, input: std::option::Option<f64>) -> Self {
-            self.max_line_coverage_percentage = input;
-            self
+            self.max_line_coverage_percentage = input; self
         }
         /// Consumes the builder and constructs a [`DescribeCodeCoveragesInput`](crate::input::DescribeCodeCoveragesInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DescribeCodeCoveragesInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DescribeCodeCoveragesInput {
-                report_arn: self.report_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                sort_order: self.sort_order,
-                sort_by: self.sort_by,
-                min_line_coverage_percentage: self.min_line_coverage_percentage,
-                max_line_coverage_percentage: self.max_line_coverage_percentage,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeCodeCoveragesInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DescribeCodeCoveragesInput {
+                    report_arn: self.report_arn
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                    sort_order: self.sort_order
+                    ,
+                    sort_by: self.sort_by
+                    ,
+                    min_line_coverage_percentage: self.min_line_coverage_percentage
+                    ,
+                    max_line_coverage_percentage: self.max_line_coverage_percentage
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeCodeCoveragesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCodeCoverages`](crate::operation::DescribeCodeCoverages)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeCodeCoverages,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeCodeCoverages, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeCodeCoveragesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeCodeCoveragesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribeCodeCoveragesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DescribeCodeCoveragesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.DescribeCodeCoverages",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.DescribeCodeCoverages"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_code_coverages(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_code_coverages(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeCodeCoverages::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeCodeCoverages",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeCodeCoverages::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeCodeCoverages", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3059,9 +2244,9 @@ impl DescribeCodeCoveragesInput {
 
 /// See [`DescribeTestCasesInput`](crate::input::DescribeTestCasesInput).
 pub mod describe_test_cases_input {
-
+    
     /// A builder for [`DescribeTestCasesInput`](crate::input::DescribeTestCasesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) report_arn: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3076,8 +2261,7 @@ pub mod describe_test_cases_input {
         }
         /// <p> The ARN of the report for which test cases are returned. </p>
         pub fn set_report_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.report_arn = input;
-            self
+            self.report_arn = input; self
         }
         /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3086,8 +2270,7 @@ pub mod describe_test_cases_input {
         }
         /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p> The maximum number of paginated test cases returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>TestCase</code> objects. The default value is 100. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -3096,8 +2279,7 @@ pub mod describe_test_cases_input {
         }
         /// <p> The maximum number of paginated test cases returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>TestCase</code> objects. The default value is 100. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p> A <code>TestCaseFilter</code> object used to filter the returned reports. </p>
         pub fn filter(mut self, input: crate::model::TestCaseFilter) -> Self {
@@ -3105,131 +2287,88 @@ pub mod describe_test_cases_input {
             self
         }
         /// <p> A <code>TestCaseFilter</code> object used to filter the returned reports. </p>
-        pub fn set_filter(
-            mut self,
-            input: std::option::Option<crate::model::TestCaseFilter>,
-        ) -> Self {
-            self.filter = input;
-            self
+        pub fn set_filter(mut self, input: std::option::Option<crate::model::TestCaseFilter>) -> Self {
+            self.filter = input; self
         }
         /// Consumes the builder and constructs a [`DescribeTestCasesInput`](crate::input::DescribeTestCasesInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DescribeTestCasesInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DescribeTestCasesInput {
-                report_arn: self.report_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                filter: self.filter,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeTestCasesInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DescribeTestCasesInput {
+                    report_arn: self.report_arn
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                    filter: self.filter
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeTestCasesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTestCases`](crate::operation::DescribeTestCases)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeTestCases,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeTestCases, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeTestCasesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeTestCasesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribeTestCasesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DescribeTestCasesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.DescribeTestCases",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.DescribeTestCases"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_test_cases(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_test_cases(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeTestCases::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeTestCases",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeTestCases::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeTestCases", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3241,9 +2380,9 @@ impl DescribeTestCasesInput {
 
 /// See [`GetReportGroupTrendInput`](crate::input::GetReportGroupTrendInput).
 pub mod get_report_group_trend_input {
-
+    
     /// A builder for [`GetReportGroupTrendInput`](crate::input::GetReportGroupTrendInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) report_group_arn: std::option::Option<std::string::String>,
         pub(crate) num_of_reports: std::option::Option<i32>,
@@ -3256,301 +2395,250 @@ pub mod get_report_group_trend_input {
             self
         }
         /// <p>The ARN of the report group that contains the reports to analyze.</p>
-        pub fn set_report_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.report_group_arn = input;
-            self
+        pub fn set_report_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.report_group_arn = input; self
         }
-        /// <p>The number of reports to analyze. This operation always retrieves the most recent reports.</p>
+        /// <p>The number of reports to analyze. This operation always retrieves the most recent reports.</p> 
         /// <p>If this parameter is omitted, the most recent 100 reports are analyzed.</p>
         pub fn num_of_reports(mut self, input: i32) -> Self {
             self.num_of_reports = Some(input);
             self
         }
-        /// <p>The number of reports to analyze. This operation always retrieves the most recent reports.</p>
+        /// <p>The number of reports to analyze. This operation always retrieves the most recent reports.</p> 
         /// <p>If this parameter is omitted, the most recent 100 reports are analyzed.</p>
         pub fn set_num_of_reports(mut self, input: std::option::Option<i32>) -> Self {
-            self.num_of_reports = input;
-            self
+            self.num_of_reports = input; self
         }
-        /// <p>The test report value to accumulate. This must be one of the following values:</p>
-        /// <dl>
+        /// <p>The test report value to accumulate. This must be one of the following values:</p> 
+        /// <dl> 
         /// <dt>
         /// Test reports:
-        /// </dt>
-        /// <dd>
-        /// <dl>
+        /// </dt> 
+        /// <dd> 
+        /// <dl> 
         /// <dt>
         /// DURATION
-        /// </dt>
-        /// <dd>
-        /// <p>Accumulate the test run times for the specified reports.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Accumulate the test run times for the specified reports.</p> 
+        /// </dd> 
         /// <dt>
         /// PASS_RATE
-        /// </dt>
-        /// <dd>
-        /// <p>Accumulate the percentage of tests that passed for the specified test reports.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Accumulate the percentage of tests that passed for the specified test reports.</p> 
+        /// </dd> 
         /// <dt>
         /// TOTAL
-        /// </dt>
-        /// <dd>
-        /// <p>Accumulate the total number of tests for the specified test reports.</p>
-        /// </dd>
-        /// </dl>
-        /// </dd>
-        /// </dl>
-        /// <dl>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Accumulate the total number of tests for the specified test reports.</p> 
+        /// </dd> 
+        /// </dl> 
+        /// </dd> 
+        /// </dl> 
+        /// <dl> 
         /// <dt>
         /// Code coverage reports:
-        /// </dt>
-        /// <dd>
-        /// <dl>
+        /// </dt> 
+        /// <dd> 
+        /// <dl> 
         /// <dt>
         /// BRANCH_COVERAGE
-        /// </dt>
-        /// <dd>
-        /// <p>Accumulate the branch coverage percentages for the specified test reports.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Accumulate the branch coverage percentages for the specified test reports.</p> 
+        /// </dd> 
         /// <dt>
         /// BRANCHES_COVERED
-        /// </dt>
-        /// <dd>
-        /// <p>Accumulate the branches covered values for the specified test reports.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Accumulate the branches covered values for the specified test reports.</p> 
+        /// </dd> 
         /// <dt>
         /// BRANCHES_MISSED
-        /// </dt>
-        /// <dd>
-        /// <p>Accumulate the branches missed values for the specified test reports.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Accumulate the branches missed values for the specified test reports.</p> 
+        /// </dd> 
         /// <dt>
         /// LINE_COVERAGE
-        /// </dt>
-        /// <dd>
-        /// <p>Accumulate the line coverage percentages for the specified test reports.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Accumulate the line coverage percentages for the specified test reports.</p> 
+        /// </dd> 
         /// <dt>
         /// LINES_COVERED
-        /// </dt>
-        /// <dd>
-        /// <p>Accumulate the lines covered values for the specified test reports.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Accumulate the lines covered values for the specified test reports.</p> 
+        /// </dd> 
         /// <dt>
         /// LINES_MISSED
-        /// </dt>
-        /// <dd>
-        /// <p>Accumulate the lines not covered values for the specified test reports.</p>
-        /// </dd>
-        /// </dl>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Accumulate the lines not covered values for the specified test reports.</p> 
+        /// </dd> 
+        /// </dl> 
+        /// </dd> 
         /// </dl>
         pub fn trend_field(mut self, input: crate::model::ReportGroupTrendFieldType) -> Self {
             self.trend_field = Some(input);
             self
         }
-        /// <p>The test report value to accumulate. This must be one of the following values:</p>
-        /// <dl>
+        /// <p>The test report value to accumulate. This must be one of the following values:</p> 
+        /// <dl> 
         /// <dt>
         /// Test reports:
-        /// </dt>
-        /// <dd>
-        /// <dl>
+        /// </dt> 
+        /// <dd> 
+        /// <dl> 
         /// <dt>
         /// DURATION
-        /// </dt>
-        /// <dd>
-        /// <p>Accumulate the test run times for the specified reports.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Accumulate the test run times for the specified reports.</p> 
+        /// </dd> 
         /// <dt>
         /// PASS_RATE
-        /// </dt>
-        /// <dd>
-        /// <p>Accumulate the percentage of tests that passed for the specified test reports.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Accumulate the percentage of tests that passed for the specified test reports.</p> 
+        /// </dd> 
         /// <dt>
         /// TOTAL
-        /// </dt>
-        /// <dd>
-        /// <p>Accumulate the total number of tests for the specified test reports.</p>
-        /// </dd>
-        /// </dl>
-        /// </dd>
-        /// </dl>
-        /// <dl>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Accumulate the total number of tests for the specified test reports.</p> 
+        /// </dd> 
+        /// </dl> 
+        /// </dd> 
+        /// </dl> 
+        /// <dl> 
         /// <dt>
         /// Code coverage reports:
-        /// </dt>
-        /// <dd>
-        /// <dl>
+        /// </dt> 
+        /// <dd> 
+        /// <dl> 
         /// <dt>
         /// BRANCH_COVERAGE
-        /// </dt>
-        /// <dd>
-        /// <p>Accumulate the branch coverage percentages for the specified test reports.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Accumulate the branch coverage percentages for the specified test reports.</p> 
+        /// </dd> 
         /// <dt>
         /// BRANCHES_COVERED
-        /// </dt>
-        /// <dd>
-        /// <p>Accumulate the branches covered values for the specified test reports.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Accumulate the branches covered values for the specified test reports.</p> 
+        /// </dd> 
         /// <dt>
         /// BRANCHES_MISSED
-        /// </dt>
-        /// <dd>
-        /// <p>Accumulate the branches missed values for the specified test reports.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Accumulate the branches missed values for the specified test reports.</p> 
+        /// </dd> 
         /// <dt>
         /// LINE_COVERAGE
-        /// </dt>
-        /// <dd>
-        /// <p>Accumulate the line coverage percentages for the specified test reports.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Accumulate the line coverage percentages for the specified test reports.</p> 
+        /// </dd> 
         /// <dt>
         /// LINES_COVERED
-        /// </dt>
-        /// <dd>
-        /// <p>Accumulate the lines covered values for the specified test reports.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Accumulate the lines covered values for the specified test reports.</p> 
+        /// </dd> 
         /// <dt>
         /// LINES_MISSED
-        /// </dt>
-        /// <dd>
-        /// <p>Accumulate the lines not covered values for the specified test reports.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Accumulate the lines not covered values for the specified test reports.</p> 
+        /// </dd> 
+        /// </dl> 
+        /// </dd> 
         /// </dl>
-        /// </dd>
-        /// </dl>
-        pub fn set_trend_field(
-            mut self,
-            input: std::option::Option<crate::model::ReportGroupTrendFieldType>,
-        ) -> Self {
-            self.trend_field = input;
-            self
+        pub fn set_trend_field(mut self, input: std::option::Option<crate::model::ReportGroupTrendFieldType>) -> Self {
+            self.trend_field = input; self
         }
         /// Consumes the builder and constructs a [`GetReportGroupTrendInput`](crate::input::GetReportGroupTrendInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetReportGroupTrendInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::GetReportGroupTrendInput {
-                report_group_arn: self.report_group_arn,
-                num_of_reports: self.num_of_reports,
-                trend_field: self.trend_field,
-            })
+        pub fn build(self) -> Result<crate::input::GetReportGroupTrendInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::GetReportGroupTrendInput {
+                    report_group_arn: self.report_group_arn
+                    ,
+                    num_of_reports: self.num_of_reports
+                    ,
+                    trend_field: self.trend_field
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetReportGroupTrendInput {
     /// Consumes the builder and constructs an Operation<[`GetReportGroupTrend`](crate::operation::GetReportGroupTrend)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetReportGroupTrend,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetReportGroupTrend, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetReportGroupTrendInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::GetReportGroupTrendInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::GetReportGroupTrendInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::GetReportGroupTrendInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.GetReportGroupTrend",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.GetReportGroupTrend"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_report_group_trend(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_report_group_trend(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetReportGroupTrend::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetReportGroupTrend",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetReportGroupTrend::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetReportGroupTrend", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3562,9 +2650,9 @@ impl GetReportGroupTrendInput {
 
 /// See [`GetResourcePolicyInput`](crate::input::GetResourcePolicyInput).
 pub mod get_resource_policy_input {
-
+    
     /// A builder for [`GetResourcePolicyInput`](crate::input::GetResourcePolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -3576,124 +2664,81 @@ pub mod get_resource_policy_input {
         }
         /// <p> The ARN of the resource that is associated with the resource policy. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Consumes the builder and constructs a [`GetResourcePolicyInput`](crate::input::GetResourcePolicyInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetResourcePolicyInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::GetResourcePolicyInput {
-                resource_arn: self.resource_arn,
-            })
+        pub fn build(self) -> Result<crate::input::GetResourcePolicyInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::GetResourcePolicyInput {
+                    resource_arn: self.resource_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetResourcePolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetResourcePolicy`](crate::operation::GetResourcePolicy)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetResourcePolicy,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetResourcePolicy, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetResourcePolicyInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::GetResourcePolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::GetResourcePolicyInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::GetResourcePolicyInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.GetResourcePolicy",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.GetResourcePolicy"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_resource_policy(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_resource_policy(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetResourcePolicy::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetResourcePolicy",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetResourcePolicy::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetResourcePolicy", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3705,9 +2750,9 @@ impl GetResourcePolicyInput {
 
 /// See [`ImportSourceCredentialsInput`](crate::input::ImportSourceCredentialsInput).
 pub mod import_source_credentials_input {
-
+    
     /// A builder for [`ImportSourceCredentialsInput`](crate::input::ImportSourceCredentialsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) username: std::option::Option<std::string::String>,
         pub(crate) token: std::option::Option<std::string::String>,
@@ -3723,8 +2768,7 @@ pub mod import_source_credentials_input {
         }
         /// <p> The Bitbucket username when the <code>authType</code> is BASIC_AUTH. This parameter is not valid for other types of source providers or connections. </p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.username = input;
-            self
+            self.username = input; self
         }
         /// <p> For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is the app password. </p>
         pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3733,8 +2777,7 @@ pub mod import_source_credentials_input {
         }
         /// <p> For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is the app password. </p>
         pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.token = input;
-            self
+            self.token = input; self
         }
         /// <p> The source provider used for this project. </p>
         pub fn server_type(mut self, input: crate::model::ServerType) -> Self {
@@ -3742,12 +2785,8 @@ pub mod import_source_credentials_input {
             self
         }
         /// <p> The source provider used for this project. </p>
-        pub fn set_server_type(
-            mut self,
-            input: std::option::Option<crate::model::ServerType>,
-        ) -> Self {
-            self.server_type = input;
-            self
+        pub fn set_server_type(mut self, input: std::option::Option<crate::model::ServerType>) -> Self {
+            self.server_type = input; self
         }
         /// <p> The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An OAUTH connection is not supported by the API and must be created using the CodeBuild console. </p>
         pub fn auth_type(mut self, input: crate::model::AuthType) -> Self {
@@ -3756,8 +2795,7 @@ pub mod import_source_credentials_input {
         }
         /// <p> The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An OAUTH connection is not supported by the API and must be created using the CodeBuild console. </p>
         pub fn set_auth_type(mut self, input: std::option::Option<crate::model::AuthType>) -> Self {
-            self.auth_type = input;
-            self
+            self.auth_type = input; self
         }
         /// <p> Set to <code>false</code> to prevent overwriting the repository source credentials. Set to <code>true</code> to overwrite the repository source credentials. The default value is <code>true</code>. </p>
         pub fn should_overwrite(mut self, input: bool) -> Self {
@@ -3766,132 +2804,89 @@ pub mod import_source_credentials_input {
         }
         /// <p> Set to <code>false</code> to prevent overwriting the repository source credentials. Set to <code>true</code> to overwrite the repository source credentials. The default value is <code>true</code>. </p>
         pub fn set_should_overwrite(mut self, input: std::option::Option<bool>) -> Self {
-            self.should_overwrite = input;
-            self
+            self.should_overwrite = input; self
         }
         /// Consumes the builder and constructs a [`ImportSourceCredentialsInput`](crate::input::ImportSourceCredentialsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ImportSourceCredentialsInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::ImportSourceCredentialsInput {
-                username: self.username,
-                token: self.token,
-                server_type: self.server_type,
-                auth_type: self.auth_type,
-                should_overwrite: self.should_overwrite,
-            })
+        pub fn build(self) -> Result<crate::input::ImportSourceCredentialsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ImportSourceCredentialsInput {
+                    username: self.username
+                    ,
+                    token: self.token
+                    ,
+                    server_type: self.server_type
+                    ,
+                    auth_type: self.auth_type
+                    ,
+                    should_overwrite: self.should_overwrite
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ImportSourceCredentialsInput {
     /// Consumes the builder and constructs an Operation<[`ImportSourceCredentials`](crate::operation::ImportSourceCredentials)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ImportSourceCredentials,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ImportSourceCredentials, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ImportSourceCredentialsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ImportSourceCredentialsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ImportSourceCredentialsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ImportSourceCredentialsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.ImportSourceCredentials",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.ImportSourceCredentials"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_import_source_credentials(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_import_source_credentials(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ImportSourceCredentials::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ImportSourceCredentials",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ImportSourceCredentials::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ImportSourceCredentials", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3903,9 +2898,9 @@ impl ImportSourceCredentialsInput {
 
 /// See [`InvalidateProjectCacheInput`](crate::input::InvalidateProjectCacheInput).
 pub mod invalidate_project_cache_input {
-
+    
     /// A builder for [`InvalidateProjectCacheInput`](crate::input::InvalidateProjectCacheInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
     }
@@ -3917,126 +2912,81 @@ pub mod invalidate_project_cache_input {
         }
         /// <p>The name of the CodeBuild build project that the cache is reset for.</p>
         pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.project_name = input;
-            self
+            self.project_name = input; self
         }
         /// Consumes the builder and constructs a [`InvalidateProjectCacheInput`](crate::input::InvalidateProjectCacheInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::InvalidateProjectCacheInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::InvalidateProjectCacheInput {
-                project_name: self.project_name,
-            })
+        pub fn build(self) -> Result<crate::input::InvalidateProjectCacheInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::InvalidateProjectCacheInput {
+                    project_name: self.project_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl InvalidateProjectCacheInput {
     /// Consumes the builder and constructs an Operation<[`InvalidateProjectCache`](crate::operation::InvalidateProjectCache)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::InvalidateProjectCache,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::InvalidateProjectCache, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::InvalidateProjectCacheInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::InvalidateProjectCacheInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::InvalidateProjectCacheInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::InvalidateProjectCacheInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.InvalidateProjectCache",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.InvalidateProjectCache"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_invalidate_project_cache(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_invalidate_project_cache(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::InvalidateProjectCache::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "InvalidateProjectCache",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::InvalidateProjectCache::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("InvalidateProjectCache", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4048,9 +2998,9 @@ impl InvalidateProjectCacheInput {
 
 /// See [`ListBuildBatchesInput`](crate::input::ListBuildBatchesInput).
 pub mod list_build_batches_input {
-
+    
     /// A builder for [`ListBuildBatchesInput`](crate::input::ListBuildBatchesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) filter: std::option::Option<crate::model::BuildBatchFilter>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -4064,12 +3014,8 @@ pub mod list_build_batches_input {
             self
         }
         /// <p>A <code>BuildBatchFilter</code> object that specifies the filters for the search.</p>
-        pub fn set_filter(
-            mut self,
-            input: std::option::Option<crate::model::BuildBatchFilter>,
-        ) -> Self {
-            self.filter = input;
-            self
+        pub fn set_filter(mut self, input: std::option::Option<crate::model::BuildBatchFilter>) -> Self {
+            self.filter = input; self
         }
         /// <p>The maximum number of results to return.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -4078,29 +3024,24 @@ pub mod list_build_batches_input {
         }
         /// <p>The maximum number of results to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
-        /// <p>Specifies the sort order of the returned items. Valid values include:</p>
-        /// <ul>
-        /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li>
-        /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li>
+        /// <p>Specifies the sort order of the returned items. Valid values include:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li> 
+        /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li> 
         /// </ul>
         pub fn sort_order(mut self, input: crate::model::SortOrderType) -> Self {
             self.sort_order = Some(input);
             self
         }
-        /// <p>Specifies the sort order of the returned items. Valid values include:</p>
-        /// <ul>
-        /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li>
-        /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li>
+        /// <p>Specifies the sort order of the returned items. Valid values include:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li> 
+        /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li> 
         /// </ul>
-        pub fn set_sort_order(
-            mut self,
-            input: std::option::Option<crate::model::SortOrderType>,
-        ) -> Self {
-            self.sort_order = input;
-            self
+        pub fn set_sort_order(mut self, input: std::option::Option<crate::model::SortOrderType>) -> Self {
+            self.sort_order = input; self
         }
         /// <p>The <code>nextToken</code> value returned from a previous call to <code>ListBuildBatches</code>. This specifies the next item to return. To return the beginning of the list, exclude this parameter.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4109,127 +3050,87 @@ pub mod list_build_batches_input {
         }
         /// <p>The <code>nextToken</code> value returned from a previous call to <code>ListBuildBatches</code>. This specifies the next item to return. To return the beginning of the list, exclude this parameter.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListBuildBatchesInput`](crate::input::ListBuildBatchesInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListBuildBatchesInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::ListBuildBatchesInput {
-                filter: self.filter,
-                max_results: self.max_results,
-                sort_order: self.sort_order,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListBuildBatchesInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListBuildBatchesInput {
+                    filter: self.filter
+                    ,
+                    max_results: self.max_results
+                    ,
+                    sort_order: self.sort_order
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListBuildBatchesInput {
     /// Consumes the builder and constructs an Operation<[`ListBuildBatches`](crate::operation::ListBuildBatches)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListBuildBatches,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListBuildBatches, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListBuildBatchesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListBuildBatchesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListBuildBatchesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListBuildBatchesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.ListBuildBatches",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.ListBuildBatches"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_build_batches(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_build_batches(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListBuildBatches::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListBuildBatches",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListBuildBatches::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListBuildBatches", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4241,9 +3142,9 @@ impl ListBuildBatchesInput {
 
 /// See [`ListBuildBatchesForProjectInput`](crate::input::ListBuildBatchesForProjectInput).
 pub mod list_build_batches_for_project_input {
-
+    
     /// A builder for [`ListBuildBatchesForProjectInput`](crate::input::ListBuildBatchesForProjectInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
         pub(crate) filter: std::option::Option<crate::model::BuildBatchFilter>,
@@ -4259,8 +3160,7 @@ pub mod list_build_batches_for_project_input {
         }
         /// <p>The name of the project.</p>
         pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.project_name = input;
-            self
+            self.project_name = input; self
         }
         /// <p>A <code>BuildBatchFilter</code> object that specifies the filters for the search.</p>
         pub fn filter(mut self, input: crate::model::BuildBatchFilter) -> Self {
@@ -4268,12 +3168,8 @@ pub mod list_build_batches_for_project_input {
             self
         }
         /// <p>A <code>BuildBatchFilter</code> object that specifies the filters for the search.</p>
-        pub fn set_filter(
-            mut self,
-            input: std::option::Option<crate::model::BuildBatchFilter>,
-        ) -> Self {
-            self.filter = input;
-            self
+        pub fn set_filter(mut self, input: std::option::Option<crate::model::BuildBatchFilter>) -> Self {
+            self.filter = input; self
         }
         /// <p>The maximum number of results to return.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -4282,29 +3178,24 @@ pub mod list_build_batches_for_project_input {
         }
         /// <p>The maximum number of results to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
-        /// <p>Specifies the sort order of the returned items. Valid values include:</p>
-        /// <ul>
-        /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li>
-        /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li>
+        /// <p>Specifies the sort order of the returned items. Valid values include:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li> 
+        /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li> 
         /// </ul>
         pub fn sort_order(mut self, input: crate::model::SortOrderType) -> Self {
             self.sort_order = Some(input);
             self
         }
-        /// <p>Specifies the sort order of the returned items. Valid values include:</p>
-        /// <ul>
-        /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li>
-        /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li>
+        /// <p>Specifies the sort order of the returned items. Valid values include:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li> 
+        /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li> 
         /// </ul>
-        pub fn set_sort_order(
-            mut self,
-            input: std::option::Option<crate::model::SortOrderType>,
-        ) -> Self {
-            self.sort_order = input;
-            self
+        pub fn set_sort_order(mut self, input: std::option::Option<crate::model::SortOrderType>) -> Self {
+            self.sort_order = input; self
         }
         /// <p>The <code>nextToken</code> value returned from a previous call to <code>ListBuildBatchesForProject</code>. This specifies the next item to return. To return the beginning of the list, exclude this parameter.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4313,70 +3204,52 @@ pub mod list_build_batches_for_project_input {
         }
         /// <p>The <code>nextToken</code> value returned from a previous call to <code>ListBuildBatchesForProject</code>. This specifies the next item to return. To return the beginning of the list, exclude this parameter.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListBuildBatchesForProjectInput`](crate::input::ListBuildBatchesForProjectInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListBuildBatchesForProjectInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::ListBuildBatchesForProjectInput {
-                project_name: self.project_name,
-                filter: self.filter,
-                max_results: self.max_results,
-                sort_order: self.sort_order,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListBuildBatchesForProjectInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListBuildBatchesForProjectInput {
+                    project_name: self.project_name
+                    ,
+                    filter: self.filter
+                    ,
+                    max_results: self.max_results
+                    ,
+                    sort_order: self.sort_order
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListBuildBatchesForProjectInput {
     /// Consumes the builder and constructs an Operation<[`ListBuildBatchesForProject`](crate::operation::ListBuildBatchesForProject)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListBuildBatchesForProject,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListBuildBatchesForProject, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListBuildBatchesForProjectInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListBuildBatchesForProjectInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListBuildBatchesForProjectInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListBuildBatchesForProjectInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.ListBuildBatchesForProject",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.ListBuildBatchesForProject"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -4384,58 +3257,36 @@ impl ListBuildBatchesForProjectInput {
             crate::operation_ser::serialize_operation_crate_operation_list_build_batches_for_project(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListBuildBatchesForProject::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListBuildBatchesForProject",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListBuildBatchesForProject::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListBuildBatchesForProject", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4447,34 +3298,30 @@ impl ListBuildBatchesForProjectInput {
 
 /// See [`ListBuildsInput`](crate::input::ListBuildsInput).
 pub mod list_builds_input {
-
+    
     /// A builder for [`ListBuildsInput`](crate::input::ListBuildsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) sort_order: std::option::Option<crate::model::SortOrderType>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The order to list build IDs. Valid values include:</p>
-        /// <ul>
-        /// <li> <p> <code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p> </li>
-        /// <li> <p> <code>DESCENDING</code>: List the build IDs in descending order by build ID.</p> </li>
+        /// <p>The order to list build IDs. Valid values include:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p> </li> 
+        /// <li> <p> <code>DESCENDING</code>: List the build IDs in descending order by build ID.</p> </li> 
         /// </ul>
         pub fn sort_order(mut self, input: crate::model::SortOrderType) -> Self {
             self.sort_order = Some(input);
             self
         }
-        /// <p>The order to list build IDs. Valid values include:</p>
-        /// <ul>
-        /// <li> <p> <code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p> </li>
-        /// <li> <p> <code>DESCENDING</code>: List the build IDs in descending order by build ID.</p> </li>
+        /// <p>The order to list build IDs. Valid values include:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p> </li> 
+        /// <li> <p> <code>DESCENDING</code>: List the build IDs in descending order by build ID.</p> </li> 
         /// </ul>
-        pub fn set_sort_order(
-            mut self,
-            input: std::option::Option<crate::model::SortOrderType>,
-        ) -> Self {
-            self.sort_order = input;
-            self
+        pub fn set_sort_order(mut self, input: std::option::Option<crate::model::SortOrderType>) -> Self {
+            self.sort_order = input; self
         }
         /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4483,124 +3330,83 @@ pub mod list_builds_input {
         }
         /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListBuildsInput`](crate::input::ListBuildsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListBuildsInput, aws_smithy_http::operation::BuildError> {
-            Ok(crate::input::ListBuildsInput {
-                sort_order: self.sort_order,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListBuildsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListBuildsInput {
+                    sort_order: self.sort_order
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListBuildsInput {
     /// Consumes the builder and constructs an Operation<[`ListBuilds`](crate::operation::ListBuilds)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListBuilds,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListBuilds, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListBuildsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListBuildsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListBuildsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListBuildsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.ListBuilds",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.ListBuilds"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_builds(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_builds(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListBuilds::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListBuilds",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListBuilds::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListBuilds", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4612,9 +3418,9 @@ impl ListBuildsInput {
 
 /// See [`ListBuildsForProjectInput`](crate::input::ListBuildsForProjectInput).
 pub mod list_builds_for_project_input {
-
+    
     /// A builder for [`ListBuildsForProjectInput`](crate::input::ListBuildsForProjectInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
         pub(crate) sort_order: std::option::Option<crate::model::SortOrderType>,
@@ -4628,33 +3434,28 @@ pub mod list_builds_for_project_input {
         }
         /// <p>The name of the CodeBuild project.</p>
         pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.project_name = input;
-            self
+            self.project_name = input; self
         }
-        /// <p>The order to sort the results in. The results are sorted by build number, not the build identifier. If this is not specified, the results are sorted in descending order.</p>
-        /// <p>Valid values include:</p>
-        /// <ul>
-        /// <li> <p> <code>ASCENDING</code>: List the build identifiers in ascending order, by build number.</p> </li>
-        /// <li> <p> <code>DESCENDING</code>: List the build identifiers in descending order, by build number.</p> </li>
-        /// </ul>
+        /// <p>The order to sort the results in. The results are sorted by build number, not the build identifier. If this is not specified, the results are sorted in descending order.</p> 
+        /// <p>Valid values include:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ASCENDING</code>: List the build identifiers in ascending order, by build number.</p> </li> 
+        /// <li> <p> <code>DESCENDING</code>: List the build identifiers in descending order, by build number.</p> </li> 
+        /// </ul> 
         /// <p>If the project has more than 100 builds, setting the sort order will result in an error. </p>
         pub fn sort_order(mut self, input: crate::model::SortOrderType) -> Self {
             self.sort_order = Some(input);
             self
         }
-        /// <p>The order to sort the results in. The results are sorted by build number, not the build identifier. If this is not specified, the results are sorted in descending order.</p>
-        /// <p>Valid values include:</p>
-        /// <ul>
-        /// <li> <p> <code>ASCENDING</code>: List the build identifiers in ascending order, by build number.</p> </li>
-        /// <li> <p> <code>DESCENDING</code>: List the build identifiers in descending order, by build number.</p> </li>
-        /// </ul>
+        /// <p>The order to sort the results in. The results are sorted by build number, not the build identifier. If this is not specified, the results are sorted in descending order.</p> 
+        /// <p>Valid values include:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ASCENDING</code>: List the build identifiers in ascending order, by build number.</p> </li> 
+        /// <li> <p> <code>DESCENDING</code>: List the build identifiers in descending order, by build number.</p> </li> 
+        /// </ul> 
         /// <p>If the project has more than 100 builds, setting the sort order will result in an error. </p>
-        pub fn set_sort_order(
-            mut self,
-            input: std::option::Option<crate::model::SortOrderType>,
-        ) -> Self {
-            self.sort_order = input;
-            self
+        pub fn set_sort_order(mut self, input: std::option::Option<crate::model::SortOrderType>) -> Self {
+            self.sort_order = input; self
         }
         /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4663,128 +3464,85 @@ pub mod list_builds_for_project_input {
         }
         /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListBuildsForProjectInput`](crate::input::ListBuildsForProjectInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListBuildsForProjectInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::ListBuildsForProjectInput {
-                project_name: self.project_name,
-                sort_order: self.sort_order,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListBuildsForProjectInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListBuildsForProjectInput {
+                    project_name: self.project_name
+                    ,
+                    sort_order: self.sort_order
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListBuildsForProjectInput {
     /// Consumes the builder and constructs an Operation<[`ListBuildsForProject`](crate::operation::ListBuildsForProject)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListBuildsForProject,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListBuildsForProject, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListBuildsForProjectInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListBuildsForProjectInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListBuildsForProjectInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListBuildsForProjectInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.ListBuildsForProject",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.ListBuildsForProject"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_builds_for_project(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_builds_for_project(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListBuildsForProject::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListBuildsForProject",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListBuildsForProject::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListBuildsForProject", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4796,66 +3554,46 @@ impl ListBuildsForProjectInput {
 
 /// See [`ListCuratedEnvironmentImagesInput`](crate::input::ListCuratedEnvironmentImagesInput).
 pub mod list_curated_environment_images_input {
-
+    
     /// A builder for [`ListCuratedEnvironmentImagesInput`](crate::input::ListCuratedEnvironmentImagesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {}
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`ListCuratedEnvironmentImagesInput`](crate::input::ListCuratedEnvironmentImagesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListCuratedEnvironmentImagesInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::ListCuratedEnvironmentImagesInput {})
+        pub fn build(self) -> Result<crate::input::ListCuratedEnvironmentImagesInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListCuratedEnvironmentImagesInput {
+                }
+            )
         }
     }
+    
+    
 }
 impl ListCuratedEnvironmentImagesInput {
     /// Consumes the builder and constructs an Operation<[`ListCuratedEnvironmentImages`](crate::operation::ListCuratedEnvironmentImages)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListCuratedEnvironmentImages,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListCuratedEnvironmentImages, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListCuratedEnvironmentImagesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListCuratedEnvironmentImagesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListCuratedEnvironmentImagesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListCuratedEnvironmentImagesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.ListCuratedEnvironmentImages",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.ListCuratedEnvironmentImages"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -4864,50 +3602,32 @@ impl ListCuratedEnvironmentImagesInput {
         );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListCuratedEnvironmentImages::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListCuratedEnvironmentImages",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListCuratedEnvironmentImages::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListCuratedEnvironmentImages", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4919,62 +3639,54 @@ impl ListCuratedEnvironmentImagesInput {
 
 /// See [`ListProjectsInput`](crate::input::ListProjectsInput).
 pub mod list_projects_input {
-
+    
     /// A builder for [`ListProjectsInput`](crate::input::ListProjectsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) sort_by: std::option::Option<crate::model::ProjectSortByType>,
         pub(crate) sort_order: std::option::Option<crate::model::SortOrderType>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The criterion to be used to list build project names. Valid values include:</p>
-        /// <ul>
-        /// <li> <p> <code>CREATED_TIME</code>: List based on when each build project was created.</p> </li>
-        /// <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last changed.</p> </li>
-        /// <li> <p> <code>NAME</code>: List based on each build project's name.</p> </li>
-        /// </ul>
+        /// <p>The criterion to be used to list build project names. Valid values include:</p> 
+        /// <ul> 
+        /// <li> <p> <code>CREATED_TIME</code>: List based on when each build project was created.</p> </li> 
+        /// <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last changed.</p> </li> 
+        /// <li> <p> <code>NAME</code>: List based on each build project's name.</p> </li> 
+        /// </ul> 
         /// <p>Use <code>sortOrder</code> to specify in what order to list the build project names based on the preceding criteria.</p>
         pub fn sort_by(mut self, input: crate::model::ProjectSortByType) -> Self {
             self.sort_by = Some(input);
             self
         }
-        /// <p>The criterion to be used to list build project names. Valid values include:</p>
-        /// <ul>
-        /// <li> <p> <code>CREATED_TIME</code>: List based on when each build project was created.</p> </li>
-        /// <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last changed.</p> </li>
-        /// <li> <p> <code>NAME</code>: List based on each build project's name.</p> </li>
-        /// </ul>
+        /// <p>The criterion to be used to list build project names. Valid values include:</p> 
+        /// <ul> 
+        /// <li> <p> <code>CREATED_TIME</code>: List based on when each build project was created.</p> </li> 
+        /// <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last changed.</p> </li> 
+        /// <li> <p> <code>NAME</code>: List based on each build project's name.</p> </li> 
+        /// </ul> 
         /// <p>Use <code>sortOrder</code> to specify in what order to list the build project names based on the preceding criteria.</p>
-        pub fn set_sort_by(
-            mut self,
-            input: std::option::Option<crate::model::ProjectSortByType>,
-        ) -> Self {
-            self.sort_by = input;
-            self
+        pub fn set_sort_by(mut self, input: std::option::Option<crate::model::ProjectSortByType>) -> Self {
+            self.sort_by = input; self
         }
-        /// <p>The order in which to list build projects. Valid values include:</p>
-        /// <ul>
-        /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
-        /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
-        /// </ul>
+        /// <p>The order in which to list build projects. Valid values include:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li> 
+        /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li> 
+        /// </ul> 
         /// <p>Use <code>sortBy</code> to specify the criterion to be used to list build project names.</p>
         pub fn sort_order(mut self, input: crate::model::SortOrderType) -> Self {
             self.sort_order = Some(input);
             self
         }
-        /// <p>The order in which to list build projects. Valid values include:</p>
-        /// <ul>
-        /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
-        /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
-        /// </ul>
+        /// <p>The order in which to list build projects. Valid values include:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li> 
+        /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li> 
+        /// </ul> 
         /// <p>Use <code>sortBy</code> to specify the criterion to be used to list build project names.</p>
-        pub fn set_sort_order(
-            mut self,
-            input: std::option::Option<crate::model::SortOrderType>,
-        ) -> Self {
-            self.sort_order = input;
-            self
+        pub fn set_sort_order(mut self, input: std::option::Option<crate::model::SortOrderType>) -> Self {
+            self.sort_order = input; self
         }
         /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4983,126 +3695,85 @@ pub mod list_projects_input {
         }
         /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListProjectsInput`](crate::input::ListProjectsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListProjectsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::ListProjectsInput {
-                sort_by: self.sort_by,
-                sort_order: self.sort_order,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListProjectsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListProjectsInput {
+                    sort_by: self.sort_by
+                    ,
+                    sort_order: self.sort_order
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListProjectsInput {
     /// Consumes the builder and constructs an Operation<[`ListProjects`](crate::operation::ListProjects)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListProjects,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListProjects, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListProjectsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListProjectsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListProjectsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListProjectsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.ListProjects",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.ListProjects"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_projects(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_projects(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListProjects::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListProjects",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListProjects::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListProjects", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5114,9 +3785,9 @@ impl ListProjectsInput {
 
 /// See [`ListReportGroupsInput`](crate::input::ListReportGroupsInput).
 pub mod list_report_groups_input {
-
+    
     /// A builder for [`ListReportGroupsInput`](crate::input::ListReportGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) sort_order: std::option::Option<crate::model::SortOrderType>,
         pub(crate) sort_by: std::option::Option<crate::model::ReportGroupSortByType>,
@@ -5130,35 +3801,27 @@ pub mod list_report_groups_input {
             self
         }
         /// <p> Used to specify the order to sort the list of returned report groups. Valid values are <code>ASCENDING</code> and <code>DESCENDING</code>. </p>
-        pub fn set_sort_order(
-            mut self,
-            input: std::option::Option<crate::model::SortOrderType>,
-        ) -> Self {
-            self.sort_order = input;
-            self
+        pub fn set_sort_order(mut self, input: std::option::Option<crate::model::SortOrderType>) -> Self {
+            self.sort_order = input; self
         }
-        /// <p> The criterion to be used to list build report groups. Valid values include: </p>
-        /// <ul>
-        /// <li> <p> <code>CREATED_TIME</code>: List based on when each report group was created.</p> </li>
-        /// <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when each report group was last changed.</p> </li>
-        /// <li> <p> <code>NAME</code>: List based on each report group's name.</p> </li>
+        /// <p> The criterion to be used to list build report groups. Valid values include: </p> 
+        /// <ul> 
+        /// <li> <p> <code>CREATED_TIME</code>: List based on when each report group was created.</p> </li> 
+        /// <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when each report group was last changed.</p> </li> 
+        /// <li> <p> <code>NAME</code>: List based on each report group's name.</p> </li> 
         /// </ul>
         pub fn sort_by(mut self, input: crate::model::ReportGroupSortByType) -> Self {
             self.sort_by = Some(input);
             self
         }
-        /// <p> The criterion to be used to list build report groups. Valid values include: </p>
-        /// <ul>
-        /// <li> <p> <code>CREATED_TIME</code>: List based on when each report group was created.</p> </li>
-        /// <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when each report group was last changed.</p> </li>
-        /// <li> <p> <code>NAME</code>: List based on each report group's name.</p> </li>
+        /// <p> The criterion to be used to list build report groups. Valid values include: </p> 
+        /// <ul> 
+        /// <li> <p> <code>CREATED_TIME</code>: List based on when each report group was created.</p> </li> 
+        /// <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when each report group was last changed.</p> </li> 
+        /// <li> <p> <code>NAME</code>: List based on each report group's name.</p> </li> 
         /// </ul>
-        pub fn set_sort_by(
-            mut self,
-            input: std::option::Option<crate::model::ReportGroupSortByType>,
-        ) -> Self {
-            self.sort_by = input;
-            self
+        pub fn set_sort_by(mut self, input: std::option::Option<crate::model::ReportGroupSortByType>) -> Self {
+            self.sort_by = input; self
         }
         /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5167,8 +3830,7 @@ pub mod list_report_groups_input {
         }
         /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p> The maximum number of paginated report groups returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>ReportGroup</code> objects. The default value is 100. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -5177,127 +3839,87 @@ pub mod list_report_groups_input {
         }
         /// <p> The maximum number of paginated report groups returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>ReportGroup</code> objects. The default value is 100. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`ListReportGroupsInput`](crate::input::ListReportGroupsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListReportGroupsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::ListReportGroupsInput {
-                sort_order: self.sort_order,
-                sort_by: self.sort_by,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            })
+        pub fn build(self) -> Result<crate::input::ListReportGroupsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListReportGroupsInput {
+                    sort_order: self.sort_order
+                    ,
+                    sort_by: self.sort_by
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListReportGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListReportGroups`](crate::operation::ListReportGroups)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListReportGroups,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListReportGroups, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListReportGroupsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListReportGroupsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListReportGroupsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListReportGroupsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.ListReportGroups",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.ListReportGroups"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_report_groups(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_report_groups(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListReportGroups::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListReportGroups",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListReportGroups::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListReportGroups", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5309,9 +3931,9 @@ impl ListReportGroupsInput {
 
 /// See [`ListReportsInput`](crate::input::ListReportsInput).
 pub mod list_reports_input {
-
+    
     /// A builder for [`ListReportsInput`](crate::input::ListReportsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) sort_order: std::option::Option<crate::model::SortOrderType>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -5319,26 +3941,22 @@ pub mod list_reports_input {
         pub(crate) filter: std::option::Option<crate::model::ReportFilter>,
     }
     impl Builder {
-        /// <p> Specifies the sort order for the list of returned reports. Valid values are: </p>
-        /// <ul>
-        /// <li> <p> <code>ASCENDING</code>: return reports in chronological order based on their creation date. </p> </li>
-        /// <li> <p> <code>DESCENDING</code>: return reports in the reverse chronological order based on their creation date. </p> </li>
+        /// <p> Specifies the sort order for the list of returned reports. Valid values are: </p> 
+        /// <ul> 
+        /// <li> <p> <code>ASCENDING</code>: return reports in chronological order based on their creation date. </p> </li> 
+        /// <li> <p> <code>DESCENDING</code>: return reports in the reverse chronological order based on their creation date. </p> </li> 
         /// </ul>
         pub fn sort_order(mut self, input: crate::model::SortOrderType) -> Self {
             self.sort_order = Some(input);
             self
         }
-        /// <p> Specifies the sort order for the list of returned reports. Valid values are: </p>
-        /// <ul>
-        /// <li> <p> <code>ASCENDING</code>: return reports in chronological order based on their creation date. </p> </li>
-        /// <li> <p> <code>DESCENDING</code>: return reports in the reverse chronological order based on their creation date. </p> </li>
+        /// <p> Specifies the sort order for the list of returned reports. Valid values are: </p> 
+        /// <ul> 
+        /// <li> <p> <code>ASCENDING</code>: return reports in chronological order based on their creation date. </p> </li> 
+        /// <li> <p> <code>DESCENDING</code>: return reports in the reverse chronological order based on their creation date. </p> </li> 
         /// </ul>
-        pub fn set_sort_order(
-            mut self,
-            input: std::option::Option<crate::model::SortOrderType>,
-        ) -> Self {
-            self.sort_order = input;
-            self
+        pub fn set_sort_order(mut self, input: std::option::Option<crate::model::SortOrderType>) -> Self {
+            self.sort_order = input; self
         }
         /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5347,8 +3965,7 @@ pub mod list_reports_input {
         }
         /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p> The maximum number of paginated reports returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Report</code> objects. The default value is 100. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -5357,8 +3974,7 @@ pub mod list_reports_input {
         }
         /// <p> The maximum number of paginated reports returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Report</code> objects. The default value is 100. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p> A <code>ReportFilter</code> object used to filter the returned reports. </p>
         pub fn filter(mut self, input: crate::model::ReportFilter) -> Self {
@@ -5366,131 +3982,88 @@ pub mod list_reports_input {
             self
         }
         /// <p> A <code>ReportFilter</code> object used to filter the returned reports. </p>
-        pub fn set_filter(
-            mut self,
-            input: std::option::Option<crate::model::ReportFilter>,
-        ) -> Self {
-            self.filter = input;
-            self
+        pub fn set_filter(mut self, input: std::option::Option<crate::model::ReportFilter>) -> Self {
+            self.filter = input; self
         }
         /// Consumes the builder and constructs a [`ListReportsInput`](crate::input::ListReportsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListReportsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::ListReportsInput {
-                sort_order: self.sort_order,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                filter: self.filter,
-            })
+        pub fn build(self) -> Result<crate::input::ListReportsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListReportsInput {
+                    sort_order: self.sort_order
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                    filter: self.filter
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListReportsInput {
     /// Consumes the builder and constructs an Operation<[`ListReports`](crate::operation::ListReports)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListReports,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListReports, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListReportsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListReportsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListReportsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListReportsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.ListReports",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.ListReports"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_reports(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_reports(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListReports::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListReports",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListReports::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListReports", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5502,9 +4075,9 @@ impl ListReportsInput {
 
 /// See [`ListReportsForReportGroupInput`](crate::input::ListReportsForReportGroupInput).
 pub mod list_reports_for_report_group_input {
-
+    
     /// A builder for [`ListReportsForReportGroupInput`](crate::input::ListReportsForReportGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) report_group_arn: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -5519,12 +4092,8 @@ pub mod list_reports_for_report_group_input {
             self
         }
         /// <p> The ARN of the report group for which you want to return report ARNs. </p>
-        pub fn set_report_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.report_group_arn = input;
-            self
+        pub fn set_report_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.report_group_arn = input; self
         }
         /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5533,8 +4102,7 @@ pub mod list_reports_for_report_group_input {
         }
         /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p> Use to specify whether the results are returned in ascending or descending order. </p>
         pub fn sort_order(mut self, input: crate::model::SortOrderType) -> Self {
@@ -5542,12 +4110,8 @@ pub mod list_reports_for_report_group_input {
             self
         }
         /// <p> Use to specify whether the results are returned in ascending or descending order. </p>
-        pub fn set_sort_order(
-            mut self,
-            input: std::option::Option<crate::model::SortOrderType>,
-        ) -> Self {
-            self.sort_order = input;
-            self
+        pub fn set_sort_order(mut self, input: std::option::Option<crate::model::SortOrderType>) -> Self {
+            self.sort_order = input; self
         }
         /// <p> The maximum number of paginated reports in this report group returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Report</code> objects. The default value is 100. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -5556,8 +4120,7 @@ pub mod list_reports_for_report_group_input {
         }
         /// <p> The maximum number of paginated reports in this report group returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Report</code> objects. The default value is 100. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p> A <code>ReportFilter</code> object used to filter the returned reports. </p>
         pub fn filter(mut self, input: crate::model::ReportFilter) -> Self {
@@ -5565,74 +4128,53 @@ pub mod list_reports_for_report_group_input {
             self
         }
         /// <p> A <code>ReportFilter</code> object used to filter the returned reports. </p>
-        pub fn set_filter(
-            mut self,
-            input: std::option::Option<crate::model::ReportFilter>,
-        ) -> Self {
-            self.filter = input;
-            self
+        pub fn set_filter(mut self, input: std::option::Option<crate::model::ReportFilter>) -> Self {
+            self.filter = input; self
         }
         /// Consumes the builder and constructs a [`ListReportsForReportGroupInput`](crate::input::ListReportsForReportGroupInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListReportsForReportGroupInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::ListReportsForReportGroupInput {
-                report_group_arn: self.report_group_arn,
-                next_token: self.next_token,
-                sort_order: self.sort_order,
-                max_results: self.max_results,
-                filter: self.filter,
-            })
+        pub fn build(self) -> Result<crate::input::ListReportsForReportGroupInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListReportsForReportGroupInput {
+                    report_group_arn: self.report_group_arn
+                    ,
+                    next_token: self.next_token
+                    ,
+                    sort_order: self.sort_order
+                    ,
+                    max_results: self.max_results
+                    ,
+                    filter: self.filter
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListReportsForReportGroupInput {
     /// Consumes the builder and constructs an Operation<[`ListReportsForReportGroup`](crate::operation::ListReportsForReportGroup)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListReportsForReportGroup,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListReportsForReportGroup, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListReportsForReportGroupInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListReportsForReportGroupInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListReportsForReportGroupInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListReportsForReportGroupInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.ListReportsForReportGroup",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.ListReportsForReportGroup"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -5640,58 +4182,36 @@ impl ListReportsForReportGroupInput {
             crate::operation_ser::serialize_operation_crate_operation_list_reports_for_report_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListReportsForReportGroup::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListReportsForReportGroup",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListReportsForReportGroup::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListReportsForReportGroup", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5703,9 +4223,9 @@ impl ListReportsForReportGroupInput {
 
 /// See [`ListSharedProjectsInput`](crate::input::ListSharedProjectsInput).
 pub mod list_shared_projects_input {
-
+    
     /// A builder for [`ListSharedProjectsInput`](crate::input::ListSharedProjectsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) sort_by: std::option::Option<crate::model::SharedResourceSortByType>,
         pub(crate) sort_order: std::option::Option<crate::model::SortOrderType>,
@@ -5713,47 +4233,39 @@ pub mod list_shared_projects_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The criterion to be used to list build projects shared with the current Amazon Web Services account or user. Valid values include: </p>
-        /// <ul>
-        /// <li> <p> <code>ARN</code>: List based on the ARN. </p> </li>
-        /// <li> <p> <code>MODIFIED_TIME</code>: List based on when information about the shared project was last changed. </p> </li>
+        /// <p> The criterion to be used to list build projects shared with the current Amazon Web Services account or user. Valid values include: </p> 
+        /// <ul> 
+        /// <li> <p> <code>ARN</code>: List based on the ARN. </p> </li> 
+        /// <li> <p> <code>MODIFIED_TIME</code>: List based on when information about the shared project was last changed. </p> </li> 
         /// </ul>
         pub fn sort_by(mut self, input: crate::model::SharedResourceSortByType) -> Self {
             self.sort_by = Some(input);
             self
         }
-        /// <p> The criterion to be used to list build projects shared with the current Amazon Web Services account or user. Valid values include: </p>
-        /// <ul>
-        /// <li> <p> <code>ARN</code>: List based on the ARN. </p> </li>
-        /// <li> <p> <code>MODIFIED_TIME</code>: List based on when information about the shared project was last changed. </p> </li>
+        /// <p> The criterion to be used to list build projects shared with the current Amazon Web Services account or user. Valid values include: </p> 
+        /// <ul> 
+        /// <li> <p> <code>ARN</code>: List based on the ARN. </p> </li> 
+        /// <li> <p> <code>MODIFIED_TIME</code>: List based on when information about the shared project was last changed. </p> </li> 
         /// </ul>
-        pub fn set_sort_by(
-            mut self,
-            input: std::option::Option<crate::model::SharedResourceSortByType>,
-        ) -> Self {
-            self.sort_by = input;
-            self
+        pub fn set_sort_by(mut self, input: std::option::Option<crate::model::SharedResourceSortByType>) -> Self {
+            self.sort_by = input; self
         }
-        /// <p>The order in which to list shared build projects. Valid values include:</p>
-        /// <ul>
-        /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
-        /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
+        /// <p>The order in which to list shared build projects. Valid values include:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li> 
+        /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li> 
         /// </ul>
         pub fn sort_order(mut self, input: crate::model::SortOrderType) -> Self {
             self.sort_order = Some(input);
             self
         }
-        /// <p>The order in which to list shared build projects. Valid values include:</p>
-        /// <ul>
-        /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
-        /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
+        /// <p>The order in which to list shared build projects. Valid values include:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li> 
+        /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li> 
         /// </ul>
-        pub fn set_sort_order(
-            mut self,
-            input: std::option::Option<crate::model::SortOrderType>,
-        ) -> Self {
-            self.sort_order = input;
-            self
+        pub fn set_sort_order(mut self, input: std::option::Option<crate::model::SortOrderType>) -> Self {
+            self.sort_order = input; self
         }
         /// <p> The maximum number of paginated shared build projects returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Project</code> objects. The default value is 100. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -5762,8 +4274,7 @@ pub mod list_shared_projects_input {
         }
         /// <p> The maximum number of paginated shared build projects returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Project</code> objects. The default value is 100. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5772,127 +4283,87 @@ pub mod list_shared_projects_input {
         }
         /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListSharedProjectsInput`](crate::input::ListSharedProjectsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListSharedProjectsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::ListSharedProjectsInput {
-                sort_by: self.sort_by,
-                sort_order: self.sort_order,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListSharedProjectsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListSharedProjectsInput {
+                    sort_by: self.sort_by
+                    ,
+                    sort_order: self.sort_order
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListSharedProjectsInput {
     /// Consumes the builder and constructs an Operation<[`ListSharedProjects`](crate::operation::ListSharedProjects)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListSharedProjects,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListSharedProjects, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListSharedProjectsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListSharedProjectsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListSharedProjectsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListSharedProjectsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.ListSharedProjects",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.ListSharedProjects"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_shared_projects(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_shared_projects(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListSharedProjects::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListSharedProjects",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListSharedProjects::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListSharedProjects", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5904,9 +4375,9 @@ impl ListSharedProjectsInput {
 
 /// See [`ListSharedReportGroupsInput`](crate::input::ListSharedReportGroupsInput).
 pub mod list_shared_report_groups_input {
-
+    
     /// A builder for [`ListSharedReportGroupsInput`](crate::input::ListSharedReportGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) sort_order: std::option::Option<crate::model::SortOrderType>,
         pub(crate) sort_by: std::option::Option<crate::model::SharedResourceSortByType>,
@@ -5914,47 +4385,39 @@ pub mod list_shared_report_groups_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The order in which to list shared report groups. Valid values include:</p>
-        /// <ul>
-        /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
-        /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
+        /// <p>The order in which to list shared report groups. Valid values include:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li> 
+        /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li> 
         /// </ul>
         pub fn sort_order(mut self, input: crate::model::SortOrderType) -> Self {
             self.sort_order = Some(input);
             self
         }
-        /// <p>The order in which to list shared report groups. Valid values include:</p>
-        /// <ul>
-        /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
-        /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
+        /// <p>The order in which to list shared report groups. Valid values include:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li> 
+        /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li> 
         /// </ul>
-        pub fn set_sort_order(
-            mut self,
-            input: std::option::Option<crate::model::SortOrderType>,
-        ) -> Self {
-            self.sort_order = input;
-            self
+        pub fn set_sort_order(mut self, input: std::option::Option<crate::model::SortOrderType>) -> Self {
+            self.sort_order = input; self
         }
-        /// <p> The criterion to be used to list report groups shared with the current Amazon Web Services account or user. Valid values include: </p>
-        /// <ul>
-        /// <li> <p> <code>ARN</code>: List based on the ARN. </p> </li>
-        /// <li> <p> <code>MODIFIED_TIME</code>: List based on when information about the shared report group was last changed. </p> </li>
+        /// <p> The criterion to be used to list report groups shared with the current Amazon Web Services account or user. Valid values include: </p> 
+        /// <ul> 
+        /// <li> <p> <code>ARN</code>: List based on the ARN. </p> </li> 
+        /// <li> <p> <code>MODIFIED_TIME</code>: List based on when information about the shared report group was last changed. </p> </li> 
         /// </ul>
         pub fn sort_by(mut self, input: crate::model::SharedResourceSortByType) -> Self {
             self.sort_by = Some(input);
             self
         }
-        /// <p> The criterion to be used to list report groups shared with the current Amazon Web Services account or user. Valid values include: </p>
-        /// <ul>
-        /// <li> <p> <code>ARN</code>: List based on the ARN. </p> </li>
-        /// <li> <p> <code>MODIFIED_TIME</code>: List based on when information about the shared report group was last changed. </p> </li>
+        /// <p> The criterion to be used to list report groups shared with the current Amazon Web Services account or user. Valid values include: </p> 
+        /// <ul> 
+        /// <li> <p> <code>ARN</code>: List based on the ARN. </p> </li> 
+        /// <li> <p> <code>MODIFIED_TIME</code>: List based on when information about the shared report group was last changed. </p> </li> 
         /// </ul>
-        pub fn set_sort_by(
-            mut self,
-            input: std::option::Option<crate::model::SharedResourceSortByType>,
-        ) -> Self {
-            self.sort_by = input;
-            self
+        pub fn set_sort_by(mut self, input: std::option::Option<crate::model::SharedResourceSortByType>) -> Self {
+            self.sort_by = input; self
         }
         /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5963,8 +4426,7 @@ pub mod list_shared_report_groups_input {
         }
         /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p> The maximum number of paginated shared report groups per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>ReportGroup</code> objects. The default value is 100. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -5973,129 +4435,87 @@ pub mod list_shared_report_groups_input {
         }
         /// <p> The maximum number of paginated shared report groups per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>ReportGroup</code> objects. The default value is 100. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`ListSharedReportGroupsInput`](crate::input::ListSharedReportGroupsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListSharedReportGroupsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::ListSharedReportGroupsInput {
-                sort_order: self.sort_order,
-                sort_by: self.sort_by,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            })
+        pub fn build(self) -> Result<crate::input::ListSharedReportGroupsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListSharedReportGroupsInput {
+                    sort_order: self.sort_order
+                    ,
+                    sort_by: self.sort_by
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListSharedReportGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListSharedReportGroups`](crate::operation::ListSharedReportGroups)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListSharedReportGroups,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListSharedReportGroups, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListSharedReportGroupsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListSharedReportGroupsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListSharedReportGroupsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListSharedReportGroupsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.ListSharedReportGroups",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.ListSharedReportGroups"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_shared_report_groups(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_shared_report_groups(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListSharedReportGroups::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListSharedReportGroups",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListSharedReportGroups::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListSharedReportGroups", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6107,119 +4527,80 @@ impl ListSharedReportGroupsInput {
 
 /// See [`ListSourceCredentialsInput`](crate::input::ListSourceCredentialsInput).
 pub mod list_source_credentials_input {
-
+    
     /// A builder for [`ListSourceCredentialsInput`](crate::input::ListSourceCredentialsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {}
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`ListSourceCredentialsInput`](crate::input::ListSourceCredentialsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListSourceCredentialsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::ListSourceCredentialsInput {})
+        pub fn build(self) -> Result<crate::input::ListSourceCredentialsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListSourceCredentialsInput {
+                }
+            )
         }
     }
+    
+    
 }
 impl ListSourceCredentialsInput {
     /// Consumes the builder and constructs an Operation<[`ListSourceCredentials`](crate::operation::ListSourceCredentials)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListSourceCredentials,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListSourceCredentials, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListSourceCredentialsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListSourceCredentialsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListSourceCredentialsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListSourceCredentialsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.ListSourceCredentials",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.ListSourceCredentials"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_source_credentials(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_source_credentials(&self)?
         );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListSourceCredentials::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListSourceCredentials",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListSourceCredentials::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListSourceCredentials", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6231,9 +4612,9 @@ impl ListSourceCredentialsInput {
 
 /// See [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput).
 pub mod put_resource_policy_input {
-
+    
     /// A builder for [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -6246,8 +4627,7 @@ pub mod put_resource_policy_input {
         }
         /// <p> A JSON-formatted resource policy. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/project-sharing.html#project-sharing-share">Sharing a Project</a> and <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/report-groups-sharing.html#report-groups-sharing-share">Sharing a Report Group</a> in the <i>CodeBuild User Guide</i>. </p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// <p> The ARN of the <code>Project</code> or <code>ReportGroup</code> resource you want to associate with a resource policy. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6256,125 +4636,83 @@ pub mod put_resource_policy_input {
         }
         /// <p> The ARN of the <code>Project</code> or <code>ReportGroup</code> resource you want to associate with a resource policy. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Consumes the builder and constructs a [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::PutResourcePolicyInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::PutResourcePolicyInput {
-                policy: self.policy,
-                resource_arn: self.resource_arn,
-            })
+        pub fn build(self) -> Result<crate::input::PutResourcePolicyInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::PutResourcePolicyInput {
+                    policy: self.policy
+                    ,
+                    resource_arn: self.resource_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl PutResourcePolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutResourcePolicy`](crate::operation::PutResourcePolicy)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::PutResourcePolicy,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PutResourcePolicy, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::PutResourcePolicyInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::PutResourcePolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::PutResourcePolicyInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::PutResourcePolicyInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.PutResourcePolicy",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.PutResourcePolicy"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_resource_policy(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_put_resource_policy(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::PutResourcePolicy::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "PutResourcePolicy",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PutResourcePolicy::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("PutResourcePolicy", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6386,9 +4724,9 @@ impl PutResourcePolicyInput {
 
 /// See [`RetryBuildInput`](crate::input::RetryBuildInput).
 pub mod retry_build_input {
-
+    
     /// A builder for [`RetryBuildInput`](crate::input::RetryBuildInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) idempotency_token: std::option::Option<std::string::String>,
@@ -6401,8 +4739,7 @@ pub mod retry_build_input {
         }
         /// <p>Specifies the identifier of the build to restart.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the <code>RetryBuild</code> request. The token is included in the <code>RetryBuild</code> request and is valid for five minutes. If you repeat the <code>RetryBuild</code> request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6410,128 +4747,84 @@ pub mod retry_build_input {
             self
         }
         /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the <code>RetryBuild</code> request. The token is included in the <code>RetryBuild</code> request and is valid for five minutes. If you repeat the <code>RetryBuild</code> request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error.</p>
-        pub fn set_idempotency_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.idempotency_token = input;
-            self
+        pub fn set_idempotency_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.idempotency_token = input; self
         }
         /// Consumes the builder and constructs a [`RetryBuildInput`](crate::input::RetryBuildInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::RetryBuildInput, aws_smithy_http::operation::BuildError> {
-            Ok(crate::input::RetryBuildInput {
-                id: self.id,
-                idempotency_token: self.idempotency_token,
-            })
+        pub fn build(self) -> Result<crate::input::RetryBuildInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::RetryBuildInput {
+                    id: self.id
+                    ,
+                    idempotency_token: self.idempotency_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl RetryBuildInput {
     /// Consumes the builder and constructs an Operation<[`RetryBuild`](crate::operation::RetryBuild)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::RetryBuild,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::RetryBuild, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::RetryBuildInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::RetryBuildInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::RetryBuildInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::RetryBuildInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.RetryBuild",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.RetryBuild"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_retry_build(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_retry_build(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::RetryBuild::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "RetryBuild",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::RetryBuild::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("RetryBuild", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6543,9 +4836,9 @@ impl RetryBuildInput {
 
 /// See [`RetryBuildBatchInput`](crate::input::RetryBuildBatchInput).
 pub mod retry_build_batch_input {
-
+    
     /// A builder for [`RetryBuildBatchInput`](crate::input::RetryBuildBatchInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) idempotency_token: std::option::Option<std::string::String>,
@@ -6559,8 +4852,7 @@ pub mod retry_build_batch_input {
         }
         /// <p>Specifies the identifier of the batch build to restart.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the <code>RetryBuildBatch</code> request. The token is included in the <code>RetryBuildBatch</code> request and is valid for five minutes. If you repeat the <code>RetryBuildBatch</code> request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6568,12 +4860,8 @@ pub mod retry_build_batch_input {
             self
         }
         /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the <code>RetryBuildBatch</code> request. The token is included in the <code>RetryBuildBatch</code> request and is valid for five minutes. If you repeat the <code>RetryBuildBatch</code> request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error.</p>
-        pub fn set_idempotency_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.idempotency_token = input;
-            self
+        pub fn set_idempotency_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.idempotency_token = input; self
         }
         /// <p>Specifies the type of retry to perform.</p>
         pub fn retry_type(mut self, input: crate::model::RetryBuildBatchType) -> Self {
@@ -6581,130 +4869,86 @@ pub mod retry_build_batch_input {
             self
         }
         /// <p>Specifies the type of retry to perform.</p>
-        pub fn set_retry_type(
-            mut self,
-            input: std::option::Option<crate::model::RetryBuildBatchType>,
-        ) -> Self {
-            self.retry_type = input;
-            self
+        pub fn set_retry_type(mut self, input: std::option::Option<crate::model::RetryBuildBatchType>) -> Self {
+            self.retry_type = input; self
         }
         /// Consumes the builder and constructs a [`RetryBuildBatchInput`](crate::input::RetryBuildBatchInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::RetryBuildBatchInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::RetryBuildBatchInput {
-                id: self.id,
-                idempotency_token: self.idempotency_token,
-                retry_type: self.retry_type,
-            })
+        pub fn build(self) -> Result<crate::input::RetryBuildBatchInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::RetryBuildBatchInput {
+                    id: self.id
+                    ,
+                    idempotency_token: self.idempotency_token
+                    ,
+                    retry_type: self.retry_type
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl RetryBuildBatchInput {
     /// Consumes the builder and constructs an Operation<[`RetryBuildBatch`](crate::operation::RetryBuildBatch)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::RetryBuildBatch,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::RetryBuildBatch, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::RetryBuildBatchInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::RetryBuildBatchInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::RetryBuildBatchInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::RetryBuildBatchInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.RetryBuildBatch",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.RetryBuildBatch"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_retry_build_batch(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_retry_build_batch(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::RetryBuildBatch::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "RetryBuildBatch",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::RetryBuildBatch::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("RetryBuildBatch", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6716,32 +4960,26 @@ impl RetryBuildBatchInput {
 
 /// See [`StartBuildInput`](crate::input::StartBuildInput).
 pub mod start_build_input {
-
+    
     /// A builder for [`StartBuildInput`](crate::input::StartBuildInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
-        pub(crate) secondary_sources_override:
-            std::option::Option<std::vec::Vec<crate::model::ProjectSource>>,
-        pub(crate) secondary_sources_version_override:
-            std::option::Option<std::vec::Vec<crate::model::ProjectSourceVersion>>,
+        pub(crate) secondary_sources_override: std::option::Option<std::vec::Vec<crate::model::ProjectSource>>,
+        pub(crate) secondary_sources_version_override: std::option::Option<std::vec::Vec<crate::model::ProjectSourceVersion>>,
         pub(crate) source_version: std::option::Option<std::string::String>,
         pub(crate) artifacts_override: std::option::Option<crate::model::ProjectArtifacts>,
-        pub(crate) secondary_artifacts_override:
-            std::option::Option<std::vec::Vec<crate::model::ProjectArtifacts>>,
-        pub(crate) environment_variables_override:
-            std::option::Option<std::vec::Vec<crate::model::EnvironmentVariable>>,
+        pub(crate) secondary_artifacts_override: std::option::Option<std::vec::Vec<crate::model::ProjectArtifacts>>,
+        pub(crate) environment_variables_override: std::option::Option<std::vec::Vec<crate::model::EnvironmentVariable>>,
         pub(crate) source_type_override: std::option::Option<crate::model::SourceType>,
         pub(crate) source_location_override: std::option::Option<std::string::String>,
         pub(crate) source_auth_override: std::option::Option<crate::model::SourceAuth>,
         pub(crate) git_clone_depth_override: std::option::Option<i32>,
-        pub(crate) git_submodules_config_override:
-            std::option::Option<crate::model::GitSubmodulesConfig>,
+        pub(crate) git_submodules_config_override: std::option::Option<crate::model::GitSubmodulesConfig>,
         pub(crate) buildspec_override: std::option::Option<std::string::String>,
         pub(crate) insecure_ssl_override: std::option::Option<bool>,
         pub(crate) report_build_status_override: std::option::Option<bool>,
-        pub(crate) build_status_config_override:
-            std::option::Option<crate::model::BuildStatusConfig>,
+        pub(crate) build_status_config_override: std::option::Option<crate::model::BuildStatusConfig>,
         pub(crate) environment_type_override: std::option::Option<crate::model::EnvironmentType>,
         pub(crate) image_override: std::option::Option<std::string::String>,
         pub(crate) compute_type_override: std::option::Option<crate::model::ComputeType>,
@@ -6754,10 +4992,8 @@ pub mod start_build_input {
         pub(crate) encryption_key_override: std::option::Option<std::string::String>,
         pub(crate) idempotency_token: std::option::Option<std::string::String>,
         pub(crate) logs_config_override: std::option::Option<crate::model::LogsConfig>,
-        pub(crate) registry_credential_override:
-            std::option::Option<crate::model::RegistryCredential>,
-        pub(crate) image_pull_credentials_type_override:
-            std::option::Option<crate::model::ImagePullCredentialsType>,
+        pub(crate) registry_credential_override: std::option::Option<crate::model::RegistryCredential>,
+        pub(crate) image_pull_credentials_type_override: std::option::Option<crate::model::ImagePullCredentialsType>,
         pub(crate) debug_session_enabled: std::option::Option<bool>,
     }
     impl Builder {
@@ -6768,8 +5004,7 @@ pub mod start_build_input {
         }
         /// <p>The name of the CodeBuild build project to start running a build.</p>
         pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.project_name = input;
-            self
+            self.project_name = input; self
         }
         /// Appends an item to `secondary_sources_override`.
         ///
@@ -6778,108 +5013,93 @@ pub mod start_build_input {
         /// <p> An array of <code>ProjectSource</code> objects. </p>
         pub fn secondary_sources_override(mut self, input: crate::model::ProjectSource) -> Self {
             let mut v = self.secondary_sources_override.unwrap_or_default();
-            v.push(input);
-            self.secondary_sources_override = Some(v);
-            self
+                            v.push(input);
+                            self.secondary_sources_override = Some(v);
+                            self
         }
         /// <p> An array of <code>ProjectSource</code> objects. </p>
-        pub fn set_secondary_sources_override(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProjectSource>>,
-        ) -> Self {
-            self.secondary_sources_override = input;
-            self
+        pub fn set_secondary_sources_override(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProjectSource>>) -> Self {
+            self.secondary_sources_override = input; self
         }
         /// Appends an item to `secondary_sources_version_override`.
         ///
         /// To override the contents of this collection use [`set_secondary_sources_version_override`](Self::set_secondary_sources_version_override).
         ///
         /// <p> An array of <code>ProjectSourceVersion</code> objects that specify one or more versions of the project's secondary sources to be used for this build only. </p>
-        pub fn secondary_sources_version_override(
-            mut self,
-            input: crate::model::ProjectSourceVersion,
-        ) -> Self {
+        pub fn secondary_sources_version_override(mut self, input: crate::model::ProjectSourceVersion) -> Self {
             let mut v = self.secondary_sources_version_override.unwrap_or_default();
-            v.push(input);
-            self.secondary_sources_version_override = Some(v);
-            self
+                            v.push(input);
+                            self.secondary_sources_version_override = Some(v);
+                            self
         }
         /// <p> An array of <code>ProjectSourceVersion</code> objects that specify one or more versions of the project's secondary sources to be used for this build only. </p>
-        pub fn set_secondary_sources_version_override(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProjectSourceVersion>>,
-        ) -> Self {
-            self.secondary_sources_version_override = input;
-            self
+        pub fn set_secondary_sources_version_override(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProjectSourceVersion>>) -> Self {
+            self.secondary_sources_version_override = input; self
         }
-        /// <p>The version of the build input to be built, for this build only. If not specified, the latest version is used. If specified, the contents depends on the source provider:</p>
-        /// <dl>
+        /// <p>The version of the build input to be built, for this build only. If not specified, the latest version is used. If specified, the contents depends on the source provider:</p> 
+        /// <dl> 
         /// <dt>
         /// CodeCommit
-        /// </dt>
-        /// <dd>
-        /// <p>The commit ID, branch, or Git tag to use.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The commit ID, branch, or Git tag to use.</p> 
+        /// </dd> 
         /// <dt>
         /// GitHub
-        /// </dt>
-        /// <dd>
-        /// <p>The commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> 
+        /// </dd> 
         /// <dt>
         /// Bitbucket
-        /// </dt>
-        /// <dd>
-        /// <p>The commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> 
+        /// </dd> 
         /// <dt>
         /// Amazon S3
-        /// </dt>
-        /// <dd>
-        /// <p>The version ID of the object that represents the build input ZIP file to use.</p>
-        /// </dd>
-        /// </dl>
-        /// <p>If <code>sourceVersion</code> is specified at the project level, then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The version ID of the object that represents the build input ZIP file to use.</p> 
+        /// </dd> 
+        /// </dl> 
+        /// <p>If <code>sourceVersion</code> is specified at the project level, then this <code>sourceVersion</code> (at the build level) takes precedence. </p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
         pub fn source_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_version = Some(input.into());
             self
         }
-        /// <p>The version of the build input to be built, for this build only. If not specified, the latest version is used. If specified, the contents depends on the source provider:</p>
-        /// <dl>
+        /// <p>The version of the build input to be built, for this build only. If not specified, the latest version is used. If specified, the contents depends on the source provider:</p> 
+        /// <dl> 
         /// <dt>
         /// CodeCommit
-        /// </dt>
-        /// <dd>
-        /// <p>The commit ID, branch, or Git tag to use.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The commit ID, branch, or Git tag to use.</p> 
+        /// </dd> 
         /// <dt>
         /// GitHub
-        /// </dt>
-        /// <dd>
-        /// <p>The commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> 
+        /// </dd> 
         /// <dt>
         /// Bitbucket
-        /// </dt>
-        /// <dd>
-        /// <p>The commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> 
+        /// </dd> 
         /// <dt>
         /// Amazon S3
-        /// </dt>
-        /// <dd>
-        /// <p>The version ID of the object that represents the build input ZIP file to use.</p>
-        /// </dd>
-        /// </dl>
-        /// <p>If <code>sourceVersion</code> is specified at the project level, then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The version ID of the object that represents the build input ZIP file to use.</p> 
+        /// </dd> 
+        /// </dl> 
+        /// <p>If <code>sourceVersion</code> is specified at the project level, then this <code>sourceVersion</code> (at the build level) takes precedence. </p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
-        pub fn set_source_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_version = input;
-            self
+        pub fn set_source_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_version = input; self
         }
         /// <p>Build output artifact settings that override, for this build only, the latest ones already defined in the build project.</p>
         pub fn artifacts_override(mut self, input: crate::model::ProjectArtifacts) -> Self {
@@ -6887,56 +5107,38 @@ pub mod start_build_input {
             self
         }
         /// <p>Build output artifact settings that override, for this build only, the latest ones already defined in the build project.</p>
-        pub fn set_artifacts_override(
-            mut self,
-            input: std::option::Option<crate::model::ProjectArtifacts>,
-        ) -> Self {
-            self.artifacts_override = input;
-            self
+        pub fn set_artifacts_override(mut self, input: std::option::Option<crate::model::ProjectArtifacts>) -> Self {
+            self.artifacts_override = input; self
         }
         /// Appends an item to `secondary_artifacts_override`.
         ///
         /// To override the contents of this collection use [`set_secondary_artifacts_override`](Self::set_secondary_artifacts_override).
         ///
         /// <p> An array of <code>ProjectArtifacts</code> objects. </p>
-        pub fn secondary_artifacts_override(
-            mut self,
-            input: crate::model::ProjectArtifacts,
-        ) -> Self {
+        pub fn secondary_artifacts_override(mut self, input: crate::model::ProjectArtifacts) -> Self {
             let mut v = self.secondary_artifacts_override.unwrap_or_default();
-            v.push(input);
-            self.secondary_artifacts_override = Some(v);
-            self
+                            v.push(input);
+                            self.secondary_artifacts_override = Some(v);
+                            self
         }
         /// <p> An array of <code>ProjectArtifacts</code> objects. </p>
-        pub fn set_secondary_artifacts_override(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProjectArtifacts>>,
-        ) -> Self {
-            self.secondary_artifacts_override = input;
-            self
+        pub fn set_secondary_artifacts_override(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProjectArtifacts>>) -> Self {
+            self.secondary_artifacts_override = input; self
         }
         /// Appends an item to `environment_variables_override`.
         ///
         /// To override the contents of this collection use [`set_environment_variables_override`](Self::set_environment_variables_override).
         ///
         /// <p>A set of environment variables that overrides, for this build only, the latest ones already defined in the build project.</p>
-        pub fn environment_variables_override(
-            mut self,
-            input: crate::model::EnvironmentVariable,
-        ) -> Self {
+        pub fn environment_variables_override(mut self, input: crate::model::EnvironmentVariable) -> Self {
             let mut v = self.environment_variables_override.unwrap_or_default();
-            v.push(input);
-            self.environment_variables_override = Some(v);
-            self
+                            v.push(input);
+                            self.environment_variables_override = Some(v);
+                            self
         }
         /// <p>A set of environment variables that overrides, for this build only, the latest ones already defined in the build project.</p>
-        pub fn set_environment_variables_override(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EnvironmentVariable>>,
-        ) -> Self {
-            self.environment_variables_override = input;
-            self
+        pub fn set_environment_variables_override(mut self, input: std::option::Option<std::vec::Vec<crate::model::EnvironmentVariable>>) -> Self {
+            self.environment_variables_override = input; self
         }
         /// <p>A source input type, for this build, that overrides the source input defined in the build project.</p>
         pub fn source_type_override(mut self, input: crate::model::SourceType) -> Self {
@@ -6944,12 +5146,8 @@ pub mod start_build_input {
             self
         }
         /// <p>A source input type, for this build, that overrides the source input defined in the build project.</p>
-        pub fn set_source_type_override(
-            mut self,
-            input: std::option::Option<crate::model::SourceType>,
-        ) -> Self {
-            self.source_type_override = input;
-            self
+        pub fn set_source_type_override(mut self, input: std::option::Option<crate::model::SourceType>) -> Self {
+            self.source_type_override = input; self
         }
         /// <p>A location that overrides, for this build, the source location for the one defined in the build project.</p>
         pub fn source_location_override(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6957,12 +5155,8 @@ pub mod start_build_input {
             self
         }
         /// <p>A location that overrides, for this build, the source location for the one defined in the build project.</p>
-        pub fn set_source_location_override(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_location_override = input;
-            self
+        pub fn set_source_location_override(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_location_override = input; self
         }
         /// <p>An authorization type for this build that overrides the one defined in the build project. This override applies only if the build project's source is BitBucket or GitHub.</p>
         pub fn source_auth_override(mut self, input: crate::model::SourceAuth) -> Self {
@@ -6970,12 +5164,8 @@ pub mod start_build_input {
             self
         }
         /// <p>An authorization type for this build that overrides the one defined in the build project. This override applies only if the build project's source is BitBucket or GitHub.</p>
-        pub fn set_source_auth_override(
-            mut self,
-            input: std::option::Option<crate::model::SourceAuth>,
-        ) -> Self {
-            self.source_auth_override = input;
-            self
+        pub fn set_source_auth_override(mut self, input: std::option::Option<crate::model::SourceAuth>) -> Self {
+            self.source_auth_override = input; self
         }
         /// <p>The user-defined depth of history, with a minimum value of 0, that overrides, for this build only, any previous depth of history defined in the build project.</p>
         pub fn git_clone_depth_override(mut self, input: i32) -> Self {
@@ -6984,39 +5174,27 @@ pub mod start_build_input {
         }
         /// <p>The user-defined depth of history, with a minimum value of 0, that overrides, for this build only, any previous depth of history defined in the build project.</p>
         pub fn set_git_clone_depth_override(mut self, input: std::option::Option<i32>) -> Self {
-            self.git_clone_depth_override = input;
-            self
+            self.git_clone_depth_override = input; self
         }
         /// <p> Information about the Git submodules configuration for this build of an CodeBuild build project. </p>
-        pub fn git_submodules_config_override(
-            mut self,
-            input: crate::model::GitSubmodulesConfig,
-        ) -> Self {
+        pub fn git_submodules_config_override(mut self, input: crate::model::GitSubmodulesConfig) -> Self {
             self.git_submodules_config_override = Some(input);
             self
         }
         /// <p> Information about the Git submodules configuration for this build of an CodeBuild build project. </p>
-        pub fn set_git_submodules_config_override(
-            mut self,
-            input: std::option::Option<crate::model::GitSubmodulesConfig>,
-        ) -> Self {
-            self.git_submodules_config_override = input;
-            self
+        pub fn set_git_submodules_config_override(mut self, input: std::option::Option<crate::model::GitSubmodulesConfig>) -> Self {
+            self.git_submodules_config_override = input; self
         }
-        /// <p>A buildspec file declaration that overrides, for this build only, the latest one already defined in the build project.</p>
+        /// <p>A buildspec file declaration that overrides, for this build only, the latest one already defined in the build project.</p> 
         /// <p> If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3 bucket. The bucket must be in the same Amazon Web Services Region as the build project. Specify the buildspec file using its ARN (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not provided or is set to an empty string, the source code must contain a buildspec file in its root directory. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec File Name and Storage Location</a>. </p>
         pub fn buildspec_override(mut self, input: impl Into<std::string::String>) -> Self {
             self.buildspec_override = Some(input.into());
             self
         }
-        /// <p>A buildspec file declaration that overrides, for this build only, the latest one already defined in the build project.</p>
+        /// <p>A buildspec file declaration that overrides, for this build only, the latest one already defined in the build project.</p> 
         /// <p> If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3 bucket. The bucket must be in the same Amazon Web Services Region as the build project. Specify the buildspec file using its ARN (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not provided or is set to an empty string, the source code must contain a buildspec file in its root directory. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec File Name and Storage Location</a>. </p>
-        pub fn set_buildspec_override(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.buildspec_override = input;
-            self
+        pub fn set_buildspec_override(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.buildspec_override = input; self
         }
         /// <p>Enable this flag to override the insecure SSL setting that is specified in the build project. The insecure SSL setting determines whether to ignore SSL warnings while connecting to the project source code. This override applies only if the build's source is GitHub Enterprise.</p>
         pub fn insecure_ssl_override(mut self, input: bool) -> Self {
@@ -7025,43 +5203,31 @@ pub mod start_build_input {
         }
         /// <p>Enable this flag to override the insecure SSL setting that is specified in the build project. The insecure SSL setting determines whether to ignore SSL warnings while connecting to the project source code. This override applies only if the build's source is GitHub Enterprise.</p>
         pub fn set_insecure_ssl_override(mut self, input: std::option::Option<bool>) -> Self {
-            self.insecure_ssl_override = input;
-            self
+            self.insecure_ssl_override = input; self
         }
-        /// <p> Set to true to report to your source provider the status of a build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown. </p>
-        /// <p>To be able to report the build status to the source provider, the user associated with the source provider must have write access to the repo. If the user does not have write access, the build status cannot be updated. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider access</a> in the <i>CodeBuild User Guide</i>.</p> <note>
-        /// <p> The status of a build triggered by a webhook is always reported to your source provider. </p>
+        /// <p> Set to true to report to your source provider the status of a build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown. </p> 
+        /// <p>To be able to report the build status to the source provider, the user associated with the source provider must have write access to the repo. If the user does not have write access, the build status cannot be updated. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider access</a> in the <i>CodeBuild User Guide</i>.</p> <note> 
+        /// <p> The status of a build triggered by a webhook is always reported to your source provider. </p> 
         /// </note>
         pub fn report_build_status_override(mut self, input: bool) -> Self {
             self.report_build_status_override = Some(input);
             self
         }
-        /// <p> Set to true to report to your source provider the status of a build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown. </p>
-        /// <p>To be able to report the build status to the source provider, the user associated with the source provider must have write access to the repo. If the user does not have write access, the build status cannot be updated. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider access</a> in the <i>CodeBuild User Guide</i>.</p> <note>
-        /// <p> The status of a build triggered by a webhook is always reported to your source provider. </p>
+        /// <p> Set to true to report to your source provider the status of a build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown. </p> 
+        /// <p>To be able to report the build status to the source provider, the user associated with the source provider must have write access to the repo. If the user does not have write access, the build status cannot be updated. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider access</a> in the <i>CodeBuild User Guide</i>.</p> <note> 
+        /// <p> The status of a build triggered by a webhook is always reported to your source provider. </p> 
         /// </note>
-        pub fn set_report_build_status_override(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.report_build_status_override = input;
-            self
+        pub fn set_report_build_status_override(mut self, input: std::option::Option<bool>) -> Self {
+            self.report_build_status_override = input; self
         }
         /// <p>Contains information that defines how the build project reports the build status to the source provider. This option is only used when the source provider is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or <code>BITBUCKET</code>.</p>
-        pub fn build_status_config_override(
-            mut self,
-            input: crate::model::BuildStatusConfig,
-        ) -> Self {
+        pub fn build_status_config_override(mut self, input: crate::model::BuildStatusConfig) -> Self {
             self.build_status_config_override = Some(input);
             self
         }
         /// <p>Contains information that defines how the build project reports the build status to the source provider. This option is only used when the source provider is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or <code>BITBUCKET</code>.</p>
-        pub fn set_build_status_config_override(
-            mut self,
-            input: std::option::Option<crate::model::BuildStatusConfig>,
-        ) -> Self {
-            self.build_status_config_override = input;
-            self
+        pub fn set_build_status_config_override(mut self, input: std::option::Option<crate::model::BuildStatusConfig>) -> Self {
+            self.build_status_config_override = input; self
         }
         /// <p>A container type for this build that overrides the one specified in the build project.</p>
         pub fn environment_type_override(mut self, input: crate::model::EnvironmentType) -> Self {
@@ -7069,12 +5235,8 @@ pub mod start_build_input {
             self
         }
         /// <p>A container type for this build that overrides the one specified in the build project.</p>
-        pub fn set_environment_type_override(
-            mut self,
-            input: std::option::Option<crate::model::EnvironmentType>,
-        ) -> Self {
-            self.environment_type_override = input;
-            self
+        pub fn set_environment_type_override(mut self, input: std::option::Option<crate::model::EnvironmentType>) -> Self {
+            self.environment_type_override = input; self
         }
         /// <p>The name of an image for this build that overrides the one specified in the build project.</p>
         pub fn image_override(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7082,12 +5244,8 @@ pub mod start_build_input {
             self
         }
         /// <p>The name of an image for this build that overrides the one specified in the build project.</p>
-        pub fn set_image_override(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.image_override = input;
-            self
+        pub fn set_image_override(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_override = input; self
         }
         /// <p>The name of a compute type for this build that overrides the one specified in the build project.</p>
         pub fn compute_type_override(mut self, input: crate::model::ComputeType) -> Self {
@@ -7095,12 +5253,8 @@ pub mod start_build_input {
             self
         }
         /// <p>The name of a compute type for this build that overrides the one specified in the build project.</p>
-        pub fn set_compute_type_override(
-            mut self,
-            input: std::option::Option<crate::model::ComputeType>,
-        ) -> Self {
-            self.compute_type_override = input;
-            self
+        pub fn set_compute_type_override(mut self, input: std::option::Option<crate::model::ComputeType>) -> Self {
+            self.compute_type_override = input; self
         }
         /// <p>The name of a certificate for this build that overrides the one specified in the build project.</p>
         pub fn certificate_override(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7108,12 +5262,8 @@ pub mod start_build_input {
             self
         }
         /// <p>The name of a certificate for this build that overrides the one specified in the build project.</p>
-        pub fn set_certificate_override(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.certificate_override = input;
-            self
+        pub fn set_certificate_override(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.certificate_override = input; self
         }
         /// <p>A ProjectCache object specified for this build that overrides the one defined in the build project.</p>
         pub fn cache_override(mut self, input: crate::model::ProjectCache) -> Self {
@@ -7121,12 +5271,8 @@ pub mod start_build_input {
             self
         }
         /// <p>A ProjectCache object specified for this build that overrides the one defined in the build project.</p>
-        pub fn set_cache_override(
-            mut self,
-            input: std::option::Option<crate::model::ProjectCache>,
-        ) -> Self {
-            self.cache_override = input;
-            self
+        pub fn set_cache_override(mut self, input: std::option::Option<crate::model::ProjectCache>) -> Self {
+            self.cache_override = input; self
         }
         /// <p>The name of a service role for this build that overrides the one specified in the build project.</p>
         pub fn service_role_override(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7134,12 +5280,8 @@ pub mod start_build_input {
             self
         }
         /// <p>The name of a service role for this build that overrides the one specified in the build project.</p>
-        pub fn set_service_role_override(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.service_role_override = input;
-            self
+        pub fn set_service_role_override(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_role_override = input; self
         }
         /// <p>Enable this flag to override privileged mode in the build project.</p>
         pub fn privileged_mode_override(mut self, input: bool) -> Self {
@@ -7148,8 +5290,7 @@ pub mod start_build_input {
         }
         /// <p>Enable this flag to override privileged mode in the build project.</p>
         pub fn set_privileged_mode_override(mut self, input: std::option::Option<bool>) -> Self {
-            self.privileged_mode_override = input;
-            self
+            self.privileged_mode_override = input; self
         }
         /// <p>The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for this build only, the latest setting already defined in the build project.</p>
         pub fn timeout_in_minutes_override(mut self, input: i32) -> Self {
@@ -7158,8 +5299,7 @@ pub mod start_build_input {
         }
         /// <p>The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for this build only, the latest setting already defined in the build project.</p>
         pub fn set_timeout_in_minutes_override(mut self, input: std::option::Option<i32>) -> Self {
-            self.timeout_in_minutes_override = input;
-            self
+            self.timeout_in_minutes_override = input; self
         }
         /// <p> The number of minutes a build is allowed to be queued before it times out. </p>
         pub fn queued_timeout_in_minutes_override(mut self, input: i32) -> Self {
@@ -7167,33 +5307,25 @@ pub mod start_build_input {
             self
         }
         /// <p> The number of minutes a build is allowed to be queued before it times out. </p>
-        pub fn set_queued_timeout_in_minutes_override(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.queued_timeout_in_minutes_override = input;
-            self
+        pub fn set_queued_timeout_in_minutes_override(mut self, input: std::option::Option<i32>) -> Self {
+            self.queued_timeout_in_minutes_override = input; self
         }
-        /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the build project. The CMK key encrypts the build output artifacts.</p> <note>
-        /// <p> You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
-        /// </note>
+        /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the build project. The CMK key encrypts the build output artifacts.</p> <note> 
+        /// <p> You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p> 
+        /// </note> 
         /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
         /// <alias-name></alias-name></code>).</p>
         pub fn encryption_key_override(mut self, input: impl Into<std::string::String>) -> Self {
             self.encryption_key_override = Some(input.into());
             self
         }
-        /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the build project. The CMK key encrypts the build output artifacts.</p> <note>
-        /// <p> You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
-        /// </note>
+        /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the build project. The CMK key encrypts the build output artifacts.</p> <note> 
+        /// <p> You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p> 
+        /// </note> 
         /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
         /// <alias-name></alias-name></code>).</p>
-        pub fn set_encryption_key_override(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.encryption_key_override = input;
-            self
+        pub fn set_encryption_key_override(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.encryption_key_override = input; self
         }
         /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the StartBuild request. The token is included in the StartBuild request and is valid for 5 minutes. If you repeat the StartBuild request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error. </p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7201,12 +5333,8 @@ pub mod start_build_input {
             self
         }
         /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the StartBuild request. The token is included in the StartBuild request and is valid for 5 minutes. If you repeat the StartBuild request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error. </p>
-        pub fn set_idempotency_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.idempotency_token = input;
-            self
+        pub fn set_idempotency_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.idempotency_token = input; self
         }
         /// <p> Log settings for this build that override the log settings defined in the build project. </p>
         pub fn logs_config_override(mut self, input: crate::model::LogsConfig) -> Self {
@@ -7214,74 +5342,56 @@ pub mod start_build_input {
             self
         }
         /// <p> Log settings for this build that override the log settings defined in the build project. </p>
-        pub fn set_logs_config_override(
-            mut self,
-            input: std::option::Option<crate::model::LogsConfig>,
-        ) -> Self {
-            self.logs_config_override = input;
-            self
+        pub fn set_logs_config_override(mut self, input: std::option::Option<crate::model::LogsConfig>) -> Self {
+            self.logs_config_override = input; self
         }
         /// <p> The credentials for access to a private registry. </p>
-        pub fn registry_credential_override(
-            mut self,
-            input: crate::model::RegistryCredential,
-        ) -> Self {
+        pub fn registry_credential_override(mut self, input: crate::model::RegistryCredential) -> Self {
             self.registry_credential_override = Some(input);
             self
         }
         /// <p> The credentials for access to a private registry. </p>
-        pub fn set_registry_credential_override(
-            mut self,
-            input: std::option::Option<crate::model::RegistryCredential>,
-        ) -> Self {
-            self.registry_credential_override = input;
-            self
+        pub fn set_registry_credential_override(mut self, input: std::option::Option<crate::model::RegistryCredential>) -> Self {
+            self.registry_credential_override = input; self
         }
-        /// <p>The type of credentials CodeBuild uses to pull images in your build. There are two valid values: </p>
-        /// <dl>
+        /// <p>The type of credentials CodeBuild uses to pull images in your build. There are two valid values: </p> 
+        /// <dl> 
         /// <dt>
         /// CODEBUILD
-        /// </dt>
-        /// <dd>
-        /// <p>Specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust CodeBuild's service principal.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust CodeBuild's service principal.</p> 
+        /// </dd> 
         /// <dt>
         /// SERVICE_ROLE
-        /// </dt>
-        /// <dd>
-        /// <p>Specifies that CodeBuild uses your build project's service role. </p>
-        /// </dd>
-        /// </dl>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Specifies that CodeBuild uses your build project's service role. </p> 
+        /// </dd> 
+        /// </dl> 
         /// <p>When using a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When using an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials. </p>
-        pub fn image_pull_credentials_type_override(
-            mut self,
-            input: crate::model::ImagePullCredentialsType,
-        ) -> Self {
+        pub fn image_pull_credentials_type_override(mut self, input: crate::model::ImagePullCredentialsType) -> Self {
             self.image_pull_credentials_type_override = Some(input);
             self
         }
-        /// <p>The type of credentials CodeBuild uses to pull images in your build. There are two valid values: </p>
-        /// <dl>
+        /// <p>The type of credentials CodeBuild uses to pull images in your build. There are two valid values: </p> 
+        /// <dl> 
         /// <dt>
         /// CODEBUILD
-        /// </dt>
-        /// <dd>
-        /// <p>Specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust CodeBuild's service principal.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust CodeBuild's service principal.</p> 
+        /// </dd> 
         /// <dt>
         /// SERVICE_ROLE
-        /// </dt>
-        /// <dd>
-        /// <p>Specifies that CodeBuild uses your build project's service role. </p>
-        /// </dd>
-        /// </dl>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Specifies that CodeBuild uses your build project's service role. </p> 
+        /// </dd> 
+        /// </dl> 
         /// <p>When using a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When using an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials. </p>
-        pub fn set_image_pull_credentials_type_override(
-            mut self,
-            input: std::option::Option<crate::model::ImagePullCredentialsType>,
-        ) -> Self {
-            self.image_pull_credentials_type_override = input;
-            self
+        pub fn set_image_pull_credentials_type_override(mut self, input: std::option::Option<crate::model::ImagePullCredentialsType>) -> Self {
+            self.image_pull_credentials_type_override = input; self
         }
         /// <p>Specifies if session debugging is enabled for this build. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in Session Manager</a>.</p>
         pub fn debug_session_enabled(mut self, input: bool) -> Self {
@@ -7290,153 +5400,141 @@ pub mod start_build_input {
         }
         /// <p>Specifies if session debugging is enabled for this build. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in Session Manager</a>.</p>
         pub fn set_debug_session_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.debug_session_enabled = input;
-            self
+            self.debug_session_enabled = input; self
         }
         /// Consumes the builder and constructs a [`StartBuildInput`](crate::input::StartBuildInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::StartBuildInput, aws_smithy_http::operation::BuildError> {
-            Ok(crate::input::StartBuildInput {
-                project_name: self.project_name,
-                secondary_sources_override: self.secondary_sources_override,
-                secondary_sources_version_override: self.secondary_sources_version_override,
-                source_version: self.source_version,
-                artifacts_override: self.artifacts_override,
-                secondary_artifacts_override: self.secondary_artifacts_override,
-                environment_variables_override: self.environment_variables_override,
-                source_type_override: self.source_type_override,
-                source_location_override: self.source_location_override,
-                source_auth_override: self.source_auth_override,
-                git_clone_depth_override: self.git_clone_depth_override,
-                git_submodules_config_override: self.git_submodules_config_override,
-                buildspec_override: self.buildspec_override,
-                insecure_ssl_override: self.insecure_ssl_override,
-                report_build_status_override: self.report_build_status_override,
-                build_status_config_override: self.build_status_config_override,
-                environment_type_override: self.environment_type_override,
-                image_override: self.image_override,
-                compute_type_override: self.compute_type_override,
-                certificate_override: self.certificate_override,
-                cache_override: self.cache_override,
-                service_role_override: self.service_role_override,
-                privileged_mode_override: self.privileged_mode_override,
-                timeout_in_minutes_override: self.timeout_in_minutes_override,
-                queued_timeout_in_minutes_override: self.queued_timeout_in_minutes_override,
-                encryption_key_override: self.encryption_key_override,
-                idempotency_token: self.idempotency_token,
-                logs_config_override: self.logs_config_override,
-                registry_credential_override: self.registry_credential_override,
-                image_pull_credentials_type_override: self.image_pull_credentials_type_override,
-                debug_session_enabled: self.debug_session_enabled,
-            })
+        pub fn build(self) -> Result<crate::input::StartBuildInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::StartBuildInput {
+                    project_name: self.project_name
+                    ,
+                    secondary_sources_override: self.secondary_sources_override
+                    ,
+                    secondary_sources_version_override: self.secondary_sources_version_override
+                    ,
+                    source_version: self.source_version
+                    ,
+                    artifacts_override: self.artifacts_override
+                    ,
+                    secondary_artifacts_override: self.secondary_artifacts_override
+                    ,
+                    environment_variables_override: self.environment_variables_override
+                    ,
+                    source_type_override: self.source_type_override
+                    ,
+                    source_location_override: self.source_location_override
+                    ,
+                    source_auth_override: self.source_auth_override
+                    ,
+                    git_clone_depth_override: self.git_clone_depth_override
+                    ,
+                    git_submodules_config_override: self.git_submodules_config_override
+                    ,
+                    buildspec_override: self.buildspec_override
+                    ,
+                    insecure_ssl_override: self.insecure_ssl_override
+                    ,
+                    report_build_status_override: self.report_build_status_override
+                    ,
+                    build_status_config_override: self.build_status_config_override
+                    ,
+                    environment_type_override: self.environment_type_override
+                    ,
+                    image_override: self.image_override
+                    ,
+                    compute_type_override: self.compute_type_override
+                    ,
+                    certificate_override: self.certificate_override
+                    ,
+                    cache_override: self.cache_override
+                    ,
+                    service_role_override: self.service_role_override
+                    ,
+                    privileged_mode_override: self.privileged_mode_override
+                    ,
+                    timeout_in_minutes_override: self.timeout_in_minutes_override
+                    ,
+                    queued_timeout_in_minutes_override: self.queued_timeout_in_minutes_override
+                    ,
+                    encryption_key_override: self.encryption_key_override
+                    ,
+                    idempotency_token: self.idempotency_token
+                    ,
+                    logs_config_override: self.logs_config_override
+                    ,
+                    registry_credential_override: self.registry_credential_override
+                    ,
+                    image_pull_credentials_type_override: self.image_pull_credentials_type_override
+                    ,
+                    debug_session_enabled: self.debug_session_enabled
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl StartBuildInput {
     /// Consumes the builder and constructs an Operation<[`StartBuild`](crate::operation::StartBuild)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::StartBuild,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::StartBuild, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::StartBuildInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::StartBuildInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::StartBuildInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::StartBuildInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.StartBuild",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.StartBuild"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_build(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_start_build(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::StartBuild::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "StartBuild",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::StartBuild::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("StartBuild", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -7448,27 +5546,22 @@ impl StartBuildInput {
 
 /// See [`StartBuildBatchInput`](crate::input::StartBuildBatchInput).
 pub mod start_build_batch_input {
-
+    
     /// A builder for [`StartBuildBatchInput`](crate::input::StartBuildBatchInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
-        pub(crate) secondary_sources_override:
-            std::option::Option<std::vec::Vec<crate::model::ProjectSource>>,
-        pub(crate) secondary_sources_version_override:
-            std::option::Option<std::vec::Vec<crate::model::ProjectSourceVersion>>,
+        pub(crate) secondary_sources_override: std::option::Option<std::vec::Vec<crate::model::ProjectSource>>,
+        pub(crate) secondary_sources_version_override: std::option::Option<std::vec::Vec<crate::model::ProjectSourceVersion>>,
         pub(crate) source_version: std::option::Option<std::string::String>,
         pub(crate) artifacts_override: std::option::Option<crate::model::ProjectArtifacts>,
-        pub(crate) secondary_artifacts_override:
-            std::option::Option<std::vec::Vec<crate::model::ProjectArtifacts>>,
-        pub(crate) environment_variables_override:
-            std::option::Option<std::vec::Vec<crate::model::EnvironmentVariable>>,
+        pub(crate) secondary_artifacts_override: std::option::Option<std::vec::Vec<crate::model::ProjectArtifacts>>,
+        pub(crate) environment_variables_override: std::option::Option<std::vec::Vec<crate::model::EnvironmentVariable>>,
         pub(crate) source_type_override: std::option::Option<crate::model::SourceType>,
         pub(crate) source_location_override: std::option::Option<std::string::String>,
         pub(crate) source_auth_override: std::option::Option<crate::model::SourceAuth>,
         pub(crate) git_clone_depth_override: std::option::Option<i32>,
-        pub(crate) git_submodules_config_override:
-            std::option::Option<crate::model::GitSubmodulesConfig>,
+        pub(crate) git_submodules_config_override: std::option::Option<crate::model::GitSubmodulesConfig>,
         pub(crate) buildspec_override: std::option::Option<std::string::String>,
         pub(crate) insecure_ssl_override: std::option::Option<bool>,
         pub(crate) report_build_batch_status_override: std::option::Option<bool>,
@@ -7484,12 +5577,9 @@ pub mod start_build_batch_input {
         pub(crate) encryption_key_override: std::option::Option<std::string::String>,
         pub(crate) idempotency_token: std::option::Option<std::string::String>,
         pub(crate) logs_config_override: std::option::Option<crate::model::LogsConfig>,
-        pub(crate) registry_credential_override:
-            std::option::Option<crate::model::RegistryCredential>,
-        pub(crate) image_pull_credentials_type_override:
-            std::option::Option<crate::model::ImagePullCredentialsType>,
-        pub(crate) build_batch_config_override:
-            std::option::Option<crate::model::ProjectBuildBatchConfig>,
+        pub(crate) registry_credential_override: std::option::Option<crate::model::RegistryCredential>,
+        pub(crate) image_pull_credentials_type_override: std::option::Option<crate::model::ImagePullCredentialsType>,
+        pub(crate) build_batch_config_override: std::option::Option<crate::model::ProjectBuildBatchConfig>,
         pub(crate) debug_session_enabled: std::option::Option<bool>,
     }
     impl Builder {
@@ -7500,8 +5590,7 @@ pub mod start_build_batch_input {
         }
         /// <p>The name of the project.</p>
         pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.project_name = input;
-            self
+            self.project_name = input; self
         }
         /// Appends an item to `secondary_sources_override`.
         ///
@@ -7510,108 +5599,93 @@ pub mod start_build_batch_input {
         /// <p>An array of <code>ProjectSource</code> objects that override the secondary sources defined in the batch build project.</p>
         pub fn secondary_sources_override(mut self, input: crate::model::ProjectSource) -> Self {
             let mut v = self.secondary_sources_override.unwrap_or_default();
-            v.push(input);
-            self.secondary_sources_override = Some(v);
-            self
+                            v.push(input);
+                            self.secondary_sources_override = Some(v);
+                            self
         }
         /// <p>An array of <code>ProjectSource</code> objects that override the secondary sources defined in the batch build project.</p>
-        pub fn set_secondary_sources_override(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProjectSource>>,
-        ) -> Self {
-            self.secondary_sources_override = input;
-            self
+        pub fn set_secondary_sources_override(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProjectSource>>) -> Self {
+            self.secondary_sources_override = input; self
         }
         /// Appends an item to `secondary_sources_version_override`.
         ///
         /// To override the contents of this collection use [`set_secondary_sources_version_override`](Self::set_secondary_sources_version_override).
         ///
         /// <p>An array of <code>ProjectSourceVersion</code> objects that override the secondary source versions in the batch build project.</p>
-        pub fn secondary_sources_version_override(
-            mut self,
-            input: crate::model::ProjectSourceVersion,
-        ) -> Self {
+        pub fn secondary_sources_version_override(mut self, input: crate::model::ProjectSourceVersion) -> Self {
             let mut v = self.secondary_sources_version_override.unwrap_or_default();
-            v.push(input);
-            self.secondary_sources_version_override = Some(v);
-            self
+                            v.push(input);
+                            self.secondary_sources_version_override = Some(v);
+                            self
         }
         /// <p>An array of <code>ProjectSourceVersion</code> objects that override the secondary source versions in the batch build project.</p>
-        pub fn set_secondary_sources_version_override(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProjectSourceVersion>>,
-        ) -> Self {
-            self.secondary_sources_version_override = input;
-            self
+        pub fn set_secondary_sources_version_override(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProjectSourceVersion>>) -> Self {
+            self.secondary_sources_version_override = input; self
         }
-        /// <p>The version of the batch build input to be built, for this build only. If not specified, the latest version is used. If specified, the contents depends on the source provider:</p>
-        /// <dl>
+        /// <p>The version of the batch build input to be built, for this build only. If not specified, the latest version is used. If specified, the contents depends on the source provider:</p> 
+        /// <dl> 
         /// <dt>
         /// CodeCommit
-        /// </dt>
-        /// <dd>
-        /// <p>The commit ID, branch, or Git tag to use.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The commit ID, branch, or Git tag to use.</p> 
+        /// </dd> 
         /// <dt>
         /// GitHub
-        /// </dt>
-        /// <dd>
-        /// <p>The commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> 
+        /// </dd> 
         /// <dt>
         /// Bitbucket
-        /// </dt>
-        /// <dd>
-        /// <p>The commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> 
+        /// </dd> 
         /// <dt>
         /// Amazon S3
-        /// </dt>
-        /// <dd>
-        /// <p>The version ID of the object that represents the build input ZIP file to use.</p>
-        /// </dd>
-        /// </dl>
-        /// <p>If <code>sourceVersion</code> is specified at the project level, then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The version ID of the object that represents the build input ZIP file to use.</p> 
+        /// </dd> 
+        /// </dl> 
+        /// <p>If <code>sourceVersion</code> is specified at the project level, then this <code>sourceVersion</code> (at the build level) takes precedence. </p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
         pub fn source_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_version = Some(input.into());
             self
         }
-        /// <p>The version of the batch build input to be built, for this build only. If not specified, the latest version is used. If specified, the contents depends on the source provider:</p>
-        /// <dl>
+        /// <p>The version of the batch build input to be built, for this build only. If not specified, the latest version is used. If specified, the contents depends on the source provider:</p> 
+        /// <dl> 
         /// <dt>
         /// CodeCommit
-        /// </dt>
-        /// <dd>
-        /// <p>The commit ID, branch, or Git tag to use.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The commit ID, branch, or Git tag to use.</p> 
+        /// </dd> 
         /// <dt>
         /// GitHub
-        /// </dt>
-        /// <dd>
-        /// <p>The commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> 
+        /// </dd> 
         /// <dt>
         /// Bitbucket
-        /// </dt>
-        /// <dd>
-        /// <p>The commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> 
+        /// </dd> 
         /// <dt>
         /// Amazon S3
-        /// </dt>
-        /// <dd>
-        /// <p>The version ID of the object that represents the build input ZIP file to use.</p>
-        /// </dd>
-        /// </dl>
-        /// <p>If <code>sourceVersion</code> is specified at the project level, then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The version ID of the object that represents the build input ZIP file to use.</p> 
+        /// </dd> 
+        /// </dl> 
+        /// <p>If <code>sourceVersion</code> is specified at the project level, then this <code>sourceVersion</code> (at the build level) takes precedence. </p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
-        pub fn set_source_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_version = input;
-            self
+        pub fn set_source_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_version = input; self
         }
         /// <p>An array of <code>ProjectArtifacts</code> objects that contains information about the build output artifact overrides for the build project.</p>
         pub fn artifacts_override(mut self, input: crate::model::ProjectArtifacts) -> Self {
@@ -7619,56 +5693,38 @@ pub mod start_build_batch_input {
             self
         }
         /// <p>An array of <code>ProjectArtifacts</code> objects that contains information about the build output artifact overrides for the build project.</p>
-        pub fn set_artifacts_override(
-            mut self,
-            input: std::option::Option<crate::model::ProjectArtifacts>,
-        ) -> Self {
-            self.artifacts_override = input;
-            self
+        pub fn set_artifacts_override(mut self, input: std::option::Option<crate::model::ProjectArtifacts>) -> Self {
+            self.artifacts_override = input; self
         }
         /// Appends an item to `secondary_artifacts_override`.
         ///
         /// To override the contents of this collection use [`set_secondary_artifacts_override`](Self::set_secondary_artifacts_override).
         ///
         /// <p>An array of <code>ProjectArtifacts</code> objects that override the secondary artifacts defined in the batch build project.</p>
-        pub fn secondary_artifacts_override(
-            mut self,
-            input: crate::model::ProjectArtifacts,
-        ) -> Self {
+        pub fn secondary_artifacts_override(mut self, input: crate::model::ProjectArtifacts) -> Self {
             let mut v = self.secondary_artifacts_override.unwrap_or_default();
-            v.push(input);
-            self.secondary_artifacts_override = Some(v);
-            self
+                            v.push(input);
+                            self.secondary_artifacts_override = Some(v);
+                            self
         }
         /// <p>An array of <code>ProjectArtifacts</code> objects that override the secondary artifacts defined in the batch build project.</p>
-        pub fn set_secondary_artifacts_override(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProjectArtifacts>>,
-        ) -> Self {
-            self.secondary_artifacts_override = input;
-            self
+        pub fn set_secondary_artifacts_override(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProjectArtifacts>>) -> Self {
+            self.secondary_artifacts_override = input; self
         }
         /// Appends an item to `environment_variables_override`.
         ///
         /// To override the contents of this collection use [`set_environment_variables_override`](Self::set_environment_variables_override).
         ///
         /// <p>An array of <code>EnvironmentVariable</code> objects that override, or add to, the environment variables defined in the batch build project.</p>
-        pub fn environment_variables_override(
-            mut self,
-            input: crate::model::EnvironmentVariable,
-        ) -> Self {
+        pub fn environment_variables_override(mut self, input: crate::model::EnvironmentVariable) -> Self {
             let mut v = self.environment_variables_override.unwrap_or_default();
-            v.push(input);
-            self.environment_variables_override = Some(v);
-            self
+                            v.push(input);
+                            self.environment_variables_override = Some(v);
+                            self
         }
         /// <p>An array of <code>EnvironmentVariable</code> objects that override, or add to, the environment variables defined in the batch build project.</p>
-        pub fn set_environment_variables_override(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EnvironmentVariable>>,
-        ) -> Self {
-            self.environment_variables_override = input;
-            self
+        pub fn set_environment_variables_override(mut self, input: std::option::Option<std::vec::Vec<crate::model::EnvironmentVariable>>) -> Self {
+            self.environment_variables_override = input; self
         }
         /// <p>The source input type that overrides the source input defined in the batch build project.</p>
         pub fn source_type_override(mut self, input: crate::model::SourceType) -> Self {
@@ -7676,12 +5732,8 @@ pub mod start_build_batch_input {
             self
         }
         /// <p>The source input type that overrides the source input defined in the batch build project.</p>
-        pub fn set_source_type_override(
-            mut self,
-            input: std::option::Option<crate::model::SourceType>,
-        ) -> Self {
-            self.source_type_override = input;
-            self
+        pub fn set_source_type_override(mut self, input: std::option::Option<crate::model::SourceType>) -> Self {
+            self.source_type_override = input; self
         }
         /// <p>A location that overrides, for this batch build, the source location defined in the batch build project.</p>
         pub fn source_location_override(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7689,12 +5741,8 @@ pub mod start_build_batch_input {
             self
         }
         /// <p>A location that overrides, for this batch build, the source location defined in the batch build project.</p>
-        pub fn set_source_location_override(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_location_override = input;
-            self
+        pub fn set_source_location_override(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_location_override = input; self
         }
         /// <p>A <code>SourceAuth</code> object that overrides the one defined in the batch build project. This override applies only if the build project's source is BitBucket or GitHub.</p>
         pub fn source_auth_override(mut self, input: crate::model::SourceAuth) -> Self {
@@ -7702,12 +5750,8 @@ pub mod start_build_batch_input {
             self
         }
         /// <p>A <code>SourceAuth</code> object that overrides the one defined in the batch build project. This override applies only if the build project's source is BitBucket or GitHub.</p>
-        pub fn set_source_auth_override(
-            mut self,
-            input: std::option::Option<crate::model::SourceAuth>,
-        ) -> Self {
-            self.source_auth_override = input;
-            self
+        pub fn set_source_auth_override(mut self, input: std::option::Option<crate::model::SourceAuth>) -> Self {
+            self.source_auth_override = input; self
         }
         /// <p>The user-defined depth of history, with a minimum value of 0, that overrides, for this batch build only, any previous depth of history defined in the batch build project.</p>
         pub fn git_clone_depth_override(mut self, input: i32) -> Self {
@@ -7716,39 +5760,27 @@ pub mod start_build_batch_input {
         }
         /// <p>The user-defined depth of history, with a minimum value of 0, that overrides, for this batch build only, any previous depth of history defined in the batch build project.</p>
         pub fn set_git_clone_depth_override(mut self, input: std::option::Option<i32>) -> Self {
-            self.git_clone_depth_override = input;
-            self
+            self.git_clone_depth_override = input; self
         }
         /// <p>A <code>GitSubmodulesConfig</code> object that overrides the Git submodules configuration for this batch build.</p>
-        pub fn git_submodules_config_override(
-            mut self,
-            input: crate::model::GitSubmodulesConfig,
-        ) -> Self {
+        pub fn git_submodules_config_override(mut self, input: crate::model::GitSubmodulesConfig) -> Self {
             self.git_submodules_config_override = Some(input);
             self
         }
         /// <p>A <code>GitSubmodulesConfig</code> object that overrides the Git submodules configuration for this batch build.</p>
-        pub fn set_git_submodules_config_override(
-            mut self,
-            input: std::option::Option<crate::model::GitSubmodulesConfig>,
-        ) -> Self {
-            self.git_submodules_config_override = input;
-            self
+        pub fn set_git_submodules_config_override(mut self, input: std::option::Option<crate::model::GitSubmodulesConfig>) -> Self {
+            self.git_submodules_config_override = input; self
         }
-        /// <p>A buildspec file declaration that overrides, for this build only, the latest one already defined in the build project.</p>
+        /// <p>A buildspec file declaration that overrides, for this build only, the latest one already defined in the build project.</p> 
         /// <p>If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3 bucket. The bucket must be in the same Amazon Web Services Region as the build project. Specify the buildspec file using its ARN (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not provided or is set to an empty string, the source code must contain a buildspec file in its root directory. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec File Name and Storage Location</a>. </p>
         pub fn buildspec_override(mut self, input: impl Into<std::string::String>) -> Self {
             self.buildspec_override = Some(input.into());
             self
         }
-        /// <p>A buildspec file declaration that overrides, for this build only, the latest one already defined in the build project.</p>
+        /// <p>A buildspec file declaration that overrides, for this build only, the latest one already defined in the build project.</p> 
         /// <p>If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3 bucket. The bucket must be in the same Amazon Web Services Region as the build project. Specify the buildspec file using its ARN (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not provided or is set to an empty string, the source code must contain a buildspec file in its root directory. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec File Name and Storage Location</a>. </p>
-        pub fn set_buildspec_override(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.buildspec_override = input;
-            self
+        pub fn set_buildspec_override(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.buildspec_override = input; self
         }
         /// <p>Enable this flag to override the insecure SSL setting that is specified in the batch build project. The insecure SSL setting determines whether to ignore SSL warnings while connecting to the project source code. This override applies only if the build's source is GitHub Enterprise.</p>
         pub fn insecure_ssl_override(mut self, input: bool) -> Self {
@@ -7757,25 +5789,20 @@ pub mod start_build_batch_input {
         }
         /// <p>Enable this flag to override the insecure SSL setting that is specified in the batch build project. The insecure SSL setting determines whether to ignore SSL warnings while connecting to the project source code. This override applies only if the build's source is GitHub Enterprise.</p>
         pub fn set_insecure_ssl_override(mut self, input: std::option::Option<bool>) -> Self {
-            self.insecure_ssl_override = input;
-            self
+            self.insecure_ssl_override = input; self
         }
-        /// <p>Set to <code>true</code> to report to your source provider the status of a batch build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown. </p> <note>
-        /// <p>The status of a build triggered by a webhook is always reported to your source provider. </p>
+        /// <p>Set to <code>true</code> to report to your source provider the status of a batch build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown. </p> <note> 
+        /// <p>The status of a build triggered by a webhook is always reported to your source provider. </p> 
         /// </note>
         pub fn report_build_batch_status_override(mut self, input: bool) -> Self {
             self.report_build_batch_status_override = Some(input);
             self
         }
-        /// <p>Set to <code>true</code> to report to your source provider the status of a batch build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown. </p> <note>
-        /// <p>The status of a build triggered by a webhook is always reported to your source provider. </p>
+        /// <p>Set to <code>true</code> to report to your source provider the status of a batch build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown. </p> <note> 
+        /// <p>The status of a build triggered by a webhook is always reported to your source provider. </p> 
         /// </note>
-        pub fn set_report_build_batch_status_override(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.report_build_batch_status_override = input;
-            self
+        pub fn set_report_build_batch_status_override(mut self, input: std::option::Option<bool>) -> Self {
+            self.report_build_batch_status_override = input; self
         }
         /// <p>A container type for this batch build that overrides the one specified in the batch build project.</p>
         pub fn environment_type_override(mut self, input: crate::model::EnvironmentType) -> Self {
@@ -7783,12 +5810,8 @@ pub mod start_build_batch_input {
             self
         }
         /// <p>A container type for this batch build that overrides the one specified in the batch build project.</p>
-        pub fn set_environment_type_override(
-            mut self,
-            input: std::option::Option<crate::model::EnvironmentType>,
-        ) -> Self {
-            self.environment_type_override = input;
-            self
+        pub fn set_environment_type_override(mut self, input: std::option::Option<crate::model::EnvironmentType>) -> Self {
+            self.environment_type_override = input; self
         }
         /// <p>The name of an image for this batch build that overrides the one specified in the batch build project.</p>
         pub fn image_override(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7796,12 +5819,8 @@ pub mod start_build_batch_input {
             self
         }
         /// <p>The name of an image for this batch build that overrides the one specified in the batch build project.</p>
-        pub fn set_image_override(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.image_override = input;
-            self
+        pub fn set_image_override(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_override = input; self
         }
         /// <p>The name of a compute type for this batch build that overrides the one specified in the batch build project.</p>
         pub fn compute_type_override(mut self, input: crate::model::ComputeType) -> Self {
@@ -7809,12 +5828,8 @@ pub mod start_build_batch_input {
             self
         }
         /// <p>The name of a compute type for this batch build that overrides the one specified in the batch build project.</p>
-        pub fn set_compute_type_override(
-            mut self,
-            input: std::option::Option<crate::model::ComputeType>,
-        ) -> Self {
-            self.compute_type_override = input;
-            self
+        pub fn set_compute_type_override(mut self, input: std::option::Option<crate::model::ComputeType>) -> Self {
+            self.compute_type_override = input; self
         }
         /// <p>The name of a certificate for this batch build that overrides the one specified in the batch build project.</p>
         pub fn certificate_override(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7822,12 +5837,8 @@ pub mod start_build_batch_input {
             self
         }
         /// <p>The name of a certificate for this batch build that overrides the one specified in the batch build project.</p>
-        pub fn set_certificate_override(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.certificate_override = input;
-            self
+        pub fn set_certificate_override(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.certificate_override = input; self
         }
         /// <p>A <code>ProjectCache</code> object that specifies cache overrides.</p>
         pub fn cache_override(mut self, input: crate::model::ProjectCache) -> Self {
@@ -7835,12 +5846,8 @@ pub mod start_build_batch_input {
             self
         }
         /// <p>A <code>ProjectCache</code> object that specifies cache overrides.</p>
-        pub fn set_cache_override(
-            mut self,
-            input: std::option::Option<crate::model::ProjectCache>,
-        ) -> Self {
-            self.cache_override = input;
-            self
+        pub fn set_cache_override(mut self, input: std::option::Option<crate::model::ProjectCache>) -> Self {
+            self.cache_override = input; self
         }
         /// <p>The name of a service role for this batch build that overrides the one specified in the batch build project.</p>
         pub fn service_role_override(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7848,12 +5855,8 @@ pub mod start_build_batch_input {
             self
         }
         /// <p>The name of a service role for this batch build that overrides the one specified in the batch build project.</p>
-        pub fn set_service_role_override(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.service_role_override = input;
-            self
+        pub fn set_service_role_override(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_role_override = input; self
         }
         /// <p>Enable this flag to override privileged mode in the batch build project.</p>
         pub fn privileged_mode_override(mut self, input: bool) -> Self {
@@ -7862,8 +5865,7 @@ pub mod start_build_batch_input {
         }
         /// <p>Enable this flag to override privileged mode in the batch build project.</p>
         pub fn set_privileged_mode_override(mut self, input: std::option::Option<bool>) -> Self {
-            self.privileged_mode_override = input;
-            self
+            self.privileged_mode_override = input; self
         }
         /// <p>Overrides the build timeout specified in the batch build project.</p>
         pub fn build_timeout_in_minutes_override(mut self, input: i32) -> Self {
@@ -7871,12 +5873,8 @@ pub mod start_build_batch_input {
             self
         }
         /// <p>Overrides the build timeout specified in the batch build project.</p>
-        pub fn set_build_timeout_in_minutes_override(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.build_timeout_in_minutes_override = input;
-            self
+        pub fn set_build_timeout_in_minutes_override(mut self, input: std::option::Option<i32>) -> Self {
+            self.build_timeout_in_minutes_override = input; self
         }
         /// <p>The number of minutes a batch build is allowed to be queued before it times out.</p>
         pub fn queued_timeout_in_minutes_override(mut self, input: i32) -> Self {
@@ -7884,33 +5882,25 @@ pub mod start_build_batch_input {
             self
         }
         /// <p>The number of minutes a batch build is allowed to be queued before it times out.</p>
-        pub fn set_queued_timeout_in_minutes_override(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.queued_timeout_in_minutes_override = input;
-            self
+        pub fn set_queued_timeout_in_minutes_override(mut self, input: std::option::Option<i32>) -> Self {
+            self.queued_timeout_in_minutes_override = input; self
         }
-        /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the batch build project. The CMK key encrypts the build output artifacts.</p> <note>
-        /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
-        /// </note>
+        /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the batch build project. The CMK key encrypts the build output artifacts.</p> <note> 
+        /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p> 
+        /// </note> 
         /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
         /// <alias-name></alias-name></code>).</p>
         pub fn encryption_key_override(mut self, input: impl Into<std::string::String>) -> Self {
             self.encryption_key_override = Some(input.into());
             self
         }
-        /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the batch build project. The CMK key encrypts the build output artifacts.</p> <note>
-        /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
-        /// </note>
+        /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the batch build project. The CMK key encrypts the build output artifacts.</p> <note> 
+        /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p> 
+        /// </note> 
         /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
         /// <alias-name></alias-name></code>).</p>
-        pub fn set_encryption_key_override(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.encryption_key_override = input;
-            self
+        pub fn set_encryption_key_override(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.encryption_key_override = input; self
         }
         /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the <code>StartBuildBatch</code> request. The token is included in the <code>StartBuildBatch</code> request and is valid for five minutes. If you repeat the <code>StartBuildBatch</code> request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7918,12 +5908,8 @@ pub mod start_build_batch_input {
             self
         }
         /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the <code>StartBuildBatch</code> request. The token is included in the <code>StartBuildBatch</code> request and is valid for five minutes. If you repeat the <code>StartBuildBatch</code> request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error.</p>
-        pub fn set_idempotency_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.idempotency_token = input;
-            self
+        pub fn set_idempotency_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.idempotency_token = input; self
         }
         /// <p>A <code>LogsConfig</code> object that override the log settings defined in the batch build project.</p>
         pub fn logs_config_override(mut self, input: crate::model::LogsConfig) -> Self {
@@ -7931,90 +5917,65 @@ pub mod start_build_batch_input {
             self
         }
         /// <p>A <code>LogsConfig</code> object that override the log settings defined in the batch build project.</p>
-        pub fn set_logs_config_override(
-            mut self,
-            input: std::option::Option<crate::model::LogsConfig>,
-        ) -> Self {
-            self.logs_config_override = input;
-            self
+        pub fn set_logs_config_override(mut self, input: std::option::Option<crate::model::LogsConfig>) -> Self {
+            self.logs_config_override = input; self
         }
         /// <p>A <code>RegistryCredential</code> object that overrides credentials for access to a private registry.</p>
-        pub fn registry_credential_override(
-            mut self,
-            input: crate::model::RegistryCredential,
-        ) -> Self {
+        pub fn registry_credential_override(mut self, input: crate::model::RegistryCredential) -> Self {
             self.registry_credential_override = Some(input);
             self
         }
         /// <p>A <code>RegistryCredential</code> object that overrides credentials for access to a private registry.</p>
-        pub fn set_registry_credential_override(
-            mut self,
-            input: std::option::Option<crate::model::RegistryCredential>,
-        ) -> Self {
-            self.registry_credential_override = input;
-            self
+        pub fn set_registry_credential_override(mut self, input: std::option::Option<crate::model::RegistryCredential>) -> Self {
+            self.registry_credential_override = input; self
         }
-        /// <p>The type of credentials CodeBuild uses to pull images in your batch build. There are two valid values: </p>
-        /// <dl>
+        /// <p>The type of credentials CodeBuild uses to pull images in your batch build. There are two valid values: </p> 
+        /// <dl> 
         /// <dt>
         /// CODEBUILD
-        /// </dt>
-        /// <dd>
-        /// <p>Specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust CodeBuild's service principal.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust CodeBuild's service principal.</p> 
+        /// </dd> 
         /// <dt>
         /// SERVICE_ROLE
-        /// </dt>
-        /// <dd>
-        /// <p>Specifies that CodeBuild uses your build project's service role. </p>
-        /// </dd>
-        /// </dl>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Specifies that CodeBuild uses your build project's service role. </p> 
+        /// </dd> 
+        /// </dl> 
         /// <p>When using a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When using an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials. </p>
-        pub fn image_pull_credentials_type_override(
-            mut self,
-            input: crate::model::ImagePullCredentialsType,
-        ) -> Self {
+        pub fn image_pull_credentials_type_override(mut self, input: crate::model::ImagePullCredentialsType) -> Self {
             self.image_pull_credentials_type_override = Some(input);
             self
         }
-        /// <p>The type of credentials CodeBuild uses to pull images in your batch build. There are two valid values: </p>
-        /// <dl>
+        /// <p>The type of credentials CodeBuild uses to pull images in your batch build. There are two valid values: </p> 
+        /// <dl> 
         /// <dt>
         /// CODEBUILD
-        /// </dt>
-        /// <dd>
-        /// <p>Specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust CodeBuild's service principal.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust CodeBuild's service principal.</p> 
+        /// </dd> 
         /// <dt>
         /// SERVICE_ROLE
-        /// </dt>
-        /// <dd>
-        /// <p>Specifies that CodeBuild uses your build project's service role. </p>
-        /// </dd>
-        /// </dl>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Specifies that CodeBuild uses your build project's service role. </p> 
+        /// </dd> 
+        /// </dl> 
         /// <p>When using a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When using an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials. </p>
-        pub fn set_image_pull_credentials_type_override(
-            mut self,
-            input: std::option::Option<crate::model::ImagePullCredentialsType>,
-        ) -> Self {
-            self.image_pull_credentials_type_override = input;
-            self
+        pub fn set_image_pull_credentials_type_override(mut self, input: std::option::Option<crate::model::ImagePullCredentialsType>) -> Self {
+            self.image_pull_credentials_type_override = input; self
         }
         /// <p>A <code>BuildBatchConfigOverride</code> object that contains batch build configuration overrides.</p>
-        pub fn build_batch_config_override(
-            mut self,
-            input: crate::model::ProjectBuildBatchConfig,
-        ) -> Self {
+        pub fn build_batch_config_override(mut self, input: crate::model::ProjectBuildBatchConfig) -> Self {
             self.build_batch_config_override = Some(input);
             self
         }
         /// <p>A <code>BuildBatchConfigOverride</code> object that contains batch build configuration overrides.</p>
-        pub fn set_build_batch_config_override(
-            mut self,
-            input: std::option::Option<crate::model::ProjectBuildBatchConfig>,
-        ) -> Self {
-            self.build_batch_config_override = input;
-            self
+        pub fn set_build_batch_config_override(mut self, input: std::option::Option<crate::model::ProjectBuildBatchConfig>) -> Self {
+            self.build_batch_config_override = input; self
         }
         /// <p>Specifies if session debugging is enabled for this batch build. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in Session Manager</a>. Batch session debugging is not supported for matrix batch builds.</p>
         pub fn debug_session_enabled(mut self, input: bool) -> Self {
@@ -8023,154 +5984,141 @@ pub mod start_build_batch_input {
         }
         /// <p>Specifies if session debugging is enabled for this batch build. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in Session Manager</a>. Batch session debugging is not supported for matrix batch builds.</p>
         pub fn set_debug_session_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.debug_session_enabled = input;
-            self
+            self.debug_session_enabled = input; self
         }
         /// Consumes the builder and constructs a [`StartBuildBatchInput`](crate::input::StartBuildBatchInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::StartBuildBatchInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::StartBuildBatchInput {
-                project_name: self.project_name,
-                secondary_sources_override: self.secondary_sources_override,
-                secondary_sources_version_override: self.secondary_sources_version_override,
-                source_version: self.source_version,
-                artifacts_override: self.artifacts_override,
-                secondary_artifacts_override: self.secondary_artifacts_override,
-                environment_variables_override: self.environment_variables_override,
-                source_type_override: self.source_type_override,
-                source_location_override: self.source_location_override,
-                source_auth_override: self.source_auth_override,
-                git_clone_depth_override: self.git_clone_depth_override,
-                git_submodules_config_override: self.git_submodules_config_override,
-                buildspec_override: self.buildspec_override,
-                insecure_ssl_override: self.insecure_ssl_override,
-                report_build_batch_status_override: self.report_build_batch_status_override,
-                environment_type_override: self.environment_type_override,
-                image_override: self.image_override,
-                compute_type_override: self.compute_type_override,
-                certificate_override: self.certificate_override,
-                cache_override: self.cache_override,
-                service_role_override: self.service_role_override,
-                privileged_mode_override: self.privileged_mode_override,
-                build_timeout_in_minutes_override: self.build_timeout_in_minutes_override,
-                queued_timeout_in_minutes_override: self.queued_timeout_in_minutes_override,
-                encryption_key_override: self.encryption_key_override,
-                idempotency_token: self.idempotency_token,
-                logs_config_override: self.logs_config_override,
-                registry_credential_override: self.registry_credential_override,
-                image_pull_credentials_type_override: self.image_pull_credentials_type_override,
-                build_batch_config_override: self.build_batch_config_override,
-                debug_session_enabled: self.debug_session_enabled,
-            })
+        pub fn build(self) -> Result<crate::input::StartBuildBatchInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::StartBuildBatchInput {
+                    project_name: self.project_name
+                    ,
+                    secondary_sources_override: self.secondary_sources_override
+                    ,
+                    secondary_sources_version_override: self.secondary_sources_version_override
+                    ,
+                    source_version: self.source_version
+                    ,
+                    artifacts_override: self.artifacts_override
+                    ,
+                    secondary_artifacts_override: self.secondary_artifacts_override
+                    ,
+                    environment_variables_override: self.environment_variables_override
+                    ,
+                    source_type_override: self.source_type_override
+                    ,
+                    source_location_override: self.source_location_override
+                    ,
+                    source_auth_override: self.source_auth_override
+                    ,
+                    git_clone_depth_override: self.git_clone_depth_override
+                    ,
+                    git_submodules_config_override: self.git_submodules_config_override
+                    ,
+                    buildspec_override: self.buildspec_override
+                    ,
+                    insecure_ssl_override: self.insecure_ssl_override
+                    ,
+                    report_build_batch_status_override: self.report_build_batch_status_override
+                    ,
+                    environment_type_override: self.environment_type_override
+                    ,
+                    image_override: self.image_override
+                    ,
+                    compute_type_override: self.compute_type_override
+                    ,
+                    certificate_override: self.certificate_override
+                    ,
+                    cache_override: self.cache_override
+                    ,
+                    service_role_override: self.service_role_override
+                    ,
+                    privileged_mode_override: self.privileged_mode_override
+                    ,
+                    build_timeout_in_minutes_override: self.build_timeout_in_minutes_override
+                    ,
+                    queued_timeout_in_minutes_override: self.queued_timeout_in_minutes_override
+                    ,
+                    encryption_key_override: self.encryption_key_override
+                    ,
+                    idempotency_token: self.idempotency_token
+                    ,
+                    logs_config_override: self.logs_config_override
+                    ,
+                    registry_credential_override: self.registry_credential_override
+                    ,
+                    image_pull_credentials_type_override: self.image_pull_credentials_type_override
+                    ,
+                    build_batch_config_override: self.build_batch_config_override
+                    ,
+                    debug_session_enabled: self.debug_session_enabled
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl StartBuildBatchInput {
     /// Consumes the builder and constructs an Operation<[`StartBuildBatch`](crate::operation::StartBuildBatch)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::StartBuildBatch,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::StartBuildBatch, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::StartBuildBatchInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::StartBuildBatchInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::StartBuildBatchInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::StartBuildBatchInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.StartBuildBatch",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.StartBuildBatch"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_build_batch(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_start_build_batch(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::StartBuildBatch::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "StartBuildBatch",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::StartBuildBatch::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("StartBuildBatch", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -8182,9 +6130,9 @@ impl StartBuildBatchInput {
 
 /// See [`StopBuildInput`](crate::input::StopBuildInput).
 pub mod stop_build_input {
-
+    
     /// A builder for [`StopBuildInput`](crate::input::StopBuildInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -8196,119 +6144,81 @@ pub mod stop_build_input {
         }
         /// <p>The ID of the build.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`StopBuildInput`](crate::input::StopBuildInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::StopBuildInput, aws_smithy_http::operation::BuildError> {
-            Ok(crate::input::StopBuildInput { id: self.id })
+        pub fn build(self) -> Result<crate::input::StopBuildInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::StopBuildInput {
+                    id: self.id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl StopBuildInput {
     /// Consumes the builder and constructs an Operation<[`StopBuild`](crate::operation::StopBuild)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::StopBuild,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::StopBuild, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::StopBuildInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::StopBuildInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::StopBuildInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::StopBuildInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.StopBuild",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.StopBuild"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_stop_build(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_stop_build(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op =
-            aws_smithy_http::operation::Operation::new(request, crate::operation::StopBuild::new())
-                .with_metadata(aws_smithy_http::operation::Metadata::new(
-                    "StopBuild",
-                    "codebuild",
-                ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::StopBuild::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("StopBuild", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -8320,9 +6230,9 @@ impl StopBuildInput {
 
 /// See [`StopBuildBatchInput`](crate::input::StopBuildBatchInput).
 pub mod stop_build_batch_input {
-
+    
     /// A builder for [`StopBuildBatchInput`](crate::input::StopBuildBatchInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -8334,122 +6244,81 @@ pub mod stop_build_batch_input {
         }
         /// <p>The identifier of the batch build to stop.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`StopBuildBatchInput`](crate::input::StopBuildBatchInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::StopBuildBatchInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::StopBuildBatchInput { id: self.id })
+        pub fn build(self) -> Result<crate::input::StopBuildBatchInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::StopBuildBatchInput {
+                    id: self.id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl StopBuildBatchInput {
     /// Consumes the builder and constructs an Operation<[`StopBuildBatch`](crate::operation::StopBuildBatch)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::StopBuildBatch,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::StopBuildBatch, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::StopBuildBatchInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::StopBuildBatchInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::StopBuildBatchInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::StopBuildBatchInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.StopBuildBatch",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.StopBuildBatch"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_stop_build_batch(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_stop_build_batch(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::StopBuildBatch::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "StopBuildBatch",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::StopBuildBatch::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("StopBuildBatch", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -8461,21 +6330,18 @@ impl StopBuildBatchInput {
 
 /// See [`UpdateProjectInput`](crate::input::UpdateProjectInput).
 pub mod update_project_input {
-
+    
     /// A builder for [`UpdateProjectInput`](crate::input::UpdateProjectInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) source: std::option::Option<crate::model::ProjectSource>,
-        pub(crate) secondary_sources:
-            std::option::Option<std::vec::Vec<crate::model::ProjectSource>>,
+        pub(crate) secondary_sources: std::option::Option<std::vec::Vec<crate::model::ProjectSource>>,
         pub(crate) source_version: std::option::Option<std::string::String>,
-        pub(crate) secondary_source_versions:
-            std::option::Option<std::vec::Vec<crate::model::ProjectSourceVersion>>,
+        pub(crate) secondary_source_versions: std::option::Option<std::vec::Vec<crate::model::ProjectSourceVersion>>,
         pub(crate) artifacts: std::option::Option<crate::model::ProjectArtifacts>,
-        pub(crate) secondary_artifacts:
-            std::option::Option<std::vec::Vec<crate::model::ProjectArtifacts>>,
+        pub(crate) secondary_artifacts: std::option::Option<std::vec::Vec<crate::model::ProjectArtifacts>>,
         pub(crate) cache: std::option::Option<crate::model::ProjectCache>,
         pub(crate) environment: std::option::Option<crate::model::ProjectEnvironment>,
         pub(crate) service_role: std::option::Option<std::string::String>,
@@ -8486,25 +6352,23 @@ pub mod update_project_input {
         pub(crate) vpc_config: std::option::Option<crate::model::VpcConfig>,
         pub(crate) badge_enabled: std::option::Option<bool>,
         pub(crate) logs_config: std::option::Option<crate::model::LogsConfig>,
-        pub(crate) file_system_locations:
-            std::option::Option<std::vec::Vec<crate::model::ProjectFileSystemLocation>>,
+        pub(crate) file_system_locations: std::option::Option<std::vec::Vec<crate::model::ProjectFileSystemLocation>>,
         pub(crate) build_batch_config: std::option::Option<crate::model::ProjectBuildBatchConfig>,
         pub(crate) concurrent_build_limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The name of the build project.</p> <note>
-        /// <p>You cannot change a build project's name.</p>
+        /// <p>The name of the build project.</p> <note> 
+        /// <p>You cannot change a build project's name.</p> 
         /// </note>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the build project.</p> <note>
-        /// <p>You cannot change a build project's name.</p>
+        /// <p>The name of the build project.</p> <note> 
+        /// <p>You cannot change a build project's name.</p> 
         /// </note>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A new or replacement description of the build project.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8513,8 +6377,7 @@ pub mod update_project_input {
         }
         /// <p>A new or replacement description of the build project.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Information to be changed about the build input source code for the build project.</p>
         pub fn source(mut self, input: crate::model::ProjectSource) -> Self {
@@ -8522,12 +6385,8 @@ pub mod update_project_input {
             self
         }
         /// <p>Information to be changed about the build input source code for the build project.</p>
-        pub fn set_source(
-            mut self,
-            input: std::option::Option<crate::model::ProjectSource>,
-        ) -> Self {
-            self.source = input;
-            self
+        pub fn set_source(mut self, input: std::option::Option<crate::model::ProjectSource>) -> Self {
+            self.source = input; self
         }
         /// Appends an item to `secondary_sources`.
         ///
@@ -8536,68 +6395,53 @@ pub mod update_project_input {
         /// <p> An array of <code>ProjectSource</code> objects. </p>
         pub fn secondary_sources(mut self, input: crate::model::ProjectSource) -> Self {
             let mut v = self.secondary_sources.unwrap_or_default();
-            v.push(input);
-            self.secondary_sources = Some(v);
-            self
+                            v.push(input);
+                            self.secondary_sources = Some(v);
+                            self
         }
         /// <p> An array of <code>ProjectSource</code> objects. </p>
-        pub fn set_secondary_sources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProjectSource>>,
-        ) -> Self {
-            self.secondary_sources = input;
-            self
+        pub fn set_secondary_sources(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProjectSource>>) -> Self {
+            self.secondary_sources = input; self
         }
-        /// <p> A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of: </p>
-        /// <ul>
-        /// <li> <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p> </li>
-        /// <li> <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
-        /// <li> <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
-        /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li>
-        /// </ul>
-        /// <p> If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level). </p>
+        /// <p> A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of: </p> 
+        /// <ul> 
+        /// <li> <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p> </li> 
+        /// <li> <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li> 
+        /// <li> <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li> 
+        /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li> 
+        /// </ul> 
+        /// <p> If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level). </p> 
         /// <p> For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
         pub fn source_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_version = Some(input.into());
             self
         }
-        /// <p> A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of: </p>
-        /// <ul>
-        /// <li> <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p> </li>
-        /// <li> <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
-        /// <li> <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
-        /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li>
-        /// </ul>
-        /// <p> If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level). </p>
+        /// <p> A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of: </p> 
+        /// <ul> 
+        /// <li> <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p> </li> 
+        /// <li> <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li> 
+        /// <li> <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li> 
+        /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li> 
+        /// </ul> 
+        /// <p> If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level). </p> 
         /// <p> For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
-        pub fn set_source_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_version = input;
-            self
+        pub fn set_source_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_version = input; self
         }
         /// Appends an item to `secondary_source_versions`.
         ///
         /// To override the contents of this collection use [`set_secondary_source_versions`](Self::set_secondary_source_versions).
         ///
         /// <p> An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at the build level, then they take over these <code>secondarySourceVersions</code> (at the project level). </p>
-        pub fn secondary_source_versions(
-            mut self,
-            input: crate::model::ProjectSourceVersion,
-        ) -> Self {
+        pub fn secondary_source_versions(mut self, input: crate::model::ProjectSourceVersion) -> Self {
             let mut v = self.secondary_source_versions.unwrap_or_default();
-            v.push(input);
-            self.secondary_source_versions = Some(v);
-            self
+                            v.push(input);
+                            self.secondary_source_versions = Some(v);
+                            self
         }
         /// <p> An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at the build level, then they take over these <code>secondarySourceVersions</code> (at the project level). </p>
-        pub fn set_secondary_source_versions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProjectSourceVersion>>,
-        ) -> Self {
-            self.secondary_source_versions = input;
-            self
+        pub fn set_secondary_source_versions(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProjectSourceVersion>>) -> Self {
+            self.secondary_source_versions = input; self
         }
         /// <p>Information to be changed about the build output artifacts for the build project.</p>
         pub fn artifacts(mut self, input: crate::model::ProjectArtifacts) -> Self {
@@ -8605,12 +6449,8 @@ pub mod update_project_input {
             self
         }
         /// <p>Information to be changed about the build output artifacts for the build project.</p>
-        pub fn set_artifacts(
-            mut self,
-            input: std::option::Option<crate::model::ProjectArtifacts>,
-        ) -> Self {
-            self.artifacts = input;
-            self
+        pub fn set_artifacts(mut self, input: std::option::Option<crate::model::ProjectArtifacts>) -> Self {
+            self.artifacts = input; self
         }
         /// Appends an item to `secondary_artifacts`.
         ///
@@ -8619,17 +6459,13 @@ pub mod update_project_input {
         /// <p> An array of <code>ProjectArtifact</code> objects. </p>
         pub fn secondary_artifacts(mut self, input: crate::model::ProjectArtifacts) -> Self {
             let mut v = self.secondary_artifacts.unwrap_or_default();
-            v.push(input);
-            self.secondary_artifacts = Some(v);
-            self
+                            v.push(input);
+                            self.secondary_artifacts = Some(v);
+                            self
         }
         /// <p> An array of <code>ProjectArtifact</code> objects. </p>
-        pub fn set_secondary_artifacts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProjectArtifacts>>,
-        ) -> Self {
-            self.secondary_artifacts = input;
-            self
+        pub fn set_secondary_artifacts(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProjectArtifacts>>) -> Self {
+            self.secondary_artifacts = input; self
         }
         /// <p>Stores recently used information so that it can be quickly accessed at a later time.</p>
         pub fn cache(mut self, input: crate::model::ProjectCache) -> Self {
@@ -8638,8 +6474,7 @@ pub mod update_project_input {
         }
         /// <p>Stores recently used information so that it can be quickly accessed at a later time.</p>
         pub fn set_cache(mut self, input: std::option::Option<crate::model::ProjectCache>) -> Self {
-            self.cache = input;
-            self
+            self.cache = input; self
         }
         /// <p>Information to be changed about the build environment for the build project.</p>
         pub fn environment(mut self, input: crate::model::ProjectEnvironment) -> Self {
@@ -8647,12 +6482,8 @@ pub mod update_project_input {
             self
         }
         /// <p>Information to be changed about the build environment for the build project.</p>
-        pub fn set_environment(
-            mut self,
-            input: std::option::Option<crate::model::ProjectEnvironment>,
-        ) -> Self {
-            self.environment = input;
-            self
+        pub fn set_environment(mut self, input: std::option::Option<crate::model::ProjectEnvironment>) -> Self {
+            self.environment = input; self
         }
         /// <p>The replacement ARN of the IAM role that enables CodeBuild to interact with dependent Amazon Web Services services on behalf of the Amazon Web Services account.</p>
         pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8661,8 +6492,7 @@ pub mod update_project_input {
         }
         /// <p>The replacement ARN of the IAM role that enables CodeBuild to interact with dependent Amazon Web Services services on behalf of the Amazon Web Services account.</p>
         pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service_role = input;
-            self
+            self.service_role = input; self
         }
         /// <p>The replacement value in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out any related build that did not get marked as completed.</p>
         pub fn timeout_in_minutes(mut self, input: i32) -> Self {
@@ -8671,8 +6501,7 @@ pub mod update_project_input {
         }
         /// <p>The replacement value in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out any related build that did not get marked as completed.</p>
         pub fn set_timeout_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
-            self.timeout_in_minutes = input;
-            self
+            self.timeout_in_minutes = input; self
         }
         /// <p> The number of minutes a build is allowed to be queued before it times out. </p>
         pub fn queued_timeout_in_minutes(mut self, input: i32) -> Self {
@@ -8681,50 +6510,41 @@ pub mod update_project_input {
         }
         /// <p> The number of minutes a build is allowed to be queued before it times out. </p>
         pub fn set_queued_timeout_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
-            self.queued_timeout_in_minutes = input;
-            self
+            self.queued_timeout_in_minutes = input; self
         }
-        /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note>
-        /// <p> You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
-        /// </note>
+        /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note> 
+        /// <p> You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p> 
+        /// </note> 
         /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
         /// <alias-name></alias-name></code>). </p>
         pub fn encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.encryption_key = Some(input.into());
             self
         }
-        /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note>
-        /// <p> You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
-        /// </note>
+        /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note> 
+        /// <p> You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p> 
+        /// </note> 
         /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
         /// <alias-name></alias-name></code>). </p>
-        pub fn set_encryption_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.encryption_key = input;
-            self
+        pub fn set_encryption_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.encryption_key = input; self
         }
         /// Appends an item to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An updated list of tag key and value pairs associated with this build project.</p>
+        /// <p>An updated list of tag key and value pairs associated with this build project.</p> 
         /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
-        /// <p>An updated list of tag key and value pairs associated with this build project.</p>
+        /// <p>An updated list of tag key and value pairs associated with this build project.</p> 
         /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
@@ -8732,12 +6552,8 @@ pub mod update_project_input {
             self
         }
         /// <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
-        pub fn set_vpc_config(
-            mut self,
-            input: std::option::Option<crate::model::VpcConfig>,
-        ) -> Self {
-            self.vpc_config = input;
-            self
+        pub fn set_vpc_config(mut self, input: std::option::Option<crate::model::VpcConfig>) -> Self {
+            self.vpc_config = input; self
         }
         /// <p>Set this to true to generate a publicly accessible URL for your project's build badge.</p>
         pub fn badge_enabled(mut self, input: bool) -> Self {
@@ -8746,8 +6562,7 @@ pub mod update_project_input {
         }
         /// <p>Set this to true to generate a publicly accessible URL for your project's build badge.</p>
         pub fn set_badge_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.badge_enabled = input;
-            self
+            self.badge_enabled = input; self
         }
         /// <p> Information about logs for the build project. A project can create logs in CloudWatch Logs, logs in an S3 bucket, or both. </p>
         pub fn logs_config(mut self, input: crate::model::LogsConfig) -> Self {
@@ -8755,34 +6570,23 @@ pub mod update_project_input {
             self
         }
         /// <p> Information about logs for the build project. A project can create logs in CloudWatch Logs, logs in an S3 bucket, or both. </p>
-        pub fn set_logs_config(
-            mut self,
-            input: std::option::Option<crate::model::LogsConfig>,
-        ) -> Self {
-            self.logs_config = input;
-            self
+        pub fn set_logs_config(mut self, input: std::option::Option<crate::model::LogsConfig>) -> Self {
+            self.logs_config = input; self
         }
         /// Appends an item to `file_system_locations`.
         ///
         /// To override the contents of this collection use [`set_file_system_locations`](Self::set_file_system_locations).
         ///
         /// <p> An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System. </p>
-        pub fn file_system_locations(
-            mut self,
-            input: crate::model::ProjectFileSystemLocation,
-        ) -> Self {
+        pub fn file_system_locations(mut self, input: crate::model::ProjectFileSystemLocation) -> Self {
             let mut v = self.file_system_locations.unwrap_or_default();
-            v.push(input);
-            self.file_system_locations = Some(v);
-            self
+                            v.push(input);
+                            self.file_system_locations = Some(v);
+                            self
         }
         /// <p> An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System. </p>
-        pub fn set_file_system_locations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProjectFileSystemLocation>>,
-        ) -> Self {
-            self.file_system_locations = input;
-            self
+        pub fn set_file_system_locations(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProjectFileSystemLocation>>) -> Self {
+            self.file_system_locations = input; self
         }
         /// <p>Contains configuration information about a batch build project.</p>
         pub fn build_batch_config(mut self, input: crate::model::ProjectBuildBatchConfig) -> Self {
@@ -8790,162 +6594,135 @@ pub mod update_project_input {
             self
         }
         /// <p>Contains configuration information about a batch build project.</p>
-        pub fn set_build_batch_config(
-            mut self,
-            input: std::option::Option<crate::model::ProjectBuildBatchConfig>,
-        ) -> Self {
-            self.build_batch_config = input;
-            self
+        pub fn set_build_batch_config(mut self, input: std::option::Option<crate::model::ProjectBuildBatchConfig>) -> Self {
+            self.build_batch_config = input; self
         }
-        /// <p>The maximum number of concurrent builds that are allowed for this project.</p>
-        /// <p>New builds are only started if the current number of builds is less than or equal to this limit. If the current build count meets this limit, new builds are throttled and are not run.</p>
+        /// <p>The maximum number of concurrent builds that are allowed for this project.</p> 
+        /// <p>New builds are only started if the current number of builds is less than or equal to this limit. If the current build count meets this limit, new builds are throttled and are not run.</p> 
         /// <p>To remove this limit, set this value to -1.</p>
         pub fn concurrent_build_limit(mut self, input: i32) -> Self {
             self.concurrent_build_limit = Some(input);
             self
         }
-        /// <p>The maximum number of concurrent builds that are allowed for this project.</p>
-        /// <p>New builds are only started if the current number of builds is less than or equal to this limit. If the current build count meets this limit, new builds are throttled and are not run.</p>
+        /// <p>The maximum number of concurrent builds that are allowed for this project.</p> 
+        /// <p>New builds are only started if the current number of builds is less than or equal to this limit. If the current build count meets this limit, new builds are throttled and are not run.</p> 
         /// <p>To remove this limit, set this value to -1.</p>
         pub fn set_concurrent_build_limit(mut self, input: std::option::Option<i32>) -> Self {
-            self.concurrent_build_limit = input;
-            self
+            self.concurrent_build_limit = input; self
         }
         /// Consumes the builder and constructs a [`UpdateProjectInput`](crate::input::UpdateProjectInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UpdateProjectInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::UpdateProjectInput {
-                name: self.name,
-                description: self.description,
-                source: self.source,
-                secondary_sources: self.secondary_sources,
-                source_version: self.source_version,
-                secondary_source_versions: self.secondary_source_versions,
-                artifacts: self.artifacts,
-                secondary_artifacts: self.secondary_artifacts,
-                cache: self.cache,
-                environment: self.environment,
-                service_role: self.service_role,
-                timeout_in_minutes: self.timeout_in_minutes,
-                queued_timeout_in_minutes: self.queued_timeout_in_minutes,
-                encryption_key: self.encryption_key,
-                tags: self.tags,
-                vpc_config: self.vpc_config,
-                badge_enabled: self.badge_enabled,
-                logs_config: self.logs_config,
-                file_system_locations: self.file_system_locations,
-                build_batch_config: self.build_batch_config,
-                concurrent_build_limit: self.concurrent_build_limit,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateProjectInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::UpdateProjectInput {
+                    name: self.name
+                    ,
+                    description: self.description
+                    ,
+                    source: self.source
+                    ,
+                    secondary_sources: self.secondary_sources
+                    ,
+                    source_version: self.source_version
+                    ,
+                    secondary_source_versions: self.secondary_source_versions
+                    ,
+                    artifacts: self.artifacts
+                    ,
+                    secondary_artifacts: self.secondary_artifacts
+                    ,
+                    cache: self.cache
+                    ,
+                    environment: self.environment
+                    ,
+                    service_role: self.service_role
+                    ,
+                    timeout_in_minutes: self.timeout_in_minutes
+                    ,
+                    queued_timeout_in_minutes: self.queued_timeout_in_minutes
+                    ,
+                    encryption_key: self.encryption_key
+                    ,
+                    tags: self.tags
+                    ,
+                    vpc_config: self.vpc_config
+                    ,
+                    badge_enabled: self.badge_enabled
+                    ,
+                    logs_config: self.logs_config
+                    ,
+                    file_system_locations: self.file_system_locations
+                    ,
+                    build_batch_config: self.build_batch_config
+                    ,
+                    concurrent_build_limit: self.concurrent_build_limit
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateProjectInput {
     /// Consumes the builder and constructs an Operation<[`UpdateProject`](crate::operation::UpdateProject)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateProject,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateProject, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateProjectInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateProjectInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::UpdateProjectInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::UpdateProjectInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.UpdateProject",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.UpdateProject"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_project(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_project(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateProject::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateProject",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateProject::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateProject", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -8957,9 +6734,9 @@ impl UpdateProjectInput {
 
 /// See [`UpdateProjectVisibilityInput`](crate::input::UpdateProjectVisibilityInput).
 pub mod update_project_visibility_input {
-
+    
     /// A builder for [`UpdateProjectVisibilityInput`](crate::input::UpdateProjectVisibilityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) project_arn: std::option::Option<std::string::String>,
         pub(crate) project_visibility: std::option::Option<crate::model::ProjectVisibilityType>,
@@ -8973,49 +6750,44 @@ pub mod update_project_visibility_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the build project.</p>
         pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.project_arn = input;
-            self
+            self.project_arn = input; self
         }
-        /// <p>Specifies the visibility of the project's builds. Possible values are:</p>
-        /// <dl>
+        /// <p>Specifies the visibility of the project's builds. Possible values are:</p> 
+        /// <dl> 
         /// <dt>
         /// PUBLIC_READ
-        /// </dt>
-        /// <dd>
-        /// <p>The project builds are visible to the public.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The project builds are visible to the public.</p> 
+        /// </dd> 
         /// <dt>
         /// PRIVATE
-        /// </dt>
-        /// <dd>
-        /// <p>The project builds are not visible to the public.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The project builds are not visible to the public.</p> 
+        /// </dd> 
         /// </dl>
         pub fn project_visibility(mut self, input: crate::model::ProjectVisibilityType) -> Self {
             self.project_visibility = Some(input);
             self
         }
-        /// <p>Specifies the visibility of the project's builds. Possible values are:</p>
-        /// <dl>
+        /// <p>Specifies the visibility of the project's builds. Possible values are:</p> 
+        /// <dl> 
         /// <dt>
         /// PUBLIC_READ
-        /// </dt>
-        /// <dd>
-        /// <p>The project builds are visible to the public.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The project builds are visible to the public.</p> 
+        /// </dd> 
         /// <dt>
         /// PRIVATE
-        /// </dt>
-        /// <dd>
-        /// <p>The project builds are not visible to the public.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The project builds are not visible to the public.</p> 
+        /// </dd> 
         /// </dl>
-        pub fn set_project_visibility(
-            mut self,
-            input: std::option::Option<crate::model::ProjectVisibilityType>,
-        ) -> Self {
-            self.project_visibility = input;
-            self
+        pub fn set_project_visibility(mut self, input: std::option::Option<crate::model::ProjectVisibilityType>) -> Self {
+            self.project_visibility = input; self
         }
         /// <p>The ARN of the IAM role that enables CodeBuild to access the CloudWatch Logs and Amazon S3 artifacts for the project's builds.</p>
         pub fn resource_access_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9023,134 +6795,86 @@ pub mod update_project_visibility_input {
             self
         }
         /// <p>The ARN of the IAM role that enables CodeBuild to access the CloudWatch Logs and Amazon S3 artifacts for the project's builds.</p>
-        pub fn set_resource_access_role(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_access_role = input;
-            self
+        pub fn set_resource_access_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_access_role = input; self
         }
         /// Consumes the builder and constructs a [`UpdateProjectVisibilityInput`](crate::input::UpdateProjectVisibilityInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::UpdateProjectVisibilityInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::UpdateProjectVisibilityInput {
-                project_arn: self.project_arn,
-                project_visibility: self.project_visibility,
-                resource_access_role: self.resource_access_role,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateProjectVisibilityInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::UpdateProjectVisibilityInput {
+                    project_arn: self.project_arn
+                    ,
+                    project_visibility: self.project_visibility
+                    ,
+                    resource_access_role: self.resource_access_role
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateProjectVisibilityInput {
     /// Consumes the builder and constructs an Operation<[`UpdateProjectVisibility`](crate::operation::UpdateProjectVisibility)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateProjectVisibility,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateProjectVisibility, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateProjectVisibilityInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateProjectVisibilityInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::UpdateProjectVisibilityInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::UpdateProjectVisibilityInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.UpdateProjectVisibility",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.UpdateProjectVisibility"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_project_visibility(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_project_visibility(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateProjectVisibility::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateProjectVisibility",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateProjectVisibility::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateProjectVisibility", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -9162,9 +6886,9 @@ impl UpdateProjectVisibilityInput {
 
 /// See [`UpdateReportGroupInput`](crate::input::UpdateReportGroupInput).
 pub mod update_report_group_input {
-
+    
     /// A builder for [`UpdateReportGroupInput`](crate::input::UpdateReportGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) export_config: std::option::Option<crate::model::ReportExportConfig>,
@@ -9178,168 +6902,119 @@ pub mod update_report_group_input {
         }
         /// <p> The ARN of the report group to update. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
-        /// <p> Used to specify an updated export type. Valid values are: </p>
-        /// <ul>
-        /// <li> <p> <code>S3</code>: The report results are exported to an S3 bucket. </p> </li>
-        /// <li> <p> <code>NO_EXPORT</code>: The report results are not exported. </p> </li>
+        /// <p> Used to specify an updated export type. Valid values are: </p> 
+        /// <ul> 
+        /// <li> <p> <code>S3</code>: The report results are exported to an S3 bucket. </p> </li> 
+        /// <li> <p> <code>NO_EXPORT</code>: The report results are not exported. </p> </li> 
         /// </ul>
         pub fn export_config(mut self, input: crate::model::ReportExportConfig) -> Self {
             self.export_config = Some(input);
             self
         }
-        /// <p> Used to specify an updated export type. Valid values are: </p>
-        /// <ul>
-        /// <li> <p> <code>S3</code>: The report results are exported to an S3 bucket. </p> </li>
-        /// <li> <p> <code>NO_EXPORT</code>: The report results are not exported. </p> </li>
+        /// <p> Used to specify an updated export type. Valid values are: </p> 
+        /// <ul> 
+        /// <li> <p> <code>S3</code>: The report results are exported to an S3 bucket. </p> </li> 
+        /// <li> <p> <code>NO_EXPORT</code>: The report results are not exported. </p> </li> 
         /// </ul>
-        pub fn set_export_config(
-            mut self,
-            input: std::option::Option<crate::model::ReportExportConfig>,
-        ) -> Self {
-            self.export_config = input;
-            self
+        pub fn set_export_config(mut self, input: std::option::Option<crate::model::ReportExportConfig>) -> Self {
+            self.export_config = input; self
         }
         /// Appends an item to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p> An updated list of tag key and value pairs associated with this report group. </p>
+        /// <p> An updated list of tag key and value pairs associated with this report group. </p> 
         /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
-        /// <p> An updated list of tag key and value pairs associated with this report group. </p>
+        /// <p> An updated list of tag key and value pairs associated with this report group. </p> 
         /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`UpdateReportGroupInput`](crate::input::UpdateReportGroupInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UpdateReportGroupInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::UpdateReportGroupInput {
-                arn: self.arn,
-                export_config: self.export_config,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateReportGroupInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::UpdateReportGroupInput {
+                    arn: self.arn
+                    ,
+                    export_config: self.export_config
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateReportGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateReportGroup`](crate::operation::UpdateReportGroup)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateReportGroup,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateReportGroup, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateReportGroupInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateReportGroupInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::UpdateReportGroupInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::UpdateReportGroupInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.UpdateReportGroup",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.UpdateReportGroup"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_report_group(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_report_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateReportGroup::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateReportGroup",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateReportGroup::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateReportGroup", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -9351,15 +7026,14 @@ impl UpdateReportGroupInput {
 
 /// See [`UpdateWebhookInput`](crate::input::UpdateWebhookInput).
 pub mod update_webhook_input {
-
+    
     /// A builder for [`UpdateWebhookInput`](crate::input::UpdateWebhookInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
         pub(crate) branch_filter: std::option::Option<std::string::String>,
         pub(crate) rotate_secret: std::option::Option<bool>,
-        pub(crate) filter_groups:
-            std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::WebhookFilter>>>,
+        pub(crate) filter_groups: std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::WebhookFilter>>>,
         pub(crate) build_type: std::option::Option<crate::model::WebhookBuildType>,
     }
     impl Builder {
@@ -9370,25 +7044,20 @@ pub mod update_webhook_input {
         }
         /// <p>The name of the CodeBuild project.</p>
         pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.project_name = input;
-            self
+            self.project_name = input; self
         }
-        /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
-        /// <p> It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p>
+        /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note> 
+        /// <p> It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p> 
         /// </note>
         pub fn branch_filter(mut self, input: impl Into<std::string::String>) -> Self {
             self.branch_filter = Some(input.into());
             self
         }
-        /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
-        /// <p> It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p>
+        /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note> 
+        /// <p> It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p> 
         /// </note>
-        pub fn set_branch_filter(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.branch_filter = input;
-            self
+        pub fn set_branch_filter(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.branch_filter = input; self
         }
         /// <p> A boolean value that specifies whether the associated GitHub repository's secret token should be updated. If you use Bitbucket for your repository, <code>rotateSecret</code> is ignored. </p>
         pub fn rotate_secret(mut self, input: bool) -> Self {
@@ -9397,8 +7066,7 @@ pub mod update_webhook_input {
         }
         /// <p> A boolean value that specifies whether the associated GitHub repository's secret token should be updated. If you use Bitbucket for your repository, <code>rotateSecret</code> is ignored. </p>
         pub fn set_rotate_secret(mut self, input: std::option::Option<bool>) -> Self {
-            self.rotate_secret = input;
-            self
+            self.rotate_secret = input; self
         }
         /// Appends an item to `filter_groups`.
         ///
@@ -9407,17 +7075,13 @@ pub mod update_webhook_input {
         /// <p> An array of arrays of <code>WebhookFilter</code> objects used to determine if a webhook event can trigger a build. A filter group must contain at least one <code>EVENT</code> <code>WebhookFilter</code>. </p>
         pub fn filter_groups(mut self, input: std::vec::Vec<crate::model::WebhookFilter>) -> Self {
             let mut v = self.filter_groups.unwrap_or_default();
-            v.push(input);
-            self.filter_groups = Some(v);
-            self
+                            v.push(input);
+                            self.filter_groups = Some(v);
+                            self
         }
         /// <p> An array of arrays of <code>WebhookFilter</code> objects used to determine if a webhook event can trigger a build. A filter group must contain at least one <code>EVENT</code> <code>WebhookFilter</code>. </p>
-        pub fn set_filter_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::WebhookFilter>>>,
-        ) -> Self {
-            self.filter_groups = input;
-            self
+        pub fn set_filter_groups(mut self, input: std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::WebhookFilter>>>) -> Self {
+            self.filter_groups = input; self
         }
         /// <p>Specifies the type of build this webhook will trigger.</p>
         pub fn build_type(mut self, input: crate::model::WebhookBuildType) -> Self {
@@ -9425,132 +7089,91 @@ pub mod update_webhook_input {
             self
         }
         /// <p>Specifies the type of build this webhook will trigger.</p>
-        pub fn set_build_type(
-            mut self,
-            input: std::option::Option<crate::model::WebhookBuildType>,
-        ) -> Self {
-            self.build_type = input;
-            self
+        pub fn set_build_type(mut self, input: std::option::Option<crate::model::WebhookBuildType>) -> Self {
+            self.build_type = input; self
         }
         /// Consumes the builder and constructs a [`UpdateWebhookInput`](crate::input::UpdateWebhookInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UpdateWebhookInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::UpdateWebhookInput {
-                project_name: self.project_name,
-                branch_filter: self.branch_filter,
-                rotate_secret: self.rotate_secret.unwrap_or_default(),
-                filter_groups: self.filter_groups,
-                build_type: self.build_type,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateWebhookInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::UpdateWebhookInput {
+                    project_name: self.project_name
+                    ,
+                    branch_filter: self.branch_filter
+                    ,
+                    rotate_secret: self.rotate_secret
+                        .unwrap_or_default()
+                    ,
+                    filter_groups: self.filter_groups
+                    ,
+                    build_type: self.build_type
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateWebhookInput {
     /// Consumes the builder and constructs an Operation<[`UpdateWebhook`](crate::operation::UpdateWebhook)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateWebhook,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateWebhook, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateWebhookInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateWebhookInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::UpdateWebhookInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::UpdateWebhookInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeBuild_20161006.UpdateWebhook",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeBuild_20161006.UpdateWebhook"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_webhook(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_webhook(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateWebhook::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateWebhook",
-            "codebuild",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateWebhook::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateWebhook", "codebuild"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -9561,37 +7184,30 @@ impl UpdateWebhookInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateWebhookInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct UpdateWebhookInput  {
     /// <p>The name of the CodeBuild project.</p>
-    #[doc(hidden)]
-    pub project_name: std::option::Option<std::string::String>,
-    /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
-    /// <p> It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p>
+    #[doc(hidden)]pub project_name: std::option::Option<std::string::String>,
+    /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note> 
+    /// <p> It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p> 
     /// </note>
-    #[doc(hidden)]
-    pub branch_filter: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub branch_filter: std::option::Option<std::string::String>,
     /// <p> A boolean value that specifies whether the associated GitHub repository's secret token should be updated. If you use Bitbucket for your repository, <code>rotateSecret</code> is ignored. </p>
-    #[doc(hidden)]
-    pub rotate_secret: bool,
+    #[doc(hidden)]pub rotate_secret: bool,
     /// <p> An array of arrays of <code>WebhookFilter</code> objects used to determine if a webhook event can trigger a build. A filter group must contain at least one <code>EVENT</code> <code>WebhookFilter</code>. </p>
-    #[doc(hidden)]
-    pub filter_groups:
-        std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::WebhookFilter>>>,
+    #[doc(hidden)]pub filter_groups: std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::WebhookFilter>>>,
     /// <p>Specifies the type of build this webhook will trigger.</p>
-    #[doc(hidden)]
-    pub build_type: std::option::Option<crate::model::WebhookBuildType>,
+    #[doc(hidden)]pub build_type: std::option::Option<crate::model::WebhookBuildType>,
 }
 impl UpdateWebhookInput {
     /// <p>The name of the CodeBuild project.</p>
-    pub fn project_name(&self) -> std::option::Option<&str> {
+    pub fn project_name(&self) -> std::option::Option<& str> {
         self.project_name.as_deref()
     }
-    /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
-    /// <p> It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p>
+    /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note> 
+    /// <p> It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p> 
     /// </note>
-    pub fn branch_filter(&self) -> std::option::Option<&str> {
+    pub fn branch_filter(&self) -> std::option::Option<& str> {
         self.branch_filter.as_deref()
     }
     /// <p> A boolean value that specifies whether the associated GitHub repository's secret token should be updated. If you use Bitbucket for your repository, <code>rotateSecret</code> is ignored. </p>
@@ -9599,17 +7215,15 @@ impl UpdateWebhookInput {
         self.rotate_secret
     }
     /// <p> An array of arrays of <code>WebhookFilter</code> objects used to determine if a webhook event can trigger a build. A filter group must contain at least one <code>EVENT</code> <code>WebhookFilter</code>. </p>
-    pub fn filter_groups(
-        &self,
-    ) -> std::option::Option<&[std::vec::Vec<crate::model::WebhookFilter>]> {
+    pub fn filter_groups(&self) -> std::option::Option<& [std::vec::Vec<crate::model::WebhookFilter>]> {
         self.filter_groups.as_deref()
     }
     /// <p>Specifies the type of build this webhook will trigger.</p>
-    pub fn build_type(&self) -> std::option::Option<&crate::model::WebhookBuildType> {
+    pub fn build_type(&self) -> std::option::Option<& crate::model::WebhookBuildType> {
         self.build_type.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateWebhookInput {
+impl  std::fmt::Debug for UpdateWebhookInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateWebhookInput");
         formatter.field("project_name", &self.project_name);
@@ -9622,44 +7236,40 @@ impl std::fmt::Debug for UpdateWebhookInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateReportGroupInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct UpdateReportGroupInput  {
     /// <p> The ARN of the report group to update. </p>
-    #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
-    /// <p> Used to specify an updated export type. Valid values are: </p>
-    /// <ul>
-    /// <li> <p> <code>S3</code>: The report results are exported to an S3 bucket. </p> </li>
-    /// <li> <p> <code>NO_EXPORT</code>: The report results are not exported. </p> </li>
+    #[doc(hidden)]pub arn: std::option::Option<std::string::String>,
+    /// <p> Used to specify an updated export type. Valid values are: </p> 
+    /// <ul> 
+    /// <li> <p> <code>S3</code>: The report results are exported to an S3 bucket. </p> </li> 
+    /// <li> <p> <code>NO_EXPORT</code>: The report results are not exported. </p> </li> 
     /// </ul>
-    #[doc(hidden)]
-    pub export_config: std::option::Option<crate::model::ReportExportConfig>,
-    /// <p> An updated list of tag key and value pairs associated with this report group. </p>
+    #[doc(hidden)]pub export_config: std::option::Option<crate::model::ReportExportConfig>,
+    /// <p> An updated list of tag key and value pairs associated with this report group. </p> 
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
-    #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl UpdateReportGroupInput {
     /// <p> The ARN of the report group to update. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
-    /// <p> Used to specify an updated export type. Valid values are: </p>
-    /// <ul>
-    /// <li> <p> <code>S3</code>: The report results are exported to an S3 bucket. </p> </li>
-    /// <li> <p> <code>NO_EXPORT</code>: The report results are not exported. </p> </li>
+    /// <p> Used to specify an updated export type. Valid values are: </p> 
+    /// <ul> 
+    /// <li> <p> <code>S3</code>: The report results are exported to an S3 bucket. </p> </li> 
+    /// <li> <p> <code>NO_EXPORT</code>: The report results are not exported. </p> </li> 
     /// </ul>
-    pub fn export_config(&self) -> std::option::Option<&crate::model::ReportExportConfig> {
+    pub fn export_config(&self) -> std::option::Option<& crate::model::ReportExportConfig> {
         self.export_config.as_ref()
     }
-    /// <p> An updated list of tag key and value pairs associated with this report group. </p>
+    /// <p> An updated list of tag key and value pairs associated with this report group. </p> 
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateReportGroupInput {
+impl  std::fmt::Debug for UpdateReportGroupInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateReportGroupInput");
         formatter.field("arn", &self.arn);
@@ -9670,62 +7280,58 @@ impl std::fmt::Debug for UpdateReportGroupInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateProjectVisibilityInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct UpdateProjectVisibilityInput  {
     /// <p>The Amazon Resource Name (ARN) of the build project.</p>
-    #[doc(hidden)]
-    pub project_arn: std::option::Option<std::string::String>,
-    /// <p>Specifies the visibility of the project's builds. Possible values are:</p>
-    /// <dl>
+    #[doc(hidden)]pub project_arn: std::option::Option<std::string::String>,
+    /// <p>Specifies the visibility of the project's builds. Possible values are:</p> 
+    /// <dl> 
     /// <dt>
     /// PUBLIC_READ
-    /// </dt>
-    /// <dd>
-    /// <p>The project builds are visible to the public.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The project builds are visible to the public.</p> 
+    /// </dd> 
     /// <dt>
     /// PRIVATE
-    /// </dt>
-    /// <dd>
-    /// <p>The project builds are not visible to the public.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The project builds are not visible to the public.</p> 
+    /// </dd> 
     /// </dl>
-    #[doc(hidden)]
-    pub project_visibility: std::option::Option<crate::model::ProjectVisibilityType>,
+    #[doc(hidden)]pub project_visibility: std::option::Option<crate::model::ProjectVisibilityType>,
     /// <p>The ARN of the IAM role that enables CodeBuild to access the CloudWatch Logs and Amazon S3 artifacts for the project's builds.</p>
-    #[doc(hidden)]
-    pub resource_access_role: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub resource_access_role: std::option::Option<std::string::String>,
 }
 impl UpdateProjectVisibilityInput {
     /// <p>The Amazon Resource Name (ARN) of the build project.</p>
-    pub fn project_arn(&self) -> std::option::Option<&str> {
+    pub fn project_arn(&self) -> std::option::Option<& str> {
         self.project_arn.as_deref()
     }
-    /// <p>Specifies the visibility of the project's builds. Possible values are:</p>
-    /// <dl>
+    /// <p>Specifies the visibility of the project's builds. Possible values are:</p> 
+    /// <dl> 
     /// <dt>
     /// PUBLIC_READ
-    /// </dt>
-    /// <dd>
-    /// <p>The project builds are visible to the public.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The project builds are visible to the public.</p> 
+    /// </dd> 
     /// <dt>
     /// PRIVATE
-    /// </dt>
-    /// <dd>
-    /// <p>The project builds are not visible to the public.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The project builds are not visible to the public.</p> 
+    /// </dd> 
     /// </dl>
-    pub fn project_visibility(&self) -> std::option::Option<&crate::model::ProjectVisibilityType> {
+    pub fn project_visibility(&self) -> std::option::Option<& crate::model::ProjectVisibilityType> {
         self.project_visibility.as_ref()
     }
     /// <p>The ARN of the IAM role that enables CodeBuild to access the CloudWatch Logs and Amazon S3 artifacts for the project's builds.</p>
-    pub fn resource_access_role(&self) -> std::option::Option<&str> {
+    pub fn resource_access_role(&self) -> std::option::Option<& str> {
         self.resource_access_role.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateProjectVisibilityInput {
+impl  std::fmt::Debug for UpdateProjectVisibilityInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateProjectVisibilityInput");
         formatter.field("project_arn", &self.project_arn);
@@ -9736,147 +7342,121 @@ impl std::fmt::Debug for UpdateProjectVisibilityInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateProjectInput {
-    /// <p>The name of the build project.</p> <note>
-    /// <p>You cannot change a build project's name.</p>
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct UpdateProjectInput  {
+    /// <p>The name of the build project.</p> <note> 
+    /// <p>You cannot change a build project's name.</p> 
     /// </note>
-    #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub name: std::option::Option<std::string::String>,
     /// <p>A new or replacement description of the build project.</p>
-    #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub description: std::option::Option<std::string::String>,
     /// <p>Information to be changed about the build input source code for the build project.</p>
-    #[doc(hidden)]
-    pub source: std::option::Option<crate::model::ProjectSource>,
+    #[doc(hidden)]pub source: std::option::Option<crate::model::ProjectSource>,
     /// <p> An array of <code>ProjectSource</code> objects. </p>
-    #[doc(hidden)]
-    pub secondary_sources: std::option::Option<std::vec::Vec<crate::model::ProjectSource>>,
-    /// <p> A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of: </p>
-    /// <ul>
-    /// <li> <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p> </li>
-    /// <li> <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
-    /// <li> <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
-    /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li>
-    /// </ul>
-    /// <p> If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level). </p>
+    #[doc(hidden)]pub secondary_sources: std::option::Option<std::vec::Vec<crate::model::ProjectSource>>,
+    /// <p> A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of: </p> 
+    /// <ul> 
+    /// <li> <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p> </li> 
+    /// <li> <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li> 
+    /// <li> <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li> 
+    /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li> 
+    /// </ul> 
+    /// <p> If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level). </p> 
     /// <p> For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
-    #[doc(hidden)]
-    pub source_version: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub source_version: std::option::Option<std::string::String>,
     /// <p> An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at the build level, then they take over these <code>secondarySourceVersions</code> (at the project level). </p>
-    #[doc(hidden)]
-    pub secondary_source_versions:
-        std::option::Option<std::vec::Vec<crate::model::ProjectSourceVersion>>,
+    #[doc(hidden)]pub secondary_source_versions: std::option::Option<std::vec::Vec<crate::model::ProjectSourceVersion>>,
     /// <p>Information to be changed about the build output artifacts for the build project.</p>
-    #[doc(hidden)]
-    pub artifacts: std::option::Option<crate::model::ProjectArtifacts>,
+    #[doc(hidden)]pub artifacts: std::option::Option<crate::model::ProjectArtifacts>,
     /// <p> An array of <code>ProjectArtifact</code> objects. </p>
-    #[doc(hidden)]
-    pub secondary_artifacts: std::option::Option<std::vec::Vec<crate::model::ProjectArtifacts>>,
+    #[doc(hidden)]pub secondary_artifacts: std::option::Option<std::vec::Vec<crate::model::ProjectArtifacts>>,
     /// <p>Stores recently used information so that it can be quickly accessed at a later time.</p>
-    #[doc(hidden)]
-    pub cache: std::option::Option<crate::model::ProjectCache>,
+    #[doc(hidden)]pub cache: std::option::Option<crate::model::ProjectCache>,
     /// <p>Information to be changed about the build environment for the build project.</p>
-    #[doc(hidden)]
-    pub environment: std::option::Option<crate::model::ProjectEnvironment>,
+    #[doc(hidden)]pub environment: std::option::Option<crate::model::ProjectEnvironment>,
     /// <p>The replacement ARN of the IAM role that enables CodeBuild to interact with dependent Amazon Web Services services on behalf of the Amazon Web Services account.</p>
-    #[doc(hidden)]
-    pub service_role: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub service_role: std::option::Option<std::string::String>,
     /// <p>The replacement value in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out any related build that did not get marked as completed.</p>
-    #[doc(hidden)]
-    pub timeout_in_minutes: std::option::Option<i32>,
+    #[doc(hidden)]pub timeout_in_minutes: std::option::Option<i32>,
     /// <p> The number of minutes a build is allowed to be queued before it times out. </p>
-    #[doc(hidden)]
-    pub queued_timeout_in_minutes: std::option::Option<i32>,
-    /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note>
-    /// <p> You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
-    /// </note>
+    #[doc(hidden)]pub queued_timeout_in_minutes: std::option::Option<i32>,
+    /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note> 
+    /// <p> You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p> 
+    /// </note> 
     /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
     /// <alias-name></alias-name></code>). </p>
-    #[doc(hidden)]
-    pub encryption_key: std::option::Option<std::string::String>,
-    /// <p>An updated list of tag key and value pairs associated with this build project.</p>
+    #[doc(hidden)]pub encryption_key: std::option::Option<std::string::String>,
+    /// <p>An updated list of tag key and value pairs associated with this build project.</p> 
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.</p>
-    #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
-    #[doc(hidden)]
-    pub vpc_config: std::option::Option<crate::model::VpcConfig>,
+    #[doc(hidden)]pub vpc_config: std::option::Option<crate::model::VpcConfig>,
     /// <p>Set this to true to generate a publicly accessible URL for your project's build badge.</p>
-    #[doc(hidden)]
-    pub badge_enabled: std::option::Option<bool>,
+    #[doc(hidden)]pub badge_enabled: std::option::Option<bool>,
     /// <p> Information about logs for the build project. A project can create logs in CloudWatch Logs, logs in an S3 bucket, or both. </p>
-    #[doc(hidden)]
-    pub logs_config: std::option::Option<crate::model::LogsConfig>,
+    #[doc(hidden)]pub logs_config: std::option::Option<crate::model::LogsConfig>,
     /// <p> An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System. </p>
-    #[doc(hidden)]
-    pub file_system_locations:
-        std::option::Option<std::vec::Vec<crate::model::ProjectFileSystemLocation>>,
+    #[doc(hidden)]pub file_system_locations: std::option::Option<std::vec::Vec<crate::model::ProjectFileSystemLocation>>,
     /// <p>Contains configuration information about a batch build project.</p>
-    #[doc(hidden)]
-    pub build_batch_config: std::option::Option<crate::model::ProjectBuildBatchConfig>,
-    /// <p>The maximum number of concurrent builds that are allowed for this project.</p>
-    /// <p>New builds are only started if the current number of builds is less than or equal to this limit. If the current build count meets this limit, new builds are throttled and are not run.</p>
+    #[doc(hidden)]pub build_batch_config: std::option::Option<crate::model::ProjectBuildBatchConfig>,
+    /// <p>The maximum number of concurrent builds that are allowed for this project.</p> 
+    /// <p>New builds are only started if the current number of builds is less than or equal to this limit. If the current build count meets this limit, new builds are throttled and are not run.</p> 
     /// <p>To remove this limit, set this value to -1.</p>
-    #[doc(hidden)]
-    pub concurrent_build_limit: std::option::Option<i32>,
+    #[doc(hidden)]pub concurrent_build_limit: std::option::Option<i32>,
 }
 impl UpdateProjectInput {
-    /// <p>The name of the build project.</p> <note>
-    /// <p>You cannot change a build project's name.</p>
+    /// <p>The name of the build project.</p> <note> 
+    /// <p>You cannot change a build project's name.</p> 
     /// </note>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A new or replacement description of the build project.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Information to be changed about the build input source code for the build project.</p>
-    pub fn source(&self) -> std::option::Option<&crate::model::ProjectSource> {
+    pub fn source(&self) -> std::option::Option<& crate::model::ProjectSource> {
         self.source.as_ref()
     }
     /// <p> An array of <code>ProjectSource</code> objects. </p>
-    pub fn secondary_sources(&self) -> std::option::Option<&[crate::model::ProjectSource]> {
+    pub fn secondary_sources(&self) -> std::option::Option<& [crate::model::ProjectSource]> {
         self.secondary_sources.as_deref()
     }
-    /// <p> A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of: </p>
-    /// <ul>
-    /// <li> <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p> </li>
-    /// <li> <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
-    /// <li> <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
-    /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li>
-    /// </ul>
-    /// <p> If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level). </p>
+    /// <p> A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of: </p> 
+    /// <ul> 
+    /// <li> <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p> </li> 
+    /// <li> <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li> 
+    /// <li> <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li> 
+    /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li> 
+    /// </ul> 
+    /// <p> If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level). </p> 
     /// <p> For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
-    pub fn source_version(&self) -> std::option::Option<&str> {
+    pub fn source_version(&self) -> std::option::Option<& str> {
         self.source_version.as_deref()
     }
     /// <p> An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at the build level, then they take over these <code>secondarySourceVersions</code> (at the project level). </p>
-    pub fn secondary_source_versions(
-        &self,
-    ) -> std::option::Option<&[crate::model::ProjectSourceVersion]> {
+    pub fn secondary_source_versions(&self) -> std::option::Option<& [crate::model::ProjectSourceVersion]> {
         self.secondary_source_versions.as_deref()
     }
     /// <p>Information to be changed about the build output artifacts for the build project.</p>
-    pub fn artifacts(&self) -> std::option::Option<&crate::model::ProjectArtifacts> {
+    pub fn artifacts(&self) -> std::option::Option<& crate::model::ProjectArtifacts> {
         self.artifacts.as_ref()
     }
     /// <p> An array of <code>ProjectArtifact</code> objects. </p>
-    pub fn secondary_artifacts(&self) -> std::option::Option<&[crate::model::ProjectArtifacts]> {
+    pub fn secondary_artifacts(&self) -> std::option::Option<& [crate::model::ProjectArtifacts]> {
         self.secondary_artifacts.as_deref()
     }
     /// <p>Stores recently used information so that it can be quickly accessed at a later time.</p>
-    pub fn cache(&self) -> std::option::Option<&crate::model::ProjectCache> {
+    pub fn cache(&self) -> std::option::Option<& crate::model::ProjectCache> {
         self.cache.as_ref()
     }
     /// <p>Information to be changed about the build environment for the build project.</p>
-    pub fn environment(&self) -> std::option::Option<&crate::model::ProjectEnvironment> {
+    pub fn environment(&self) -> std::option::Option<& crate::model::ProjectEnvironment> {
         self.environment.as_ref()
     }
     /// <p>The replacement ARN of the IAM role that enables CodeBuild to interact with dependent Amazon Web Services services on behalf of the Amazon Web Services account.</p>
-    pub fn service_role(&self) -> std::option::Option<&str> {
+    pub fn service_role(&self) -> std::option::Option<& str> {
         self.service_role.as_deref()
     }
     /// <p>The replacement value in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out any related build that did not get marked as completed.</p>
@@ -9887,21 +7467,21 @@ impl UpdateProjectInput {
     pub fn queued_timeout_in_minutes(&self) -> std::option::Option<i32> {
         self.queued_timeout_in_minutes
     }
-    /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note>
-    /// <p> You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
-    /// </note>
+    /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note> 
+    /// <p> You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p> 
+    /// </note> 
     /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
     /// <alias-name></alias-name></code>). </p>
-    pub fn encryption_key(&self) -> std::option::Option<&str> {
+    pub fn encryption_key(&self) -> std::option::Option<& str> {
         self.encryption_key.as_deref()
     }
-    /// <p>An updated list of tag key and value pairs associated with this build project.</p>
+    /// <p>An updated list of tag key and value pairs associated with this build project.</p> 
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
-    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+    pub fn vpc_config(&self) -> std::option::Option<& crate::model::VpcConfig> {
         self.vpc_config.as_ref()
     }
     /// <p>Set this to true to generate a publicly accessible URL for your project's build badge.</p>
@@ -9909,29 +7489,25 @@ impl UpdateProjectInput {
         self.badge_enabled
     }
     /// <p> Information about logs for the build project. A project can create logs in CloudWatch Logs, logs in an S3 bucket, or both. </p>
-    pub fn logs_config(&self) -> std::option::Option<&crate::model::LogsConfig> {
+    pub fn logs_config(&self) -> std::option::Option<& crate::model::LogsConfig> {
         self.logs_config.as_ref()
     }
     /// <p> An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System. </p>
-    pub fn file_system_locations(
-        &self,
-    ) -> std::option::Option<&[crate::model::ProjectFileSystemLocation]> {
+    pub fn file_system_locations(&self) -> std::option::Option<& [crate::model::ProjectFileSystemLocation]> {
         self.file_system_locations.as_deref()
     }
     /// <p>Contains configuration information about a batch build project.</p>
-    pub fn build_batch_config(
-        &self,
-    ) -> std::option::Option<&crate::model::ProjectBuildBatchConfig> {
+    pub fn build_batch_config(&self) -> std::option::Option<& crate::model::ProjectBuildBatchConfig> {
         self.build_batch_config.as_ref()
     }
-    /// <p>The maximum number of concurrent builds that are allowed for this project.</p>
-    /// <p>New builds are only started if the current number of builds is less than or equal to this limit. If the current build count meets this limit, new builds are throttled and are not run.</p>
+    /// <p>The maximum number of concurrent builds that are allowed for this project.</p> 
+    /// <p>New builds are only started if the current number of builds is less than or equal to this limit. If the current build count meets this limit, new builds are throttled and are not run.</p> 
     /// <p>To remove this limit, set this value to -1.</p>
     pub fn concurrent_build_limit(&self) -> std::option::Option<i32> {
         self.concurrent_build_limit
     }
 }
-impl std::fmt::Debug for UpdateProjectInput {
+impl  std::fmt::Debug for UpdateProjectInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateProjectInput");
         formatter.field("name", &self.name);
@@ -9960,20 +7536,18 @@ impl std::fmt::Debug for UpdateProjectInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct StopBuildBatchInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct StopBuildBatchInput  {
     /// <p>The identifier of the batch build to stop.</p>
-    #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub id: std::option::Option<std::string::String>,
 }
 impl StopBuildBatchInput {
     /// <p>The identifier of the batch build to stop.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for StopBuildBatchInput {
+impl  std::fmt::Debug for StopBuildBatchInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopBuildBatchInput");
         formatter.field("id", &self.id);
@@ -9982,20 +7556,18 @@ impl std::fmt::Debug for StopBuildBatchInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct StopBuildInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct StopBuildInput  {
     /// <p>The ID of the build.</p>
-    #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub id: std::option::Option<std::string::String>,
 }
 impl StopBuildInput {
     /// <p>The ID of the build.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for StopBuildInput {
+impl  std::fmt::Debug for StopBuildInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopBuildInput");
         formatter.field("id", &self.id);
@@ -10004,232 +7576,188 @@ impl std::fmt::Debug for StopBuildInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct StartBuildBatchInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct StartBuildBatchInput  {
     /// <p>The name of the project.</p>
-    #[doc(hidden)]
-    pub project_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub project_name: std::option::Option<std::string::String>,
     /// <p>An array of <code>ProjectSource</code> objects that override the secondary sources defined in the batch build project.</p>
-    #[doc(hidden)]
-    pub secondary_sources_override: std::option::Option<std::vec::Vec<crate::model::ProjectSource>>,
+    #[doc(hidden)]pub secondary_sources_override: std::option::Option<std::vec::Vec<crate::model::ProjectSource>>,
     /// <p>An array of <code>ProjectSourceVersion</code> objects that override the secondary source versions in the batch build project.</p>
-    #[doc(hidden)]
-    pub secondary_sources_version_override:
-        std::option::Option<std::vec::Vec<crate::model::ProjectSourceVersion>>,
-    /// <p>The version of the batch build input to be built, for this build only. If not specified, the latest version is used. If specified, the contents depends on the source provider:</p>
-    /// <dl>
+    #[doc(hidden)]pub secondary_sources_version_override: std::option::Option<std::vec::Vec<crate::model::ProjectSourceVersion>>,
+    /// <p>The version of the batch build input to be built, for this build only. If not specified, the latest version is used. If specified, the contents depends on the source provider:</p> 
+    /// <dl> 
     /// <dt>
     /// CodeCommit
-    /// </dt>
-    /// <dd>
-    /// <p>The commit ID, branch, or Git tag to use.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The commit ID, branch, or Git tag to use.</p> 
+    /// </dd> 
     /// <dt>
     /// GitHub
-    /// </dt>
-    /// <dd>
-    /// <p>The commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> 
+    /// </dd> 
     /// <dt>
     /// Bitbucket
-    /// </dt>
-    /// <dd>
-    /// <p>The commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> 
+    /// </dd> 
     /// <dt>
     /// Amazon S3
-    /// </dt>
-    /// <dd>
-    /// <p>The version ID of the object that represents the build input ZIP file to use.</p>
-    /// </dd>
-    /// </dl>
-    /// <p>If <code>sourceVersion</code> is specified at the project level, then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The version ID of the object that represents the build input ZIP file to use.</p> 
+    /// </dd> 
+    /// </dl> 
+    /// <p>If <code>sourceVersion</code> is specified at the project level, then this <code>sourceVersion</code> (at the build level) takes precedence. </p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
-    #[doc(hidden)]
-    pub source_version: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub source_version: std::option::Option<std::string::String>,
     /// <p>An array of <code>ProjectArtifacts</code> objects that contains information about the build output artifact overrides for the build project.</p>
-    #[doc(hidden)]
-    pub artifacts_override: std::option::Option<crate::model::ProjectArtifacts>,
+    #[doc(hidden)]pub artifacts_override: std::option::Option<crate::model::ProjectArtifacts>,
     /// <p>An array of <code>ProjectArtifacts</code> objects that override the secondary artifacts defined in the batch build project.</p>
-    #[doc(hidden)]
-    pub secondary_artifacts_override:
-        std::option::Option<std::vec::Vec<crate::model::ProjectArtifacts>>,
+    #[doc(hidden)]pub secondary_artifacts_override: std::option::Option<std::vec::Vec<crate::model::ProjectArtifacts>>,
     /// <p>An array of <code>EnvironmentVariable</code> objects that override, or add to, the environment variables defined in the batch build project.</p>
-    #[doc(hidden)]
-    pub environment_variables_override:
-        std::option::Option<std::vec::Vec<crate::model::EnvironmentVariable>>,
+    #[doc(hidden)]pub environment_variables_override: std::option::Option<std::vec::Vec<crate::model::EnvironmentVariable>>,
     /// <p>The source input type that overrides the source input defined in the batch build project.</p>
-    #[doc(hidden)]
-    pub source_type_override: std::option::Option<crate::model::SourceType>,
+    #[doc(hidden)]pub source_type_override: std::option::Option<crate::model::SourceType>,
     /// <p>A location that overrides, for this batch build, the source location defined in the batch build project.</p>
-    #[doc(hidden)]
-    pub source_location_override: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub source_location_override: std::option::Option<std::string::String>,
     /// <p>A <code>SourceAuth</code> object that overrides the one defined in the batch build project. This override applies only if the build project's source is BitBucket or GitHub.</p>
-    #[doc(hidden)]
-    pub source_auth_override: std::option::Option<crate::model::SourceAuth>,
+    #[doc(hidden)]pub source_auth_override: std::option::Option<crate::model::SourceAuth>,
     /// <p>The user-defined depth of history, with a minimum value of 0, that overrides, for this batch build only, any previous depth of history defined in the batch build project.</p>
-    #[doc(hidden)]
-    pub git_clone_depth_override: std::option::Option<i32>,
+    #[doc(hidden)]pub git_clone_depth_override: std::option::Option<i32>,
     /// <p>A <code>GitSubmodulesConfig</code> object that overrides the Git submodules configuration for this batch build.</p>
-    #[doc(hidden)]
-    pub git_submodules_config_override: std::option::Option<crate::model::GitSubmodulesConfig>,
-    /// <p>A buildspec file declaration that overrides, for this build only, the latest one already defined in the build project.</p>
+    #[doc(hidden)]pub git_submodules_config_override: std::option::Option<crate::model::GitSubmodulesConfig>,
+    /// <p>A buildspec file declaration that overrides, for this build only, the latest one already defined in the build project.</p> 
     /// <p>If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3 bucket. The bucket must be in the same Amazon Web Services Region as the build project. Specify the buildspec file using its ARN (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not provided or is set to an empty string, the source code must contain a buildspec file in its root directory. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec File Name and Storage Location</a>. </p>
-    #[doc(hidden)]
-    pub buildspec_override: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub buildspec_override: std::option::Option<std::string::String>,
     /// <p>Enable this flag to override the insecure SSL setting that is specified in the batch build project. The insecure SSL setting determines whether to ignore SSL warnings while connecting to the project source code. This override applies only if the build's source is GitHub Enterprise.</p>
-    #[doc(hidden)]
-    pub insecure_ssl_override: std::option::Option<bool>,
-    /// <p>Set to <code>true</code> to report to your source provider the status of a batch build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown. </p> <note>
-    /// <p>The status of a build triggered by a webhook is always reported to your source provider. </p>
+    #[doc(hidden)]pub insecure_ssl_override: std::option::Option<bool>,
+    /// <p>Set to <code>true</code> to report to your source provider the status of a batch build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown. </p> <note> 
+    /// <p>The status of a build triggered by a webhook is always reported to your source provider. </p> 
     /// </note>
-    #[doc(hidden)]
-    pub report_build_batch_status_override: std::option::Option<bool>,
+    #[doc(hidden)]pub report_build_batch_status_override: std::option::Option<bool>,
     /// <p>A container type for this batch build that overrides the one specified in the batch build project.</p>
-    #[doc(hidden)]
-    pub environment_type_override: std::option::Option<crate::model::EnvironmentType>,
+    #[doc(hidden)]pub environment_type_override: std::option::Option<crate::model::EnvironmentType>,
     /// <p>The name of an image for this batch build that overrides the one specified in the batch build project.</p>
-    #[doc(hidden)]
-    pub image_override: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub image_override: std::option::Option<std::string::String>,
     /// <p>The name of a compute type for this batch build that overrides the one specified in the batch build project.</p>
-    #[doc(hidden)]
-    pub compute_type_override: std::option::Option<crate::model::ComputeType>,
+    #[doc(hidden)]pub compute_type_override: std::option::Option<crate::model::ComputeType>,
     /// <p>The name of a certificate for this batch build that overrides the one specified in the batch build project.</p>
-    #[doc(hidden)]
-    pub certificate_override: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub certificate_override: std::option::Option<std::string::String>,
     /// <p>A <code>ProjectCache</code> object that specifies cache overrides.</p>
-    #[doc(hidden)]
-    pub cache_override: std::option::Option<crate::model::ProjectCache>,
+    #[doc(hidden)]pub cache_override: std::option::Option<crate::model::ProjectCache>,
     /// <p>The name of a service role for this batch build that overrides the one specified in the batch build project.</p>
-    #[doc(hidden)]
-    pub service_role_override: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub service_role_override: std::option::Option<std::string::String>,
     /// <p>Enable this flag to override privileged mode in the batch build project.</p>
-    #[doc(hidden)]
-    pub privileged_mode_override: std::option::Option<bool>,
+    #[doc(hidden)]pub privileged_mode_override: std::option::Option<bool>,
     /// <p>Overrides the build timeout specified in the batch build project.</p>
-    #[doc(hidden)]
-    pub build_timeout_in_minutes_override: std::option::Option<i32>,
+    #[doc(hidden)]pub build_timeout_in_minutes_override: std::option::Option<i32>,
     /// <p>The number of minutes a batch build is allowed to be queued before it times out.</p>
-    #[doc(hidden)]
-    pub queued_timeout_in_minutes_override: std::option::Option<i32>,
-    /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the batch build project. The CMK key encrypts the build output artifacts.</p> <note>
-    /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
-    /// </note>
+    #[doc(hidden)]pub queued_timeout_in_minutes_override: std::option::Option<i32>,
+    /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the batch build project. The CMK key encrypts the build output artifacts.</p> <note> 
+    /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p> 
+    /// </note> 
     /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
     /// <alias-name></alias-name></code>).</p>
-    #[doc(hidden)]
-    pub encryption_key_override: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub encryption_key_override: std::option::Option<std::string::String>,
     /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the <code>StartBuildBatch</code> request. The token is included in the <code>StartBuildBatch</code> request and is valid for five minutes. If you repeat the <code>StartBuildBatch</code> request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error.</p>
-    #[doc(hidden)]
-    pub idempotency_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub idempotency_token: std::option::Option<std::string::String>,
     /// <p>A <code>LogsConfig</code> object that override the log settings defined in the batch build project.</p>
-    #[doc(hidden)]
-    pub logs_config_override: std::option::Option<crate::model::LogsConfig>,
+    #[doc(hidden)]pub logs_config_override: std::option::Option<crate::model::LogsConfig>,
     /// <p>A <code>RegistryCredential</code> object that overrides credentials for access to a private registry.</p>
-    #[doc(hidden)]
-    pub registry_credential_override: std::option::Option<crate::model::RegistryCredential>,
-    /// <p>The type of credentials CodeBuild uses to pull images in your batch build. There are two valid values: </p>
-    /// <dl>
+    #[doc(hidden)]pub registry_credential_override: std::option::Option<crate::model::RegistryCredential>,
+    /// <p>The type of credentials CodeBuild uses to pull images in your batch build. There are two valid values: </p> 
+    /// <dl> 
     /// <dt>
     /// CODEBUILD
-    /// </dt>
-    /// <dd>
-    /// <p>Specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust CodeBuild's service principal.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust CodeBuild's service principal.</p> 
+    /// </dd> 
     /// <dt>
     /// SERVICE_ROLE
-    /// </dt>
-    /// <dd>
-    /// <p>Specifies that CodeBuild uses your build project's service role. </p>
-    /// </dd>
-    /// </dl>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Specifies that CodeBuild uses your build project's service role. </p> 
+    /// </dd> 
+    /// </dl> 
     /// <p>When using a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When using an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials. </p>
-    #[doc(hidden)]
-    pub image_pull_credentials_type_override:
-        std::option::Option<crate::model::ImagePullCredentialsType>,
+    #[doc(hidden)]pub image_pull_credentials_type_override: std::option::Option<crate::model::ImagePullCredentialsType>,
     /// <p>A <code>BuildBatchConfigOverride</code> object that contains batch build configuration overrides.</p>
-    #[doc(hidden)]
-    pub build_batch_config_override: std::option::Option<crate::model::ProjectBuildBatchConfig>,
+    #[doc(hidden)]pub build_batch_config_override: std::option::Option<crate::model::ProjectBuildBatchConfig>,
     /// <p>Specifies if session debugging is enabled for this batch build. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in Session Manager</a>. Batch session debugging is not supported for matrix batch builds.</p>
-    #[doc(hidden)]
-    pub debug_session_enabled: std::option::Option<bool>,
+    #[doc(hidden)]pub debug_session_enabled: std::option::Option<bool>,
 }
 impl StartBuildBatchInput {
     /// <p>The name of the project.</p>
-    pub fn project_name(&self) -> std::option::Option<&str> {
+    pub fn project_name(&self) -> std::option::Option<& str> {
         self.project_name.as_deref()
     }
     /// <p>An array of <code>ProjectSource</code> objects that override the secondary sources defined in the batch build project.</p>
-    pub fn secondary_sources_override(
-        &self,
-    ) -> std::option::Option<&[crate::model::ProjectSource]> {
+    pub fn secondary_sources_override(&self) -> std::option::Option<& [crate::model::ProjectSource]> {
         self.secondary_sources_override.as_deref()
     }
     /// <p>An array of <code>ProjectSourceVersion</code> objects that override the secondary source versions in the batch build project.</p>
-    pub fn secondary_sources_version_override(
-        &self,
-    ) -> std::option::Option<&[crate::model::ProjectSourceVersion]> {
+    pub fn secondary_sources_version_override(&self) -> std::option::Option<& [crate::model::ProjectSourceVersion]> {
         self.secondary_sources_version_override.as_deref()
     }
-    /// <p>The version of the batch build input to be built, for this build only. If not specified, the latest version is used. If specified, the contents depends on the source provider:</p>
-    /// <dl>
+    /// <p>The version of the batch build input to be built, for this build only. If not specified, the latest version is used. If specified, the contents depends on the source provider:</p> 
+    /// <dl> 
     /// <dt>
     /// CodeCommit
-    /// </dt>
-    /// <dd>
-    /// <p>The commit ID, branch, or Git tag to use.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The commit ID, branch, or Git tag to use.</p> 
+    /// </dd> 
     /// <dt>
     /// GitHub
-    /// </dt>
-    /// <dd>
-    /// <p>The commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> 
+    /// </dd> 
     /// <dt>
     /// Bitbucket
-    /// </dt>
-    /// <dd>
-    /// <p>The commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> 
+    /// </dd> 
     /// <dt>
     /// Amazon S3
-    /// </dt>
-    /// <dd>
-    /// <p>The version ID of the object that represents the build input ZIP file to use.</p>
-    /// </dd>
-    /// </dl>
-    /// <p>If <code>sourceVersion</code> is specified at the project level, then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The version ID of the object that represents the build input ZIP file to use.</p> 
+    /// </dd> 
+    /// </dl> 
+    /// <p>If <code>sourceVersion</code> is specified at the project level, then this <code>sourceVersion</code> (at the build level) takes precedence. </p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
-    pub fn source_version(&self) -> std::option::Option<&str> {
+    pub fn source_version(&self) -> std::option::Option<& str> {
         self.source_version.as_deref()
     }
     /// <p>An array of <code>ProjectArtifacts</code> objects that contains information about the build output artifact overrides for the build project.</p>
-    pub fn artifacts_override(&self) -> std::option::Option<&crate::model::ProjectArtifacts> {
+    pub fn artifacts_override(&self) -> std::option::Option<& crate::model::ProjectArtifacts> {
         self.artifacts_override.as_ref()
     }
     /// <p>An array of <code>ProjectArtifacts</code> objects that override the secondary artifacts defined in the batch build project.</p>
-    pub fn secondary_artifacts_override(
-        &self,
-    ) -> std::option::Option<&[crate::model::ProjectArtifacts]> {
+    pub fn secondary_artifacts_override(&self) -> std::option::Option<& [crate::model::ProjectArtifacts]> {
         self.secondary_artifacts_override.as_deref()
     }
     /// <p>An array of <code>EnvironmentVariable</code> objects that override, or add to, the environment variables defined in the batch build project.</p>
-    pub fn environment_variables_override(
-        &self,
-    ) -> std::option::Option<&[crate::model::EnvironmentVariable]> {
+    pub fn environment_variables_override(&self) -> std::option::Option<& [crate::model::EnvironmentVariable]> {
         self.environment_variables_override.as_deref()
     }
     /// <p>The source input type that overrides the source input defined in the batch build project.</p>
-    pub fn source_type_override(&self) -> std::option::Option<&crate::model::SourceType> {
+    pub fn source_type_override(&self) -> std::option::Option<& crate::model::SourceType> {
         self.source_type_override.as_ref()
     }
     /// <p>A location that overrides, for this batch build, the source location defined in the batch build project.</p>
-    pub fn source_location_override(&self) -> std::option::Option<&str> {
+    pub fn source_location_override(&self) -> std::option::Option<& str> {
         self.source_location_override.as_deref()
     }
     /// <p>A <code>SourceAuth</code> object that overrides the one defined in the batch build project. This override applies only if the build project's source is BitBucket or GitHub.</p>
-    pub fn source_auth_override(&self) -> std::option::Option<&crate::model::SourceAuth> {
+    pub fn source_auth_override(&self) -> std::option::Option<& crate::model::SourceAuth> {
         self.source_auth_override.as_ref()
     }
     /// <p>The user-defined depth of history, with a minimum value of 0, that overrides, for this batch build only, any previous depth of history defined in the batch build project.</p>
@@ -10237,48 +7765,46 @@ impl StartBuildBatchInput {
         self.git_clone_depth_override
     }
     /// <p>A <code>GitSubmodulesConfig</code> object that overrides the Git submodules configuration for this batch build.</p>
-    pub fn git_submodules_config_override(
-        &self,
-    ) -> std::option::Option<&crate::model::GitSubmodulesConfig> {
+    pub fn git_submodules_config_override(&self) -> std::option::Option<& crate::model::GitSubmodulesConfig> {
         self.git_submodules_config_override.as_ref()
     }
-    /// <p>A buildspec file declaration that overrides, for this build only, the latest one already defined in the build project.</p>
+    /// <p>A buildspec file declaration that overrides, for this build only, the latest one already defined in the build project.</p> 
     /// <p>If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3 bucket. The bucket must be in the same Amazon Web Services Region as the build project. Specify the buildspec file using its ARN (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not provided or is set to an empty string, the source code must contain a buildspec file in its root directory. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec File Name and Storage Location</a>. </p>
-    pub fn buildspec_override(&self) -> std::option::Option<&str> {
+    pub fn buildspec_override(&self) -> std::option::Option<& str> {
         self.buildspec_override.as_deref()
     }
     /// <p>Enable this flag to override the insecure SSL setting that is specified in the batch build project. The insecure SSL setting determines whether to ignore SSL warnings while connecting to the project source code. This override applies only if the build's source is GitHub Enterprise.</p>
     pub fn insecure_ssl_override(&self) -> std::option::Option<bool> {
         self.insecure_ssl_override
     }
-    /// <p>Set to <code>true</code> to report to your source provider the status of a batch build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown. </p> <note>
-    /// <p>The status of a build triggered by a webhook is always reported to your source provider. </p>
+    /// <p>Set to <code>true</code> to report to your source provider the status of a batch build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown. </p> <note> 
+    /// <p>The status of a build triggered by a webhook is always reported to your source provider. </p> 
     /// </note>
     pub fn report_build_batch_status_override(&self) -> std::option::Option<bool> {
         self.report_build_batch_status_override
     }
     /// <p>A container type for this batch build that overrides the one specified in the batch build project.</p>
-    pub fn environment_type_override(&self) -> std::option::Option<&crate::model::EnvironmentType> {
+    pub fn environment_type_override(&self) -> std::option::Option<& crate::model::EnvironmentType> {
         self.environment_type_override.as_ref()
     }
     /// <p>The name of an image for this batch build that overrides the one specified in the batch build project.</p>
-    pub fn image_override(&self) -> std::option::Option<&str> {
+    pub fn image_override(&self) -> std::option::Option<& str> {
         self.image_override.as_deref()
     }
     /// <p>The name of a compute type for this batch build that overrides the one specified in the batch build project.</p>
-    pub fn compute_type_override(&self) -> std::option::Option<&crate::model::ComputeType> {
+    pub fn compute_type_override(&self) -> std::option::Option<& crate::model::ComputeType> {
         self.compute_type_override.as_ref()
     }
     /// <p>The name of a certificate for this batch build that overrides the one specified in the batch build project.</p>
-    pub fn certificate_override(&self) -> std::option::Option<&str> {
+    pub fn certificate_override(&self) -> std::option::Option<& str> {
         self.certificate_override.as_deref()
     }
     /// <p>A <code>ProjectCache</code> object that specifies cache overrides.</p>
-    pub fn cache_override(&self) -> std::option::Option<&crate::model::ProjectCache> {
+    pub fn cache_override(&self) -> std::option::Option<& crate::model::ProjectCache> {
         self.cache_override.as_ref()
     }
     /// <p>The name of a service role for this batch build that overrides the one specified in the batch build project.</p>
-    pub fn service_role_override(&self) -> std::option::Option<&str> {
+    pub fn service_role_override(&self) -> std::option::Option<& str> {
         self.service_role_override.as_deref()
     }
     /// <p>Enable this flag to override privileged mode in the batch build project.</p>
@@ -10293,53 +7819,47 @@ impl StartBuildBatchInput {
     pub fn queued_timeout_in_minutes_override(&self) -> std::option::Option<i32> {
         self.queued_timeout_in_minutes_override
     }
-    /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the batch build project. The CMK key encrypts the build output artifacts.</p> <note>
-    /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
-    /// </note>
+    /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the batch build project. The CMK key encrypts the build output artifacts.</p> <note> 
+    /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p> 
+    /// </note> 
     /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
     /// <alias-name></alias-name></code>).</p>
-    pub fn encryption_key_override(&self) -> std::option::Option<&str> {
+    pub fn encryption_key_override(&self) -> std::option::Option<& str> {
         self.encryption_key_override.as_deref()
     }
     /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the <code>StartBuildBatch</code> request. The token is included in the <code>StartBuildBatch</code> request and is valid for five minutes. If you repeat the <code>StartBuildBatch</code> request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error.</p>
-    pub fn idempotency_token(&self) -> std::option::Option<&str> {
+    pub fn idempotency_token(&self) -> std::option::Option<& str> {
         self.idempotency_token.as_deref()
     }
     /// <p>A <code>LogsConfig</code> object that override the log settings defined in the batch build project.</p>
-    pub fn logs_config_override(&self) -> std::option::Option<&crate::model::LogsConfig> {
+    pub fn logs_config_override(&self) -> std::option::Option<& crate::model::LogsConfig> {
         self.logs_config_override.as_ref()
     }
     /// <p>A <code>RegistryCredential</code> object that overrides credentials for access to a private registry.</p>
-    pub fn registry_credential_override(
-        &self,
-    ) -> std::option::Option<&crate::model::RegistryCredential> {
+    pub fn registry_credential_override(&self) -> std::option::Option<& crate::model::RegistryCredential> {
         self.registry_credential_override.as_ref()
     }
-    /// <p>The type of credentials CodeBuild uses to pull images in your batch build. There are two valid values: </p>
-    /// <dl>
+    /// <p>The type of credentials CodeBuild uses to pull images in your batch build. There are two valid values: </p> 
+    /// <dl> 
     /// <dt>
     /// CODEBUILD
-    /// </dt>
-    /// <dd>
-    /// <p>Specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust CodeBuild's service principal.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust CodeBuild's service principal.</p> 
+    /// </dd> 
     /// <dt>
     /// SERVICE_ROLE
-    /// </dt>
-    /// <dd>
-    /// <p>Specifies that CodeBuild uses your build project's service role. </p>
-    /// </dd>
-    /// </dl>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Specifies that CodeBuild uses your build project's service role. </p> 
+    /// </dd> 
+    /// </dl> 
     /// <p>When using a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When using an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials. </p>
-    pub fn image_pull_credentials_type_override(
-        &self,
-    ) -> std::option::Option<&crate::model::ImagePullCredentialsType> {
+    pub fn image_pull_credentials_type_override(&self) -> std::option::Option<& crate::model::ImagePullCredentialsType> {
         self.image_pull_credentials_type_override.as_ref()
     }
     /// <p>A <code>BuildBatchConfigOverride</code> object that contains batch build configuration overrides.</p>
-    pub fn build_batch_config_override(
-        &self,
-    ) -> std::option::Option<&crate::model::ProjectBuildBatchConfig> {
+    pub fn build_batch_config_override(&self) -> std::option::Option<& crate::model::ProjectBuildBatchConfig> {
         self.build_batch_config_override.as_ref()
     }
     /// <p>Specifies if session debugging is enabled for this batch build. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in Session Manager</a>. Batch session debugging is not supported for matrix batch builds.</p>
@@ -10347,42 +7867,24 @@ impl StartBuildBatchInput {
         self.debug_session_enabled
     }
 }
-impl std::fmt::Debug for StartBuildBatchInput {
+impl  std::fmt::Debug for StartBuildBatchInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartBuildBatchInput");
         formatter.field("project_name", &self.project_name);
-        formatter.field(
-            "secondary_sources_override",
-            &self.secondary_sources_override,
-        );
-        formatter.field(
-            "secondary_sources_version_override",
-            &self.secondary_sources_version_override,
-        );
+        formatter.field("secondary_sources_override", &self.secondary_sources_override);
+        formatter.field("secondary_sources_version_override", &self.secondary_sources_version_override);
         formatter.field("source_version", &self.source_version);
         formatter.field("artifacts_override", &self.artifacts_override);
-        formatter.field(
-            "secondary_artifacts_override",
-            &self.secondary_artifacts_override,
-        );
-        formatter.field(
-            "environment_variables_override",
-            &self.environment_variables_override,
-        );
+        formatter.field("secondary_artifacts_override", &self.secondary_artifacts_override);
+        formatter.field("environment_variables_override", &self.environment_variables_override);
         formatter.field("source_type_override", &self.source_type_override);
         formatter.field("source_location_override", &self.source_location_override);
         formatter.field("source_auth_override", &self.source_auth_override);
         formatter.field("git_clone_depth_override", &self.git_clone_depth_override);
-        formatter.field(
-            "git_submodules_config_override",
-            &self.git_submodules_config_override,
-        );
+        formatter.field("git_submodules_config_override", &self.git_submodules_config_override);
         formatter.field("buildspec_override", &self.buildspec_override);
         formatter.field("insecure_ssl_override", &self.insecure_ssl_override);
-        formatter.field(
-            "report_build_batch_status_override",
-            &self.report_build_batch_status_override,
-        );
+        formatter.field("report_build_batch_status_override", &self.report_build_batch_status_override);
         formatter.field("environment_type_override", &self.environment_type_override);
         formatter.field("image_override", &self.image_override);
         formatter.field("compute_type_override", &self.compute_type_override);
@@ -10390,262 +7892,203 @@ impl std::fmt::Debug for StartBuildBatchInput {
         formatter.field("cache_override", &self.cache_override);
         formatter.field("service_role_override", &self.service_role_override);
         formatter.field("privileged_mode_override", &self.privileged_mode_override);
-        formatter.field(
-            "build_timeout_in_minutes_override",
-            &self.build_timeout_in_minutes_override,
-        );
-        formatter.field(
-            "queued_timeout_in_minutes_override",
-            &self.queued_timeout_in_minutes_override,
-        );
+        formatter.field("build_timeout_in_minutes_override", &self.build_timeout_in_minutes_override);
+        formatter.field("queued_timeout_in_minutes_override", &self.queued_timeout_in_minutes_override);
         formatter.field("encryption_key_override", &self.encryption_key_override);
         formatter.field("idempotency_token", &self.idempotency_token);
         formatter.field("logs_config_override", &self.logs_config_override);
-        formatter.field(
-            "registry_credential_override",
-            &self.registry_credential_override,
-        );
-        formatter.field(
-            "image_pull_credentials_type_override",
-            &self.image_pull_credentials_type_override,
-        );
-        formatter.field(
-            "build_batch_config_override",
-            &self.build_batch_config_override,
-        );
+        formatter.field("registry_credential_override", &self.registry_credential_override);
+        formatter.field("image_pull_credentials_type_override", &self.image_pull_credentials_type_override);
+        formatter.field("build_batch_config_override", &self.build_batch_config_override);
         formatter.field("debug_session_enabled", &self.debug_session_enabled);
         formatter.finish()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct StartBuildInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct StartBuildInput  {
     /// <p>The name of the CodeBuild build project to start running a build.</p>
-    #[doc(hidden)]
-    pub project_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub project_name: std::option::Option<std::string::String>,
     /// <p> An array of <code>ProjectSource</code> objects. </p>
-    #[doc(hidden)]
-    pub secondary_sources_override: std::option::Option<std::vec::Vec<crate::model::ProjectSource>>,
+    #[doc(hidden)]pub secondary_sources_override: std::option::Option<std::vec::Vec<crate::model::ProjectSource>>,
     /// <p> An array of <code>ProjectSourceVersion</code> objects that specify one or more versions of the project's secondary sources to be used for this build only. </p>
-    #[doc(hidden)]
-    pub secondary_sources_version_override:
-        std::option::Option<std::vec::Vec<crate::model::ProjectSourceVersion>>,
-    /// <p>The version of the build input to be built, for this build only. If not specified, the latest version is used. If specified, the contents depends on the source provider:</p>
-    /// <dl>
+    #[doc(hidden)]pub secondary_sources_version_override: std::option::Option<std::vec::Vec<crate::model::ProjectSourceVersion>>,
+    /// <p>The version of the build input to be built, for this build only. If not specified, the latest version is used. If specified, the contents depends on the source provider:</p> 
+    /// <dl> 
     /// <dt>
     /// CodeCommit
-    /// </dt>
-    /// <dd>
-    /// <p>The commit ID, branch, or Git tag to use.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The commit ID, branch, or Git tag to use.</p> 
+    /// </dd> 
     /// <dt>
     /// GitHub
-    /// </dt>
-    /// <dd>
-    /// <p>The commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> 
+    /// </dd> 
     /// <dt>
     /// Bitbucket
-    /// </dt>
-    /// <dd>
-    /// <p>The commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> 
+    /// </dd> 
     /// <dt>
     /// Amazon S3
-    /// </dt>
-    /// <dd>
-    /// <p>The version ID of the object that represents the build input ZIP file to use.</p>
-    /// </dd>
-    /// </dl>
-    /// <p>If <code>sourceVersion</code> is specified at the project level, then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The version ID of the object that represents the build input ZIP file to use.</p> 
+    /// </dd> 
+    /// </dl> 
+    /// <p>If <code>sourceVersion</code> is specified at the project level, then this <code>sourceVersion</code> (at the build level) takes precedence. </p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
-    #[doc(hidden)]
-    pub source_version: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub source_version: std::option::Option<std::string::String>,
     /// <p>Build output artifact settings that override, for this build only, the latest ones already defined in the build project.</p>
-    #[doc(hidden)]
-    pub artifacts_override: std::option::Option<crate::model::ProjectArtifacts>,
+    #[doc(hidden)]pub artifacts_override: std::option::Option<crate::model::ProjectArtifacts>,
     /// <p> An array of <code>ProjectArtifacts</code> objects. </p>
-    #[doc(hidden)]
-    pub secondary_artifacts_override:
-        std::option::Option<std::vec::Vec<crate::model::ProjectArtifacts>>,
+    #[doc(hidden)]pub secondary_artifacts_override: std::option::Option<std::vec::Vec<crate::model::ProjectArtifacts>>,
     /// <p>A set of environment variables that overrides, for this build only, the latest ones already defined in the build project.</p>
-    #[doc(hidden)]
-    pub environment_variables_override:
-        std::option::Option<std::vec::Vec<crate::model::EnvironmentVariable>>,
+    #[doc(hidden)]pub environment_variables_override: std::option::Option<std::vec::Vec<crate::model::EnvironmentVariable>>,
     /// <p>A source input type, for this build, that overrides the source input defined in the build project.</p>
-    #[doc(hidden)]
-    pub source_type_override: std::option::Option<crate::model::SourceType>,
+    #[doc(hidden)]pub source_type_override: std::option::Option<crate::model::SourceType>,
     /// <p>A location that overrides, for this build, the source location for the one defined in the build project.</p>
-    #[doc(hidden)]
-    pub source_location_override: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub source_location_override: std::option::Option<std::string::String>,
     /// <p>An authorization type for this build that overrides the one defined in the build project. This override applies only if the build project's source is BitBucket or GitHub.</p>
-    #[doc(hidden)]
-    pub source_auth_override: std::option::Option<crate::model::SourceAuth>,
+    #[doc(hidden)]pub source_auth_override: std::option::Option<crate::model::SourceAuth>,
     /// <p>The user-defined depth of history, with a minimum value of 0, that overrides, for this build only, any previous depth of history defined in the build project.</p>
-    #[doc(hidden)]
-    pub git_clone_depth_override: std::option::Option<i32>,
+    #[doc(hidden)]pub git_clone_depth_override: std::option::Option<i32>,
     /// <p> Information about the Git submodules configuration for this build of an CodeBuild build project. </p>
-    #[doc(hidden)]
-    pub git_submodules_config_override: std::option::Option<crate::model::GitSubmodulesConfig>,
-    /// <p>A buildspec file declaration that overrides, for this build only, the latest one already defined in the build project.</p>
+    #[doc(hidden)]pub git_submodules_config_override: std::option::Option<crate::model::GitSubmodulesConfig>,
+    /// <p>A buildspec file declaration that overrides, for this build only, the latest one already defined in the build project.</p> 
     /// <p> If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3 bucket. The bucket must be in the same Amazon Web Services Region as the build project. Specify the buildspec file using its ARN (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not provided or is set to an empty string, the source code must contain a buildspec file in its root directory. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec File Name and Storage Location</a>. </p>
-    #[doc(hidden)]
-    pub buildspec_override: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub buildspec_override: std::option::Option<std::string::String>,
     /// <p>Enable this flag to override the insecure SSL setting that is specified in the build project. The insecure SSL setting determines whether to ignore SSL warnings while connecting to the project source code. This override applies only if the build's source is GitHub Enterprise.</p>
-    #[doc(hidden)]
-    pub insecure_ssl_override: std::option::Option<bool>,
-    /// <p> Set to true to report to your source provider the status of a build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown. </p>
-    /// <p>To be able to report the build status to the source provider, the user associated with the source provider must have write access to the repo. If the user does not have write access, the build status cannot be updated. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider access</a> in the <i>CodeBuild User Guide</i>.</p> <note>
-    /// <p> The status of a build triggered by a webhook is always reported to your source provider. </p>
+    #[doc(hidden)]pub insecure_ssl_override: std::option::Option<bool>,
+    /// <p> Set to true to report to your source provider the status of a build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown. </p> 
+    /// <p>To be able to report the build status to the source provider, the user associated with the source provider must have write access to the repo. If the user does not have write access, the build status cannot be updated. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider access</a> in the <i>CodeBuild User Guide</i>.</p> <note> 
+    /// <p> The status of a build triggered by a webhook is always reported to your source provider. </p> 
     /// </note>
-    #[doc(hidden)]
-    pub report_build_status_override: std::option::Option<bool>,
+    #[doc(hidden)]pub report_build_status_override: std::option::Option<bool>,
     /// <p>Contains information that defines how the build project reports the build status to the source provider. This option is only used when the source provider is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or <code>BITBUCKET</code>.</p>
-    #[doc(hidden)]
-    pub build_status_config_override: std::option::Option<crate::model::BuildStatusConfig>,
+    #[doc(hidden)]pub build_status_config_override: std::option::Option<crate::model::BuildStatusConfig>,
     /// <p>A container type for this build that overrides the one specified in the build project.</p>
-    #[doc(hidden)]
-    pub environment_type_override: std::option::Option<crate::model::EnvironmentType>,
+    #[doc(hidden)]pub environment_type_override: std::option::Option<crate::model::EnvironmentType>,
     /// <p>The name of an image for this build that overrides the one specified in the build project.</p>
-    #[doc(hidden)]
-    pub image_override: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub image_override: std::option::Option<std::string::String>,
     /// <p>The name of a compute type for this build that overrides the one specified in the build project.</p>
-    #[doc(hidden)]
-    pub compute_type_override: std::option::Option<crate::model::ComputeType>,
+    #[doc(hidden)]pub compute_type_override: std::option::Option<crate::model::ComputeType>,
     /// <p>The name of a certificate for this build that overrides the one specified in the build project.</p>
-    #[doc(hidden)]
-    pub certificate_override: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub certificate_override: std::option::Option<std::string::String>,
     /// <p>A ProjectCache object specified for this build that overrides the one defined in the build project.</p>
-    #[doc(hidden)]
-    pub cache_override: std::option::Option<crate::model::ProjectCache>,
+    #[doc(hidden)]pub cache_override: std::option::Option<crate::model::ProjectCache>,
     /// <p>The name of a service role for this build that overrides the one specified in the build project.</p>
-    #[doc(hidden)]
-    pub service_role_override: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub service_role_override: std::option::Option<std::string::String>,
     /// <p>Enable this flag to override privileged mode in the build project.</p>
-    #[doc(hidden)]
-    pub privileged_mode_override: std::option::Option<bool>,
+    #[doc(hidden)]pub privileged_mode_override: std::option::Option<bool>,
     /// <p>The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for this build only, the latest setting already defined in the build project.</p>
-    #[doc(hidden)]
-    pub timeout_in_minutes_override: std::option::Option<i32>,
+    #[doc(hidden)]pub timeout_in_minutes_override: std::option::Option<i32>,
     /// <p> The number of minutes a build is allowed to be queued before it times out. </p>
-    #[doc(hidden)]
-    pub queued_timeout_in_minutes_override: std::option::Option<i32>,
-    /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the build project. The CMK key encrypts the build output artifacts.</p> <note>
-    /// <p> You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
-    /// </note>
+    #[doc(hidden)]pub queued_timeout_in_minutes_override: std::option::Option<i32>,
+    /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the build project. The CMK key encrypts the build output artifacts.</p> <note> 
+    /// <p> You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p> 
+    /// </note> 
     /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
     /// <alias-name></alias-name></code>).</p>
-    #[doc(hidden)]
-    pub encryption_key_override: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub encryption_key_override: std::option::Option<std::string::String>,
     /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the StartBuild request. The token is included in the StartBuild request and is valid for 5 minutes. If you repeat the StartBuild request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error. </p>
-    #[doc(hidden)]
-    pub idempotency_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub idempotency_token: std::option::Option<std::string::String>,
     /// <p> Log settings for this build that override the log settings defined in the build project. </p>
-    #[doc(hidden)]
-    pub logs_config_override: std::option::Option<crate::model::LogsConfig>,
+    #[doc(hidden)]pub logs_config_override: std::option::Option<crate::model::LogsConfig>,
     /// <p> The credentials for access to a private registry. </p>
-    #[doc(hidden)]
-    pub registry_credential_override: std::option::Option<crate::model::RegistryCredential>,
-    /// <p>The type of credentials CodeBuild uses to pull images in your build. There are two valid values: </p>
-    /// <dl>
+    #[doc(hidden)]pub registry_credential_override: std::option::Option<crate::model::RegistryCredential>,
+    /// <p>The type of credentials CodeBuild uses to pull images in your build. There are two valid values: </p> 
+    /// <dl> 
     /// <dt>
     /// CODEBUILD
-    /// </dt>
-    /// <dd>
-    /// <p>Specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust CodeBuild's service principal.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust CodeBuild's service principal.</p> 
+    /// </dd> 
     /// <dt>
     /// SERVICE_ROLE
-    /// </dt>
-    /// <dd>
-    /// <p>Specifies that CodeBuild uses your build project's service role. </p>
-    /// </dd>
-    /// </dl>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Specifies that CodeBuild uses your build project's service role. </p> 
+    /// </dd> 
+    /// </dl> 
     /// <p>When using a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When using an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials. </p>
-    #[doc(hidden)]
-    pub image_pull_credentials_type_override:
-        std::option::Option<crate::model::ImagePullCredentialsType>,
+    #[doc(hidden)]pub image_pull_credentials_type_override: std::option::Option<crate::model::ImagePullCredentialsType>,
     /// <p>Specifies if session debugging is enabled for this build. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in Session Manager</a>.</p>
-    #[doc(hidden)]
-    pub debug_session_enabled: std::option::Option<bool>,
+    #[doc(hidden)]pub debug_session_enabled: std::option::Option<bool>,
 }
 impl StartBuildInput {
     /// <p>The name of the CodeBuild build project to start running a build.</p>
-    pub fn project_name(&self) -> std::option::Option<&str> {
+    pub fn project_name(&self) -> std::option::Option<& str> {
         self.project_name.as_deref()
     }
     /// <p> An array of <code>ProjectSource</code> objects. </p>
-    pub fn secondary_sources_override(
-        &self,
-    ) -> std::option::Option<&[crate::model::ProjectSource]> {
+    pub fn secondary_sources_override(&self) -> std::option::Option<& [crate::model::ProjectSource]> {
         self.secondary_sources_override.as_deref()
     }
     /// <p> An array of <code>ProjectSourceVersion</code> objects that specify one or more versions of the project's secondary sources to be used for this build only. </p>
-    pub fn secondary_sources_version_override(
-        &self,
-    ) -> std::option::Option<&[crate::model::ProjectSourceVersion]> {
+    pub fn secondary_sources_version_override(&self) -> std::option::Option<& [crate::model::ProjectSourceVersion]> {
         self.secondary_sources_version_override.as_deref()
     }
-    /// <p>The version of the build input to be built, for this build only. If not specified, the latest version is used. If specified, the contents depends on the source provider:</p>
-    /// <dl>
+    /// <p>The version of the build input to be built, for this build only. If not specified, the latest version is used. If specified, the contents depends on the source provider:</p> 
+    /// <dl> 
     /// <dt>
     /// CodeCommit
-    /// </dt>
-    /// <dd>
-    /// <p>The commit ID, branch, or Git tag to use.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The commit ID, branch, or Git tag to use.</p> 
+    /// </dd> 
     /// <dt>
     /// GitHub
-    /// </dt>
-    /// <dd>
-    /// <p>The commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> 
+    /// </dd> 
     /// <dt>
     /// Bitbucket
-    /// </dt>
-    /// <dd>
-    /// <p>The commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> 
+    /// </dd> 
     /// <dt>
     /// Amazon S3
-    /// </dt>
-    /// <dd>
-    /// <p>The version ID of the object that represents the build input ZIP file to use.</p>
-    /// </dd>
-    /// </dl>
-    /// <p>If <code>sourceVersion</code> is specified at the project level, then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The version ID of the object that represents the build input ZIP file to use.</p> 
+    /// </dd> 
+    /// </dl> 
+    /// <p>If <code>sourceVersion</code> is specified at the project level, then this <code>sourceVersion</code> (at the build level) takes precedence. </p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
-    pub fn source_version(&self) -> std::option::Option<&str> {
+    pub fn source_version(&self) -> std::option::Option<& str> {
         self.source_version.as_deref()
     }
     /// <p>Build output artifact settings that override, for this build only, the latest ones already defined in the build project.</p>
-    pub fn artifacts_override(&self) -> std::option::Option<&crate::model::ProjectArtifacts> {
+    pub fn artifacts_override(&self) -> std::option::Option<& crate::model::ProjectArtifacts> {
         self.artifacts_override.as_ref()
     }
     /// <p> An array of <code>ProjectArtifacts</code> objects. </p>
-    pub fn secondary_artifacts_override(
-        &self,
-    ) -> std::option::Option<&[crate::model::ProjectArtifacts]> {
+    pub fn secondary_artifacts_override(&self) -> std::option::Option<& [crate::model::ProjectArtifacts]> {
         self.secondary_artifacts_override.as_deref()
     }
     /// <p>A set of environment variables that overrides, for this build only, the latest ones already defined in the build project.</p>
-    pub fn environment_variables_override(
-        &self,
-    ) -> std::option::Option<&[crate::model::EnvironmentVariable]> {
+    pub fn environment_variables_override(&self) -> std::option::Option<& [crate::model::EnvironmentVariable]> {
         self.environment_variables_override.as_deref()
     }
     /// <p>A source input type, for this build, that overrides the source input defined in the build project.</p>
-    pub fn source_type_override(&self) -> std::option::Option<&crate::model::SourceType> {
+    pub fn source_type_override(&self) -> std::option::Option<& crate::model::SourceType> {
         self.source_type_override.as_ref()
     }
     /// <p>A location that overrides, for this build, the source location for the one defined in the build project.</p>
-    pub fn source_location_override(&self) -> std::option::Option<&str> {
+    pub fn source_location_override(&self) -> std::option::Option<& str> {
         self.source_location_override.as_deref()
     }
     /// <p>An authorization type for this build that overrides the one defined in the build project. This override applies only if the build project's source is BitBucket or GitHub.</p>
-    pub fn source_auth_override(&self) -> std::option::Option<&crate::model::SourceAuth> {
+    pub fn source_auth_override(&self) -> std::option::Option<& crate::model::SourceAuth> {
         self.source_auth_override.as_ref()
     }
     /// <p>The user-defined depth of history, with a minimum value of 0, that overrides, for this build only, any previous depth of history defined in the build project.</p>
@@ -10653,55 +8096,51 @@ impl StartBuildInput {
         self.git_clone_depth_override
     }
     /// <p> Information about the Git submodules configuration for this build of an CodeBuild build project. </p>
-    pub fn git_submodules_config_override(
-        &self,
-    ) -> std::option::Option<&crate::model::GitSubmodulesConfig> {
+    pub fn git_submodules_config_override(&self) -> std::option::Option<& crate::model::GitSubmodulesConfig> {
         self.git_submodules_config_override.as_ref()
     }
-    /// <p>A buildspec file declaration that overrides, for this build only, the latest one already defined in the build project.</p>
+    /// <p>A buildspec file declaration that overrides, for this build only, the latest one already defined in the build project.</p> 
     /// <p> If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3 bucket. The bucket must be in the same Amazon Web Services Region as the build project. Specify the buildspec file using its ARN (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not provided or is set to an empty string, the source code must contain a buildspec file in its root directory. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec File Name and Storage Location</a>. </p>
-    pub fn buildspec_override(&self) -> std::option::Option<&str> {
+    pub fn buildspec_override(&self) -> std::option::Option<& str> {
         self.buildspec_override.as_deref()
     }
     /// <p>Enable this flag to override the insecure SSL setting that is specified in the build project. The insecure SSL setting determines whether to ignore SSL warnings while connecting to the project source code. This override applies only if the build's source is GitHub Enterprise.</p>
     pub fn insecure_ssl_override(&self) -> std::option::Option<bool> {
         self.insecure_ssl_override
     }
-    /// <p> Set to true to report to your source provider the status of a build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown. </p>
-    /// <p>To be able to report the build status to the source provider, the user associated with the source provider must have write access to the repo. If the user does not have write access, the build status cannot be updated. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider access</a> in the <i>CodeBuild User Guide</i>.</p> <note>
-    /// <p> The status of a build triggered by a webhook is always reported to your source provider. </p>
+    /// <p> Set to true to report to your source provider the status of a build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown. </p> 
+    /// <p>To be able to report the build status to the source provider, the user associated with the source provider must have write access to the repo. If the user does not have write access, the build status cannot be updated. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider access</a> in the <i>CodeBuild User Guide</i>.</p> <note> 
+    /// <p> The status of a build triggered by a webhook is always reported to your source provider. </p> 
     /// </note>
     pub fn report_build_status_override(&self) -> std::option::Option<bool> {
         self.report_build_status_override
     }
     /// <p>Contains information that defines how the build project reports the build status to the source provider. This option is only used when the source provider is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or <code>BITBUCKET</code>.</p>
-    pub fn build_status_config_override(
-        &self,
-    ) -> std::option::Option<&crate::model::BuildStatusConfig> {
+    pub fn build_status_config_override(&self) -> std::option::Option<& crate::model::BuildStatusConfig> {
         self.build_status_config_override.as_ref()
     }
     /// <p>A container type for this build that overrides the one specified in the build project.</p>
-    pub fn environment_type_override(&self) -> std::option::Option<&crate::model::EnvironmentType> {
+    pub fn environment_type_override(&self) -> std::option::Option<& crate::model::EnvironmentType> {
         self.environment_type_override.as_ref()
     }
     /// <p>The name of an image for this build that overrides the one specified in the build project.</p>
-    pub fn image_override(&self) -> std::option::Option<&str> {
+    pub fn image_override(&self) -> std::option::Option<& str> {
         self.image_override.as_deref()
     }
     /// <p>The name of a compute type for this build that overrides the one specified in the build project.</p>
-    pub fn compute_type_override(&self) -> std::option::Option<&crate::model::ComputeType> {
+    pub fn compute_type_override(&self) -> std::option::Option<& crate::model::ComputeType> {
         self.compute_type_override.as_ref()
     }
     /// <p>The name of a certificate for this build that overrides the one specified in the build project.</p>
-    pub fn certificate_override(&self) -> std::option::Option<&str> {
+    pub fn certificate_override(&self) -> std::option::Option<& str> {
         self.certificate_override.as_deref()
     }
     /// <p>A ProjectCache object specified for this build that overrides the one defined in the build project.</p>
-    pub fn cache_override(&self) -> std::option::Option<&crate::model::ProjectCache> {
+    pub fn cache_override(&self) -> std::option::Option<& crate::model::ProjectCache> {
         self.cache_override.as_ref()
     }
     /// <p>The name of a service role for this build that overrides the one specified in the build project.</p>
-    pub fn service_role_override(&self) -> std::option::Option<&str> {
+    pub fn service_role_override(&self) -> std::option::Option<& str> {
         self.service_role_override.as_deref()
     }
     /// <p>Enable this flag to override privileged mode in the build project.</p>
@@ -10716,47 +8155,43 @@ impl StartBuildInput {
     pub fn queued_timeout_in_minutes_override(&self) -> std::option::Option<i32> {
         self.queued_timeout_in_minutes_override
     }
-    /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the build project. The CMK key encrypts the build output artifacts.</p> <note>
-    /// <p> You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
-    /// </note>
+    /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the build project. The CMK key encrypts the build output artifacts.</p> <note> 
+    /// <p> You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p> 
+    /// </note> 
     /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
     /// <alias-name></alias-name></code>).</p>
-    pub fn encryption_key_override(&self) -> std::option::Option<&str> {
+    pub fn encryption_key_override(&self) -> std::option::Option<& str> {
         self.encryption_key_override.as_deref()
     }
     /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the StartBuild request. The token is included in the StartBuild request and is valid for 5 minutes. If you repeat the StartBuild request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error. </p>
-    pub fn idempotency_token(&self) -> std::option::Option<&str> {
+    pub fn idempotency_token(&self) -> std::option::Option<& str> {
         self.idempotency_token.as_deref()
     }
     /// <p> Log settings for this build that override the log settings defined in the build project. </p>
-    pub fn logs_config_override(&self) -> std::option::Option<&crate::model::LogsConfig> {
+    pub fn logs_config_override(&self) -> std::option::Option<& crate::model::LogsConfig> {
         self.logs_config_override.as_ref()
     }
     /// <p> The credentials for access to a private registry. </p>
-    pub fn registry_credential_override(
-        &self,
-    ) -> std::option::Option<&crate::model::RegistryCredential> {
+    pub fn registry_credential_override(&self) -> std::option::Option<& crate::model::RegistryCredential> {
         self.registry_credential_override.as_ref()
     }
-    /// <p>The type of credentials CodeBuild uses to pull images in your build. There are two valid values: </p>
-    /// <dl>
+    /// <p>The type of credentials CodeBuild uses to pull images in your build. There are two valid values: </p> 
+    /// <dl> 
     /// <dt>
     /// CODEBUILD
-    /// </dt>
-    /// <dd>
-    /// <p>Specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust CodeBuild's service principal.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust CodeBuild's service principal.</p> 
+    /// </dd> 
     /// <dt>
     /// SERVICE_ROLE
-    /// </dt>
-    /// <dd>
-    /// <p>Specifies that CodeBuild uses your build project's service role. </p>
-    /// </dd>
-    /// </dl>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Specifies that CodeBuild uses your build project's service role. </p> 
+    /// </dd> 
+    /// </dl> 
     /// <p>When using a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When using an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials. </p>
-    pub fn image_pull_credentials_type_override(
-        &self,
-    ) -> std::option::Option<&crate::model::ImagePullCredentialsType> {
+    pub fn image_pull_credentials_type_override(&self) -> std::option::Option<& crate::model::ImagePullCredentialsType> {
         self.image_pull_credentials_type_override.as_ref()
     }
     /// <p>Specifies if session debugging is enabled for this build. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in Session Manager</a>.</p>
@@ -10764,46 +8199,25 @@ impl StartBuildInput {
         self.debug_session_enabled
     }
 }
-impl std::fmt::Debug for StartBuildInput {
+impl  std::fmt::Debug for StartBuildInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartBuildInput");
         formatter.field("project_name", &self.project_name);
-        formatter.field(
-            "secondary_sources_override",
-            &self.secondary_sources_override,
-        );
-        formatter.field(
-            "secondary_sources_version_override",
-            &self.secondary_sources_version_override,
-        );
+        formatter.field("secondary_sources_override", &self.secondary_sources_override);
+        formatter.field("secondary_sources_version_override", &self.secondary_sources_version_override);
         formatter.field("source_version", &self.source_version);
         formatter.field("artifacts_override", &self.artifacts_override);
-        formatter.field(
-            "secondary_artifacts_override",
-            &self.secondary_artifacts_override,
-        );
-        formatter.field(
-            "environment_variables_override",
-            &self.environment_variables_override,
-        );
+        formatter.field("secondary_artifacts_override", &self.secondary_artifacts_override);
+        formatter.field("environment_variables_override", &self.environment_variables_override);
         formatter.field("source_type_override", &self.source_type_override);
         formatter.field("source_location_override", &self.source_location_override);
         formatter.field("source_auth_override", &self.source_auth_override);
         formatter.field("git_clone_depth_override", &self.git_clone_depth_override);
-        formatter.field(
-            "git_submodules_config_override",
-            &self.git_submodules_config_override,
-        );
+        formatter.field("git_submodules_config_override", &self.git_submodules_config_override);
         formatter.field("buildspec_override", &self.buildspec_override);
         formatter.field("insecure_ssl_override", &self.insecure_ssl_override);
-        formatter.field(
-            "report_build_status_override",
-            &self.report_build_status_override,
-        );
-        formatter.field(
-            "build_status_config_override",
-            &self.build_status_config_override,
-        );
+        formatter.field("report_build_status_override", &self.report_build_status_override);
+        formatter.field("build_status_config_override", &self.build_status_config_override);
         formatter.field("environment_type_override", &self.environment_type_override);
         formatter.field("image_override", &self.image_override);
         formatter.field("compute_type_override", &self.compute_type_override);
@@ -10811,59 +8225,43 @@ impl std::fmt::Debug for StartBuildInput {
         formatter.field("cache_override", &self.cache_override);
         formatter.field("service_role_override", &self.service_role_override);
         formatter.field("privileged_mode_override", &self.privileged_mode_override);
-        formatter.field(
-            "timeout_in_minutes_override",
-            &self.timeout_in_minutes_override,
-        );
-        formatter.field(
-            "queued_timeout_in_minutes_override",
-            &self.queued_timeout_in_minutes_override,
-        );
+        formatter.field("timeout_in_minutes_override", &self.timeout_in_minutes_override);
+        formatter.field("queued_timeout_in_minutes_override", &self.queued_timeout_in_minutes_override);
         formatter.field("encryption_key_override", &self.encryption_key_override);
         formatter.field("idempotency_token", &self.idempotency_token);
         formatter.field("logs_config_override", &self.logs_config_override);
-        formatter.field(
-            "registry_credential_override",
-            &self.registry_credential_override,
-        );
-        formatter.field(
-            "image_pull_credentials_type_override",
-            &self.image_pull_credentials_type_override,
-        );
+        formatter.field("registry_credential_override", &self.registry_credential_override);
+        formatter.field("image_pull_credentials_type_override", &self.image_pull_credentials_type_override);
         formatter.field("debug_session_enabled", &self.debug_session_enabled);
         formatter.finish()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct RetryBuildBatchInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct RetryBuildBatchInput  {
     /// <p>Specifies the identifier of the batch build to restart.</p>
-    #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub id: std::option::Option<std::string::String>,
     /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the <code>RetryBuildBatch</code> request. The token is included in the <code>RetryBuildBatch</code> request and is valid for five minutes. If you repeat the <code>RetryBuildBatch</code> request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error.</p>
-    #[doc(hidden)]
-    pub idempotency_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub idempotency_token: std::option::Option<std::string::String>,
     /// <p>Specifies the type of retry to perform.</p>
-    #[doc(hidden)]
-    pub retry_type: std::option::Option<crate::model::RetryBuildBatchType>,
+    #[doc(hidden)]pub retry_type: std::option::Option<crate::model::RetryBuildBatchType>,
 }
 impl RetryBuildBatchInput {
     /// <p>Specifies the identifier of the batch build to restart.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the <code>RetryBuildBatch</code> request. The token is included in the <code>RetryBuildBatch</code> request and is valid for five minutes. If you repeat the <code>RetryBuildBatch</code> request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error.</p>
-    pub fn idempotency_token(&self) -> std::option::Option<&str> {
+    pub fn idempotency_token(&self) -> std::option::Option<& str> {
         self.idempotency_token.as_deref()
     }
     /// <p>Specifies the type of retry to perform.</p>
-    pub fn retry_type(&self) -> std::option::Option<&crate::model::RetryBuildBatchType> {
+    pub fn retry_type(&self) -> std::option::Option<& crate::model::RetryBuildBatchType> {
         self.retry_type.as_ref()
     }
 }
-impl std::fmt::Debug for RetryBuildBatchInput {
+impl  std::fmt::Debug for RetryBuildBatchInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RetryBuildBatchInput");
         formatter.field("id", &self.id);
@@ -10874,27 +8272,24 @@ impl std::fmt::Debug for RetryBuildBatchInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct RetryBuildInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct RetryBuildInput  {
     /// <p>Specifies the identifier of the build to restart.</p>
-    #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub id: std::option::Option<std::string::String>,
     /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the <code>RetryBuild</code> request. The token is included in the <code>RetryBuild</code> request and is valid for five minutes. If you repeat the <code>RetryBuild</code> request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error.</p>
-    #[doc(hidden)]
-    pub idempotency_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub idempotency_token: std::option::Option<std::string::String>,
 }
 impl RetryBuildInput {
     /// <p>Specifies the identifier of the build to restart.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the <code>RetryBuild</code> request. The token is included in the <code>RetryBuild</code> request and is valid for five minutes. If you repeat the <code>RetryBuild</code> request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error.</p>
-    pub fn idempotency_token(&self) -> std::option::Option<&str> {
+    pub fn idempotency_token(&self) -> std::option::Option<& str> {
         self.idempotency_token.as_deref()
     }
 }
-impl std::fmt::Debug for RetryBuildInput {
+impl  std::fmt::Debug for RetryBuildInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RetryBuildInput");
         formatter.field("id", &self.id);
@@ -10904,27 +8299,24 @@ impl std::fmt::Debug for RetryBuildInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PutResourcePolicyInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct PutResourcePolicyInput  {
     /// <p> A JSON-formatted resource policy. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/project-sharing.html#project-sharing-share">Sharing a Project</a> and <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/report-groups-sharing.html#report-groups-sharing-share">Sharing a Report Group</a> in the <i>CodeBuild User Guide</i>. </p>
-    #[doc(hidden)]
-    pub policy: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub policy: std::option::Option<std::string::String>,
     /// <p> The ARN of the <code>Project</code> or <code>ReportGroup</code> resource you want to associate with a resource policy. </p>
-    #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
 }
 impl PutResourcePolicyInput {
     /// <p> A JSON-formatted resource policy. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/project-sharing.html#project-sharing-share">Sharing a Project</a> and <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/report-groups-sharing.html#report-groups-sharing-share">Sharing a Report Group</a> in the <i>CodeBuild User Guide</i>. </p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
     /// <p> The ARN of the <code>Project</code> or <code>ReportGroup</code> resource you want to associate with a resource policy. </p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for PutResourcePolicyInput {
+impl  std::fmt::Debug for PutResourcePolicyInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutResourcePolicyInput");
         formatter.field("policy", &self.policy);
@@ -10934,10 +8326,10 @@ impl std::fmt::Debug for PutResourcePolicyInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListSourceCredentialsInput {}
-impl std::fmt::Debug for ListSourceCredentialsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListSourceCredentialsInput  {
+}
+impl  std::fmt::Debug for ListSourceCredentialsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSourceCredentialsInput");
         formatter.finish()
@@ -10945,49 +8337,44 @@ impl std::fmt::Debug for ListSourceCredentialsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListSharedReportGroupsInput {
-    /// <p>The order in which to list shared report groups. Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
-    /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListSharedReportGroupsInput  {
+    /// <p>The order in which to list shared report groups. Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li> 
+    /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li> 
     /// </ul>
-    #[doc(hidden)]
-    pub sort_order: std::option::Option<crate::model::SortOrderType>,
-    /// <p> The criterion to be used to list report groups shared with the current Amazon Web Services account or user. Valid values include: </p>
-    /// <ul>
-    /// <li> <p> <code>ARN</code>: List based on the ARN. </p> </li>
-    /// <li> <p> <code>MODIFIED_TIME</code>: List based on when information about the shared report group was last changed. </p> </li>
+    #[doc(hidden)]pub sort_order: std::option::Option<crate::model::SortOrderType>,
+    /// <p> The criterion to be used to list report groups shared with the current Amazon Web Services account or user. Valid values include: </p> 
+    /// <ul> 
+    /// <li> <p> <code>ARN</code>: List based on the ARN. </p> </li> 
+    /// <li> <p> <code>MODIFIED_TIME</code>: List based on when information about the shared report group was last changed. </p> </li> 
     /// </ul>
-    #[doc(hidden)]
-    pub sort_by: std::option::Option<crate::model::SharedResourceSortByType>,
+    #[doc(hidden)]pub sort_by: std::option::Option<crate::model::SharedResourceSortByType>,
     /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
     /// <p> The maximum number of paginated shared report groups per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>ReportGroup</code> objects. The default value is 100. </p>
-    #[doc(hidden)]
-    pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]pub max_results: std::option::Option<i32>,
 }
 impl ListSharedReportGroupsInput {
-    /// <p>The order in which to list shared report groups. Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
-    /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
+    /// <p>The order in which to list shared report groups. Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li> 
+    /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li> 
     /// </ul>
-    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrderType> {
+    pub fn sort_order(&self) -> std::option::Option<& crate::model::SortOrderType> {
         self.sort_order.as_ref()
     }
-    /// <p> The criterion to be used to list report groups shared with the current Amazon Web Services account or user. Valid values include: </p>
-    /// <ul>
-    /// <li> <p> <code>ARN</code>: List based on the ARN. </p> </li>
-    /// <li> <p> <code>MODIFIED_TIME</code>: List based on when information about the shared report group was last changed. </p> </li>
+    /// <p> The criterion to be used to list report groups shared with the current Amazon Web Services account or user. Valid values include: </p> 
+    /// <ul> 
+    /// <li> <p> <code>ARN</code>: List based on the ARN. </p> </li> 
+    /// <li> <p> <code>MODIFIED_TIME</code>: List based on when information about the shared report group was last changed. </p> </li> 
     /// </ul>
-    pub fn sort_by(&self) -> std::option::Option<&crate::model::SharedResourceSortByType> {
+    pub fn sort_by(&self) -> std::option::Option<& crate::model::SharedResourceSortByType> {
         self.sort_by.as_ref()
     }
     /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> The maximum number of paginated shared report groups per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>ReportGroup</code> objects. The default value is 100. </p>
@@ -10995,7 +8382,7 @@ impl ListSharedReportGroupsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListSharedReportGroupsInput {
+impl  std::fmt::Debug for ListSharedReportGroupsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSharedReportGroupsInput");
         formatter.field("sort_order", &self.sort_order);
@@ -11007,45 +8394,40 @@ impl std::fmt::Debug for ListSharedReportGroupsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListSharedProjectsInput {
-    /// <p> The criterion to be used to list build projects shared with the current Amazon Web Services account or user. Valid values include: </p>
-    /// <ul>
-    /// <li> <p> <code>ARN</code>: List based on the ARN. </p> </li>
-    /// <li> <p> <code>MODIFIED_TIME</code>: List based on when information about the shared project was last changed. </p> </li>
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListSharedProjectsInput  {
+    /// <p> The criterion to be used to list build projects shared with the current Amazon Web Services account or user. Valid values include: </p> 
+    /// <ul> 
+    /// <li> <p> <code>ARN</code>: List based on the ARN. </p> </li> 
+    /// <li> <p> <code>MODIFIED_TIME</code>: List based on when information about the shared project was last changed. </p> </li> 
     /// </ul>
-    #[doc(hidden)]
-    pub sort_by: std::option::Option<crate::model::SharedResourceSortByType>,
-    /// <p>The order in which to list shared build projects. Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
-    /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
+    #[doc(hidden)]pub sort_by: std::option::Option<crate::model::SharedResourceSortByType>,
+    /// <p>The order in which to list shared build projects. Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li> 
+    /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li> 
     /// </ul>
-    #[doc(hidden)]
-    pub sort_order: std::option::Option<crate::model::SortOrderType>,
+    #[doc(hidden)]pub sort_order: std::option::Option<crate::model::SortOrderType>,
     /// <p> The maximum number of paginated shared build projects returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Project</code> objects. The default value is 100. </p>
-    #[doc(hidden)]
-    pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]pub max_results: std::option::Option<i32>,
     /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSharedProjectsInput {
-    /// <p> The criterion to be used to list build projects shared with the current Amazon Web Services account or user. Valid values include: </p>
-    /// <ul>
-    /// <li> <p> <code>ARN</code>: List based on the ARN. </p> </li>
-    /// <li> <p> <code>MODIFIED_TIME</code>: List based on when information about the shared project was last changed. </p> </li>
+    /// <p> The criterion to be used to list build projects shared with the current Amazon Web Services account or user. Valid values include: </p> 
+    /// <ul> 
+    /// <li> <p> <code>ARN</code>: List based on the ARN. </p> </li> 
+    /// <li> <p> <code>MODIFIED_TIME</code>: List based on when information about the shared project was last changed. </p> </li> 
     /// </ul>
-    pub fn sort_by(&self) -> std::option::Option<&crate::model::SharedResourceSortByType> {
+    pub fn sort_by(&self) -> std::option::Option<& crate::model::SharedResourceSortByType> {
         self.sort_by.as_ref()
     }
-    /// <p>The order in which to list shared build projects. Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
-    /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
+    /// <p>The order in which to list shared build projects. Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li> 
+    /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li> 
     /// </ul>
-    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrderType> {
+    pub fn sort_order(&self) -> std::option::Option<& crate::model::SortOrderType> {
         self.sort_order.as_ref()
     }
     /// <p> The maximum number of paginated shared build projects returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Project</code> objects. The default value is 100. </p>
@@ -11053,11 +8435,11 @@ impl ListSharedProjectsInput {
         self.max_results
     }
     /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListSharedProjectsInput {
+impl  std::fmt::Debug for ListSharedProjectsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSharedProjectsInput");
         formatter.field("sort_by", &self.sort_by);
@@ -11069,36 +8451,30 @@ impl std::fmt::Debug for ListSharedProjectsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListReportsForReportGroupInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListReportsForReportGroupInput  {
     /// <p> The ARN of the report group for which you want to return report ARNs. </p>
-    #[doc(hidden)]
-    pub report_group_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub report_group_arn: std::option::Option<std::string::String>,
     /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
     /// <p> Use to specify whether the results are returned in ascending or descending order. </p>
-    #[doc(hidden)]
-    pub sort_order: std::option::Option<crate::model::SortOrderType>,
+    #[doc(hidden)]pub sort_order: std::option::Option<crate::model::SortOrderType>,
     /// <p> The maximum number of paginated reports in this report group returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Report</code> objects. The default value is 100. </p>
-    #[doc(hidden)]
-    pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]pub max_results: std::option::Option<i32>,
     /// <p> A <code>ReportFilter</code> object used to filter the returned reports. </p>
-    #[doc(hidden)]
-    pub filter: std::option::Option<crate::model::ReportFilter>,
+    #[doc(hidden)]pub filter: std::option::Option<crate::model::ReportFilter>,
 }
 impl ListReportsForReportGroupInput {
     /// <p> The ARN of the report group for which you want to return report ARNs. </p>
-    pub fn report_group_arn(&self) -> std::option::Option<&str> {
+    pub fn report_group_arn(&self) -> std::option::Option<& str> {
         self.report_group_arn.as_deref()
     }
     /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> Use to specify whether the results are returned in ascending or descending order. </p>
-    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrderType> {
+    pub fn sort_order(&self) -> std::option::Option<& crate::model::SortOrderType> {
         self.sort_order.as_ref()
     }
     /// <p> The maximum number of paginated reports in this report group returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Report</code> objects. The default value is 100. </p>
@@ -11106,11 +8482,11 @@ impl ListReportsForReportGroupInput {
         self.max_results
     }
     /// <p> A <code>ReportFilter</code> object used to filter the returned reports. </p>
-    pub fn filter(&self) -> std::option::Option<&crate::model::ReportFilter> {
+    pub fn filter(&self) -> std::option::Option<& crate::model::ReportFilter> {
         self.filter.as_ref()
     }
 }
-impl std::fmt::Debug for ListReportsForReportGroupInput {
+impl  std::fmt::Debug for ListReportsForReportGroupInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListReportsForReportGroupInput");
         formatter.field("report_group_arn", &self.report_group_arn);
@@ -11123,37 +8499,32 @@ impl std::fmt::Debug for ListReportsForReportGroupInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListReportsInput {
-    /// <p> Specifies the sort order for the list of returned reports. Valid values are: </p>
-    /// <ul>
-    /// <li> <p> <code>ASCENDING</code>: return reports in chronological order based on their creation date. </p> </li>
-    /// <li> <p> <code>DESCENDING</code>: return reports in the reverse chronological order based on their creation date. </p> </li>
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListReportsInput  {
+    /// <p> Specifies the sort order for the list of returned reports. Valid values are: </p> 
+    /// <ul> 
+    /// <li> <p> <code>ASCENDING</code>: return reports in chronological order based on their creation date. </p> </li> 
+    /// <li> <p> <code>DESCENDING</code>: return reports in the reverse chronological order based on their creation date. </p> </li> 
     /// </ul>
-    #[doc(hidden)]
-    pub sort_order: std::option::Option<crate::model::SortOrderType>,
+    #[doc(hidden)]pub sort_order: std::option::Option<crate::model::SortOrderType>,
     /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
     /// <p> The maximum number of paginated reports returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Report</code> objects. The default value is 100. </p>
-    #[doc(hidden)]
-    pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]pub max_results: std::option::Option<i32>,
     /// <p> A <code>ReportFilter</code> object used to filter the returned reports. </p>
-    #[doc(hidden)]
-    pub filter: std::option::Option<crate::model::ReportFilter>,
+    #[doc(hidden)]pub filter: std::option::Option<crate::model::ReportFilter>,
 }
 impl ListReportsInput {
-    /// <p> Specifies the sort order for the list of returned reports. Valid values are: </p>
-    /// <ul>
-    /// <li> <p> <code>ASCENDING</code>: return reports in chronological order based on their creation date. </p> </li>
-    /// <li> <p> <code>DESCENDING</code>: return reports in the reverse chronological order based on their creation date. </p> </li>
+    /// <p> Specifies the sort order for the list of returned reports. Valid values are: </p> 
+    /// <ul> 
+    /// <li> <p> <code>ASCENDING</code>: return reports in chronological order based on their creation date. </p> </li> 
+    /// <li> <p> <code>DESCENDING</code>: return reports in the reverse chronological order based on their creation date. </p> </li> 
     /// </ul>
-    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrderType> {
+    pub fn sort_order(&self) -> std::option::Option<& crate::model::SortOrderType> {
         self.sort_order.as_ref()
     }
     /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> The maximum number of paginated reports returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Report</code> objects. The default value is 100. </p>
@@ -11161,11 +8532,11 @@ impl ListReportsInput {
         self.max_results
     }
     /// <p> A <code>ReportFilter</code> object used to filter the returned reports. </p>
-    pub fn filter(&self) -> std::option::Option<&crate::model::ReportFilter> {
+    pub fn filter(&self) -> std::option::Option<& crate::model::ReportFilter> {
         self.filter.as_ref()
     }
 }
-impl std::fmt::Debug for ListReportsInput {
+impl  std::fmt::Debug for ListReportsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListReportsInput");
         formatter.field("sort_order", &self.sort_order);
@@ -11177,43 +8548,38 @@ impl std::fmt::Debug for ListReportsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListReportGroupsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListReportGroupsInput  {
     /// <p> Used to specify the order to sort the list of returned report groups. Valid values are <code>ASCENDING</code> and <code>DESCENDING</code>. </p>
-    #[doc(hidden)]
-    pub sort_order: std::option::Option<crate::model::SortOrderType>,
-    /// <p> The criterion to be used to list build report groups. Valid values include: </p>
-    /// <ul>
-    /// <li> <p> <code>CREATED_TIME</code>: List based on when each report group was created.</p> </li>
-    /// <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when each report group was last changed.</p> </li>
-    /// <li> <p> <code>NAME</code>: List based on each report group's name.</p> </li>
+    #[doc(hidden)]pub sort_order: std::option::Option<crate::model::SortOrderType>,
+    /// <p> The criterion to be used to list build report groups. Valid values include: </p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATED_TIME</code>: List based on when each report group was created.</p> </li> 
+    /// <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when each report group was last changed.</p> </li> 
+    /// <li> <p> <code>NAME</code>: List based on each report group's name.</p> </li> 
     /// </ul>
-    #[doc(hidden)]
-    pub sort_by: std::option::Option<crate::model::ReportGroupSortByType>,
+    #[doc(hidden)]pub sort_by: std::option::Option<crate::model::ReportGroupSortByType>,
     /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
     /// <p> The maximum number of paginated report groups returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>ReportGroup</code> objects. The default value is 100. </p>
-    #[doc(hidden)]
-    pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]pub max_results: std::option::Option<i32>,
 }
 impl ListReportGroupsInput {
     /// <p> Used to specify the order to sort the list of returned report groups. Valid values are <code>ASCENDING</code> and <code>DESCENDING</code>. </p>
-    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrderType> {
+    pub fn sort_order(&self) -> std::option::Option<& crate::model::SortOrderType> {
         self.sort_order.as_ref()
     }
-    /// <p> The criterion to be used to list build report groups. Valid values include: </p>
-    /// <ul>
-    /// <li> <p> <code>CREATED_TIME</code>: List based on when each report group was created.</p> </li>
-    /// <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when each report group was last changed.</p> </li>
-    /// <li> <p> <code>NAME</code>: List based on each report group's name.</p> </li>
+    /// <p> The criterion to be used to list build report groups. Valid values include: </p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATED_TIME</code>: List based on when each report group was created.</p> </li> 
+    /// <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when each report group was last changed.</p> </li> 
+    /// <li> <p> <code>NAME</code>: List based on each report group's name.</p> </li> 
     /// </ul>
-    pub fn sort_by(&self) -> std::option::Option<&crate::model::ReportGroupSortByType> {
+    pub fn sort_by(&self) -> std::option::Option<& crate::model::ReportGroupSortByType> {
         self.sort_by.as_ref()
     }
     /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> The maximum number of paginated report groups returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>ReportGroup</code> objects. The default value is 100. </p>
@@ -11221,7 +8587,7 @@ impl ListReportGroupsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListReportGroupsInput {
+impl  std::fmt::Debug for ListReportGroupsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListReportGroupsInput");
         formatter.field("sort_order", &self.sort_order);
@@ -11233,56 +8599,52 @@ impl std::fmt::Debug for ListReportGroupsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListProjectsInput {
-    /// <p>The criterion to be used to list build project names. Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>CREATED_TIME</code>: List based on when each build project was created.</p> </li>
-    /// <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last changed.</p> </li>
-    /// <li> <p> <code>NAME</code>: List based on each build project's name.</p> </li>
-    /// </ul>
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListProjectsInput  {
+    /// <p>The criterion to be used to list build project names. Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATED_TIME</code>: List based on when each build project was created.</p> </li> 
+    /// <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last changed.</p> </li> 
+    /// <li> <p> <code>NAME</code>: List based on each build project's name.</p> </li> 
+    /// </ul> 
     /// <p>Use <code>sortOrder</code> to specify in what order to list the build project names based on the preceding criteria.</p>
-    #[doc(hidden)]
-    pub sort_by: std::option::Option<crate::model::ProjectSortByType>,
-    /// <p>The order in which to list build projects. Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
-    /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
-    /// </ul>
+    #[doc(hidden)]pub sort_by: std::option::Option<crate::model::ProjectSortByType>,
+    /// <p>The order in which to list build projects. Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li> 
+    /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li> 
+    /// </ul> 
     /// <p>Use <code>sortBy</code> to specify the criterion to be used to list build project names.</p>
-    #[doc(hidden)]
-    pub sort_order: std::option::Option<crate::model::SortOrderType>,
+    #[doc(hidden)]pub sort_order: std::option::Option<crate::model::SortOrderType>,
     /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProjectsInput {
-    /// <p>The criterion to be used to list build project names. Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>CREATED_TIME</code>: List based on when each build project was created.</p> </li>
-    /// <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last changed.</p> </li>
-    /// <li> <p> <code>NAME</code>: List based on each build project's name.</p> </li>
-    /// </ul>
+    /// <p>The criterion to be used to list build project names. Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATED_TIME</code>: List based on when each build project was created.</p> </li> 
+    /// <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last changed.</p> </li> 
+    /// <li> <p> <code>NAME</code>: List based on each build project's name.</p> </li> 
+    /// </ul> 
     /// <p>Use <code>sortOrder</code> to specify in what order to list the build project names based on the preceding criteria.</p>
-    pub fn sort_by(&self) -> std::option::Option<&crate::model::ProjectSortByType> {
+    pub fn sort_by(&self) -> std::option::Option<& crate::model::ProjectSortByType> {
         self.sort_by.as_ref()
     }
-    /// <p>The order in which to list build projects. Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
-    /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
-    /// </ul>
+    /// <p>The order in which to list build projects. Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li> 
+    /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li> 
+    /// </ul> 
     /// <p>Use <code>sortBy</code> to specify the criterion to be used to list build project names.</p>
-    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrderType> {
+    pub fn sort_order(&self) -> std::option::Option<& crate::model::SortOrderType> {
         self.sort_order.as_ref()
     }
     /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListProjectsInput {
+impl  std::fmt::Debug for ListProjectsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListProjectsInput");
         formatter.field("sort_by", &self.sort_by);
@@ -11293,10 +8655,10 @@ impl std::fmt::Debug for ListProjectsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListCuratedEnvironmentImagesInput {}
-impl std::fmt::Debug for ListCuratedEnvironmentImagesInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListCuratedEnvironmentImagesInput  {
+}
+impl  std::fmt::Debug for ListCuratedEnvironmentImagesInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListCuratedEnvironmentImagesInput");
         formatter.finish()
@@ -11304,46 +8666,42 @@ impl std::fmt::Debug for ListCuratedEnvironmentImagesInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListBuildsForProjectInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListBuildsForProjectInput  {
     /// <p>The name of the CodeBuild project.</p>
-    #[doc(hidden)]
-    pub project_name: std::option::Option<std::string::String>,
-    /// <p>The order to sort the results in. The results are sorted by build number, not the build identifier. If this is not specified, the results are sorted in descending order.</p>
-    /// <p>Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>ASCENDING</code>: List the build identifiers in ascending order, by build number.</p> </li>
-    /// <li> <p> <code>DESCENDING</code>: List the build identifiers in descending order, by build number.</p> </li>
-    /// </ul>
+    #[doc(hidden)]pub project_name: std::option::Option<std::string::String>,
+    /// <p>The order to sort the results in. The results are sorted by build number, not the build identifier. If this is not specified, the results are sorted in descending order.</p> 
+    /// <p>Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ASCENDING</code>: List the build identifiers in ascending order, by build number.</p> </li> 
+    /// <li> <p> <code>DESCENDING</code>: List the build identifiers in descending order, by build number.</p> </li> 
+    /// </ul> 
     /// <p>If the project has more than 100 builds, setting the sort order will result in an error. </p>
-    #[doc(hidden)]
-    pub sort_order: std::option::Option<crate::model::SortOrderType>,
+    #[doc(hidden)]pub sort_order: std::option::Option<crate::model::SortOrderType>,
     /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBuildsForProjectInput {
     /// <p>The name of the CodeBuild project.</p>
-    pub fn project_name(&self) -> std::option::Option<&str> {
+    pub fn project_name(&self) -> std::option::Option<& str> {
         self.project_name.as_deref()
     }
-    /// <p>The order to sort the results in. The results are sorted by build number, not the build identifier. If this is not specified, the results are sorted in descending order.</p>
-    /// <p>Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>ASCENDING</code>: List the build identifiers in ascending order, by build number.</p> </li>
-    /// <li> <p> <code>DESCENDING</code>: List the build identifiers in descending order, by build number.</p> </li>
-    /// </ul>
+    /// <p>The order to sort the results in. The results are sorted by build number, not the build identifier. If this is not specified, the results are sorted in descending order.</p> 
+    /// <p>Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ASCENDING</code>: List the build identifiers in ascending order, by build number.</p> </li> 
+    /// <li> <p> <code>DESCENDING</code>: List the build identifiers in descending order, by build number.</p> </li> 
+    /// </ul> 
     /// <p>If the project has more than 100 builds, setting the sort order will result in an error. </p>
-    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrderType> {
+    pub fn sort_order(&self) -> std::option::Option<& crate::model::SortOrderType> {
         self.sort_order.as_ref()
     }
     /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListBuildsForProjectInput {
+impl  std::fmt::Debug for ListBuildsForProjectInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListBuildsForProjectInput");
         formatter.field("project_name", &self.project_name);
@@ -11354,35 +8712,32 @@ impl std::fmt::Debug for ListBuildsForProjectInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListBuildsInput {
-    /// <p>The order to list build IDs. Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p> </li>
-    /// <li> <p> <code>DESCENDING</code>: List the build IDs in descending order by build ID.</p> </li>
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListBuildsInput  {
+    /// <p>The order to list build IDs. Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p> </li> 
+    /// <li> <p> <code>DESCENDING</code>: List the build IDs in descending order by build ID.</p> </li> 
     /// </ul>
-    #[doc(hidden)]
-    pub sort_order: std::option::Option<crate::model::SortOrderType>,
+    #[doc(hidden)]pub sort_order: std::option::Option<crate::model::SortOrderType>,
     /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBuildsInput {
-    /// <p>The order to list build IDs. Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p> </li>
-    /// <li> <p> <code>DESCENDING</code>: List the build IDs in descending order by build ID.</p> </li>
+    /// <p>The order to list build IDs. Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p> </li> 
+    /// <li> <p> <code>DESCENDING</code>: List the build IDs in descending order by build ID.</p> </li> 
     /// </ul>
-    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrderType> {
+    pub fn sort_order(&self) -> std::option::Option<& crate::model::SortOrderType> {
         self.sort_order.as_ref()
     }
     /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListBuildsInput {
+impl  std::fmt::Debug for ListBuildsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListBuildsInput");
         formatter.field("sort_order", &self.sort_order);
@@ -11392,56 +8747,50 @@ impl std::fmt::Debug for ListBuildsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListBuildBatchesForProjectInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListBuildBatchesForProjectInput  {
     /// <p>The name of the project.</p>
-    #[doc(hidden)]
-    pub project_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub project_name: std::option::Option<std::string::String>,
     /// <p>A <code>BuildBatchFilter</code> object that specifies the filters for the search.</p>
-    #[doc(hidden)]
-    pub filter: std::option::Option<crate::model::BuildBatchFilter>,
+    #[doc(hidden)]pub filter: std::option::Option<crate::model::BuildBatchFilter>,
     /// <p>The maximum number of results to return.</p>
-    #[doc(hidden)]
-    pub max_results: std::option::Option<i32>,
-    /// <p>Specifies the sort order of the returned items. Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li>
-    /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li>
+    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    /// <p>Specifies the sort order of the returned items. Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li> 
+    /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li> 
     /// </ul>
-    #[doc(hidden)]
-    pub sort_order: std::option::Option<crate::model::SortOrderType>,
+    #[doc(hidden)]pub sort_order: std::option::Option<crate::model::SortOrderType>,
     /// <p>The <code>nextToken</code> value returned from a previous call to <code>ListBuildBatchesForProject</code>. This specifies the next item to return. To return the beginning of the list, exclude this parameter.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBuildBatchesForProjectInput {
     /// <p>The name of the project.</p>
-    pub fn project_name(&self) -> std::option::Option<&str> {
+    pub fn project_name(&self) -> std::option::Option<& str> {
         self.project_name.as_deref()
     }
     /// <p>A <code>BuildBatchFilter</code> object that specifies the filters for the search.</p>
-    pub fn filter(&self) -> std::option::Option<&crate::model::BuildBatchFilter> {
+    pub fn filter(&self) -> std::option::Option<& crate::model::BuildBatchFilter> {
         self.filter.as_ref()
     }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Specifies the sort order of the returned items. Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li>
-    /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li>
+    /// <p>Specifies the sort order of the returned items. Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li> 
+    /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li> 
     /// </ul>
-    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrderType> {
+    pub fn sort_order(&self) -> std::option::Option<& crate::model::SortOrderType> {
         self.sort_order.as_ref()
     }
     /// <p>The <code>nextToken</code> value returned from a previous call to <code>ListBuildBatchesForProject</code>. This specifies the next item to return. To return the beginning of the list, exclude this parameter.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListBuildBatchesForProjectInput {
+impl  std::fmt::Debug for ListBuildBatchesForProjectInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListBuildBatchesForProjectInput");
         formatter.field("project_name", &self.project_name);
@@ -11454,49 +8803,44 @@ impl std::fmt::Debug for ListBuildBatchesForProjectInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListBuildBatchesInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListBuildBatchesInput  {
     /// <p>A <code>BuildBatchFilter</code> object that specifies the filters for the search.</p>
-    #[doc(hidden)]
-    pub filter: std::option::Option<crate::model::BuildBatchFilter>,
+    #[doc(hidden)]pub filter: std::option::Option<crate::model::BuildBatchFilter>,
     /// <p>The maximum number of results to return.</p>
-    #[doc(hidden)]
-    pub max_results: std::option::Option<i32>,
-    /// <p>Specifies the sort order of the returned items. Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li>
-    /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li>
+    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    /// <p>Specifies the sort order of the returned items. Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li> 
+    /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li> 
     /// </ul>
-    #[doc(hidden)]
-    pub sort_order: std::option::Option<crate::model::SortOrderType>,
+    #[doc(hidden)]pub sort_order: std::option::Option<crate::model::SortOrderType>,
     /// <p>The <code>nextToken</code> value returned from a previous call to <code>ListBuildBatches</code>. This specifies the next item to return. To return the beginning of the list, exclude this parameter.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBuildBatchesInput {
     /// <p>A <code>BuildBatchFilter</code> object that specifies the filters for the search.</p>
-    pub fn filter(&self) -> std::option::Option<&crate::model::BuildBatchFilter> {
+    pub fn filter(&self) -> std::option::Option<& crate::model::BuildBatchFilter> {
         self.filter.as_ref()
     }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Specifies the sort order of the returned items. Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li>
-    /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li>
+    /// <p>Specifies the sort order of the returned items. Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li> 
+    /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li> 
     /// </ul>
-    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrderType> {
+    pub fn sort_order(&self) -> std::option::Option<& crate::model::SortOrderType> {
         self.sort_order.as_ref()
     }
     /// <p>The <code>nextToken</code> value returned from a previous call to <code>ListBuildBatches</code>. This specifies the next item to return. To return the beginning of the list, exclude this parameter.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListBuildBatchesInput {
+impl  std::fmt::Debug for ListBuildBatchesInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListBuildBatchesInput");
         formatter.field("filter", &self.filter);
@@ -11508,20 +8852,18 @@ impl std::fmt::Debug for ListBuildBatchesInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidateProjectCacheInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct InvalidateProjectCacheInput  {
     /// <p>The name of the CodeBuild build project that the cache is reset for.</p>
-    #[doc(hidden)]
-    pub project_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub project_name: std::option::Option<std::string::String>,
 }
 impl InvalidateProjectCacheInput {
     /// <p>The name of the CodeBuild build project that the cache is reset for.</p>
-    pub fn project_name(&self) -> std::option::Option<&str> {
+    pub fn project_name(&self) -> std::option::Option<& str> {
         self.project_name.as_deref()
     }
 }
-impl std::fmt::Debug for InvalidateProjectCacheInput {
+impl  std::fmt::Debug for InvalidateProjectCacheInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidateProjectCacheInput");
         formatter.field("project_name", &self.project_name);
@@ -11530,40 +8872,34 @@ impl std::fmt::Debug for InvalidateProjectCacheInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ImportSourceCredentialsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ImportSourceCredentialsInput  {
     /// <p> The Bitbucket username when the <code>authType</code> is BASIC_AUTH. This parameter is not valid for other types of source providers or connections. </p>
-    #[doc(hidden)]
-    pub username: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub username: std::option::Option<std::string::String>,
     /// <p> For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is the app password. </p>
-    #[doc(hidden)]
-    pub token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub token: std::option::Option<std::string::String>,
     /// <p> The source provider used for this project. </p>
-    #[doc(hidden)]
-    pub server_type: std::option::Option<crate::model::ServerType>,
+    #[doc(hidden)]pub server_type: std::option::Option<crate::model::ServerType>,
     /// <p> The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An OAUTH connection is not supported by the API and must be created using the CodeBuild console. </p>
-    #[doc(hidden)]
-    pub auth_type: std::option::Option<crate::model::AuthType>,
+    #[doc(hidden)]pub auth_type: std::option::Option<crate::model::AuthType>,
     /// <p> Set to <code>false</code> to prevent overwriting the repository source credentials. Set to <code>true</code> to overwrite the repository source credentials. The default value is <code>true</code>. </p>
-    #[doc(hidden)]
-    pub should_overwrite: std::option::Option<bool>,
+    #[doc(hidden)]pub should_overwrite: std::option::Option<bool>,
 }
 impl ImportSourceCredentialsInput {
     /// <p> The Bitbucket username when the <code>authType</code> is BASIC_AUTH. This parameter is not valid for other types of source providers or connections. </p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p> For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is the app password. </p>
-    pub fn token(&self) -> std::option::Option<&str> {
+    pub fn token(&self) -> std::option::Option<& str> {
         self.token.as_deref()
     }
     /// <p> The source provider used for this project. </p>
-    pub fn server_type(&self) -> std::option::Option<&crate::model::ServerType> {
+    pub fn server_type(&self) -> std::option::Option<& crate::model::ServerType> {
         self.server_type.as_ref()
     }
     /// <p> The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An OAUTH connection is not supported by the API and must be created using the CodeBuild console. </p>
-    pub fn auth_type(&self) -> std::option::Option<&crate::model::AuthType> {
+    pub fn auth_type(&self) -> std::option::Option<& crate::model::AuthType> {
         self.auth_type.as_ref()
     }
     /// <p> Set to <code>false</code> to prevent overwriting the repository source credentials. Set to <code>true</code> to overwrite the repository source credentials. The default value is <code>true</code>. </p>
@@ -11571,7 +8907,7 @@ impl ImportSourceCredentialsInput {
         self.should_overwrite
     }
 }
-impl std::fmt::Debug for ImportSourceCredentialsInput {
+impl  std::fmt::Debug for ImportSourceCredentialsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportSourceCredentialsInput");
         formatter.field("username", &self.username);
@@ -11584,20 +8920,18 @@ impl std::fmt::Debug for ImportSourceCredentialsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetResourcePolicyInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct GetResourcePolicyInput  {
     /// <p> The ARN of the resource that is associated with the resource policy. </p>
-    #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
 }
 impl GetResourcePolicyInput {
     /// <p> The ARN of the resource that is associated with the resource policy. </p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetResourcePolicyInput {
+impl  std::fmt::Debug for GetResourcePolicyInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResourcePolicyInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -11606,180 +8940,176 @@ impl std::fmt::Debug for GetResourcePolicyInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetReportGroupTrendInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct GetReportGroupTrendInput  {
     /// <p>The ARN of the report group that contains the reports to analyze.</p>
-    #[doc(hidden)]
-    pub report_group_arn: std::option::Option<std::string::String>,
-    /// <p>The number of reports to analyze. This operation always retrieves the most recent reports.</p>
+    #[doc(hidden)]pub report_group_arn: std::option::Option<std::string::String>,
+    /// <p>The number of reports to analyze. This operation always retrieves the most recent reports.</p> 
     /// <p>If this parameter is omitted, the most recent 100 reports are analyzed.</p>
-    #[doc(hidden)]
-    pub num_of_reports: std::option::Option<i32>,
-    /// <p>The test report value to accumulate. This must be one of the following values:</p>
-    /// <dl>
+    #[doc(hidden)]pub num_of_reports: std::option::Option<i32>,
+    /// <p>The test report value to accumulate. This must be one of the following values:</p> 
+    /// <dl> 
     /// <dt>
     /// Test reports:
-    /// </dt>
-    /// <dd>
-    /// <dl>
+    /// </dt> 
+    /// <dd> 
+    /// <dl> 
     /// <dt>
     /// DURATION
-    /// </dt>
-    /// <dd>
-    /// <p>Accumulate the test run times for the specified reports.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Accumulate the test run times for the specified reports.</p> 
+    /// </dd> 
     /// <dt>
     /// PASS_RATE
-    /// </dt>
-    /// <dd>
-    /// <p>Accumulate the percentage of tests that passed for the specified test reports.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Accumulate the percentage of tests that passed for the specified test reports.</p> 
+    /// </dd> 
     /// <dt>
     /// TOTAL
-    /// </dt>
-    /// <dd>
-    /// <p>Accumulate the total number of tests for the specified test reports.</p>
-    /// </dd>
-    /// </dl>
-    /// </dd>
-    /// </dl>
-    /// <dl>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Accumulate the total number of tests for the specified test reports.</p> 
+    /// </dd> 
+    /// </dl> 
+    /// </dd> 
+    /// </dl> 
+    /// <dl> 
     /// <dt>
     /// Code coverage reports:
-    /// </dt>
-    /// <dd>
-    /// <dl>
+    /// </dt> 
+    /// <dd> 
+    /// <dl> 
     /// <dt>
     /// BRANCH_COVERAGE
-    /// </dt>
-    /// <dd>
-    /// <p>Accumulate the branch coverage percentages for the specified test reports.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Accumulate the branch coverage percentages for the specified test reports.</p> 
+    /// </dd> 
     /// <dt>
     /// BRANCHES_COVERED
-    /// </dt>
-    /// <dd>
-    /// <p>Accumulate the branches covered values for the specified test reports.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Accumulate the branches covered values for the specified test reports.</p> 
+    /// </dd> 
     /// <dt>
     /// BRANCHES_MISSED
-    /// </dt>
-    /// <dd>
-    /// <p>Accumulate the branches missed values for the specified test reports.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Accumulate the branches missed values for the specified test reports.</p> 
+    /// </dd> 
     /// <dt>
     /// LINE_COVERAGE
-    /// </dt>
-    /// <dd>
-    /// <p>Accumulate the line coverage percentages for the specified test reports.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Accumulate the line coverage percentages for the specified test reports.</p> 
+    /// </dd> 
     /// <dt>
     /// LINES_COVERED
-    /// </dt>
-    /// <dd>
-    /// <p>Accumulate the lines covered values for the specified test reports.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Accumulate the lines covered values for the specified test reports.</p> 
+    /// </dd> 
     /// <dt>
     /// LINES_MISSED
-    /// </dt>
-    /// <dd>
-    /// <p>Accumulate the lines not covered values for the specified test reports.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Accumulate the lines not covered values for the specified test reports.</p> 
+    /// </dd> 
+    /// </dl> 
+    /// </dd> 
     /// </dl>
-    /// </dd>
-    /// </dl>
-    #[doc(hidden)]
-    pub trend_field: std::option::Option<crate::model::ReportGroupTrendFieldType>,
+    #[doc(hidden)]pub trend_field: std::option::Option<crate::model::ReportGroupTrendFieldType>,
 }
 impl GetReportGroupTrendInput {
     /// <p>The ARN of the report group that contains the reports to analyze.</p>
-    pub fn report_group_arn(&self) -> std::option::Option<&str> {
+    pub fn report_group_arn(&self) -> std::option::Option<& str> {
         self.report_group_arn.as_deref()
     }
-    /// <p>The number of reports to analyze. This operation always retrieves the most recent reports.</p>
+    /// <p>The number of reports to analyze. This operation always retrieves the most recent reports.</p> 
     /// <p>If this parameter is omitted, the most recent 100 reports are analyzed.</p>
     pub fn num_of_reports(&self) -> std::option::Option<i32> {
         self.num_of_reports
     }
-    /// <p>The test report value to accumulate. This must be one of the following values:</p>
-    /// <dl>
+    /// <p>The test report value to accumulate. This must be one of the following values:</p> 
+    /// <dl> 
     /// <dt>
     /// Test reports:
-    /// </dt>
-    /// <dd>
-    /// <dl>
+    /// </dt> 
+    /// <dd> 
+    /// <dl> 
     /// <dt>
     /// DURATION
-    /// </dt>
-    /// <dd>
-    /// <p>Accumulate the test run times for the specified reports.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Accumulate the test run times for the specified reports.</p> 
+    /// </dd> 
     /// <dt>
     /// PASS_RATE
-    /// </dt>
-    /// <dd>
-    /// <p>Accumulate the percentage of tests that passed for the specified test reports.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Accumulate the percentage of tests that passed for the specified test reports.</p> 
+    /// </dd> 
     /// <dt>
     /// TOTAL
-    /// </dt>
-    /// <dd>
-    /// <p>Accumulate the total number of tests for the specified test reports.</p>
-    /// </dd>
-    /// </dl>
-    /// </dd>
-    /// </dl>
-    /// <dl>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Accumulate the total number of tests for the specified test reports.</p> 
+    /// </dd> 
+    /// </dl> 
+    /// </dd> 
+    /// </dl> 
+    /// <dl> 
     /// <dt>
     /// Code coverage reports:
-    /// </dt>
-    /// <dd>
-    /// <dl>
+    /// </dt> 
+    /// <dd> 
+    /// <dl> 
     /// <dt>
     /// BRANCH_COVERAGE
-    /// </dt>
-    /// <dd>
-    /// <p>Accumulate the branch coverage percentages for the specified test reports.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Accumulate the branch coverage percentages for the specified test reports.</p> 
+    /// </dd> 
     /// <dt>
     /// BRANCHES_COVERED
-    /// </dt>
-    /// <dd>
-    /// <p>Accumulate the branches covered values for the specified test reports.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Accumulate the branches covered values for the specified test reports.</p> 
+    /// </dd> 
     /// <dt>
     /// BRANCHES_MISSED
-    /// </dt>
-    /// <dd>
-    /// <p>Accumulate the branches missed values for the specified test reports.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Accumulate the branches missed values for the specified test reports.</p> 
+    /// </dd> 
     /// <dt>
     /// LINE_COVERAGE
-    /// </dt>
-    /// <dd>
-    /// <p>Accumulate the line coverage percentages for the specified test reports.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Accumulate the line coverage percentages for the specified test reports.</p> 
+    /// </dd> 
     /// <dt>
     /// LINES_COVERED
-    /// </dt>
-    /// <dd>
-    /// <p>Accumulate the lines covered values for the specified test reports.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Accumulate the lines covered values for the specified test reports.</p> 
+    /// </dd> 
     /// <dt>
     /// LINES_MISSED
-    /// </dt>
-    /// <dd>
-    /// <p>Accumulate the lines not covered values for the specified test reports.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Accumulate the lines not covered values for the specified test reports.</p> 
+    /// </dd> 
+    /// </dl> 
+    /// </dd> 
     /// </dl>
-    /// </dd>
-    /// </dl>
-    pub fn trend_field(&self) -> std::option::Option<&crate::model::ReportGroupTrendFieldType> {
+    pub fn trend_field(&self) -> std::option::Option<& crate::model::ReportGroupTrendFieldType> {
         self.trend_field.as_ref()
     }
 }
-impl std::fmt::Debug for GetReportGroupTrendInput {
+impl  std::fmt::Debug for GetReportGroupTrendInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetReportGroupTrendInput");
         formatter.field("report_group_arn", &self.report_group_arn);
@@ -11790,29 +9120,24 @@ impl std::fmt::Debug for GetReportGroupTrendInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeTestCasesInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DescribeTestCasesInput  {
     /// <p> The ARN of the report for which test cases are returned. </p>
-    #[doc(hidden)]
-    pub report_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub report_arn: std::option::Option<std::string::String>,
     /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
     /// <p> The maximum number of paginated test cases returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>TestCase</code> objects. The default value is 100. </p>
-    #[doc(hidden)]
-    pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]pub max_results: std::option::Option<i32>,
     /// <p> A <code>TestCaseFilter</code> object used to filter the returned reports. </p>
-    #[doc(hidden)]
-    pub filter: std::option::Option<crate::model::TestCaseFilter>,
+    #[doc(hidden)]pub filter: std::option::Option<crate::model::TestCaseFilter>,
 }
 impl DescribeTestCasesInput {
     /// <p> The ARN of the report for which test cases are returned. </p>
-    pub fn report_arn(&self) -> std::option::Option<&str> {
+    pub fn report_arn(&self) -> std::option::Option<& str> {
         self.report_arn.as_deref()
     }
     /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> The maximum number of paginated test cases returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>TestCase</code> objects. The default value is 100. </p>
@@ -11820,11 +9145,11 @@ impl DescribeTestCasesInput {
         self.max_results
     }
     /// <p> A <code>TestCaseFilter</code> object used to filter the returned reports. </p>
-    pub fn filter(&self) -> std::option::Option<&crate::model::TestCaseFilter> {
+    pub fn filter(&self) -> std::option::Option<& crate::model::TestCaseFilter> {
         self.filter.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeTestCasesInput {
+impl  std::fmt::Debug for DescribeTestCasesInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTestCasesInput");
         formatter.field("report_arn", &self.report_arn);
@@ -11836,52 +9161,44 @@ impl std::fmt::Debug for DescribeTestCasesInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeCodeCoveragesInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DescribeCodeCoveragesInput  {
     /// <p> The ARN of the report for which test cases are returned. </p>
-    #[doc(hidden)]
-    pub report_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub report_arn: std::option::Option<std::string::String>,
     /// <p>The <code>nextToken</code> value returned from a previous call to <code>DescribeCodeCoverages</code>. This specifies the next item to return. To return the beginning of the list, exclude this parameter.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
-    #[doc(hidden)]
-    pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]pub max_results: std::option::Option<i32>,
     /// <p>Specifies if the results are sorted in ascending or descending order.</p>
-    #[doc(hidden)]
-    pub sort_order: std::option::Option<crate::model::SortOrderType>,
-    /// <p>Specifies how the results are sorted. Possible values are:</p>
-    /// <dl>
+    #[doc(hidden)]pub sort_order: std::option::Option<crate::model::SortOrderType>,
+    /// <p>Specifies how the results are sorted. Possible values are:</p> 
+    /// <dl> 
     /// <dt>
     /// FILE_PATH
-    /// </dt>
-    /// <dd>
-    /// <p>The results are sorted by file path.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The results are sorted by file path.</p> 
+    /// </dd> 
     /// <dt>
     /// LINE_COVERAGE_PERCENTAGE
-    /// </dt>
-    /// <dd>
-    /// <p>The results are sorted by the percentage of lines that are covered.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The results are sorted by the percentage of lines that are covered.</p> 
+    /// </dd> 
     /// </dl>
-    #[doc(hidden)]
-    pub sort_by: std::option::Option<crate::model::ReportCodeCoverageSortByType>,
+    #[doc(hidden)]pub sort_by: std::option::Option<crate::model::ReportCodeCoverageSortByType>,
     /// <p>The minimum line coverage percentage to report.</p>
-    #[doc(hidden)]
-    pub min_line_coverage_percentage: std::option::Option<f64>,
+    #[doc(hidden)]pub min_line_coverage_percentage: std::option::Option<f64>,
     /// <p>The maximum line coverage percentage to report.</p>
-    #[doc(hidden)]
-    pub max_line_coverage_percentage: std::option::Option<f64>,
+    #[doc(hidden)]pub max_line_coverage_percentage: std::option::Option<f64>,
 }
 impl DescribeCodeCoveragesInput {
     /// <p> The ARN of the report for which test cases are returned. </p>
-    pub fn report_arn(&self) -> std::option::Option<&str> {
+    pub fn report_arn(&self) -> std::option::Option<& str> {
         self.report_arn.as_deref()
     }
     /// <p>The <code>nextToken</code> value returned from a previous call to <code>DescribeCodeCoverages</code>. This specifies the next item to return. To return the beginning of the list, exclude this parameter.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return.</p>
@@ -11889,25 +9206,25 @@ impl DescribeCodeCoveragesInput {
         self.max_results
     }
     /// <p>Specifies if the results are sorted in ascending or descending order.</p>
-    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrderType> {
+    pub fn sort_order(&self) -> std::option::Option<& crate::model::SortOrderType> {
         self.sort_order.as_ref()
     }
-    /// <p>Specifies how the results are sorted. Possible values are:</p>
-    /// <dl>
+    /// <p>Specifies how the results are sorted. Possible values are:</p> 
+    /// <dl> 
     /// <dt>
     /// FILE_PATH
-    /// </dt>
-    /// <dd>
-    /// <p>The results are sorted by file path.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The results are sorted by file path.</p> 
+    /// </dd> 
     /// <dt>
     /// LINE_COVERAGE_PERCENTAGE
-    /// </dt>
-    /// <dd>
-    /// <p>The results are sorted by the percentage of lines that are covered.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The results are sorted by the percentage of lines that are covered.</p> 
+    /// </dd> 
     /// </dl>
-    pub fn sort_by(&self) -> std::option::Option<&crate::model::ReportCodeCoverageSortByType> {
+    pub fn sort_by(&self) -> std::option::Option<& crate::model::ReportCodeCoverageSortByType> {
         self.sort_by.as_ref()
     }
     /// <p>The minimum line coverage percentage to report.</p>
@@ -11919,7 +9236,7 @@ impl DescribeCodeCoveragesInput {
         self.max_line_coverage_percentage
     }
 }
-impl std::fmt::Debug for DescribeCodeCoveragesInput {
+impl  std::fmt::Debug for DescribeCodeCoveragesInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeCodeCoveragesInput");
         formatter.field("report_arn", &self.report_arn);
@@ -11927,33 +9244,25 @@ impl std::fmt::Debug for DescribeCodeCoveragesInput {
         formatter.field("max_results", &self.max_results);
         formatter.field("sort_order", &self.sort_order);
         formatter.field("sort_by", &self.sort_by);
-        formatter.field(
-            "min_line_coverage_percentage",
-            &self.min_line_coverage_percentage,
-        );
-        formatter.field(
-            "max_line_coverage_percentage",
-            &self.max_line_coverage_percentage,
-        );
+        formatter.field("min_line_coverage_percentage", &self.min_line_coverage_percentage);
+        formatter.field("max_line_coverage_percentage", &self.max_line_coverage_percentage);
         formatter.finish()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteWebhookInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DeleteWebhookInput  {
     /// <p>The name of the CodeBuild project.</p>
-    #[doc(hidden)]
-    pub project_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub project_name: std::option::Option<std::string::String>,
 }
 impl DeleteWebhookInput {
     /// <p>The name of the CodeBuild project.</p>
-    pub fn project_name(&self) -> std::option::Option<&str> {
+    pub fn project_name(&self) -> std::option::Option<& str> {
         self.project_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteWebhookInput {
+impl  std::fmt::Debug for DeleteWebhookInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteWebhookInput");
         formatter.field("project_name", &self.project_name);
@@ -11962,20 +9271,18 @@ impl std::fmt::Debug for DeleteWebhookInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteSourceCredentialsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DeleteSourceCredentialsInput  {
     /// <p> The Amazon Resource Name (ARN) of the token.</p>
-    #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub arn: std::option::Option<std::string::String>,
 }
 impl DeleteSourceCredentialsInput {
     /// <p> The Amazon Resource Name (ARN) of the token.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSourceCredentialsInput {
+impl  std::fmt::Debug for DeleteSourceCredentialsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteSourceCredentialsInput");
         formatter.field("arn", &self.arn);
@@ -11984,20 +9291,18 @@ impl std::fmt::Debug for DeleteSourceCredentialsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteResourcePolicyInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DeleteResourcePolicyInput  {
     /// <p> The ARN of the resource that is associated with the resource policy. </p>
-    #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
 }
 impl DeleteResourcePolicyInput {
     /// <p> The ARN of the resource that is associated with the resource policy. </p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteResourcePolicyInput {
+impl  std::fmt::Debug for DeleteResourcePolicyInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteResourcePolicyInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -12006,29 +9311,26 @@ impl std::fmt::Debug for DeleteResourcePolicyInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteReportGroupInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DeleteReportGroupInput  {
     /// <p>The ARN of the report group to delete. </p>
-    #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
-    /// <p>If <code>true</code>, deletes any reports that belong to a report group before deleting the report group. </p>
+    #[doc(hidden)]pub arn: std::option::Option<std::string::String>,
+    /// <p>If <code>true</code>, deletes any reports that belong to a report group before deleting the report group. </p> 
     /// <p>If <code>false</code>, you must delete any reports in the report group. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListReportsForReportGroup.html">ListReportsForReportGroup</a> to get the reports in a report group. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteReport.html">DeleteReport</a> to delete the reports. If you call <code>DeleteReportGroup</code> for a report group that contains one or more reports, an exception is thrown. </p>
-    #[doc(hidden)]
-    pub delete_reports: bool,
+    #[doc(hidden)]pub delete_reports: bool,
 }
 impl DeleteReportGroupInput {
     /// <p>The ARN of the report group to delete. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
-    /// <p>If <code>true</code>, deletes any reports that belong to a report group before deleting the report group. </p>
+    /// <p>If <code>true</code>, deletes any reports that belong to a report group before deleting the report group. </p> 
     /// <p>If <code>false</code>, you must delete any reports in the report group. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListReportsForReportGroup.html">ListReportsForReportGroup</a> to get the reports in a report group. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteReport.html">DeleteReport</a> to delete the reports. If you call <code>DeleteReportGroup</code> for a report group that contains one or more reports, an exception is thrown. </p>
     pub fn delete_reports(&self) -> bool {
         self.delete_reports
     }
 }
-impl std::fmt::Debug for DeleteReportGroupInput {
+impl  std::fmt::Debug for DeleteReportGroupInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteReportGroupInput");
         formatter.field("arn", &self.arn);
@@ -12038,20 +9340,18 @@ impl std::fmt::Debug for DeleteReportGroupInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteReportInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DeleteReportInput  {
     /// <p> The ARN of the report to delete. </p>
-    #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub arn: std::option::Option<std::string::String>,
 }
 impl DeleteReportInput {
     /// <p> The ARN of the report to delete. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteReportInput {
+impl  std::fmt::Debug for DeleteReportInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteReportInput");
         formatter.field("arn", &self.arn);
@@ -12060,20 +9360,18 @@ impl std::fmt::Debug for DeleteReportInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteProjectInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DeleteProjectInput  {
     /// <p>The name of the build project.</p>
-    #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub name: std::option::Option<std::string::String>,
 }
 impl DeleteProjectInput {
     /// <p>The name of the build project.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteProjectInput {
+impl  std::fmt::Debug for DeleteProjectInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteProjectInput");
         formatter.field("name", &self.name);
@@ -12082,20 +9380,18 @@ impl std::fmt::Debug for DeleteProjectInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteBuildBatchInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DeleteBuildBatchInput  {
     /// <p>The identifier of the batch build to delete.</p>
-    #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub id: std::option::Option<std::string::String>,
 }
 impl DeleteBuildBatchInput {
     /// <p>The identifier of the batch build to delete.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBuildBatchInput {
+impl  std::fmt::Debug for DeleteBuildBatchInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteBuildBatchInput");
         formatter.field("id", &self.id);
@@ -12104,50 +9400,42 @@ impl std::fmt::Debug for DeleteBuildBatchInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateWebhookInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CreateWebhookInput  {
     /// <p>The name of the CodeBuild project.</p>
-    #[doc(hidden)]
-    pub project_name: std::option::Option<std::string::String>,
-    /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
-    /// <p>It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p>
+    #[doc(hidden)]pub project_name: std::option::Option<std::string::String>,
+    /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note> 
+    /// <p>It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p> 
     /// </note>
-    #[doc(hidden)]
-    pub branch_filter: std::option::Option<std::string::String>,
-    /// <p>An array of arrays of <code>WebhookFilter</code> objects used to determine which webhooks are triggered. At least one <code>WebhookFilter</code> in the array must specify <code>EVENT</code> as its <code>type</code>. </p>
+    #[doc(hidden)]pub branch_filter: std::option::Option<std::string::String>,
+    /// <p>An array of arrays of <code>WebhookFilter</code> objects used to determine which webhooks are triggered. At least one <code>WebhookFilter</code> in the array must specify <code>EVENT</code> as its <code>type</code>. </p> 
     /// <p>For a build to be triggered, at least one filter group in the <code>filterGroups</code> array must pass. For a filter group to pass, each of its filters must pass. </p>
-    #[doc(hidden)]
-    pub filter_groups:
-        std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::WebhookFilter>>>,
+    #[doc(hidden)]pub filter_groups: std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::WebhookFilter>>>,
     /// <p>Specifies the type of build this webhook will trigger.</p>
-    #[doc(hidden)]
-    pub build_type: std::option::Option<crate::model::WebhookBuildType>,
+    #[doc(hidden)]pub build_type: std::option::Option<crate::model::WebhookBuildType>,
 }
 impl CreateWebhookInput {
     /// <p>The name of the CodeBuild project.</p>
-    pub fn project_name(&self) -> std::option::Option<&str> {
+    pub fn project_name(&self) -> std::option::Option<& str> {
         self.project_name.as_deref()
     }
-    /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
-    /// <p>It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p>
+    /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note> 
+    /// <p>It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p> 
     /// </note>
-    pub fn branch_filter(&self) -> std::option::Option<&str> {
+    pub fn branch_filter(&self) -> std::option::Option<& str> {
         self.branch_filter.as_deref()
     }
-    /// <p>An array of arrays of <code>WebhookFilter</code> objects used to determine which webhooks are triggered. At least one <code>WebhookFilter</code> in the array must specify <code>EVENT</code> as its <code>type</code>. </p>
+    /// <p>An array of arrays of <code>WebhookFilter</code> objects used to determine which webhooks are triggered. At least one <code>WebhookFilter</code> in the array must specify <code>EVENT</code> as its <code>type</code>. </p> 
     /// <p>For a build to be triggered, at least one filter group in the <code>filterGroups</code> array must pass. For a filter group to pass, each of its filters must pass. </p>
-    pub fn filter_groups(
-        &self,
-    ) -> std::option::Option<&[std::vec::Vec<crate::model::WebhookFilter>]> {
+    pub fn filter_groups(&self) -> std::option::Option<& [std::vec::Vec<crate::model::WebhookFilter>]> {
         self.filter_groups.as_deref()
     }
     /// <p>Specifies the type of build this webhook will trigger.</p>
-    pub fn build_type(&self) -> std::option::Option<&crate::model::WebhookBuildType> {
+    pub fn build_type(&self) -> std::option::Option<& crate::model::WebhookBuildType> {
         self.build_type.as_ref()
     }
 }
-impl std::fmt::Debug for CreateWebhookInput {
+impl  std::fmt::Debug for CreateWebhookInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateWebhookInput");
         formatter.field("project_name", &self.project_name);
@@ -12159,43 +9447,38 @@ impl std::fmt::Debug for CreateWebhookInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateReportGroupInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CreateReportGroupInput  {
     /// <p> The name of the report group. </p>
-    #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub name: std::option::Option<std::string::String>,
     /// <p> The type of report group. </p>
-    #[doc(hidden)]
-    pub r#type: std::option::Option<crate::model::ReportType>,
+    #[doc(hidden)]pub r#type: std::option::Option<crate::model::ReportType>,
     /// <p> A <code>ReportExportConfig</code> object that contains information about where the report group test results are exported. </p>
-    #[doc(hidden)]
-    pub export_config: std::option::Option<crate::model::ReportExportConfig>,
-    /// <p> A list of tag key and value pairs associated with this report group. </p>
+    #[doc(hidden)]pub export_config: std::option::Option<crate::model::ReportExportConfig>,
+    /// <p> A list of tag key and value pairs associated with this report group. </p> 
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
-    #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateReportGroupInput {
     /// <p> The name of the report group. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p> The type of report group. </p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ReportType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ReportType> {
         self.r#type.as_ref()
     }
     /// <p> A <code>ReportExportConfig</code> object that contains information about where the report group test results are exported. </p>
-    pub fn export_config(&self) -> std::option::Option<&crate::model::ReportExportConfig> {
+    pub fn export_config(&self) -> std::option::Option<& crate::model::ReportExportConfig> {
         self.export_config.as_ref()
     }
-    /// <p> A list of tag key and value pairs associated with this report group. </p>
+    /// <p> A list of tag key and value pairs associated with this report group. </p> 
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateReportGroupInput {
+impl  std::fmt::Debug for CreateReportGroupInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateReportGroupInput");
         formatter.field("name", &self.name);
@@ -12207,142 +9490,116 @@ impl std::fmt::Debug for CreateReportGroupInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateProjectInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CreateProjectInput  {
     /// <p>The name of the build project.</p>
-    #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub name: std::option::Option<std::string::String>,
     /// <p>A description that makes the build project easy to identify.</p>
-    #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub description: std::option::Option<std::string::String>,
     /// <p>Information about the build input source code for the build project.</p>
-    #[doc(hidden)]
-    pub source: std::option::Option<crate::model::ProjectSource>,
+    #[doc(hidden)]pub source: std::option::Option<crate::model::ProjectSource>,
     /// <p>An array of <code>ProjectSource</code> objects. </p>
-    #[doc(hidden)]
-    pub secondary_sources: std::option::Option<std::vec::Vec<crate::model::ProjectSource>>,
-    /// <p>A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of: </p>
-    /// <ul>
-    /// <li> <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p> </li>
-    /// <li> <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
-    /// <li> <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
-    /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li>
-    /// </ul>
-    /// <p>If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level). </p>
+    #[doc(hidden)]pub secondary_sources: std::option::Option<std::vec::Vec<crate::model::ProjectSource>>,
+    /// <p>A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of: </p> 
+    /// <ul> 
+    /// <li> <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p> </li> 
+    /// <li> <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li> 
+    /// <li> <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li> 
+    /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li> 
+    /// </ul> 
+    /// <p>If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level). </p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
-    #[doc(hidden)]
-    pub source_version: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub source_version: std::option::Option<std::string::String>,
     /// <p>An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at the build level, then they take precedence over these <code>secondarySourceVersions</code> (at the project level). </p>
-    #[doc(hidden)]
-    pub secondary_source_versions:
-        std::option::Option<std::vec::Vec<crate::model::ProjectSourceVersion>>,
+    #[doc(hidden)]pub secondary_source_versions: std::option::Option<std::vec::Vec<crate::model::ProjectSourceVersion>>,
     /// <p>Information about the build output artifacts for the build project.</p>
-    #[doc(hidden)]
-    pub artifacts: std::option::Option<crate::model::ProjectArtifacts>,
+    #[doc(hidden)]pub artifacts: std::option::Option<crate::model::ProjectArtifacts>,
     /// <p>An array of <code>ProjectArtifacts</code> objects. </p>
-    #[doc(hidden)]
-    pub secondary_artifacts: std::option::Option<std::vec::Vec<crate::model::ProjectArtifacts>>,
+    #[doc(hidden)]pub secondary_artifacts: std::option::Option<std::vec::Vec<crate::model::ProjectArtifacts>>,
     /// <p>Stores recently used information so that it can be quickly accessed at a later time.</p>
-    #[doc(hidden)]
-    pub cache: std::option::Option<crate::model::ProjectCache>,
+    #[doc(hidden)]pub cache: std::option::Option<crate::model::ProjectCache>,
     /// <p>Information about the build environment for the build project.</p>
-    #[doc(hidden)]
-    pub environment: std::option::Option<crate::model::ProjectEnvironment>,
+    #[doc(hidden)]pub environment: std::option::Option<crate::model::ProjectEnvironment>,
     /// <p>The ARN of the IAM role that enables CodeBuild to interact with dependent Amazon Web Services services on behalf of the Amazon Web Services account.</p>
-    #[doc(hidden)]
-    pub service_role: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub service_role: std::option::Option<std::string::String>,
     /// <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before it times out any build that has not been marked as completed. The default is 60 minutes.</p>
-    #[doc(hidden)]
-    pub timeout_in_minutes: std::option::Option<i32>,
+    #[doc(hidden)]pub timeout_in_minutes: std::option::Option<i32>,
     /// <p>The number of minutes a build is allowed to be queued before it times out. </p>
-    #[doc(hidden)]
-    pub queued_timeout_in_minutes: std::option::Option<i32>,
-    /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note>
-    /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
-    /// </note>
+    #[doc(hidden)]pub queued_timeout_in_minutes: std::option::Option<i32>,
+    /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note> 
+    /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p> 
+    /// </note> 
     /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
     /// <alias-name></alias-name></code>). </p>
-    #[doc(hidden)]
-    pub encryption_key: std::option::Option<std::string::String>,
-    /// <p>A list of tag key and value pairs associated with this build project.</p>
+    #[doc(hidden)]pub encryption_key: std::option::Option<std::string::String>,
+    /// <p>A list of tag key and value pairs associated with this build project.</p> 
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.</p>
-    #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
-    #[doc(hidden)]
-    pub vpc_config: std::option::Option<crate::model::VpcConfig>,
+    #[doc(hidden)]pub vpc_config: std::option::Option<crate::model::VpcConfig>,
     /// <p>Set this to true to generate a publicly accessible URL for your project's build badge.</p>
-    #[doc(hidden)]
-    pub badge_enabled: std::option::Option<bool>,
+    #[doc(hidden)]pub badge_enabled: std::option::Option<bool>,
     /// <p>Information about logs for the build project. These can be logs in CloudWatch Logs, logs uploaded to a specified S3 bucket, or both. </p>
-    #[doc(hidden)]
-    pub logs_config: std::option::Option<crate::model::LogsConfig>,
+    #[doc(hidden)]pub logs_config: std::option::Option<crate::model::LogsConfig>,
     /// <p> An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System. </p>
-    #[doc(hidden)]
-    pub file_system_locations:
-        std::option::Option<std::vec::Vec<crate::model::ProjectFileSystemLocation>>,
+    #[doc(hidden)]pub file_system_locations: std::option::Option<std::vec::Vec<crate::model::ProjectFileSystemLocation>>,
     /// <p>A <code>ProjectBuildBatchConfig</code> object that defines the batch build options for the project.</p>
-    #[doc(hidden)]
-    pub build_batch_config: std::option::Option<crate::model::ProjectBuildBatchConfig>,
-    /// <p>The maximum number of concurrent builds that are allowed for this project.</p>
+    #[doc(hidden)]pub build_batch_config: std::option::Option<crate::model::ProjectBuildBatchConfig>,
+    /// <p>The maximum number of concurrent builds that are allowed for this project.</p> 
     /// <p>New builds are only started if the current number of builds is less than or equal to this limit. If the current build count meets this limit, new builds are throttled and are not run.</p>
-    #[doc(hidden)]
-    pub concurrent_build_limit: std::option::Option<i32>,
+    #[doc(hidden)]pub concurrent_build_limit: std::option::Option<i32>,
 }
 impl CreateProjectInput {
     /// <p>The name of the build project.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description that makes the build project easy to identify.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Information about the build input source code for the build project.</p>
-    pub fn source(&self) -> std::option::Option<&crate::model::ProjectSource> {
+    pub fn source(&self) -> std::option::Option<& crate::model::ProjectSource> {
         self.source.as_ref()
     }
     /// <p>An array of <code>ProjectSource</code> objects. </p>
-    pub fn secondary_sources(&self) -> std::option::Option<&[crate::model::ProjectSource]> {
+    pub fn secondary_sources(&self) -> std::option::Option<& [crate::model::ProjectSource]> {
         self.secondary_sources.as_deref()
     }
-    /// <p>A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of: </p>
-    /// <ul>
-    /// <li> <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p> </li>
-    /// <li> <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
-    /// <li> <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
-    /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li>
-    /// </ul>
-    /// <p>If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level). </p>
+    /// <p>A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of: </p> 
+    /// <ul> 
+    /// <li> <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p> </li> 
+    /// <li> <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li> 
+    /// <li> <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li> 
+    /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li> 
+    /// </ul> 
+    /// <p>If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level). </p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
-    pub fn source_version(&self) -> std::option::Option<&str> {
+    pub fn source_version(&self) -> std::option::Option<& str> {
         self.source_version.as_deref()
     }
     /// <p>An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at the build level, then they take precedence over these <code>secondarySourceVersions</code> (at the project level). </p>
-    pub fn secondary_source_versions(
-        &self,
-    ) -> std::option::Option<&[crate::model::ProjectSourceVersion]> {
+    pub fn secondary_source_versions(&self) -> std::option::Option<& [crate::model::ProjectSourceVersion]> {
         self.secondary_source_versions.as_deref()
     }
     /// <p>Information about the build output artifacts for the build project.</p>
-    pub fn artifacts(&self) -> std::option::Option<&crate::model::ProjectArtifacts> {
+    pub fn artifacts(&self) -> std::option::Option<& crate::model::ProjectArtifacts> {
         self.artifacts.as_ref()
     }
     /// <p>An array of <code>ProjectArtifacts</code> objects. </p>
-    pub fn secondary_artifacts(&self) -> std::option::Option<&[crate::model::ProjectArtifacts]> {
+    pub fn secondary_artifacts(&self) -> std::option::Option<& [crate::model::ProjectArtifacts]> {
         self.secondary_artifacts.as_deref()
     }
     /// <p>Stores recently used information so that it can be quickly accessed at a later time.</p>
-    pub fn cache(&self) -> std::option::Option<&crate::model::ProjectCache> {
+    pub fn cache(&self) -> std::option::Option<& crate::model::ProjectCache> {
         self.cache.as_ref()
     }
     /// <p>Information about the build environment for the build project.</p>
-    pub fn environment(&self) -> std::option::Option<&crate::model::ProjectEnvironment> {
+    pub fn environment(&self) -> std::option::Option<& crate::model::ProjectEnvironment> {
         self.environment.as_ref()
     }
     /// <p>The ARN of the IAM role that enables CodeBuild to interact with dependent Amazon Web Services services on behalf of the Amazon Web Services account.</p>
-    pub fn service_role(&self) -> std::option::Option<&str> {
+    pub fn service_role(&self) -> std::option::Option<& str> {
         self.service_role.as_deref()
     }
     /// <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before it times out any build that has not been marked as completed. The default is 60 minutes.</p>
@@ -12353,21 +9610,21 @@ impl CreateProjectInput {
     pub fn queued_timeout_in_minutes(&self) -> std::option::Option<i32> {
         self.queued_timeout_in_minutes
     }
-    /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note>
-    /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
-    /// </note>
+    /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note> 
+    /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p> 
+    /// </note> 
     /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
     /// <alias-name></alias-name></code>). </p>
-    pub fn encryption_key(&self) -> std::option::Option<&str> {
+    pub fn encryption_key(&self) -> std::option::Option<& str> {
         self.encryption_key.as_deref()
     }
-    /// <p>A list of tag key and value pairs associated with this build project.</p>
+    /// <p>A list of tag key and value pairs associated with this build project.</p> 
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
-    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+    pub fn vpc_config(&self) -> std::option::Option<& crate::model::VpcConfig> {
         self.vpc_config.as_ref()
     }
     /// <p>Set this to true to generate a publicly accessible URL for your project's build badge.</p>
@@ -12375,28 +9632,24 @@ impl CreateProjectInput {
         self.badge_enabled
     }
     /// <p>Information about logs for the build project. These can be logs in CloudWatch Logs, logs uploaded to a specified S3 bucket, or both. </p>
-    pub fn logs_config(&self) -> std::option::Option<&crate::model::LogsConfig> {
+    pub fn logs_config(&self) -> std::option::Option<& crate::model::LogsConfig> {
         self.logs_config.as_ref()
     }
     /// <p> An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System. </p>
-    pub fn file_system_locations(
-        &self,
-    ) -> std::option::Option<&[crate::model::ProjectFileSystemLocation]> {
+    pub fn file_system_locations(&self) -> std::option::Option<& [crate::model::ProjectFileSystemLocation]> {
         self.file_system_locations.as_deref()
     }
     /// <p>A <code>ProjectBuildBatchConfig</code> object that defines the batch build options for the project.</p>
-    pub fn build_batch_config(
-        &self,
-    ) -> std::option::Option<&crate::model::ProjectBuildBatchConfig> {
+    pub fn build_batch_config(&self) -> std::option::Option<& crate::model::ProjectBuildBatchConfig> {
         self.build_batch_config.as_ref()
     }
-    /// <p>The maximum number of concurrent builds that are allowed for this project.</p>
+    /// <p>The maximum number of concurrent builds that are allowed for this project.</p> 
     /// <p>New builds are only started if the current number of builds is less than or equal to this limit. If the current build count meets this limit, new builds are throttled and are not run.</p>
     pub fn concurrent_build_limit(&self) -> std::option::Option<i32> {
         self.concurrent_build_limit
     }
 }
-impl std::fmt::Debug for CreateProjectInput {
+impl  std::fmt::Debug for CreateProjectInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateProjectInput");
         formatter.field("name", &self.name);
@@ -12425,20 +9678,18 @@ impl std::fmt::Debug for CreateProjectInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct BatchGetReportsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct BatchGetReportsInput  {
     /// <p> An array of ARNs that identify the <code>Report</code> objects to return. </p>
-    #[doc(hidden)]
-    pub report_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub report_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetReportsInput {
     /// <p> An array of ARNs that identify the <code>Report</code> objects to return. </p>
-    pub fn report_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn report_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.report_arns.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetReportsInput {
+impl  std::fmt::Debug for BatchGetReportsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetReportsInput");
         formatter.field("report_arns", &self.report_arns);
@@ -12447,20 +9698,18 @@ impl std::fmt::Debug for BatchGetReportsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct BatchGetReportGroupsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct BatchGetReportGroupsInput  {
     /// <p> An array of report group ARNs that identify the report groups to return. </p>
-    #[doc(hidden)]
-    pub report_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub report_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetReportGroupsInput {
     /// <p> An array of report group ARNs that identify the report groups to return. </p>
-    pub fn report_group_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn report_group_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.report_group_arns.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetReportGroupsInput {
+impl  std::fmt::Debug for BatchGetReportGroupsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetReportGroupsInput");
         formatter.field("report_group_arns", &self.report_group_arns);
@@ -12469,20 +9718,18 @@ impl std::fmt::Debug for BatchGetReportGroupsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct BatchGetProjectsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct BatchGetProjectsInput  {
     /// <p>The names or ARNs of the build projects. To get information about a project shared with your Amazon Web Services account, its ARN must be specified. You cannot specify a shared project using its name.</p>
-    #[doc(hidden)]
-    pub names: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetProjectsInput {
     /// <p>The names or ARNs of the build projects. To get information about a project shared with your Amazon Web Services account, its ARN must be specified. You cannot specify a shared project using its name.</p>
-    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn names(&self) -> std::option::Option<& [std::string::String]> {
         self.names.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetProjectsInput {
+impl  std::fmt::Debug for BatchGetProjectsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetProjectsInput");
         formatter.field("names", &self.names);
@@ -12491,20 +9738,18 @@ impl std::fmt::Debug for BatchGetProjectsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct BatchGetBuildsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct BatchGetBuildsInput  {
     /// <p>The IDs of the builds.</p>
-    #[doc(hidden)]
-    pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetBuildsInput {
     /// <p>The IDs of the builds.</p>
-    pub fn ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ids(&self) -> std::option::Option<& [std::string::String]> {
         self.ids.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetBuildsInput {
+impl  std::fmt::Debug for BatchGetBuildsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetBuildsInput");
         formatter.field("ids", &self.ids);
@@ -12513,20 +9758,18 @@ impl std::fmt::Debug for BatchGetBuildsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct BatchGetBuildBatchesInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct BatchGetBuildBatchesInput  {
     /// <p>An array that contains the batch build identifiers to retrieve.</p>
-    #[doc(hidden)]
-    pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetBuildBatchesInput {
     /// <p>An array that contains the batch build identifiers to retrieve.</p>
-    pub fn ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ids(&self) -> std::option::Option<& [std::string::String]> {
         self.ids.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetBuildBatchesInput {
+impl  std::fmt::Debug for BatchGetBuildBatchesInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetBuildBatchesInput");
         formatter.field("ids", &self.ids);
@@ -12535,23 +9778,22 @@ impl std::fmt::Debug for BatchGetBuildBatchesInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct BatchDeleteBuildsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct BatchDeleteBuildsInput  {
     /// <p>The IDs of the builds to delete.</p>
-    #[doc(hidden)]
-    pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchDeleteBuildsInput {
     /// <p>The IDs of the builds to delete.</p>
-    pub fn ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ids(&self) -> std::option::Option<& [std::string::String]> {
         self.ids.as_deref()
     }
 }
-impl std::fmt::Debug for BatchDeleteBuildsInput {
+impl  std::fmt::Debug for BatchDeleteBuildsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDeleteBuildsInput");
         formatter.field("ids", &self.ids);
         formatter.finish()
     }
 }
+

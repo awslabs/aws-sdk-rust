@@ -3,9 +3,9 @@ use std::fmt::Write;
 
 /// See [`CancelTaskExecutionInput`](crate::input::CancelTaskExecutionInput).
 pub mod cancel_task_execution_input {
-
+    
     /// A builder for [`CancelTaskExecutionInput`](crate::input::CancelTaskExecutionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) task_execution_arn: std::option::Option<std::string::String>,
     }
@@ -16,128 +16,82 @@ pub mod cancel_task_execution_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the task execution to cancel.</p>
-        pub fn set_task_execution_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.task_execution_arn = input;
-            self
+        pub fn set_task_execution_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.task_execution_arn = input; self
         }
         /// Consumes the builder and constructs a [`CancelTaskExecutionInput`](crate::input::CancelTaskExecutionInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CancelTaskExecutionInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::CancelTaskExecutionInput {
-                task_execution_arn: self.task_execution_arn,
-            })
+        pub fn build(self) -> Result<crate::input::CancelTaskExecutionInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CancelTaskExecutionInput {
+                    task_execution_arn: self.task_execution_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CancelTaskExecutionInput {
     /// Consumes the builder and constructs an Operation<[`CancelTaskExecution`](crate::operation::CancelTaskExecution)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CancelTaskExecution,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CancelTaskExecution, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CancelTaskExecutionInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::CancelTaskExecutionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CancelTaskExecutionInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CancelTaskExecutionInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.CancelTaskExecution",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.CancelTaskExecution"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_cancel_task_execution(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_cancel_task_execution(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CancelTaskExecution::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CancelTaskExecution",
-            "datasync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CancelTaskExecution::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CancelTaskExecution", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -149,9 +103,9 @@ impl CancelTaskExecutionInput {
 
 /// See [`CreateAgentInput`](crate::input::CreateAgentInput).
 pub mod create_agent_input {
-
+    
     /// A builder for [`CreateAgentInput`](crate::input::CreateAgentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) activation_key: std::option::Option<std::string::String>,
         pub(crate) agent_name: std::option::Option<std::string::String>,
@@ -161,22 +115,18 @@ pub mod create_agent_input {
         pub(crate) security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>Your agent activation key. You can get the activation key either by sending an HTTP GET request with redirects that enable you to get the agent IP address (port 80). Alternatively, you can get it from the DataSync console.</p>
-        /// <p>The redirect URL returned in the response provides you the activation key for your agent in the query string parameter <code>activationKey</code>. It might also include other activation-related parameters; however, these are merely defaults. The arguments you pass to this API call determine the actual configuration of your agent.</p>
+        /// <p>Your agent activation key. You can get the activation key either by sending an HTTP GET request with redirects that enable you to get the agent IP address (port 80). Alternatively, you can get it from the DataSync console.</p> 
+        /// <p>The redirect URL returned in the response provides you the activation key for your agent in the query string parameter <code>activationKey</code>. It might also include other activation-related parameters; however, these are merely defaults. The arguments you pass to this API call determine the actual configuration of your agent.</p> 
         /// <p>For more information, see Activating an Agent in the <i>DataSync User Guide.</i> </p>
         pub fn activation_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.activation_key = Some(input.into());
             self
         }
-        /// <p>Your agent activation key. You can get the activation key either by sending an HTTP GET request with redirects that enable you to get the agent IP address (port 80). Alternatively, you can get it from the DataSync console.</p>
-        /// <p>The redirect URL returned in the response provides you the activation key for your agent in the query string parameter <code>activationKey</code>. It might also include other activation-related parameters; however, these are merely defaults. The arguments you pass to this API call determine the actual configuration of your agent.</p>
+        /// <p>Your agent activation key. You can get the activation key either by sending an HTTP GET request with redirects that enable you to get the agent IP address (port 80). Alternatively, you can get it from the DataSync console.</p> 
+        /// <p>The redirect URL returned in the response provides you the activation key for your agent in the query string parameter <code>activationKey</code>. It might also include other activation-related parameters; however, these are merely defaults. The arguments you pass to this API call determine the actual configuration of your agent.</p> 
         /// <p>For more information, see Activating an Agent in the <i>DataSync User Guide.</i> </p>
-        pub fn set_activation_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.activation_key = input;
-            self
+        pub fn set_activation_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.activation_key = input; self
         }
         /// <p>The name you configured for your agent. This value is a text reference that is used to identify the agent in the console.</p>
         pub fn agent_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -185,46 +135,37 @@ pub mod create_agent_input {
         }
         /// <p>The name you configured for your agent. This value is a text reference that is used to identify the agent in the console.</p>
         pub fn set_agent_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.agent_name = input;
-            self
+            self.agent_name = input; self
         }
         /// Appends an item to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The key-value pair that represents the tag that you want to associate with the agent. The value can be an empty string. This value helps you manage, filter, and search for your agents.</p> <note>
-        /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. </p>
+        /// <p>The key-value pair that represents the tag that you want to associate with the agent. The value can be an empty string. This value helps you manage, filter, and search for your agents.</p> <note> 
+        /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. </p> 
         /// </note>
         pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
-        /// <p>The key-value pair that represents the tag that you want to associate with the agent. The value can be an empty string. This value helps you manage, filter, and search for your agents.</p> <note>
-        /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. </p>
+        /// <p>The key-value pair that represents the tag that you want to associate with the agent. The value can be an empty string. This value helps you manage, filter, and search for your agents.</p> <note> 
+        /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. </p> 
         /// </note>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>) -> Self {
+            self.tags = input; self
         }
-        /// <p>The ID of the VPC (virtual private cloud) endpoint that the agent has access to. This is the client-side VPC endpoint, also called a PrivateLink. If you don't have a PrivateLink VPC endpoint, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service">Creating a VPC Endpoint Service Configuration</a> in the Amazon VPC User Guide.</p>
+        /// <p>The ID of the VPC (virtual private cloud) endpoint that the agent has access to. This is the client-side VPC endpoint, also called a PrivateLink. If you don't have a PrivateLink VPC endpoint, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service">Creating a VPC Endpoint Service Configuration</a> in the Amazon VPC User Guide.</p> 
         /// <p>VPC endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.</p>
         pub fn vpc_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.vpc_endpoint_id = Some(input.into());
             self
         }
-        /// <p>The ID of the VPC (virtual private cloud) endpoint that the agent has access to. This is the client-side VPC endpoint, also called a PrivateLink. If you don't have a PrivateLink VPC endpoint, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service">Creating a VPC Endpoint Service Configuration</a> in the Amazon VPC User Guide.</p>
+        /// <p>The ID of the VPC (virtual private cloud) endpoint that the agent has access to. This is the client-side VPC endpoint, also called a PrivateLink. If you don't have a PrivateLink VPC endpoint, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service">Creating a VPC Endpoint Service Configuration</a> in the Amazon VPC User Guide.</p> 
         /// <p>VPC endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.</p>
-        pub fn set_vpc_endpoint_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vpc_endpoint_id = input;
-            self
+        pub fn set_vpc_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpc_endpoint_id = input; self
         }
         /// Appends an item to `subnet_arns`.
         ///
@@ -233,17 +174,13 @@ pub mod create_agent_input {
         /// <p>The Amazon Resource Names (ARNs) of the subnets in which DataSync will create elastic network interfaces for each data transfer task. The agent that runs a task must be private. When you start a task that is associated with an agent created in a VPC, or one that has access to an IP address in a VPC, then the task is also private. In this case, DataSync creates four network interfaces for each task in your subnet. For a data transfer to work, the agent must be able to route to all these four network interfaces.</p>
         pub fn subnet_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_arns.unwrap_or_default();
-            v.push(input.into());
-            self.subnet_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.subnet_arns = Some(v);
+                            self
         }
         /// <p>The Amazon Resource Names (ARNs) of the subnets in which DataSync will create elastic network interfaces for each data transfer task. The agent that runs a task must be private. When you start a task that is associated with an agent created in a VPC, or one that has access to an IP address in a VPC, then the task is also private. In this case, DataSync creates four network interfaces for each task in your subnet. For a data transfer to work, the agent must be able to route to all these four network interfaces.</p>
-        pub fn set_subnet_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnet_arns = input;
-            self
+        pub fn set_subnet_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.subnet_arns = input; self
         }
         /// Appends an item to `security_group_arns`.
         ///
@@ -252,138 +189,97 @@ pub mod create_agent_input {
         /// <p>The ARNs of the security groups used to protect your data transfer task subnets. See <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns">SecurityGroupArns</a>.</p>
         pub fn security_group_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_arns.unwrap_or_default();
-            v.push(input.into());
-            self.security_group_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.security_group_arns = Some(v);
+                            self
         }
         /// <p>The ARNs of the security groups used to protect your data transfer task subnets. See <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns">SecurityGroupArns</a>.</p>
-        pub fn set_security_group_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_group_arns = input;
-            self
+        pub fn set_security_group_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.security_group_arns = input; self
         }
         /// Consumes the builder and constructs a [`CreateAgentInput`](crate::input::CreateAgentInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateAgentInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::CreateAgentInput {
-                activation_key: self.activation_key,
-                agent_name: self.agent_name,
-                tags: self.tags,
-                vpc_endpoint_id: self.vpc_endpoint_id,
-                subnet_arns: self.subnet_arns,
-                security_group_arns: self.security_group_arns,
-            })
+        pub fn build(self) -> Result<crate::input::CreateAgentInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CreateAgentInput {
+                    activation_key: self.activation_key
+                    ,
+                    agent_name: self.agent_name
+                    ,
+                    tags: self.tags
+                    ,
+                    vpc_endpoint_id: self.vpc_endpoint_id
+                    ,
+                    subnet_arns: self.subnet_arns
+                    ,
+                    security_group_arns: self.security_group_arns
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateAgentInput {
     /// Consumes the builder and constructs an Operation<[`CreateAgent`](crate::operation::CreateAgent)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateAgent,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateAgent, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateAgentInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::CreateAgentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreateAgentInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CreateAgentInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.CreateAgent",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.CreateAgent"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_agent(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_agent(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateAgent::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateAgent",
-            "datasync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateAgent::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateAgent", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -395,9 +291,9 @@ impl CreateAgentInput {
 
 /// See [`CreateLocationEfsInput`](crate::input::CreateLocationEfsInput).
 pub mod create_location_efs_input {
-
+    
     /// A builder for [`CreateLocationEfsInput`](crate::input::CreateLocationEfsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) subdirectory: std::option::Option<std::string::String>,
         pub(crate) efs_filesystem_arn: std::option::Option<std::string::String>,
@@ -408,19 +304,18 @@ pub mod create_location_efs_input {
         pub(crate) in_transit_encryption: std::option::Option<crate::model::EfsInTransitEncryption>,
     }
     impl Builder {
-        /// <p>Specifies a mount path for your Amazon EFS file system. This is where DataSync reads or writes data (depending on if this is a source or destination location). By default, DataSync uses the root directory, but you can also include subdirectories.</p> <note>
-        /// <p>You must specify a value with forward slashes (for example, <code>/path/to/folder</code>).</p>
+        /// <p>Specifies a mount path for your Amazon EFS file system. This is where DataSync reads or writes data (depending on if this is a source or destination location). By default, DataSync uses the root directory, but you can also include subdirectories.</p> <note> 
+        /// <p>You must specify a value with forward slashes (for example, <code>/path/to/folder</code>).</p> 
         /// </note>
         pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
             self.subdirectory = Some(input.into());
             self
         }
-        /// <p>Specifies a mount path for your Amazon EFS file system. This is where DataSync reads or writes data (depending on if this is a source or destination location). By default, DataSync uses the root directory, but you can also include subdirectories.</p> <note>
-        /// <p>You must specify a value with forward slashes (for example, <code>/path/to/folder</code>).</p>
+        /// <p>Specifies a mount path for your Amazon EFS file system. This is where DataSync reads or writes data (depending on if this is a source or destination location). By default, DataSync uses the root directory, but you can also include subdirectories.</p> <note> 
+        /// <p>You must specify a value with forward slashes (for example, <code>/path/to/folder</code>).</p> 
         /// </note>
         pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.subdirectory = input;
-            self
+            self.subdirectory = input; self
         }
         /// <p>Specifies the ARN for the Amazon EFS file system.</p>
         pub fn efs_filesystem_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -428,12 +323,8 @@ pub mod create_location_efs_input {
             self
         }
         /// <p>Specifies the ARN for the Amazon EFS file system.</p>
-        pub fn set_efs_filesystem_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.efs_filesystem_arn = input;
-            self
+        pub fn set_efs_filesystem_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.efs_filesystem_arn = input; self
         }
         /// <p>Specifies the subnet and security groups DataSync uses to access your Amazon EFS file system.</p>
         pub fn ec2_config(mut self, input: crate::model::Ec2Config) -> Self {
@@ -441,12 +332,8 @@ pub mod create_location_efs_input {
             self
         }
         /// <p>Specifies the subnet and security groups DataSync uses to access your Amazon EFS file system.</p>
-        pub fn set_ec2_config(
-            mut self,
-            input: std::option::Option<crate::model::Ec2Config>,
-        ) -> Self {
-            self.ec2_config = input;
-            self
+        pub fn set_ec2_config(mut self, input: std::option::Option<crate::model::Ec2Config>) -> Self {
+            self.ec2_config = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -455,17 +342,13 @@ pub mod create_location_efs_input {
         /// <p>Specifies the key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
         pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>Specifies the key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>) -> Self {
+            self.tags = input; self
         }
         /// <p>Specifies the Amazon Resource Name (ARN) of the access point that DataSync uses to access the Amazon EFS file system.</p>
         pub fn access_point_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -473,168 +356,114 @@ pub mod create_location_efs_input {
             self
         }
         /// <p>Specifies the Amazon Resource Name (ARN) of the access point that DataSync uses to access the Amazon EFS file system.</p>
-        pub fn set_access_point_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.access_point_arn = input;
-            self
+        pub fn set_access_point_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.access_point_arn = input; self
         }
         /// <p>Specifies an Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS file system.</p>
-        pub fn file_system_access_role_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn file_system_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.file_system_access_role_arn = Some(input.into());
             self
         }
         /// <p>Specifies an Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS file system.</p>
-        pub fn set_file_system_access_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.file_system_access_role_arn = input;
-            self
+        pub fn set_file_system_access_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.file_system_access_role_arn = input; self
         }
-        /// <p>Specifies whether you want DataSync to use Transport Layer Security (TLS) 1.2 encryption when it copies data to or from the Amazon EFS file system.</p>
+        /// <p>Specifies whether you want DataSync to use Transport Layer Security (TLS) 1.2 encryption when it copies data to or from the Amazon EFS file system.</p> 
         /// <p>If you specify an access point using <code>AccessPointArn</code> or an IAM role using <code>FileSystemAccessRoleArn</code>, you must set this parameter to <code>TLS1_2</code>.</p>
-        pub fn in_transit_encryption(
-            mut self,
-            input: crate::model::EfsInTransitEncryption,
-        ) -> Self {
+        pub fn in_transit_encryption(mut self, input: crate::model::EfsInTransitEncryption) -> Self {
             self.in_transit_encryption = Some(input);
             self
         }
-        /// <p>Specifies whether you want DataSync to use Transport Layer Security (TLS) 1.2 encryption when it copies data to or from the Amazon EFS file system.</p>
+        /// <p>Specifies whether you want DataSync to use Transport Layer Security (TLS) 1.2 encryption when it copies data to or from the Amazon EFS file system.</p> 
         /// <p>If you specify an access point using <code>AccessPointArn</code> or an IAM role using <code>FileSystemAccessRoleArn</code>, you must set this parameter to <code>TLS1_2</code>.</p>
-        pub fn set_in_transit_encryption(
-            mut self,
-            input: std::option::Option<crate::model::EfsInTransitEncryption>,
-        ) -> Self {
-            self.in_transit_encryption = input;
-            self
+        pub fn set_in_transit_encryption(mut self, input: std::option::Option<crate::model::EfsInTransitEncryption>) -> Self {
+            self.in_transit_encryption = input; self
         }
         /// Consumes the builder and constructs a [`CreateLocationEfsInput`](crate::input::CreateLocationEfsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateLocationEfsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::CreateLocationEfsInput {
-                subdirectory: self.subdirectory,
-                efs_filesystem_arn: self.efs_filesystem_arn,
-                ec2_config: self.ec2_config,
-                tags: self.tags,
-                access_point_arn: self.access_point_arn,
-                file_system_access_role_arn: self.file_system_access_role_arn,
-                in_transit_encryption: self.in_transit_encryption,
-            })
+        pub fn build(self) -> Result<crate::input::CreateLocationEfsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CreateLocationEfsInput {
+                    subdirectory: self.subdirectory
+                    ,
+                    efs_filesystem_arn: self.efs_filesystem_arn
+                    ,
+                    ec2_config: self.ec2_config
+                    ,
+                    tags: self.tags
+                    ,
+                    access_point_arn: self.access_point_arn
+                    ,
+                    file_system_access_role_arn: self.file_system_access_role_arn
+                    ,
+                    in_transit_encryption: self.in_transit_encryption
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateLocationEfsInput {
     /// Consumes the builder and constructs an Operation<[`CreateLocationEfs`](crate::operation::CreateLocationEfs)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateLocationEfs,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateLocationEfs, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateLocationEfsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::CreateLocationEfsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreateLocationEfsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CreateLocationEfsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.CreateLocationEfs",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.CreateLocationEfs"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_location_efs(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_location_efs(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateLocationEfs::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateLocationEfs",
-            "datasync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateLocationEfs::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateLocationEfs", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -646,9 +475,9 @@ impl CreateLocationEfsInput {
 
 /// See [`CreateLocationFsxLustreInput`](crate::input::CreateLocationFsxLustreInput).
 pub mod create_location_fsx_lustre_input {
-
+    
     /// A builder for [`CreateLocationFsxLustreInput`](crate::input::CreateLocationFsxLustreInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) fsx_filesystem_arn: std::option::Option<std::string::String>,
         pub(crate) security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -662,12 +491,8 @@ pub mod create_location_fsx_lustre_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the FSx for Lustre file system.</p>
-        pub fn set_fsx_filesystem_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.fsx_filesystem_arn = input;
-            self
+        pub fn set_fsx_filesystem_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.fsx_filesystem_arn = input; self
         }
         /// Appends an item to `security_group_arns`.
         ///
@@ -676,17 +501,13 @@ pub mod create_location_fsx_lustre_input {
         /// <p>The Amazon Resource Names (ARNs) of the security groups that are used to configure the FSx for Lustre file system.</p>
         pub fn security_group_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_arns.unwrap_or_default();
-            v.push(input.into());
-            self.security_group_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.security_group_arns = Some(v);
+                            self
         }
         /// <p>The Amazon Resource Names (ARNs) of the security groups that are used to configure the FSx for Lustre file system.</p>
-        pub fn set_security_group_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_group_arns = input;
-            self
+        pub fn set_security_group_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.security_group_arns = input; self
         }
         /// <p>A subdirectory in the location's path. This subdirectory in the FSx for Lustre file system is used to read data from the FSx for Lustre source location or write data to the FSx for Lustre destination.</p>
         pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
@@ -695,8 +516,7 @@ pub mod create_location_fsx_lustre_input {
         }
         /// <p>A subdirectory in the location's path. This subdirectory in the FSx for Lustre file system is used to read data from the FSx for Lustre source location or write data to the FSx for Lustre destination.</p>
         pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.subdirectory = input;
-            self
+            self.subdirectory = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -705,140 +525,93 @@ pub mod create_location_fsx_lustre_input {
         /// <p>The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
         pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateLocationFsxLustreInput`](crate::input::CreateLocationFsxLustreInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateLocationFsxLustreInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::CreateLocationFsxLustreInput {
-                fsx_filesystem_arn: self.fsx_filesystem_arn,
-                security_group_arns: self.security_group_arns,
-                subdirectory: self.subdirectory,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::CreateLocationFsxLustreInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CreateLocationFsxLustreInput {
+                    fsx_filesystem_arn: self.fsx_filesystem_arn
+                    ,
+                    security_group_arns: self.security_group_arns
+                    ,
+                    subdirectory: self.subdirectory
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateLocationFsxLustreInput {
     /// Consumes the builder and constructs an Operation<[`CreateLocationFsxLustre`](crate::operation::CreateLocationFsxLustre)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateLocationFsxLustre,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateLocationFsxLustre, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateLocationFsxLustreInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::CreateLocationFsxLustreInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreateLocationFsxLustreInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CreateLocationFsxLustreInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.CreateLocationFsxLustre",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.CreateLocationFsxLustre"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_location_fsx_lustre(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_location_fsx_lustre(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateLocationFsxLustre::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateLocationFsxLustre",
-            "datasync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateLocationFsxLustre::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateLocationFsxLustre", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -850,9 +623,9 @@ impl CreateLocationFsxLustreInput {
 
 /// See [`CreateLocationFsxOntapInput`](crate::input::CreateLocationFsxOntapInput).
 pub mod create_location_fsx_ontap_input {
-
+    
     /// A builder for [`CreateLocationFsxOntapInput`](crate::input::CreateLocationFsxOntapInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) protocol: std::option::Option<crate::model::FsxProtocol>,
         pub(crate) security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -867,73 +640,57 @@ pub mod create_location_fsx_ontap_input {
             self
         }
         /// <p>Specifies the data transfer protocol that DataSync uses to access your Amazon FSx file system.</p>
-        pub fn set_protocol(
-            mut self,
-            input: std::option::Option<crate::model::FsxProtocol>,
-        ) -> Self {
-            self.protocol = input;
-            self
+        pub fn set_protocol(mut self, input: std::option::Option<crate::model::FsxProtocol>) -> Self {
+            self.protocol = input; self
         }
         /// Appends an item to `security_group_arns`.
         ///
         /// To override the contents of this collection use [`set_security_group_arns`](Self::set_security_group_arns).
         ///
-        /// <p>Specifies the Amazon EC2 security groups that provide access to your file system's preferred subnet.</p>
-        /// <p>The security groups must allow outbound traffic on the following ports (depending on the protocol you use):</p>
-        /// <ul>
-        /// <li> <p> <b>Network File System (NFS)</b>: TCP ports 111, 635, and 2049</p> </li>
-        /// <li> <p> <b>Server Message Block (SMB)</b>: TCP port 445</p> </li>
-        /// </ul>
+        /// <p>Specifies the Amazon EC2 security groups that provide access to your file system's preferred subnet.</p> 
+        /// <p>The security groups must allow outbound traffic on the following ports (depending on the protocol you use):</p> 
+        /// <ul> 
+        /// <li> <p> <b>Network File System (NFS)</b>: TCP ports 111, 635, and 2049</p> </li> 
+        /// <li> <p> <b>Server Message Block (SMB)</b>: TCP port 445</p> </li> 
+        /// </ul> 
         /// <p>Your file system's security groups must also allow inbound traffic on the same ports.</p>
         pub fn security_group_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_arns.unwrap_or_default();
-            v.push(input.into());
-            self.security_group_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.security_group_arns = Some(v);
+                            self
         }
-        /// <p>Specifies the Amazon EC2 security groups that provide access to your file system's preferred subnet.</p>
-        /// <p>The security groups must allow outbound traffic on the following ports (depending on the protocol you use):</p>
-        /// <ul>
-        /// <li> <p> <b>Network File System (NFS)</b>: TCP ports 111, 635, and 2049</p> </li>
-        /// <li> <p> <b>Server Message Block (SMB)</b>: TCP port 445</p> </li>
-        /// </ul>
+        /// <p>Specifies the Amazon EC2 security groups that provide access to your file system's preferred subnet.</p> 
+        /// <p>The security groups must allow outbound traffic on the following ports (depending on the protocol you use):</p> 
+        /// <ul> 
+        /// <li> <p> <b>Network File System (NFS)</b>: TCP ports 111, 635, and 2049</p> </li> 
+        /// <li> <p> <b>Server Message Block (SMB)</b>: TCP port 445</p> </li> 
+        /// </ul> 
         /// <p>Your file system's security groups must also allow inbound traffic on the same ports.</p>
-        pub fn set_security_group_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_group_arns = input;
-            self
+        pub fn set_security_group_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.security_group_arns = input; self
         }
         /// <p>Specifies the ARN of the storage virtual machine (SVM) on your file system where you're copying data to or from.</p>
-        pub fn storage_virtual_machine_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn storage_virtual_machine_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.storage_virtual_machine_arn = Some(input.into());
             self
         }
         /// <p>Specifies the ARN of the storage virtual machine (SVM) on your file system where you're copying data to or from.</p>
-        pub fn set_storage_virtual_machine_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.storage_virtual_machine_arn = input;
-            self
+        pub fn set_storage_virtual_machine_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.storage_virtual_machine_arn = input; self
         }
-        /// <p>Specifies the junction path (also known as a mount point) in the SVM volume where you're copying data to or from (for example, <code>/vol1</code>).</p> <note>
-        /// <p>Don't specify a junction path in the SVM's root volume. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing FSx for ONTAP storage virtual machines</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
+        /// <p>Specifies the junction path (also known as a mount point) in the SVM volume where you're copying data to or from (for example, <code>/vol1</code>).</p> <note> 
+        /// <p>Don't specify a junction path in the SVM's root volume. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing FSx for ONTAP storage virtual machines</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p> 
         /// </note>
         pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
             self.subdirectory = Some(input.into());
             self
         }
-        /// <p>Specifies the junction path (also known as a mount point) in the SVM volume where you're copying data to or from (for example, <code>/vol1</code>).</p> <note>
-        /// <p>Don't specify a junction path in the SVM's root volume. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing FSx for ONTAP storage virtual machines</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
+        /// <p>Specifies the junction path (also known as a mount point) in the SVM volume where you're copying data to or from (for example, <code>/vol1</code>).</p> <note> 
+        /// <p>Don't specify a junction path in the SVM's root volume. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing FSx for ONTAP storage virtual machines</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p> 
         /// </note>
         pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.subdirectory = input;
-            self
+            self.subdirectory = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -942,139 +699,95 @@ pub mod create_location_fsx_ontap_input {
         /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
         pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateLocationFsxOntapInput`](crate::input::CreateLocationFsxOntapInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateLocationFsxOntapInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::CreateLocationFsxOntapInput {
-                protocol: self.protocol,
-                security_group_arns: self.security_group_arns,
-                storage_virtual_machine_arn: self.storage_virtual_machine_arn,
-                subdirectory: self.subdirectory,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::CreateLocationFsxOntapInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CreateLocationFsxOntapInput {
+                    protocol: self.protocol
+                    ,
+                    security_group_arns: self.security_group_arns
+                    ,
+                    storage_virtual_machine_arn: self.storage_virtual_machine_arn
+                    ,
+                    subdirectory: self.subdirectory
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateLocationFsxOntapInput {
     /// Consumes the builder and constructs an Operation<[`CreateLocationFsxOntap`](crate::operation::CreateLocationFsxOntap)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateLocationFsxOntap,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateLocationFsxOntap, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateLocationFsxOntapInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::CreateLocationFsxOntapInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreateLocationFsxOntapInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CreateLocationFsxOntapInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.CreateLocationFsxOntap",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.CreateLocationFsxOntap"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_location_fsx_ontap(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_location_fsx_ontap(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateLocationFsxOntap::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateLocationFsxOntap",
-            "datasync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateLocationFsxOntap::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateLocationFsxOntap", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1086,9 +799,9 @@ impl CreateLocationFsxOntapInput {
 
 /// See [`CreateLocationFsxOpenZfsInput`](crate::input::CreateLocationFsxOpenZfsInput).
 pub mod create_location_fsx_open_zfs_input {
-
+    
     /// A builder for [`CreateLocationFsxOpenZfsInput`](crate::input::CreateLocationFsxOpenZfsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) fsx_filesystem_arn: std::option::Option<std::string::String>,
         pub(crate) protocol: std::option::Option<crate::model::FsxProtocol>,
@@ -1103,12 +816,8 @@ pub mod create_location_fsx_open_zfs_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the FSx for OpenZFS file system.</p>
-        pub fn set_fsx_filesystem_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.fsx_filesystem_arn = input;
-            self
+        pub fn set_fsx_filesystem_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.fsx_filesystem_arn = input; self
         }
         /// <p>The type of protocol that DataSync uses to access your file system.</p>
         pub fn protocol(mut self, input: crate::model::FsxProtocol) -> Self {
@@ -1116,12 +825,8 @@ pub mod create_location_fsx_open_zfs_input {
             self
         }
         /// <p>The type of protocol that DataSync uses to access your file system.</p>
-        pub fn set_protocol(
-            mut self,
-            input: std::option::Option<crate::model::FsxProtocol>,
-        ) -> Self {
-            self.protocol = input;
-            self
+        pub fn set_protocol(mut self, input: std::option::Option<crate::model::FsxProtocol>) -> Self {
+            self.protocol = input; self
         }
         /// Appends an item to `security_group_arns`.
         ///
@@ -1130,17 +835,13 @@ pub mod create_location_fsx_open_zfs_input {
         /// <p>The ARNs of the security groups that are used to configure the FSx for OpenZFS file system.</p>
         pub fn security_group_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_arns.unwrap_or_default();
-            v.push(input.into());
-            self.security_group_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.security_group_arns = Some(v);
+                            self
         }
         /// <p>The ARNs of the security groups that are used to configure the FSx for OpenZFS file system.</p>
-        pub fn set_security_group_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_group_arns = input;
-            self
+        pub fn set_security_group_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.security_group_arns = input; self
         }
         /// <p>A subdirectory in the location's path that must begin with <code>/fsx</code>. DataSync uses this subdirectory to read or write data (depending on whether the file system is a source or destination location).</p>
         pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1149,8 +850,7 @@ pub mod create_location_fsx_open_zfs_input {
         }
         /// <p>A subdirectory in the location's path that must begin with <code>/fsx</code>. DataSync uses this subdirectory to read or write data (depending on whether the file system is a source or destination location).</p>
         pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.subdirectory = input;
-            self
+            self.subdirectory = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -1159,141 +859,95 @@ pub mod create_location_fsx_open_zfs_input {
         /// <p>The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
         pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateLocationFsxOpenZfsInput`](crate::input::CreateLocationFsxOpenZfsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateLocationFsxOpenZfsInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::CreateLocationFsxOpenZfsInput {
-                fsx_filesystem_arn: self.fsx_filesystem_arn,
-                protocol: self.protocol,
-                security_group_arns: self.security_group_arns,
-                subdirectory: self.subdirectory,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::CreateLocationFsxOpenZfsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CreateLocationFsxOpenZfsInput {
+                    fsx_filesystem_arn: self.fsx_filesystem_arn
+                    ,
+                    protocol: self.protocol
+                    ,
+                    security_group_arns: self.security_group_arns
+                    ,
+                    subdirectory: self.subdirectory
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateLocationFsxOpenZfsInput {
     /// Consumes the builder and constructs an Operation<[`CreateLocationFsxOpenZfs`](crate::operation::CreateLocationFsxOpenZfs)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateLocationFsxOpenZfs,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateLocationFsxOpenZfs, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateLocationFsxOpenZfsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::CreateLocationFsxOpenZfsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreateLocationFsxOpenZfsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CreateLocationFsxOpenZfsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.CreateLocationFsxOpenZfs",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.CreateLocationFsxOpenZfs"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_location_fsx_open_zfs(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_location_fsx_open_zfs(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateLocationFsxOpenZfs::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateLocationFsxOpenZfs",
-            "datasync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateLocationFsxOpenZfs::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateLocationFsxOpenZfs", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1305,9 +959,9 @@ impl CreateLocationFsxOpenZfsInput {
 
 /// See [`CreateLocationFsxWindowsInput`](crate::input::CreateLocationFsxWindowsInput).
 pub mod create_location_fsx_windows_input {
-
+    
     /// A builder for [`CreateLocationFsxWindowsInput`](crate::input::CreateLocationFsxWindowsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) subdirectory: std::option::Option<std::string::String>,
         pub(crate) fsx_filesystem_arn: std::option::Option<std::string::String>,
@@ -1325,8 +979,7 @@ pub mod create_location_fsx_windows_input {
         }
         /// <p>Specifies a mount path for your file system using forward slashes. This is where DataSync reads or writes data (depending on if this is a source or destination location).</p>
         pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.subdirectory = input;
-            self
+            self.subdirectory = input; self
         }
         /// <p>Specifies the Amazon Resource Name (ARN) for the FSx for Windows File Server file system.</p>
         pub fn fsx_filesystem_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1334,43 +987,35 @@ pub mod create_location_fsx_windows_input {
             self
         }
         /// <p>Specifies the Amazon Resource Name (ARN) for the FSx for Windows File Server file system.</p>
-        pub fn set_fsx_filesystem_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.fsx_filesystem_arn = input;
-            self
+        pub fn set_fsx_filesystem_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.fsx_filesystem_arn = input; self
         }
         /// Appends an item to `security_group_arns`.
         ///
         /// To override the contents of this collection use [`set_security_group_arns`](Self::set_security_group_arns).
         ///
-        /// <p>Specifies the ARNs of the security groups that provide access to your file system's preferred subnet.</p> <note>
-        /// <p>If you choose a security group that doesn't allow connections from within itself, do one of the following:</p>
-        /// <ul>
-        /// <li> <p>Configure the security group to allow it to communicate within itself.</p> </li>
-        /// <li> <p>Choose a different security group that can communicate with the mount target's security group.</p> </li>
-        /// </ul>
+        /// <p>Specifies the ARNs of the security groups that provide access to your file system's preferred subnet.</p> <note> 
+        /// <p>If you choose a security group that doesn't allow connections from within itself, do one of the following:</p> 
+        /// <ul> 
+        /// <li> <p>Configure the security group to allow it to communicate within itself.</p> </li> 
+        /// <li> <p>Choose a different security group that can communicate with the mount target's security group.</p> </li> 
+        /// </ul> 
         /// </note>
         pub fn security_group_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_arns.unwrap_or_default();
-            v.push(input.into());
-            self.security_group_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.security_group_arns = Some(v);
+                            self
         }
-        /// <p>Specifies the ARNs of the security groups that provide access to your file system's preferred subnet.</p> <note>
-        /// <p>If you choose a security group that doesn't allow connections from within itself, do one of the following:</p>
-        /// <ul>
-        /// <li> <p>Configure the security group to allow it to communicate within itself.</p> </li>
-        /// <li> <p>Choose a different security group that can communicate with the mount target's security group.</p> </li>
-        /// </ul>
+        /// <p>Specifies the ARNs of the security groups that provide access to your file system's preferred subnet.</p> <note> 
+        /// <p>If you choose a security group that doesn't allow connections from within itself, do one of the following:</p> 
+        /// <ul> 
+        /// <li> <p>Configure the security group to allow it to communicate within itself.</p> </li> 
+        /// <li> <p>Choose a different security group that can communicate with the mount target's security group.</p> </li> 
+        /// </ul> 
         /// </note>
-        pub fn set_security_group_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_group_arns = input;
-            self
+        pub fn set_security_group_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.security_group_arns = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -1379,29 +1024,24 @@ pub mod create_location_fsx_windows_input {
         /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
         pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>) -> Self {
+            self.tags = input; self
         }
-        /// <p>Specifies the user who has the permissions to access files and folders in the file system.</p>
+        /// <p>Specifies the user who has the permissions to access files and folders in the file system.</p> 
         /// <p>For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata, see <a href="create-fsx-location.html#FSxWuser">user</a>.</p>
         pub fn user(mut self, input: impl Into<std::string::String>) -> Self {
             self.user = Some(input.into());
             self
         }
-        /// <p>Specifies the user who has the permissions to access files and folders in the file system.</p>
+        /// <p>Specifies the user who has the permissions to access files and folders in the file system.</p> 
         /// <p>For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata, see <a href="create-fsx-location.html#FSxWuser">user</a>.</p>
         pub fn set_user(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user = input;
-            self
+            self.user = input; self
         }
         /// <p>Specifies the name of the Windows domain that the FSx for Windows File Server belongs to.</p>
         pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1410,8 +1050,7 @@ pub mod create_location_fsx_windows_input {
         }
         /// <p>Specifies the name of the Windows domain that the FSx for Windows File Server belongs to.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
         /// <p>Specifies the password of the user who has the permissions to access files and folders in the file system.</p>
         pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1420,134 +1059,93 @@ pub mod create_location_fsx_windows_input {
         }
         /// <p>Specifies the password of the user who has the permissions to access files and folders in the file system.</p>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.password = input;
-            self
+            self.password = input; self
         }
         /// Consumes the builder and constructs a [`CreateLocationFsxWindowsInput`](crate::input::CreateLocationFsxWindowsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateLocationFsxWindowsInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::CreateLocationFsxWindowsInput {
-                subdirectory: self.subdirectory,
-                fsx_filesystem_arn: self.fsx_filesystem_arn,
-                security_group_arns: self.security_group_arns,
-                tags: self.tags,
-                user: self.user,
-                domain: self.domain,
-                password: self.password,
-            })
+        pub fn build(self) -> Result<crate::input::CreateLocationFsxWindowsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CreateLocationFsxWindowsInput {
+                    subdirectory: self.subdirectory
+                    ,
+                    fsx_filesystem_arn: self.fsx_filesystem_arn
+                    ,
+                    security_group_arns: self.security_group_arns
+                    ,
+                    tags: self.tags
+                    ,
+                    user: self.user
+                    ,
+                    domain: self.domain
+                    ,
+                    password: self.password
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateLocationFsxWindowsInput {
     /// Consumes the builder and constructs an Operation<[`CreateLocationFsxWindows`](crate::operation::CreateLocationFsxWindows)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateLocationFsxWindows,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateLocationFsxWindows, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateLocationFsxWindowsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::CreateLocationFsxWindowsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreateLocationFsxWindowsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CreateLocationFsxWindowsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.CreateLocationFsxWindows",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.CreateLocationFsxWindows"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_location_fsx_windows(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_location_fsx_windows(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateLocationFsxWindows::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateLocationFsxWindows",
-            "datasync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateLocationFsxWindows::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateLocationFsxWindows", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1559,9 +1157,9 @@ impl CreateLocationFsxWindowsInput {
 
 /// See [`CreateLocationHdfsInput`](crate::input::CreateLocationHdfsInput).
 pub mod create_location_hdfs_input {
-
+    
     /// A builder for [`CreateLocationHdfsInput`](crate::input::CreateLocationHdfsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) subdirectory: std::option::Option<std::string::String>,
         pub(crate) name_nodes: std::option::Option<std::vec::Vec<crate::model::HdfsNameNode>>,
@@ -1585,8 +1183,7 @@ pub mod create_location_hdfs_input {
         }
         /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write data to the HDFS cluster. If the subdirectory isn't specified, it will default to <code>/</code>.</p>
         pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.subdirectory = input;
-            self
+            self.subdirectory = input; self
         }
         /// Appends an item to `name_nodes`.
         ///
@@ -1595,17 +1192,13 @@ pub mod create_location_hdfs_input {
         /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes. You can use only one NameNode.</p>
         pub fn name_nodes(mut self, input: crate::model::HdfsNameNode) -> Self {
             let mut v = self.name_nodes.unwrap_or_default();
-            v.push(input);
-            self.name_nodes = Some(v);
-            self
+                            v.push(input);
+                            self.name_nodes = Some(v);
+                            self
         }
         /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes. You can use only one NameNode.</p>
-        pub fn set_name_nodes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::HdfsNameNode>>,
-        ) -> Self {
-            self.name_nodes = input;
-            self
+        pub fn set_name_nodes(mut self, input: std::option::Option<std::vec::Vec<crate::model::HdfsNameNode>>) -> Self {
+            self.name_nodes = input; self
         }
         /// <p>The size of data blocks to write into the HDFS cluster. The block size must be a multiple of 512 bytes. The default block size is 128 mebibytes (MiB).</p>
         pub fn block_size(mut self, input: i32) -> Self {
@@ -1614,8 +1207,7 @@ pub mod create_location_hdfs_input {
         }
         /// <p>The size of data blocks to write into the HDFS cluster. The block size must be a multiple of 512 bytes. The default block size is 128 mebibytes (MiB).</p>
         pub fn set_block_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.block_size = input;
-            self
+            self.block_size = input; self
         }
         /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. By default, data is replicated to three DataNodes.</p>
         pub fn replication_factor(mut self, input: i32) -> Self {
@@ -1624,8 +1216,7 @@ pub mod create_location_hdfs_input {
         }
         /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. By default, data is replicated to three DataNodes.</p>
         pub fn set_replication_factor(mut self, input: std::option::Option<i32>) -> Self {
-            self.replication_factor = input;
-            self
+            self.replication_factor = input; self
         }
         /// <p>The URI of the HDFS cluster's Key Management Server (KMS). </p>
         pub fn kms_key_provider_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1633,12 +1224,8 @@ pub mod create_location_hdfs_input {
             self
         }
         /// <p>The URI of the HDFS cluster's Key Management Server (KMS). </p>
-        pub fn set_kms_key_provider_uri(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.kms_key_provider_uri = input;
-            self
+        pub fn set_kms_key_provider_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_provider_uri = input; self
         }
         /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer protection settings configured on the Hadoop Distributed File System (HDFS) cluster. If <code>QopConfiguration</code> isn't specified, <code>RpcProtection</code> and <code>DataTransferProtection</code> default to <code>PRIVACY</code>. If you set <code>RpcProtection</code> or <code>DataTransferProtection</code>, the other parameter assumes the same value. </p>
         pub fn qop_configuration(mut self, input: crate::model::QopConfiguration) -> Self {
@@ -1646,12 +1233,8 @@ pub mod create_location_hdfs_input {
             self
         }
         /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer protection settings configured on the Hadoop Distributed File System (HDFS) cluster. If <code>QopConfiguration</code> isn't specified, <code>RpcProtection</code> and <code>DataTransferProtection</code> default to <code>PRIVACY</code>. If you set <code>RpcProtection</code> or <code>DataTransferProtection</code>, the other parameter assumes the same value. </p>
-        pub fn set_qop_configuration(
-            mut self,
-            input: std::option::Option<crate::model::QopConfiguration>,
-        ) -> Self {
-            self.qop_configuration = input;
-            self
+        pub fn set_qop_configuration(mut self, input: std::option::Option<crate::model::QopConfiguration>) -> Self {
+            self.qop_configuration = input; self
         }
         /// <p>The type of authentication used to determine the identity of the user. </p>
         pub fn authentication_type(mut self, input: crate::model::HdfsAuthenticationType) -> Self {
@@ -1659,77 +1242,60 @@ pub mod create_location_hdfs_input {
             self
         }
         /// <p>The type of authentication used to determine the identity of the user. </p>
-        pub fn set_authentication_type(
-            mut self,
-            input: std::option::Option<crate::model::HdfsAuthenticationType>,
-        ) -> Self {
-            self.authentication_type = input;
-            self
+        pub fn set_authentication_type(mut self, input: std::option::Option<crate::model::HdfsAuthenticationType>) -> Self {
+            self.authentication_type = input; self
         }
-        /// <p>The user name used to identify the client on the host operating system. </p> <note>
-        /// <p>If <code>SIMPLE</code> is specified for <code>AuthenticationType</code>, this parameter is required. </p>
+        /// <p>The user name used to identify the client on the host operating system. </p> <note> 
+        /// <p>If <code>SIMPLE</code> is specified for <code>AuthenticationType</code>, this parameter is required. </p> 
         /// </note>
         pub fn simple_user(mut self, input: impl Into<std::string::String>) -> Self {
             self.simple_user = Some(input.into());
             self
         }
-        /// <p>The user name used to identify the client on the host operating system. </p> <note>
-        /// <p>If <code>SIMPLE</code> is specified for <code>AuthenticationType</code>, this parameter is required. </p>
+        /// <p>The user name used to identify the client on the host operating system. </p> <note> 
+        /// <p>If <code>SIMPLE</code> is specified for <code>AuthenticationType</code>, this parameter is required. </p> 
         /// </note>
         pub fn set_simple_user(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.simple_user = input;
-            self
+            self.simple_user = input; self
         }
-        /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p> <note>
-        /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required.</p>
+        /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p> <note> 
+        /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required.</p> 
         /// </note>
         pub fn kerberos_principal(mut self, input: impl Into<std::string::String>) -> Self {
             self.kerberos_principal = Some(input.into());
             self
         }
-        /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p> <note>
-        /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required.</p>
+        /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p> <note> 
+        /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required.</p> 
         /// </note>
-        pub fn set_kerberos_principal(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.kerberos_principal = input;
-            self
+        pub fn set_kerberos_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kerberos_principal = input; self
         }
-        /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you're using the CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text. </p> <note>
-        /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required. </p>
+        /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you're using the CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text. </p> <note> 
+        /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required. </p> 
         /// </note>
         pub fn kerberos_keytab(mut self, input: aws_smithy_types::Blob) -> Self {
             self.kerberos_keytab = Some(input);
             self
         }
-        /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you're using the CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text. </p> <note>
-        /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required. </p>
+        /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you're using the CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text. </p> <note> 
+        /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required. </p> 
         /// </note>
-        pub fn set_kerberos_keytab(
-            mut self,
-            input: std::option::Option<aws_smithy_types::Blob>,
-        ) -> Self {
-            self.kerberos_keytab = input;
-            self
+        pub fn set_kerberos_keytab(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+            self.kerberos_keytab = input; self
         }
-        /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text. </p> <note>
-        /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required.</p>
+        /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text. </p> <note> 
+        /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required.</p> 
         /// </note>
         pub fn kerberos_krb5_conf(mut self, input: aws_smithy_types::Blob) -> Self {
             self.kerberos_krb5_conf = Some(input);
             self
         }
-        /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text. </p> <note>
-        /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required.</p>
+        /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text. </p> <note> 
+        /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required.</p> 
         /// </note>
-        pub fn set_kerberos_krb5_conf(
-            mut self,
-            input: std::option::Option<aws_smithy_types::Blob>,
-        ) -> Self {
-            self.kerberos_krb5_conf = input;
-            self
+        pub fn set_kerberos_krb5_conf(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+            self.kerberos_krb5_conf = input; self
         }
         /// Appends an item to `agent_arns`.
         ///
@@ -1738,17 +1304,13 @@ pub mod create_location_hdfs_input {
         /// <p>The Amazon Resource Names (ARNs) of the agents that are used to connect to the HDFS cluster.</p>
         pub fn agent_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.agent_arns.unwrap_or_default();
-            v.push(input.into());
-            self.agent_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.agent_arns = Some(v);
+                            self
         }
         /// <p>The Amazon Resource Names (ARNs) of the agents that are used to connect to the HDFS cluster.</p>
-        pub fn set_agent_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.agent_arns = input;
-            self
+        pub fn set_agent_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.agent_arns = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -1757,145 +1319,111 @@ pub mod create_location_hdfs_input {
         /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources. </p>
         pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateLocationHdfsInput`](crate::input::CreateLocationHdfsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateLocationHdfsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::CreateLocationHdfsInput {
-                subdirectory: self.subdirectory,
-                name_nodes: self.name_nodes,
-                block_size: self.block_size,
-                replication_factor: self.replication_factor,
-                kms_key_provider_uri: self.kms_key_provider_uri,
-                qop_configuration: self.qop_configuration,
-                authentication_type: self.authentication_type,
-                simple_user: self.simple_user,
-                kerberos_principal: self.kerberos_principal,
-                kerberos_keytab: self.kerberos_keytab,
-                kerberos_krb5_conf: self.kerberos_krb5_conf,
-                agent_arns: self.agent_arns,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::CreateLocationHdfsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CreateLocationHdfsInput {
+                    subdirectory: self.subdirectory
+                    ,
+                    name_nodes: self.name_nodes
+                    ,
+                    block_size: self.block_size
+                    ,
+                    replication_factor: self.replication_factor
+                    ,
+                    kms_key_provider_uri: self.kms_key_provider_uri
+                    ,
+                    qop_configuration: self.qop_configuration
+                    ,
+                    authentication_type: self.authentication_type
+                    ,
+                    simple_user: self.simple_user
+                    ,
+                    kerberos_principal: self.kerberos_principal
+                    ,
+                    kerberos_keytab: self.kerberos_keytab
+                    ,
+                    kerberos_krb5_conf: self.kerberos_krb5_conf
+                    ,
+                    agent_arns: self.agent_arns
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateLocationHdfsInput {
     /// Consumes the builder and constructs an Operation<[`CreateLocationHdfs`](crate::operation::CreateLocationHdfs)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateLocationHdfs,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateLocationHdfs, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateLocationHdfsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::CreateLocationHdfsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreateLocationHdfsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CreateLocationHdfsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.CreateLocationHdfs",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.CreateLocationHdfs"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_location_hdfs(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_location_hdfs(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateLocationHdfs::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateLocationHdfs",
-            "datasync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateLocationHdfs::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateLocationHdfs", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1907,9 +1435,9 @@ impl CreateLocationHdfsInput {
 
 /// See [`CreateLocationNfsInput`](crate::input::CreateLocationNfsInput).
 pub mod create_location_nfs_input {
-
+    
     /// A builder for [`CreateLocationNfsInput`](crate::input::CreateLocationNfsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) subdirectory: std::option::Option<std::string::String>,
         pub(crate) server_hostname: std::option::Option<std::string::String>,
@@ -1918,57 +1446,48 @@ pub mod create_location_nfs_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
     }
     impl Builder {
-        /// <p>The subdirectory in the NFS file system that is used to read data from the NFS source location or write data to the NFS destination. The NFS path should be a path that's exported by the NFS server, or a subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your network. </p>
-        /// <p>To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS client that has access to your server. You can specify any directory that appears in the results, and any subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication. </p>
-        /// <p>To transfer all the data in the folder you specified, DataSync needs to have permissions to read all the data. To ensure this, either configure the NFS export with <code>no_root_squash,</code> or ensure that the permissions for all of the files that you want DataSync allow read access for all users. Doing either enables the agent to read the files. For the agent to access directories, you must additionally enable all execute access.</p>
-        /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
+        /// <p>The subdirectory in the NFS file system that is used to read data from the NFS source location or write data to the NFS destination. The NFS path should be a path that's exported by the NFS server, or a subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your network. </p> 
+        /// <p>To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS client that has access to your server. You can specify any directory that appears in the results, and any subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication. </p> 
+        /// <p>To transfer all the data in the folder you specified, DataSync needs to have permissions to read all the data. To ensure this, either configure the NFS export with <code>no_root_squash,</code> or ensure that the permissions for all of the files that you want DataSync allow read access for all users. Doing either enables the agent to read the files. For the agent to access directories, you must additionally enable all execute access.</p> 
+        /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p> 
         /// <p>For information about NFS export configuration, see 18.7. The /etc/exports Configuration File in the Red Hat Enterprise Linux documentation.</p>
         pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
             self.subdirectory = Some(input.into());
             self
         }
-        /// <p>The subdirectory in the NFS file system that is used to read data from the NFS source location or write data to the NFS destination. The NFS path should be a path that's exported by the NFS server, or a subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your network. </p>
-        /// <p>To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS client that has access to your server. You can specify any directory that appears in the results, and any subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication. </p>
-        /// <p>To transfer all the data in the folder you specified, DataSync needs to have permissions to read all the data. To ensure this, either configure the NFS export with <code>no_root_squash,</code> or ensure that the permissions for all of the files that you want DataSync allow read access for all users. Doing either enables the agent to read the files. For the agent to access directories, you must additionally enable all execute access.</p>
-        /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
+        /// <p>The subdirectory in the NFS file system that is used to read data from the NFS source location or write data to the NFS destination. The NFS path should be a path that's exported by the NFS server, or a subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your network. </p> 
+        /// <p>To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS client that has access to your server. You can specify any directory that appears in the results, and any subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication. </p> 
+        /// <p>To transfer all the data in the folder you specified, DataSync needs to have permissions to read all the data. To ensure this, either configure the NFS export with <code>no_root_squash,</code> or ensure that the permissions for all of the files that you want DataSync allow read access for all users. Doing either enables the agent to read the files. For the agent to access directories, you must additionally enable all execute access.</p> 
+        /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p> 
         /// <p>For information about NFS export configuration, see 18.7. The /etc/exports Configuration File in the Red Hat Enterprise Linux documentation.</p>
         pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.subdirectory = input;
-            self
+            self.subdirectory = input; self
         }
-        /// <p>The name of the NFS server. This value is the IP address or Domain Name Service (DNS) name of the NFS server. An agent that is installed on-premises uses this hostname to mount the NFS server in a network. </p>
-        /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p> <note>
-        /// <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
+        /// <p>The name of the NFS server. This value is the IP address or Domain Name Service (DNS) name of the NFS server. An agent that is installed on-premises uses this hostname to mount the NFS server in a network. </p> 
+        /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p> <note> 
+        /// <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p> 
         /// </note>
         pub fn server_hostname(mut self, input: impl Into<std::string::String>) -> Self {
             self.server_hostname = Some(input.into());
             self
         }
-        /// <p>The name of the NFS server. This value is the IP address or Domain Name Service (DNS) name of the NFS server. An agent that is installed on-premises uses this hostname to mount the NFS server in a network. </p>
-        /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p> <note>
-        /// <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
+        /// <p>The name of the NFS server. This value is the IP address or Domain Name Service (DNS) name of the NFS server. An agent that is installed on-premises uses this hostname to mount the NFS server in a network. </p> 
+        /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p> <note> 
+        /// <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p> 
         /// </note>
-        pub fn set_server_hostname(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.server_hostname = input;
-            self
+        pub fn set_server_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.server_hostname = input; self
         }
-        /// <p>Contains a list of Amazon Resource Names (ARNs) of agents that are used to connect to an NFS server. </p>
+        /// <p>Contains a list of Amazon Resource Names (ARNs) of agents that are used to connect to an NFS server. </p> 
         /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
         pub fn on_prem_config(mut self, input: crate::model::OnPremConfig) -> Self {
             self.on_prem_config = Some(input);
             self
         }
-        /// <p>Contains a list of Amazon Resource Names (ARNs) of agents that are used to connect to an NFS server. </p>
+        /// <p>Contains a list of Amazon Resource Names (ARNs) of agents that are used to connect to an NFS server. </p> 
         /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
-        pub fn set_on_prem_config(
-            mut self,
-            input: std::option::Option<crate::model::OnPremConfig>,
-        ) -> Self {
-            self.on_prem_config = input;
-            self
+        pub fn set_on_prem_config(mut self, input: std::option::Option<crate::model::OnPremConfig>) -> Self {
+            self.on_prem_config = input; self
         }
         /// <p>The NFS mount options that DataSync can use to mount your NFS share.</p>
         pub fn mount_options(mut self, input: crate::model::NfsMountOptions) -> Self {
@@ -1976,12 +1495,8 @@ pub mod create_location_nfs_input {
             self
         }
         /// <p>The NFS mount options that DataSync can use to mount your NFS share.</p>
-        pub fn set_mount_options(
-            mut self,
-            input: std::option::Option<crate::model::NfsMountOptions>,
-        ) -> Self {
-            self.mount_options = input;
-            self
+        pub fn set_mount_options(mut self, input: std::option::Option<crate::model::NfsMountOptions>) -> Self {
+            self.mount_options = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -1990,137 +1505,95 @@ pub mod create_location_nfs_input {
         /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources.</p>
         pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateLocationNfsInput`](crate::input::CreateLocationNfsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateLocationNfsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::CreateLocationNfsInput {
-                subdirectory: self.subdirectory,
-                server_hostname: self.server_hostname,
-                on_prem_config: self.on_prem_config,
-                mount_options: self.mount_options,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::CreateLocationNfsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CreateLocationNfsInput {
+                    subdirectory: self.subdirectory
+                    ,
+                    server_hostname: self.server_hostname
+                    ,
+                    on_prem_config: self.on_prem_config
+                    ,
+                    mount_options: self.mount_options
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateLocationNfsInput {
     /// Consumes the builder and constructs an Operation<[`CreateLocationNfs`](crate::operation::CreateLocationNfs)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateLocationNfs,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateLocationNfs, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateLocationNfsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::CreateLocationNfsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreateLocationNfsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CreateLocationNfsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.CreateLocationNfs",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.CreateLocationNfs"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_location_nfs(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_location_nfs(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateLocationNfs::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateLocationNfs",
-            "datasync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateLocationNfs::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateLocationNfs", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2132,9 +1605,9 @@ impl CreateLocationNfsInput {
 
 /// See [`CreateLocationObjectStorageInput`](crate::input::CreateLocationObjectStorageInput).
 pub mod create_location_object_storage_input {
-
+    
     /// A builder for [`CreateLocationObjectStorageInput`](crate::input::CreateLocationObjectStorageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) server_hostname: std::option::Option<std::string::String>,
         pub(crate) server_port: std::option::Option<i32>,
@@ -2153,12 +1626,8 @@ pub mod create_location_object_storage_input {
             self
         }
         /// <p>Specifies the domain name or IP address of the object storage server. A DataSync agent uses this hostname to mount the object storage server in a network.</p>
-        pub fn set_server_hostname(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.server_hostname = input;
-            self
+        pub fn set_server_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.server_hostname = input; self
         }
         /// <p>Specifies the port that your object storage server accepts inbound network traffic on (for example, port 443).</p>
         pub fn server_port(mut self, input: i32) -> Self {
@@ -2167,8 +1636,7 @@ pub mod create_location_object_storage_input {
         }
         /// <p>Specifies the port that your object storage server accepts inbound network traffic on (for example, port 443).</p>
         pub fn set_server_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.server_port = input;
-            self
+            self.server_port = input; self
         }
         /// <p>Specifies the protocol that your object storage server uses to communicate.</p>
         pub fn server_protocol(mut self, input: crate::model::ObjectStorageServerProtocol) -> Self {
@@ -2176,12 +1644,8 @@ pub mod create_location_object_storage_input {
             self
         }
         /// <p>Specifies the protocol that your object storage server uses to communicate.</p>
-        pub fn set_server_protocol(
-            mut self,
-            input: std::option::Option<crate::model::ObjectStorageServerProtocol>,
-        ) -> Self {
-            self.server_protocol = input;
-            self
+        pub fn set_server_protocol(mut self, input: std::option::Option<crate::model::ObjectStorageServerProtocol>) -> Self {
+            self.server_protocol = input; self
         }
         /// <p>Specifies the object prefix for your object storage server. If this is a source location, DataSync only copies objects with this prefix. If this is a destination location, DataSync writes all objects with this prefix. </p>
         pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2190,8 +1654,7 @@ pub mod create_location_object_storage_input {
         }
         /// <p>Specifies the object prefix for your object storage server. If this is a source location, DataSync only copies objects with this prefix. If this is a destination location, DataSync writes all objects with this prefix. </p>
         pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.subdirectory = input;
-            self
+            self.subdirectory = input; self
         }
         /// <p>Specifies the name of the object storage bucket involved in the transfer.</p>
         pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2200,8 +1663,7 @@ pub mod create_location_object_storage_input {
         }
         /// <p>Specifies the name of the object storage bucket involved in the transfer.</p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket_name = input;
-            self
+            self.bucket_name = input; self
         }
         /// <p>Specifies the access key (for example, a user name) if credentials are required to authenticate with the object storage server.</p>
         pub fn access_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2210,8 +1672,7 @@ pub mod create_location_object_storage_input {
         }
         /// <p>Specifies the access key (for example, a user name) if credentials are required to authenticate with the object storage server.</p>
         pub fn set_access_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.access_key = input;
-            self
+            self.access_key = input; self
         }
         /// <p>Specifies the secret key (for example, a password) if credentials are required to authenticate with the object storage server.</p>
         pub fn secret_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2220,8 +1681,7 @@ pub mod create_location_object_storage_input {
         }
         /// <p>Specifies the secret key (for example, a password) if credentials are required to authenticate with the object storage server.</p>
         pub fn set_secret_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.secret_key = input;
-            self
+            self.secret_key = input; self
         }
         /// Appends an item to `agent_arns`.
         ///
@@ -2230,17 +1690,13 @@ pub mod create_location_object_storage_input {
         /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can securely connect with your location.</p>
         pub fn agent_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.agent_arns.unwrap_or_default();
-            v.push(input.into());
-            self.agent_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.agent_arns = Some(v);
+                            self
         }
         /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can securely connect with your location.</p>
-        pub fn set_agent_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.agent_arns = input;
-            self
+        pub fn set_agent_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.agent_arns = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -2249,83 +1705,66 @@ pub mod create_location_object_storage_input {
         /// <p>Specifies the key-value pair that represents a tag that you want to add to the resource. Tags can help you manage, filter, and search for your resources. We recommend creating a name tag for your location.</p>
         pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>Specifies the key-value pair that represents a tag that you want to add to the resource. Tags can help you manage, filter, and search for your resources. We recommend creating a name tag for your location.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateLocationObjectStorageInput`](crate::input::CreateLocationObjectStorageInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateLocationObjectStorageInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::CreateLocationObjectStorageInput {
-                server_hostname: self.server_hostname,
-                server_port: self.server_port,
-                server_protocol: self.server_protocol,
-                subdirectory: self.subdirectory,
-                bucket_name: self.bucket_name,
-                access_key: self.access_key,
-                secret_key: self.secret_key,
-                agent_arns: self.agent_arns,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::CreateLocationObjectStorageInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CreateLocationObjectStorageInput {
+                    server_hostname: self.server_hostname
+                    ,
+                    server_port: self.server_port
+                    ,
+                    server_protocol: self.server_protocol
+                    ,
+                    subdirectory: self.subdirectory
+                    ,
+                    bucket_name: self.bucket_name
+                    ,
+                    access_key: self.access_key
+                    ,
+                    secret_key: self.secret_key
+                    ,
+                    agent_arns: self.agent_arns
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateLocationObjectStorageInput {
     /// Consumes the builder and constructs an Operation<[`CreateLocationObjectStorage`](crate::operation::CreateLocationObjectStorage)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateLocationObjectStorage,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateLocationObjectStorage, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateLocationObjectStorageInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::CreateLocationObjectStorageInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreateLocationObjectStorageInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CreateLocationObjectStorageInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.CreateLocationObjectStorage",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.CreateLocationObjectStorage"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2333,58 +1772,36 @@ impl CreateLocationObjectStorageInput {
             crate::operation_ser::serialize_operation_crate_operation_create_location_object_storage(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateLocationObjectStorage::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateLocationObjectStorage",
-            "datasync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateLocationObjectStorage::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateLocationObjectStorage", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2396,9 +1813,9 @@ impl CreateLocationObjectStorageInput {
 
 /// See [`CreateLocationS3Input`](crate::input::CreateLocationS3Input).
 pub mod create_location_s3_input {
-
+    
     /// A builder for [`CreateLocationS3Input`](crate::input::CreateLocationS3Input).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) subdirectory: std::option::Option<std::string::String>,
         pub(crate) s3_bucket_arn: std::option::Option<std::string::String>,
@@ -2415,8 +1832,7 @@ pub mod create_location_s3_input {
         }
         /// <p>A subdirectory in the Amazon S3 bucket. This subdirectory in Amazon S3 is used to read data from the S3 source location or write data to the S3 destination.</p>
         pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.subdirectory = input;
-            self
+            self.subdirectory = input; self
         }
         /// <p>The ARN of the Amazon S3 bucket. If the bucket is on an Amazon Web Services Outpost, this must be an access point ARN.</p>
         pub fn s3_bucket_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2424,39 +1840,30 @@ pub mod create_location_s3_input {
             self
         }
         /// <p>The ARN of the Amazon S3 bucket. If the bucket is on an Amazon Web Services Outpost, this must be an access point ARN.</p>
-        pub fn set_s3_bucket_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.s3_bucket_arn = input;
-            self
+        pub fn set_s3_bucket_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_bucket_arn = input; self
         }
-        /// <p>The Amazon S3 storage class that you want to store your files in when this location is used as a task destination. For buckets in Amazon Web Services Regions, the storage class defaults to Standard. For buckets on Outposts, the storage class defaults to Amazon Web Services S3 Outposts.</p>
+        /// <p>The Amazon S3 storage class that you want to store your files in when this location is used as a task destination. For buckets in Amazon Web Services Regions, the storage class defaults to Standard. For buckets on Outposts, the storage class defaults to Amazon Web Services S3 Outposts.</p> 
         /// <p>For more information about S3 storage classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have behaviors that can affect your S3 storage cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with S3 storage classes in DataSync</a>.</p>
         pub fn s3_storage_class(mut self, input: crate::model::S3StorageClass) -> Self {
             self.s3_storage_class = Some(input);
             self
         }
-        /// <p>The Amazon S3 storage class that you want to store your files in when this location is used as a task destination. For buckets in Amazon Web Services Regions, the storage class defaults to Standard. For buckets on Outposts, the storage class defaults to Amazon Web Services S3 Outposts.</p>
+        /// <p>The Amazon S3 storage class that you want to store your files in when this location is used as a task destination. For buckets in Amazon Web Services Regions, the storage class defaults to Standard. For buckets on Outposts, the storage class defaults to Amazon Web Services S3 Outposts.</p> 
         /// <p>For more information about S3 storage classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have behaviors that can affect your S3 storage cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with S3 storage classes in DataSync</a>.</p>
-        pub fn set_s3_storage_class(
-            mut self,
-            input: std::option::Option<crate::model::S3StorageClass>,
-        ) -> Self {
-            self.s3_storage_class = input;
-            self
+        pub fn set_s3_storage_class(mut self, input: std::option::Option<crate::model::S3StorageClass>) -> Self {
+            self.s3_storage_class = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to access an Amazon S3 bucket.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to access an Amazon S3 bucket.</p> 
         /// <p>For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>DataSync User Guide</i>.</p>
         pub fn s3_config(mut self, input: crate::model::S3Config) -> Self {
             self.s3_config = Some(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to access an Amazon S3 bucket.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to access an Amazon S3 bucket.</p> 
         /// <p>For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>DataSync User Guide</i>.</p>
         pub fn set_s3_config(mut self, input: std::option::Option<crate::model::S3Config>) -> Self {
-            self.s3_config = input;
-            self
+            self.s3_config = input; self
         }
         /// Appends an item to `agent_arns`.
         ///
@@ -2465,17 +1872,13 @@ pub mod create_location_s3_input {
         /// <p>If you're using DataSync on an Amazon Web Services Outpost, specify the Amazon Resource Names (ARNs) of the DataSync agents deployed on your Outpost. For more information about launching a DataSync agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
         pub fn agent_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.agent_arns.unwrap_or_default();
-            v.push(input.into());
-            self.agent_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.agent_arns = Some(v);
+                            self
         }
         /// <p>If you're using DataSync on an Amazon Web Services Outpost, specify the Amazon Resource Names (ARNs) of the DataSync agents deployed on your Outpost. For more information about launching a DataSync agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
-        pub fn set_agent_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.agent_arns = input;
-            self
+        pub fn set_agent_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.agent_arns = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -2484,138 +1887,97 @@ pub mod create_location_s3_input {
         /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources.</p>
         pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateLocationS3Input`](crate::input::CreateLocationS3Input).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateLocationS3Input, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::CreateLocationS3Input {
-                subdirectory: self.subdirectory,
-                s3_bucket_arn: self.s3_bucket_arn,
-                s3_storage_class: self.s3_storage_class,
-                s3_config: self.s3_config,
-                agent_arns: self.agent_arns,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::CreateLocationS3Input, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CreateLocationS3Input {
+                    subdirectory: self.subdirectory
+                    ,
+                    s3_bucket_arn: self.s3_bucket_arn
+                    ,
+                    s3_storage_class: self.s3_storage_class
+                    ,
+                    s3_config: self.s3_config
+                    ,
+                    agent_arns: self.agent_arns
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateLocationS3Input {
     /// Consumes the builder and constructs an Operation<[`CreateLocationS3`](crate::operation::CreateLocationS3)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateLocationS3,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateLocationS3, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateLocationS3Input,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::CreateLocationS3Input, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreateLocationS3Input,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CreateLocationS3Input,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.CreateLocationS3",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.CreateLocationS3"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_location_s3(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_location_s3(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateLocationS3::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateLocationS3",
-            "datasync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateLocationS3::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateLocationS3", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2627,9 +1989,9 @@ impl CreateLocationS3Input {
 
 /// See [`CreateLocationSmbInput`](crate::input::CreateLocationSmbInput).
 pub mod create_location_smb_input {
-
+    
     /// A builder for [`CreateLocationSmbInput`](crate::input::CreateLocationSmbInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) subdirectory: std::option::Option<std::string::String>,
         pub(crate) server_hostname: std::option::Option<std::string::String>,
@@ -2641,50 +2003,44 @@ pub mod create_location_smb_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
     }
     impl Builder {
-        /// <p>The subdirectory in the SMB file system that is used to read data from the SMB source location or write data to the SMB destination. The SMB path should be a path that's exported by the SMB server, or a subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your network.</p> <note>
-        /// <p> <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.</p>
-        /// </note>
+        /// <p>The subdirectory in the SMB file system that is used to read data from the SMB source location or write data to the SMB destination. The SMB path should be a path that's exported by the SMB server, or a subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your network.</p> <note> 
+        /// <p> <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.</p> 
+        /// </note> 
         /// <p>To transfer all the data in the folder you specified, DataSync needs to have permissions to mount the SMB share, as well as to access all the data in that share. To ensure this, either ensure that the user/password specified belongs to the user who can mount the share, and who has the appropriate permissions for all of the files and directories that you want DataSync to access, or use credentials of a member of the Backup Operators group to mount the share. Doing either enables the agent to access the data. For the agent to access directories, you must additionally enable all execute access.</p>
         pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
             self.subdirectory = Some(input.into());
             self
         }
-        /// <p>The subdirectory in the SMB file system that is used to read data from the SMB source location or write data to the SMB destination. The SMB path should be a path that's exported by the SMB server, or a subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your network.</p> <note>
-        /// <p> <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.</p>
-        /// </note>
+        /// <p>The subdirectory in the SMB file system that is used to read data from the SMB source location or write data to the SMB destination. The SMB path should be a path that's exported by the SMB server, or a subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your network.</p> <note> 
+        /// <p> <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.</p> 
+        /// </note> 
         /// <p>To transfer all the data in the folder you specified, DataSync needs to have permissions to mount the SMB share, as well as to access all the data in that share. To ensure this, either ensure that the user/password specified belongs to the user who can mount the share, and who has the appropriate permissions for all of the files and directories that you want DataSync to access, or use credentials of a member of the Backup Operators group to mount the share. Doing either enables the agent to access the data. For the agent to access directories, you must additionally enable all execute access.</p>
         pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.subdirectory = input;
-            self
+            self.subdirectory = input; self
         }
-        /// <p>The name of the SMB server. This value is the IP address or Domain Name Service (DNS) name of the SMB server. An agent that is installed on-premises uses this hostname to mount the SMB server in a network.</p> <note>
-        /// <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
+        /// <p>The name of the SMB server. This value is the IP address or Domain Name Service (DNS) name of the SMB server. An agent that is installed on-premises uses this hostname to mount the SMB server in a network.</p> <note> 
+        /// <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p> 
         /// </note>
         pub fn server_hostname(mut self, input: impl Into<std::string::String>) -> Self {
             self.server_hostname = Some(input.into());
             self
         }
-        /// <p>The name of the SMB server. This value is the IP address or Domain Name Service (DNS) name of the SMB server. An agent that is installed on-premises uses this hostname to mount the SMB server in a network.</p> <note>
-        /// <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
+        /// <p>The name of the SMB server. This value is the IP address or Domain Name Service (DNS) name of the SMB server. An agent that is installed on-premises uses this hostname to mount the SMB server in a network.</p> <note> 
+        /// <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p> 
         /// </note>
-        pub fn set_server_hostname(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.server_hostname = input;
-            self
+        pub fn set_server_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.server_hostname = input; self
         }
-        /// <p>The user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
+        /// <p>The user who can mount the share, has the permissions to access files and folders in the SMB share.</p> 
         /// <p>For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata, see the <a href="create-smb-location.html#SMBuser">User setting</a> for SMB locations.</p>
         pub fn user(mut self, input: impl Into<std::string::String>) -> Self {
             self.user = Some(input.into());
             self
         }
-        /// <p>The user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
+        /// <p>The user who can mount the share, has the permissions to access files and folders in the SMB share.</p> 
         /// <p>For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata, see the <a href="create-smb-location.html#SMBuser">User setting</a> for SMB locations.</p>
         pub fn set_user(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user = input;
-            self
+            self.user = input; self
         }
         /// <p>The name of the Windows domain that the SMB server belongs to.</p>
         pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2693,8 +2049,7 @@ pub mod create_location_smb_input {
         }
         /// <p>The name of the Windows domain that the SMB server belongs to.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
         /// <p>The password of the user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
         pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2703,8 +2058,7 @@ pub mod create_location_smb_input {
         }
         /// <p>The password of the user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.password = input;
-            self
+            self.password = input; self
         }
         /// Appends an item to `agent_arns`.
         ///
@@ -2713,17 +2067,13 @@ pub mod create_location_smb_input {
         /// <p>The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block (SMB) location. </p>
         pub fn agent_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.agent_arns.unwrap_or_default();
-            v.push(input.into());
-            self.agent_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.agent_arns = Some(v);
+                            self
         }
         /// <p>The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block (SMB) location. </p>
-        pub fn set_agent_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.agent_arns = input;
-            self
+        pub fn set_agent_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.agent_arns = input; self
         }
         /// <p>The mount options used by DataSync to access the SMB server.</p>
         pub fn mount_options(mut self, input: crate::model::SmbMountOptions) -> Self {
@@ -2731,12 +2081,8 @@ pub mod create_location_smb_input {
             self
         }
         /// <p>The mount options used by DataSync to access the SMB server.</p>
-        pub fn set_mount_options(
-            mut self,
-            input: std::option::Option<crate::model::SmbMountOptions>,
-        ) -> Self {
-            self.mount_options = input;
-            self
+        pub fn set_mount_options(mut self, input: std::option::Option<crate::model::SmbMountOptions>) -> Self {
+            self.mount_options = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -2745,140 +2091,101 @@ pub mod create_location_smb_input {
         /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources.</p>
         pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateLocationSmbInput`](crate::input::CreateLocationSmbInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateLocationSmbInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::CreateLocationSmbInput {
-                subdirectory: self.subdirectory,
-                server_hostname: self.server_hostname,
-                user: self.user,
-                domain: self.domain,
-                password: self.password,
-                agent_arns: self.agent_arns,
-                mount_options: self.mount_options,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::CreateLocationSmbInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CreateLocationSmbInput {
+                    subdirectory: self.subdirectory
+                    ,
+                    server_hostname: self.server_hostname
+                    ,
+                    user: self.user
+                    ,
+                    domain: self.domain
+                    ,
+                    password: self.password
+                    ,
+                    agent_arns: self.agent_arns
+                    ,
+                    mount_options: self.mount_options
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateLocationSmbInput {
     /// Consumes the builder and constructs an Operation<[`CreateLocationSmb`](crate::operation::CreateLocationSmb)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateLocationSmb,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateLocationSmb, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateLocationSmbInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::CreateLocationSmbInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreateLocationSmbInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CreateLocationSmbInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.CreateLocationSmb",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.CreateLocationSmb"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_location_smb(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_location_smb(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateLocationSmb::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateLocationSmb",
-            "datasync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateLocationSmb::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateLocationSmb", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2890,9 +2197,9 @@ impl CreateLocationSmbInput {
 
 /// See [`CreateTaskInput`](crate::input::CreateTaskInput).
 pub mod create_task_input {
-
+    
     /// A builder for [`CreateTaskInput`](crate::input::CreateTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) source_location_arn: std::option::Option<std::string::String>,
         pub(crate) destination_location_arn: std::option::Option<std::string::String>,
@@ -2911,12 +2218,8 @@ pub mod create_task_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the source location for the task.</p>
-        pub fn set_source_location_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_location_arn = input;
-            self
+        pub fn set_source_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_location_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services storage resource's location. </p>
         pub fn destination_location_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2924,12 +2227,8 @@ pub mod create_task_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services storage resource's location. </p>
-        pub fn set_destination_location_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.destination_location_arn = input;
-            self
+        pub fn set_destination_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.destination_location_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor and log events in the task. </p>
         pub fn cloud_watch_log_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2937,12 +2236,8 @@ pub mod create_task_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor and log events in the task. </p>
-        pub fn set_cloud_watch_log_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cloud_watch_log_group_arn = input;
-            self
+        pub fn set_cloud_watch_log_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cloud_watch_log_group_arn = input; self
         }
         /// <p>The name of a task. This value is a text reference that is used to identify the task in the console. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2951,41 +2246,35 @@ pub mod create_task_input {
         }
         /// <p>The name of a task. This value is a text reference that is used to identify the task in the console. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
-        /// <p>The set of configuration options that control the behavior of a single execution of the task that occurs when you call <code>StartTaskExecution</code>. You can configure these options to preserve metadata such as user ID (UID) and group ID (GID), file permissions, data integrity verification, and so on.</p>
+        /// <p>The set of configuration options that control the behavior of a single execution of the task that occurs when you call <code>StartTaskExecution</code>. You can configure these options to preserve metadata such as user ID (UID) and group ID (GID), file permissions, data integrity verification, and so on.</p> 
         /// <p>For each individual task execution, you can override these options by specifying the <code>OverrideOptions</code> before starting the task execution. For more information, see the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. </p>
         pub fn options(mut self, input: crate::model::Options) -> Self {
             self.options = Some(input);
             self
         }
-        /// <p>The set of configuration options that control the behavior of a single execution of the task that occurs when you call <code>StartTaskExecution</code>. You can configure these options to preserve metadata such as user ID (UID) and group ID (GID), file permissions, data integrity verification, and so on.</p>
+        /// <p>The set of configuration options that control the behavior of a single execution of the task that occurs when you call <code>StartTaskExecution</code>. You can configure these options to preserve metadata such as user ID (UID) and group ID (GID), file permissions, data integrity verification, and so on.</p> 
         /// <p>For each individual task execution, you can override these options by specifying the <code>OverrideOptions</code> before starting the task execution. For more information, see the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. </p>
         pub fn set_options(mut self, input: std::option::Option<crate::model::Options>) -> Self {
-            self.options = input;
-            self
+            self.options = input; self
         }
         /// Appends an item to `excludes`.
         ///
         /// To override the contents of this collection use [`set_excludes`](Self::set_excludes).
         ///
-        /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
+        /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p> 
         /// <p> </p>
         pub fn excludes(mut self, input: crate::model::FilterRule) -> Self {
             let mut v = self.excludes.unwrap_or_default();
-            v.push(input);
-            self.excludes = Some(v);
-            self
+                            v.push(input);
+                            self.excludes = Some(v);
+                            self
         }
-        /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
+        /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p> 
         /// <p> </p>
-        pub fn set_excludes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
-        ) -> Self {
-            self.excludes = input;
-            self
+        pub fn set_excludes(mut self, input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>) -> Self {
+            self.excludes = input; self
         }
         /// <p>Specifies a schedule used to periodically transfer files from a source to a destination location. The schedule should be specified in UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
         pub fn schedule(mut self, input: crate::model::TaskSchedule) -> Self {
@@ -2993,12 +2282,8 @@ pub mod create_task_input {
             self
         }
         /// <p>Specifies a schedule used to periodically transfer files from a source to a destination location. The schedule should be specified in UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
-        pub fn set_schedule(
-            mut self,
-            input: std::option::Option<crate::model::TaskSchedule>,
-        ) -> Self {
-            self.schedule = input;
-            self
+        pub fn set_schedule(mut self, input: std::option::Option<crate::model::TaskSchedule>) -> Self {
+            self.schedule = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -3007,17 +2292,13 @@ pub mod create_task_input {
         /// <p>The key-value pair that represents the tag that you want to add to the resource. The value can be an empty string. </p>
         pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The key-value pair that represents the tag that you want to add to the resource. The value can be an empty string. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>) -> Self {
+            self.tags = input; self
         }
         /// Appends an item to `includes`.
         ///
@@ -3026,140 +2307,103 @@ pub mod create_task_input {
         /// <p>A list of filter rules that determines which files to include when running a task. The pattern contains a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
         pub fn includes(mut self, input: crate::model::FilterRule) -> Self {
             let mut v = self.includes.unwrap_or_default();
-            v.push(input);
-            self.includes = Some(v);
-            self
+                            v.push(input);
+                            self.includes = Some(v);
+                            self
         }
         /// <p>A list of filter rules that determines which files to include when running a task. The pattern contains a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
-        pub fn set_includes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
-        ) -> Self {
-            self.includes = input;
-            self
+        pub fn set_includes(mut self, input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>) -> Self {
+            self.includes = input; self
         }
         /// Consumes the builder and constructs a [`CreateTaskInput`](crate::input::CreateTaskInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateTaskInput, aws_smithy_http::operation::BuildError> {
-            Ok(crate::input::CreateTaskInput {
-                source_location_arn: self.source_location_arn,
-                destination_location_arn: self.destination_location_arn,
-                cloud_watch_log_group_arn: self.cloud_watch_log_group_arn,
-                name: self.name,
-                options: self.options,
-                excludes: self.excludes,
-                schedule: self.schedule,
-                tags: self.tags,
-                includes: self.includes,
-            })
+        pub fn build(self) -> Result<crate::input::CreateTaskInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CreateTaskInput {
+                    source_location_arn: self.source_location_arn
+                    ,
+                    destination_location_arn: self.destination_location_arn
+                    ,
+                    cloud_watch_log_group_arn: self.cloud_watch_log_group_arn
+                    ,
+                    name: self.name
+                    ,
+                    options: self.options
+                    ,
+                    excludes: self.excludes
+                    ,
+                    schedule: self.schedule
+                    ,
+                    tags: self.tags
+                    ,
+                    includes: self.includes
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateTaskInput {
     /// Consumes the builder and constructs an Operation<[`CreateTask`](crate::operation::CreateTask)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateTask,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateTask, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateTaskInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::CreateTaskInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreateTaskInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CreateTaskInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.CreateTask",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.CreateTask"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_task(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_task(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateTask::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateTask",
-            "datasync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateTask::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateTask", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3171,9 +2415,9 @@ impl CreateTaskInput {
 
 /// See [`DeleteAgentInput`](crate::input::DeleteAgentInput).
 pub mod delete_agent_input {
-
+    
     /// A builder for [`DeleteAgentInput`](crate::input::DeleteAgentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) agent_arn: std::option::Option<std::string::String>,
     }
@@ -3185,124 +2429,81 @@ pub mod delete_agent_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the agent to delete. Use the <code>ListAgents</code> operation to return a list of agents for your account and Amazon Web Services Region.</p>
         pub fn set_agent_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.agent_arn = input;
-            self
+            self.agent_arn = input; self
         }
         /// Consumes the builder and constructs a [`DeleteAgentInput`](crate::input::DeleteAgentInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteAgentInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DeleteAgentInput {
-                agent_arn: self.agent_arn,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteAgentInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DeleteAgentInput {
+                    agent_arn: self.agent_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteAgentInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAgent`](crate::operation::DeleteAgent)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteAgent,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteAgent, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteAgentInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteAgentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DeleteAgentInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DeleteAgentInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.DeleteAgent",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.DeleteAgent"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_agent(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_agent(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteAgent::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteAgent",
-            "datasync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteAgent::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteAgent", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3314,9 +2515,9 @@ impl DeleteAgentInput {
 
 /// See [`DeleteLocationInput`](crate::input::DeleteLocationInput).
 pub mod delete_location_input {
-
+    
     /// A builder for [`DeleteLocationInput`](crate::input::DeleteLocationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
     }
@@ -3328,124 +2529,81 @@ pub mod delete_location_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the location to delete.</p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_arn = input;
-            self
+            self.location_arn = input; self
         }
         /// Consumes the builder and constructs a [`DeleteLocationInput`](crate::input::DeleteLocationInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteLocationInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DeleteLocationInput {
-                location_arn: self.location_arn,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteLocationInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DeleteLocationInput {
+                    location_arn: self.location_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteLocationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLocation`](crate::operation::DeleteLocation)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteLocation,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteLocation, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteLocationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteLocationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DeleteLocationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DeleteLocationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.DeleteLocation",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.DeleteLocation"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_location(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_location(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteLocation::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteLocation",
-            "datasync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteLocation::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteLocation", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3457,9 +2615,9 @@ impl DeleteLocationInput {
 
 /// See [`DeleteTaskInput`](crate::input::DeleteTaskInput).
 pub mod delete_task_input {
-
+    
     /// A builder for [`DeleteTaskInput`](crate::input::DeleteTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) task_arn: std::option::Option<std::string::String>,
     }
@@ -3471,123 +2629,81 @@ pub mod delete_task_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the task to delete.</p>
         pub fn set_task_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.task_arn = input;
-            self
+            self.task_arn = input; self
         }
         /// Consumes the builder and constructs a [`DeleteTaskInput`](crate::input::DeleteTaskInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteTaskInput, aws_smithy_http::operation::BuildError> {
-            Ok(crate::input::DeleteTaskInput {
-                task_arn: self.task_arn,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteTaskInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DeleteTaskInput {
+                    task_arn: self.task_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteTaskInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTask`](crate::operation::DeleteTask)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteTask,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteTask, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteTaskInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteTaskInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DeleteTaskInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DeleteTaskInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.DeleteTask",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.DeleteTask"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_task(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_task(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteTask::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteTask",
-            "datasync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteTask::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteTask", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3599,9 +2715,9 @@ impl DeleteTaskInput {
 
 /// See [`DescribeAgentInput`](crate::input::DescribeAgentInput).
 pub mod describe_agent_input {
-
+    
     /// A builder for [`DescribeAgentInput`](crate::input::DescribeAgentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) agent_arn: std::option::Option<std::string::String>,
     }
@@ -3613,124 +2729,81 @@ pub mod describe_agent_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the agent to describe.</p>
         pub fn set_agent_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.agent_arn = input;
-            self
+            self.agent_arn = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAgentInput`](crate::input::DescribeAgentInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DescribeAgentInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DescribeAgentInput {
-                agent_arn: self.agent_arn,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeAgentInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DescribeAgentInput {
+                    agent_arn: self.agent_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeAgentInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAgent`](crate::operation::DescribeAgent)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeAgent,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeAgent, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeAgentInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeAgentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribeAgentInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DescribeAgentInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.DescribeAgent",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.DescribeAgent"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_agent(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_agent(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeAgent::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeAgent",
-            "datasync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeAgent::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeAgent", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3742,9 +2815,9 @@ impl DescribeAgentInput {
 
 /// See [`DescribeLocationEfsInput`](crate::input::DescribeLocationEfsInput).
 pub mod describe_location_efs_input {
-
+    
     /// A builder for [`DescribeLocationEfsInput`](crate::input::DescribeLocationEfsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
     }
@@ -3756,124 +2829,81 @@ pub mod describe_location_efs_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon EFS file system location that you want information about.</p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_arn = input;
-            self
+            self.location_arn = input; self
         }
         /// Consumes the builder and constructs a [`DescribeLocationEfsInput`](crate::input::DescribeLocationEfsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DescribeLocationEfsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DescribeLocationEfsInput {
-                location_arn: self.location_arn,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeLocationEfsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DescribeLocationEfsInput {
+                    location_arn: self.location_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeLocationEfsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLocationEfs`](crate::operation::DescribeLocationEfs)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeLocationEfs,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeLocationEfs, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeLocationEfsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeLocationEfsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribeLocationEfsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DescribeLocationEfsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.DescribeLocationEfs",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.DescribeLocationEfs"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_location_efs(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_location_efs(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeLocationEfs::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeLocationEfs",
-            "datasync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeLocationEfs::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeLocationEfs", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3885,9 +2915,9 @@ impl DescribeLocationEfsInput {
 
 /// See [`DescribeLocationFsxLustreInput`](crate::input::DescribeLocationFsxLustreInput).
 pub mod describe_location_fsx_lustre_input {
-
+    
     /// A builder for [`DescribeLocationFsxLustreInput`](crate::input::DescribeLocationFsxLustreInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
     }
@@ -3899,128 +2929,81 @@ pub mod describe_location_fsx_lustre_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the FSx for Lustre location to describe. </p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_arn = input;
-            self
+            self.location_arn = input; self
         }
         /// Consumes the builder and constructs a [`DescribeLocationFsxLustreInput`](crate::input::DescribeLocationFsxLustreInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeLocationFsxLustreInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::DescribeLocationFsxLustreInput {
-                location_arn: self.location_arn,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeLocationFsxLustreInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DescribeLocationFsxLustreInput {
+                    location_arn: self.location_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeLocationFsxLustreInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLocationFsxLustre`](crate::operation::DescribeLocationFsxLustre)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeLocationFsxLustre,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeLocationFsxLustre, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeLocationFsxLustreInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeLocationFsxLustreInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribeLocationFsxLustreInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DescribeLocationFsxLustreInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.DescribeLocationFsxLustre",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.DescribeLocationFsxLustre"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_location_fsx_lustre(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_location_fsx_lustre(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeLocationFsxLustre::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeLocationFsxLustre",
-            "datasync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeLocationFsxLustre::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeLocationFsxLustre", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4032,9 +3015,9 @@ impl DescribeLocationFsxLustreInput {
 
 /// See [`DescribeLocationFsxOntapInput`](crate::input::DescribeLocationFsxOntapInput).
 pub mod describe_location_fsx_ontap_input {
-
+    
     /// A builder for [`DescribeLocationFsxOntapInput`](crate::input::DescribeLocationFsxOntapInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
     }
@@ -4046,128 +3029,81 @@ pub mod describe_location_fsx_ontap_input {
         }
         /// <p>Specifies the Amazon Resource Name (ARN) of the FSx for ONTAP file system location that you want information about.</p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_arn = input;
-            self
+            self.location_arn = input; self
         }
         /// Consumes the builder and constructs a [`DescribeLocationFsxOntapInput`](crate::input::DescribeLocationFsxOntapInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeLocationFsxOntapInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::DescribeLocationFsxOntapInput {
-                location_arn: self.location_arn,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeLocationFsxOntapInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DescribeLocationFsxOntapInput {
+                    location_arn: self.location_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeLocationFsxOntapInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLocationFsxOntap`](crate::operation::DescribeLocationFsxOntap)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeLocationFsxOntap,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeLocationFsxOntap, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeLocationFsxOntapInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeLocationFsxOntapInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribeLocationFsxOntapInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DescribeLocationFsxOntapInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.DescribeLocationFsxOntap",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.DescribeLocationFsxOntap"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_location_fsx_ontap(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_location_fsx_ontap(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeLocationFsxOntap::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeLocationFsxOntap",
-            "datasync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeLocationFsxOntap::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeLocationFsxOntap", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4179,9 +3115,9 @@ impl DescribeLocationFsxOntapInput {
 
 /// See [`DescribeLocationFsxOpenZfsInput`](crate::input::DescribeLocationFsxOpenZfsInput).
 pub mod describe_location_fsx_open_zfs_input {
-
+    
     /// A builder for [`DescribeLocationFsxOpenZfsInput`](crate::input::DescribeLocationFsxOpenZfsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
     }
@@ -4193,66 +3129,44 @@ pub mod describe_location_fsx_open_zfs_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the FSx for OpenZFS location to describe.</p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_arn = input;
-            self
+            self.location_arn = input; self
         }
         /// Consumes the builder and constructs a [`DescribeLocationFsxOpenZfsInput`](crate::input::DescribeLocationFsxOpenZfsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeLocationFsxOpenZfsInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::DescribeLocationFsxOpenZfsInput {
-                location_arn: self.location_arn,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeLocationFsxOpenZfsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DescribeLocationFsxOpenZfsInput {
+                    location_arn: self.location_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeLocationFsxOpenZfsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLocationFsxOpenZfs`](crate::operation::DescribeLocationFsxOpenZfs)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeLocationFsxOpenZfs,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeLocationFsxOpenZfs, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeLocationFsxOpenZfsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeLocationFsxOpenZfsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribeLocationFsxOpenZfsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DescribeLocationFsxOpenZfsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.DescribeLocationFsxOpenZfs",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.DescribeLocationFsxOpenZfs"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -4260,58 +3174,36 @@ impl DescribeLocationFsxOpenZfsInput {
             crate::operation_ser::serialize_operation_crate_operation_describe_location_fsx_open_zfs(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeLocationFsxOpenZfs::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeLocationFsxOpenZfs",
-            "datasync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeLocationFsxOpenZfs::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeLocationFsxOpenZfs", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4323,9 +3215,9 @@ impl DescribeLocationFsxOpenZfsInput {
 
 /// See [`DescribeLocationFsxWindowsInput`](crate::input::DescribeLocationFsxWindowsInput).
 pub mod describe_location_fsx_windows_input {
-
+    
     /// A builder for [`DescribeLocationFsxWindowsInput`](crate::input::DescribeLocationFsxWindowsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
     }
@@ -4337,66 +3229,44 @@ pub mod describe_location_fsx_windows_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location to describe.</p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_arn = input;
-            self
+            self.location_arn = input; self
         }
         /// Consumes the builder and constructs a [`DescribeLocationFsxWindowsInput`](crate::input::DescribeLocationFsxWindowsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeLocationFsxWindowsInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::DescribeLocationFsxWindowsInput {
-                location_arn: self.location_arn,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeLocationFsxWindowsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DescribeLocationFsxWindowsInput {
+                    location_arn: self.location_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeLocationFsxWindowsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLocationFsxWindows`](crate::operation::DescribeLocationFsxWindows)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeLocationFsxWindows,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeLocationFsxWindows, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeLocationFsxWindowsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeLocationFsxWindowsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribeLocationFsxWindowsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DescribeLocationFsxWindowsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.DescribeLocationFsxWindows",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.DescribeLocationFsxWindows"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -4404,58 +3274,36 @@ impl DescribeLocationFsxWindowsInput {
             crate::operation_ser::serialize_operation_crate_operation_describe_location_fsx_windows(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeLocationFsxWindows::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeLocationFsxWindows",
-            "datasync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeLocationFsxWindows::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeLocationFsxWindows", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4467,9 +3315,9 @@ impl DescribeLocationFsxWindowsInput {
 
 /// See [`DescribeLocationHdfsInput`](crate::input::DescribeLocationHdfsInput).
 pub mod describe_location_hdfs_input {
-
+    
     /// A builder for [`DescribeLocationHdfsInput`](crate::input::DescribeLocationHdfsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
     }
@@ -4481,126 +3329,81 @@ pub mod describe_location_hdfs_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the HDFS cluster location to describe.</p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_arn = input;
-            self
+            self.location_arn = input; self
         }
         /// Consumes the builder and constructs a [`DescribeLocationHdfsInput`](crate::input::DescribeLocationHdfsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DescribeLocationHdfsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DescribeLocationHdfsInput {
-                location_arn: self.location_arn,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeLocationHdfsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DescribeLocationHdfsInput {
+                    location_arn: self.location_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeLocationHdfsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLocationHdfs`](crate::operation::DescribeLocationHdfs)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeLocationHdfs,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeLocationHdfs, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeLocationHdfsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeLocationHdfsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribeLocationHdfsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DescribeLocationHdfsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.DescribeLocationHdfs",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.DescribeLocationHdfs"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_location_hdfs(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_location_hdfs(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeLocationHdfs::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeLocationHdfs",
-            "datasync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeLocationHdfs::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeLocationHdfs", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4612,9 +3415,9 @@ impl DescribeLocationHdfsInput {
 
 /// See [`DescribeLocationNfsInput`](crate::input::DescribeLocationNfsInput).
 pub mod describe_location_nfs_input {
-
+    
     /// A builder for [`DescribeLocationNfsInput`](crate::input::DescribeLocationNfsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
     }
@@ -4626,124 +3429,81 @@ pub mod describe_location_nfs_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the NFS location to describe.</p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_arn = input;
-            self
+            self.location_arn = input; self
         }
         /// Consumes the builder and constructs a [`DescribeLocationNfsInput`](crate::input::DescribeLocationNfsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DescribeLocationNfsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DescribeLocationNfsInput {
-                location_arn: self.location_arn,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeLocationNfsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DescribeLocationNfsInput {
+                    location_arn: self.location_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeLocationNfsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLocationNfs`](crate::operation::DescribeLocationNfs)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeLocationNfs,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeLocationNfs, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeLocationNfsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeLocationNfsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribeLocationNfsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DescribeLocationNfsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.DescribeLocationNfs",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.DescribeLocationNfs"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_location_nfs(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_location_nfs(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeLocationNfs::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeLocationNfs",
-            "datasync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeLocationNfs::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeLocationNfs", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4755,9 +3515,9 @@ impl DescribeLocationNfsInput {
 
 /// See [`DescribeLocationObjectStorageInput`](crate::input::DescribeLocationObjectStorageInput).
 pub mod describe_location_object_storage_input {
-
+    
     /// A builder for [`DescribeLocationObjectStorageInput`](crate::input::DescribeLocationObjectStorageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
     }
@@ -4769,66 +3529,44 @@ pub mod describe_location_object_storage_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the object storage system location that you want information about.</p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_arn = input;
-            self
+            self.location_arn = input; self
         }
         /// Consumes the builder and constructs a [`DescribeLocationObjectStorageInput`](crate::input::DescribeLocationObjectStorageInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeLocationObjectStorageInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::DescribeLocationObjectStorageInput {
-                location_arn: self.location_arn,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeLocationObjectStorageInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DescribeLocationObjectStorageInput {
+                    location_arn: self.location_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeLocationObjectStorageInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLocationObjectStorage`](crate::operation::DescribeLocationObjectStorage)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeLocationObjectStorage,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeLocationObjectStorage, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeLocationObjectStorageInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeLocationObjectStorageInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribeLocationObjectStorageInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DescribeLocationObjectStorageInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.DescribeLocationObjectStorage",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.DescribeLocationObjectStorage"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -4836,58 +3574,36 @@ impl DescribeLocationObjectStorageInput {
             crate::operation_ser::serialize_operation_crate_operation_describe_location_object_storage(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeLocationObjectStorage::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeLocationObjectStorage",
-            "datasync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeLocationObjectStorage::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeLocationObjectStorage", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4899,9 +3615,9 @@ impl DescribeLocationObjectStorageInput {
 
 /// See [`DescribeLocationS3Input`](crate::input::DescribeLocationS3Input).
 pub mod describe_location_s3_input {
-
+    
     /// A builder for [`DescribeLocationS3Input`](crate::input::DescribeLocationS3Input).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
     }
@@ -4913,124 +3629,81 @@ pub mod describe_location_s3_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket location to describe.</p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_arn = input;
-            self
+            self.location_arn = input; self
         }
         /// Consumes the builder and constructs a [`DescribeLocationS3Input`](crate::input::DescribeLocationS3Input).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DescribeLocationS3Input, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DescribeLocationS3Input {
-                location_arn: self.location_arn,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeLocationS3Input, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DescribeLocationS3Input {
+                    location_arn: self.location_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeLocationS3Input {
     /// Consumes the builder and constructs an Operation<[`DescribeLocationS3`](crate::operation::DescribeLocationS3)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeLocationS3,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeLocationS3, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeLocationS3Input,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeLocationS3Input, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribeLocationS3Input,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DescribeLocationS3Input,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.DescribeLocationS3",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.DescribeLocationS3"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_location_s3(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_location_s3(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeLocationS3::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeLocationS3",
-            "datasync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeLocationS3::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeLocationS3", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5042,9 +3715,9 @@ impl DescribeLocationS3Input {
 
 /// See [`DescribeLocationSmbInput`](crate::input::DescribeLocationSmbInput).
 pub mod describe_location_smb_input {
-
+    
     /// A builder for [`DescribeLocationSmbInput`](crate::input::DescribeLocationSmbInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
     }
@@ -5056,124 +3729,81 @@ pub mod describe_location_smb_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the SMB location to describe.</p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_arn = input;
-            self
+            self.location_arn = input; self
         }
         /// Consumes the builder and constructs a [`DescribeLocationSmbInput`](crate::input::DescribeLocationSmbInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DescribeLocationSmbInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DescribeLocationSmbInput {
-                location_arn: self.location_arn,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeLocationSmbInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DescribeLocationSmbInput {
+                    location_arn: self.location_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeLocationSmbInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLocationSmb`](crate::operation::DescribeLocationSmb)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeLocationSmb,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeLocationSmb, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeLocationSmbInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeLocationSmbInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribeLocationSmbInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DescribeLocationSmbInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.DescribeLocationSmb",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.DescribeLocationSmb"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_location_smb(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_location_smb(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeLocationSmb::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeLocationSmb",
-            "datasync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeLocationSmb::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeLocationSmb", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5185,9 +3815,9 @@ impl DescribeLocationSmbInput {
 
 /// See [`DescribeTaskInput`](crate::input::DescribeTaskInput).
 pub mod describe_task_input {
-
+    
     /// A builder for [`DescribeTaskInput`](crate::input::DescribeTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) task_arn: std::option::Option<std::string::String>,
     }
@@ -5199,124 +3829,81 @@ pub mod describe_task_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the task to describe.</p>
         pub fn set_task_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.task_arn = input;
-            self
+            self.task_arn = input; self
         }
         /// Consumes the builder and constructs a [`DescribeTaskInput`](crate::input::DescribeTaskInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DescribeTaskInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DescribeTaskInput {
-                task_arn: self.task_arn,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeTaskInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DescribeTaskInput {
+                    task_arn: self.task_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeTaskInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTask`](crate::operation::DescribeTask)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeTask,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeTask, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeTaskInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeTaskInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribeTaskInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DescribeTaskInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.DescribeTask",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.DescribeTask"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_task(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_task(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeTask::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeTask",
-            "datasync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeTask::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeTask", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5328,9 +3915,9 @@ impl DescribeTaskInput {
 
 /// See [`DescribeTaskExecutionInput`](crate::input::DescribeTaskExecutionInput).
 pub mod describe_task_execution_input {
-
+    
     /// A builder for [`DescribeTaskExecutionInput`](crate::input::DescribeTaskExecutionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) task_execution_arn: std::option::Option<std::string::String>,
     }
@@ -5341,130 +3928,82 @@ pub mod describe_task_execution_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the task that is being executed.</p>
-        pub fn set_task_execution_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.task_execution_arn = input;
-            self
+        pub fn set_task_execution_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.task_execution_arn = input; self
         }
         /// Consumes the builder and constructs a [`DescribeTaskExecutionInput`](crate::input::DescribeTaskExecutionInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DescribeTaskExecutionInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DescribeTaskExecutionInput {
-                task_execution_arn: self.task_execution_arn,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeTaskExecutionInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DescribeTaskExecutionInput {
+                    task_execution_arn: self.task_execution_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeTaskExecutionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTaskExecution`](crate::operation::DescribeTaskExecution)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeTaskExecution,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeTaskExecution, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeTaskExecutionInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeTaskExecutionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribeTaskExecutionInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DescribeTaskExecutionInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.DescribeTaskExecution",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.DescribeTaskExecution"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_task_execution(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_task_execution(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeTaskExecution::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeTaskExecution",
-            "datasync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeTaskExecution::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeTaskExecution", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5476,9 +4015,9 @@ impl DescribeTaskExecutionInput {
 
 /// See [`ListAgentsInput`](crate::input::ListAgentsInput).
 pub mod list_agents_input {
-
+    
     /// A builder for [`ListAgentsInput`](crate::input::ListAgentsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -5491,8 +4030,7 @@ pub mod list_agents_input {
         }
         /// <p>The maximum number of agents to list.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>An opaque string that indicates the position at which to begin the next list of agents.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5501,124 +4039,83 @@ pub mod list_agents_input {
         }
         /// <p>An opaque string that indicates the position at which to begin the next list of agents.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAgentsInput`](crate::input::ListAgentsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListAgentsInput, aws_smithy_http::operation::BuildError> {
-            Ok(crate::input::ListAgentsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListAgentsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListAgentsInput {
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListAgentsInput {
     /// Consumes the builder and constructs an Operation<[`ListAgents`](crate::operation::ListAgents)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListAgents,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListAgents, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListAgentsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListAgentsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListAgentsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListAgentsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.ListAgents",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.ListAgents"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_agents(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_agents(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListAgents::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListAgents",
-            "datasync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListAgents::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListAgents", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5630,9 +4127,9 @@ impl ListAgentsInput {
 
 /// See [`ListLocationsInput`](crate::input::ListLocationsInput).
 pub mod list_locations_input {
-
+    
     /// A builder for [`ListLocationsInput`](crate::input::ListLocationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -5646,8 +4143,7 @@ pub mod list_locations_input {
         }
         /// <p>The maximum number of locations to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>An opaque string that indicates the position at which to begin the next list of locations.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5656,8 +4152,7 @@ pub mod list_locations_input {
         }
         /// <p>An opaque string that indicates the position at which to begin the next list of locations.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `filters`.
         ///
@@ -5666,135 +4161,91 @@ pub mod list_locations_input {
         /// <p>You can use API filters to narrow down the list of resources returned by <code>ListLocations</code>. For example, to retrieve all tasks on a specific source location, you can use <code>ListLocations</code> with filter name <code>LocationType S3</code> and <code>Operator Equals</code>.</p>
         pub fn filters(mut self, input: crate::model::LocationFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input);
-            self.filters = Some(v);
-            self
+                            v.push(input);
+                            self.filters = Some(v);
+                            self
         }
         /// <p>You can use API filters to narrow down the list of resources returned by <code>ListLocations</code>. For example, to retrieve all tasks on a specific source location, you can use <code>ListLocations</code> with filter name <code>LocationType S3</code> and <code>Operator Equals</code>.</p>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LocationFilter>>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::LocationFilter>>) -> Self {
+            self.filters = input; self
         }
         /// Consumes the builder and constructs a [`ListLocationsInput`](crate::input::ListLocationsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListLocationsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::ListLocationsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-                filters: self.filters,
-            })
+        pub fn build(self) -> Result<crate::input::ListLocationsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListLocationsInput {
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                    filters: self.filters
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListLocationsInput {
     /// Consumes the builder and constructs an Operation<[`ListLocations`](crate::operation::ListLocations)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListLocations,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListLocations, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListLocationsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListLocationsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListLocationsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListLocationsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.ListLocations",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.ListLocations"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_locations(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_locations(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListLocations::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListLocations",
-            "datasync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListLocations::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListLocations", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5806,9 +4257,9 @@ impl ListLocationsInput {
 
 /// See [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
 pub mod list_tags_for_resource_input {
-
+    
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -5822,8 +4273,7 @@ pub mod list_tags_for_resource_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource whose tags to list.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// <p>The maximum number of locations to return.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -5832,8 +4282,7 @@ pub mod list_tags_for_resource_input {
         }
         /// <p>The maximum number of locations to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>An opaque string that indicates the position at which to begin the next list of locations.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5842,128 +4291,85 @@ pub mod list_tags_for_resource_input {
         }
         /// <p>An opaque string that indicates the position at which to begin the next list of locations.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::ListTagsForResourceInput {
-                resource_arn: self.resource_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListTagsForResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListTagsForResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListTagsForResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListTagsForResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListTagsForResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListTagsForResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.ListTagsForResource",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.ListTagsForResource"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListTagsForResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListTagsForResource",
-            "datasync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListTagsForResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListTagsForResource", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5975,9 +4381,9 @@ impl ListTagsForResourceInput {
 
 /// See [`ListTaskExecutionsInput`](crate::input::ListTaskExecutionsInput).
 pub mod list_task_executions_input {
-
+    
     /// A builder for [`ListTaskExecutionsInput`](crate::input::ListTaskExecutionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) task_arn: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -5991,8 +4397,7 @@ pub mod list_task_executions_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the task whose tasks you want to list.</p>
         pub fn set_task_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.task_arn = input;
-            self
+            self.task_arn = input; self
         }
         /// <p>The maximum number of executed tasks to list.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -6001,8 +4406,7 @@ pub mod list_task_executions_input {
         }
         /// <p>The maximum number of executed tasks to list.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>An opaque string that indicates the position at which to begin the next list of the executed tasks.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6011,126 +4415,85 @@ pub mod list_task_executions_input {
         }
         /// <p>An opaque string that indicates the position at which to begin the next list of the executed tasks.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListTaskExecutionsInput`](crate::input::ListTaskExecutionsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListTaskExecutionsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::ListTaskExecutionsInput {
-                task_arn: self.task_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListTaskExecutionsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListTaskExecutionsInput {
+                    task_arn: self.task_arn
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListTaskExecutionsInput {
     /// Consumes the builder and constructs an Operation<[`ListTaskExecutions`](crate::operation::ListTaskExecutions)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListTaskExecutions,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListTaskExecutions, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListTaskExecutionsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListTaskExecutionsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListTaskExecutionsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListTaskExecutionsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.ListTaskExecutions",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.ListTaskExecutions"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_task_executions(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_task_executions(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListTaskExecutions::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListTaskExecutions",
-            "datasync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListTaskExecutions::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListTaskExecutions", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6142,9 +4505,9 @@ impl ListTaskExecutionsInput {
 
 /// See [`ListTasksInput`](crate::input::ListTasksInput).
 pub mod list_tasks_input {
-
+    
     /// A builder for [`ListTasksInput`](crate::input::ListTasksInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -6158,8 +4521,7 @@ pub mod list_tasks_input {
         }
         /// <p>The maximum number of tasks to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>An opaque string that indicates the position at which to begin the next list of tasks.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6168,8 +4530,7 @@ pub mod list_tasks_input {
         }
         /// <p>An opaque string that indicates the position at which to begin the next list of tasks.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `filters`.
         ///
@@ -6178,132 +4539,91 @@ pub mod list_tasks_input {
         /// <p>You can use API filters to narrow down the list of resources returned by <code>ListTasks</code>. For example, to retrieve all tasks on a specific source location, you can use <code>ListTasks</code> with filter name <code>LocationId</code> and <code>Operator Equals</code> with the ARN for the location.</p>
         pub fn filters(mut self, input: crate::model::TaskFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input);
-            self.filters = Some(v);
-            self
+                            v.push(input);
+                            self.filters = Some(v);
+                            self
         }
         /// <p>You can use API filters to narrow down the list of resources returned by <code>ListTasks</code>. For example, to retrieve all tasks on a specific source location, you can use <code>ListTasks</code> with filter name <code>LocationId</code> and <code>Operator Equals</code> with the ARN for the location.</p>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TaskFilter>>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::TaskFilter>>) -> Self {
+            self.filters = input; self
         }
         /// Consumes the builder and constructs a [`ListTasksInput`](crate::input::ListTasksInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListTasksInput, aws_smithy_http::operation::BuildError> {
-            Ok(crate::input::ListTasksInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-                filters: self.filters,
-            })
+        pub fn build(self) -> Result<crate::input::ListTasksInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListTasksInput {
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                    filters: self.filters
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListTasksInput {
     /// Consumes the builder and constructs an Operation<[`ListTasks`](crate::operation::ListTasks)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListTasks,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListTasks, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListTasksInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListTasksInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListTasksInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListTasksInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.ListTasks",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.ListTasks"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_tasks(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_tasks(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op =
-            aws_smithy_http::operation::Operation::new(request, crate::operation::ListTasks::new())
-                .with_metadata(aws_smithy_http::operation::Metadata::new(
-                    "ListTasks",
-                    "datasync",
-                ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListTasks::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListTasks", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6315,9 +4635,9 @@ impl ListTasksInput {
 
 /// See [`StartTaskExecutionInput`](crate::input::StartTaskExecutionInput).
 pub mod start_task_execution_input {
-
+    
     /// A builder for [`StartTaskExecutionInput`](crate::input::StartTaskExecutionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) task_arn: std::option::Option<std::string::String>,
         pub(crate) override_options: std::option::Option<crate::model::Options>,
@@ -6332,44 +4652,35 @@ pub mod start_task_execution_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the task to start.</p>
         pub fn set_task_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.task_arn = input;
-            self
+            self.task_arn = input; self
         }
-        /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
+        /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p> 
         /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
         pub fn override_options(mut self, input: crate::model::Options) -> Self {
             self.override_options = Some(input);
             self
         }
-        /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
+        /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p> 
         /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
-        pub fn set_override_options(
-            mut self,
-            input: std::option::Option<crate::model::Options>,
-        ) -> Self {
-            self.override_options = input;
-            self
+        pub fn set_override_options(mut self, input: std::option::Option<crate::model::Options>) -> Self {
+            self.override_options = input; self
         }
         /// Appends an item to `includes`.
         ///
         /// To override the contents of this collection use [`set_includes`](Self::set_includes).
         ///
-        /// <p>A list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
+        /// <p>A list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p> 
         /// <p> </p>
         pub fn includes(mut self, input: crate::model::FilterRule) -> Self {
             let mut v = self.includes.unwrap_or_default();
-            v.push(input);
-            self.includes = Some(v);
-            self
+                            v.push(input);
+                            self.includes = Some(v);
+                            self
         }
-        /// <p>A list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
+        /// <p>A list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p> 
         /// <p> </p>
-        pub fn set_includes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
-        ) -> Self {
-            self.includes = input;
-            self
+        pub fn set_includes(mut self, input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>) -> Self {
+            self.includes = input; self
         }
         /// Appends an item to `excludes`.
         ///
@@ -6378,136 +4689,93 @@ pub mod start_task_execution_input {
         /// <p>A list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
         pub fn excludes(mut self, input: crate::model::FilterRule) -> Self {
             let mut v = self.excludes.unwrap_or_default();
-            v.push(input);
-            self.excludes = Some(v);
-            self
+                            v.push(input);
+                            self.excludes = Some(v);
+                            self
         }
         /// <p>A list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
-        pub fn set_excludes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
-        ) -> Self {
-            self.excludes = input;
-            self
+        pub fn set_excludes(mut self, input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>) -> Self {
+            self.excludes = input; self
         }
         /// Consumes the builder and constructs a [`StartTaskExecutionInput`](crate::input::StartTaskExecutionInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::StartTaskExecutionInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::StartTaskExecutionInput {
-                task_arn: self.task_arn,
-                override_options: self.override_options,
-                includes: self.includes,
-                excludes: self.excludes,
-            })
+        pub fn build(self) -> Result<crate::input::StartTaskExecutionInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::StartTaskExecutionInput {
+                    task_arn: self.task_arn
+                    ,
+                    override_options: self.override_options
+                    ,
+                    includes: self.includes
+                    ,
+                    excludes: self.excludes
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl StartTaskExecutionInput {
     /// Consumes the builder and constructs an Operation<[`StartTaskExecution`](crate::operation::StartTaskExecution)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::StartTaskExecution,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::StartTaskExecution, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::StartTaskExecutionInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::StartTaskExecutionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::StartTaskExecutionInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::StartTaskExecutionInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.StartTaskExecution",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.StartTaskExecution"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_task_execution(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_start_task_execution(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::StartTaskExecution::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "StartTaskExecution",
-            "datasync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::StartTaskExecution::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("StartTaskExecution", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6519,9 +4787,9 @@ impl StartTaskExecutionInput {
 
 /// See [`TagResourceInput`](crate::input::TagResourceInput).
 pub mod tag_resource_input {
-
+    
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
@@ -6534,8 +4802,7 @@ pub mod tag_resource_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to apply the tag to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -6544,134 +4811,89 @@ pub mod tag_resource_input {
         /// <p>The tags to apply.</p>
         pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags to apply.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::TagResourceInput {
-                resource_arn: self.resource_arn,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::TagResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::TagResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::TagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::TagResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::TagResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::TagResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.TagResource",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.TagResource"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::TagResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "TagResource",
-            "datasync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("TagResource", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6683,9 +4905,9 @@ impl TagResourceInput {
 
 /// See [`UntagResourceInput`](crate::input::UntagResourceInput).
 pub mod untag_resource_input {
-
+    
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6698,8 +4920,7 @@ pub mod untag_resource_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to remove the tag from.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Appends an item to `keys`.
         ///
@@ -6708,134 +4929,89 @@ pub mod untag_resource_input {
         /// <p>The keys in the key-value pair in the tag to remove.</p>
         pub fn keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.keys.unwrap_or_default();
-            v.push(input.into());
-            self.keys = Some(v);
-            self
+                            v.push(input.into());
+                            self.keys = Some(v);
+                            self
         }
         /// <p>The keys in the key-value pair in the tag to remove.</p>
-        pub fn set_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.keys = input;
-            self
+        pub fn set_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.keys = input; self
         }
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::UntagResourceInput {
-                resource_arn: self.resource_arn,
-                keys: self.keys,
-            })
+        pub fn build(self) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::UntagResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                    keys: self.keys
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UntagResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UntagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UntagResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::UntagResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::UntagResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.UntagResource",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.UntagResource"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UntagResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UntagResource",
-            "datasync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UntagResource", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6847,9 +5023,9 @@ impl UntagResourceInput {
 
 /// See [`UpdateAgentInput`](crate::input::UpdateAgentInput).
 pub mod update_agent_input {
-
+    
     /// A builder for [`UpdateAgentInput`](crate::input::UpdateAgentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) agent_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6862,8 +5038,7 @@ pub mod update_agent_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the agent to update.</p>
         pub fn set_agent_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.agent_arn = input;
-            self
+            self.agent_arn = input; self
         }
         /// <p>The name that you want to use to configure the agent.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6872,125 +5047,83 @@ pub mod update_agent_input {
         }
         /// <p>The name that you want to use to configure the agent.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`UpdateAgentInput`](crate::input::UpdateAgentInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UpdateAgentInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::UpdateAgentInput {
-                agent_arn: self.agent_arn,
-                name: self.name,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateAgentInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::UpdateAgentInput {
+                    agent_arn: self.agent_arn
+                    ,
+                    name: self.name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateAgentInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAgent`](crate::operation::UpdateAgent)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateAgent,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateAgent, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateAgentInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateAgentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::UpdateAgentInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::UpdateAgentInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.UpdateAgent",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.UpdateAgent"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_agent(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_agent(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateAgent::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateAgent",
-            "datasync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateAgent::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateAgent", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -7002,9 +5135,9 @@ impl UpdateAgentInput {
 
 /// See [`UpdateLocationHdfsInput`](crate::input::UpdateLocationHdfsInput).
 pub mod update_location_hdfs_input {
-
+    
     /// A builder for [`UpdateLocationHdfsInput`](crate::input::UpdateLocationHdfsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
         pub(crate) subdirectory: std::option::Option<std::string::String>,
@@ -7028,8 +5161,7 @@ pub mod update_location_hdfs_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the source HDFS cluster location.</p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_arn = input;
-            self
+            self.location_arn = input; self
         }
         /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write data to the HDFS cluster.</p>
         pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7038,8 +5170,7 @@ pub mod update_location_hdfs_input {
         }
         /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write data to the HDFS cluster.</p>
         pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.subdirectory = input;
-            self
+            self.subdirectory = input; self
         }
         /// Appends an item to `name_nodes`.
         ///
@@ -7048,17 +5179,13 @@ pub mod update_location_hdfs_input {
         /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes. You can use only one NameNode.</p>
         pub fn name_nodes(mut self, input: crate::model::HdfsNameNode) -> Self {
             let mut v = self.name_nodes.unwrap_or_default();
-            v.push(input);
-            self.name_nodes = Some(v);
-            self
+                            v.push(input);
+                            self.name_nodes = Some(v);
+                            self
         }
         /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes. You can use only one NameNode.</p>
-        pub fn set_name_nodes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::HdfsNameNode>>,
-        ) -> Self {
-            self.name_nodes = input;
-            self
+        pub fn set_name_nodes(mut self, input: std::option::Option<std::vec::Vec<crate::model::HdfsNameNode>>) -> Self {
+            self.name_nodes = input; self
         }
         /// <p>The size of the data blocks to write into the HDFS cluster. </p>
         pub fn block_size(mut self, input: i32) -> Self {
@@ -7067,8 +5194,7 @@ pub mod update_location_hdfs_input {
         }
         /// <p>The size of the data blocks to write into the HDFS cluster. </p>
         pub fn set_block_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.block_size = input;
-            self
+            self.block_size = input; self
         }
         /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. </p>
         pub fn replication_factor(mut self, input: i32) -> Self {
@@ -7077,8 +5203,7 @@ pub mod update_location_hdfs_input {
         }
         /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. </p>
         pub fn set_replication_factor(mut self, input: std::option::Option<i32>) -> Self {
-            self.replication_factor = input;
-            self
+            self.replication_factor = input; self
         }
         /// <p>The URI of the HDFS cluster's Key Management Server (KMS). </p>
         pub fn kms_key_provider_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7086,12 +5211,8 @@ pub mod update_location_hdfs_input {
             self
         }
         /// <p>The URI of the HDFS cluster's Key Management Server (KMS). </p>
-        pub fn set_kms_key_provider_uri(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.kms_key_provider_uri = input;
-            self
+        pub fn set_kms_key_provider_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_provider_uri = input; self
         }
         /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer privacy settings configured on the Hadoop Distributed File System (HDFS) cluster. </p>
         pub fn qop_configuration(mut self, input: crate::model::QopConfiguration) -> Self {
@@ -7099,12 +5220,8 @@ pub mod update_location_hdfs_input {
             self
         }
         /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer privacy settings configured on the Hadoop Distributed File System (HDFS) cluster. </p>
-        pub fn set_qop_configuration(
-            mut self,
-            input: std::option::Option<crate::model::QopConfiguration>,
-        ) -> Self {
-            self.qop_configuration = input;
-            self
+        pub fn set_qop_configuration(mut self, input: std::option::Option<crate::model::QopConfiguration>) -> Self {
+            self.qop_configuration = input; self
         }
         /// <p>The type of authentication used to determine the identity of the user. </p>
         pub fn authentication_type(mut self, input: crate::model::HdfsAuthenticationType) -> Self {
@@ -7112,12 +5229,8 @@ pub mod update_location_hdfs_input {
             self
         }
         /// <p>The type of authentication used to determine the identity of the user. </p>
-        pub fn set_authentication_type(
-            mut self,
-            input: std::option::Option<crate::model::HdfsAuthenticationType>,
-        ) -> Self {
-            self.authentication_type = input;
-            self
+        pub fn set_authentication_type(mut self, input: std::option::Option<crate::model::HdfsAuthenticationType>) -> Self {
+            self.authentication_type = input; self
         }
         /// <p>The user name used to identify the client on the host operating system.</p>
         pub fn simple_user(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7126,8 +5239,7 @@ pub mod update_location_hdfs_input {
         }
         /// <p>The user name used to identify the client on the host operating system.</p>
         pub fn set_simple_user(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.simple_user = input;
-            self
+            self.simple_user = input; self
         }
         /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p>
         pub fn kerberos_principal(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7135,12 +5247,8 @@ pub mod update_location_hdfs_input {
             self
         }
         /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p>
-        pub fn set_kerberos_principal(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.kerberos_principal = input;
-            self
+        pub fn set_kerberos_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kerberos_principal = input; self
         }
         /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you use the CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
         pub fn kerberos_keytab(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -7148,12 +5256,8 @@ pub mod update_location_hdfs_input {
             self
         }
         /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you use the CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
-        pub fn set_kerberos_keytab(
-            mut self,
-            input: std::option::Option<aws_smithy_types::Blob>,
-        ) -> Self {
-            self.kerberos_keytab = input;
-            self
+        pub fn set_kerberos_keytab(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+            self.kerberos_keytab = input; self
         }
         /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
         pub fn kerberos_krb5_conf(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -7161,12 +5265,8 @@ pub mod update_location_hdfs_input {
             self
         }
         /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
-        pub fn set_kerberos_krb5_conf(
-            mut self,
-            input: std::option::Option<aws_smithy_types::Blob>,
-        ) -> Self {
-            self.kerberos_krb5_conf = input;
-            self
+        pub fn set_kerberos_krb5_conf(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+            self.kerberos_krb5_conf = input; self
         }
         /// Appends an item to `agent_arns`.
         ///
@@ -7175,145 +5275,111 @@ pub mod update_location_hdfs_input {
         /// <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
         pub fn agent_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.agent_arns.unwrap_or_default();
-            v.push(input.into());
-            self.agent_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.agent_arns = Some(v);
+                            self
         }
         /// <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
-        pub fn set_agent_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.agent_arns = input;
-            self
+        pub fn set_agent_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.agent_arns = input; self
         }
         /// Consumes the builder and constructs a [`UpdateLocationHdfsInput`](crate::input::UpdateLocationHdfsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UpdateLocationHdfsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::UpdateLocationHdfsInput {
-                location_arn: self.location_arn,
-                subdirectory: self.subdirectory,
-                name_nodes: self.name_nodes,
-                block_size: self.block_size,
-                replication_factor: self.replication_factor,
-                kms_key_provider_uri: self.kms_key_provider_uri,
-                qop_configuration: self.qop_configuration,
-                authentication_type: self.authentication_type,
-                simple_user: self.simple_user,
-                kerberos_principal: self.kerberos_principal,
-                kerberos_keytab: self.kerberos_keytab,
-                kerberos_krb5_conf: self.kerberos_krb5_conf,
-                agent_arns: self.agent_arns,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateLocationHdfsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::UpdateLocationHdfsInput {
+                    location_arn: self.location_arn
+                    ,
+                    subdirectory: self.subdirectory
+                    ,
+                    name_nodes: self.name_nodes
+                    ,
+                    block_size: self.block_size
+                    ,
+                    replication_factor: self.replication_factor
+                    ,
+                    kms_key_provider_uri: self.kms_key_provider_uri
+                    ,
+                    qop_configuration: self.qop_configuration
+                    ,
+                    authentication_type: self.authentication_type
+                    ,
+                    simple_user: self.simple_user
+                    ,
+                    kerberos_principal: self.kerberos_principal
+                    ,
+                    kerberos_keytab: self.kerberos_keytab
+                    ,
+                    kerberos_krb5_conf: self.kerberos_krb5_conf
+                    ,
+                    agent_arns: self.agent_arns
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateLocationHdfsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLocationHdfs`](crate::operation::UpdateLocationHdfs)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateLocationHdfs,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateLocationHdfs, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateLocationHdfsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateLocationHdfsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::UpdateLocationHdfsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::UpdateLocationHdfsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.UpdateLocationHdfs",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.UpdateLocationHdfs"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_location_hdfs(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_location_hdfs(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateLocationHdfs::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateLocationHdfs",
-            "datasync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateLocationHdfs::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateLocationHdfs", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -7325,9 +5391,9 @@ impl UpdateLocationHdfsInput {
 
 /// See [`UpdateLocationNfsInput`](crate::input::UpdateLocationNfsInput).
 pub mod update_location_nfs_input {
-
+    
     /// A builder for [`UpdateLocationNfsInput`](crate::input::UpdateLocationNfsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
         pub(crate) subdirectory: std::option::Option<std::string::String>,
@@ -7342,26 +5408,24 @@ pub mod update_location_nfs_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the NFS location to update.</p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_arn = input;
-            self
+            self.location_arn = input; self
         }
-        /// <p>The subdirectory in the NFS file system that is used to read data from the NFS source location or write data to the NFS destination. The NFS path should be a path that's exported by the NFS server, or a subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your network.</p>
-        /// <p>To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS client that has access to your server. You can specify any directory that appears in the results, and any subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication. </p>
-        /// <p>To transfer all the data in the folder that you specified, DataSync must have permissions to read all the data. To ensure this, either configure the NFS export with <code>no_root_squash</code>, or ensure that the files you want DataSync to access have permissions that allow read access for all users. Doing either option enables the agent to read the files. For the agent to access directories, you must additionally enable all execute access.</p>
-        /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
+        /// <p>The subdirectory in the NFS file system that is used to read data from the NFS source location or write data to the NFS destination. The NFS path should be a path that's exported by the NFS server, or a subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your network.</p> 
+        /// <p>To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS client that has access to your server. You can specify any directory that appears in the results, and any subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication. </p> 
+        /// <p>To transfer all the data in the folder that you specified, DataSync must have permissions to read all the data. To ensure this, either configure the NFS export with <code>no_root_squash</code>, or ensure that the files you want DataSync to access have permissions that allow read access for all users. Doing either option enables the agent to read the files. For the agent to access directories, you must additionally enable all execute access.</p> 
+        /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p> 
         /// <p>For information about NFS export configuration, see 18.7. The /etc/exports Configuration File in the Red Hat Enterprise Linux documentation.</p>
         pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
             self.subdirectory = Some(input.into());
             self
         }
-        /// <p>The subdirectory in the NFS file system that is used to read data from the NFS source location or write data to the NFS destination. The NFS path should be a path that's exported by the NFS server, or a subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your network.</p>
-        /// <p>To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS client that has access to your server. You can specify any directory that appears in the results, and any subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication. </p>
-        /// <p>To transfer all the data in the folder that you specified, DataSync must have permissions to read all the data. To ensure this, either configure the NFS export with <code>no_root_squash</code>, or ensure that the files you want DataSync to access have permissions that allow read access for all users. Doing either option enables the agent to read the files. For the agent to access directories, you must additionally enable all execute access.</p>
-        /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
+        /// <p>The subdirectory in the NFS file system that is used to read data from the NFS source location or write data to the NFS destination. The NFS path should be a path that's exported by the NFS server, or a subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your network.</p> 
+        /// <p>To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS client that has access to your server. You can specify any directory that appears in the results, and any subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication. </p> 
+        /// <p>To transfer all the data in the folder that you specified, DataSync must have permissions to read all the data. To ensure this, either configure the NFS export with <code>no_root_squash</code>, or ensure that the files you want DataSync to access have permissions that allow read access for all users. Doing either option enables the agent to read the files. For the agent to access directories, you must additionally enable all execute access.</p> 
+        /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p> 
         /// <p>For information about NFS export configuration, see 18.7. The /etc/exports Configuration File in the Red Hat Enterprise Linux documentation.</p>
         pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.subdirectory = input;
-            self
+            self.subdirectory = input; self
         }
         /// <p>A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS) location.</p>
         pub fn on_prem_config(mut self, input: crate::model::OnPremConfig) -> Self {
@@ -7369,12 +5433,8 @@ pub mod update_location_nfs_input {
             self
         }
         /// <p>A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS) location.</p>
-        pub fn set_on_prem_config(
-            mut self,
-            input: std::option::Option<crate::model::OnPremConfig>,
-        ) -> Self {
-            self.on_prem_config = input;
-            self
+        pub fn set_on_prem_config(mut self, input: std::option::Option<crate::model::OnPremConfig>) -> Self {
+            self.on_prem_config = input; self
         }
         /// <p>Specifies how DataSync can access a location using the NFS protocol.</p>
         pub fn mount_options(mut self, input: crate::model::NfsMountOptions) -> Self {
@@ -7382,131 +5442,88 @@ pub mod update_location_nfs_input {
             self
         }
         /// <p>Specifies how DataSync can access a location using the NFS protocol.</p>
-        pub fn set_mount_options(
-            mut self,
-            input: std::option::Option<crate::model::NfsMountOptions>,
-        ) -> Self {
-            self.mount_options = input;
-            self
+        pub fn set_mount_options(mut self, input: std::option::Option<crate::model::NfsMountOptions>) -> Self {
+            self.mount_options = input; self
         }
         /// Consumes the builder and constructs a [`UpdateLocationNfsInput`](crate::input::UpdateLocationNfsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UpdateLocationNfsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::UpdateLocationNfsInput {
-                location_arn: self.location_arn,
-                subdirectory: self.subdirectory,
-                on_prem_config: self.on_prem_config,
-                mount_options: self.mount_options,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateLocationNfsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::UpdateLocationNfsInput {
+                    location_arn: self.location_arn
+                    ,
+                    subdirectory: self.subdirectory
+                    ,
+                    on_prem_config: self.on_prem_config
+                    ,
+                    mount_options: self.mount_options
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateLocationNfsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLocationNfs`](crate::operation::UpdateLocationNfs)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateLocationNfs,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateLocationNfs, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateLocationNfsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateLocationNfsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::UpdateLocationNfsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::UpdateLocationNfsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.UpdateLocationNfs",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.UpdateLocationNfs"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_location_nfs(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_location_nfs(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateLocationNfs::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateLocationNfs",
-            "datasync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateLocationNfs::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateLocationNfs", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -7518,9 +5535,9 @@ impl UpdateLocationNfsInput {
 
 /// See [`UpdateLocationObjectStorageInput`](crate::input::UpdateLocationObjectStorageInput).
 pub mod update_location_object_storage_input {
-
+    
     /// A builder for [`UpdateLocationObjectStorageInput`](crate::input::UpdateLocationObjectStorageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
         pub(crate) server_port: std::option::Option<i32>,
@@ -7538,8 +5555,7 @@ pub mod update_location_object_storage_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the self-managed object storage server location to be updated.</p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_arn = input;
-            self
+            self.location_arn = input; self
         }
         /// <p>The port that your self-managed object storage server accepts inbound network traffic on. The server port is set by default to TCP 80 (HTTP) or TCP 443 (HTTPS). You can specify a custom port if your self-managed object storage server requires one.</p>
         pub fn server_port(mut self, input: i32) -> Self {
@@ -7548,8 +5564,7 @@ pub mod update_location_object_storage_input {
         }
         /// <p>The port that your self-managed object storage server accepts inbound network traffic on. The server port is set by default to TCP 80 (HTTP) or TCP 443 (HTTPS). You can specify a custom port if your self-managed object storage server requires one.</p>
         pub fn set_server_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.server_port = input;
-            self
+            self.server_port = input; self
         }
         /// <p>The protocol that the object storage server uses to communicate. Valid values are <code>HTTP</code> or <code>HTTPS</code>.</p>
         pub fn server_protocol(mut self, input: crate::model::ObjectStorageServerProtocol) -> Self {
@@ -7557,12 +5572,8 @@ pub mod update_location_object_storage_input {
             self
         }
         /// <p>The protocol that the object storage server uses to communicate. Valid values are <code>HTTP</code> or <code>HTTPS</code>.</p>
-        pub fn set_server_protocol(
-            mut self,
-            input: std::option::Option<crate::model::ObjectStorageServerProtocol>,
-        ) -> Self {
-            self.server_protocol = input;
-            self
+        pub fn set_server_protocol(mut self, input: std::option::Option<crate::model::ObjectStorageServerProtocol>) -> Self {
+            self.server_protocol = input; self
         }
         /// <p>The subdirectory in the self-managed object storage server that is used to read data from.</p>
         pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7571,8 +5582,7 @@ pub mod update_location_object_storage_input {
         }
         /// <p>The subdirectory in the self-managed object storage server that is used to read data from.</p>
         pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.subdirectory = input;
-            self
+            self.subdirectory = input; self
         }
         /// <p>Optional. The access key is used if credentials are required to access the self-managed object storage server. If your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.</p>
         pub fn access_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7581,8 +5591,7 @@ pub mod update_location_object_storage_input {
         }
         /// <p>Optional. The access key is used if credentials are required to access the self-managed object storage server. If your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.</p>
         pub fn set_access_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.access_key = input;
-            self
+            self.access_key = input; self
         }
         /// <p>Optional. The secret key is used if credentials are required to access the self-managed object storage server. If your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.</p>
         pub fn secret_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7591,8 +5600,7 @@ pub mod update_location_object_storage_input {
         }
         /// <p>Optional. The secret key is used if credentials are required to access the self-managed object storage server. If your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.</p>
         pub fn set_secret_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.secret_key = input;
-            self
+            self.secret_key = input; self
         }
         /// Appends an item to `agent_arns`.
         ///
@@ -7601,81 +5609,62 @@ pub mod update_location_object_storage_input {
         /// <p>The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server location.</p>
         pub fn agent_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.agent_arns.unwrap_or_default();
-            v.push(input.into());
-            self.agent_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.agent_arns = Some(v);
+                            self
         }
         /// <p>The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server location.</p>
-        pub fn set_agent_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.agent_arns = input;
-            self
+        pub fn set_agent_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.agent_arns = input; self
         }
         /// Consumes the builder and constructs a [`UpdateLocationObjectStorageInput`](crate::input::UpdateLocationObjectStorageInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::UpdateLocationObjectStorageInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::UpdateLocationObjectStorageInput {
-                location_arn: self.location_arn,
-                server_port: self.server_port,
-                server_protocol: self.server_protocol,
-                subdirectory: self.subdirectory,
-                access_key: self.access_key,
-                secret_key: self.secret_key,
-                agent_arns: self.agent_arns,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateLocationObjectStorageInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::UpdateLocationObjectStorageInput {
+                    location_arn: self.location_arn
+                    ,
+                    server_port: self.server_port
+                    ,
+                    server_protocol: self.server_protocol
+                    ,
+                    subdirectory: self.subdirectory
+                    ,
+                    access_key: self.access_key
+                    ,
+                    secret_key: self.secret_key
+                    ,
+                    agent_arns: self.agent_arns
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateLocationObjectStorageInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLocationObjectStorage`](crate::operation::UpdateLocationObjectStorage)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateLocationObjectStorage,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateLocationObjectStorage, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateLocationObjectStorageInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateLocationObjectStorageInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::UpdateLocationObjectStorageInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::UpdateLocationObjectStorageInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.UpdateLocationObjectStorage",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.UpdateLocationObjectStorage"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -7683,58 +5672,36 @@ impl UpdateLocationObjectStorageInput {
             crate::operation_ser::serialize_operation_crate_operation_update_location_object_storage(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateLocationObjectStorage::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateLocationObjectStorage",
-            "datasync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateLocationObjectStorage::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateLocationObjectStorage", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -7746,9 +5713,9 @@ impl UpdateLocationObjectStorageInput {
 
 /// See [`UpdateLocationSmbInput`](crate::input::UpdateLocationSmbInput).
 pub mod update_location_smb_input {
-
+    
     /// A builder for [`UpdateLocationSmbInput`](crate::input::UpdateLocationSmbInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
         pub(crate) subdirectory: std::option::Option<std::string::String>,
@@ -7766,34 +5733,32 @@ pub mod update_location_smb_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the SMB location to update.</p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_arn = input;
-            self
+            self.location_arn = input; self
         }
-        /// <p>The subdirectory in the SMB file system that is used to read data from the SMB source location or write data to the SMB destination. The SMB path should be a path that's exported by the SMB server, or a subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your network.</p> <note>
-        /// <p> <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.</p>
-        /// </note>
-        /// <p>To transfer all the data in the folder that you specified, DataSync must have permissions to mount the SMB share and to access all the data in that share. To ensure this, do either of the following:</p>
-        /// <ul>
-        /// <li> <p>Ensure that the user/password specified belongs to the user who can mount the share and who has the appropriate permissions for all of the files and directories that you want DataSync to access.</p> </li>
-        /// <li> <p>Use credentials of a member of the Backup Operators group to mount the share. </p> </li>
-        /// </ul>
+        /// <p>The subdirectory in the SMB file system that is used to read data from the SMB source location or write data to the SMB destination. The SMB path should be a path that's exported by the SMB server, or a subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your network.</p> <note> 
+        /// <p> <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.</p> 
+        /// </note> 
+        /// <p>To transfer all the data in the folder that you specified, DataSync must have permissions to mount the SMB share and to access all the data in that share. To ensure this, do either of the following:</p> 
+        /// <ul> 
+        /// <li> <p>Ensure that the user/password specified belongs to the user who can mount the share and who has the appropriate permissions for all of the files and directories that you want DataSync to access.</p> </li> 
+        /// <li> <p>Use credentials of a member of the Backup Operators group to mount the share. </p> </li> 
+        /// </ul> 
         /// <p>Doing either of these options enables the agent to access the data. For the agent to access directories, you must also enable all execute access.</p>
         pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
             self.subdirectory = Some(input.into());
             self
         }
-        /// <p>The subdirectory in the SMB file system that is used to read data from the SMB source location or write data to the SMB destination. The SMB path should be a path that's exported by the SMB server, or a subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your network.</p> <note>
-        /// <p> <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.</p>
-        /// </note>
-        /// <p>To transfer all the data in the folder that you specified, DataSync must have permissions to mount the SMB share and to access all the data in that share. To ensure this, do either of the following:</p>
-        /// <ul>
-        /// <li> <p>Ensure that the user/password specified belongs to the user who can mount the share and who has the appropriate permissions for all of the files and directories that you want DataSync to access.</p> </li>
-        /// <li> <p>Use credentials of a member of the Backup Operators group to mount the share. </p> </li>
-        /// </ul>
+        /// <p>The subdirectory in the SMB file system that is used to read data from the SMB source location or write data to the SMB destination. The SMB path should be a path that's exported by the SMB server, or a subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your network.</p> <note> 
+        /// <p> <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.</p> 
+        /// </note> 
+        /// <p>To transfer all the data in the folder that you specified, DataSync must have permissions to mount the SMB share and to access all the data in that share. To ensure this, do either of the following:</p> 
+        /// <ul> 
+        /// <li> <p>Ensure that the user/password specified belongs to the user who can mount the share and who has the appropriate permissions for all of the files and directories that you want DataSync to access.</p> </li> 
+        /// <li> <p>Use credentials of a member of the Backup Operators group to mount the share. </p> </li> 
+        /// </ul> 
         /// <p>Doing either of these options enables the agent to access the data. For the agent to access directories, you must also enable all execute access.</p>
         pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.subdirectory = input;
-            self
+            self.subdirectory = input; self
         }
         /// <p>The user who can mount the share has the permissions to access files and folders in the SMB share.</p>
         pub fn user(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7802,8 +5767,7 @@ pub mod update_location_smb_input {
         }
         /// <p>The user who can mount the share has the permissions to access files and folders in the SMB share.</p>
         pub fn set_user(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user = input;
-            self
+            self.user = input; self
         }
         /// <p>The name of the Windows domain that the SMB server belongs to.</p>
         pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7812,8 +5776,7 @@ pub mod update_location_smb_input {
         }
         /// <p>The name of the Windows domain that the SMB server belongs to.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
         /// <p>The password of the user who can mount the share has the permissions to access files and folders in the SMB share.</p>
         pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7822,8 +5785,7 @@ pub mod update_location_smb_input {
         }
         /// <p>The password of the user who can mount the share has the permissions to access files and folders in the SMB share.</p>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.password = input;
-            self
+            self.password = input; self
         }
         /// Appends an item to `agent_arns`.
         ///
@@ -7832,17 +5794,13 @@ pub mod update_location_smb_input {
         /// <p>The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block (SMB) location.</p>
         pub fn agent_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.agent_arns.unwrap_or_default();
-            v.push(input.into());
-            self.agent_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.agent_arns = Some(v);
+                            self
         }
         /// <p>The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block (SMB) location.</p>
-        pub fn set_agent_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.agent_arns = input;
-            self
+        pub fn set_agent_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.agent_arns = input; self
         }
         /// <p>Specifies how DataSync can access a location using the SMB protocol.</p>
         pub fn mount_options(mut self, input: crate::model::SmbMountOptions) -> Self {
@@ -7850,134 +5808,94 @@ pub mod update_location_smb_input {
             self
         }
         /// <p>Specifies how DataSync can access a location using the SMB protocol.</p>
-        pub fn set_mount_options(
-            mut self,
-            input: std::option::Option<crate::model::SmbMountOptions>,
-        ) -> Self {
-            self.mount_options = input;
-            self
+        pub fn set_mount_options(mut self, input: std::option::Option<crate::model::SmbMountOptions>) -> Self {
+            self.mount_options = input; self
         }
         /// Consumes the builder and constructs a [`UpdateLocationSmbInput`](crate::input::UpdateLocationSmbInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UpdateLocationSmbInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::UpdateLocationSmbInput {
-                location_arn: self.location_arn,
-                subdirectory: self.subdirectory,
-                user: self.user,
-                domain: self.domain,
-                password: self.password,
-                agent_arns: self.agent_arns,
-                mount_options: self.mount_options,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateLocationSmbInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::UpdateLocationSmbInput {
+                    location_arn: self.location_arn
+                    ,
+                    subdirectory: self.subdirectory
+                    ,
+                    user: self.user
+                    ,
+                    domain: self.domain
+                    ,
+                    password: self.password
+                    ,
+                    agent_arns: self.agent_arns
+                    ,
+                    mount_options: self.mount_options
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateLocationSmbInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLocationSmb`](crate::operation::UpdateLocationSmb)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateLocationSmb,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateLocationSmb, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateLocationSmbInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateLocationSmbInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::UpdateLocationSmbInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::UpdateLocationSmbInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.UpdateLocationSmb",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.UpdateLocationSmb"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_location_smb(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_location_smb(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateLocationSmb::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateLocationSmb",
-            "datasync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateLocationSmb::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateLocationSmb", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -7989,9 +5907,9 @@ impl UpdateLocationSmbInput {
 
 /// See [`UpdateTaskInput`](crate::input::UpdateTaskInput).
 pub mod update_task_input {
-
+    
     /// A builder for [`UpdateTaskInput`](crate::input::UpdateTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) task_arn: std::option::Option<std::string::String>,
         pub(crate) options: std::option::Option<crate::model::Options>,
@@ -8009,41 +5927,35 @@ pub mod update_task_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource name of the task to update.</p>
         pub fn set_task_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.task_arn = input;
-            self
+            self.task_arn = input; self
         }
-        /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
+        /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p> 
         /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
         pub fn options(mut self, input: crate::model::Options) -> Self {
             self.options = Some(input);
             self
         }
-        /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
+        /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p> 
         /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
         pub fn set_options(mut self, input: std::option::Option<crate::model::Options>) -> Self {
-            self.options = input;
-            self
+            self.options = input; self
         }
         /// Appends an item to `excludes`.
         ///
         /// To override the contents of this collection use [`set_excludes`](Self::set_excludes).
         ///
-        /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
+        /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p> 
         /// <p> </p>
         pub fn excludes(mut self, input: crate::model::FilterRule) -> Self {
             let mut v = self.excludes.unwrap_or_default();
-            v.push(input);
-            self.excludes = Some(v);
-            self
+                            v.push(input);
+                            self.excludes = Some(v);
+                            self
         }
-        /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
+        /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p> 
         /// <p> </p>
-        pub fn set_excludes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
-        ) -> Self {
-            self.excludes = input;
-            self
+        pub fn set_excludes(mut self, input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>) -> Self {
+            self.excludes = input; self
         }
         /// <p>Specifies a schedule used to periodically transfer files from a source to a destination location. You can configure your task to execute hourly, daily, weekly or on specific days of the week. You control when in the day or hour you want the task to execute. The time you specify is UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
         pub fn schedule(mut self, input: crate::model::TaskSchedule) -> Self {
@@ -8051,12 +5963,8 @@ pub mod update_task_input {
             self
         }
         /// <p>Specifies a schedule used to periodically transfer files from a source to a destination location. You can configure your task to execute hourly, daily, weekly or on specific days of the week. You control when in the day or hour you want the task to execute. The time you specify is UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
-        pub fn set_schedule(
-            mut self,
-            input: std::option::Option<crate::model::TaskSchedule>,
-        ) -> Self {
-            self.schedule = input;
-            self
+        pub fn set_schedule(mut self, input: std::option::Option<crate::model::TaskSchedule>) -> Self {
+            self.schedule = input; self
         }
         /// <p>The name of the task to update.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8065,8 +5973,7 @@ pub mod update_task_input {
         }
         /// <p>The name of the task to update.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource name of the Amazon CloudWatch log group.</p>
         pub fn cloud_watch_log_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8074,12 +5981,8 @@ pub mod update_task_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource name of the Amazon CloudWatch log group.</p>
-        pub fn set_cloud_watch_log_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cloud_watch_log_group_arn = input;
-            self
+        pub fn set_cloud_watch_log_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cloud_watch_log_group_arn = input; self
         }
         /// Appends an item to `includes`.
         ///
@@ -8088,138 +5991,99 @@ pub mod update_task_input {
         /// <p>A list of filter rules that determines which files to include when running a task. The pattern contains a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
         pub fn includes(mut self, input: crate::model::FilterRule) -> Self {
             let mut v = self.includes.unwrap_or_default();
-            v.push(input);
-            self.includes = Some(v);
-            self
+                            v.push(input);
+                            self.includes = Some(v);
+                            self
         }
         /// <p>A list of filter rules that determines which files to include when running a task. The pattern contains a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
-        pub fn set_includes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
-        ) -> Self {
-            self.includes = input;
-            self
+        pub fn set_includes(mut self, input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>) -> Self {
+            self.includes = input; self
         }
         /// Consumes the builder and constructs a [`UpdateTaskInput`](crate::input::UpdateTaskInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UpdateTaskInput, aws_smithy_http::operation::BuildError> {
-            Ok(crate::input::UpdateTaskInput {
-                task_arn: self.task_arn,
-                options: self.options,
-                excludes: self.excludes,
-                schedule: self.schedule,
-                name: self.name,
-                cloud_watch_log_group_arn: self.cloud_watch_log_group_arn,
-                includes: self.includes,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateTaskInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::UpdateTaskInput {
+                    task_arn: self.task_arn
+                    ,
+                    options: self.options
+                    ,
+                    excludes: self.excludes
+                    ,
+                    schedule: self.schedule
+                    ,
+                    name: self.name
+                    ,
+                    cloud_watch_log_group_arn: self.cloud_watch_log_group_arn
+                    ,
+                    includes: self.includes
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateTaskInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTask`](crate::operation::UpdateTask)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateTask,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateTask, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateTaskInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateTaskInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::UpdateTaskInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::UpdateTaskInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.UpdateTask",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.UpdateTask"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_task(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_task(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateTask::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateTask",
-            "datasync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateTask::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateTask", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -8231,9 +6095,9 @@ impl UpdateTaskInput {
 
 /// See [`UpdateTaskExecutionInput`](crate::input::UpdateTaskExecutionInput).
 pub mod update_task_execution_input {
-
+    
     /// A builder for [`UpdateTaskExecutionInput`](crate::input::UpdateTaskExecutionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) task_execution_arn: std::option::Option<std::string::String>,
         pub(crate) options: std::option::Option<crate::model::Options>,
@@ -8245,141 +6109,95 @@ pub mod update_task_execution_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the specific task execution that is being updated. </p>
-        pub fn set_task_execution_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.task_execution_arn = input;
-            self
+        pub fn set_task_execution_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.task_execution_arn = input; self
         }
-        /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
+        /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p> 
         /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
         pub fn options(mut self, input: crate::model::Options) -> Self {
             self.options = Some(input);
             self
         }
-        /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
+        /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p> 
         /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
         pub fn set_options(mut self, input: std::option::Option<crate::model::Options>) -> Self {
-            self.options = input;
-            self
+            self.options = input; self
         }
         /// Consumes the builder and constructs a [`UpdateTaskExecutionInput`](crate::input::UpdateTaskExecutionInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UpdateTaskExecutionInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::UpdateTaskExecutionInput {
-                task_execution_arn: self.task_execution_arn,
-                options: self.options,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateTaskExecutionInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::UpdateTaskExecutionInput {
+                    task_execution_arn: self.task_execution_arn
+                    ,
+                    options: self.options
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateTaskExecutionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTaskExecution`](crate::operation::UpdateTaskExecution)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateTaskExecution,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateTaskExecution, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateTaskExecutionInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateTaskExecutionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::UpdateTaskExecutionInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::UpdateTaskExecutionInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "FmrsService.UpdateTaskExecution",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "FmrsService.UpdateTaskExecution"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_task_execution(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_task_execution(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateTaskExecution::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateTaskExecution",
-            "datasync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateTaskExecution::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateTaskExecution", "datasync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -8390,29 +6208,26 @@ impl UpdateTaskExecutionInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateTaskExecutionInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct UpdateTaskExecutionInput  {
     /// <p>The Amazon Resource Name (ARN) of the specific task execution that is being updated. </p>
-    #[doc(hidden)]
-    pub task_execution_arn: std::option::Option<std::string::String>,
-    /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
+    #[doc(hidden)]pub task_execution_arn: std::option::Option<std::string::String>,
+    /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p> 
     /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
-    #[doc(hidden)]
-    pub options: std::option::Option<crate::model::Options>,
+    #[doc(hidden)]pub options: std::option::Option<crate::model::Options>,
 }
 impl UpdateTaskExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the specific task execution that is being updated. </p>
-    pub fn task_execution_arn(&self) -> std::option::Option<&str> {
+    pub fn task_execution_arn(&self) -> std::option::Option<& str> {
         self.task_execution_arn.as_deref()
     }
-    /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
+    /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p> 
     /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
-    pub fn options(&self) -> std::option::Option<&crate::model::Options> {
+    pub fn options(&self) -> std::option::Option<& crate::model::Options> {
         self.options.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateTaskExecutionInput {
+impl  std::fmt::Debug for UpdateTaskExecutionInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateTaskExecutionInput");
         formatter.field("task_execution_arn", &self.task_execution_arn);
@@ -8422,66 +6237,58 @@ impl std::fmt::Debug for UpdateTaskExecutionInput {
 }
 
 /// <p>UpdateTaskResponse</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateTaskInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct UpdateTaskInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource name of the task to update.</p>
-    #[doc(hidden)]
-    pub task_arn: std::option::Option<std::string::String>,
-    /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
+    #[doc(hidden)]pub task_arn: std::option::Option<std::string::String>,
+    /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p> 
     /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
-    #[doc(hidden)]
-    pub options: std::option::Option<crate::model::Options>,
-    /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
+    #[doc(hidden)]pub options: std::option::Option<crate::model::Options>,
+    /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p> 
     /// <p> </p>
-    #[doc(hidden)]
-    pub excludes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
+    #[doc(hidden)]pub excludes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
     /// <p>Specifies a schedule used to periodically transfer files from a source to a destination location. You can configure your task to execute hourly, daily, weekly or on specific days of the week. You control when in the day or hour you want the task to execute. The time you specify is UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
-    #[doc(hidden)]
-    pub schedule: std::option::Option<crate::model::TaskSchedule>,
+    #[doc(hidden)]pub schedule: std::option::Option<crate::model::TaskSchedule>,
     /// <p>The name of the task to update.</p>
-    #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the resource name of the Amazon CloudWatch log group.</p>
-    #[doc(hidden)]
-    pub cloud_watch_log_group_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub cloud_watch_log_group_arn: std::option::Option<std::string::String>,
     /// <p>A list of filter rules that determines which files to include when running a task. The pattern contains a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
-    #[doc(hidden)]
-    pub includes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
+    #[doc(hidden)]pub includes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
 }
 impl UpdateTaskInput {
     /// <p>The Amazon Resource Name (ARN) of the resource name of the task to update.</p>
-    pub fn task_arn(&self) -> std::option::Option<&str> {
+    pub fn task_arn(&self) -> std::option::Option<& str> {
         self.task_arn.as_deref()
     }
-    /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
+    /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p> 
     /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
-    pub fn options(&self) -> std::option::Option<&crate::model::Options> {
+    pub fn options(&self) -> std::option::Option<& crate::model::Options> {
         self.options.as_ref()
     }
-    /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
+    /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p> 
     /// <p> </p>
-    pub fn excludes(&self) -> std::option::Option<&[crate::model::FilterRule]> {
+    pub fn excludes(&self) -> std::option::Option<& [crate::model::FilterRule]> {
         self.excludes.as_deref()
     }
     /// <p>Specifies a schedule used to periodically transfer files from a source to a destination location. You can configure your task to execute hourly, daily, weekly or on specific days of the week. You control when in the day or hour you want the task to execute. The time you specify is UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
-    pub fn schedule(&self) -> std::option::Option<&crate::model::TaskSchedule> {
+    pub fn schedule(&self) -> std::option::Option<& crate::model::TaskSchedule> {
         self.schedule.as_ref()
     }
     /// <p>The name of the task to update.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the resource name of the Amazon CloudWatch log group.</p>
-    pub fn cloud_watch_log_group_arn(&self) -> std::option::Option<&str> {
+    pub fn cloud_watch_log_group_arn(&self) -> std::option::Option<& str> {
         self.cloud_watch_log_group_arn.as_deref()
     }
     /// <p>A list of filter rules that determines which files to include when running a task. The pattern contains a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
-    pub fn includes(&self) -> std::option::Option<&[crate::model::FilterRule]> {
+    pub fn includes(&self) -> std::option::Option<& [crate::model::FilterRule]> {
         self.includes.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateTaskInput {
+impl  std::fmt::Debug for UpdateTaskInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateTaskInput");
         formatter.field("task_arn", &self.task_arn);
@@ -8496,78 +6303,70 @@ impl std::fmt::Debug for UpdateTaskInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateLocationSmbInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct UpdateLocationSmbInput  {
     /// <p>The Amazon Resource Name (ARN) of the SMB location to update.</p>
-    #[doc(hidden)]
-    pub location_arn: std::option::Option<std::string::String>,
-    /// <p>The subdirectory in the SMB file system that is used to read data from the SMB source location or write data to the SMB destination. The SMB path should be a path that's exported by the SMB server, or a subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your network.</p> <note>
-    /// <p> <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.</p>
-    /// </note>
-    /// <p>To transfer all the data in the folder that you specified, DataSync must have permissions to mount the SMB share and to access all the data in that share. To ensure this, do either of the following:</p>
-    /// <ul>
-    /// <li> <p>Ensure that the user/password specified belongs to the user who can mount the share and who has the appropriate permissions for all of the files and directories that you want DataSync to access.</p> </li>
-    /// <li> <p>Use credentials of a member of the Backup Operators group to mount the share. </p> </li>
-    /// </ul>
+    #[doc(hidden)]pub location_arn: std::option::Option<std::string::String>,
+    /// <p>The subdirectory in the SMB file system that is used to read data from the SMB source location or write data to the SMB destination. The SMB path should be a path that's exported by the SMB server, or a subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your network.</p> <note> 
+    /// <p> <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.</p> 
+    /// </note> 
+    /// <p>To transfer all the data in the folder that you specified, DataSync must have permissions to mount the SMB share and to access all the data in that share. To ensure this, do either of the following:</p> 
+    /// <ul> 
+    /// <li> <p>Ensure that the user/password specified belongs to the user who can mount the share and who has the appropriate permissions for all of the files and directories that you want DataSync to access.</p> </li> 
+    /// <li> <p>Use credentials of a member of the Backup Operators group to mount the share. </p> </li> 
+    /// </ul> 
     /// <p>Doing either of these options enables the agent to access the data. For the agent to access directories, you must also enable all execute access.</p>
-    #[doc(hidden)]
-    pub subdirectory: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub subdirectory: std::option::Option<std::string::String>,
     /// <p>The user who can mount the share has the permissions to access files and folders in the SMB share.</p>
-    #[doc(hidden)]
-    pub user: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub user: std::option::Option<std::string::String>,
     /// <p>The name of the Windows domain that the SMB server belongs to.</p>
-    #[doc(hidden)]
-    pub domain: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub domain: std::option::Option<std::string::String>,
     /// <p>The password of the user who can mount the share has the permissions to access files and folders in the SMB share.</p>
-    #[doc(hidden)]
-    pub password: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub password: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block (SMB) location.</p>
-    #[doc(hidden)]
-    pub agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies how DataSync can access a location using the SMB protocol.</p>
-    #[doc(hidden)]
-    pub mount_options: std::option::Option<crate::model::SmbMountOptions>,
+    #[doc(hidden)]pub mount_options: std::option::Option<crate::model::SmbMountOptions>,
 }
 impl UpdateLocationSmbInput {
     /// <p>The Amazon Resource Name (ARN) of the SMB location to update.</p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
-    /// <p>The subdirectory in the SMB file system that is used to read data from the SMB source location or write data to the SMB destination. The SMB path should be a path that's exported by the SMB server, or a subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your network.</p> <note>
-    /// <p> <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.</p>
-    /// </note>
-    /// <p>To transfer all the data in the folder that you specified, DataSync must have permissions to mount the SMB share and to access all the data in that share. To ensure this, do either of the following:</p>
-    /// <ul>
-    /// <li> <p>Ensure that the user/password specified belongs to the user who can mount the share and who has the appropriate permissions for all of the files and directories that you want DataSync to access.</p> </li>
-    /// <li> <p>Use credentials of a member of the Backup Operators group to mount the share. </p> </li>
-    /// </ul>
+    /// <p>The subdirectory in the SMB file system that is used to read data from the SMB source location or write data to the SMB destination. The SMB path should be a path that's exported by the SMB server, or a subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your network.</p> <note> 
+    /// <p> <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.</p> 
+    /// </note> 
+    /// <p>To transfer all the data in the folder that you specified, DataSync must have permissions to mount the SMB share and to access all the data in that share. To ensure this, do either of the following:</p> 
+    /// <ul> 
+    /// <li> <p>Ensure that the user/password specified belongs to the user who can mount the share and who has the appropriate permissions for all of the files and directories that you want DataSync to access.</p> </li> 
+    /// <li> <p>Use credentials of a member of the Backup Operators group to mount the share. </p> </li> 
+    /// </ul> 
     /// <p>Doing either of these options enables the agent to access the data. For the agent to access directories, you must also enable all execute access.</p>
-    pub fn subdirectory(&self) -> std::option::Option<&str> {
+    pub fn subdirectory(&self) -> std::option::Option<& str> {
         self.subdirectory.as_deref()
     }
     /// <p>The user who can mount the share has the permissions to access files and folders in the SMB share.</p>
-    pub fn user(&self) -> std::option::Option<&str> {
+    pub fn user(&self) -> std::option::Option<& str> {
         self.user.as_deref()
     }
     /// <p>The name of the Windows domain that the SMB server belongs to.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The password of the user who can mount the share has the permissions to access files and folders in the SMB share.</p>
-    pub fn password(&self) -> std::option::Option<&str> {
+    pub fn password(&self) -> std::option::Option<& str> {
         self.password.as_deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block (SMB) location.</p>
-    pub fn agent_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn agent_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.agent_arns.as_deref()
     }
     /// <p>Specifies how DataSync can access a location using the SMB protocol.</p>
-    pub fn mount_options(&self) -> std::option::Option<&crate::model::SmbMountOptions> {
+    pub fn mount_options(&self) -> std::option::Option<& crate::model::SmbMountOptions> {
         self.mount_options.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateLocationSmbInput {
+impl  std::fmt::Debug for UpdateLocationSmbInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateLocationSmbInput");
         formatter.field("location_arn", &self.location_arn);
@@ -8582,34 +6381,26 @@ impl std::fmt::Debug for UpdateLocationSmbInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateLocationObjectStorageInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct UpdateLocationObjectStorageInput  {
     /// <p>The Amazon Resource Name (ARN) of the self-managed object storage server location to be updated.</p>
-    #[doc(hidden)]
-    pub location_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub location_arn: std::option::Option<std::string::String>,
     /// <p>The port that your self-managed object storage server accepts inbound network traffic on. The server port is set by default to TCP 80 (HTTP) or TCP 443 (HTTPS). You can specify a custom port if your self-managed object storage server requires one.</p>
-    #[doc(hidden)]
-    pub server_port: std::option::Option<i32>,
+    #[doc(hidden)]pub server_port: std::option::Option<i32>,
     /// <p>The protocol that the object storage server uses to communicate. Valid values are <code>HTTP</code> or <code>HTTPS</code>.</p>
-    #[doc(hidden)]
-    pub server_protocol: std::option::Option<crate::model::ObjectStorageServerProtocol>,
+    #[doc(hidden)]pub server_protocol: std::option::Option<crate::model::ObjectStorageServerProtocol>,
     /// <p>The subdirectory in the self-managed object storage server that is used to read data from.</p>
-    #[doc(hidden)]
-    pub subdirectory: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub subdirectory: std::option::Option<std::string::String>,
     /// <p>Optional. The access key is used if credentials are required to access the self-managed object storage server. If your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.</p>
-    #[doc(hidden)]
-    pub access_key: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub access_key: std::option::Option<std::string::String>,
     /// <p>Optional. The secret key is used if credentials are required to access the self-managed object storage server. If your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.</p>
-    #[doc(hidden)]
-    pub secret_key: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub secret_key: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server location.</p>
-    #[doc(hidden)]
-    pub agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateLocationObjectStorageInput {
     /// <p>The Amazon Resource Name (ARN) of the self-managed object storage server location to be updated.</p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
     /// <p>The port that your self-managed object storage server accepts inbound network traffic on. The server port is set by default to TCP 80 (HTTP) or TCP 443 (HTTPS). You can specify a custom port if your self-managed object storage server requires one.</p>
@@ -8617,29 +6408,27 @@ impl UpdateLocationObjectStorageInput {
         self.server_port
     }
     /// <p>The protocol that the object storage server uses to communicate. Valid values are <code>HTTP</code> or <code>HTTPS</code>.</p>
-    pub fn server_protocol(
-        &self,
-    ) -> std::option::Option<&crate::model::ObjectStorageServerProtocol> {
+    pub fn server_protocol(&self) -> std::option::Option<& crate::model::ObjectStorageServerProtocol> {
         self.server_protocol.as_ref()
     }
     /// <p>The subdirectory in the self-managed object storage server that is used to read data from.</p>
-    pub fn subdirectory(&self) -> std::option::Option<&str> {
+    pub fn subdirectory(&self) -> std::option::Option<& str> {
         self.subdirectory.as_deref()
     }
     /// <p>Optional. The access key is used if credentials are required to access the self-managed object storage server. If your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.</p>
-    pub fn access_key(&self) -> std::option::Option<&str> {
+    pub fn access_key(&self) -> std::option::Option<& str> {
         self.access_key.as_deref()
     }
     /// <p>Optional. The secret key is used if credentials are required to access the self-managed object storage server. If your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.</p>
-    pub fn secret_key(&self) -> std::option::Option<&str> {
+    pub fn secret_key(&self) -> std::option::Option<& str> {
         self.secret_key.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server location.</p>
-    pub fn agent_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn agent_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.agent_arns.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateLocationObjectStorageInput {
+impl  std::fmt::Debug for UpdateLocationObjectStorageInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateLocationObjectStorageInput");
         formatter.field("location_arn", &self.location_arn);
@@ -8654,49 +6443,44 @@ impl std::fmt::Debug for UpdateLocationObjectStorageInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateLocationNfsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct UpdateLocationNfsInput  {
     /// <p>The Amazon Resource Name (ARN) of the NFS location to update.</p>
-    #[doc(hidden)]
-    pub location_arn: std::option::Option<std::string::String>,
-    /// <p>The subdirectory in the NFS file system that is used to read data from the NFS source location or write data to the NFS destination. The NFS path should be a path that's exported by the NFS server, or a subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your network.</p>
-    /// <p>To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS client that has access to your server. You can specify any directory that appears in the results, and any subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication. </p>
-    /// <p>To transfer all the data in the folder that you specified, DataSync must have permissions to read all the data. To ensure this, either configure the NFS export with <code>no_root_squash</code>, or ensure that the files you want DataSync to access have permissions that allow read access for all users. Doing either option enables the agent to read the files. For the agent to access directories, you must additionally enable all execute access.</p>
-    /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
+    #[doc(hidden)]pub location_arn: std::option::Option<std::string::String>,
+    /// <p>The subdirectory in the NFS file system that is used to read data from the NFS source location or write data to the NFS destination. The NFS path should be a path that's exported by the NFS server, or a subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your network.</p> 
+    /// <p>To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS client that has access to your server. You can specify any directory that appears in the results, and any subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication. </p> 
+    /// <p>To transfer all the data in the folder that you specified, DataSync must have permissions to read all the data. To ensure this, either configure the NFS export with <code>no_root_squash</code>, or ensure that the files you want DataSync to access have permissions that allow read access for all users. Doing either option enables the agent to read the files. For the agent to access directories, you must additionally enable all execute access.</p> 
+    /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p> 
     /// <p>For information about NFS export configuration, see 18.7. The /etc/exports Configuration File in the Red Hat Enterprise Linux documentation.</p>
-    #[doc(hidden)]
-    pub subdirectory: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub subdirectory: std::option::Option<std::string::String>,
     /// <p>A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS) location.</p>
-    #[doc(hidden)]
-    pub on_prem_config: std::option::Option<crate::model::OnPremConfig>,
+    #[doc(hidden)]pub on_prem_config: std::option::Option<crate::model::OnPremConfig>,
     /// <p>Specifies how DataSync can access a location using the NFS protocol.</p>
-    #[doc(hidden)]
-    pub mount_options: std::option::Option<crate::model::NfsMountOptions>,
+    #[doc(hidden)]pub mount_options: std::option::Option<crate::model::NfsMountOptions>,
 }
 impl UpdateLocationNfsInput {
     /// <p>The Amazon Resource Name (ARN) of the NFS location to update.</p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
-    /// <p>The subdirectory in the NFS file system that is used to read data from the NFS source location or write data to the NFS destination. The NFS path should be a path that's exported by the NFS server, or a subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your network.</p>
-    /// <p>To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS client that has access to your server. You can specify any directory that appears in the results, and any subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication. </p>
-    /// <p>To transfer all the data in the folder that you specified, DataSync must have permissions to read all the data. To ensure this, either configure the NFS export with <code>no_root_squash</code>, or ensure that the files you want DataSync to access have permissions that allow read access for all users. Doing either option enables the agent to read the files. For the agent to access directories, you must additionally enable all execute access.</p>
-    /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
+    /// <p>The subdirectory in the NFS file system that is used to read data from the NFS source location or write data to the NFS destination. The NFS path should be a path that's exported by the NFS server, or a subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your network.</p> 
+    /// <p>To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS client that has access to your server. You can specify any directory that appears in the results, and any subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication. </p> 
+    /// <p>To transfer all the data in the folder that you specified, DataSync must have permissions to read all the data. To ensure this, either configure the NFS export with <code>no_root_squash</code>, or ensure that the files you want DataSync to access have permissions that allow read access for all users. Doing either option enables the agent to read the files. For the agent to access directories, you must additionally enable all execute access.</p> 
+    /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p> 
     /// <p>For information about NFS export configuration, see 18.7. The /etc/exports Configuration File in the Red Hat Enterprise Linux documentation.</p>
-    pub fn subdirectory(&self) -> std::option::Option<&str> {
+    pub fn subdirectory(&self) -> std::option::Option<& str> {
         self.subdirectory.as_deref()
     }
     /// <p>A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS) location.</p>
-    pub fn on_prem_config(&self) -> std::option::Option<&crate::model::OnPremConfig> {
+    pub fn on_prem_config(&self) -> std::option::Option<& crate::model::OnPremConfig> {
         self.on_prem_config.as_ref()
     }
     /// <p>Specifies how DataSync can access a location using the NFS protocol.</p>
-    pub fn mount_options(&self) -> std::option::Option<&crate::model::NfsMountOptions> {
+    pub fn mount_options(&self) -> std::option::Option<& crate::model::NfsMountOptions> {
         self.mount_options.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateLocationNfsInput {
+impl  std::fmt::Debug for UpdateLocationNfsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateLocationNfsInput");
         formatter.field("location_arn", &self.location_arn);
@@ -8708,60 +6492,46 @@ impl std::fmt::Debug for UpdateLocationNfsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateLocationHdfsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct UpdateLocationHdfsInput  {
     /// <p>The Amazon Resource Name (ARN) of the source HDFS cluster location.</p>
-    #[doc(hidden)]
-    pub location_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub location_arn: std::option::Option<std::string::String>,
     /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write data to the HDFS cluster.</p>
-    #[doc(hidden)]
-    pub subdirectory: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub subdirectory: std::option::Option<std::string::String>,
     /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes. You can use only one NameNode.</p>
-    #[doc(hidden)]
-    pub name_nodes: std::option::Option<std::vec::Vec<crate::model::HdfsNameNode>>,
+    #[doc(hidden)]pub name_nodes: std::option::Option<std::vec::Vec<crate::model::HdfsNameNode>>,
     /// <p>The size of the data blocks to write into the HDFS cluster. </p>
-    #[doc(hidden)]
-    pub block_size: std::option::Option<i32>,
+    #[doc(hidden)]pub block_size: std::option::Option<i32>,
     /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. </p>
-    #[doc(hidden)]
-    pub replication_factor: std::option::Option<i32>,
+    #[doc(hidden)]pub replication_factor: std::option::Option<i32>,
     /// <p>The URI of the HDFS cluster's Key Management Server (KMS). </p>
-    #[doc(hidden)]
-    pub kms_key_provider_uri: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub kms_key_provider_uri: std::option::Option<std::string::String>,
     /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer privacy settings configured on the Hadoop Distributed File System (HDFS) cluster. </p>
-    #[doc(hidden)]
-    pub qop_configuration: std::option::Option<crate::model::QopConfiguration>,
+    #[doc(hidden)]pub qop_configuration: std::option::Option<crate::model::QopConfiguration>,
     /// <p>The type of authentication used to determine the identity of the user. </p>
-    #[doc(hidden)]
-    pub authentication_type: std::option::Option<crate::model::HdfsAuthenticationType>,
+    #[doc(hidden)]pub authentication_type: std::option::Option<crate::model::HdfsAuthenticationType>,
     /// <p>The user name used to identify the client on the host operating system.</p>
-    #[doc(hidden)]
-    pub simple_user: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub simple_user: std::option::Option<std::string::String>,
     /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p>
-    #[doc(hidden)]
-    pub kerberos_principal: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub kerberos_principal: std::option::Option<std::string::String>,
     /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you use the CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
-    #[doc(hidden)]
-    pub kerberos_keytab: std::option::Option<aws_smithy_types::Blob>,
+    #[doc(hidden)]pub kerberos_keytab: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
-    #[doc(hidden)]
-    pub kerberos_krb5_conf: std::option::Option<aws_smithy_types::Blob>,
+    #[doc(hidden)]pub kerberos_krb5_conf: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
-    #[doc(hidden)]
-    pub agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateLocationHdfsInput {
     /// <p>The Amazon Resource Name (ARN) of the source HDFS cluster location.</p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
     /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write data to the HDFS cluster.</p>
-    pub fn subdirectory(&self) -> std::option::Option<&str> {
+    pub fn subdirectory(&self) -> std::option::Option<& str> {
         self.subdirectory.as_deref()
     }
     /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes. You can use only one NameNode.</p>
-    pub fn name_nodes(&self) -> std::option::Option<&[crate::model::HdfsNameNode]> {
+    pub fn name_nodes(&self) -> std::option::Option<& [crate::model::HdfsNameNode]> {
         self.name_nodes.as_deref()
     }
     /// <p>The size of the data blocks to write into the HDFS cluster. </p>
@@ -8773,41 +6543,39 @@ impl UpdateLocationHdfsInput {
         self.replication_factor
     }
     /// <p>The URI of the HDFS cluster's Key Management Server (KMS). </p>
-    pub fn kms_key_provider_uri(&self) -> std::option::Option<&str> {
+    pub fn kms_key_provider_uri(&self) -> std::option::Option<& str> {
         self.kms_key_provider_uri.as_deref()
     }
     /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer privacy settings configured on the Hadoop Distributed File System (HDFS) cluster. </p>
-    pub fn qop_configuration(&self) -> std::option::Option<&crate::model::QopConfiguration> {
+    pub fn qop_configuration(&self) -> std::option::Option<& crate::model::QopConfiguration> {
         self.qop_configuration.as_ref()
     }
     /// <p>The type of authentication used to determine the identity of the user. </p>
-    pub fn authentication_type(
-        &self,
-    ) -> std::option::Option<&crate::model::HdfsAuthenticationType> {
+    pub fn authentication_type(&self) -> std::option::Option<& crate::model::HdfsAuthenticationType> {
         self.authentication_type.as_ref()
     }
     /// <p>The user name used to identify the client on the host operating system.</p>
-    pub fn simple_user(&self) -> std::option::Option<&str> {
+    pub fn simple_user(&self) -> std::option::Option<& str> {
         self.simple_user.as_deref()
     }
     /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p>
-    pub fn kerberos_principal(&self) -> std::option::Option<&str> {
+    pub fn kerberos_principal(&self) -> std::option::Option<& str> {
         self.kerberos_principal.as_deref()
     }
     /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you use the CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
-    pub fn kerberos_keytab(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn kerberos_keytab(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.kerberos_keytab.as_ref()
     }
     /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
-    pub fn kerberos_krb5_conf(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn kerberos_krb5_conf(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.kerberos_krb5_conf.as_ref()
     }
     /// <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
-    pub fn agent_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn agent_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.agent_arns.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateLocationHdfsInput {
+impl  std::fmt::Debug for UpdateLocationHdfsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateLocationHdfsInput");
         formatter.field("location_arn", &self.location_arn);
@@ -8828,27 +6596,24 @@ impl std::fmt::Debug for UpdateLocationHdfsInput {
 }
 
 /// <p>UpdateAgentRequest</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateAgentInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct UpdateAgentInput  {
     /// <p>The Amazon Resource Name (ARN) of the agent to update.</p>
-    #[doc(hidden)]
-    pub agent_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub agent_arn: std::option::Option<std::string::String>,
     /// <p>The name that you want to use to configure the agent.</p>
-    #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub name: std::option::Option<std::string::String>,
 }
 impl UpdateAgentInput {
     /// <p>The Amazon Resource Name (ARN) of the agent to update.</p>
-    pub fn agent_arn(&self) -> std::option::Option<&str> {
+    pub fn agent_arn(&self) -> std::option::Option<& str> {
         self.agent_arn.as_deref()
     }
     /// <p>The name that you want to use to configure the agent.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAgentInput {
+impl  std::fmt::Debug for UpdateAgentInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAgentInput");
         formatter.field("agent_arn", &self.agent_arn);
@@ -8858,27 +6623,24 @@ impl std::fmt::Debug for UpdateAgentInput {
 }
 
 /// <p>UntagResourceRequest</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UntagResourceInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct UntagResourceInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource to remove the tag from.</p>
-    #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The keys in the key-value pair in the tag to remove.</p>
-    #[doc(hidden)]
-    pub keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to remove the tag from.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The keys in the key-value pair in the tag to remove.</p>
-    pub fn keys(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn keys(&self) -> std::option::Option<& [std::string::String]> {
         self.keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
+impl  std::fmt::Debug for UntagResourceInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -8888,27 +6650,24 @@ impl std::fmt::Debug for UntagResourceInput {
 }
 
 /// <p>TagResourceRequest</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct TagResourceInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct TagResourceInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource to apply the tag to.</p>
-    #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags to apply.</p>
-    #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
+    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
 }
 impl TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to apply the tag to.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The tags to apply.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::TagListEntry]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::TagListEntry]> {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
+impl  std::fmt::Debug for TagResourceInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -8918,45 +6677,40 @@ impl std::fmt::Debug for TagResourceInput {
 }
 
 /// <p>StartTaskExecutionRequest</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct StartTaskExecutionInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct StartTaskExecutionInput  {
     /// <p>The Amazon Resource Name (ARN) of the task to start.</p>
-    #[doc(hidden)]
-    pub task_arn: std::option::Option<std::string::String>,
-    /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
+    #[doc(hidden)]pub task_arn: std::option::Option<std::string::String>,
+    /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p> 
     /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
-    #[doc(hidden)]
-    pub override_options: std::option::Option<crate::model::Options>,
-    /// <p>A list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
+    #[doc(hidden)]pub override_options: std::option::Option<crate::model::Options>,
+    /// <p>A list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p> 
     /// <p> </p>
-    #[doc(hidden)]
-    pub includes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
+    #[doc(hidden)]pub includes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
     /// <p>A list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
-    #[doc(hidden)]
-    pub excludes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
+    #[doc(hidden)]pub excludes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
 }
 impl StartTaskExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the task to start.</p>
-    pub fn task_arn(&self) -> std::option::Option<&str> {
+    pub fn task_arn(&self) -> std::option::Option<& str> {
         self.task_arn.as_deref()
     }
-    /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
+    /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p> 
     /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
-    pub fn override_options(&self) -> std::option::Option<&crate::model::Options> {
+    pub fn override_options(&self) -> std::option::Option<& crate::model::Options> {
         self.override_options.as_ref()
     }
-    /// <p>A list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
+    /// <p>A list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p> 
     /// <p> </p>
-    pub fn includes(&self) -> std::option::Option<&[crate::model::FilterRule]> {
+    pub fn includes(&self) -> std::option::Option<& [crate::model::FilterRule]> {
         self.includes.as_deref()
     }
     /// <p>A list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
-    pub fn excludes(&self) -> std::option::Option<&[crate::model::FilterRule]> {
+    pub fn excludes(&self) -> std::option::Option<& [crate::model::FilterRule]> {
         self.excludes.as_deref()
     }
 }
-impl std::fmt::Debug for StartTaskExecutionInput {
+impl  std::fmt::Debug for StartTaskExecutionInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartTaskExecutionInput");
         formatter.field("task_arn", &self.task_arn);
@@ -8968,18 +6722,14 @@ impl std::fmt::Debug for StartTaskExecutionInput {
 }
 
 /// <p>ListTasksRequest</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListTasksInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListTasksInput  {
     /// <p>The maximum number of tasks to return.</p>
-    #[doc(hidden)]
-    pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]pub max_results: std::option::Option<i32>,
     /// <p>An opaque string that indicates the position at which to begin the next list of tasks.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
     /// <p>You can use API filters to narrow down the list of resources returned by <code>ListTasks</code>. For example, to retrieve all tasks on a specific source location, you can use <code>ListTasks</code> with filter name <code>LocationId</code> and <code>Operator Equals</code> with the ARN for the location.</p>
-    #[doc(hidden)]
-    pub filters: std::option::Option<std::vec::Vec<crate::model::TaskFilter>>,
+    #[doc(hidden)]pub filters: std::option::Option<std::vec::Vec<crate::model::TaskFilter>>,
 }
 impl ListTasksInput {
     /// <p>The maximum number of tasks to return.</p>
@@ -8987,15 +6737,15 @@ impl ListTasksInput {
         self.max_results
     }
     /// <p>An opaque string that indicates the position at which to begin the next list of tasks.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>You can use API filters to narrow down the list of resources returned by <code>ListTasks</code>. For example, to retrieve all tasks on a specific source location, you can use <code>ListTasks</code> with filter name <code>LocationId</code> and <code>Operator Equals</code> with the ARN for the location.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::model::TaskFilter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::model::TaskFilter]> {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListTasksInput {
+impl  std::fmt::Debug for ListTasksInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTasksInput");
         formatter.field("max_results", &self.max_results);
@@ -9006,22 +6756,18 @@ impl std::fmt::Debug for ListTasksInput {
 }
 
 /// <p>ListTaskExecutions</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListTaskExecutionsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListTaskExecutionsInput  {
     /// <p>The Amazon Resource Name (ARN) of the task whose tasks you want to list.</p>
-    #[doc(hidden)]
-    pub task_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub task_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of executed tasks to list.</p>
-    #[doc(hidden)]
-    pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]pub max_results: std::option::Option<i32>,
     /// <p>An opaque string that indicates the position at which to begin the next list of the executed tasks.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTaskExecutionsInput {
     /// <p>The Amazon Resource Name (ARN) of the task whose tasks you want to list.</p>
-    pub fn task_arn(&self) -> std::option::Option<&str> {
+    pub fn task_arn(&self) -> std::option::Option<& str> {
         self.task_arn.as_deref()
     }
     /// <p>The maximum number of executed tasks to list.</p>
@@ -9029,11 +6775,11 @@ impl ListTaskExecutionsInput {
         self.max_results
     }
     /// <p>An opaque string that indicates the position at which to begin the next list of the executed tasks.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTaskExecutionsInput {
+impl  std::fmt::Debug for ListTaskExecutionsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTaskExecutionsInput");
         formatter.field("task_arn", &self.task_arn);
@@ -9044,22 +6790,18 @@ impl std::fmt::Debug for ListTaskExecutionsInput {
 }
 
 /// <p>ListTagsForResourceRequest</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListTagsForResourceInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListTagsForResourceInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource whose tags to list.</p>
-    #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of locations to return.</p>
-    #[doc(hidden)]
-    pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]pub max_results: std::option::Option<i32>,
     /// <p>An opaque string that indicates the position at which to begin the next list of locations.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource whose tags to list.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The maximum number of locations to return.</p>
@@ -9067,11 +6809,11 @@ impl ListTagsForResourceInput {
         self.max_results
     }
     /// <p>An opaque string that indicates the position at which to begin the next list of locations.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
+impl  std::fmt::Debug for ListTagsForResourceInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -9082,18 +6824,14 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 }
 
 /// <p>ListLocationsRequest</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListLocationsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListLocationsInput  {
     /// <p>The maximum number of locations to return.</p>
-    #[doc(hidden)]
-    pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]pub max_results: std::option::Option<i32>,
     /// <p>An opaque string that indicates the position at which to begin the next list of locations.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
     /// <p>You can use API filters to narrow down the list of resources returned by <code>ListLocations</code>. For example, to retrieve all tasks on a specific source location, you can use <code>ListLocations</code> with filter name <code>LocationType S3</code> and <code>Operator Equals</code>.</p>
-    #[doc(hidden)]
-    pub filters: std::option::Option<std::vec::Vec<crate::model::LocationFilter>>,
+    #[doc(hidden)]pub filters: std::option::Option<std::vec::Vec<crate::model::LocationFilter>>,
 }
 impl ListLocationsInput {
     /// <p>The maximum number of locations to return.</p>
@@ -9101,15 +6839,15 @@ impl ListLocationsInput {
         self.max_results
     }
     /// <p>An opaque string that indicates the position at which to begin the next list of locations.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>You can use API filters to narrow down the list of resources returned by <code>ListLocations</code>. For example, to retrieve all tasks on a specific source location, you can use <code>ListLocations</code> with filter name <code>LocationType S3</code> and <code>Operator Equals</code>.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::model::LocationFilter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::model::LocationFilter]> {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListLocationsInput {
+impl  std::fmt::Debug for ListLocationsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListLocationsInput");
         formatter.field("max_results", &self.max_results);
@@ -9120,15 +6858,12 @@ impl std::fmt::Debug for ListLocationsInput {
 }
 
 /// <p>ListAgentsRequest</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListAgentsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListAgentsInput  {
     /// <p>The maximum number of agents to list.</p>
-    #[doc(hidden)]
-    pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]pub max_results: std::option::Option<i32>,
     /// <p>An opaque string that indicates the position at which to begin the next list of agents.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAgentsInput {
     /// <p>The maximum number of agents to list.</p>
@@ -9136,11 +6871,11 @@ impl ListAgentsInput {
         self.max_results
     }
     /// <p>An opaque string that indicates the position at which to begin the next list of agents.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListAgentsInput {
+impl  std::fmt::Debug for ListAgentsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAgentsInput");
         formatter.field("max_results", &self.max_results);
@@ -9150,20 +6885,18 @@ impl std::fmt::Debug for ListAgentsInput {
 }
 
 /// <p>DescribeTaskExecutionRequest</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeTaskExecutionInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DescribeTaskExecutionInput  {
     /// <p>The Amazon Resource Name (ARN) of the task that is being executed.</p>
-    #[doc(hidden)]
-    pub task_execution_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub task_execution_arn: std::option::Option<std::string::String>,
 }
 impl DescribeTaskExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the task that is being executed.</p>
-    pub fn task_execution_arn(&self) -> std::option::Option<&str> {
+    pub fn task_execution_arn(&self) -> std::option::Option<& str> {
         self.task_execution_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTaskExecutionInput {
+impl  std::fmt::Debug for DescribeTaskExecutionInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTaskExecutionInput");
         formatter.field("task_execution_arn", &self.task_execution_arn);
@@ -9172,20 +6905,18 @@ impl std::fmt::Debug for DescribeTaskExecutionInput {
 }
 
 /// <p>DescribeTaskRequest</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeTaskInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DescribeTaskInput  {
     /// <p>The Amazon Resource Name (ARN) of the task to describe.</p>
-    #[doc(hidden)]
-    pub task_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub task_arn: std::option::Option<std::string::String>,
 }
 impl DescribeTaskInput {
     /// <p>The Amazon Resource Name (ARN) of the task to describe.</p>
-    pub fn task_arn(&self) -> std::option::Option<&str> {
+    pub fn task_arn(&self) -> std::option::Option<& str> {
         self.task_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTaskInput {
+impl  std::fmt::Debug for DescribeTaskInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTaskInput");
         formatter.field("task_arn", &self.task_arn);
@@ -9194,20 +6925,18 @@ impl std::fmt::Debug for DescribeTaskInput {
 }
 
 /// <p>DescribeLocationSmbRequest</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeLocationSmbInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DescribeLocationSmbInput  {
     /// <p>The Amazon Resource Name (ARN) of the SMB location to describe.</p>
-    #[doc(hidden)]
-    pub location_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub location_arn: std::option::Option<std::string::String>,
 }
 impl DescribeLocationSmbInput {
     /// <p>The Amazon Resource Name (ARN) of the SMB location to describe.</p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLocationSmbInput {
+impl  std::fmt::Debug for DescribeLocationSmbInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLocationSmbInput");
         formatter.field("location_arn", &self.location_arn);
@@ -9216,20 +6945,18 @@ impl std::fmt::Debug for DescribeLocationSmbInput {
 }
 
 /// <p>DescribeLocationS3Request</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeLocationS3Input {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DescribeLocationS3Input  {
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket location to describe.</p>
-    #[doc(hidden)]
-    pub location_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub location_arn: std::option::Option<std::string::String>,
 }
 impl DescribeLocationS3Input {
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket location to describe.</p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLocationS3Input {
+impl  std::fmt::Debug for DescribeLocationS3Input  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLocationS3Input");
         formatter.field("location_arn", &self.location_arn);
@@ -9238,20 +6965,18 @@ impl std::fmt::Debug for DescribeLocationS3Input {
 }
 
 /// <p>DescribeLocationObjectStorageRequest</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeLocationObjectStorageInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DescribeLocationObjectStorageInput  {
     /// <p>The Amazon Resource Name (ARN) of the object storage system location that you want information about.</p>
-    #[doc(hidden)]
-    pub location_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub location_arn: std::option::Option<std::string::String>,
 }
 impl DescribeLocationObjectStorageInput {
     /// <p>The Amazon Resource Name (ARN) of the object storage system location that you want information about.</p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLocationObjectStorageInput {
+impl  std::fmt::Debug for DescribeLocationObjectStorageInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLocationObjectStorageInput");
         formatter.field("location_arn", &self.location_arn);
@@ -9260,20 +6985,18 @@ impl std::fmt::Debug for DescribeLocationObjectStorageInput {
 }
 
 /// <p>DescribeLocationNfsRequest</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeLocationNfsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DescribeLocationNfsInput  {
     /// <p>The Amazon Resource Name (ARN) of the NFS location to describe.</p>
-    #[doc(hidden)]
-    pub location_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub location_arn: std::option::Option<std::string::String>,
 }
 impl DescribeLocationNfsInput {
     /// <p>The Amazon Resource Name (ARN) of the NFS location to describe.</p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLocationNfsInput {
+impl  std::fmt::Debug for DescribeLocationNfsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLocationNfsInput");
         formatter.field("location_arn", &self.location_arn);
@@ -9282,20 +7005,18 @@ impl std::fmt::Debug for DescribeLocationNfsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeLocationHdfsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DescribeLocationHdfsInput  {
     /// <p>The Amazon Resource Name (ARN) of the HDFS cluster location to describe.</p>
-    #[doc(hidden)]
-    pub location_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub location_arn: std::option::Option<std::string::String>,
 }
 impl DescribeLocationHdfsInput {
     /// <p>The Amazon Resource Name (ARN) of the HDFS cluster location to describe.</p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLocationHdfsInput {
+impl  std::fmt::Debug for DescribeLocationHdfsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLocationHdfsInput");
         formatter.field("location_arn", &self.location_arn);
@@ -9304,20 +7025,18 @@ impl std::fmt::Debug for DescribeLocationHdfsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeLocationFsxWindowsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DescribeLocationFsxWindowsInput  {
     /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location to describe.</p>
-    #[doc(hidden)]
-    pub location_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub location_arn: std::option::Option<std::string::String>,
 }
 impl DescribeLocationFsxWindowsInput {
     /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location to describe.</p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLocationFsxWindowsInput {
+impl  std::fmt::Debug for DescribeLocationFsxWindowsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLocationFsxWindowsInput");
         formatter.field("location_arn", &self.location_arn);
@@ -9326,20 +7045,18 @@ impl std::fmt::Debug for DescribeLocationFsxWindowsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeLocationFsxOpenZfsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DescribeLocationFsxOpenZfsInput  {
     /// <p>The Amazon Resource Name (ARN) of the FSx for OpenZFS location to describe.</p>
-    #[doc(hidden)]
-    pub location_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub location_arn: std::option::Option<std::string::String>,
 }
 impl DescribeLocationFsxOpenZfsInput {
     /// <p>The Amazon Resource Name (ARN) of the FSx for OpenZFS location to describe.</p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLocationFsxOpenZfsInput {
+impl  std::fmt::Debug for DescribeLocationFsxOpenZfsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLocationFsxOpenZfsInput");
         formatter.field("location_arn", &self.location_arn);
@@ -9348,20 +7065,18 @@ impl std::fmt::Debug for DescribeLocationFsxOpenZfsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeLocationFsxOntapInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DescribeLocationFsxOntapInput  {
     /// <p>Specifies the Amazon Resource Name (ARN) of the FSx for ONTAP file system location that you want information about.</p>
-    #[doc(hidden)]
-    pub location_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub location_arn: std::option::Option<std::string::String>,
 }
 impl DescribeLocationFsxOntapInput {
     /// <p>Specifies the Amazon Resource Name (ARN) of the FSx for ONTAP file system location that you want information about.</p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLocationFsxOntapInput {
+impl  std::fmt::Debug for DescribeLocationFsxOntapInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLocationFsxOntapInput");
         formatter.field("location_arn", &self.location_arn);
@@ -9370,20 +7085,18 @@ impl std::fmt::Debug for DescribeLocationFsxOntapInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeLocationFsxLustreInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DescribeLocationFsxLustreInput  {
     /// <p>The Amazon Resource Name (ARN) of the FSx for Lustre location to describe. </p>
-    #[doc(hidden)]
-    pub location_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub location_arn: std::option::Option<std::string::String>,
 }
 impl DescribeLocationFsxLustreInput {
     /// <p>The Amazon Resource Name (ARN) of the FSx for Lustre location to describe. </p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLocationFsxLustreInput {
+impl  std::fmt::Debug for DescribeLocationFsxLustreInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLocationFsxLustreInput");
         formatter.field("location_arn", &self.location_arn);
@@ -9392,20 +7105,18 @@ impl std::fmt::Debug for DescribeLocationFsxLustreInput {
 }
 
 /// <p>DescribeLocationEfsRequest</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeLocationEfsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DescribeLocationEfsInput  {
     /// <p>The Amazon Resource Name (ARN) of the Amazon EFS file system location that you want information about.</p>
-    #[doc(hidden)]
-    pub location_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub location_arn: std::option::Option<std::string::String>,
 }
 impl DescribeLocationEfsInput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon EFS file system location that you want information about.</p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLocationEfsInput {
+impl  std::fmt::Debug for DescribeLocationEfsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLocationEfsInput");
         formatter.field("location_arn", &self.location_arn);
@@ -9414,20 +7125,18 @@ impl std::fmt::Debug for DescribeLocationEfsInput {
 }
 
 /// <p>DescribeAgent</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeAgentInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DescribeAgentInput  {
     /// <p>The Amazon Resource Name (ARN) of the agent to describe.</p>
-    #[doc(hidden)]
-    pub agent_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub agent_arn: std::option::Option<std::string::String>,
 }
 impl DescribeAgentInput {
     /// <p>The Amazon Resource Name (ARN) of the agent to describe.</p>
-    pub fn agent_arn(&self) -> std::option::Option<&str> {
+    pub fn agent_arn(&self) -> std::option::Option<& str> {
         self.agent_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAgentInput {
+impl  std::fmt::Debug for DescribeAgentInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAgentInput");
         formatter.field("agent_arn", &self.agent_arn);
@@ -9436,20 +7145,18 @@ impl std::fmt::Debug for DescribeAgentInput {
 }
 
 /// <p>DeleteTask</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteTaskInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DeleteTaskInput  {
     /// <p>The Amazon Resource Name (ARN) of the task to delete.</p>
-    #[doc(hidden)]
-    pub task_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub task_arn: std::option::Option<std::string::String>,
 }
 impl DeleteTaskInput {
     /// <p>The Amazon Resource Name (ARN) of the task to delete.</p>
-    pub fn task_arn(&self) -> std::option::Option<&str> {
+    pub fn task_arn(&self) -> std::option::Option<& str> {
         self.task_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteTaskInput {
+impl  std::fmt::Debug for DeleteTaskInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteTaskInput");
         formatter.field("task_arn", &self.task_arn);
@@ -9458,20 +7165,18 @@ impl std::fmt::Debug for DeleteTaskInput {
 }
 
 /// <p>DeleteLocation</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteLocationInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DeleteLocationInput  {
     /// <p>The Amazon Resource Name (ARN) of the location to delete.</p>
-    #[doc(hidden)]
-    pub location_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub location_arn: std::option::Option<std::string::String>,
 }
 impl DeleteLocationInput {
     /// <p>The Amazon Resource Name (ARN) of the location to delete.</p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteLocationInput {
+impl  std::fmt::Debug for DeleteLocationInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteLocationInput");
         formatter.field("location_arn", &self.location_arn);
@@ -9480,20 +7185,18 @@ impl std::fmt::Debug for DeleteLocationInput {
 }
 
 /// <p>DeleteAgentRequest</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteAgentInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DeleteAgentInput  {
     /// <p>The Amazon Resource Name (ARN) of the agent to delete. Use the <code>ListAgents</code> operation to return a list of agents for your account and Amazon Web Services Region.</p>
-    #[doc(hidden)]
-    pub agent_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub agent_arn: std::option::Option<std::string::String>,
 }
 impl DeleteAgentInput {
     /// <p>The Amazon Resource Name (ARN) of the agent to delete. Use the <code>ListAgents</code> operation to return a list of agents for your account and Amazon Web Services Region.</p>
-    pub fn agent_arn(&self) -> std::option::Option<&str> {
+    pub fn agent_arn(&self) -> std::option::Option<& str> {
         self.agent_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAgentInput {
+impl  std::fmt::Debug for DeleteAgentInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAgentInput");
         formatter.field("agent_arn", &self.agent_arn);
@@ -9502,80 +7205,70 @@ impl std::fmt::Debug for DeleteAgentInput {
 }
 
 /// <p>CreateTaskRequest</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateTaskInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CreateTaskInput  {
     /// <p>The Amazon Resource Name (ARN) of the source location for the task.</p>
-    #[doc(hidden)]
-    pub source_location_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub source_location_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services storage resource's location. </p>
-    #[doc(hidden)]
-    pub destination_location_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub destination_location_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor and log events in the task. </p>
-    #[doc(hidden)]
-    pub cloud_watch_log_group_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub cloud_watch_log_group_arn: std::option::Option<std::string::String>,
     /// <p>The name of a task. This value is a text reference that is used to identify the task in the console. </p>
-    #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
-    /// <p>The set of configuration options that control the behavior of a single execution of the task that occurs when you call <code>StartTaskExecution</code>. You can configure these options to preserve metadata such as user ID (UID) and group ID (GID), file permissions, data integrity verification, and so on.</p>
+    #[doc(hidden)]pub name: std::option::Option<std::string::String>,
+    /// <p>The set of configuration options that control the behavior of a single execution of the task that occurs when you call <code>StartTaskExecution</code>. You can configure these options to preserve metadata such as user ID (UID) and group ID (GID), file permissions, data integrity verification, and so on.</p> 
     /// <p>For each individual task execution, you can override these options by specifying the <code>OverrideOptions</code> before starting the task execution. For more information, see the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. </p>
-    #[doc(hidden)]
-    pub options: std::option::Option<crate::model::Options>,
-    /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
+    #[doc(hidden)]pub options: std::option::Option<crate::model::Options>,
+    /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p> 
     /// <p> </p>
-    #[doc(hidden)]
-    pub excludes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
+    #[doc(hidden)]pub excludes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
     /// <p>Specifies a schedule used to periodically transfer files from a source to a destination location. The schedule should be specified in UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
-    #[doc(hidden)]
-    pub schedule: std::option::Option<crate::model::TaskSchedule>,
+    #[doc(hidden)]pub schedule: std::option::Option<crate::model::TaskSchedule>,
     /// <p>The key-value pair that represents the tag that you want to add to the resource. The value can be an empty string. </p>
-    #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
+    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
     /// <p>A list of filter rules that determines which files to include when running a task. The pattern contains a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
-    #[doc(hidden)]
-    pub includes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
+    #[doc(hidden)]pub includes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
 }
 impl CreateTaskInput {
     /// <p>The Amazon Resource Name (ARN) of the source location for the task.</p>
-    pub fn source_location_arn(&self) -> std::option::Option<&str> {
+    pub fn source_location_arn(&self) -> std::option::Option<& str> {
         self.source_location_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services storage resource's location. </p>
-    pub fn destination_location_arn(&self) -> std::option::Option<&str> {
+    pub fn destination_location_arn(&self) -> std::option::Option<& str> {
         self.destination_location_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor and log events in the task. </p>
-    pub fn cloud_watch_log_group_arn(&self) -> std::option::Option<&str> {
+    pub fn cloud_watch_log_group_arn(&self) -> std::option::Option<& str> {
         self.cloud_watch_log_group_arn.as_deref()
     }
     /// <p>The name of a task. This value is a text reference that is used to identify the task in the console. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>The set of configuration options that control the behavior of a single execution of the task that occurs when you call <code>StartTaskExecution</code>. You can configure these options to preserve metadata such as user ID (UID) and group ID (GID), file permissions, data integrity verification, and so on.</p>
+    /// <p>The set of configuration options that control the behavior of a single execution of the task that occurs when you call <code>StartTaskExecution</code>. You can configure these options to preserve metadata such as user ID (UID) and group ID (GID), file permissions, data integrity verification, and so on.</p> 
     /// <p>For each individual task execution, you can override these options by specifying the <code>OverrideOptions</code> before starting the task execution. For more information, see the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. </p>
-    pub fn options(&self) -> std::option::Option<&crate::model::Options> {
+    pub fn options(&self) -> std::option::Option<& crate::model::Options> {
         self.options.as_ref()
     }
-    /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
+    /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p> 
     /// <p> </p>
-    pub fn excludes(&self) -> std::option::Option<&[crate::model::FilterRule]> {
+    pub fn excludes(&self) -> std::option::Option<& [crate::model::FilterRule]> {
         self.excludes.as_deref()
     }
     /// <p>Specifies a schedule used to periodically transfer files from a source to a destination location. The schedule should be specified in UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
-    pub fn schedule(&self) -> std::option::Option<&crate::model::TaskSchedule> {
+    pub fn schedule(&self) -> std::option::Option<& crate::model::TaskSchedule> {
         self.schedule.as_ref()
     }
     /// <p>The key-value pair that represents the tag that you want to add to the resource. The value can be an empty string. </p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::TagListEntry]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::TagListEntry]> {
         self.tags.as_deref()
     }
     /// <p>A list of filter rules that determines which files to include when running a task. The pattern contains a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
-    pub fn includes(&self) -> std::option::Option<&[crate::model::FilterRule]> {
+    pub fn includes(&self) -> std::option::Option<& [crate::model::FilterRule]> {
         self.includes.as_deref()
     }
 }
-impl std::fmt::Debug for CreateTaskInput {
+impl  std::fmt::Debug for CreateTaskInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTaskInput");
         formatter.field("source_location_arn", &self.source_location_arn);
@@ -9592,81 +7285,72 @@ impl std::fmt::Debug for CreateTaskInput {
 }
 
 /// <p>CreateLocationSmbRequest</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateLocationSmbInput {
-    /// <p>The subdirectory in the SMB file system that is used to read data from the SMB source location or write data to the SMB destination. The SMB path should be a path that's exported by the SMB server, or a subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your network.</p> <note>
-    /// <p> <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.</p>
-    /// </note>
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CreateLocationSmbInput  {
+    /// <p>The subdirectory in the SMB file system that is used to read data from the SMB source location or write data to the SMB destination. The SMB path should be a path that's exported by the SMB server, or a subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your network.</p> <note> 
+    /// <p> <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.</p> 
+    /// </note> 
     /// <p>To transfer all the data in the folder you specified, DataSync needs to have permissions to mount the SMB share, as well as to access all the data in that share. To ensure this, either ensure that the user/password specified belongs to the user who can mount the share, and who has the appropriate permissions for all of the files and directories that you want DataSync to access, or use credentials of a member of the Backup Operators group to mount the share. Doing either enables the agent to access the data. For the agent to access directories, you must additionally enable all execute access.</p>
-    #[doc(hidden)]
-    pub subdirectory: std::option::Option<std::string::String>,
-    /// <p>The name of the SMB server. This value is the IP address or Domain Name Service (DNS) name of the SMB server. An agent that is installed on-premises uses this hostname to mount the SMB server in a network.</p> <note>
-    /// <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
+    #[doc(hidden)]pub subdirectory: std::option::Option<std::string::String>,
+    /// <p>The name of the SMB server. This value is the IP address or Domain Name Service (DNS) name of the SMB server. An agent that is installed on-premises uses this hostname to mount the SMB server in a network.</p> <note> 
+    /// <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p> 
     /// </note>
-    #[doc(hidden)]
-    pub server_hostname: std::option::Option<std::string::String>,
-    /// <p>The user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
+    #[doc(hidden)]pub server_hostname: std::option::Option<std::string::String>,
+    /// <p>The user who can mount the share, has the permissions to access files and folders in the SMB share.</p> 
     /// <p>For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata, see the <a href="create-smb-location.html#SMBuser">User setting</a> for SMB locations.</p>
-    #[doc(hidden)]
-    pub user: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub user: std::option::Option<std::string::String>,
     /// <p>The name of the Windows domain that the SMB server belongs to.</p>
-    #[doc(hidden)]
-    pub domain: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub domain: std::option::Option<std::string::String>,
     /// <p>The password of the user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
-    #[doc(hidden)]
-    pub password: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub password: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block (SMB) location. </p>
-    #[doc(hidden)]
-    pub agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The mount options used by DataSync to access the SMB server.</p>
-    #[doc(hidden)]
-    pub mount_options: std::option::Option<crate::model::SmbMountOptions>,
+    #[doc(hidden)]pub mount_options: std::option::Option<crate::model::SmbMountOptions>,
     /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources.</p>
-    #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
+    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
 }
 impl CreateLocationSmbInput {
-    /// <p>The subdirectory in the SMB file system that is used to read data from the SMB source location or write data to the SMB destination. The SMB path should be a path that's exported by the SMB server, or a subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your network.</p> <note>
-    /// <p> <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.</p>
-    /// </note>
+    /// <p>The subdirectory in the SMB file system that is used to read data from the SMB source location or write data to the SMB destination. The SMB path should be a path that's exported by the SMB server, or a subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your network.</p> <note> 
+    /// <p> <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.</p> 
+    /// </note> 
     /// <p>To transfer all the data in the folder you specified, DataSync needs to have permissions to mount the SMB share, as well as to access all the data in that share. To ensure this, either ensure that the user/password specified belongs to the user who can mount the share, and who has the appropriate permissions for all of the files and directories that you want DataSync to access, or use credentials of a member of the Backup Operators group to mount the share. Doing either enables the agent to access the data. For the agent to access directories, you must additionally enable all execute access.</p>
-    pub fn subdirectory(&self) -> std::option::Option<&str> {
+    pub fn subdirectory(&self) -> std::option::Option<& str> {
         self.subdirectory.as_deref()
     }
-    /// <p>The name of the SMB server. This value is the IP address or Domain Name Service (DNS) name of the SMB server. An agent that is installed on-premises uses this hostname to mount the SMB server in a network.</p> <note>
-    /// <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
+    /// <p>The name of the SMB server. This value is the IP address or Domain Name Service (DNS) name of the SMB server. An agent that is installed on-premises uses this hostname to mount the SMB server in a network.</p> <note> 
+    /// <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p> 
     /// </note>
-    pub fn server_hostname(&self) -> std::option::Option<&str> {
+    pub fn server_hostname(&self) -> std::option::Option<& str> {
         self.server_hostname.as_deref()
     }
-    /// <p>The user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
+    /// <p>The user who can mount the share, has the permissions to access files and folders in the SMB share.</p> 
     /// <p>For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata, see the <a href="create-smb-location.html#SMBuser">User setting</a> for SMB locations.</p>
-    pub fn user(&self) -> std::option::Option<&str> {
+    pub fn user(&self) -> std::option::Option<& str> {
         self.user.as_deref()
     }
     /// <p>The name of the Windows domain that the SMB server belongs to.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The password of the user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
-    pub fn password(&self) -> std::option::Option<&str> {
+    pub fn password(&self) -> std::option::Option<& str> {
         self.password.as_deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block (SMB) location. </p>
-    pub fn agent_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn agent_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.agent_arns.as_deref()
     }
     /// <p>The mount options used by DataSync to access the SMB server.</p>
-    pub fn mount_options(&self) -> std::option::Option<&crate::model::SmbMountOptions> {
+    pub fn mount_options(&self) -> std::option::Option<& crate::model::SmbMountOptions> {
         self.mount_options.as_ref()
     }
     /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::TagListEntry]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::TagListEntry]> {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLocationSmbInput {
+impl  std::fmt::Debug for CreateLocationSmbInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLocationSmbInput");
         formatter.field("subdirectory", &self.subdirectory);
@@ -9682,59 +7366,52 @@ impl std::fmt::Debug for CreateLocationSmbInput {
 }
 
 /// <p>CreateLocationS3Request</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateLocationS3Input {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CreateLocationS3Input  {
     /// <p>A subdirectory in the Amazon S3 bucket. This subdirectory in Amazon S3 is used to read data from the S3 source location or write data to the S3 destination.</p>
-    #[doc(hidden)]
-    pub subdirectory: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub subdirectory: std::option::Option<std::string::String>,
     /// <p>The ARN of the Amazon S3 bucket. If the bucket is on an Amazon Web Services Outpost, this must be an access point ARN.</p>
-    #[doc(hidden)]
-    pub s3_bucket_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon S3 storage class that you want to store your files in when this location is used as a task destination. For buckets in Amazon Web Services Regions, the storage class defaults to Standard. For buckets on Outposts, the storage class defaults to Amazon Web Services S3 Outposts.</p>
+    #[doc(hidden)]pub s3_bucket_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon S3 storage class that you want to store your files in when this location is used as a task destination. For buckets in Amazon Web Services Regions, the storage class defaults to Standard. For buckets on Outposts, the storage class defaults to Amazon Web Services S3 Outposts.</p> 
     /// <p>For more information about S3 storage classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have behaviors that can affect your S3 storage cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with S3 storage classes in DataSync</a>.</p>
-    #[doc(hidden)]
-    pub s3_storage_class: std::option::Option<crate::model::S3StorageClass>,
-    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to access an Amazon S3 bucket.</p>
+    #[doc(hidden)]pub s3_storage_class: std::option::Option<crate::model::S3StorageClass>,
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to access an Amazon S3 bucket.</p> 
     /// <p>For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>DataSync User Guide</i>.</p>
-    #[doc(hidden)]
-    pub s3_config: std::option::Option<crate::model::S3Config>,
+    #[doc(hidden)]pub s3_config: std::option::Option<crate::model::S3Config>,
     /// <p>If you're using DataSync on an Amazon Web Services Outpost, specify the Amazon Resource Names (ARNs) of the DataSync agents deployed on your Outpost. For more information about launching a DataSync agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
-    #[doc(hidden)]
-    pub agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources.</p>
-    #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
+    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
 }
 impl CreateLocationS3Input {
     /// <p>A subdirectory in the Amazon S3 bucket. This subdirectory in Amazon S3 is used to read data from the S3 source location or write data to the S3 destination.</p>
-    pub fn subdirectory(&self) -> std::option::Option<&str> {
+    pub fn subdirectory(&self) -> std::option::Option<& str> {
         self.subdirectory.as_deref()
     }
     /// <p>The ARN of the Amazon S3 bucket. If the bucket is on an Amazon Web Services Outpost, this must be an access point ARN.</p>
-    pub fn s3_bucket_arn(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket_arn(&self) -> std::option::Option<& str> {
         self.s3_bucket_arn.as_deref()
     }
-    /// <p>The Amazon S3 storage class that you want to store your files in when this location is used as a task destination. For buckets in Amazon Web Services Regions, the storage class defaults to Standard. For buckets on Outposts, the storage class defaults to Amazon Web Services S3 Outposts.</p>
+    /// <p>The Amazon S3 storage class that you want to store your files in when this location is used as a task destination. For buckets in Amazon Web Services Regions, the storage class defaults to Standard. For buckets on Outposts, the storage class defaults to Amazon Web Services S3 Outposts.</p> 
     /// <p>For more information about S3 storage classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have behaviors that can affect your S3 storage cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with S3 storage classes in DataSync</a>.</p>
-    pub fn s3_storage_class(&self) -> std::option::Option<&crate::model::S3StorageClass> {
+    pub fn s3_storage_class(&self) -> std::option::Option<& crate::model::S3StorageClass> {
         self.s3_storage_class.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to access an Amazon S3 bucket.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to access an Amazon S3 bucket.</p> 
     /// <p>For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>DataSync User Guide</i>.</p>
-    pub fn s3_config(&self) -> std::option::Option<&crate::model::S3Config> {
+    pub fn s3_config(&self) -> std::option::Option<& crate::model::S3Config> {
         self.s3_config.as_ref()
     }
     /// <p>If you're using DataSync on an Amazon Web Services Outpost, specify the Amazon Resource Names (ARNs) of the DataSync agents deployed on your Outpost. For more information about launching a DataSync agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
-    pub fn agent_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn agent_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.agent_arns.as_deref()
     }
     /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::TagListEntry]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::TagListEntry]> {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLocationS3Input {
+impl  std::fmt::Debug for CreateLocationS3Input  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLocationS3Input");
         formatter.field("subdirectory", &self.subdirectory);
@@ -9748,40 +7425,30 @@ impl std::fmt::Debug for CreateLocationS3Input {
 }
 
 /// <p>CreateLocationObjectStorageRequest</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateLocationObjectStorageInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CreateLocationObjectStorageInput  {
     /// <p>Specifies the domain name or IP address of the object storage server. A DataSync agent uses this hostname to mount the object storage server in a network.</p>
-    #[doc(hidden)]
-    pub server_hostname: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub server_hostname: std::option::Option<std::string::String>,
     /// <p>Specifies the port that your object storage server accepts inbound network traffic on (for example, port 443).</p>
-    #[doc(hidden)]
-    pub server_port: std::option::Option<i32>,
+    #[doc(hidden)]pub server_port: std::option::Option<i32>,
     /// <p>Specifies the protocol that your object storage server uses to communicate.</p>
-    #[doc(hidden)]
-    pub server_protocol: std::option::Option<crate::model::ObjectStorageServerProtocol>,
+    #[doc(hidden)]pub server_protocol: std::option::Option<crate::model::ObjectStorageServerProtocol>,
     /// <p>Specifies the object prefix for your object storage server. If this is a source location, DataSync only copies objects with this prefix. If this is a destination location, DataSync writes all objects with this prefix. </p>
-    #[doc(hidden)]
-    pub subdirectory: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub subdirectory: std::option::Option<std::string::String>,
     /// <p>Specifies the name of the object storage bucket involved in the transfer.</p>
-    #[doc(hidden)]
-    pub bucket_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub bucket_name: std::option::Option<std::string::String>,
     /// <p>Specifies the access key (for example, a user name) if credentials are required to authenticate with the object storage server.</p>
-    #[doc(hidden)]
-    pub access_key: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub access_key: std::option::Option<std::string::String>,
     /// <p>Specifies the secret key (for example, a password) if credentials are required to authenticate with the object storage server.</p>
-    #[doc(hidden)]
-    pub secret_key: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub secret_key: std::option::Option<std::string::String>,
     /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can securely connect with your location.</p>
-    #[doc(hidden)]
-    pub agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies the key-value pair that represents a tag that you want to add to the resource. Tags can help you manage, filter, and search for your resources. We recommend creating a name tag for your location.</p>
-    #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
+    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
 }
 impl CreateLocationObjectStorageInput {
     /// <p>Specifies the domain name or IP address of the object storage server. A DataSync agent uses this hostname to mount the object storage server in a network.</p>
-    pub fn server_hostname(&self) -> std::option::Option<&str> {
+    pub fn server_hostname(&self) -> std::option::Option<& str> {
         self.server_hostname.as_deref()
     }
     /// <p>Specifies the port that your object storage server accepts inbound network traffic on (for example, port 443).</p>
@@ -9789,37 +7456,35 @@ impl CreateLocationObjectStorageInput {
         self.server_port
     }
     /// <p>Specifies the protocol that your object storage server uses to communicate.</p>
-    pub fn server_protocol(
-        &self,
-    ) -> std::option::Option<&crate::model::ObjectStorageServerProtocol> {
+    pub fn server_protocol(&self) -> std::option::Option<& crate::model::ObjectStorageServerProtocol> {
         self.server_protocol.as_ref()
     }
     /// <p>Specifies the object prefix for your object storage server. If this is a source location, DataSync only copies objects with this prefix. If this is a destination location, DataSync writes all objects with this prefix. </p>
-    pub fn subdirectory(&self) -> std::option::Option<&str> {
+    pub fn subdirectory(&self) -> std::option::Option<& str> {
         self.subdirectory.as_deref()
     }
     /// <p>Specifies the name of the object storage bucket involved in the transfer.</p>
-    pub fn bucket_name(&self) -> std::option::Option<&str> {
+    pub fn bucket_name(&self) -> std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
     /// <p>Specifies the access key (for example, a user name) if credentials are required to authenticate with the object storage server.</p>
-    pub fn access_key(&self) -> std::option::Option<&str> {
+    pub fn access_key(&self) -> std::option::Option<& str> {
         self.access_key.as_deref()
     }
     /// <p>Specifies the secret key (for example, a password) if credentials are required to authenticate with the object storage server.</p>
-    pub fn secret_key(&self) -> std::option::Option<&str> {
+    pub fn secret_key(&self) -> std::option::Option<& str> {
         self.secret_key.as_deref()
     }
     /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can securely connect with your location.</p>
-    pub fn agent_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn agent_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.agent_arns.as_deref()
     }
     /// <p>Specifies the key-value pair that represents a tag that you want to add to the resource. Tags can help you manage, filter, and search for your resources. We recommend creating a name tag for your location.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::TagListEntry]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::TagListEntry]> {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLocationObjectStorageInput {
+impl  std::fmt::Debug for CreateLocationObjectStorageInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLocationObjectStorageInput");
         formatter.field("server_hostname", &self.server_hostname);
@@ -9836,64 +7501,58 @@ impl std::fmt::Debug for CreateLocationObjectStorageInput {
 }
 
 /// <p>CreateLocationNfsRequest</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateLocationNfsInput {
-    /// <p>The subdirectory in the NFS file system that is used to read data from the NFS source location or write data to the NFS destination. The NFS path should be a path that's exported by the NFS server, or a subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your network. </p>
-    /// <p>To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS client that has access to your server. You can specify any directory that appears in the results, and any subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication. </p>
-    /// <p>To transfer all the data in the folder you specified, DataSync needs to have permissions to read all the data. To ensure this, either configure the NFS export with <code>no_root_squash,</code> or ensure that the permissions for all of the files that you want DataSync allow read access for all users. Doing either enables the agent to read the files. For the agent to access directories, you must additionally enable all execute access.</p>
-    /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CreateLocationNfsInput  {
+    /// <p>The subdirectory in the NFS file system that is used to read data from the NFS source location or write data to the NFS destination. The NFS path should be a path that's exported by the NFS server, or a subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your network. </p> 
+    /// <p>To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS client that has access to your server. You can specify any directory that appears in the results, and any subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication. </p> 
+    /// <p>To transfer all the data in the folder you specified, DataSync needs to have permissions to read all the data. To ensure this, either configure the NFS export with <code>no_root_squash,</code> or ensure that the permissions for all of the files that you want DataSync allow read access for all users. Doing either enables the agent to read the files. For the agent to access directories, you must additionally enable all execute access.</p> 
+    /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p> 
     /// <p>For information about NFS export configuration, see 18.7. The /etc/exports Configuration File in the Red Hat Enterprise Linux documentation.</p>
-    #[doc(hidden)]
-    pub subdirectory: std::option::Option<std::string::String>,
-    /// <p>The name of the NFS server. This value is the IP address or Domain Name Service (DNS) name of the NFS server. An agent that is installed on-premises uses this hostname to mount the NFS server in a network. </p>
-    /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p> <note>
-    /// <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
+    #[doc(hidden)]pub subdirectory: std::option::Option<std::string::String>,
+    /// <p>The name of the NFS server. This value is the IP address or Domain Name Service (DNS) name of the NFS server. An agent that is installed on-premises uses this hostname to mount the NFS server in a network. </p> 
+    /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p> <note> 
+    /// <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p> 
     /// </note>
-    #[doc(hidden)]
-    pub server_hostname: std::option::Option<std::string::String>,
-    /// <p>Contains a list of Amazon Resource Names (ARNs) of agents that are used to connect to an NFS server. </p>
+    #[doc(hidden)]pub server_hostname: std::option::Option<std::string::String>,
+    /// <p>Contains a list of Amazon Resource Names (ARNs) of agents that are used to connect to an NFS server. </p> 
     /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
-    #[doc(hidden)]
-    pub on_prem_config: std::option::Option<crate::model::OnPremConfig>,
+    #[doc(hidden)]pub on_prem_config: std::option::Option<crate::model::OnPremConfig>,
     /// <p>The NFS mount options that DataSync can use to mount your NFS share.</p>
-    #[doc(hidden)]
-    pub mount_options: std::option::Option<crate::model::NfsMountOptions>,
+    #[doc(hidden)]pub mount_options: std::option::Option<crate::model::NfsMountOptions>,
     /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources.</p>
-    #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
+    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
 }
 impl CreateLocationNfsInput {
-    /// <p>The subdirectory in the NFS file system that is used to read data from the NFS source location or write data to the NFS destination. The NFS path should be a path that's exported by the NFS server, or a subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your network. </p>
-    /// <p>To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS client that has access to your server. You can specify any directory that appears in the results, and any subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication. </p>
-    /// <p>To transfer all the data in the folder you specified, DataSync needs to have permissions to read all the data. To ensure this, either configure the NFS export with <code>no_root_squash,</code> or ensure that the permissions for all of the files that you want DataSync allow read access for all users. Doing either enables the agent to read the files. For the agent to access directories, you must additionally enable all execute access.</p>
-    /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
+    /// <p>The subdirectory in the NFS file system that is used to read data from the NFS source location or write data to the NFS destination. The NFS path should be a path that's exported by the NFS server, or a subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your network. </p> 
+    /// <p>To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS client that has access to your server. You can specify any directory that appears in the results, and any subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication. </p> 
+    /// <p>To transfer all the data in the folder you specified, DataSync needs to have permissions to read all the data. To ensure this, either configure the NFS export with <code>no_root_squash,</code> or ensure that the permissions for all of the files that you want DataSync allow read access for all users. Doing either enables the agent to read the files. For the agent to access directories, you must additionally enable all execute access.</p> 
+    /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p> 
     /// <p>For information about NFS export configuration, see 18.7. The /etc/exports Configuration File in the Red Hat Enterprise Linux documentation.</p>
-    pub fn subdirectory(&self) -> std::option::Option<&str> {
+    pub fn subdirectory(&self) -> std::option::Option<& str> {
         self.subdirectory.as_deref()
     }
-    /// <p>The name of the NFS server. This value is the IP address or Domain Name Service (DNS) name of the NFS server. An agent that is installed on-premises uses this hostname to mount the NFS server in a network. </p>
-    /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p> <note>
-    /// <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
+    /// <p>The name of the NFS server. This value is the IP address or Domain Name Service (DNS) name of the NFS server. An agent that is installed on-premises uses this hostname to mount the NFS server in a network. </p> 
+    /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p> <note> 
+    /// <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p> 
     /// </note>
-    pub fn server_hostname(&self) -> std::option::Option<&str> {
+    pub fn server_hostname(&self) -> std::option::Option<& str> {
         self.server_hostname.as_deref()
     }
-    /// <p>Contains a list of Amazon Resource Names (ARNs) of agents that are used to connect to an NFS server. </p>
+    /// <p>Contains a list of Amazon Resource Names (ARNs) of agents that are used to connect to an NFS server. </p> 
     /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
-    pub fn on_prem_config(&self) -> std::option::Option<&crate::model::OnPremConfig> {
+    pub fn on_prem_config(&self) -> std::option::Option<& crate::model::OnPremConfig> {
         self.on_prem_config.as_ref()
     }
     /// <p>The NFS mount options that DataSync can use to mount your NFS share.</p>
-    pub fn mount_options(&self) -> std::option::Option<&crate::model::NfsMountOptions> {
+    pub fn mount_options(&self) -> std::option::Option<& crate::model::NfsMountOptions> {
         self.mount_options.as_ref()
     }
     /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::TagListEntry]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::TagListEntry]> {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLocationNfsInput {
+impl  std::fmt::Debug for CreateLocationNfsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLocationNfsInput");
         formatter.field("subdirectory", &self.subdirectory);
@@ -9906,64 +7565,50 @@ impl std::fmt::Debug for CreateLocationNfsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateLocationHdfsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CreateLocationHdfsInput  {
     /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write data to the HDFS cluster. If the subdirectory isn't specified, it will default to <code>/</code>.</p>
-    #[doc(hidden)]
-    pub subdirectory: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub subdirectory: std::option::Option<std::string::String>,
     /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes. You can use only one NameNode.</p>
-    #[doc(hidden)]
-    pub name_nodes: std::option::Option<std::vec::Vec<crate::model::HdfsNameNode>>,
+    #[doc(hidden)]pub name_nodes: std::option::Option<std::vec::Vec<crate::model::HdfsNameNode>>,
     /// <p>The size of data blocks to write into the HDFS cluster. The block size must be a multiple of 512 bytes. The default block size is 128 mebibytes (MiB).</p>
-    #[doc(hidden)]
-    pub block_size: std::option::Option<i32>,
+    #[doc(hidden)]pub block_size: std::option::Option<i32>,
     /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. By default, data is replicated to three DataNodes.</p>
-    #[doc(hidden)]
-    pub replication_factor: std::option::Option<i32>,
+    #[doc(hidden)]pub replication_factor: std::option::Option<i32>,
     /// <p>The URI of the HDFS cluster's Key Management Server (KMS). </p>
-    #[doc(hidden)]
-    pub kms_key_provider_uri: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub kms_key_provider_uri: std::option::Option<std::string::String>,
     /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer protection settings configured on the Hadoop Distributed File System (HDFS) cluster. If <code>QopConfiguration</code> isn't specified, <code>RpcProtection</code> and <code>DataTransferProtection</code> default to <code>PRIVACY</code>. If you set <code>RpcProtection</code> or <code>DataTransferProtection</code>, the other parameter assumes the same value. </p>
-    #[doc(hidden)]
-    pub qop_configuration: std::option::Option<crate::model::QopConfiguration>,
+    #[doc(hidden)]pub qop_configuration: std::option::Option<crate::model::QopConfiguration>,
     /// <p>The type of authentication used to determine the identity of the user. </p>
-    #[doc(hidden)]
-    pub authentication_type: std::option::Option<crate::model::HdfsAuthenticationType>,
-    /// <p>The user name used to identify the client on the host operating system. </p> <note>
-    /// <p>If <code>SIMPLE</code> is specified for <code>AuthenticationType</code>, this parameter is required. </p>
+    #[doc(hidden)]pub authentication_type: std::option::Option<crate::model::HdfsAuthenticationType>,
+    /// <p>The user name used to identify the client on the host operating system. </p> <note> 
+    /// <p>If <code>SIMPLE</code> is specified for <code>AuthenticationType</code>, this parameter is required. </p> 
     /// </note>
-    #[doc(hidden)]
-    pub simple_user: std::option::Option<std::string::String>,
-    /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p> <note>
-    /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required.</p>
+    #[doc(hidden)]pub simple_user: std::option::Option<std::string::String>,
+    /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p> <note> 
+    /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required.</p> 
     /// </note>
-    #[doc(hidden)]
-    pub kerberos_principal: std::option::Option<std::string::String>,
-    /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you're using the CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text. </p> <note>
-    /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required. </p>
+    #[doc(hidden)]pub kerberos_principal: std::option::Option<std::string::String>,
+    /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you're using the CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text. </p> <note> 
+    /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required. </p> 
     /// </note>
-    #[doc(hidden)]
-    pub kerberos_keytab: std::option::Option<aws_smithy_types::Blob>,
-    /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text. </p> <note>
-    /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required.</p>
+    #[doc(hidden)]pub kerberos_keytab: std::option::Option<aws_smithy_types::Blob>,
+    /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text. </p> <note> 
+    /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required.</p> 
     /// </note>
-    #[doc(hidden)]
-    pub kerberos_krb5_conf: std::option::Option<aws_smithy_types::Blob>,
+    #[doc(hidden)]pub kerberos_krb5_conf: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The Amazon Resource Names (ARNs) of the agents that are used to connect to the HDFS cluster.</p>
-    #[doc(hidden)]
-    pub agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources. </p>
-    #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
+    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
 }
 impl CreateLocationHdfsInput {
     /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write data to the HDFS cluster. If the subdirectory isn't specified, it will default to <code>/</code>.</p>
-    pub fn subdirectory(&self) -> std::option::Option<&str> {
+    pub fn subdirectory(&self) -> std::option::Option<& str> {
         self.subdirectory.as_deref()
     }
     /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes. You can use only one NameNode.</p>
-    pub fn name_nodes(&self) -> std::option::Option<&[crate::model::HdfsNameNode]> {
+    pub fn name_nodes(&self) -> std::option::Option<& [crate::model::HdfsNameNode]> {
         self.name_nodes.as_deref()
     }
     /// <p>The size of data blocks to write into the HDFS cluster. The block size must be a multiple of 512 bytes. The default block size is 128 mebibytes (MiB).</p>
@@ -9975,53 +7620,51 @@ impl CreateLocationHdfsInput {
         self.replication_factor
     }
     /// <p>The URI of the HDFS cluster's Key Management Server (KMS). </p>
-    pub fn kms_key_provider_uri(&self) -> std::option::Option<&str> {
+    pub fn kms_key_provider_uri(&self) -> std::option::Option<& str> {
         self.kms_key_provider_uri.as_deref()
     }
     /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer protection settings configured on the Hadoop Distributed File System (HDFS) cluster. If <code>QopConfiguration</code> isn't specified, <code>RpcProtection</code> and <code>DataTransferProtection</code> default to <code>PRIVACY</code>. If you set <code>RpcProtection</code> or <code>DataTransferProtection</code>, the other parameter assumes the same value. </p>
-    pub fn qop_configuration(&self) -> std::option::Option<&crate::model::QopConfiguration> {
+    pub fn qop_configuration(&self) -> std::option::Option<& crate::model::QopConfiguration> {
         self.qop_configuration.as_ref()
     }
     /// <p>The type of authentication used to determine the identity of the user. </p>
-    pub fn authentication_type(
-        &self,
-    ) -> std::option::Option<&crate::model::HdfsAuthenticationType> {
+    pub fn authentication_type(&self) -> std::option::Option<& crate::model::HdfsAuthenticationType> {
         self.authentication_type.as_ref()
     }
-    /// <p>The user name used to identify the client on the host operating system. </p> <note>
-    /// <p>If <code>SIMPLE</code> is specified for <code>AuthenticationType</code>, this parameter is required. </p>
+    /// <p>The user name used to identify the client on the host operating system. </p> <note> 
+    /// <p>If <code>SIMPLE</code> is specified for <code>AuthenticationType</code>, this parameter is required. </p> 
     /// </note>
-    pub fn simple_user(&self) -> std::option::Option<&str> {
+    pub fn simple_user(&self) -> std::option::Option<& str> {
         self.simple_user.as_deref()
     }
-    /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p> <note>
-    /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required.</p>
+    /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p> <note> 
+    /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required.</p> 
     /// </note>
-    pub fn kerberos_principal(&self) -> std::option::Option<&str> {
+    pub fn kerberos_principal(&self) -> std::option::Option<& str> {
         self.kerberos_principal.as_deref()
     }
-    /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you're using the CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text. </p> <note>
-    /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required. </p>
+    /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you're using the CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text. </p> <note> 
+    /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required. </p> 
     /// </note>
-    pub fn kerberos_keytab(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn kerberos_keytab(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.kerberos_keytab.as_ref()
     }
-    /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text. </p> <note>
-    /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required.</p>
+    /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text. </p> <note> 
+    /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required.</p> 
     /// </note>
-    pub fn kerberos_krb5_conf(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn kerberos_krb5_conf(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.kerberos_krb5_conf.as_ref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the agents that are used to connect to the HDFS cluster.</p>
-    pub fn agent_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn agent_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.agent_arns.as_deref()
     }
     /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources. </p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::TagListEntry]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::TagListEntry]> {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLocationHdfsInput {
+impl  std::fmt::Debug for CreateLocationHdfsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLocationHdfsInput");
         formatter.field("subdirectory", &self.subdirectory);
@@ -10042,76 +7685,68 @@ impl std::fmt::Debug for CreateLocationHdfsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateLocationFsxWindowsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CreateLocationFsxWindowsInput  {
     /// <p>Specifies a mount path for your file system using forward slashes. This is where DataSync reads or writes data (depending on if this is a source or destination location).</p>
-    #[doc(hidden)]
-    pub subdirectory: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub subdirectory: std::option::Option<std::string::String>,
     /// <p>Specifies the Amazon Resource Name (ARN) for the FSx for Windows File Server file system.</p>
-    #[doc(hidden)]
-    pub fsx_filesystem_arn: std::option::Option<std::string::String>,
-    /// <p>Specifies the ARNs of the security groups that provide access to your file system's preferred subnet.</p> <note>
-    /// <p>If you choose a security group that doesn't allow connections from within itself, do one of the following:</p>
-    /// <ul>
-    /// <li> <p>Configure the security group to allow it to communicate within itself.</p> </li>
-    /// <li> <p>Choose a different security group that can communicate with the mount target's security group.</p> </li>
-    /// </ul>
+    #[doc(hidden)]pub fsx_filesystem_arn: std::option::Option<std::string::String>,
+    /// <p>Specifies the ARNs of the security groups that provide access to your file system's preferred subnet.</p> <note> 
+    /// <p>If you choose a security group that doesn't allow connections from within itself, do one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>Configure the security group to allow it to communicate within itself.</p> </li> 
+    /// <li> <p>Choose a different security group that can communicate with the mount target's security group.</p> </li> 
+    /// </ul> 
     /// </note>
-    #[doc(hidden)]
-    pub security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
-    #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
-    /// <p>Specifies the user who has the permissions to access files and folders in the file system.</p>
+    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
+    /// <p>Specifies the user who has the permissions to access files and folders in the file system.</p> 
     /// <p>For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata, see <a href="create-fsx-location.html#FSxWuser">user</a>.</p>
-    #[doc(hidden)]
-    pub user: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub user: std::option::Option<std::string::String>,
     /// <p>Specifies the name of the Windows domain that the FSx for Windows File Server belongs to.</p>
-    #[doc(hidden)]
-    pub domain: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub domain: std::option::Option<std::string::String>,
     /// <p>Specifies the password of the user who has the permissions to access files and folders in the file system.</p>
-    #[doc(hidden)]
-    pub password: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub password: std::option::Option<std::string::String>,
 }
 impl CreateLocationFsxWindowsInput {
     /// <p>Specifies a mount path for your file system using forward slashes. This is where DataSync reads or writes data (depending on if this is a source or destination location).</p>
-    pub fn subdirectory(&self) -> std::option::Option<&str> {
+    pub fn subdirectory(&self) -> std::option::Option<& str> {
         self.subdirectory.as_deref()
     }
     /// <p>Specifies the Amazon Resource Name (ARN) for the FSx for Windows File Server file system.</p>
-    pub fn fsx_filesystem_arn(&self) -> std::option::Option<&str> {
+    pub fn fsx_filesystem_arn(&self) -> std::option::Option<& str> {
         self.fsx_filesystem_arn.as_deref()
     }
-    /// <p>Specifies the ARNs of the security groups that provide access to your file system's preferred subnet.</p> <note>
-    /// <p>If you choose a security group that doesn't allow connections from within itself, do one of the following:</p>
-    /// <ul>
-    /// <li> <p>Configure the security group to allow it to communicate within itself.</p> </li>
-    /// <li> <p>Choose a different security group that can communicate with the mount target's security group.</p> </li>
-    /// </ul>
+    /// <p>Specifies the ARNs of the security groups that provide access to your file system's preferred subnet.</p> <note> 
+    /// <p>If you choose a security group that doesn't allow connections from within itself, do one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>Configure the security group to allow it to communicate within itself.</p> </li> 
+    /// <li> <p>Choose a different security group that can communicate with the mount target's security group.</p> </li> 
+    /// </ul> 
     /// </note>
-    pub fn security_group_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_group_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.security_group_arns.as_deref()
     }
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::TagListEntry]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::TagListEntry]> {
         self.tags.as_deref()
     }
-    /// <p>Specifies the user who has the permissions to access files and folders in the file system.</p>
+    /// <p>Specifies the user who has the permissions to access files and folders in the file system.</p> 
     /// <p>For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata, see <a href="create-fsx-location.html#FSxWuser">user</a>.</p>
-    pub fn user(&self) -> std::option::Option<&str> {
+    pub fn user(&self) -> std::option::Option<& str> {
         self.user.as_deref()
     }
     /// <p>Specifies the name of the Windows domain that the FSx for Windows File Server belongs to.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>Specifies the password of the user who has the permissions to access files and folders in the file system.</p>
-    pub fn password(&self) -> std::option::Option<&str> {
+    pub fn password(&self) -> std::option::Option<& str> {
         self.password.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLocationFsxWindowsInput {
+impl  std::fmt::Debug for CreateLocationFsxWindowsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLocationFsxWindowsInput");
         formatter.field("subdirectory", &self.subdirectory);
@@ -10126,48 +7761,42 @@ impl std::fmt::Debug for CreateLocationFsxWindowsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateLocationFsxOpenZfsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CreateLocationFsxOpenZfsInput  {
     /// <p>The Amazon Resource Name (ARN) of the FSx for OpenZFS file system.</p>
-    #[doc(hidden)]
-    pub fsx_filesystem_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub fsx_filesystem_arn: std::option::Option<std::string::String>,
     /// <p>The type of protocol that DataSync uses to access your file system.</p>
-    #[doc(hidden)]
-    pub protocol: std::option::Option<crate::model::FsxProtocol>,
+    #[doc(hidden)]pub protocol: std::option::Option<crate::model::FsxProtocol>,
     /// <p>The ARNs of the security groups that are used to configure the FSx for OpenZFS file system.</p>
-    #[doc(hidden)]
-    pub security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A subdirectory in the location's path that must begin with <code>/fsx</code>. DataSync uses this subdirectory to read or write data (depending on whether the file system is a source or destination location).</p>
-    #[doc(hidden)]
-    pub subdirectory: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub subdirectory: std::option::Option<std::string::String>,
     /// <p>The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
-    #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
+    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
 }
 impl CreateLocationFsxOpenZfsInput {
     /// <p>The Amazon Resource Name (ARN) of the FSx for OpenZFS file system.</p>
-    pub fn fsx_filesystem_arn(&self) -> std::option::Option<&str> {
+    pub fn fsx_filesystem_arn(&self) -> std::option::Option<& str> {
         self.fsx_filesystem_arn.as_deref()
     }
     /// <p>The type of protocol that DataSync uses to access your file system.</p>
-    pub fn protocol(&self) -> std::option::Option<&crate::model::FsxProtocol> {
+    pub fn protocol(&self) -> std::option::Option<& crate::model::FsxProtocol> {
         self.protocol.as_ref()
     }
     /// <p>The ARNs of the security groups that are used to configure the FSx for OpenZFS file system.</p>
-    pub fn security_group_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_group_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.security_group_arns.as_deref()
     }
     /// <p>A subdirectory in the location's path that must begin with <code>/fsx</code>. DataSync uses this subdirectory to read or write data (depending on whether the file system is a source or destination location).</p>
-    pub fn subdirectory(&self) -> std::option::Option<&str> {
+    pub fn subdirectory(&self) -> std::option::Option<& str> {
         self.subdirectory.as_deref()
     }
     /// <p>The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::TagListEntry]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::TagListEntry]> {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLocationFsxOpenZfsInput {
+impl  std::fmt::Debug for CreateLocationFsxOpenZfsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLocationFsxOpenZfsInput");
         formatter.field("fsx_filesystem_arn", &self.fsx_filesystem_arn);
@@ -10180,72 +7809,63 @@ impl std::fmt::Debug for CreateLocationFsxOpenZfsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateLocationFsxOntapInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CreateLocationFsxOntapInput  {
     /// <p>Specifies the data transfer protocol that DataSync uses to access your Amazon FSx file system.</p>
-    #[doc(hidden)]
-    pub protocol: std::option::Option<crate::model::FsxProtocol>,
-    /// <p>Specifies the Amazon EC2 security groups that provide access to your file system's preferred subnet.</p>
-    /// <p>The security groups must allow outbound traffic on the following ports (depending on the protocol you use):</p>
-    /// <ul>
-    /// <li> <p> <b>Network File System (NFS)</b>: TCP ports 111, 635, and 2049</p> </li>
-    /// <li> <p> <b>Server Message Block (SMB)</b>: TCP port 445</p> </li>
-    /// </ul>
+    #[doc(hidden)]pub protocol: std::option::Option<crate::model::FsxProtocol>,
+    /// <p>Specifies the Amazon EC2 security groups that provide access to your file system's preferred subnet.</p> 
+    /// <p>The security groups must allow outbound traffic on the following ports (depending on the protocol you use):</p> 
+    /// <ul> 
+    /// <li> <p> <b>Network File System (NFS)</b>: TCP ports 111, 635, and 2049</p> </li> 
+    /// <li> <p> <b>Server Message Block (SMB)</b>: TCP port 445</p> </li> 
+    /// </ul> 
     /// <p>Your file system's security groups must also allow inbound traffic on the same ports.</p>
-    #[doc(hidden)]
-    pub security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies the ARN of the storage virtual machine (SVM) on your file system where you're copying data to or from.</p>
-    #[doc(hidden)]
-    pub storage_virtual_machine_arn: std::option::Option<std::string::String>,
-    /// <p>Specifies the junction path (also known as a mount point) in the SVM volume where you're copying data to or from (for example, <code>/vol1</code>).</p> <note>
-    /// <p>Don't specify a junction path in the SVM's root volume. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing FSx for ONTAP storage virtual machines</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
+    #[doc(hidden)]pub storage_virtual_machine_arn: std::option::Option<std::string::String>,
+    /// <p>Specifies the junction path (also known as a mount point) in the SVM volume where you're copying data to or from (for example, <code>/vol1</code>).</p> <note> 
+    /// <p>Don't specify a junction path in the SVM's root volume. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing FSx for ONTAP storage virtual machines</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p> 
     /// </note>
-    #[doc(hidden)]
-    pub subdirectory: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub subdirectory: std::option::Option<std::string::String>,
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
-    #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
+    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
 }
 impl CreateLocationFsxOntapInput {
     /// <p>Specifies the data transfer protocol that DataSync uses to access your Amazon FSx file system.</p>
-    pub fn protocol(&self) -> std::option::Option<&crate::model::FsxProtocol> {
+    pub fn protocol(&self) -> std::option::Option<& crate::model::FsxProtocol> {
         self.protocol.as_ref()
     }
-    /// <p>Specifies the Amazon EC2 security groups that provide access to your file system's preferred subnet.</p>
-    /// <p>The security groups must allow outbound traffic on the following ports (depending on the protocol you use):</p>
-    /// <ul>
-    /// <li> <p> <b>Network File System (NFS)</b>: TCP ports 111, 635, and 2049</p> </li>
-    /// <li> <p> <b>Server Message Block (SMB)</b>: TCP port 445</p> </li>
-    /// </ul>
+    /// <p>Specifies the Amazon EC2 security groups that provide access to your file system's preferred subnet.</p> 
+    /// <p>The security groups must allow outbound traffic on the following ports (depending on the protocol you use):</p> 
+    /// <ul> 
+    /// <li> <p> <b>Network File System (NFS)</b>: TCP ports 111, 635, and 2049</p> </li> 
+    /// <li> <p> <b>Server Message Block (SMB)</b>: TCP port 445</p> </li> 
+    /// </ul> 
     /// <p>Your file system's security groups must also allow inbound traffic on the same ports.</p>
-    pub fn security_group_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_group_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.security_group_arns.as_deref()
     }
     /// <p>Specifies the ARN of the storage virtual machine (SVM) on your file system where you're copying data to or from.</p>
-    pub fn storage_virtual_machine_arn(&self) -> std::option::Option<&str> {
+    pub fn storage_virtual_machine_arn(&self) -> std::option::Option<& str> {
         self.storage_virtual_machine_arn.as_deref()
     }
-    /// <p>Specifies the junction path (also known as a mount point) in the SVM volume where you're copying data to or from (for example, <code>/vol1</code>).</p> <note>
-    /// <p>Don't specify a junction path in the SVM's root volume. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing FSx for ONTAP storage virtual machines</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
+    /// <p>Specifies the junction path (also known as a mount point) in the SVM volume where you're copying data to or from (for example, <code>/vol1</code>).</p> <note> 
+    /// <p>Don't specify a junction path in the SVM's root volume. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing FSx for ONTAP storage virtual machines</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p> 
     /// </note>
-    pub fn subdirectory(&self) -> std::option::Option<&str> {
+    pub fn subdirectory(&self) -> std::option::Option<& str> {
         self.subdirectory.as_deref()
     }
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::TagListEntry]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::TagListEntry]> {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLocationFsxOntapInput {
+impl  std::fmt::Debug for CreateLocationFsxOntapInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLocationFsxOntapInput");
         formatter.field("protocol", &self.protocol);
         formatter.field("security_group_arns", &self.security_group_arns);
-        formatter.field(
-            "storage_virtual_machine_arn",
-            &self.storage_virtual_machine_arn,
-        );
+        formatter.field("storage_virtual_machine_arn", &self.storage_virtual_machine_arn);
         formatter.field("subdirectory", &self.subdirectory);
         formatter.field("tags", &self.tags);
         formatter.finish()
@@ -10253,41 +7873,36 @@ impl std::fmt::Debug for CreateLocationFsxOntapInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateLocationFsxLustreInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CreateLocationFsxLustreInput  {
     /// <p>The Amazon Resource Name (ARN) for the FSx for Lustre file system.</p>
-    #[doc(hidden)]
-    pub fsx_filesystem_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub fsx_filesystem_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) of the security groups that are used to configure the FSx for Lustre file system.</p>
-    #[doc(hidden)]
-    pub security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A subdirectory in the location's path. This subdirectory in the FSx for Lustre file system is used to read data from the FSx for Lustre source location or write data to the FSx for Lustre destination.</p>
-    #[doc(hidden)]
-    pub subdirectory: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub subdirectory: std::option::Option<std::string::String>,
     /// <p>The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
-    #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
+    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
 }
 impl CreateLocationFsxLustreInput {
     /// <p>The Amazon Resource Name (ARN) for the FSx for Lustre file system.</p>
-    pub fn fsx_filesystem_arn(&self) -> std::option::Option<&str> {
+    pub fn fsx_filesystem_arn(&self) -> std::option::Option<& str> {
         self.fsx_filesystem_arn.as_deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the security groups that are used to configure the FSx for Lustre file system.</p>
-    pub fn security_group_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_group_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.security_group_arns.as_deref()
     }
     /// <p>A subdirectory in the location's path. This subdirectory in the FSx for Lustre file system is used to read data from the FSx for Lustre source location or write data to the FSx for Lustre destination.</p>
-    pub fn subdirectory(&self) -> std::option::Option<&str> {
+    pub fn subdirectory(&self) -> std::option::Option<& str> {
         self.subdirectory.as_deref()
     }
     /// <p>The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::TagListEntry]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::TagListEntry]> {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLocationFsxLustreInput {
+impl  std::fmt::Debug for CreateLocationFsxLustreInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLocationFsxLustreInput");
         formatter.field("fsx_filesystem_arn", &self.fsx_filesystem_arn);
@@ -10299,70 +7914,60 @@ impl std::fmt::Debug for CreateLocationFsxLustreInput {
 }
 
 /// <p>CreateLocationEfsRequest</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateLocationEfsInput {
-    /// <p>Specifies a mount path for your Amazon EFS file system. This is where DataSync reads or writes data (depending on if this is a source or destination location). By default, DataSync uses the root directory, but you can also include subdirectories.</p> <note>
-    /// <p>You must specify a value with forward slashes (for example, <code>/path/to/folder</code>).</p>
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CreateLocationEfsInput  {
+    /// <p>Specifies a mount path for your Amazon EFS file system. This is where DataSync reads or writes data (depending on if this is a source or destination location). By default, DataSync uses the root directory, but you can also include subdirectories.</p> <note> 
+    /// <p>You must specify a value with forward slashes (for example, <code>/path/to/folder</code>).</p> 
     /// </note>
-    #[doc(hidden)]
-    pub subdirectory: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub subdirectory: std::option::Option<std::string::String>,
     /// <p>Specifies the ARN for the Amazon EFS file system.</p>
-    #[doc(hidden)]
-    pub efs_filesystem_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub efs_filesystem_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the subnet and security groups DataSync uses to access your Amazon EFS file system.</p>
-    #[doc(hidden)]
-    pub ec2_config: std::option::Option<crate::model::Ec2Config>,
+    #[doc(hidden)]pub ec2_config: std::option::Option<crate::model::Ec2Config>,
     /// <p>Specifies the key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
-    #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
+    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
     /// <p>Specifies the Amazon Resource Name (ARN) of the access point that DataSync uses to access the Amazon EFS file system.</p>
-    #[doc(hidden)]
-    pub access_point_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub access_point_arn: std::option::Option<std::string::String>,
     /// <p>Specifies an Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS file system.</p>
-    #[doc(hidden)]
-    pub file_system_access_role_arn: std::option::Option<std::string::String>,
-    /// <p>Specifies whether you want DataSync to use Transport Layer Security (TLS) 1.2 encryption when it copies data to or from the Amazon EFS file system.</p>
+    #[doc(hidden)]pub file_system_access_role_arn: std::option::Option<std::string::String>,
+    /// <p>Specifies whether you want DataSync to use Transport Layer Security (TLS) 1.2 encryption when it copies data to or from the Amazon EFS file system.</p> 
     /// <p>If you specify an access point using <code>AccessPointArn</code> or an IAM role using <code>FileSystemAccessRoleArn</code>, you must set this parameter to <code>TLS1_2</code>.</p>
-    #[doc(hidden)]
-    pub in_transit_encryption: std::option::Option<crate::model::EfsInTransitEncryption>,
+    #[doc(hidden)]pub in_transit_encryption: std::option::Option<crate::model::EfsInTransitEncryption>,
 }
 impl CreateLocationEfsInput {
-    /// <p>Specifies a mount path for your Amazon EFS file system. This is where DataSync reads or writes data (depending on if this is a source or destination location). By default, DataSync uses the root directory, but you can also include subdirectories.</p> <note>
-    /// <p>You must specify a value with forward slashes (for example, <code>/path/to/folder</code>).</p>
+    /// <p>Specifies a mount path for your Amazon EFS file system. This is where DataSync reads or writes data (depending on if this is a source or destination location). By default, DataSync uses the root directory, but you can also include subdirectories.</p> <note> 
+    /// <p>You must specify a value with forward slashes (for example, <code>/path/to/folder</code>).</p> 
     /// </note>
-    pub fn subdirectory(&self) -> std::option::Option<&str> {
+    pub fn subdirectory(&self) -> std::option::Option<& str> {
         self.subdirectory.as_deref()
     }
     /// <p>Specifies the ARN for the Amazon EFS file system.</p>
-    pub fn efs_filesystem_arn(&self) -> std::option::Option<&str> {
+    pub fn efs_filesystem_arn(&self) -> std::option::Option<& str> {
         self.efs_filesystem_arn.as_deref()
     }
     /// <p>Specifies the subnet and security groups DataSync uses to access your Amazon EFS file system.</p>
-    pub fn ec2_config(&self) -> std::option::Option<&crate::model::Ec2Config> {
+    pub fn ec2_config(&self) -> std::option::Option<& crate::model::Ec2Config> {
         self.ec2_config.as_ref()
     }
     /// <p>Specifies the key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::TagListEntry]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::TagListEntry]> {
         self.tags.as_deref()
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the access point that DataSync uses to access the Amazon EFS file system.</p>
-    pub fn access_point_arn(&self) -> std::option::Option<&str> {
+    pub fn access_point_arn(&self) -> std::option::Option<& str> {
         self.access_point_arn.as_deref()
     }
     /// <p>Specifies an Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS file system.</p>
-    pub fn file_system_access_role_arn(&self) -> std::option::Option<&str> {
+    pub fn file_system_access_role_arn(&self) -> std::option::Option<& str> {
         self.file_system_access_role_arn.as_deref()
     }
-    /// <p>Specifies whether you want DataSync to use Transport Layer Security (TLS) 1.2 encryption when it copies data to or from the Amazon EFS file system.</p>
+    /// <p>Specifies whether you want DataSync to use Transport Layer Security (TLS) 1.2 encryption when it copies data to or from the Amazon EFS file system.</p> 
     /// <p>If you specify an access point using <code>AccessPointArn</code> or an IAM role using <code>FileSystemAccessRoleArn</code>, you must set this parameter to <code>TLS1_2</code>.</p>
-    pub fn in_transit_encryption(
-        &self,
-    ) -> std::option::Option<&crate::model::EfsInTransitEncryption> {
+    pub fn in_transit_encryption(&self) -> std::option::Option<& crate::model::EfsInTransitEncryption> {
         self.in_transit_encryption.as_ref()
     }
 }
-impl std::fmt::Debug for CreateLocationEfsInput {
+impl  std::fmt::Debug for CreateLocationEfsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLocationEfsInput");
         formatter.field("subdirectory", &self.subdirectory);
@@ -10370,75 +7975,65 @@ impl std::fmt::Debug for CreateLocationEfsInput {
         formatter.field("ec2_config", &self.ec2_config);
         formatter.field("tags", &self.tags);
         formatter.field("access_point_arn", &self.access_point_arn);
-        formatter.field(
-            "file_system_access_role_arn",
-            &self.file_system_access_role_arn,
-        );
+        formatter.field("file_system_access_role_arn", &self.file_system_access_role_arn);
         formatter.field("in_transit_encryption", &self.in_transit_encryption);
         formatter.finish()
     }
 }
 
 /// <p>CreateAgentRequest</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateAgentInput {
-    /// <p>Your agent activation key. You can get the activation key either by sending an HTTP GET request with redirects that enable you to get the agent IP address (port 80). Alternatively, you can get it from the DataSync console.</p>
-    /// <p>The redirect URL returned in the response provides you the activation key for your agent in the query string parameter <code>activationKey</code>. It might also include other activation-related parameters; however, these are merely defaults. The arguments you pass to this API call determine the actual configuration of your agent.</p>
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CreateAgentInput  {
+    /// <p>Your agent activation key. You can get the activation key either by sending an HTTP GET request with redirects that enable you to get the agent IP address (port 80). Alternatively, you can get it from the DataSync console.</p> 
+    /// <p>The redirect URL returned in the response provides you the activation key for your agent in the query string parameter <code>activationKey</code>. It might also include other activation-related parameters; however, these are merely defaults. The arguments you pass to this API call determine the actual configuration of your agent.</p> 
     /// <p>For more information, see Activating an Agent in the <i>DataSync User Guide.</i> </p>
-    #[doc(hidden)]
-    pub activation_key: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub activation_key: std::option::Option<std::string::String>,
     /// <p>The name you configured for your agent. This value is a text reference that is used to identify the agent in the console.</p>
-    #[doc(hidden)]
-    pub agent_name: std::option::Option<std::string::String>,
-    /// <p>The key-value pair that represents the tag that you want to associate with the agent. The value can be an empty string. This value helps you manage, filter, and search for your agents.</p> <note>
-    /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. </p>
+    #[doc(hidden)]pub agent_name: std::option::Option<std::string::String>,
+    /// <p>The key-value pair that represents the tag that you want to associate with the agent. The value can be an empty string. This value helps you manage, filter, and search for your agents.</p> <note> 
+    /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. </p> 
     /// </note>
-    #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
-    /// <p>The ID of the VPC (virtual private cloud) endpoint that the agent has access to. This is the client-side VPC endpoint, also called a PrivateLink. If you don't have a PrivateLink VPC endpoint, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service">Creating a VPC Endpoint Service Configuration</a> in the Amazon VPC User Guide.</p>
+    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
+    /// <p>The ID of the VPC (virtual private cloud) endpoint that the agent has access to. This is the client-side VPC endpoint, also called a PrivateLink. If you don't have a PrivateLink VPC endpoint, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service">Creating a VPC Endpoint Service Configuration</a> in the Amazon VPC User Guide.</p> 
     /// <p>VPC endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.</p>
-    #[doc(hidden)]
-    pub vpc_endpoint_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub vpc_endpoint_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) of the subnets in which DataSync will create elastic network interfaces for each data transfer task. The agent that runs a task must be private. When you start a task that is associated with an agent created in a VPC, or one that has access to an IP address in a VPC, then the task is also private. In this case, DataSync creates four network interfaces for each task in your subnet. For a data transfer to work, the agent must be able to route to all these four network interfaces.</p>
-    #[doc(hidden)]
-    pub subnet_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub subnet_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ARNs of the security groups used to protect your data transfer task subnets. See <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns">SecurityGroupArns</a>.</p>
-    #[doc(hidden)]
-    pub security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreateAgentInput {
-    /// <p>Your agent activation key. You can get the activation key either by sending an HTTP GET request with redirects that enable you to get the agent IP address (port 80). Alternatively, you can get it from the DataSync console.</p>
-    /// <p>The redirect URL returned in the response provides you the activation key for your agent in the query string parameter <code>activationKey</code>. It might also include other activation-related parameters; however, these are merely defaults. The arguments you pass to this API call determine the actual configuration of your agent.</p>
+    /// <p>Your agent activation key. You can get the activation key either by sending an HTTP GET request with redirects that enable you to get the agent IP address (port 80). Alternatively, you can get it from the DataSync console.</p> 
+    /// <p>The redirect URL returned in the response provides you the activation key for your agent in the query string parameter <code>activationKey</code>. It might also include other activation-related parameters; however, these are merely defaults. The arguments you pass to this API call determine the actual configuration of your agent.</p> 
     /// <p>For more information, see Activating an Agent in the <i>DataSync User Guide.</i> </p>
-    pub fn activation_key(&self) -> std::option::Option<&str> {
+    pub fn activation_key(&self) -> std::option::Option<& str> {
         self.activation_key.as_deref()
     }
     /// <p>The name you configured for your agent. This value is a text reference that is used to identify the agent in the console.</p>
-    pub fn agent_name(&self) -> std::option::Option<&str> {
+    pub fn agent_name(&self) -> std::option::Option<& str> {
         self.agent_name.as_deref()
     }
-    /// <p>The key-value pair that represents the tag that you want to associate with the agent. The value can be an empty string. This value helps you manage, filter, and search for your agents.</p> <note>
-    /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. </p>
+    /// <p>The key-value pair that represents the tag that you want to associate with the agent. The value can be an empty string. This value helps you manage, filter, and search for your agents.</p> <note> 
+    /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. </p> 
     /// </note>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::TagListEntry]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::TagListEntry]> {
         self.tags.as_deref()
     }
-    /// <p>The ID of the VPC (virtual private cloud) endpoint that the agent has access to. This is the client-side VPC endpoint, also called a PrivateLink. If you don't have a PrivateLink VPC endpoint, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service">Creating a VPC Endpoint Service Configuration</a> in the Amazon VPC User Guide.</p>
+    /// <p>The ID of the VPC (virtual private cloud) endpoint that the agent has access to. This is the client-side VPC endpoint, also called a PrivateLink. If you don't have a PrivateLink VPC endpoint, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service">Creating a VPC Endpoint Service Configuration</a> in the Amazon VPC User Guide.</p> 
     /// <p>VPC endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.</p>
-    pub fn vpc_endpoint_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_endpoint_id(&self) -> std::option::Option<& str> {
         self.vpc_endpoint_id.as_deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the subnets in which DataSync will create elastic network interfaces for each data transfer task. The agent that runs a task must be private. When you start a task that is associated with an agent created in a VPC, or one that has access to an IP address in a VPC, then the task is also private. In this case, DataSync creates four network interfaces for each task in your subnet. For a data transfer to work, the agent must be able to route to all these four network interfaces.</p>
-    pub fn subnet_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnet_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.subnet_arns.as_deref()
     }
     /// <p>The ARNs of the security groups used to protect your data transfer task subnets. See <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns">SecurityGroupArns</a>.</p>
-    pub fn security_group_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_group_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.security_group_arns.as_deref()
     }
 }
-impl std::fmt::Debug for CreateAgentInput {
+impl  std::fmt::Debug for CreateAgentInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAgentInput");
         formatter.field("activation_key", &self.activation_key);
@@ -10452,23 +8047,22 @@ impl std::fmt::Debug for CreateAgentInput {
 }
 
 /// <p>CancelTaskExecutionRequest</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CancelTaskExecutionInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CancelTaskExecutionInput  {
     /// <p>The Amazon Resource Name (ARN) of the task execution to cancel.</p>
-    #[doc(hidden)]
-    pub task_execution_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub task_execution_arn: std::option::Option<std::string::String>,
 }
 impl CancelTaskExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the task execution to cancel.</p>
-    pub fn task_execution_arn(&self) -> std::option::Option<&str> {
+    pub fn task_execution_arn(&self) -> std::option::Option<& str> {
         self.task_execution_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CancelTaskExecutionInput {
+impl  std::fmt::Debug for CancelTaskExecutionInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelTaskExecutionInput");
         formatter.field("task_execution_arn", &self.task_execution_arn);
         formatter.finish()
     }
 }
+

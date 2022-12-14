@@ -17,15 +17,15 @@ version = "0.51.0"
 
 [dependencies.aws-sdk-ec2]
 path = "../../sdk/ec2"
-version = "0.21.0"
+version = "0.22.0"
 
 [dependencies.aws-sdk-lambda]
 path = "../../sdk/lambda"
-version = "0.21.0"
+version = "0.22.0"
 
 [dependencies.aws-sdk-s3]
 path = "../../sdk/s3"
-version = "0.21.0"
+version = "0.22.0"
 
 [dependencies.serde]
 version = "1"

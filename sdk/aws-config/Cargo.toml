@@ -30,12 +30,12 @@ http = "0.2.4"
 [dependencies.aws-sdk-sts]
 path = "../sts"
 default-features = false
-version = "0.21.0"
+version = "0.22.0"
 
 [dependencies.aws-sdk-sso]
 path = "../sso"
 default-features = false
-version = "0.21.0"
+version = "0.22.0"
 
 [dependencies.aws-smithy-async]
 path = "../aws-smithy-async"

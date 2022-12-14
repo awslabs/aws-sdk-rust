@@ -3,9 +3,9 @@ use std::fmt::Write;
 
 /// See [`AssociateOriginationIdentityInput`](crate::input::AssociateOriginationIdentityInput).
 pub mod associate_origination_identity_input {
-
+    
     /// A builder for [`AssociateOriginationIdentityInput`](crate::input::AssociateOriginationIdentityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) pool_id: std::option::Option<std::string::String>,
         pub(crate) origination_identity: std::option::Option<std::string::String>,
@@ -20,8 +20,7 @@ pub mod associate_origination_identity_input {
         }
         /// <p>The pool to update with the new Identity. This value can be either the PoolId or PoolArn, and you can find these values using <code>DescribePools</code>.</p>
         pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pool_id = input;
-            self
+            self.pool_id = input; self
         }
         /// <p>The origination identity to use, such as PhoneNumberId, PhoneNumberArn, SenderId, or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn, while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
         pub fn origination_identity(mut self, input: impl Into<std::string::String>) -> Self {
@@ -29,12 +28,8 @@ pub mod associate_origination_identity_input {
             self
         }
         /// <p>The origination identity to use, such as PhoneNumberId, PhoneNumberArn, SenderId, or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn, while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
-        pub fn set_origination_identity(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.origination_identity = input;
-            self
+        pub fn set_origination_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.origination_identity = input; self
         }
         /// <p>The new two-character code, in ISO 3166-1 alpha-2 format, for the country or region of the origination identity.</p>
         pub fn iso_country_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -42,12 +37,8 @@ pub mod associate_origination_identity_input {
             self
         }
         /// <p>The new two-character code, in ISO 3166-1 alpha-2 format, for the country or region of the origination identity.</p>
-        pub fn set_iso_country_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.iso_country_code = input;
-            self
+        pub fn set_iso_country_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.iso_country_code = input; self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,72 +47,53 @@ pub mod associate_origination_identity_input {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// Consumes the builder and constructs a [`AssociateOriginationIdentityInput`](crate::input::AssociateOriginationIdentityInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::AssociateOriginationIdentityInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::AssociateOriginationIdentityInput {
-                pool_id: self.pool_id,
-                origination_identity: self.origination_identity,
-                iso_country_code: self.iso_country_code,
-                client_token: self.client_token,
-            })
+        pub fn build(self) -> Result<crate::input::AssociateOriginationIdentityInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::AssociateOriginationIdentityInput {
+                    pool_id: self.pool_id
+                    ,
+                    origination_identity: self.origination_identity
+                    ,
+                    iso_country_code: self.iso_country_code
+                    ,
+                    client_token: self.client_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl AssociateOriginationIdentityInput {
     /// Consumes the builder and constructs an Operation<[`AssociateOriginationIdentity`](crate::operation::AssociateOriginationIdentity)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        mut self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::AssociateOriginationIdentity,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::AssociateOriginationIdentity, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         if self.client_token.is_none() {
-            self.client_token = Some(_config.make_token.make_idempotency_token());
-        }
+                                self.client_token = Some(_config.make_token.make_idempotency_token());
+                            }
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::AssociateOriginationIdentityInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::AssociateOriginationIdentityInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::AssociateOriginationIdentityInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::AssociateOriginationIdentityInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "PinpointSMSVoiceV2.AssociateOriginationIdentity",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "PinpointSMSVoiceV2.AssociateOriginationIdentity"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -129,58 +101,36 @@ impl AssociateOriginationIdentityInput {
             crate::operation_ser::serialize_operation_crate_operation_associate_origination_identity(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::AssociateOriginationIdentity::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "AssociateOriginationIdentity",
-            "pinpointsmsvoicev2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::AssociateOriginationIdentity::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("AssociateOriginationIdentity", "pinpointsmsvoicev2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -192,9 +142,9 @@ impl AssociateOriginationIdentityInput {
 
 /// See [`CreateConfigurationSetInput`](crate::input::CreateConfigurationSetInput).
 pub mod create_configuration_set_input {
-
+    
     /// A builder for [`CreateConfigurationSetInput`](crate::input::CreateConfigurationSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -207,12 +157,8 @@ pub mod create_configuration_set_input {
             self
         }
         /// <p>The name to use for the new configuration set.</p>
-        pub fn set_configuration_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_name = input;
-            self
+        pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_name = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -221,17 +167,13 @@ pub mod create_configuration_set_input {
         /// <p>An array of key and value pair tags that's associated with the new configuration set. </p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>An array of key and value pair tags that's associated with the new configuration set. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -240,131 +182,88 @@ pub mod create_configuration_set_input {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// Consumes the builder and constructs a [`CreateConfigurationSetInput`](crate::input::CreateConfigurationSetInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateConfigurationSetInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::CreateConfigurationSetInput {
-                configuration_set_name: self.configuration_set_name,
-                tags: self.tags,
-                client_token: self.client_token,
-            })
+        pub fn build(self) -> Result<crate::input::CreateConfigurationSetInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CreateConfigurationSetInput {
+                    configuration_set_name: self.configuration_set_name
+                    ,
+                    tags: self.tags
+                    ,
+                    client_token: self.client_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateConfigurationSetInput {
     /// Consumes the builder and constructs an Operation<[`CreateConfigurationSet`](crate::operation::CreateConfigurationSet)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        mut self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateConfigurationSet,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateConfigurationSet, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         if self.client_token.is_none() {
-            self.client_token = Some(_config.make_token.make_idempotency_token());
-        }
+                                self.client_token = Some(_config.make_token.make_idempotency_token());
+                            }
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateConfigurationSetInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::CreateConfigurationSetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreateConfigurationSetInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CreateConfigurationSetInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "PinpointSMSVoiceV2.CreateConfigurationSet",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "PinpointSMSVoiceV2.CreateConfigurationSet"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_configuration_set(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_configuration_set(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateConfigurationSet::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateConfigurationSet",
-            "pinpointsmsvoicev2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateConfigurationSet::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateConfigurationSet", "pinpointsmsvoicev2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -376,18 +275,15 @@ impl CreateConfigurationSetInput {
 
 /// See [`CreateEventDestinationInput`](crate::input::CreateEventDestinationInput).
 pub mod create_event_destination_input {
-
+    
     /// A builder for [`CreateEventDestinationInput`](crate::input::CreateEventDestinationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
         pub(crate) event_destination_name: std::option::Option<std::string::String>,
-        pub(crate) matching_event_types:
-            std::option::Option<std::vec::Vec<crate::model::EventType>>,
-        pub(crate) cloud_watch_logs_destination:
-            std::option::Option<crate::model::CloudWatchLogsDestination>,
-        pub(crate) kinesis_firehose_destination:
-            std::option::Option<crate::model::KinesisFirehoseDestination>,
+        pub(crate) matching_event_types: std::option::Option<std::vec::Vec<crate::model::EventType>>,
+        pub(crate) cloud_watch_logs_destination: std::option::Option<crate::model::CloudWatchLogsDestination>,
+        pub(crate) kinesis_firehose_destination: std::option::Option<crate::model::KinesisFirehoseDestination>,
         pub(crate) sns_destination: std::option::Option<crate::model::SnsDestination>,
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
@@ -398,12 +294,8 @@ pub mod create_event_destination_input {
             self
         }
         /// <p>Either the name of the configuration set or the configuration set ARN to apply event logging to. The ConfigurateSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
-        pub fn set_configuration_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_name = input;
-            self
+        pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_name = input; self
         }
         /// <p>The name that identifies the event destination.</p>
         pub fn event_destination_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -411,12 +303,8 @@ pub mod create_event_destination_input {
             self
         }
         /// <p>The name that identifies the event destination.</p>
-        pub fn set_event_destination_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.event_destination_name = input;
-            self
+        pub fn set_event_destination_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_destination_name = input; self
         }
         /// Appends an item to `matching_event_types`.
         ///
@@ -425,49 +313,31 @@ pub mod create_event_destination_input {
         /// <p>An array of event types that determine which events to log. If "ALL" is used, then Amazon Pinpoint logs every event type.</p>
         pub fn matching_event_types(mut self, input: crate::model::EventType) -> Self {
             let mut v = self.matching_event_types.unwrap_or_default();
-            v.push(input);
-            self.matching_event_types = Some(v);
-            self
+                            v.push(input);
+                            self.matching_event_types = Some(v);
+                            self
         }
         /// <p>An array of event types that determine which events to log. If "ALL" is used, then Amazon Pinpoint logs every event type.</p>
-        pub fn set_matching_event_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EventType>>,
-        ) -> Self {
-            self.matching_event_types = input;
-            self
+        pub fn set_matching_event_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::EventType>>) -> Self {
+            self.matching_event_types = input; self
         }
         /// <p>An object that contains information about an event destination for logging to Amazon CloudWatch logs.</p>
-        pub fn cloud_watch_logs_destination(
-            mut self,
-            input: crate::model::CloudWatchLogsDestination,
-        ) -> Self {
+        pub fn cloud_watch_logs_destination(mut self, input: crate::model::CloudWatchLogsDestination) -> Self {
             self.cloud_watch_logs_destination = Some(input);
             self
         }
         /// <p>An object that contains information about an event destination for logging to Amazon CloudWatch logs.</p>
-        pub fn set_cloud_watch_logs_destination(
-            mut self,
-            input: std::option::Option<crate::model::CloudWatchLogsDestination>,
-        ) -> Self {
-            self.cloud_watch_logs_destination = input;
-            self
+        pub fn set_cloud_watch_logs_destination(mut self, input: std::option::Option<crate::model::CloudWatchLogsDestination>) -> Self {
+            self.cloud_watch_logs_destination = input; self
         }
         /// <p>An object that contains information about an event destination for logging to Amazon Kinesis Data Firehose.</p>
-        pub fn kinesis_firehose_destination(
-            mut self,
-            input: crate::model::KinesisFirehoseDestination,
-        ) -> Self {
+        pub fn kinesis_firehose_destination(mut self, input: crate::model::KinesisFirehoseDestination) -> Self {
             self.kinesis_firehose_destination = Some(input);
             self
         }
         /// <p>An object that contains information about an event destination for logging to Amazon Kinesis Data Firehose.</p>
-        pub fn set_kinesis_firehose_destination(
-            mut self,
-            input: std::option::Option<crate::model::KinesisFirehoseDestination>,
-        ) -> Self {
-            self.kinesis_firehose_destination = input;
-            self
+        pub fn set_kinesis_firehose_destination(mut self, input: std::option::Option<crate::model::KinesisFirehoseDestination>) -> Self {
+            self.kinesis_firehose_destination = input; self
         }
         /// <p>An object that contains information about an event destination for logging to Amazon SNS.</p>
         pub fn sns_destination(mut self, input: crate::model::SnsDestination) -> Self {
@@ -475,12 +345,8 @@ pub mod create_event_destination_input {
             self
         }
         /// <p>An object that contains information about an event destination for logging to Amazon SNS.</p>
-        pub fn set_sns_destination(
-            mut self,
-            input: std::option::Option<crate::model::SnsDestination>,
-        ) -> Self {
-            self.sns_destination = input;
-            self
+        pub fn set_sns_destination(mut self, input: std::option::Option<crate::model::SnsDestination>) -> Self {
+            self.sns_destination = input; self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -489,135 +355,96 @@ pub mod create_event_destination_input {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// Consumes the builder and constructs a [`CreateEventDestinationInput`](crate::input::CreateEventDestinationInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateEventDestinationInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::CreateEventDestinationInput {
-                configuration_set_name: self.configuration_set_name,
-                event_destination_name: self.event_destination_name,
-                matching_event_types: self.matching_event_types,
-                cloud_watch_logs_destination: self.cloud_watch_logs_destination,
-                kinesis_firehose_destination: self.kinesis_firehose_destination,
-                sns_destination: self.sns_destination,
-                client_token: self.client_token,
-            })
+        pub fn build(self) -> Result<crate::input::CreateEventDestinationInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CreateEventDestinationInput {
+                    configuration_set_name: self.configuration_set_name
+                    ,
+                    event_destination_name: self.event_destination_name
+                    ,
+                    matching_event_types: self.matching_event_types
+                    ,
+                    cloud_watch_logs_destination: self.cloud_watch_logs_destination
+                    ,
+                    kinesis_firehose_destination: self.kinesis_firehose_destination
+                    ,
+                    sns_destination: self.sns_destination
+                    ,
+                    client_token: self.client_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateEventDestinationInput {
     /// Consumes the builder and constructs an Operation<[`CreateEventDestination`](crate::operation::CreateEventDestination)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        mut self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateEventDestination,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateEventDestination, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         if self.client_token.is_none() {
-            self.client_token = Some(_config.make_token.make_idempotency_token());
-        }
+                                self.client_token = Some(_config.make_token.make_idempotency_token());
+                            }
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateEventDestinationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::CreateEventDestinationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreateEventDestinationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CreateEventDestinationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "PinpointSMSVoiceV2.CreateEventDestination",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "PinpointSMSVoiceV2.CreateEventDestination"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_event_destination(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_event_destination(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateEventDestination::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateEventDestination",
-            "pinpointsmsvoicev2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateEventDestination::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateEventDestination", "pinpointsmsvoicev2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -629,9 +456,9 @@ impl CreateEventDestinationInput {
 
 /// See [`CreateOptOutListInput`](crate::input::CreateOptOutListInput).
 pub mod create_opt_out_list_input {
-
+    
     /// A builder for [`CreateOptOutListInput`](crate::input::CreateOptOutListInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) opt_out_list_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -644,12 +471,8 @@ pub mod create_opt_out_list_input {
             self
         }
         /// <p>The name of the new OptOutList.</p>
-        pub fn set_opt_out_list_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.opt_out_list_name = input;
-            self
+        pub fn set_opt_out_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.opt_out_list_name = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -658,17 +481,13 @@ pub mod create_opt_out_list_input {
         /// <p>An array of tags (key and value pairs) to associate with the new OptOutList.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>An array of tags (key and value pairs) to associate with the new OptOutList.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -677,129 +496,88 @@ pub mod create_opt_out_list_input {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// Consumes the builder and constructs a [`CreateOptOutListInput`](crate::input::CreateOptOutListInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateOptOutListInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::CreateOptOutListInput {
-                opt_out_list_name: self.opt_out_list_name,
-                tags: self.tags,
-                client_token: self.client_token,
-            })
+        pub fn build(self) -> Result<crate::input::CreateOptOutListInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CreateOptOutListInput {
+                    opt_out_list_name: self.opt_out_list_name
+                    ,
+                    tags: self.tags
+                    ,
+                    client_token: self.client_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateOptOutListInput {
     /// Consumes the builder and constructs an Operation<[`CreateOptOutList`](crate::operation::CreateOptOutList)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        mut self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateOptOutList,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateOptOutList, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         if self.client_token.is_none() {
-            self.client_token = Some(_config.make_token.make_idempotency_token());
-        }
+                                self.client_token = Some(_config.make_token.make_idempotency_token());
+                            }
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateOptOutListInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::CreateOptOutListInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreateOptOutListInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CreateOptOutListInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "PinpointSMSVoiceV2.CreateOptOutList",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "PinpointSMSVoiceV2.CreateOptOutList"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_opt_out_list(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_opt_out_list(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateOptOutList::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateOptOutList",
-            "pinpointsmsvoicev2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateOptOutList::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateOptOutList", "pinpointsmsvoicev2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -811,9 +589,9 @@ impl CreateOptOutListInput {
 
 /// See [`CreatePoolInput`](crate::input::CreatePoolInput).
 pub mod create_pool_input {
-
+    
     /// A builder for [`CreatePoolInput`](crate::input::CreatePoolInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) origination_identity: std::option::Option<std::string::String>,
         pub(crate) iso_country_code: std::option::Option<std::string::String>,
@@ -829,12 +607,8 @@ pub mod create_pool_input {
             self
         }
         /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
-        pub fn set_origination_identity(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.origination_identity = input;
-            self
+        pub fn set_origination_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.origination_identity = input; self
         }
         /// <p>The new two-character code, in ISO 3166-1 alpha-2 format, for the country or region of the new pool.</p>
         pub fn iso_country_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -842,12 +616,8 @@ pub mod create_pool_input {
             self
         }
         /// <p>The new two-character code, in ISO 3166-1 alpha-2 format, for the country or region of the new pool.</p>
-        pub fn set_iso_country_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.iso_country_code = input;
-            self
+        pub fn set_iso_country_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.iso_country_code = input; self
         }
         /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
         pub fn message_type(mut self, input: crate::model::MessageType) -> Self {
@@ -855,12 +625,8 @@ pub mod create_pool_input {
             self
         }
         /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-        pub fn set_message_type(
-            mut self,
-            input: std::option::Option<crate::model::MessageType>,
-        ) -> Self {
-            self.message_type = input;
-            self
+        pub fn set_message_type(mut self, input: std::option::Option<crate::model::MessageType>) -> Self {
+            self.message_type = input; self
         }
         /// <p>By default this is set to false. When set to true the pool can't be deleted. You can change this value using the <code>UpdatePool</code> action.</p>
         pub fn deletion_protection_enabled(mut self, input: bool) -> Self {
@@ -869,8 +635,7 @@ pub mod create_pool_input {
         }
         /// <p>By default this is set to false. When set to true the pool can't be deleted. You can change this value using the <code>UpdatePool</code> action.</p>
         pub fn set_deletion_protection_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.deletion_protection_enabled = input;
-            self
+            self.deletion_protection_enabled = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -879,17 +644,13 @@ pub mod create_pool_input {
         /// <p>An array of tags (key and value pairs) associated with the pool.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>An array of tags (key and value pairs) associated with the pool.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -898,131 +659,94 @@ pub mod create_pool_input {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// Consumes the builder and constructs a [`CreatePoolInput`](crate::input::CreatePoolInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreatePoolInput, aws_smithy_http::operation::BuildError> {
-            Ok(crate::input::CreatePoolInput {
-                origination_identity: self.origination_identity,
-                iso_country_code: self.iso_country_code,
-                message_type: self.message_type,
-                deletion_protection_enabled: self.deletion_protection_enabled,
-                tags: self.tags,
-                client_token: self.client_token,
-            })
+        pub fn build(self) -> Result<crate::input::CreatePoolInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CreatePoolInput {
+                    origination_identity: self.origination_identity
+                    ,
+                    iso_country_code: self.iso_country_code
+                    ,
+                    message_type: self.message_type
+                    ,
+                    deletion_protection_enabled: self.deletion_protection_enabled
+                    ,
+                    tags: self.tags
+                    ,
+                    client_token: self.client_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreatePoolInput {
     /// Consumes the builder and constructs an Operation<[`CreatePool`](crate::operation::CreatePool)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        mut self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreatePool,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreatePool, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         if self.client_token.is_none() {
-            self.client_token = Some(_config.make_token.make_idempotency_token());
-        }
+                                self.client_token = Some(_config.make_token.make_idempotency_token());
+                            }
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreatePoolInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::CreatePoolInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreatePoolInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CreatePoolInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "PinpointSMSVoiceV2.CreatePool",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "PinpointSMSVoiceV2.CreatePool"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_pool(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_pool(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreatePool::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreatePool",
-            "pinpointsmsvoicev2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreatePool::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreatePool", "pinpointsmsvoicev2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1034,9 +758,9 @@ impl CreatePoolInput {
 
 /// See [`DeleteConfigurationSetInput`](crate::input::DeleteConfigurationSetInput).
 pub mod delete_configuration_set_input {
-
+    
     /// A builder for [`DeleteConfigurationSetInput`](crate::input::DeleteConfigurationSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
     }
@@ -1047,130 +771,82 @@ pub mod delete_configuration_set_input {
             self
         }
         /// <p>The name of the configuration set or the configuration set ARN that you want to delete. The ConfigurationSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
-        pub fn set_configuration_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_name = input;
-            self
+        pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_name = input; self
         }
         /// Consumes the builder and constructs a [`DeleteConfigurationSetInput`](crate::input::DeleteConfigurationSetInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteConfigurationSetInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DeleteConfigurationSetInput {
-                configuration_set_name: self.configuration_set_name,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteConfigurationSetInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DeleteConfigurationSetInput {
+                    configuration_set_name: self.configuration_set_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteConfigurationSetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConfigurationSet`](crate::operation::DeleteConfigurationSet)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteConfigurationSet,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteConfigurationSet, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteConfigurationSetInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteConfigurationSetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DeleteConfigurationSetInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DeleteConfigurationSetInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "PinpointSMSVoiceV2.DeleteConfigurationSet",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "PinpointSMSVoiceV2.DeleteConfigurationSet"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_configuration_set(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_configuration_set(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteConfigurationSet::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteConfigurationSet",
-            "pinpointsmsvoicev2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteConfigurationSet::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteConfigurationSet", "pinpointsmsvoicev2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1182,9 +858,9 @@ impl DeleteConfigurationSetInput {
 
 /// See [`DeleteDefaultMessageTypeInput`](crate::input::DeleteDefaultMessageTypeInput).
 pub mod delete_default_message_type_input {
-
+    
     /// A builder for [`DeleteDefaultMessageTypeInput`](crate::input::DeleteDefaultMessageTypeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
     }
@@ -1195,132 +871,82 @@ pub mod delete_default_message_type_input {
             self
         }
         /// <p>The name of the configuration set or the configuration set Amazon Resource Name (ARN) to delete the default message type from. The ConfigurationSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
-        pub fn set_configuration_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_name = input;
-            self
+        pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_name = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDefaultMessageTypeInput`](crate::input::DeleteDefaultMessageTypeInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteDefaultMessageTypeInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::DeleteDefaultMessageTypeInput {
-                configuration_set_name: self.configuration_set_name,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteDefaultMessageTypeInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DeleteDefaultMessageTypeInput {
+                    configuration_set_name: self.configuration_set_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteDefaultMessageTypeInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDefaultMessageType`](crate::operation::DeleteDefaultMessageType)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteDefaultMessageType,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteDefaultMessageType, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteDefaultMessageTypeInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteDefaultMessageTypeInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DeleteDefaultMessageTypeInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DeleteDefaultMessageTypeInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "PinpointSMSVoiceV2.DeleteDefaultMessageType",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "PinpointSMSVoiceV2.DeleteDefaultMessageType"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_default_message_type(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_default_message_type(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteDefaultMessageType::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteDefaultMessageType",
-            "pinpointsmsvoicev2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteDefaultMessageType::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteDefaultMessageType", "pinpointsmsvoicev2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1332,9 +958,9 @@ impl DeleteDefaultMessageTypeInput {
 
 /// See [`DeleteDefaultSenderIdInput`](crate::input::DeleteDefaultSenderIdInput).
 pub mod delete_default_sender_id_input {
-
+    
     /// A builder for [`DeleteDefaultSenderIdInput`](crate::input::DeleteDefaultSenderIdInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
     }
@@ -1345,130 +971,82 @@ pub mod delete_default_sender_id_input {
             self
         }
         /// <p>The name of the configuration set or the configuration set Amazon Resource Name (ARN) to delete the default sender ID from. The ConfigurationSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
-        pub fn set_configuration_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_name = input;
-            self
+        pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_name = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDefaultSenderIdInput`](crate::input::DeleteDefaultSenderIdInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteDefaultSenderIdInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DeleteDefaultSenderIdInput {
-                configuration_set_name: self.configuration_set_name,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteDefaultSenderIdInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DeleteDefaultSenderIdInput {
+                    configuration_set_name: self.configuration_set_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteDefaultSenderIdInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDefaultSenderId`](crate::operation::DeleteDefaultSenderId)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteDefaultSenderId,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteDefaultSenderId, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteDefaultSenderIdInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteDefaultSenderIdInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DeleteDefaultSenderIdInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DeleteDefaultSenderIdInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "PinpointSMSVoiceV2.DeleteDefaultSenderId",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "PinpointSMSVoiceV2.DeleteDefaultSenderId"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_default_sender_id(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_default_sender_id(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteDefaultSenderId::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteDefaultSenderId",
-            "pinpointsmsvoicev2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteDefaultSenderId::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteDefaultSenderId", "pinpointsmsvoicev2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1480,9 +1058,9 @@ impl DeleteDefaultSenderIdInput {
 
 /// See [`DeleteEventDestinationInput`](crate::input::DeleteEventDestinationInput).
 pub mod delete_event_destination_input {
-
+    
     /// A builder for [`DeleteEventDestinationInput`](crate::input::DeleteEventDestinationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
         pub(crate) event_destination_name: std::option::Option<std::string::String>,
@@ -1494,12 +1072,8 @@ pub mod delete_event_destination_input {
             self
         }
         /// <p>The name of the configuration set or the configuration set's Amazon Resource Name (ARN) to remove the event destination from. The ConfigurateSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
-        pub fn set_configuration_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_name = input;
-            self
+        pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_name = input; self
         }
         /// <p>The name of the event destination to delete.</p>
         pub fn event_destination_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1507,131 +1081,84 @@ pub mod delete_event_destination_input {
             self
         }
         /// <p>The name of the event destination to delete.</p>
-        pub fn set_event_destination_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.event_destination_name = input;
-            self
+        pub fn set_event_destination_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_destination_name = input; self
         }
         /// Consumes the builder and constructs a [`DeleteEventDestinationInput`](crate::input::DeleteEventDestinationInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteEventDestinationInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DeleteEventDestinationInput {
-                configuration_set_name: self.configuration_set_name,
-                event_destination_name: self.event_destination_name,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteEventDestinationInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DeleteEventDestinationInput {
+                    configuration_set_name: self.configuration_set_name
+                    ,
+                    event_destination_name: self.event_destination_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteEventDestinationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEventDestination`](crate::operation::DeleteEventDestination)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteEventDestination,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteEventDestination, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteEventDestinationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteEventDestinationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DeleteEventDestinationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DeleteEventDestinationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "PinpointSMSVoiceV2.DeleteEventDestination",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "PinpointSMSVoiceV2.DeleteEventDestination"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_event_destination(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_event_destination(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteEventDestination::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteEventDestination",
-            "pinpointsmsvoicev2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteEventDestination::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteEventDestination", "pinpointsmsvoicev2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1643,9 +1170,9 @@ impl DeleteEventDestinationInput {
 
 /// See [`DeleteKeywordInput`](crate::input::DeleteKeywordInput).
 pub mod delete_keyword_input {
-
+    
     /// A builder for [`DeleteKeywordInput`](crate::input::DeleteKeywordInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) origination_identity: std::option::Option<std::string::String>,
         pub(crate) keyword: std::option::Option<std::string::String>,
@@ -1657,12 +1184,8 @@ pub mod delete_keyword_input {
             self
         }
         /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, PoolId or PoolArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn and <code>DescribePools</code> to find the values of PoolId and PoolArn.</p>
-        pub fn set_origination_identity(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.origination_identity = input;
-            self
+        pub fn set_origination_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.origination_identity = input; self
         }
         /// <p>The keyword to delete.</p>
         pub fn keyword(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1671,125 +1194,83 @@ pub mod delete_keyword_input {
         }
         /// <p>The keyword to delete.</p>
         pub fn set_keyword(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.keyword = input;
-            self
+            self.keyword = input; self
         }
         /// Consumes the builder and constructs a [`DeleteKeywordInput`](crate::input::DeleteKeywordInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteKeywordInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DeleteKeywordInput {
-                origination_identity: self.origination_identity,
-                keyword: self.keyword,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteKeywordInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DeleteKeywordInput {
+                    origination_identity: self.origination_identity
+                    ,
+                    keyword: self.keyword
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteKeywordInput {
     /// Consumes the builder and constructs an Operation<[`DeleteKeyword`](crate::operation::DeleteKeyword)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteKeyword,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteKeyword, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteKeywordInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteKeywordInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DeleteKeywordInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DeleteKeywordInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "PinpointSMSVoiceV2.DeleteKeyword",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "PinpointSMSVoiceV2.DeleteKeyword"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_keyword(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_keyword(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteKeyword::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteKeyword",
-            "pinpointsmsvoicev2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteKeyword::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteKeyword", "pinpointsmsvoicev2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1801,9 +1282,9 @@ impl DeleteKeywordInput {
 
 /// See [`DeleteOptedOutNumberInput`](crate::input::DeleteOptedOutNumberInput).
 pub mod delete_opted_out_number_input {
-
+    
     /// A builder for [`DeleteOptedOutNumberInput`](crate::input::DeleteOptedOutNumberInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) opt_out_list_name: std::option::Option<std::string::String>,
         pub(crate) opted_out_number: std::option::Option<std::string::String>,
@@ -1815,12 +1296,8 @@ pub mod delete_opted_out_number_input {
             self
         }
         /// <p>The OptOutListName or OptOutListArn to remove the phone number from.</p>
-        pub fn set_opt_out_list_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.opt_out_list_name = input;
-            self
+        pub fn set_opt_out_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.opt_out_list_name = input; self
         }
         /// <p>The phone number, in E.164 format, to remove from the OptOutList.</p>
         pub fn opted_out_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1828,131 +1305,84 @@ pub mod delete_opted_out_number_input {
             self
         }
         /// <p>The phone number, in E.164 format, to remove from the OptOutList.</p>
-        pub fn set_opted_out_number(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.opted_out_number = input;
-            self
+        pub fn set_opted_out_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.opted_out_number = input; self
         }
         /// Consumes the builder and constructs a [`DeleteOptedOutNumberInput`](crate::input::DeleteOptedOutNumberInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteOptedOutNumberInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DeleteOptedOutNumberInput {
-                opt_out_list_name: self.opt_out_list_name,
-                opted_out_number: self.opted_out_number,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteOptedOutNumberInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DeleteOptedOutNumberInput {
+                    opt_out_list_name: self.opt_out_list_name
+                    ,
+                    opted_out_number: self.opted_out_number
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteOptedOutNumberInput {
     /// Consumes the builder and constructs an Operation<[`DeleteOptedOutNumber`](crate::operation::DeleteOptedOutNumber)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteOptedOutNumber,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteOptedOutNumber, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteOptedOutNumberInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteOptedOutNumberInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DeleteOptedOutNumberInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DeleteOptedOutNumberInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "PinpointSMSVoiceV2.DeleteOptedOutNumber",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "PinpointSMSVoiceV2.DeleteOptedOutNumber"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_opted_out_number(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_opted_out_number(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteOptedOutNumber::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteOptedOutNumber",
-            "pinpointsmsvoicev2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteOptedOutNumber::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteOptedOutNumber", "pinpointsmsvoicev2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1964,9 +1394,9 @@ impl DeleteOptedOutNumberInput {
 
 /// See [`DeleteOptOutListInput`](crate::input::DeleteOptOutListInput).
 pub mod delete_opt_out_list_input {
-
+    
     /// A builder for [`DeleteOptOutListInput`](crate::input::DeleteOptOutListInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) opt_out_list_name: std::option::Option<std::string::String>,
     }
@@ -1977,128 +1407,82 @@ pub mod delete_opt_out_list_input {
             self
         }
         /// <p>The OptOutListName or OptOutListArn of the OptOutList to delete. You can use <code>DescribeOptOutLists</code> to find the values for OptOutListName and OptOutListArn.</p>
-        pub fn set_opt_out_list_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.opt_out_list_name = input;
-            self
+        pub fn set_opt_out_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.opt_out_list_name = input; self
         }
         /// Consumes the builder and constructs a [`DeleteOptOutListInput`](crate::input::DeleteOptOutListInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteOptOutListInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DeleteOptOutListInput {
-                opt_out_list_name: self.opt_out_list_name,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteOptOutListInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DeleteOptOutListInput {
+                    opt_out_list_name: self.opt_out_list_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteOptOutListInput {
     /// Consumes the builder and constructs an Operation<[`DeleteOptOutList`](crate::operation::DeleteOptOutList)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteOptOutList,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteOptOutList, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteOptOutListInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteOptOutListInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DeleteOptOutListInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DeleteOptOutListInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "PinpointSMSVoiceV2.DeleteOptOutList",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "PinpointSMSVoiceV2.DeleteOptOutList"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_opt_out_list(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_opt_out_list(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteOptOutList::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteOptOutList",
-            "pinpointsmsvoicev2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteOptOutList::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteOptOutList", "pinpointsmsvoicev2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2110,9 +1494,9 @@ impl DeleteOptOutListInput {
 
 /// See [`DeletePoolInput`](crate::input::DeletePoolInput).
 pub mod delete_pool_input {
-
+    
     /// A builder for [`DeletePoolInput`](crate::input::DeletePoolInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) pool_id: std::option::Option<std::string::String>,
     }
@@ -2124,123 +1508,81 @@ pub mod delete_pool_input {
         }
         /// <p>The PoolId or PoolArn of the pool to delete. You can use <code>DescribePools</code> to find the values for PoolId and PoolArn .</p>
         pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pool_id = input;
-            self
+            self.pool_id = input; self
         }
         /// Consumes the builder and constructs a [`DeletePoolInput`](crate::input::DeletePoolInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeletePoolInput, aws_smithy_http::operation::BuildError> {
-            Ok(crate::input::DeletePoolInput {
-                pool_id: self.pool_id,
-            })
+        pub fn build(self) -> Result<crate::input::DeletePoolInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DeletePoolInput {
+                    pool_id: self.pool_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeletePoolInput {
     /// Consumes the builder and constructs an Operation<[`DeletePool`](crate::operation::DeletePool)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeletePool,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeletePool, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeletePoolInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DeletePoolInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DeletePoolInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DeletePoolInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "PinpointSMSVoiceV2.DeletePool",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "PinpointSMSVoiceV2.DeletePool"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_pool(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_pool(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeletePool::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeletePool",
-            "pinpointsmsvoicev2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeletePool::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeletePool", "pinpointsmsvoicev2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2252,66 +1594,46 @@ impl DeletePoolInput {
 
 /// See [`DeleteTextMessageSpendLimitOverrideInput`](crate::input::DeleteTextMessageSpendLimitOverrideInput).
 pub mod delete_text_message_spend_limit_override_input {
-
+    
     /// A builder for [`DeleteTextMessageSpendLimitOverrideInput`](crate::input::DeleteTextMessageSpendLimitOverrideInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {}
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteTextMessageSpendLimitOverrideInput`](crate::input::DeleteTextMessageSpendLimitOverrideInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteTextMessageSpendLimitOverrideInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::DeleteTextMessageSpendLimitOverrideInput {})
+        pub fn build(self) -> Result<crate::input::DeleteTextMessageSpendLimitOverrideInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DeleteTextMessageSpendLimitOverrideInput {
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteTextMessageSpendLimitOverrideInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTextMessageSpendLimitOverride`](crate::operation::DeleteTextMessageSpendLimitOverride)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteTextMessageSpendLimitOverride,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteTextMessageSpendLimitOverride, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteTextMessageSpendLimitOverrideInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteTextMessageSpendLimitOverrideInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DeleteTextMessageSpendLimitOverrideInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DeleteTextMessageSpendLimitOverrideInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "PinpointSMSVoiceV2.DeleteTextMessageSpendLimitOverride",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "PinpointSMSVoiceV2.DeleteTextMessageSpendLimitOverride"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2320,50 +1642,32 @@ impl DeleteTextMessageSpendLimitOverrideInput {
         );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteTextMessageSpendLimitOverride::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteTextMessageSpendLimitOverride",
-            "pinpointsmsvoicev2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteTextMessageSpendLimitOverride::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteTextMessageSpendLimitOverride", "pinpointsmsvoicev2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2375,66 +1679,46 @@ impl DeleteTextMessageSpendLimitOverrideInput {
 
 /// See [`DeleteVoiceMessageSpendLimitOverrideInput`](crate::input::DeleteVoiceMessageSpendLimitOverrideInput).
 pub mod delete_voice_message_spend_limit_override_input {
-
+    
     /// A builder for [`DeleteVoiceMessageSpendLimitOverrideInput`](crate::input::DeleteVoiceMessageSpendLimitOverrideInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {}
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteVoiceMessageSpendLimitOverrideInput`](crate::input::DeleteVoiceMessageSpendLimitOverrideInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteVoiceMessageSpendLimitOverrideInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::DeleteVoiceMessageSpendLimitOverrideInput {})
+        pub fn build(self) -> Result<crate::input::DeleteVoiceMessageSpendLimitOverrideInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DeleteVoiceMessageSpendLimitOverrideInput {
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteVoiceMessageSpendLimitOverrideInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVoiceMessageSpendLimitOverride`](crate::operation::DeleteVoiceMessageSpendLimitOverride)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteVoiceMessageSpendLimitOverride,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteVoiceMessageSpendLimitOverride, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteVoiceMessageSpendLimitOverrideInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteVoiceMessageSpendLimitOverrideInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DeleteVoiceMessageSpendLimitOverrideInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DeleteVoiceMessageSpendLimitOverrideInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "PinpointSMSVoiceV2.DeleteVoiceMessageSpendLimitOverride",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "PinpointSMSVoiceV2.DeleteVoiceMessageSpendLimitOverride"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2443,50 +1727,32 @@ impl DeleteVoiceMessageSpendLimitOverrideInput {
         );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteVoiceMessageSpendLimitOverride::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteVoiceMessageSpendLimitOverride",
-            "pinpointsmsvoicev2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteVoiceMessageSpendLimitOverride::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteVoiceMessageSpendLimitOverride", "pinpointsmsvoicev2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2498,9 +1764,9 @@ impl DeleteVoiceMessageSpendLimitOverrideInput {
 
 /// See [`DescribeAccountAttributesInput`](crate::input::DescribeAccountAttributesInput).
 pub mod describe_account_attributes_input {
-
+    
     /// A builder for [`DescribeAccountAttributesInput`](crate::input::DescribeAccountAttributesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2513,8 +1779,7 @@ pub mod describe_account_attributes_input {
         }
         /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum number of results to return per each request.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -2523,129 +1788,83 @@ pub mod describe_account_attributes_input {
         }
         /// <p>The maximum number of results to return per each request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAccountAttributesInput`](crate::input::DescribeAccountAttributesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeAccountAttributesInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::DescribeAccountAttributesInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeAccountAttributesInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DescribeAccountAttributesInput {
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeAccountAttributesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAccountAttributes`](crate::operation::DescribeAccountAttributes)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeAccountAttributes,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeAccountAttributes, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeAccountAttributesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeAccountAttributesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribeAccountAttributesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DescribeAccountAttributesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "PinpointSMSVoiceV2.DescribeAccountAttributes",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "PinpointSMSVoiceV2.DescribeAccountAttributes"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_account_attributes(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_account_attributes(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeAccountAttributes::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeAccountAttributes",
-            "pinpointsmsvoicev2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeAccountAttributes::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeAccountAttributes", "pinpointsmsvoicev2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2657,9 +1876,9 @@ impl DescribeAccountAttributesInput {
 
 /// See [`DescribeAccountLimitsInput`](crate::input::DescribeAccountLimitsInput).
 pub mod describe_account_limits_input {
-
+    
     /// A builder for [`DescribeAccountLimitsInput`](crate::input::DescribeAccountLimitsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2672,8 +1891,7 @@ pub mod describe_account_limits_input {
         }
         /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum number of results to return per each request.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -2682,127 +1900,83 @@ pub mod describe_account_limits_input {
         }
         /// <p>The maximum number of results to return per each request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAccountLimitsInput`](crate::input::DescribeAccountLimitsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DescribeAccountLimitsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DescribeAccountLimitsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeAccountLimitsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DescribeAccountLimitsInput {
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeAccountLimitsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAccountLimits`](crate::operation::DescribeAccountLimits)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeAccountLimits,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeAccountLimits, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeAccountLimitsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeAccountLimitsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribeAccountLimitsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DescribeAccountLimitsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "PinpointSMSVoiceV2.DescribeAccountLimits",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "PinpointSMSVoiceV2.DescribeAccountLimits"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_account_limits(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_account_limits(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeAccountLimits::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeAccountLimits",
-            "pinpointsmsvoicev2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeAccountLimits::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeAccountLimits", "pinpointsmsvoicev2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2814,13 +1988,12 @@ impl DescribeAccountLimitsInput {
 
 /// See [`DescribeConfigurationSetsInput`](crate::input::DescribeConfigurationSetsInput).
 pub mod describe_configuration_sets_input {
-
+    
     /// A builder for [`DescribeConfigurationSetsInput`](crate::input::DescribeConfigurationSetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) configuration_set_names: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) filters:
-            std::option::Option<std::vec::Vec<crate::model::ConfigurationSetFilter>>,
+        pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::ConfigurationSetFilter>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
     }
@@ -2832,17 +2005,13 @@ pub mod describe_configuration_sets_input {
         /// <p>An array of strings. Each element can be either a ConfigurationSetName or ConfigurationSetArn.</p>
         pub fn configuration_set_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.configuration_set_names.unwrap_or_default();
-            v.push(input.into());
-            self.configuration_set_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.configuration_set_names = Some(v);
+                            self
         }
         /// <p>An array of strings. Each element can be either a ConfigurationSetName or ConfigurationSetArn.</p>
-        pub fn set_configuration_set_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.configuration_set_names = input;
-            self
+        pub fn set_configuration_set_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.configuration_set_names = input; self
         }
         /// Appends an item to `filters`.
         ///
@@ -2851,17 +2020,13 @@ pub mod describe_configuration_sets_input {
         /// <p>An array of filters to apply to the results that are returned.</p>
         pub fn filters(mut self, input: crate::model::ConfigurationSetFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input);
-            self.filters = Some(v);
-            self
+                            v.push(input);
+                            self.filters = Some(v);
+                            self
         }
         /// <p>An array of filters to apply to the results that are returned.</p>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ConfigurationSetFilter>>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::ConfigurationSetFilter>>) -> Self {
+            self.filters = input; self
         }
         /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2870,8 +2035,7 @@ pub mod describe_configuration_sets_input {
         }
         /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum number of results to return per each request.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -2880,131 +2044,87 @@ pub mod describe_configuration_sets_input {
         }
         /// <p>The maximum number of results to return per each request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`DescribeConfigurationSetsInput`](crate::input::DescribeConfigurationSetsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeConfigurationSetsInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::DescribeConfigurationSetsInput {
-                configuration_set_names: self.configuration_set_names,
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeConfigurationSetsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DescribeConfigurationSetsInput {
+                    configuration_set_names: self.configuration_set_names
+                    ,
+                    filters: self.filters
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeConfigurationSetsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConfigurationSets`](crate::operation::DescribeConfigurationSets)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeConfigurationSets,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeConfigurationSets, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeConfigurationSetsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeConfigurationSetsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribeConfigurationSetsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DescribeConfigurationSetsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "PinpointSMSVoiceV2.DescribeConfigurationSets",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "PinpointSMSVoiceV2.DescribeConfigurationSets"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_configuration_sets(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_configuration_sets(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeConfigurationSets::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeConfigurationSets",
-            "pinpointsmsvoicev2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeConfigurationSets::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeConfigurationSets", "pinpointsmsvoicev2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3016,9 +2136,9 @@ impl DescribeConfigurationSetsInput {
 
 /// See [`DescribeKeywordsInput`](crate::input::DescribeKeywordsInput).
 pub mod describe_keywords_input {
-
+    
     /// A builder for [`DescribeKeywordsInput`](crate::input::DescribeKeywordsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) origination_identity: std::option::Option<std::string::String>,
         pub(crate) keywords: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3033,12 +2153,8 @@ pub mod describe_keywords_input {
             self
         }
         /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
-        pub fn set_origination_identity(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.origination_identity = input;
-            self
+        pub fn set_origination_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.origination_identity = input; self
         }
         /// Appends an item to `keywords`.
         ///
@@ -3047,17 +2163,13 @@ pub mod describe_keywords_input {
         /// <p>An array of keywords to search for.</p>
         pub fn keywords(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.keywords.unwrap_or_default();
-            v.push(input.into());
-            self.keywords = Some(v);
-            self
+                            v.push(input.into());
+                            self.keywords = Some(v);
+                            self
         }
         /// <p>An array of keywords to search for.</p>
-        pub fn set_keywords(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.keywords = input;
-            self
+        pub fn set_keywords(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.keywords = input; self
         }
         /// Appends an item to `filters`.
         ///
@@ -3066,17 +2178,13 @@ pub mod describe_keywords_input {
         /// <p>An array of keyword filters to filter the results.</p>
         pub fn filters(mut self, input: crate::model::KeywordFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input);
-            self.filters = Some(v);
-            self
+                            v.push(input);
+                            self.filters = Some(v);
+                            self
         }
         /// <p>An array of keyword filters to filter the results.</p>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::KeywordFilter>>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::KeywordFilter>>) -> Self {
+            self.filters = input; self
         }
         /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3085,8 +2193,7 @@ pub mod describe_keywords_input {
         }
         /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum number of results to return per each request.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -3095,128 +2202,89 @@ pub mod describe_keywords_input {
         }
         /// <p>The maximum number of results to return per each request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`DescribeKeywordsInput`](crate::input::DescribeKeywordsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DescribeKeywordsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DescribeKeywordsInput {
-                origination_identity: self.origination_identity,
-                keywords: self.keywords,
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeKeywordsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DescribeKeywordsInput {
+                    origination_identity: self.origination_identity
+                    ,
+                    keywords: self.keywords
+                    ,
+                    filters: self.filters
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeKeywordsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeKeywords`](crate::operation::DescribeKeywords)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeKeywords,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeKeywords, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeKeywordsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeKeywordsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribeKeywordsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DescribeKeywordsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "PinpointSMSVoiceV2.DescribeKeywords",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "PinpointSMSVoiceV2.DescribeKeywords"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_keywords(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_keywords(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeKeywords::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeKeywords",
-            "pinpointsmsvoicev2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeKeywords::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeKeywords", "pinpointsmsvoicev2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3228,9 +2296,9 @@ impl DescribeKeywordsInput {
 
 /// See [`DescribeOptedOutNumbersInput`](crate::input::DescribeOptedOutNumbersInput).
 pub mod describe_opted_out_numbers_input {
-
+    
     /// A builder for [`DescribeOptedOutNumbersInput`](crate::input::DescribeOptedOutNumbersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) opt_out_list_name: std::option::Option<std::string::String>,
         pub(crate) opted_out_numbers: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3245,12 +2313,8 @@ pub mod describe_opted_out_numbers_input {
             self
         }
         /// <p>The OptOutListName or OptOutListArn of the OptOutList. You can use <code>DescribeOptOutLists</code> to find the values for OptOutListName and OptOutListArn.</p>
-        pub fn set_opt_out_list_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.opt_out_list_name = input;
-            self
+        pub fn set_opt_out_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.opt_out_list_name = input; self
         }
         /// Appends an item to `opted_out_numbers`.
         ///
@@ -3259,17 +2323,13 @@ pub mod describe_opted_out_numbers_input {
         /// <p>An array of phone numbers to search for in the OptOutList.</p>
         pub fn opted_out_numbers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.opted_out_numbers.unwrap_or_default();
-            v.push(input.into());
-            self.opted_out_numbers = Some(v);
-            self
+                            v.push(input.into());
+                            self.opted_out_numbers = Some(v);
+                            self
         }
         /// <p>An array of phone numbers to search for in the OptOutList.</p>
-        pub fn set_opted_out_numbers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.opted_out_numbers = input;
-            self
+        pub fn set_opted_out_numbers(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.opted_out_numbers = input; self
         }
         /// Appends an item to `filters`.
         ///
@@ -3278,17 +2338,13 @@ pub mod describe_opted_out_numbers_input {
         /// <p>An array of OptedOutFilter objects to filter the results on.</p>
         pub fn filters(mut self, input: crate::model::OptedOutFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input);
-            self.filters = Some(v);
-            self
+                            v.push(input);
+                            self.filters = Some(v);
+                            self
         }
         /// <p>An array of OptedOutFilter objects to filter the results on.</p>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::OptedOutFilter>>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::OptedOutFilter>>) -> Self {
+            self.filters = input; self
         }
         /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3297,8 +2353,7 @@ pub mod describe_opted_out_numbers_input {
         }
         /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum number of results to return per each request.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -3307,132 +2362,89 @@ pub mod describe_opted_out_numbers_input {
         }
         /// <p>The maximum number of results to return per each request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`DescribeOptedOutNumbersInput`](crate::input::DescribeOptedOutNumbersInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeOptedOutNumbersInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::DescribeOptedOutNumbersInput {
-                opt_out_list_name: self.opt_out_list_name,
-                opted_out_numbers: self.opted_out_numbers,
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeOptedOutNumbersInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DescribeOptedOutNumbersInput {
+                    opt_out_list_name: self.opt_out_list_name
+                    ,
+                    opted_out_numbers: self.opted_out_numbers
+                    ,
+                    filters: self.filters
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeOptedOutNumbersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeOptedOutNumbers`](crate::operation::DescribeOptedOutNumbers)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeOptedOutNumbers,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeOptedOutNumbers, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeOptedOutNumbersInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeOptedOutNumbersInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribeOptedOutNumbersInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DescribeOptedOutNumbersInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "PinpointSMSVoiceV2.DescribeOptedOutNumbers",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "PinpointSMSVoiceV2.DescribeOptedOutNumbers"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_opted_out_numbers(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_opted_out_numbers(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeOptedOutNumbers::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeOptedOutNumbers",
-            "pinpointsmsvoicev2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeOptedOutNumbers::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeOptedOutNumbers", "pinpointsmsvoicev2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3444,9 +2456,9 @@ impl DescribeOptedOutNumbersInput {
 
 /// See [`DescribeOptOutListsInput`](crate::input::DescribeOptOutListsInput).
 pub mod describe_opt_out_lists_input {
-
+    
     /// A builder for [`DescribeOptOutListsInput`](crate::input::DescribeOptOutListsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) opt_out_list_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3460,17 +2472,13 @@ pub mod describe_opt_out_lists_input {
         /// <p>The OptOutLists to show the details of. This is an array of strings that can be either the OptOutListName or OptOutListArn.</p>
         pub fn opt_out_list_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.opt_out_list_names.unwrap_or_default();
-            v.push(input.into());
-            self.opt_out_list_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.opt_out_list_names = Some(v);
+                            self
         }
         /// <p>The OptOutLists to show the details of. This is an array of strings that can be either the OptOutListName or OptOutListArn.</p>
-        pub fn set_opt_out_list_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.opt_out_list_names = input;
-            self
+        pub fn set_opt_out_list_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.opt_out_list_names = input; self
         }
         /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3479,8 +2487,7 @@ pub mod describe_opt_out_lists_input {
         }
         /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum number of results to return per each request.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -3489,128 +2496,85 @@ pub mod describe_opt_out_lists_input {
         }
         /// <p>The maximum number of results to return per each request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`DescribeOptOutListsInput`](crate::input::DescribeOptOutListsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DescribeOptOutListsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DescribeOptOutListsInput {
-                opt_out_list_names: self.opt_out_list_names,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeOptOutListsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DescribeOptOutListsInput {
+                    opt_out_list_names: self.opt_out_list_names
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeOptOutListsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeOptOutLists`](crate::operation::DescribeOptOutLists)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeOptOutLists,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeOptOutLists, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeOptOutListsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeOptOutListsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribeOptOutListsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DescribeOptOutListsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "PinpointSMSVoiceV2.DescribeOptOutLists",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "PinpointSMSVoiceV2.DescribeOptOutLists"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_opt_out_lists(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_opt_out_lists(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeOptOutLists::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeOptOutLists",
-            "pinpointsmsvoicev2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeOptOutLists::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeOptOutLists", "pinpointsmsvoicev2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3622,9 +2586,9 @@ impl DescribeOptOutListsInput {
 
 /// See [`DescribePhoneNumbersInput`](crate::input::DescribePhoneNumbersInput).
 pub mod describe_phone_numbers_input {
-
+    
     /// A builder for [`DescribePhoneNumbersInput`](crate::input::DescribePhoneNumbersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) phone_number_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::PhoneNumberFilter>>,
@@ -3639,17 +2603,13 @@ pub mod describe_phone_numbers_input {
         /// <p>The unique identifier of phone numbers to find information about. This is an array of strings that can be either the PhoneNumberId or PhoneNumberArn.</p>
         pub fn phone_number_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.phone_number_ids.unwrap_or_default();
-            v.push(input.into());
-            self.phone_number_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.phone_number_ids = Some(v);
+                            self
         }
         /// <p>The unique identifier of phone numbers to find information about. This is an array of strings that can be either the PhoneNumberId or PhoneNumberArn.</p>
-        pub fn set_phone_number_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.phone_number_ids = input;
-            self
+        pub fn set_phone_number_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.phone_number_ids = input; self
         }
         /// Appends an item to `filters`.
         ///
@@ -3658,17 +2618,13 @@ pub mod describe_phone_numbers_input {
         /// <p>An array of PhoneNumberFilter objects to filter the results.</p>
         pub fn filters(mut self, input: crate::model::PhoneNumberFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input);
-            self.filters = Some(v);
-            self
+                            v.push(input);
+                            self.filters = Some(v);
+                            self
         }
         /// <p>An array of PhoneNumberFilter objects to filter the results.</p>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PhoneNumberFilter>>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::PhoneNumberFilter>>) -> Self {
+            self.filters = input; self
         }
         /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3677,8 +2633,7 @@ pub mod describe_phone_numbers_input {
         }
         /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum number of results to return per each request.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -3687,129 +2642,87 @@ pub mod describe_phone_numbers_input {
         }
         /// <p>The maximum number of results to return per each request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`DescribePhoneNumbersInput`](crate::input::DescribePhoneNumbersInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DescribePhoneNumbersInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DescribePhoneNumbersInput {
-                phone_number_ids: self.phone_number_ids,
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            })
+        pub fn build(self) -> Result<crate::input::DescribePhoneNumbersInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DescribePhoneNumbersInput {
+                    phone_number_ids: self.phone_number_ids
+                    ,
+                    filters: self.filters
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribePhoneNumbersInput {
     /// Consumes the builder and constructs an Operation<[`DescribePhoneNumbers`](crate::operation::DescribePhoneNumbers)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribePhoneNumbers,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribePhoneNumbers, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribePhoneNumbersInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DescribePhoneNumbersInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribePhoneNumbersInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DescribePhoneNumbersInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "PinpointSMSVoiceV2.DescribePhoneNumbers",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "PinpointSMSVoiceV2.DescribePhoneNumbers"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_phone_numbers(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_phone_numbers(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribePhoneNumbers::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribePhoneNumbers",
-            "pinpointsmsvoicev2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribePhoneNumbers::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribePhoneNumbers", "pinpointsmsvoicev2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3821,9 +2734,9 @@ impl DescribePhoneNumbersInput {
 
 /// See [`DescribePoolsInput`](crate::input::DescribePoolsInput).
 pub mod describe_pools_input {
-
+    
     /// A builder for [`DescribePoolsInput`](crate::input::DescribePoolsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) pool_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::PoolFilter>>,
@@ -3838,17 +2751,13 @@ pub mod describe_pools_input {
         /// <p>The unique identifier of pools to find. This is an array of strings that can be either the PoolId or PoolArn.</p>
         pub fn pool_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.pool_ids.unwrap_or_default();
-            v.push(input.into());
-            self.pool_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.pool_ids = Some(v);
+                            self
         }
         /// <p>The unique identifier of pools to find. This is an array of strings that can be either the PoolId or PoolArn.</p>
-        pub fn set_pool_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.pool_ids = input;
-            self
+        pub fn set_pool_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.pool_ids = input; self
         }
         /// Appends an item to `filters`.
         ///
@@ -3857,17 +2766,13 @@ pub mod describe_pools_input {
         /// <p>An array of PoolFilter objects to filter the results.</p>
         pub fn filters(mut self, input: crate::model::PoolFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input);
-            self.filters = Some(v);
-            self
+                            v.push(input);
+                            self.filters = Some(v);
+                            self
         }
         /// <p>An array of PoolFilter objects to filter the results.</p>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PoolFilter>>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::PoolFilter>>) -> Self {
+            self.filters = input; self
         }
         /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3876,8 +2781,7 @@ pub mod describe_pools_input {
         }
         /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum number of results to return per each request.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -3886,127 +2790,87 @@ pub mod describe_pools_input {
         }
         /// <p>The maximum number of results to return per each request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`DescribePoolsInput`](crate::input::DescribePoolsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DescribePoolsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DescribePoolsInput {
-                pool_ids: self.pool_ids,
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            })
+        pub fn build(self) -> Result<crate::input::DescribePoolsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DescribePoolsInput {
+                    pool_ids: self.pool_ids
+                    ,
+                    filters: self.filters
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribePoolsInput {
     /// Consumes the builder and constructs an Operation<[`DescribePools`](crate::operation::DescribePools)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribePools,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribePools, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribePoolsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DescribePoolsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribePoolsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DescribePoolsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "PinpointSMSVoiceV2.DescribePools",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "PinpointSMSVoiceV2.DescribePools"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_pools(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_pools(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribePools::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribePools",
-            "pinpointsmsvoicev2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribePools::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribePools", "pinpointsmsvoicev2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4018,9 +2882,9 @@ impl DescribePoolsInput {
 
 /// See [`DescribeSenderIdsInput`](crate::input::DescribeSenderIdsInput).
 pub mod describe_sender_ids_input {
-
+    
     /// A builder for [`DescribeSenderIdsInput`](crate::input::DescribeSenderIdsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) sender_ids: std::option::Option<std::vec::Vec<crate::model::SenderIdAndCountry>>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::SenderIdFilter>>,
@@ -4035,17 +2899,13 @@ pub mod describe_sender_ids_input {
         /// <p>An array of SenderIdAndCountry objects to search for.</p>
         pub fn sender_ids(mut self, input: crate::model::SenderIdAndCountry) -> Self {
             let mut v = self.sender_ids.unwrap_or_default();
-            v.push(input);
-            self.sender_ids = Some(v);
-            self
+                            v.push(input);
+                            self.sender_ids = Some(v);
+                            self
         }
         /// <p>An array of SenderIdAndCountry objects to search for.</p>
-        pub fn set_sender_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SenderIdAndCountry>>,
-        ) -> Self {
-            self.sender_ids = input;
-            self
+        pub fn set_sender_ids(mut self, input: std::option::Option<std::vec::Vec<crate::model::SenderIdAndCountry>>) -> Self {
+            self.sender_ids = input; self
         }
         /// Appends an item to `filters`.
         ///
@@ -4054,17 +2914,13 @@ pub mod describe_sender_ids_input {
         /// <p>An array of SenderIdFilter objects to filter the results.</p>
         pub fn filters(mut self, input: crate::model::SenderIdFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input);
-            self.filters = Some(v);
-            self
+                            v.push(input);
+                            self.filters = Some(v);
+                            self
         }
         /// <p>An array of SenderIdFilter objects to filter the results.</p>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SenderIdFilter>>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::SenderIdFilter>>) -> Self {
+            self.filters = input; self
         }
         /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4073,8 +2929,7 @@ pub mod describe_sender_ids_input {
         }
         /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum number of results to return per each request.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -4083,127 +2938,87 @@ pub mod describe_sender_ids_input {
         }
         /// <p>The maximum number of results to return per each request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`DescribeSenderIdsInput`](crate::input::DescribeSenderIdsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DescribeSenderIdsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DescribeSenderIdsInput {
-                sender_ids: self.sender_ids,
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeSenderIdsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DescribeSenderIdsInput {
+                    sender_ids: self.sender_ids
+                    ,
+                    filters: self.filters
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeSenderIdsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSenderIds`](crate::operation::DescribeSenderIds)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeSenderIds,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeSenderIds, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeSenderIdsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeSenderIdsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribeSenderIdsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DescribeSenderIdsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "PinpointSMSVoiceV2.DescribeSenderIds",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "PinpointSMSVoiceV2.DescribeSenderIds"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_sender_ids(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_sender_ids(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeSenderIds::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeSenderIds",
-            "pinpointsmsvoicev2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeSenderIds::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeSenderIds", "pinpointsmsvoicev2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4215,9 +3030,9 @@ impl DescribeSenderIdsInput {
 
 /// See [`DescribeSpendLimitsInput`](crate::input::DescribeSpendLimitsInput).
 pub mod describe_spend_limits_input {
-
+    
     /// A builder for [`DescribeSpendLimitsInput`](crate::input::DescribeSpendLimitsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -4230,8 +3045,7 @@ pub mod describe_spend_limits_input {
         }
         /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum number of results to return per each request.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -4240,125 +3054,83 @@ pub mod describe_spend_limits_input {
         }
         /// <p>The maximum number of results to return per each request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`DescribeSpendLimitsInput`](crate::input::DescribeSpendLimitsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DescribeSpendLimitsInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DescribeSpendLimitsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeSpendLimitsInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DescribeSpendLimitsInput {
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeSpendLimitsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSpendLimits`](crate::operation::DescribeSpendLimits)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeSpendLimits,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeSpendLimits, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeSpendLimitsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeSpendLimitsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribeSpendLimitsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DescribeSpendLimitsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "PinpointSMSVoiceV2.DescribeSpendLimits",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "PinpointSMSVoiceV2.DescribeSpendLimits"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_spend_limits(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_spend_limits(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeSpendLimits::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeSpendLimits",
-            "pinpointsmsvoicev2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeSpendLimits::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeSpendLimits", "pinpointsmsvoicev2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4370,9 +3142,9 @@ impl DescribeSpendLimitsInput {
 
 /// See [`DisassociateOriginationIdentityInput`](crate::input::DisassociateOriginationIdentityInput).
 pub mod disassociate_origination_identity_input {
-
+    
     /// A builder for [`DisassociateOriginationIdentityInput`](crate::input::DisassociateOriginationIdentityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) pool_id: std::option::Option<std::string::String>,
         pub(crate) origination_identity: std::option::Option<std::string::String>,
@@ -4387,8 +3159,7 @@ pub mod disassociate_origination_identity_input {
         }
         /// <p>The unique identifier for the pool to disassociate with the origination identity. This value can be either the PoolId or PoolArn.</p>
         pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pool_id = input;
-            self
+            self.pool_id = input; self
         }
         /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> find the values for PhoneNumberId and PhoneNumberArn, or use <code>DescribeSenderIds</code> to get the values for SenderId and SenderIdArn.</p>
         pub fn origination_identity(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4396,12 +3167,8 @@ pub mod disassociate_origination_identity_input {
             self
         }
         /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> find the values for PhoneNumberId and PhoneNumberArn, or use <code>DescribeSenderIds</code> to get the values for SenderId and SenderIdArn.</p>
-        pub fn set_origination_identity(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.origination_identity = input;
-            self
+        pub fn set_origination_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.origination_identity = input; self
         }
         /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
         pub fn iso_country_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4409,12 +3176,8 @@ pub mod disassociate_origination_identity_input {
             self
         }
         /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-        pub fn set_iso_country_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.iso_country_code = input;
-            self
+        pub fn set_iso_country_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.iso_country_code = input; self
         }
         /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4423,72 +3186,53 @@ pub mod disassociate_origination_identity_input {
         }
         /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// Consumes the builder and constructs a [`DisassociateOriginationIdentityInput`](crate::input::DisassociateOriginationIdentityInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DisassociateOriginationIdentityInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::DisassociateOriginationIdentityInput {
-                pool_id: self.pool_id,
-                origination_identity: self.origination_identity,
-                iso_country_code: self.iso_country_code,
-                client_token: self.client_token,
-            })
+        pub fn build(self) -> Result<crate::input::DisassociateOriginationIdentityInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DisassociateOriginationIdentityInput {
+                    pool_id: self.pool_id
+                    ,
+                    origination_identity: self.origination_identity
+                    ,
+                    iso_country_code: self.iso_country_code
+                    ,
+                    client_token: self.client_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DisassociateOriginationIdentityInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateOriginationIdentity`](crate::operation::DisassociateOriginationIdentity)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        mut self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DisassociateOriginationIdentity,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DisassociateOriginationIdentity, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         if self.client_token.is_none() {
-            self.client_token = Some(_config.make_token.make_idempotency_token());
-        }
+                                self.client_token = Some(_config.make_token.make_idempotency_token());
+                            }
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DisassociateOriginationIdentityInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DisassociateOriginationIdentityInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DisassociateOriginationIdentityInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DisassociateOriginationIdentityInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "PinpointSMSVoiceV2.DisassociateOriginationIdentity",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "PinpointSMSVoiceV2.DisassociateOriginationIdentity"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -4496,58 +3240,36 @@ impl DisassociateOriginationIdentityInput {
             crate::operation_ser::serialize_operation_crate_operation_disassociate_origination_identity(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DisassociateOriginationIdentity::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DisassociateOriginationIdentity",
-            "pinpointsmsvoicev2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DisassociateOriginationIdentity::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DisassociateOriginationIdentity", "pinpointsmsvoicev2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4559,13 +3281,12 @@ impl DisassociateOriginationIdentityInput {
 
 /// See [`ListPoolOriginationIdentitiesInput`](crate::input::ListPoolOriginationIdentitiesInput).
 pub mod list_pool_origination_identities_input {
-
+    
     /// A builder for [`ListPoolOriginationIdentitiesInput`](crate::input::ListPoolOriginationIdentitiesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) pool_id: std::option::Option<std::string::String>,
-        pub(crate) filters:
-            std::option::Option<std::vec::Vec<crate::model::PoolOriginationIdentitiesFilter>>,
+        pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::PoolOriginationIdentitiesFilter>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
     }
@@ -4577,8 +3298,7 @@ pub mod list_pool_origination_identities_input {
         }
         /// <p>The unique identifier for the pool. This value can be either the PoolId or PoolArn.</p>
         pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pool_id = input;
-            self
+            self.pool_id = input; self
         }
         /// Appends an item to `filters`.
         ///
@@ -4587,19 +3307,13 @@ pub mod list_pool_origination_identities_input {
         /// <p>An array of PoolOriginationIdentitiesFilter objects to filter the results..</p>
         pub fn filters(mut self, input: crate::model::PoolOriginationIdentitiesFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input);
-            self.filters = Some(v);
-            self
+                            v.push(input);
+                            self.filters = Some(v);
+                            self
         }
         /// <p>An array of PoolOriginationIdentitiesFilter objects to filter the results..</p>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::PoolOriginationIdentitiesFilter>,
-            >,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::PoolOriginationIdentitiesFilter>>) -> Self {
+            self.filters = input; self
         }
         /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4608,8 +3322,7 @@ pub mod list_pool_origination_identities_input {
         }
         /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum number of results to return per each request.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -4618,69 +3331,50 @@ pub mod list_pool_origination_identities_input {
         }
         /// <p>The maximum number of results to return per each request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`ListPoolOriginationIdentitiesInput`](crate::input::ListPoolOriginationIdentitiesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListPoolOriginationIdentitiesInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::ListPoolOriginationIdentitiesInput {
-                pool_id: self.pool_id,
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            })
+        pub fn build(self) -> Result<crate::input::ListPoolOriginationIdentitiesInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListPoolOriginationIdentitiesInput {
+                    pool_id: self.pool_id
+                    ,
+                    filters: self.filters
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListPoolOriginationIdentitiesInput {
     /// Consumes the builder and constructs an Operation<[`ListPoolOriginationIdentities`](crate::operation::ListPoolOriginationIdentities)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListPoolOriginationIdentities,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListPoolOriginationIdentities, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListPoolOriginationIdentitiesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListPoolOriginationIdentitiesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListPoolOriginationIdentitiesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListPoolOriginationIdentitiesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "PinpointSMSVoiceV2.ListPoolOriginationIdentities",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "PinpointSMSVoiceV2.ListPoolOriginationIdentities"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -4688,58 +3382,36 @@ impl ListPoolOriginationIdentitiesInput {
             crate::operation_ser::serialize_operation_crate_operation_list_pool_origination_identities(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListPoolOriginationIdentities::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListPoolOriginationIdentities",
-            "pinpointsmsvoicev2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListPoolOriginationIdentities::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListPoolOriginationIdentities", "pinpointsmsvoicev2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4751,9 +3423,9 @@ impl ListPoolOriginationIdentitiesInput {
 
 /// See [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
 pub mod list_tags_for_resource_input {
-
+    
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -4765,126 +3437,81 @@ pub mod list_tags_for_resource_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to query for.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::ListTagsForResourceInput {
-                resource_arn: self.resource_arn,
-            })
+        pub fn build(self) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListTagsForResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListTagsForResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListTagsForResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListTagsForResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListTagsForResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListTagsForResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "PinpointSMSVoiceV2.ListTagsForResource",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "PinpointSMSVoiceV2.ListTagsForResource"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListTagsForResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListTagsForResource",
-            "pinpointsmsvoicev2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListTagsForResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListTagsForResource", "pinpointsmsvoicev2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4896,9 +3523,9 @@ impl ListTagsForResourceInput {
 
 /// See [`PutKeywordInput`](crate::input::PutKeywordInput).
 pub mod put_keyword_input {
-
+    
     /// A builder for [`PutKeywordInput`](crate::input::PutKeywordInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) origination_identity: std::option::Option<std::string::String>,
         pub(crate) keyword: std::option::Option<std::string::String>,
@@ -4912,12 +3539,8 @@ pub mod put_keyword_input {
             self
         }
         /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> get the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
-        pub fn set_origination_identity(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.origination_identity = input;
-            self
+        pub fn set_origination_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.origination_identity = input; self
         }
         /// <p>The new keyword to add.</p>
         pub fn keyword(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4926,31 +3549,26 @@ pub mod put_keyword_input {
         }
         /// <p>The new keyword to add.</p>
         pub fn set_keyword(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.keyword = input;
-            self
+            self.keyword = input; self
         }
-        /// <p>The message associated with the keyword.</p>
-        /// <ul>
-        /// <li> <p>AUTOMATIC_RESPONSE: A message is sent to the recipient.</p> </li>
-        /// <li> <p>OPT_OUT: Keeps the recipient from receiving future messages.</p> </li>
-        /// <li> <p>OPT_IN: The recipient wants to receive future messages.</p> </li>
+        /// <p>The message associated with the keyword.</p> 
+        /// <ul> 
+        /// <li> <p>AUTOMATIC_RESPONSE: A message is sent to the recipient.</p> </li> 
+        /// <li> <p>OPT_OUT: Keeps the recipient from receiving future messages.</p> </li> 
+        /// <li> <p>OPT_IN: The recipient wants to receive future messages.</p> </li> 
         /// </ul>
         pub fn keyword_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.keyword_message = Some(input.into());
             self
         }
-        /// <p>The message associated with the keyword.</p>
-        /// <ul>
-        /// <li> <p>AUTOMATIC_RESPONSE: A message is sent to the recipient.</p> </li>
-        /// <li> <p>OPT_OUT: Keeps the recipient from receiving future messages.</p> </li>
-        /// <li> <p>OPT_IN: The recipient wants to receive future messages.</p> </li>
+        /// <p>The message associated with the keyword.</p> 
+        /// <ul> 
+        /// <li> <p>AUTOMATIC_RESPONSE: A message is sent to the recipient.</p> </li> 
+        /// <li> <p>OPT_OUT: Keeps the recipient from receiving future messages.</p> </li> 
+        /// <li> <p>OPT_IN: The recipient wants to receive future messages.</p> </li> 
         /// </ul>
-        pub fn set_keyword_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.keyword_message = input;
-            self
+        pub fn set_keyword_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.keyword_message = input; self
         }
         /// <p>The action to perform for the new keyword when it is received.</p>
         pub fn keyword_action(mut self, input: crate::model::KeywordAction) -> Self {
@@ -4958,130 +3576,88 @@ pub mod put_keyword_input {
             self
         }
         /// <p>The action to perform for the new keyword when it is received.</p>
-        pub fn set_keyword_action(
-            mut self,
-            input: std::option::Option<crate::model::KeywordAction>,
-        ) -> Self {
-            self.keyword_action = input;
-            self
+        pub fn set_keyword_action(mut self, input: std::option::Option<crate::model::KeywordAction>) -> Self {
+            self.keyword_action = input; self
         }
         /// Consumes the builder and constructs a [`PutKeywordInput`](crate::input::PutKeywordInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::PutKeywordInput, aws_smithy_http::operation::BuildError> {
-            Ok(crate::input::PutKeywordInput {
-                origination_identity: self.origination_identity,
-                keyword: self.keyword,
-                keyword_message: self.keyword_message,
-                keyword_action: self.keyword_action,
-            })
+        pub fn build(self) -> Result<crate::input::PutKeywordInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::PutKeywordInput {
+                    origination_identity: self.origination_identity
+                    ,
+                    keyword: self.keyword
+                    ,
+                    keyword_message: self.keyword_message
+                    ,
+                    keyword_action: self.keyword_action
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl PutKeywordInput {
     /// Consumes the builder and constructs an Operation<[`PutKeyword`](crate::operation::PutKeyword)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::PutKeyword,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PutKeyword, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::PutKeywordInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::PutKeywordInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::PutKeywordInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::PutKeywordInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "PinpointSMSVoiceV2.PutKeyword",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "PinpointSMSVoiceV2.PutKeyword"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_keyword(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_put_keyword(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::PutKeyword::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "PutKeyword",
-            "pinpointsmsvoicev2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PutKeyword::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("PutKeyword", "pinpointsmsvoicev2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5093,9 +3669,9 @@ impl PutKeywordInput {
 
 /// See [`PutOptedOutNumberInput`](crate::input::PutOptedOutNumberInput).
 pub mod put_opted_out_number_input {
-
+    
     /// A builder for [`PutOptedOutNumberInput`](crate::input::PutOptedOutNumberInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) opt_out_list_name: std::option::Option<std::string::String>,
         pub(crate) opted_out_number: std::option::Option<std::string::String>,
@@ -5107,12 +3683,8 @@ pub mod put_opted_out_number_input {
             self
         }
         /// <p>The OptOutListName or OptOutListArn to add the phone number to.</p>
-        pub fn set_opt_out_list_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.opt_out_list_name = input;
-            self
+        pub fn set_opt_out_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.opt_out_list_name = input; self
         }
         /// <p>The phone number to add to the OptOutList in E.164 format.</p>
         pub fn opted_out_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5120,129 +3692,84 @@ pub mod put_opted_out_number_input {
             self
         }
         /// <p>The phone number to add to the OptOutList in E.164 format.</p>
-        pub fn set_opted_out_number(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.opted_out_number = input;
-            self
+        pub fn set_opted_out_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.opted_out_number = input; self
         }
         /// Consumes the builder and constructs a [`PutOptedOutNumberInput`](crate::input::PutOptedOutNumberInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::PutOptedOutNumberInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::PutOptedOutNumberInput {
-                opt_out_list_name: self.opt_out_list_name,
-                opted_out_number: self.opted_out_number,
-            })
+        pub fn build(self) -> Result<crate::input::PutOptedOutNumberInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::PutOptedOutNumberInput {
+                    opt_out_list_name: self.opt_out_list_name
+                    ,
+                    opted_out_number: self.opted_out_number
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl PutOptedOutNumberInput {
     /// Consumes the builder and constructs an Operation<[`PutOptedOutNumber`](crate::operation::PutOptedOutNumber)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::PutOptedOutNumber,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PutOptedOutNumber, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::PutOptedOutNumberInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::PutOptedOutNumberInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::PutOptedOutNumberInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::PutOptedOutNumberInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "PinpointSMSVoiceV2.PutOptedOutNumber",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "PinpointSMSVoiceV2.PutOptedOutNumber"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_opted_out_number(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_put_opted_out_number(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::PutOptedOutNumber::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "PutOptedOutNumber",
-            "pinpointsmsvoicev2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PutOptedOutNumber::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("PutOptedOutNumber", "pinpointsmsvoicev2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5254,9 +3781,9 @@ impl PutOptedOutNumberInput {
 
 /// See [`ReleasePhoneNumberInput`](crate::input::ReleasePhoneNumberInput).
 pub mod release_phone_number_input {
-
+    
     /// A builder for [`ReleasePhoneNumberInput`](crate::input::ReleasePhoneNumberInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) phone_number_id: std::option::Option<std::string::String>,
     }
@@ -5267,128 +3794,82 @@ pub mod release_phone_number_input {
             self
         }
         /// <p>The PhoneNumberId or PhoneNumberArn of the phone number to release. You can use <code>DescribePhoneNumbers</code> to get the values for PhoneNumberId and PhoneNumberArn.</p>
-        pub fn set_phone_number_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.phone_number_id = input;
-            self
+        pub fn set_phone_number_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.phone_number_id = input; self
         }
         /// Consumes the builder and constructs a [`ReleasePhoneNumberInput`](crate::input::ReleasePhoneNumberInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ReleasePhoneNumberInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::ReleasePhoneNumberInput {
-                phone_number_id: self.phone_number_id,
-            })
+        pub fn build(self) -> Result<crate::input::ReleasePhoneNumberInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ReleasePhoneNumberInput {
+                    phone_number_id: self.phone_number_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ReleasePhoneNumberInput {
     /// Consumes the builder and constructs an Operation<[`ReleasePhoneNumber`](crate::operation::ReleasePhoneNumber)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ReleasePhoneNumber,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ReleasePhoneNumber, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ReleasePhoneNumberInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ReleasePhoneNumberInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ReleasePhoneNumberInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ReleasePhoneNumberInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "PinpointSMSVoiceV2.ReleasePhoneNumber",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "PinpointSMSVoiceV2.ReleasePhoneNumber"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_release_phone_number(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_release_phone_number(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ReleasePhoneNumber::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ReleasePhoneNumber",
-            "pinpointsmsvoicev2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ReleasePhoneNumber::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ReleasePhoneNumber", "pinpointsmsvoicev2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5400,14 +3881,13 @@ impl ReleasePhoneNumberInput {
 
 /// See [`RequestPhoneNumberInput`](crate::input::RequestPhoneNumberInput).
 pub mod request_phone_number_input {
-
+    
     /// A builder for [`RequestPhoneNumberInput`](crate::input::RequestPhoneNumberInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) iso_country_code: std::option::Option<std::string::String>,
         pub(crate) message_type: std::option::Option<crate::model::MessageType>,
-        pub(crate) number_capabilities:
-            std::option::Option<std::vec::Vec<crate::model::NumberCapability>>,
+        pub(crate) number_capabilities: std::option::Option<std::vec::Vec<crate::model::NumberCapability>>,
         pub(crate) number_type: std::option::Option<crate::model::RequestableNumberType>,
         pub(crate) opt_out_list_name: std::option::Option<std::string::String>,
         pub(crate) pool_id: std::option::Option<std::string::String>,
@@ -5423,12 +3903,8 @@ pub mod request_phone_number_input {
             self
         }
         /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-        pub fn set_iso_country_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.iso_country_code = input;
-            self
+        pub fn set_iso_country_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.iso_country_code = input; self
         }
         /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
         pub fn message_type(mut self, input: crate::model::MessageType) -> Self {
@@ -5436,12 +3912,8 @@ pub mod request_phone_number_input {
             self
         }
         /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-        pub fn set_message_type(
-            mut self,
-            input: std::option::Option<crate::model::MessageType>,
-        ) -> Self {
-            self.message_type = input;
-            self
+        pub fn set_message_type(mut self, input: std::option::Option<crate::model::MessageType>) -> Self {
+            self.message_type = input; self
         }
         /// Appends an item to `number_capabilities`.
         ///
@@ -5450,17 +3922,13 @@ pub mod request_phone_number_input {
         /// <p>Indicates if the phone number will be used for text messages, voice messages, or both. </p>
         pub fn number_capabilities(mut self, input: crate::model::NumberCapability) -> Self {
             let mut v = self.number_capabilities.unwrap_or_default();
-            v.push(input);
-            self.number_capabilities = Some(v);
-            self
+                            v.push(input);
+                            self.number_capabilities = Some(v);
+                            self
         }
         /// <p>Indicates if the phone number will be used for text messages, voice messages, or both. </p>
-        pub fn set_number_capabilities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::NumberCapability>>,
-        ) -> Self {
-            self.number_capabilities = input;
-            self
+        pub fn set_number_capabilities(mut self, input: std::option::Option<std::vec::Vec<crate::model::NumberCapability>>) -> Self {
+            self.number_capabilities = input; self
         }
         /// <p>The type of phone number to request.</p>
         pub fn number_type(mut self, input: crate::model::RequestableNumberType) -> Self {
@@ -5468,12 +3936,8 @@ pub mod request_phone_number_input {
             self
         }
         /// <p>The type of phone number to request.</p>
-        pub fn set_number_type(
-            mut self,
-            input: std::option::Option<crate::model::RequestableNumberType>,
-        ) -> Self {
-            self.number_type = input;
-            self
+        pub fn set_number_type(mut self, input: std::option::Option<crate::model::RequestableNumberType>) -> Self {
+            self.number_type = input; self
         }
         /// <p>The name of the OptOutList to associate with the phone number. You can use the OutOutListName or OptPutListArn.</p>
         pub fn opt_out_list_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5481,12 +3945,8 @@ pub mod request_phone_number_input {
             self
         }
         /// <p>The name of the OptOutList to associate with the phone number. You can use the OutOutListName or OptPutListArn.</p>
-        pub fn set_opt_out_list_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.opt_out_list_name = input;
-            self
+        pub fn set_opt_out_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.opt_out_list_name = input; self
         }
         /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn. </p>
         pub fn pool_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5495,8 +3955,7 @@ pub mod request_phone_number_input {
         }
         /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn. </p>
         pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pool_id = input;
-            self
+            self.pool_id = input; self
         }
         /// <p>Use this field to attach your phone number for an external registration process.</p>
         pub fn registration_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5504,12 +3963,8 @@ pub mod request_phone_number_input {
             self
         }
         /// <p>Use this field to attach your phone number for an external registration process.</p>
-        pub fn set_registration_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.registration_id = input;
-            self
+        pub fn set_registration_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.registration_id = input; self
         }
         /// <p>By default this is set to false. When set to true the phone number can't be deleted.</p>
         pub fn deletion_protection_enabled(mut self, input: bool) -> Self {
@@ -5518,8 +3973,7 @@ pub mod request_phone_number_input {
         }
         /// <p>By default this is set to false. When set to true the phone number can't be deleted.</p>
         pub fn set_deletion_protection_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.deletion_protection_enabled = input;
-            self
+            self.deletion_protection_enabled = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -5528,17 +3982,13 @@ pub mod request_phone_number_input {
         /// <p>An array of tags (key and value pairs) associate with the requested phone number. </p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>An array of tags (key and value pairs) associate with the requested phone number. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5547,136 +3997,102 @@ pub mod request_phone_number_input {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// Consumes the builder and constructs a [`RequestPhoneNumberInput`](crate::input::RequestPhoneNumberInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::RequestPhoneNumberInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::RequestPhoneNumberInput {
-                iso_country_code: self.iso_country_code,
-                message_type: self.message_type,
-                number_capabilities: self.number_capabilities,
-                number_type: self.number_type,
-                opt_out_list_name: self.opt_out_list_name,
-                pool_id: self.pool_id,
-                registration_id: self.registration_id,
-                deletion_protection_enabled: self.deletion_protection_enabled,
-                tags: self.tags,
-                client_token: self.client_token,
-            })
+        pub fn build(self) -> Result<crate::input::RequestPhoneNumberInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::RequestPhoneNumberInput {
+                    iso_country_code: self.iso_country_code
+                    ,
+                    message_type: self.message_type
+                    ,
+                    number_capabilities: self.number_capabilities
+                    ,
+                    number_type: self.number_type
+                    ,
+                    opt_out_list_name: self.opt_out_list_name
+                    ,
+                    pool_id: self.pool_id
+                    ,
+                    registration_id: self.registration_id
+                    ,
+                    deletion_protection_enabled: self.deletion_protection_enabled
+                    ,
+                    tags: self.tags
+                    ,
+                    client_token: self.client_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl RequestPhoneNumberInput {
     /// Consumes the builder and constructs an Operation<[`RequestPhoneNumber`](crate::operation::RequestPhoneNumber)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        mut self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::RequestPhoneNumber,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::RequestPhoneNumber, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         if self.client_token.is_none() {
-            self.client_token = Some(_config.make_token.make_idempotency_token());
-        }
+                                self.client_token = Some(_config.make_token.make_idempotency_token());
+                            }
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::RequestPhoneNumberInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::RequestPhoneNumberInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::RequestPhoneNumberInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::RequestPhoneNumberInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "PinpointSMSVoiceV2.RequestPhoneNumber",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "PinpointSMSVoiceV2.RequestPhoneNumber"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_request_phone_number(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_request_phone_number(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::RequestPhoneNumber::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "RequestPhoneNumber",
-            "pinpointsmsvoicev2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::RequestPhoneNumber::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("RequestPhoneNumber", "pinpointsmsvoicev2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5688,9 +4104,9 @@ impl RequestPhoneNumberInput {
 
 /// See [`SendTextMessageInput`](crate::input::SendTextMessageInput).
 pub mod send_text_message_input {
-
+    
     /// A builder for [`SendTextMessageInput`](crate::input::SendTextMessageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) destination_phone_number: std::option::Option<std::string::String>,
         pub(crate) origination_identity: std::option::Option<std::string::String>,
@@ -5700,15 +4116,8 @@ pub mod send_text_message_input {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
         pub(crate) max_price: std::option::Option<std::string::String>,
         pub(crate) time_to_live: std::option::Option<i32>,
-        pub(crate) context: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) destination_country_parameters: std::option::Option<
-            std::collections::HashMap<
-                crate::model::DestinationCountryParameterKey,
-                std::string::String,
-            >,
-        >,
+        pub(crate) context: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) destination_country_parameters: std::option::Option<std::collections::HashMap<crate::model::DestinationCountryParameterKey, std::string::String>>,
         pub(crate) dry_run: std::option::Option<bool>,
     }
     impl Builder {
@@ -5718,12 +4127,8 @@ pub mod send_text_message_input {
             self
         }
         /// <p>The destination phone number in E.164 format.</p>
-        pub fn set_destination_phone_number(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.destination_phone_number = input;
-            self
+        pub fn set_destination_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.destination_phone_number = input; self
         }
         /// <p>The origination identity of the message. This can be either the PhoneNumber, PhoneNumberId, PhoneNumberArn, SenderId, SenderIdArn, PoolId, or PoolArn.</p>
         pub fn origination_identity(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5731,12 +4136,8 @@ pub mod send_text_message_input {
             self
         }
         /// <p>The origination identity of the message. This can be either the PhoneNumber, PhoneNumberId, PhoneNumberArn, SenderId, SenderIdArn, PoolId, or PoolArn.</p>
-        pub fn set_origination_identity(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.origination_identity = input;
-            self
+        pub fn set_origination_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.origination_identity = input; self
         }
         /// <p>The body of the text message.</p>
         pub fn message_body(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5745,8 +4146,7 @@ pub mod send_text_message_input {
         }
         /// <p>The body of the text message.</p>
         pub fn set_message_body(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message_body = input;
-            self
+            self.message_body = input; self
         }
         /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
         pub fn message_type(mut self, input: crate::model::MessageType) -> Self {
@@ -5754,12 +4154,8 @@ pub mod send_text_message_input {
             self
         }
         /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-        pub fn set_message_type(
-            mut self,
-            input: std::option::Option<crate::model::MessageType>,
-        ) -> Self {
-            self.message_type = input;
-            self
+        pub fn set_message_type(mut self, input: std::option::Option<crate::model::MessageType>) -> Self {
+            self.message_type = input; self
         }
         /// <p>When you register a short code in the US, you must specify a program name. If you don’t have a US short code, omit this attribute.</p>
         pub fn keyword(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5768,8 +4164,7 @@ pub mod send_text_message_input {
         }
         /// <p>When you register a short code in the US, you must specify a program name. If you don’t have a US short code, omit this attribute.</p>
         pub fn set_keyword(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.keyword = input;
-            self
+            self.keyword = input; self
         }
         /// <p>The name of the configuration set to use. This can be either the ConfigurationSetName or ConfigurationSetArn.</p>
         pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5777,12 +4172,8 @@ pub mod send_text_message_input {
             self
         }
         /// <p>The name of the configuration set to use. This can be either the ConfigurationSetName or ConfigurationSetArn.</p>
-        pub fn set_configuration_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_name = input;
-            self
+        pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_name = input; self
         }
         /// <p>The maximum amount that you want to spend, in US dollars, per each text message part. A text message can contain multiple parts.</p>
         pub fn max_price(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5791,8 +4182,7 @@ pub mod send_text_message_input {
         }
         /// <p>The maximum amount that you want to spend, in US dollars, per each text message part. A text message can contain multiple parts.</p>
         pub fn set_max_price(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.max_price = input;
-            self
+            self.max_price = input; self
         }
         /// <p>How long the text message is valid for. By default this is 72 hours.</p>
         pub fn time_to_live(mut self, input: i32) -> Self {
@@ -5801,61 +4191,37 @@ pub mod send_text_message_input {
         }
         /// <p>How long the text message is valid for. By default this is 72 hours.</p>
         pub fn set_time_to_live(mut self, input: std::option::Option<i32>) -> Self {
-            self.time_to_live = input;
-            self
+            self.time_to_live = input; self
         }
         /// Adds a key-value pair to `context`.
         ///
         /// To override the contents of this collection use [`set_context`](Self::set_context).
         ///
         /// <p>You can specify custom data in this field. If you do, that data is logged to the event destination.</p>
-        pub fn context(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn context(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.context.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.context = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.context = Some(hash_map);
+                            self
         }
         /// <p>You can specify custom data in this field. If you do, that data is logged to the event destination.</p>
-        pub fn set_context(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.context = input;
-            self
+        pub fn set_context(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.context = input; self
         }
         /// Adds a key-value pair to `destination_country_parameters`.
         ///
         /// To override the contents of this collection use [`set_destination_country_parameters`](Self::set_destination_country_parameters).
         ///
         /// <p>This field is used for any country-specific registration requirements. Currently, this setting is only used when you send messages to recipients in India using a sender ID. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-senderid-india.html">Special requirements for sending SMS messages to recipients in India</a>. </p>
-        pub fn destination_country_parameters(
-            mut self,
-            k: crate::model::DestinationCountryParameterKey,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn destination_country_parameters(mut self, k: crate::model::DestinationCountryParameterKey, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.destination_country_parameters.unwrap_or_default();
-            hash_map.insert(k, v.into());
-            self.destination_country_parameters = Some(hash_map);
-            self
+                            hash_map.insert(k, v.into());
+                            self.destination_country_parameters = Some(hash_map);
+                            self
         }
         /// <p>This field is used for any country-specific registration requirements. Currently, this setting is only used when you send messages to recipients in India using a sender ID. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-senderid-india.html">Special requirements for sending SMS messages to recipients in India</a>. </p>
-        pub fn set_destination_country_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    crate::model::DestinationCountryParameterKey,
-                    std::string::String,
-                >,
-            >,
-        ) -> Self {
-            self.destination_country_parameters = input;
-            self
+        pub fn set_destination_country_parameters(mut self, input: std::option::Option<std::collections::HashMap<crate::model::DestinationCountryParameterKey, std::string::String>>) -> Self {
+            self.destination_country_parameters = input; self
         }
         /// <p>When set to true, the message is checked and validated, but isn't sent to the end recipient.</p>
         pub fn dry_run(mut self, input: bool) -> Self {
@@ -5864,134 +4230,102 @@ pub mod send_text_message_input {
         }
         /// <p>When set to true, the message is checked and validated, but isn't sent to the end recipient.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-            self.dry_run = input;
-            self
+            self.dry_run = input; self
         }
         /// Consumes the builder and constructs a [`SendTextMessageInput`](crate::input::SendTextMessageInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::SendTextMessageInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::SendTextMessageInput {
-                destination_phone_number: self.destination_phone_number,
-                origination_identity: self.origination_identity,
-                message_body: self.message_body,
-                message_type: self.message_type,
-                keyword: self.keyword,
-                configuration_set_name: self.configuration_set_name,
-                max_price: self.max_price,
-                time_to_live: self.time_to_live,
-                context: self.context,
-                destination_country_parameters: self.destination_country_parameters,
-                dry_run: self.dry_run.unwrap_or_default(),
-            })
+        pub fn build(self) -> Result<crate::input::SendTextMessageInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::SendTextMessageInput {
+                    destination_phone_number: self.destination_phone_number
+                    ,
+                    origination_identity: self.origination_identity
+                    ,
+                    message_body: self.message_body
+                    ,
+                    message_type: self.message_type
+                    ,
+                    keyword: self.keyword
+                    ,
+                    configuration_set_name: self.configuration_set_name
+                    ,
+                    max_price: self.max_price
+                    ,
+                    time_to_live: self.time_to_live
+                    ,
+                    context: self.context
+                    ,
+                    destination_country_parameters: self.destination_country_parameters
+                    ,
+                    dry_run: self.dry_run
+                        .unwrap_or_default()
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl SendTextMessageInput {
     /// Consumes the builder and constructs an Operation<[`SendTextMessage`](crate::operation::SendTextMessage)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::SendTextMessage,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::SendTextMessage, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::SendTextMessageInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::SendTextMessageInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::SendTextMessageInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::SendTextMessageInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "PinpointSMSVoiceV2.SendTextMessage",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "PinpointSMSVoiceV2.SendTextMessage"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_send_text_message(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_send_text_message(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::SendTextMessage::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "SendTextMessage",
-            "pinpointsmsvoicev2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::SendTextMessage::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("SendTextMessage", "pinpointsmsvoicev2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6003,22 +4337,19 @@ impl SendTextMessageInput {
 
 /// See [`SendVoiceMessageInput`](crate::input::SendVoiceMessageInput).
 pub mod send_voice_message_input {
-
+    
     /// A builder for [`SendVoiceMessageInput`](crate::input::SendVoiceMessageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) destination_phone_number: std::option::Option<std::string::String>,
         pub(crate) origination_identity: std::option::Option<std::string::String>,
         pub(crate) message_body: std::option::Option<std::string::String>,
-        pub(crate) message_body_text_type:
-            std::option::Option<crate::model::VoiceMessageBodyTextType>,
+        pub(crate) message_body_text_type: std::option::Option<crate::model::VoiceMessageBodyTextType>,
         pub(crate) voice_id: std::option::Option<crate::model::VoiceId>,
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
         pub(crate) max_price_per_minute: std::option::Option<std::string::String>,
         pub(crate) time_to_live: std::option::Option<i32>,
-        pub(crate) context: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) context: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) dry_run: std::option::Option<bool>,
     }
     impl Builder {
@@ -6028,12 +4359,8 @@ pub mod send_voice_message_input {
             self
         }
         /// <p>The destination phone number in E.164 format.</p>
-        pub fn set_destination_phone_number(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.destination_phone_number = input;
-            self
+        pub fn set_destination_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.destination_phone_number = input; self
         }
         /// <p>The origination identity to use for the voice call. This can be the PhoneNumber, PhoneNumberId, PhoneNumberArn, PoolId, or PoolArn.</p>
         pub fn origination_identity(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6041,12 +4368,8 @@ pub mod send_voice_message_input {
             self
         }
         /// <p>The origination identity to use for the voice call. This can be the PhoneNumber, PhoneNumberId, PhoneNumberArn, PoolId, or PoolArn.</p>
-        pub fn set_origination_identity(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.origination_identity = input;
-            self
+        pub fn set_origination_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.origination_identity = input; self
         }
         /// <p>The text to convert to a voice message.</p>
         pub fn message_body(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6055,32 +4378,24 @@ pub mod send_voice_message_input {
         }
         /// <p>The text to convert to a voice message.</p>
         pub fn set_message_body(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message_body = input;
-            self
+            self.message_body = input; self
         }
-        /// <p>Specifies if the MessageBody field contains text or <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">speech synthesis markup language (SSML)</a>.</p>
-        /// <ul>
-        /// <li> <p>TEXT: This is the default value. When used the maximum character limit is 3000.</p> </li>
-        /// <li> <p>SSML: When used the maximum character limit is 6000 including SSML tagging.</p> </li>
+        /// <p>Specifies if the MessageBody field contains text or <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">speech synthesis markup language (SSML)</a>.</p> 
+        /// <ul> 
+        /// <li> <p>TEXT: This is the default value. When used the maximum character limit is 3000.</p> </li> 
+        /// <li> <p>SSML: When used the maximum character limit is 6000 including SSML tagging.</p> </li> 
         /// </ul>
-        pub fn message_body_text_type(
-            mut self,
-            input: crate::model::VoiceMessageBodyTextType,
-        ) -> Self {
+        pub fn message_body_text_type(mut self, input: crate::model::VoiceMessageBodyTextType) -> Self {
             self.message_body_text_type = Some(input);
             self
         }
-        /// <p>Specifies if the MessageBody field contains text or <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">speech synthesis markup language (SSML)</a>.</p>
-        /// <ul>
-        /// <li> <p>TEXT: This is the default value. When used the maximum character limit is 3000.</p> </li>
-        /// <li> <p>SSML: When used the maximum character limit is 6000 including SSML tagging.</p> </li>
+        /// <p>Specifies if the MessageBody field contains text or <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">speech synthesis markup language (SSML)</a>.</p> 
+        /// <ul> 
+        /// <li> <p>TEXT: This is the default value. When used the maximum character limit is 3000.</p> </li> 
+        /// <li> <p>SSML: When used the maximum character limit is 6000 including SSML tagging.</p> </li> 
         /// </ul>
-        pub fn set_message_body_text_type(
-            mut self,
-            input: std::option::Option<crate::model::VoiceMessageBodyTextType>,
-        ) -> Self {
-            self.message_body_text_type = input;
-            self
+        pub fn set_message_body_text_type(mut self, input: std::option::Option<crate::model::VoiceMessageBodyTextType>) -> Self {
+            self.message_body_text_type = input; self
         }
         /// <p>The voice for the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly</a> service to use. By default this is set to "MATTHEW".</p>
         pub fn voice_id(mut self, input: crate::model::VoiceId) -> Self {
@@ -6089,8 +4404,7 @@ pub mod send_voice_message_input {
         }
         /// <p>The voice for the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly</a> service to use. By default this is set to "MATTHEW".</p>
         pub fn set_voice_id(mut self, input: std::option::Option<crate::model::VoiceId>) -> Self {
-            self.voice_id = input;
-            self
+            self.voice_id = input; self
         }
         /// <p>The name of the configuration set to use. This can be either the ConfigurationSetName or ConfigurationSetArn.</p>
         pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6098,12 +4412,8 @@ pub mod send_voice_message_input {
             self
         }
         /// <p>The name of the configuration set to use. This can be either the ConfigurationSetName or ConfigurationSetArn.</p>
-        pub fn set_configuration_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_name = input;
-            self
+        pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_name = input; self
         }
         /// <p>The maximum amount to spend per voice message, in US dollars.</p>
         pub fn max_price_per_minute(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6111,12 +4421,8 @@ pub mod send_voice_message_input {
             self
         }
         /// <p>The maximum amount to spend per voice message, in US dollars.</p>
-        pub fn set_max_price_per_minute(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.max_price_per_minute = input;
-            self
+        pub fn set_max_price_per_minute(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.max_price_per_minute = input; self
         }
         /// <p>How long the voice message is valid for. By default this is 72 hours.</p>
         pub fn time_to_live(mut self, input: i32) -> Self {
@@ -6125,33 +4431,22 @@ pub mod send_voice_message_input {
         }
         /// <p>How long the voice message is valid for. By default this is 72 hours.</p>
         pub fn set_time_to_live(mut self, input: std::option::Option<i32>) -> Self {
-            self.time_to_live = input;
-            self
+            self.time_to_live = input; self
         }
         /// Adds a key-value pair to `context`.
         ///
         /// To override the contents of this collection use [`set_context`](Self::set_context).
         ///
         /// <p>You can specify custom data in this field. If you do, that data is logged to the event destination.</p>
-        pub fn context(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn context(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.context.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.context = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.context = Some(hash_map);
+                            self
         }
         /// <p>You can specify custom data in this field. If you do, that data is logged to the event destination.</p>
-        pub fn set_context(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.context = input;
-            self
+        pub fn set_context(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.context = input; self
         }
         /// <p>When set to true, the message is checked and validated, but isn't sent to the end recipient.</p>
         pub fn dry_run(mut self, input: bool) -> Self {
@@ -6160,133 +4455,100 @@ pub mod send_voice_message_input {
         }
         /// <p>When set to true, the message is checked and validated, but isn't sent to the end recipient.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-            self.dry_run = input;
-            self
+            self.dry_run = input; self
         }
         /// Consumes the builder and constructs a [`SendVoiceMessageInput`](crate::input::SendVoiceMessageInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::SendVoiceMessageInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::SendVoiceMessageInput {
-                destination_phone_number: self.destination_phone_number,
-                origination_identity: self.origination_identity,
-                message_body: self.message_body,
-                message_body_text_type: self.message_body_text_type,
-                voice_id: self.voice_id,
-                configuration_set_name: self.configuration_set_name,
-                max_price_per_minute: self.max_price_per_minute,
-                time_to_live: self.time_to_live,
-                context: self.context,
-                dry_run: self.dry_run.unwrap_or_default(),
-            })
+        pub fn build(self) -> Result<crate::input::SendVoiceMessageInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::SendVoiceMessageInput {
+                    destination_phone_number: self.destination_phone_number
+                    ,
+                    origination_identity: self.origination_identity
+                    ,
+                    message_body: self.message_body
+                    ,
+                    message_body_text_type: self.message_body_text_type
+                    ,
+                    voice_id: self.voice_id
+                    ,
+                    configuration_set_name: self.configuration_set_name
+                    ,
+                    max_price_per_minute: self.max_price_per_minute
+                    ,
+                    time_to_live: self.time_to_live
+                    ,
+                    context: self.context
+                    ,
+                    dry_run: self.dry_run
+                        .unwrap_or_default()
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl SendVoiceMessageInput {
     /// Consumes the builder and constructs an Operation<[`SendVoiceMessage`](crate::operation::SendVoiceMessage)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::SendVoiceMessage,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::SendVoiceMessage, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::SendVoiceMessageInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::SendVoiceMessageInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::SendVoiceMessageInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::SendVoiceMessageInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "PinpointSMSVoiceV2.SendVoiceMessage",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "PinpointSMSVoiceV2.SendVoiceMessage"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_send_voice_message(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_send_voice_message(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::SendVoiceMessage::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "SendVoiceMessage",
-            "pinpointsmsvoicev2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::SendVoiceMessage::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("SendVoiceMessage", "pinpointsmsvoicev2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6298,9 +4560,9 @@ impl SendVoiceMessageInput {
 
 /// See [`SetDefaultMessageTypeInput`](crate::input::SetDefaultMessageTypeInput).
 pub mod set_default_message_type_input {
-
+    
     /// A builder for [`SetDefaultMessageTypeInput`](crate::input::SetDefaultMessageTypeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
         pub(crate) message_type: std::option::Option<crate::model::MessageType>,
@@ -6312,12 +4574,8 @@ pub mod set_default_message_type_input {
             self
         }
         /// <p>The configuration set to update with a new default message type. This field can be the ConsigurationSetName or ConfigurationSetArn.</p>
-        pub fn set_configuration_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_name = input;
-            self
+        pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_name = input; self
         }
         /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
         pub fn message_type(mut self, input: crate::model::MessageType) -> Self {
@@ -6325,131 +4583,84 @@ pub mod set_default_message_type_input {
             self
         }
         /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-        pub fn set_message_type(
-            mut self,
-            input: std::option::Option<crate::model::MessageType>,
-        ) -> Self {
-            self.message_type = input;
-            self
+        pub fn set_message_type(mut self, input: std::option::Option<crate::model::MessageType>) -> Self {
+            self.message_type = input; self
         }
         /// Consumes the builder and constructs a [`SetDefaultMessageTypeInput`](crate::input::SetDefaultMessageTypeInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::SetDefaultMessageTypeInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::SetDefaultMessageTypeInput {
-                configuration_set_name: self.configuration_set_name,
-                message_type: self.message_type,
-            })
+        pub fn build(self) -> Result<crate::input::SetDefaultMessageTypeInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::SetDefaultMessageTypeInput {
+                    configuration_set_name: self.configuration_set_name
+                    ,
+                    message_type: self.message_type
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl SetDefaultMessageTypeInput {
     /// Consumes the builder and constructs an Operation<[`SetDefaultMessageType`](crate::operation::SetDefaultMessageType)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::SetDefaultMessageType,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::SetDefaultMessageType, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::SetDefaultMessageTypeInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::SetDefaultMessageTypeInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::SetDefaultMessageTypeInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::SetDefaultMessageTypeInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "PinpointSMSVoiceV2.SetDefaultMessageType",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "PinpointSMSVoiceV2.SetDefaultMessageType"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_set_default_message_type(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_set_default_message_type(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::SetDefaultMessageType::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "SetDefaultMessageType",
-            "pinpointsmsvoicev2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::SetDefaultMessageType::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("SetDefaultMessageType", "pinpointsmsvoicev2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6461,9 +4672,9 @@ impl SetDefaultMessageTypeInput {
 
 /// See [`SetDefaultSenderIdInput`](crate::input::SetDefaultSenderIdInput).
 pub mod set_default_sender_id_input {
-
+    
     /// A builder for [`SetDefaultSenderIdInput`](crate::input::SetDefaultSenderIdInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
         pub(crate) sender_id: std::option::Option<std::string::String>,
@@ -6475,12 +4686,8 @@ pub mod set_default_sender_id_input {
             self
         }
         /// <p>The configuration set to updated with a new default SenderId. This field can be the ConsigurationSetName or ConfigurationSetArn.</p>
-        pub fn set_configuration_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_name = input;
-            self
+        pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_name = input; self
         }
         /// <p>The current sender ID for the configuration set. When sending a text message to a destination country which supports SenderIds, the default sender ID on the configuration set specified on <code>SendTextMessage</code> will be used if no dedicated origination phone numbers or registered SenderIds are available in your account, instead of a generic sender ID, such as 'NOTICE'.</p>
         pub fn sender_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6489,125 +4696,83 @@ pub mod set_default_sender_id_input {
         }
         /// <p>The current sender ID for the configuration set. When sending a text message to a destination country which supports SenderIds, the default sender ID on the configuration set specified on <code>SendTextMessage</code> will be used if no dedicated origination phone numbers or registered SenderIds are available in your account, instead of a generic sender ID, such as 'NOTICE'.</p>
         pub fn set_sender_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sender_id = input;
-            self
+            self.sender_id = input; self
         }
         /// Consumes the builder and constructs a [`SetDefaultSenderIdInput`](crate::input::SetDefaultSenderIdInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::SetDefaultSenderIdInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::SetDefaultSenderIdInput {
-                configuration_set_name: self.configuration_set_name,
-                sender_id: self.sender_id,
-            })
+        pub fn build(self) -> Result<crate::input::SetDefaultSenderIdInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::SetDefaultSenderIdInput {
+                    configuration_set_name: self.configuration_set_name
+                    ,
+                    sender_id: self.sender_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl SetDefaultSenderIdInput {
     /// Consumes the builder and constructs an Operation<[`SetDefaultSenderId`](crate::operation::SetDefaultSenderId)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::SetDefaultSenderId,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::SetDefaultSenderId, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::SetDefaultSenderIdInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::SetDefaultSenderIdInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::SetDefaultSenderIdInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::SetDefaultSenderIdInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "PinpointSMSVoiceV2.SetDefaultSenderId",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "PinpointSMSVoiceV2.SetDefaultSenderId"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_set_default_sender_id(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_set_default_sender_id(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::SetDefaultSenderId::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "SetDefaultSenderId",
-            "pinpointsmsvoicev2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::SetDefaultSenderId::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("SetDefaultSenderId", "pinpointsmsvoicev2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6619,9 +4784,9 @@ impl SetDefaultSenderIdInput {
 
 /// See [`SetTextMessageSpendLimitOverrideInput`](crate::input::SetTextMessageSpendLimitOverrideInput).
 pub mod set_text_message_spend_limit_override_input {
-
+    
     /// A builder for [`SetTextMessageSpendLimitOverrideInput`](crate::input::SetTextMessageSpendLimitOverrideInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) monthly_limit: std::option::Option<i64>,
     }
@@ -6633,66 +4798,44 @@ pub mod set_text_message_spend_limit_override_input {
         }
         /// <p>The new monthly limit to enforce on text messages.</p>
         pub fn set_monthly_limit(mut self, input: std::option::Option<i64>) -> Self {
-            self.monthly_limit = input;
-            self
+            self.monthly_limit = input; self
         }
         /// Consumes the builder and constructs a [`SetTextMessageSpendLimitOverrideInput`](crate::input::SetTextMessageSpendLimitOverrideInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::SetTextMessageSpendLimitOverrideInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::SetTextMessageSpendLimitOverrideInput {
-                monthly_limit: self.monthly_limit,
-            })
+        pub fn build(self) -> Result<crate::input::SetTextMessageSpendLimitOverrideInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::SetTextMessageSpendLimitOverrideInput {
+                    monthly_limit: self.monthly_limit
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl SetTextMessageSpendLimitOverrideInput {
     /// Consumes the builder and constructs an Operation<[`SetTextMessageSpendLimitOverride`](crate::operation::SetTextMessageSpendLimitOverride)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::SetTextMessageSpendLimitOverride,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::SetTextMessageSpendLimitOverride, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::SetTextMessageSpendLimitOverrideInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::SetTextMessageSpendLimitOverrideInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::SetTextMessageSpendLimitOverrideInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::SetTextMessageSpendLimitOverrideInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "PinpointSMSVoiceV2.SetTextMessageSpendLimitOverride",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "PinpointSMSVoiceV2.SetTextMessageSpendLimitOverride"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -6700,58 +4843,36 @@ impl SetTextMessageSpendLimitOverrideInput {
             crate::operation_ser::serialize_operation_crate_operation_set_text_message_spend_limit_override(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::SetTextMessageSpendLimitOverride::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "SetTextMessageSpendLimitOverride",
-            "pinpointsmsvoicev2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::SetTextMessageSpendLimitOverride::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("SetTextMessageSpendLimitOverride", "pinpointsmsvoicev2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6763,9 +4884,9 @@ impl SetTextMessageSpendLimitOverrideInput {
 
 /// See [`SetVoiceMessageSpendLimitOverrideInput`](crate::input::SetVoiceMessageSpendLimitOverrideInput).
 pub mod set_voice_message_spend_limit_override_input {
-
+    
     /// A builder for [`SetVoiceMessageSpendLimitOverrideInput`](crate::input::SetVoiceMessageSpendLimitOverrideInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) monthly_limit: std::option::Option<i64>,
     }
@@ -6777,66 +4898,44 @@ pub mod set_voice_message_spend_limit_override_input {
         }
         /// <p>The new monthly limit to enforce on voice messages.</p>
         pub fn set_monthly_limit(mut self, input: std::option::Option<i64>) -> Self {
-            self.monthly_limit = input;
-            self
+            self.monthly_limit = input; self
         }
         /// Consumes the builder and constructs a [`SetVoiceMessageSpendLimitOverrideInput`](crate::input::SetVoiceMessageSpendLimitOverrideInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::SetVoiceMessageSpendLimitOverrideInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::SetVoiceMessageSpendLimitOverrideInput {
-                monthly_limit: self.monthly_limit,
-            })
+        pub fn build(self) -> Result<crate::input::SetVoiceMessageSpendLimitOverrideInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::SetVoiceMessageSpendLimitOverrideInput {
+                    monthly_limit: self.monthly_limit
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl SetVoiceMessageSpendLimitOverrideInput {
     /// Consumes the builder and constructs an Operation<[`SetVoiceMessageSpendLimitOverride`](crate::operation::SetVoiceMessageSpendLimitOverride)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::SetVoiceMessageSpendLimitOverride,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::SetVoiceMessageSpendLimitOverride, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::SetVoiceMessageSpendLimitOverrideInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::SetVoiceMessageSpendLimitOverrideInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::SetVoiceMessageSpendLimitOverrideInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::SetVoiceMessageSpendLimitOverrideInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "PinpointSMSVoiceV2.SetVoiceMessageSpendLimitOverride",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "PinpointSMSVoiceV2.SetVoiceMessageSpendLimitOverride"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -6844,58 +4943,36 @@ impl SetVoiceMessageSpendLimitOverrideInput {
             crate::operation_ser::serialize_operation_crate_operation_set_voice_message_spend_limit_override(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::SetVoiceMessageSpendLimitOverride::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "SetVoiceMessageSpendLimitOverride",
-            "pinpointsmsvoicev2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::SetVoiceMessageSpendLimitOverride::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("SetVoiceMessageSpendLimitOverride", "pinpointsmsvoicev2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6907,9 +4984,9 @@ impl SetVoiceMessageSpendLimitOverrideInput {
 
 /// See [`TagResourceInput`](crate::input::TagResourceInput).
 pub mod tag_resource_input {
-
+    
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -6922,8 +4999,7 @@ pub mod tag_resource_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -6932,134 +5008,89 @@ pub mod tag_resource_input {
         /// <p>An array of key and value pair tags that are associated with the resource.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>An array of key and value pair tags that are associated with the resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::TagResourceInput {
-                resource_arn: self.resource_arn,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::TagResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::TagResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::TagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::TagResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::TagResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::TagResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "PinpointSMSVoiceV2.TagResource",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "PinpointSMSVoiceV2.TagResource"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::TagResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "TagResource",
-            "pinpointsmsvoicev2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("TagResource", "pinpointsmsvoicev2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -7071,9 +5102,9 @@ impl TagResourceInput {
 
 /// See [`UntagResourceInput`](crate::input::UntagResourceInput).
 pub mod untag_resource_input {
-
+    
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7086,8 +5117,7 @@ pub mod untag_resource_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Appends an item to `tag_keys`.
         ///
@@ -7096,134 +5126,89 @@ pub mod untag_resource_input {
         /// <p>An array of tag key values to unassociate with the resource.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-            v.push(input.into());
-            self.tag_keys = Some(v);
-            self
+                            v.push(input.into());
+                            self.tag_keys = Some(v);
+                            self
         }
         /// <p>An array of tag key values to unassociate with the resource.</p>
-        pub fn set_tag_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.tag_keys = input;
-            self
+        pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.tag_keys = input; self
         }
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::UntagResourceInput {
-                resource_arn: self.resource_arn,
-                tag_keys: self.tag_keys,
-            })
+        pub fn build(self) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::UntagResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                    tag_keys: self.tag_keys
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UntagResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UntagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UntagResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::UntagResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::UntagResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "PinpointSMSVoiceV2.UntagResource",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "PinpointSMSVoiceV2.UntagResource"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UntagResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UntagResource",
-            "pinpointsmsvoicev2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UntagResource", "pinpointsmsvoicev2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -7235,19 +5220,16 @@ impl UntagResourceInput {
 
 /// See [`UpdateEventDestinationInput`](crate::input::UpdateEventDestinationInput).
 pub mod update_event_destination_input {
-
+    
     /// A builder for [`UpdateEventDestinationInput`](crate::input::UpdateEventDestinationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
         pub(crate) event_destination_name: std::option::Option<std::string::String>,
         pub(crate) enabled: std::option::Option<bool>,
-        pub(crate) matching_event_types:
-            std::option::Option<std::vec::Vec<crate::model::EventType>>,
-        pub(crate) cloud_watch_logs_destination:
-            std::option::Option<crate::model::CloudWatchLogsDestination>,
-        pub(crate) kinesis_firehose_destination:
-            std::option::Option<crate::model::KinesisFirehoseDestination>,
+        pub(crate) matching_event_types: std::option::Option<std::vec::Vec<crate::model::EventType>>,
+        pub(crate) cloud_watch_logs_destination: std::option::Option<crate::model::CloudWatchLogsDestination>,
+        pub(crate) kinesis_firehose_destination: std::option::Option<crate::model::KinesisFirehoseDestination>,
         pub(crate) sns_destination: std::option::Option<crate::model::SnsDestination>,
     }
     impl Builder {
@@ -7257,12 +5239,8 @@ pub mod update_event_destination_input {
             self
         }
         /// <p>The configuration set to update with the new event destination. Valid values for this can be the ConfigurationSetName or ConfigurationSetArn.</p>
-        pub fn set_configuration_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_name = input;
-            self
+        pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_name = input; self
         }
         /// <p>The name to use for the event destination.</p>
         pub fn event_destination_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7270,12 +5248,8 @@ pub mod update_event_destination_input {
             self
         }
         /// <p>The name to use for the event destination.</p>
-        pub fn set_event_destination_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.event_destination_name = input;
-            self
+        pub fn set_event_destination_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_destination_name = input; self
         }
         /// <p>When set to true logging is enabled.</p>
         pub fn enabled(mut self, input: bool) -> Self {
@@ -7284,8 +5258,7 @@ pub mod update_event_destination_input {
         }
         /// <p>When set to true logging is enabled.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// Appends an item to `matching_event_types`.
         ///
@@ -7294,49 +5267,31 @@ pub mod update_event_destination_input {
         /// <p>An array of event types that determine which events to log.</p>
         pub fn matching_event_types(mut self, input: crate::model::EventType) -> Self {
             let mut v = self.matching_event_types.unwrap_or_default();
-            v.push(input);
-            self.matching_event_types = Some(v);
-            self
+                            v.push(input);
+                            self.matching_event_types = Some(v);
+                            self
         }
         /// <p>An array of event types that determine which events to log.</p>
-        pub fn set_matching_event_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EventType>>,
-        ) -> Self {
-            self.matching_event_types = input;
-            self
+        pub fn set_matching_event_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::EventType>>) -> Self {
+            self.matching_event_types = input; self
         }
         /// <p>An object that contains information about an event destination that sends data to CloudWatch Logs.</p>
-        pub fn cloud_watch_logs_destination(
-            mut self,
-            input: crate::model::CloudWatchLogsDestination,
-        ) -> Self {
+        pub fn cloud_watch_logs_destination(mut self, input: crate::model::CloudWatchLogsDestination) -> Self {
             self.cloud_watch_logs_destination = Some(input);
             self
         }
         /// <p>An object that contains information about an event destination that sends data to CloudWatch Logs.</p>
-        pub fn set_cloud_watch_logs_destination(
-            mut self,
-            input: std::option::Option<crate::model::CloudWatchLogsDestination>,
-        ) -> Self {
-            self.cloud_watch_logs_destination = input;
-            self
+        pub fn set_cloud_watch_logs_destination(mut self, input: std::option::Option<crate::model::CloudWatchLogsDestination>) -> Self {
+            self.cloud_watch_logs_destination = input; self
         }
         /// <p>An object that contains information about an event destination for logging to Kinesis Data Firehose.</p>
-        pub fn kinesis_firehose_destination(
-            mut self,
-            input: crate::model::KinesisFirehoseDestination,
-        ) -> Self {
+        pub fn kinesis_firehose_destination(mut self, input: crate::model::KinesisFirehoseDestination) -> Self {
             self.kinesis_firehose_destination = Some(input);
             self
         }
         /// <p>An object that contains information about an event destination for logging to Kinesis Data Firehose.</p>
-        pub fn set_kinesis_firehose_destination(
-            mut self,
-            input: std::option::Option<crate::model::KinesisFirehoseDestination>,
-        ) -> Self {
-            self.kinesis_firehose_destination = input;
-            self
+        pub fn set_kinesis_firehose_destination(mut self, input: std::option::Option<crate::model::KinesisFirehoseDestination>) -> Self {
+            self.kinesis_firehose_destination = input; self
         }
         /// <p>An object that contains information about an event destination that sends data to Amazon SNS.</p>
         pub fn sns_destination(mut self, input: crate::model::SnsDestination) -> Self {
@@ -7344,136 +5299,94 @@ pub mod update_event_destination_input {
             self
         }
         /// <p>An object that contains information about an event destination that sends data to Amazon SNS.</p>
-        pub fn set_sns_destination(
-            mut self,
-            input: std::option::Option<crate::model::SnsDestination>,
-        ) -> Self {
-            self.sns_destination = input;
-            self
+        pub fn set_sns_destination(mut self, input: std::option::Option<crate::model::SnsDestination>) -> Self {
+            self.sns_destination = input; self
         }
         /// Consumes the builder and constructs a [`UpdateEventDestinationInput`](crate::input::UpdateEventDestinationInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UpdateEventDestinationInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::UpdateEventDestinationInput {
-                configuration_set_name: self.configuration_set_name,
-                event_destination_name: self.event_destination_name,
-                enabled: self.enabled,
-                matching_event_types: self.matching_event_types,
-                cloud_watch_logs_destination: self.cloud_watch_logs_destination,
-                kinesis_firehose_destination: self.kinesis_firehose_destination,
-                sns_destination: self.sns_destination,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateEventDestinationInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::UpdateEventDestinationInput {
+                    configuration_set_name: self.configuration_set_name
+                    ,
+                    event_destination_name: self.event_destination_name
+                    ,
+                    enabled: self.enabled
+                    ,
+                    matching_event_types: self.matching_event_types
+                    ,
+                    cloud_watch_logs_destination: self.cloud_watch_logs_destination
+                    ,
+                    kinesis_firehose_destination: self.kinesis_firehose_destination
+                    ,
+                    sns_destination: self.sns_destination
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateEventDestinationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateEventDestination`](crate::operation::UpdateEventDestination)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateEventDestination,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateEventDestination, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateEventDestinationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateEventDestinationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::UpdateEventDestinationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::UpdateEventDestinationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "PinpointSMSVoiceV2.UpdateEventDestination",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "PinpointSMSVoiceV2.UpdateEventDestination"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_event_destination(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_event_destination(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateEventDestination::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateEventDestination",
-            "pinpointsmsvoicev2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateEventDestination::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateEventDestination", "pinpointsmsvoicev2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -7485,9 +5398,9 @@ impl UpdateEventDestinationInput {
 
 /// See [`UpdatePhoneNumberInput`](crate::input::UpdatePhoneNumberInput).
 pub mod update_phone_number_input {
-
+    
     /// A builder for [`UpdatePhoneNumberInput`](crate::input::UpdatePhoneNumberInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) phone_number_id: std::option::Option<std::string::String>,
         pub(crate) two_way_enabled: std::option::Option<bool>,
@@ -7503,12 +5416,8 @@ pub mod update_phone_number_input {
             self
         }
         /// <p>The unique identifier of the phone number. Valid values for this field can be either the PhoneNumberId or PhoneNumberArn.</p>
-        pub fn set_phone_number_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.phone_number_id = input;
-            self
+        pub fn set_phone_number_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.phone_number_id = input; self
         }
         /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
         pub fn two_way_enabled(mut self, input: bool) -> Self {
@@ -7517,8 +5426,7 @@ pub mod update_phone_number_input {
         }
         /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
         pub fn set_two_way_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.two_way_enabled = input;
-            self
+            self.two_way_enabled = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
         pub fn two_way_channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7526,12 +5434,8 @@ pub mod update_phone_number_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
-        pub fn set_two_way_channel_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.two_way_channel_arn = input;
-            self
+        pub fn set_two_way_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.two_way_channel_arn = input; self
         }
         /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
         pub fn self_managed_opt_outs_enabled(mut self, input: bool) -> Self {
@@ -7539,12 +5443,8 @@ pub mod update_phone_number_input {
             self
         }
         /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
-        pub fn set_self_managed_opt_outs_enabled(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.self_managed_opt_outs_enabled = input;
-            self
+        pub fn set_self_managed_opt_outs_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.self_managed_opt_outs_enabled = input; self
         }
         /// <p>The OptOutList to add the phone number to. Valid values for this field can be either the OutOutListName or OutOutListArn.</p>
         pub fn opt_out_list_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7552,12 +5452,8 @@ pub mod update_phone_number_input {
             self
         }
         /// <p>The OptOutList to add the phone number to. Valid values for this field can be either the OutOutListName or OutOutListArn.</p>
-        pub fn set_opt_out_list_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.opt_out_list_name = input;
-            self
+        pub fn set_opt_out_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.opt_out_list_name = input; self
         }
         /// <p>By default this is set to false. When set to true the phone number can't be deleted. </p>
         pub fn deletion_protection_enabled(mut self, input: bool) -> Self {
@@ -7566,129 +5462,91 @@ pub mod update_phone_number_input {
         }
         /// <p>By default this is set to false. When set to true the phone number can't be deleted. </p>
         pub fn set_deletion_protection_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.deletion_protection_enabled = input;
-            self
+            self.deletion_protection_enabled = input; self
         }
         /// Consumes the builder and constructs a [`UpdatePhoneNumberInput`](crate::input::UpdatePhoneNumberInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UpdatePhoneNumberInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::UpdatePhoneNumberInput {
-                phone_number_id: self.phone_number_id,
-                two_way_enabled: self.two_way_enabled,
-                two_way_channel_arn: self.two_way_channel_arn,
-                self_managed_opt_outs_enabled: self.self_managed_opt_outs_enabled,
-                opt_out_list_name: self.opt_out_list_name,
-                deletion_protection_enabled: self.deletion_protection_enabled,
-            })
+        pub fn build(self) -> Result<crate::input::UpdatePhoneNumberInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::UpdatePhoneNumberInput {
+                    phone_number_id: self.phone_number_id
+                    ,
+                    two_way_enabled: self.two_way_enabled
+                    ,
+                    two_way_channel_arn: self.two_way_channel_arn
+                    ,
+                    self_managed_opt_outs_enabled: self.self_managed_opt_outs_enabled
+                    ,
+                    opt_out_list_name: self.opt_out_list_name
+                    ,
+                    deletion_protection_enabled: self.deletion_protection_enabled
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdatePhoneNumberInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePhoneNumber`](crate::operation::UpdatePhoneNumber)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdatePhoneNumber,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdatePhoneNumber, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdatePhoneNumberInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::UpdatePhoneNumberInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::UpdatePhoneNumberInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::UpdatePhoneNumberInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "PinpointSMSVoiceV2.UpdatePhoneNumber",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "PinpointSMSVoiceV2.UpdatePhoneNumber"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_phone_number(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_phone_number(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdatePhoneNumber::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdatePhoneNumber",
-            "pinpointsmsvoicev2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdatePhoneNumber::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdatePhoneNumber", "pinpointsmsvoicev2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -7700,9 +5558,9 @@ impl UpdatePhoneNumberInput {
 
 /// See [`UpdatePoolInput`](crate::input::UpdatePoolInput).
 pub mod update_pool_input {
-
+    
     /// A builder for [`UpdatePoolInput`](crate::input::UpdatePoolInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) pool_id: std::option::Option<std::string::String>,
         pub(crate) two_way_enabled: std::option::Option<bool>,
@@ -7720,8 +5578,7 @@ pub mod update_pool_input {
         }
         /// <p>The unique identifier of the pool to update. Valid values are either the PoolId or PoolArn.</p>
         pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pool_id = input;
-            self
+            self.pool_id = input; self
         }
         /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
         pub fn two_way_enabled(mut self, input: bool) -> Self {
@@ -7730,8 +5587,7 @@ pub mod update_pool_input {
         }
         /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
         pub fn set_two_way_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.two_way_enabled = input;
-            self
+            self.two_way_enabled = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
         pub fn two_way_channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7739,12 +5595,8 @@ pub mod update_pool_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
-        pub fn set_two_way_channel_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.two_way_channel_arn = input;
-            self
+        pub fn set_two_way_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.two_way_channel_arn = input; self
         }
         /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
         pub fn self_managed_opt_outs_enabled(mut self, input: bool) -> Self {
@@ -7752,12 +5604,8 @@ pub mod update_pool_input {
             self
         }
         /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
-        pub fn set_self_managed_opt_outs_enabled(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.self_managed_opt_outs_enabled = input;
-            self
+        pub fn set_self_managed_opt_outs_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.self_managed_opt_outs_enabled = input; self
         }
         /// <p>The OptOutList to associate with the pool. Valid values are either OptOutListName or OptOutListArn.</p>
         pub fn opt_out_list_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7765,12 +5613,8 @@ pub mod update_pool_input {
             self
         }
         /// <p>The OptOutList to associate with the pool. Valid values are either OptOutListName or OptOutListArn.</p>
-        pub fn set_opt_out_list_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.opt_out_list_name = input;
-            self
+        pub fn set_opt_out_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.opt_out_list_name = input; self
         }
         /// <p>Indicates whether shared routes are enabled for the pool.</p>
         pub fn shared_routes_enabled(mut self, input: bool) -> Self {
@@ -7779,8 +5623,7 @@ pub mod update_pool_input {
         }
         /// <p>Indicates whether shared routes are enabled for the pool.</p>
         pub fn set_shared_routes_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.shared_routes_enabled = input;
-            self
+            self.shared_routes_enabled = input; self
         }
         /// <p>When set to true the pool can't be deleted.</p>
         pub fn deletion_protection_enabled(mut self, input: bool) -> Self {
@@ -7789,129 +5632,93 @@ pub mod update_pool_input {
         }
         /// <p>When set to true the pool can't be deleted.</p>
         pub fn set_deletion_protection_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.deletion_protection_enabled = input;
-            self
+            self.deletion_protection_enabled = input; self
         }
         /// Consumes the builder and constructs a [`UpdatePoolInput`](crate::input::UpdatePoolInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UpdatePoolInput, aws_smithy_http::operation::BuildError> {
-            Ok(crate::input::UpdatePoolInput {
-                pool_id: self.pool_id,
-                two_way_enabled: self.two_way_enabled,
-                two_way_channel_arn: self.two_way_channel_arn,
-                self_managed_opt_outs_enabled: self.self_managed_opt_outs_enabled,
-                opt_out_list_name: self.opt_out_list_name,
-                shared_routes_enabled: self.shared_routes_enabled,
-                deletion_protection_enabled: self.deletion_protection_enabled,
-            })
+        pub fn build(self) -> Result<crate::input::UpdatePoolInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::UpdatePoolInput {
+                    pool_id: self.pool_id
+                    ,
+                    two_way_enabled: self.two_way_enabled
+                    ,
+                    two_way_channel_arn: self.two_way_channel_arn
+                    ,
+                    self_managed_opt_outs_enabled: self.self_managed_opt_outs_enabled
+                    ,
+                    opt_out_list_name: self.opt_out_list_name
+                    ,
+                    shared_routes_enabled: self.shared_routes_enabled
+                    ,
+                    deletion_protection_enabled: self.deletion_protection_enabled
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdatePoolInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePool`](crate::operation::UpdatePool)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdatePool,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdatePool, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdatePoolInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::UpdatePoolInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::UpdatePoolInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::UpdatePoolInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "PinpointSMSVoiceV2.UpdatePool",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "PinpointSMSVoiceV2.UpdatePool"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_pool(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_pool(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdatePool::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdatePool",
-            "pinpointsmsvoicev2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdatePool::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdatePool", "pinpointsmsvoicev2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -7922,34 +5729,26 @@ impl UpdatePoolInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdatePoolInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct UpdatePoolInput  {
     /// <p>The unique identifier of the pool to update. Valid values are either the PoolId or PoolArn.</p>
-    #[doc(hidden)]
-    pub pool_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub pool_id: std::option::Option<std::string::String>,
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
-    #[doc(hidden)]
-    pub two_way_enabled: std::option::Option<bool>,
+    #[doc(hidden)]pub two_way_enabled: std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
-    #[doc(hidden)]
-    pub two_way_channel_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub two_way_channel_arn: std::option::Option<std::string::String>,
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
-    #[doc(hidden)]
-    pub self_managed_opt_outs_enabled: std::option::Option<bool>,
+    #[doc(hidden)]pub self_managed_opt_outs_enabled: std::option::Option<bool>,
     /// <p>The OptOutList to associate with the pool. Valid values are either OptOutListName or OptOutListArn.</p>
-    #[doc(hidden)]
-    pub opt_out_list_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub opt_out_list_name: std::option::Option<std::string::String>,
     /// <p>Indicates whether shared routes are enabled for the pool.</p>
-    #[doc(hidden)]
-    pub shared_routes_enabled: std::option::Option<bool>,
+    #[doc(hidden)]pub shared_routes_enabled: std::option::Option<bool>,
     /// <p>When set to true the pool can't be deleted.</p>
-    #[doc(hidden)]
-    pub deletion_protection_enabled: std::option::Option<bool>,
+    #[doc(hidden)]pub deletion_protection_enabled: std::option::Option<bool>,
 }
 impl UpdatePoolInput {
     /// <p>The unique identifier of the pool to update. Valid values are either the PoolId or PoolArn.</p>
-    pub fn pool_id(&self) -> std::option::Option<&str> {
+    pub fn pool_id(&self) -> std::option::Option<& str> {
         self.pool_id.as_deref()
     }
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
@@ -7957,7 +5756,7 @@ impl UpdatePoolInput {
         self.two_way_enabled
     }
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
-    pub fn two_way_channel_arn(&self) -> std::option::Option<&str> {
+    pub fn two_way_channel_arn(&self) -> std::option::Option<& str> {
         self.two_way_channel_arn.as_deref()
     }
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
@@ -7965,7 +5764,7 @@ impl UpdatePoolInput {
         self.self_managed_opt_outs_enabled
     }
     /// <p>The OptOutList to associate with the pool. Valid values are either OptOutListName or OptOutListArn.</p>
-    pub fn opt_out_list_name(&self) -> std::option::Option<&str> {
+    pub fn opt_out_list_name(&self) -> std::option::Option<& str> {
         self.opt_out_list_name.as_deref()
     }
     /// <p>Indicates whether shared routes are enabled for the pool.</p>
@@ -7977,52 +5776,39 @@ impl UpdatePoolInput {
         self.deletion_protection_enabled
     }
 }
-impl std::fmt::Debug for UpdatePoolInput {
+impl  std::fmt::Debug for UpdatePoolInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePoolInput");
         formatter.field("pool_id", &self.pool_id);
         formatter.field("two_way_enabled", &self.two_way_enabled);
         formatter.field("two_way_channel_arn", &self.two_way_channel_arn);
-        formatter.field(
-            "self_managed_opt_outs_enabled",
-            &self.self_managed_opt_outs_enabled,
-        );
+        formatter.field("self_managed_opt_outs_enabled", &self.self_managed_opt_outs_enabled);
         formatter.field("opt_out_list_name", &self.opt_out_list_name);
         formatter.field("shared_routes_enabled", &self.shared_routes_enabled);
-        formatter.field(
-            "deletion_protection_enabled",
-            &self.deletion_protection_enabled,
-        );
+        formatter.field("deletion_protection_enabled", &self.deletion_protection_enabled);
         formatter.finish()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdatePhoneNumberInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct UpdatePhoneNumberInput  {
     /// <p>The unique identifier of the phone number. Valid values for this field can be either the PhoneNumberId or PhoneNumberArn.</p>
-    #[doc(hidden)]
-    pub phone_number_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub phone_number_id: std::option::Option<std::string::String>,
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
-    #[doc(hidden)]
-    pub two_way_enabled: std::option::Option<bool>,
+    #[doc(hidden)]pub two_way_enabled: std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
-    #[doc(hidden)]
-    pub two_way_channel_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub two_way_channel_arn: std::option::Option<std::string::String>,
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
-    #[doc(hidden)]
-    pub self_managed_opt_outs_enabled: std::option::Option<bool>,
+    #[doc(hidden)]pub self_managed_opt_outs_enabled: std::option::Option<bool>,
     /// <p>The OptOutList to add the phone number to. Valid values for this field can be either the OutOutListName or OutOutListArn.</p>
-    #[doc(hidden)]
-    pub opt_out_list_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub opt_out_list_name: std::option::Option<std::string::String>,
     /// <p>By default this is set to false. When set to true the phone number can't be deleted. </p>
-    #[doc(hidden)]
-    pub deletion_protection_enabled: std::option::Option<bool>,
+    #[doc(hidden)]pub deletion_protection_enabled: std::option::Option<bool>,
 }
 impl UpdatePhoneNumberInput {
     /// <p>The unique identifier of the phone number. Valid values for this field can be either the PhoneNumberId or PhoneNumberArn.</p>
-    pub fn phone_number_id(&self) -> std::option::Option<&str> {
+    pub fn phone_number_id(&self) -> std::option::Option<& str> {
         self.phone_number_id.as_deref()
     }
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
@@ -8030,7 +5816,7 @@ impl UpdatePhoneNumberInput {
         self.two_way_enabled
     }
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
-    pub fn two_way_channel_arn(&self) -> std::option::Option<&str> {
+    pub fn two_way_channel_arn(&self) -> std::option::Option<& str> {
         self.two_way_channel_arn.as_deref()
     }
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
@@ -8038,7 +5824,7 @@ impl UpdatePhoneNumberInput {
         self.self_managed_opt_outs_enabled
     }
     /// <p>The OptOutList to add the phone number to. Valid values for this field can be either the OutOutListName or OutOutListArn.</p>
-    pub fn opt_out_list_name(&self) -> std::option::Option<&str> {
+    pub fn opt_out_list_name(&self) -> std::option::Option<& str> {
         self.opt_out_list_name.as_deref()
     }
     /// <p>By default this is set to false. When set to true the phone number can't be deleted. </p>
@@ -8046,58 +5832,44 @@ impl UpdatePhoneNumberInput {
         self.deletion_protection_enabled
     }
 }
-impl std::fmt::Debug for UpdatePhoneNumberInput {
+impl  std::fmt::Debug for UpdatePhoneNumberInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePhoneNumberInput");
         formatter.field("phone_number_id", &self.phone_number_id);
         formatter.field("two_way_enabled", &self.two_way_enabled);
         formatter.field("two_way_channel_arn", &self.two_way_channel_arn);
-        formatter.field(
-            "self_managed_opt_outs_enabled",
-            &self.self_managed_opt_outs_enabled,
-        );
+        formatter.field("self_managed_opt_outs_enabled", &self.self_managed_opt_outs_enabled);
         formatter.field("opt_out_list_name", &self.opt_out_list_name);
-        formatter.field(
-            "deletion_protection_enabled",
-            &self.deletion_protection_enabled,
-        );
+        formatter.field("deletion_protection_enabled", &self.deletion_protection_enabled);
         formatter.finish()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateEventDestinationInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct UpdateEventDestinationInput  {
     /// <p>The configuration set to update with the new event destination. Valid values for this can be the ConfigurationSetName or ConfigurationSetArn.</p>
-    #[doc(hidden)]
-    pub configuration_set_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>The name to use for the event destination.</p>
-    #[doc(hidden)]
-    pub event_destination_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub event_destination_name: std::option::Option<std::string::String>,
     /// <p>When set to true logging is enabled.</p>
-    #[doc(hidden)]
-    pub enabled: std::option::Option<bool>,
+    #[doc(hidden)]pub enabled: std::option::Option<bool>,
     /// <p>An array of event types that determine which events to log.</p>
-    #[doc(hidden)]
-    pub matching_event_types: std::option::Option<std::vec::Vec<crate::model::EventType>>,
+    #[doc(hidden)]pub matching_event_types: std::option::Option<std::vec::Vec<crate::model::EventType>>,
     /// <p>An object that contains information about an event destination that sends data to CloudWatch Logs.</p>
-    #[doc(hidden)]
-    pub cloud_watch_logs_destination: std::option::Option<crate::model::CloudWatchLogsDestination>,
+    #[doc(hidden)]pub cloud_watch_logs_destination: std::option::Option<crate::model::CloudWatchLogsDestination>,
     /// <p>An object that contains information about an event destination for logging to Kinesis Data Firehose.</p>
-    #[doc(hidden)]
-    pub kinesis_firehose_destination: std::option::Option<crate::model::KinesisFirehoseDestination>,
+    #[doc(hidden)]pub kinesis_firehose_destination: std::option::Option<crate::model::KinesisFirehoseDestination>,
     /// <p>An object that contains information about an event destination that sends data to Amazon SNS.</p>
-    #[doc(hidden)]
-    pub sns_destination: std::option::Option<crate::model::SnsDestination>,
+    #[doc(hidden)]pub sns_destination: std::option::Option<crate::model::SnsDestination>,
 }
 impl UpdateEventDestinationInput {
     /// <p>The configuration set to update with the new event destination. Valid values for this can be the ConfigurationSetName or ConfigurationSetArn.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>The name to use for the event destination.</p>
-    pub fn event_destination_name(&self) -> std::option::Option<&str> {
+    pub fn event_destination_name(&self) -> std::option::Option<& str> {
         self.event_destination_name.as_deref()
     }
     /// <p>When set to true logging is enabled.</p>
@@ -8105,68 +5877,55 @@ impl UpdateEventDestinationInput {
         self.enabled
     }
     /// <p>An array of event types that determine which events to log.</p>
-    pub fn matching_event_types(&self) -> std::option::Option<&[crate::model::EventType]> {
+    pub fn matching_event_types(&self) -> std::option::Option<& [crate::model::EventType]> {
         self.matching_event_types.as_deref()
     }
     /// <p>An object that contains information about an event destination that sends data to CloudWatch Logs.</p>
-    pub fn cloud_watch_logs_destination(
-        &self,
-    ) -> std::option::Option<&crate::model::CloudWatchLogsDestination> {
+    pub fn cloud_watch_logs_destination(&self) -> std::option::Option<& crate::model::CloudWatchLogsDestination> {
         self.cloud_watch_logs_destination.as_ref()
     }
     /// <p>An object that contains information about an event destination for logging to Kinesis Data Firehose.</p>
-    pub fn kinesis_firehose_destination(
-        &self,
-    ) -> std::option::Option<&crate::model::KinesisFirehoseDestination> {
+    pub fn kinesis_firehose_destination(&self) -> std::option::Option<& crate::model::KinesisFirehoseDestination> {
         self.kinesis_firehose_destination.as_ref()
     }
     /// <p>An object that contains information about an event destination that sends data to Amazon SNS.</p>
-    pub fn sns_destination(&self) -> std::option::Option<&crate::model::SnsDestination> {
+    pub fn sns_destination(&self) -> std::option::Option<& crate::model::SnsDestination> {
         self.sns_destination.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateEventDestinationInput {
+impl  std::fmt::Debug for UpdateEventDestinationInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateEventDestinationInput");
         formatter.field("configuration_set_name", &self.configuration_set_name);
         formatter.field("event_destination_name", &self.event_destination_name);
         formatter.field("enabled", &self.enabled);
         formatter.field("matching_event_types", &self.matching_event_types);
-        formatter.field(
-            "cloud_watch_logs_destination",
-            &self.cloud_watch_logs_destination,
-        );
-        formatter.field(
-            "kinesis_firehose_destination",
-            &self.kinesis_firehose_destination,
-        );
+        formatter.field("cloud_watch_logs_destination", &self.cloud_watch_logs_destination);
+        formatter.field("kinesis_firehose_destination", &self.kinesis_firehose_destination);
         formatter.field("sns_destination", &self.sns_destination);
         formatter.finish()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UntagResourceInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct UntagResourceInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
     /// <p>An array of tag key values to unassociate with the resource.</p>
-    #[doc(hidden)]
-    pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>An array of tag key values to unassociate with the resource.</p>
-    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
+impl  std::fmt::Debug for UntagResourceInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -8176,27 +5935,24 @@ impl std::fmt::Debug for UntagResourceInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct TagResourceInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct TagResourceInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
     /// <p>An array of key and value pair tags that are associated with the resource.</p>
-    #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>An array of key and value pair tags that are associated with the resource.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
+impl  std::fmt::Debug for TagResourceInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -8206,12 +5962,10 @@ impl std::fmt::Debug for TagResourceInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SetVoiceMessageSpendLimitOverrideInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct SetVoiceMessageSpendLimitOverrideInput  {
     /// <p>The new monthly limit to enforce on voice messages.</p>
-    #[doc(hidden)]
-    pub monthly_limit: std::option::Option<i64>,
+    #[doc(hidden)]pub monthly_limit: std::option::Option<i64>,
 }
 impl SetVoiceMessageSpendLimitOverrideInput {
     /// <p>The new monthly limit to enforce on voice messages.</p>
@@ -8219,7 +5973,7 @@ impl SetVoiceMessageSpendLimitOverrideInput {
         self.monthly_limit
     }
 }
-impl std::fmt::Debug for SetVoiceMessageSpendLimitOverrideInput {
+impl  std::fmt::Debug for SetVoiceMessageSpendLimitOverrideInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetVoiceMessageSpendLimitOverrideInput");
         formatter.field("monthly_limit", &self.monthly_limit);
@@ -8228,12 +5982,10 @@ impl std::fmt::Debug for SetVoiceMessageSpendLimitOverrideInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SetTextMessageSpendLimitOverrideInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct SetTextMessageSpendLimitOverrideInput  {
     /// <p>The new monthly limit to enforce on text messages.</p>
-    #[doc(hidden)]
-    pub monthly_limit: std::option::Option<i64>,
+    #[doc(hidden)]pub monthly_limit: std::option::Option<i64>,
 }
 impl SetTextMessageSpendLimitOverrideInput {
     /// <p>The new monthly limit to enforce on text messages.</p>
@@ -8241,7 +5993,7 @@ impl SetTextMessageSpendLimitOverrideInput {
         self.monthly_limit
     }
 }
-impl std::fmt::Debug for SetTextMessageSpendLimitOverrideInput {
+impl  std::fmt::Debug for SetTextMessageSpendLimitOverrideInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetTextMessageSpendLimitOverrideInput");
         formatter.field("monthly_limit", &self.monthly_limit);
@@ -8250,27 +6002,24 @@ impl std::fmt::Debug for SetTextMessageSpendLimitOverrideInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SetDefaultSenderIdInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct SetDefaultSenderIdInput  {
     /// <p>The configuration set to updated with a new default SenderId. This field can be the ConsigurationSetName or ConfigurationSetArn.</p>
-    #[doc(hidden)]
-    pub configuration_set_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>The current sender ID for the configuration set. When sending a text message to a destination country which supports SenderIds, the default sender ID on the configuration set specified on <code>SendTextMessage</code> will be used if no dedicated origination phone numbers or registered SenderIds are available in your account, instead of a generic sender ID, such as 'NOTICE'.</p>
-    #[doc(hidden)]
-    pub sender_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub sender_id: std::option::Option<std::string::String>,
 }
 impl SetDefaultSenderIdInput {
     /// <p>The configuration set to updated with a new default SenderId. This field can be the ConsigurationSetName or ConfigurationSetArn.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>The current sender ID for the configuration set. When sending a text message to a destination country which supports SenderIds, the default sender ID on the configuration set specified on <code>SendTextMessage</code> will be used if no dedicated origination phone numbers or registered SenderIds are available in your account, instead of a generic sender ID, such as 'NOTICE'.</p>
-    pub fn sender_id(&self) -> std::option::Option<&str> {
+    pub fn sender_id(&self) -> std::option::Option<& str> {
         self.sender_id.as_deref()
     }
 }
-impl std::fmt::Debug for SetDefaultSenderIdInput {
+impl  std::fmt::Debug for SetDefaultSenderIdInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetDefaultSenderIdInput");
         formatter.field("configuration_set_name", &self.configuration_set_name);
@@ -8280,27 +6029,24 @@ impl std::fmt::Debug for SetDefaultSenderIdInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SetDefaultMessageTypeInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct SetDefaultMessageTypeInput  {
     /// <p>The configuration set to update with a new default message type. This field can be the ConsigurationSetName or ConfigurationSetArn.</p>
-    #[doc(hidden)]
-    pub configuration_set_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    #[doc(hidden)]
-    pub message_type: std::option::Option<crate::model::MessageType>,
+    #[doc(hidden)]pub message_type: std::option::Option<crate::model::MessageType>,
 }
 impl SetDefaultMessageTypeInput {
     /// <p>The configuration set to update with a new default message type. This field can be the ConsigurationSetName or ConfigurationSetArn.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    pub fn message_type(&self) -> std::option::Option<&crate::model::MessageType> {
+    pub fn message_type(&self) -> std::option::Option<& crate::model::MessageType> {
         self.message_type.as_ref()
     }
 }
-impl std::fmt::Debug for SetDefaultMessageTypeInput {
+impl  std::fmt::Debug for SetDefaultMessageTypeInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetDefaultMessageTypeInput");
         formatter.field("configuration_set_name", &self.configuration_set_name);
@@ -8310,78 +6056,64 @@ impl std::fmt::Debug for SetDefaultMessageTypeInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SendVoiceMessageInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct SendVoiceMessageInput  {
     /// <p>The destination phone number in E.164 format.</p>
-    #[doc(hidden)]
-    pub destination_phone_number: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub destination_phone_number: std::option::Option<std::string::String>,
     /// <p>The origination identity to use for the voice call. This can be the PhoneNumber, PhoneNumberId, PhoneNumberArn, PoolId, or PoolArn.</p>
-    #[doc(hidden)]
-    pub origination_identity: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub origination_identity: std::option::Option<std::string::String>,
     /// <p>The text to convert to a voice message.</p>
-    #[doc(hidden)]
-    pub message_body: std::option::Option<std::string::String>,
-    /// <p>Specifies if the MessageBody field contains text or <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">speech synthesis markup language (SSML)</a>.</p>
-    /// <ul>
-    /// <li> <p>TEXT: This is the default value. When used the maximum character limit is 3000.</p> </li>
-    /// <li> <p>SSML: When used the maximum character limit is 6000 including SSML tagging.</p> </li>
+    #[doc(hidden)]pub message_body: std::option::Option<std::string::String>,
+    /// <p>Specifies if the MessageBody field contains text or <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">speech synthesis markup language (SSML)</a>.</p> 
+    /// <ul> 
+    /// <li> <p>TEXT: This is the default value. When used the maximum character limit is 3000.</p> </li> 
+    /// <li> <p>SSML: When used the maximum character limit is 6000 including SSML tagging.</p> </li> 
     /// </ul>
-    #[doc(hidden)]
-    pub message_body_text_type: std::option::Option<crate::model::VoiceMessageBodyTextType>,
+    #[doc(hidden)]pub message_body_text_type: std::option::Option<crate::model::VoiceMessageBodyTextType>,
     /// <p>The voice for the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly</a> service to use. By default this is set to "MATTHEW".</p>
-    #[doc(hidden)]
-    pub voice_id: std::option::Option<crate::model::VoiceId>,
+    #[doc(hidden)]pub voice_id: std::option::Option<crate::model::VoiceId>,
     /// <p>The name of the configuration set to use. This can be either the ConfigurationSetName or ConfigurationSetArn.</p>
-    #[doc(hidden)]
-    pub configuration_set_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>The maximum amount to spend per voice message, in US dollars.</p>
-    #[doc(hidden)]
-    pub max_price_per_minute: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub max_price_per_minute: std::option::Option<std::string::String>,
     /// <p>How long the voice message is valid for. By default this is 72 hours.</p>
-    #[doc(hidden)]
-    pub time_to_live: std::option::Option<i32>,
+    #[doc(hidden)]pub time_to_live: std::option::Option<i32>,
     /// <p>You can specify custom data in this field. If you do, that data is logged to the event destination.</p>
-    #[doc(hidden)]
-    pub context:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[doc(hidden)]pub context: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>When set to true, the message is checked and validated, but isn't sent to the end recipient.</p>
-    #[doc(hidden)]
-    pub dry_run: bool,
+    #[doc(hidden)]pub dry_run: bool,
 }
 impl SendVoiceMessageInput {
     /// <p>The destination phone number in E.164 format.</p>
-    pub fn destination_phone_number(&self) -> std::option::Option<&str> {
+    pub fn destination_phone_number(&self) -> std::option::Option<& str> {
         self.destination_phone_number.as_deref()
     }
     /// <p>The origination identity to use for the voice call. This can be the PhoneNumber, PhoneNumberId, PhoneNumberArn, PoolId, or PoolArn.</p>
-    pub fn origination_identity(&self) -> std::option::Option<&str> {
+    pub fn origination_identity(&self) -> std::option::Option<& str> {
         self.origination_identity.as_deref()
     }
     /// <p>The text to convert to a voice message.</p>
-    pub fn message_body(&self) -> std::option::Option<&str> {
+    pub fn message_body(&self) -> std::option::Option<& str> {
         self.message_body.as_deref()
     }
-    /// <p>Specifies if the MessageBody field contains text or <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">speech synthesis markup language (SSML)</a>.</p>
-    /// <ul>
-    /// <li> <p>TEXT: This is the default value. When used the maximum character limit is 3000.</p> </li>
-    /// <li> <p>SSML: When used the maximum character limit is 6000 including SSML tagging.</p> </li>
+    /// <p>Specifies if the MessageBody field contains text or <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">speech synthesis markup language (SSML)</a>.</p> 
+    /// <ul> 
+    /// <li> <p>TEXT: This is the default value. When used the maximum character limit is 3000.</p> </li> 
+    /// <li> <p>SSML: When used the maximum character limit is 6000 including SSML tagging.</p> </li> 
     /// </ul>
-    pub fn message_body_text_type(
-        &self,
-    ) -> std::option::Option<&crate::model::VoiceMessageBodyTextType> {
+    pub fn message_body_text_type(&self) -> std::option::Option<& crate::model::VoiceMessageBodyTextType> {
         self.message_body_text_type.as_ref()
     }
     /// <p>The voice for the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly</a> service to use. By default this is set to "MATTHEW".</p>
-    pub fn voice_id(&self) -> std::option::Option<&crate::model::VoiceId> {
+    pub fn voice_id(&self) -> std::option::Option<& crate::model::VoiceId> {
         self.voice_id.as_ref()
     }
     /// <p>The name of the configuration set to use. This can be either the ConfigurationSetName or ConfigurationSetArn.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>The maximum amount to spend per voice message, in US dollars.</p>
-    pub fn max_price_per_minute(&self) -> std::option::Option<&str> {
+    pub fn max_price_per_minute(&self) -> std::option::Option<& str> {
         self.max_price_per_minute.as_deref()
     }
     /// <p>How long the voice message is valid for. By default this is 72 hours.</p>
@@ -8389,10 +6121,7 @@ impl SendVoiceMessageInput {
         self.time_to_live
     }
     /// <p>You can specify custom data in this field. If you do, that data is logged to the event destination.</p>
-    pub fn context(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn context(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.context.as_ref()
     }
     /// <p>When set to true, the message is checked and validated, but isn't sent to the end recipient.</p>
@@ -8400,7 +6129,7 @@ impl SendVoiceMessageInput {
         self.dry_run
     }
 }
-impl std::fmt::Debug for SendVoiceMessageInput {
+impl  std::fmt::Debug for SendVoiceMessageInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendVoiceMessageInput");
         formatter.field("destination_phone_number", &self.destination_phone_number);
@@ -8418,76 +6147,58 @@ impl std::fmt::Debug for SendVoiceMessageInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SendTextMessageInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct SendTextMessageInput  {
     /// <p>The destination phone number in E.164 format.</p>
-    #[doc(hidden)]
-    pub destination_phone_number: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub destination_phone_number: std::option::Option<std::string::String>,
     /// <p>The origination identity of the message. This can be either the PhoneNumber, PhoneNumberId, PhoneNumberArn, SenderId, SenderIdArn, PoolId, or PoolArn.</p>
-    #[doc(hidden)]
-    pub origination_identity: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub origination_identity: std::option::Option<std::string::String>,
     /// <p>The body of the text message.</p>
-    #[doc(hidden)]
-    pub message_body: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub message_body: std::option::Option<std::string::String>,
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    #[doc(hidden)]
-    pub message_type: std::option::Option<crate::model::MessageType>,
+    #[doc(hidden)]pub message_type: std::option::Option<crate::model::MessageType>,
     /// <p>When you register a short code in the US, you must specify a program name. If you don’t have a US short code, omit this attribute.</p>
-    #[doc(hidden)]
-    pub keyword: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub keyword: std::option::Option<std::string::String>,
     /// <p>The name of the configuration set to use. This can be either the ConfigurationSetName or ConfigurationSetArn.</p>
-    #[doc(hidden)]
-    pub configuration_set_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>The maximum amount that you want to spend, in US dollars, per each text message part. A text message can contain multiple parts.</p>
-    #[doc(hidden)]
-    pub max_price: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub max_price: std::option::Option<std::string::String>,
     /// <p>How long the text message is valid for. By default this is 72 hours.</p>
-    #[doc(hidden)]
-    pub time_to_live: std::option::Option<i32>,
+    #[doc(hidden)]pub time_to_live: std::option::Option<i32>,
     /// <p>You can specify custom data in this field. If you do, that data is logged to the event destination.</p>
-    #[doc(hidden)]
-    pub context:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[doc(hidden)]pub context: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>This field is used for any country-specific registration requirements. Currently, this setting is only used when you send messages to recipients in India using a sender ID. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-senderid-india.html">Special requirements for sending SMS messages to recipients in India</a>. </p>
-    #[doc(hidden)]
-    pub destination_country_parameters: std::option::Option<
-        std::collections::HashMap<
-            crate::model::DestinationCountryParameterKey,
-            std::string::String,
-        >,
-    >,
+    #[doc(hidden)]pub destination_country_parameters: std::option::Option<std::collections::HashMap<crate::model::DestinationCountryParameterKey, std::string::String>>,
     /// <p>When set to true, the message is checked and validated, but isn't sent to the end recipient.</p>
-    #[doc(hidden)]
-    pub dry_run: bool,
+    #[doc(hidden)]pub dry_run: bool,
 }
 impl SendTextMessageInput {
     /// <p>The destination phone number in E.164 format.</p>
-    pub fn destination_phone_number(&self) -> std::option::Option<&str> {
+    pub fn destination_phone_number(&self) -> std::option::Option<& str> {
         self.destination_phone_number.as_deref()
     }
     /// <p>The origination identity of the message. This can be either the PhoneNumber, PhoneNumberId, PhoneNumberArn, SenderId, SenderIdArn, PoolId, or PoolArn.</p>
-    pub fn origination_identity(&self) -> std::option::Option<&str> {
+    pub fn origination_identity(&self) -> std::option::Option<& str> {
         self.origination_identity.as_deref()
     }
     /// <p>The body of the text message.</p>
-    pub fn message_body(&self) -> std::option::Option<&str> {
+    pub fn message_body(&self) -> std::option::Option<& str> {
         self.message_body.as_deref()
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    pub fn message_type(&self) -> std::option::Option<&crate::model::MessageType> {
+    pub fn message_type(&self) -> std::option::Option<& crate::model::MessageType> {
         self.message_type.as_ref()
     }
     /// <p>When you register a short code in the US, you must specify a program name. If you don’t have a US short code, omit this attribute.</p>
-    pub fn keyword(&self) -> std::option::Option<&str> {
+    pub fn keyword(&self) -> std::option::Option<& str> {
         self.keyword.as_deref()
     }
     /// <p>The name of the configuration set to use. This can be either the ConfigurationSetName or ConfigurationSetArn.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>The maximum amount that you want to spend, in US dollars, per each text message part. A text message can contain multiple parts.</p>
-    pub fn max_price(&self) -> std::option::Option<&str> {
+    pub fn max_price(&self) -> std::option::Option<& str> {
         self.max_price.as_deref()
     }
     /// <p>How long the text message is valid for. By default this is 72 hours.</p>
@@ -8495,21 +6206,11 @@ impl SendTextMessageInput {
         self.time_to_live
     }
     /// <p>You can specify custom data in this field. If you do, that data is logged to the event destination.</p>
-    pub fn context(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn context(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.context.as_ref()
     }
     /// <p>This field is used for any country-specific registration requirements. Currently, this setting is only used when you send messages to recipients in India using a sender ID. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-senderid-india.html">Special requirements for sending SMS messages to recipients in India</a>. </p>
-    pub fn destination_country_parameters(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            crate::model::DestinationCountryParameterKey,
-            std::string::String,
-        >,
-    > {
+    pub fn destination_country_parameters(&self) -> std::option::Option<& std::collections::HashMap<crate::model::DestinationCountryParameterKey, std::string::String>> {
         self.destination_country_parameters.as_ref()
     }
     /// <p>When set to true, the message is checked and validated, but isn't sent to the end recipient.</p>
@@ -8517,7 +6218,7 @@ impl SendTextMessageInput {
         self.dry_run
     }
 }
-impl std::fmt::Debug for SendTextMessageInput {
+impl  std::fmt::Debug for SendTextMessageInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendTextMessageInput");
         formatter.field("destination_phone_number", &self.destination_phone_number);
@@ -8529,77 +6230,63 @@ impl std::fmt::Debug for SendTextMessageInput {
         formatter.field("max_price", &self.max_price);
         formatter.field("time_to_live", &self.time_to_live);
         formatter.field("context", &self.context);
-        formatter.field(
-            "destination_country_parameters",
-            &self.destination_country_parameters,
-        );
+        formatter.field("destination_country_parameters", &self.destination_country_parameters);
         formatter.field("dry_run", &self.dry_run);
         formatter.finish()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct RequestPhoneNumberInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct RequestPhoneNumberInput  {
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    #[doc(hidden)]
-    pub iso_country_code: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub iso_country_code: std::option::Option<std::string::String>,
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    #[doc(hidden)]
-    pub message_type: std::option::Option<crate::model::MessageType>,
+    #[doc(hidden)]pub message_type: std::option::Option<crate::model::MessageType>,
     /// <p>Indicates if the phone number will be used for text messages, voice messages, or both. </p>
-    #[doc(hidden)]
-    pub number_capabilities: std::option::Option<std::vec::Vec<crate::model::NumberCapability>>,
+    #[doc(hidden)]pub number_capabilities: std::option::Option<std::vec::Vec<crate::model::NumberCapability>>,
     /// <p>The type of phone number to request.</p>
-    #[doc(hidden)]
-    pub number_type: std::option::Option<crate::model::RequestableNumberType>,
+    #[doc(hidden)]pub number_type: std::option::Option<crate::model::RequestableNumberType>,
     /// <p>The name of the OptOutList to associate with the phone number. You can use the OutOutListName or OptPutListArn.</p>
-    #[doc(hidden)]
-    pub opt_out_list_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub opt_out_list_name: std::option::Option<std::string::String>,
     /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn. </p>
-    #[doc(hidden)]
-    pub pool_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub pool_id: std::option::Option<std::string::String>,
     /// <p>Use this field to attach your phone number for an external registration process.</p>
-    #[doc(hidden)]
-    pub registration_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub registration_id: std::option::Option<std::string::String>,
     /// <p>By default this is set to false. When set to true the phone number can't be deleted.</p>
-    #[doc(hidden)]
-    pub deletion_protection_enabled: std::option::Option<bool>,
+    #[doc(hidden)]pub deletion_protection_enabled: std::option::Option<bool>,
     /// <p>An array of tags (key and value pairs) associate with the requested phone number. </p>
-    #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
-    #[doc(hidden)]
-    pub client_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub client_token: std::option::Option<std::string::String>,
 }
 impl RequestPhoneNumberInput {
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub fn iso_country_code(&self) -> std::option::Option<&str> {
+    pub fn iso_country_code(&self) -> std::option::Option<& str> {
         self.iso_country_code.as_deref()
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    pub fn message_type(&self) -> std::option::Option<&crate::model::MessageType> {
+    pub fn message_type(&self) -> std::option::Option<& crate::model::MessageType> {
         self.message_type.as_ref()
     }
     /// <p>Indicates if the phone number will be used for text messages, voice messages, or both. </p>
-    pub fn number_capabilities(&self) -> std::option::Option<&[crate::model::NumberCapability]> {
+    pub fn number_capabilities(&self) -> std::option::Option<& [crate::model::NumberCapability]> {
         self.number_capabilities.as_deref()
     }
     /// <p>The type of phone number to request.</p>
-    pub fn number_type(&self) -> std::option::Option<&crate::model::RequestableNumberType> {
+    pub fn number_type(&self) -> std::option::Option<& crate::model::RequestableNumberType> {
         self.number_type.as_ref()
     }
     /// <p>The name of the OptOutList to associate with the phone number. You can use the OutOutListName or OptPutListArn.</p>
-    pub fn opt_out_list_name(&self) -> std::option::Option<&str> {
+    pub fn opt_out_list_name(&self) -> std::option::Option<& str> {
         self.opt_out_list_name.as_deref()
     }
     /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn. </p>
-    pub fn pool_id(&self) -> std::option::Option<&str> {
+    pub fn pool_id(&self) -> std::option::Option<& str> {
         self.pool_id.as_deref()
     }
     /// <p>Use this field to attach your phone number for an external registration process.</p>
-    pub fn registration_id(&self) -> std::option::Option<&str> {
+    pub fn registration_id(&self) -> std::option::Option<& str> {
         self.registration_id.as_deref()
     }
     /// <p>By default this is set to false. When set to true the phone number can't be deleted.</p>
@@ -8607,15 +6294,15 @@ impl RequestPhoneNumberInput {
         self.deletion_protection_enabled
     }
     /// <p>An array of tags (key and value pairs) associate with the requested phone number. </p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for RequestPhoneNumberInput {
+impl  std::fmt::Debug for RequestPhoneNumberInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RequestPhoneNumberInput");
         formatter.field("iso_country_code", &self.iso_country_code);
@@ -8625,10 +6312,7 @@ impl std::fmt::Debug for RequestPhoneNumberInput {
         formatter.field("opt_out_list_name", &self.opt_out_list_name);
         formatter.field("pool_id", &self.pool_id);
         formatter.field("registration_id", &self.registration_id);
-        formatter.field(
-            "deletion_protection_enabled",
-            &self.deletion_protection_enabled,
-        );
+        formatter.field("deletion_protection_enabled", &self.deletion_protection_enabled);
         formatter.field("tags", &self.tags);
         formatter.field("client_token", &self.client_token);
         formatter.finish()
@@ -8636,20 +6320,18 @@ impl std::fmt::Debug for RequestPhoneNumberInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ReleasePhoneNumberInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ReleasePhoneNumberInput  {
     /// <p>The PhoneNumberId or PhoneNumberArn of the phone number to release. You can use <code>DescribePhoneNumbers</code> to get the values for PhoneNumberId and PhoneNumberArn.</p>
-    #[doc(hidden)]
-    pub phone_number_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub phone_number_id: std::option::Option<std::string::String>,
 }
 impl ReleasePhoneNumberInput {
     /// <p>The PhoneNumberId or PhoneNumberArn of the phone number to release. You can use <code>DescribePhoneNumbers</code> to get the values for PhoneNumberId and PhoneNumberArn.</p>
-    pub fn phone_number_id(&self) -> std::option::Option<&str> {
+    pub fn phone_number_id(&self) -> std::option::Option<& str> {
         self.phone_number_id.as_deref()
     }
 }
-impl std::fmt::Debug for ReleasePhoneNumberInput {
+impl  std::fmt::Debug for ReleasePhoneNumberInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReleasePhoneNumberInput");
         formatter.field("phone_number_id", &self.phone_number_id);
@@ -8658,27 +6340,24 @@ impl std::fmt::Debug for ReleasePhoneNumberInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PutOptedOutNumberInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct PutOptedOutNumberInput  {
     /// <p>The OptOutListName or OptOutListArn to add the phone number to.</p>
-    #[doc(hidden)]
-    pub opt_out_list_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub opt_out_list_name: std::option::Option<std::string::String>,
     /// <p>The phone number to add to the OptOutList in E.164 format.</p>
-    #[doc(hidden)]
-    pub opted_out_number: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub opted_out_number: std::option::Option<std::string::String>,
 }
 impl PutOptedOutNumberInput {
     /// <p>The OptOutListName or OptOutListArn to add the phone number to.</p>
-    pub fn opt_out_list_name(&self) -> std::option::Option<&str> {
+    pub fn opt_out_list_name(&self) -> std::option::Option<& str> {
         self.opt_out_list_name.as_deref()
     }
     /// <p>The phone number to add to the OptOutList in E.164 format.</p>
-    pub fn opted_out_number(&self) -> std::option::Option<&str> {
+    pub fn opted_out_number(&self) -> std::option::Option<& str> {
         self.opted_out_number.as_deref()
     }
 }
-impl std::fmt::Debug for PutOptedOutNumberInput {
+impl  std::fmt::Debug for PutOptedOutNumberInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutOptedOutNumberInput");
         formatter.field("opt_out_list_name", &self.opt_out_list_name);
@@ -8688,51 +6367,46 @@ impl std::fmt::Debug for PutOptedOutNumberInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PutKeywordInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct PutKeywordInput  {
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> get the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
-    #[doc(hidden)]
-    pub origination_identity: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub origination_identity: std::option::Option<std::string::String>,
     /// <p>The new keyword to add.</p>
-    #[doc(hidden)]
-    pub keyword: std::option::Option<std::string::String>,
-    /// <p>The message associated with the keyword.</p>
-    /// <ul>
-    /// <li> <p>AUTOMATIC_RESPONSE: A message is sent to the recipient.</p> </li>
-    /// <li> <p>OPT_OUT: Keeps the recipient from receiving future messages.</p> </li>
-    /// <li> <p>OPT_IN: The recipient wants to receive future messages.</p> </li>
+    #[doc(hidden)]pub keyword: std::option::Option<std::string::String>,
+    /// <p>The message associated with the keyword.</p> 
+    /// <ul> 
+    /// <li> <p>AUTOMATIC_RESPONSE: A message is sent to the recipient.</p> </li> 
+    /// <li> <p>OPT_OUT: Keeps the recipient from receiving future messages.</p> </li> 
+    /// <li> <p>OPT_IN: The recipient wants to receive future messages.</p> </li> 
     /// </ul>
-    #[doc(hidden)]
-    pub keyword_message: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub keyword_message: std::option::Option<std::string::String>,
     /// <p>The action to perform for the new keyword when it is received.</p>
-    #[doc(hidden)]
-    pub keyword_action: std::option::Option<crate::model::KeywordAction>,
+    #[doc(hidden)]pub keyword_action: std::option::Option<crate::model::KeywordAction>,
 }
 impl PutKeywordInput {
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> get the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
-    pub fn origination_identity(&self) -> std::option::Option<&str> {
+    pub fn origination_identity(&self) -> std::option::Option<& str> {
         self.origination_identity.as_deref()
     }
     /// <p>The new keyword to add.</p>
-    pub fn keyword(&self) -> std::option::Option<&str> {
+    pub fn keyword(&self) -> std::option::Option<& str> {
         self.keyword.as_deref()
     }
-    /// <p>The message associated with the keyword.</p>
-    /// <ul>
-    /// <li> <p>AUTOMATIC_RESPONSE: A message is sent to the recipient.</p> </li>
-    /// <li> <p>OPT_OUT: Keeps the recipient from receiving future messages.</p> </li>
-    /// <li> <p>OPT_IN: The recipient wants to receive future messages.</p> </li>
+    /// <p>The message associated with the keyword.</p> 
+    /// <ul> 
+    /// <li> <p>AUTOMATIC_RESPONSE: A message is sent to the recipient.</p> </li> 
+    /// <li> <p>OPT_OUT: Keeps the recipient from receiving future messages.</p> </li> 
+    /// <li> <p>OPT_IN: The recipient wants to receive future messages.</p> </li> 
     /// </ul>
-    pub fn keyword_message(&self) -> std::option::Option<&str> {
+    pub fn keyword_message(&self) -> std::option::Option<& str> {
         self.keyword_message.as_deref()
     }
     /// <p>The action to perform for the new keyword when it is received.</p>
-    pub fn keyword_action(&self) -> std::option::Option<&crate::model::KeywordAction> {
+    pub fn keyword_action(&self) -> std::option::Option<& crate::model::KeywordAction> {
         self.keyword_action.as_ref()
     }
 }
-impl std::fmt::Debug for PutKeywordInput {
+impl  std::fmt::Debug for PutKeywordInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutKeywordInput");
         formatter.field("origination_identity", &self.origination_identity);
@@ -8744,20 +6418,18 @@ impl std::fmt::Debug for PutKeywordInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListTagsForResourceInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListTagsForResourceInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource to query for.</p>
-    #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to query for.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
+impl  std::fmt::Debug for ListTagsForResourceInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -8766,33 +6438,28 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListPoolOriginationIdentitiesInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListPoolOriginationIdentitiesInput  {
     /// <p>The unique identifier for the pool. This value can be either the PoolId or PoolArn.</p>
-    #[doc(hidden)]
-    pub pool_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub pool_id: std::option::Option<std::string::String>,
     /// <p>An array of PoolOriginationIdentitiesFilter objects to filter the results..</p>
-    #[doc(hidden)]
-    pub filters: std::option::Option<std::vec::Vec<crate::model::PoolOriginationIdentitiesFilter>>,
+    #[doc(hidden)]pub filters: std::option::Option<std::vec::Vec<crate::model::PoolOriginationIdentitiesFilter>>,
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per each request.</p>
-    #[doc(hidden)]
-    pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]pub max_results: std::option::Option<i32>,
 }
 impl ListPoolOriginationIdentitiesInput {
     /// <p>The unique identifier for the pool. This value can be either the PoolId or PoolArn.</p>
-    pub fn pool_id(&self) -> std::option::Option<&str> {
+    pub fn pool_id(&self) -> std::option::Option<& str> {
         self.pool_id.as_deref()
     }
     /// <p>An array of PoolOriginationIdentitiesFilter objects to filter the results..</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::model::PoolOriginationIdentitiesFilter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::model::PoolOriginationIdentitiesFilter]> {
         self.filters.as_deref()
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per each request.</p>
@@ -8800,7 +6467,7 @@ impl ListPoolOriginationIdentitiesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListPoolOriginationIdentitiesInput {
+impl  std::fmt::Debug for ListPoolOriginationIdentitiesInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPoolOriginationIdentitiesInput");
         formatter.field("pool_id", &self.pool_id);
@@ -8812,41 +6479,36 @@ impl std::fmt::Debug for ListPoolOriginationIdentitiesInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DisassociateOriginationIdentityInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DisassociateOriginationIdentityInput  {
     /// <p>The unique identifier for the pool to disassociate with the origination identity. This value can be either the PoolId or PoolArn.</p>
-    #[doc(hidden)]
-    pub pool_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub pool_id: std::option::Option<std::string::String>,
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> find the values for PhoneNumberId and PhoneNumberArn, or use <code>DescribeSenderIds</code> to get the values for SenderId and SenderIdArn.</p>
-    #[doc(hidden)]
-    pub origination_identity: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub origination_identity: std::option::Option<std::string::String>,
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    #[doc(hidden)]
-    pub iso_country_code: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub iso_country_code: std::option::Option<std::string::String>,
     /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
-    #[doc(hidden)]
-    pub client_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub client_token: std::option::Option<std::string::String>,
 }
 impl DisassociateOriginationIdentityInput {
     /// <p>The unique identifier for the pool to disassociate with the origination identity. This value can be either the PoolId or PoolArn.</p>
-    pub fn pool_id(&self) -> std::option::Option<&str> {
+    pub fn pool_id(&self) -> std::option::Option<& str> {
         self.pool_id.as_deref()
     }
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> find the values for PhoneNumberId and PhoneNumberArn, or use <code>DescribeSenderIds</code> to get the values for SenderId and SenderIdArn.</p>
-    pub fn origination_identity(&self) -> std::option::Option<&str> {
+    pub fn origination_identity(&self) -> std::option::Option<& str> {
         self.origination_identity.as_deref()
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub fn iso_country_code(&self) -> std::option::Option<&str> {
+    pub fn iso_country_code(&self) -> std::option::Option<& str> {
         self.iso_country_code.as_deref()
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateOriginationIdentityInput {
+impl  std::fmt::Debug for DisassociateOriginationIdentityInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateOriginationIdentityInput");
         formatter.field("pool_id", &self.pool_id);
@@ -8858,19 +6520,16 @@ impl std::fmt::Debug for DisassociateOriginationIdentityInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeSpendLimitsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DescribeSpendLimitsInput  {
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per each request.</p>
-    #[doc(hidden)]
-    pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]pub max_results: std::option::Option<i32>,
 }
 impl DescribeSpendLimitsInput {
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per each request.</p>
@@ -8878,7 +6537,7 @@ impl DescribeSpendLimitsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeSpendLimitsInput {
+impl  std::fmt::Debug for DescribeSpendLimitsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSpendLimitsInput");
         formatter.field("next_token", &self.next_token);
@@ -8888,33 +6547,28 @@ impl std::fmt::Debug for DescribeSpendLimitsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeSenderIdsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DescribeSenderIdsInput  {
     /// <p>An array of SenderIdAndCountry objects to search for.</p>
-    #[doc(hidden)]
-    pub sender_ids: std::option::Option<std::vec::Vec<crate::model::SenderIdAndCountry>>,
+    #[doc(hidden)]pub sender_ids: std::option::Option<std::vec::Vec<crate::model::SenderIdAndCountry>>,
     /// <p>An array of SenderIdFilter objects to filter the results.</p>
-    #[doc(hidden)]
-    pub filters: std::option::Option<std::vec::Vec<crate::model::SenderIdFilter>>,
+    #[doc(hidden)]pub filters: std::option::Option<std::vec::Vec<crate::model::SenderIdFilter>>,
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per each request.</p>
-    #[doc(hidden)]
-    pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]pub max_results: std::option::Option<i32>,
 }
 impl DescribeSenderIdsInput {
     /// <p>An array of SenderIdAndCountry objects to search for.</p>
-    pub fn sender_ids(&self) -> std::option::Option<&[crate::model::SenderIdAndCountry]> {
+    pub fn sender_ids(&self) -> std::option::Option<& [crate::model::SenderIdAndCountry]> {
         self.sender_ids.as_deref()
     }
     /// <p>An array of SenderIdFilter objects to filter the results.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::model::SenderIdFilter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::model::SenderIdFilter]> {
         self.filters.as_deref()
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per each request.</p>
@@ -8922,7 +6576,7 @@ impl DescribeSenderIdsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeSenderIdsInput {
+impl  std::fmt::Debug for DescribeSenderIdsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSenderIdsInput");
         formatter.field("sender_ids", &self.sender_ids);
@@ -8934,33 +6588,28 @@ impl std::fmt::Debug for DescribeSenderIdsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribePoolsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DescribePoolsInput  {
     /// <p>The unique identifier of pools to find. This is an array of strings that can be either the PoolId or PoolArn.</p>
-    #[doc(hidden)]
-    pub pool_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub pool_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of PoolFilter objects to filter the results.</p>
-    #[doc(hidden)]
-    pub filters: std::option::Option<std::vec::Vec<crate::model::PoolFilter>>,
+    #[doc(hidden)]pub filters: std::option::Option<std::vec::Vec<crate::model::PoolFilter>>,
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per each request.</p>
-    #[doc(hidden)]
-    pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]pub max_results: std::option::Option<i32>,
 }
 impl DescribePoolsInput {
     /// <p>The unique identifier of pools to find. This is an array of strings that can be either the PoolId or PoolArn.</p>
-    pub fn pool_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn pool_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.pool_ids.as_deref()
     }
     /// <p>An array of PoolFilter objects to filter the results.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::model::PoolFilter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::model::PoolFilter]> {
         self.filters.as_deref()
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per each request.</p>
@@ -8968,7 +6617,7 @@ impl DescribePoolsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribePoolsInput {
+impl  std::fmt::Debug for DescribePoolsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePoolsInput");
         formatter.field("pool_ids", &self.pool_ids);
@@ -8980,33 +6629,28 @@ impl std::fmt::Debug for DescribePoolsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribePhoneNumbersInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DescribePhoneNumbersInput  {
     /// <p>The unique identifier of phone numbers to find information about. This is an array of strings that can be either the PhoneNumberId or PhoneNumberArn.</p>
-    #[doc(hidden)]
-    pub phone_number_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub phone_number_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of PhoneNumberFilter objects to filter the results.</p>
-    #[doc(hidden)]
-    pub filters: std::option::Option<std::vec::Vec<crate::model::PhoneNumberFilter>>,
+    #[doc(hidden)]pub filters: std::option::Option<std::vec::Vec<crate::model::PhoneNumberFilter>>,
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per each request.</p>
-    #[doc(hidden)]
-    pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]pub max_results: std::option::Option<i32>,
 }
 impl DescribePhoneNumbersInput {
     /// <p>The unique identifier of phone numbers to find information about. This is an array of strings that can be either the PhoneNumberId or PhoneNumberArn.</p>
-    pub fn phone_number_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn phone_number_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.phone_number_ids.as_deref()
     }
     /// <p>An array of PhoneNumberFilter objects to filter the results.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::model::PhoneNumberFilter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::model::PhoneNumberFilter]> {
         self.filters.as_deref()
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per each request.</p>
@@ -9014,7 +6658,7 @@ impl DescribePhoneNumbersInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribePhoneNumbersInput {
+impl  std::fmt::Debug for DescribePhoneNumbersInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePhoneNumbersInput");
         formatter.field("phone_number_ids", &self.phone_number_ids);
@@ -9026,26 +6670,22 @@ impl std::fmt::Debug for DescribePhoneNumbersInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeOptOutListsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DescribeOptOutListsInput  {
     /// <p>The OptOutLists to show the details of. This is an array of strings that can be either the OptOutListName or OptOutListArn.</p>
-    #[doc(hidden)]
-    pub opt_out_list_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub opt_out_list_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per each request.</p>
-    #[doc(hidden)]
-    pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]pub max_results: std::option::Option<i32>,
 }
 impl DescribeOptOutListsInput {
     /// <p>The OptOutLists to show the details of. This is an array of strings that can be either the OptOutListName or OptOutListArn.</p>
-    pub fn opt_out_list_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn opt_out_list_names(&self) -> std::option::Option<& [std::string::String]> {
         self.opt_out_list_names.as_deref()
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per each request.</p>
@@ -9053,7 +6693,7 @@ impl DescribeOptOutListsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeOptOutListsInput {
+impl  std::fmt::Debug for DescribeOptOutListsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeOptOutListsInput");
         formatter.field("opt_out_list_names", &self.opt_out_list_names);
@@ -9064,40 +6704,34 @@ impl std::fmt::Debug for DescribeOptOutListsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeOptedOutNumbersInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DescribeOptedOutNumbersInput  {
     /// <p>The OptOutListName or OptOutListArn of the OptOutList. You can use <code>DescribeOptOutLists</code> to find the values for OptOutListName and OptOutListArn.</p>
-    #[doc(hidden)]
-    pub opt_out_list_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub opt_out_list_name: std::option::Option<std::string::String>,
     /// <p>An array of phone numbers to search for in the OptOutList.</p>
-    #[doc(hidden)]
-    pub opted_out_numbers: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub opted_out_numbers: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of OptedOutFilter objects to filter the results on.</p>
-    #[doc(hidden)]
-    pub filters: std::option::Option<std::vec::Vec<crate::model::OptedOutFilter>>,
+    #[doc(hidden)]pub filters: std::option::Option<std::vec::Vec<crate::model::OptedOutFilter>>,
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per each request.</p>
-    #[doc(hidden)]
-    pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]pub max_results: std::option::Option<i32>,
 }
 impl DescribeOptedOutNumbersInput {
     /// <p>The OptOutListName or OptOutListArn of the OptOutList. You can use <code>DescribeOptOutLists</code> to find the values for OptOutListName and OptOutListArn.</p>
-    pub fn opt_out_list_name(&self) -> std::option::Option<&str> {
+    pub fn opt_out_list_name(&self) -> std::option::Option<& str> {
         self.opt_out_list_name.as_deref()
     }
     /// <p>An array of phone numbers to search for in the OptOutList.</p>
-    pub fn opted_out_numbers(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn opted_out_numbers(&self) -> std::option::Option<& [std::string::String]> {
         self.opted_out_numbers.as_deref()
     }
     /// <p>An array of OptedOutFilter objects to filter the results on.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::model::OptedOutFilter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::model::OptedOutFilter]> {
         self.filters.as_deref()
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per each request.</p>
@@ -9105,7 +6739,7 @@ impl DescribeOptedOutNumbersInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeOptedOutNumbersInput {
+impl  std::fmt::Debug for DescribeOptedOutNumbersInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeOptedOutNumbersInput");
         formatter.field("opt_out_list_name", &self.opt_out_list_name);
@@ -9118,40 +6752,34 @@ impl std::fmt::Debug for DescribeOptedOutNumbersInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeKeywordsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DescribeKeywordsInput  {
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
-    #[doc(hidden)]
-    pub origination_identity: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub origination_identity: std::option::Option<std::string::String>,
     /// <p>An array of keywords to search for.</p>
-    #[doc(hidden)]
-    pub keywords: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub keywords: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of keyword filters to filter the results.</p>
-    #[doc(hidden)]
-    pub filters: std::option::Option<std::vec::Vec<crate::model::KeywordFilter>>,
+    #[doc(hidden)]pub filters: std::option::Option<std::vec::Vec<crate::model::KeywordFilter>>,
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per each request.</p>
-    #[doc(hidden)]
-    pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]pub max_results: std::option::Option<i32>,
 }
 impl DescribeKeywordsInput {
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
-    pub fn origination_identity(&self) -> std::option::Option<&str> {
+    pub fn origination_identity(&self) -> std::option::Option<& str> {
         self.origination_identity.as_deref()
     }
     /// <p>An array of keywords to search for.</p>
-    pub fn keywords(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn keywords(&self) -> std::option::Option<& [std::string::String]> {
         self.keywords.as_deref()
     }
     /// <p>An array of keyword filters to filter the results.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::model::KeywordFilter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::model::KeywordFilter]> {
         self.filters.as_deref()
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per each request.</p>
@@ -9159,7 +6787,7 @@ impl DescribeKeywordsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeKeywordsInput {
+impl  std::fmt::Debug for DescribeKeywordsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeKeywordsInput");
         formatter.field("origination_identity", &self.origination_identity);
@@ -9172,33 +6800,28 @@ impl std::fmt::Debug for DescribeKeywordsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeConfigurationSetsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DescribeConfigurationSetsInput  {
     /// <p>An array of strings. Each element can be either a ConfigurationSetName or ConfigurationSetArn.</p>
-    #[doc(hidden)]
-    pub configuration_set_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub configuration_set_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of filters to apply to the results that are returned.</p>
-    #[doc(hidden)]
-    pub filters: std::option::Option<std::vec::Vec<crate::model::ConfigurationSetFilter>>,
+    #[doc(hidden)]pub filters: std::option::Option<std::vec::Vec<crate::model::ConfigurationSetFilter>>,
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per each request.</p>
-    #[doc(hidden)]
-    pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]pub max_results: std::option::Option<i32>,
 }
 impl DescribeConfigurationSetsInput {
     /// <p>An array of strings. Each element can be either a ConfigurationSetName or ConfigurationSetArn.</p>
-    pub fn configuration_set_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn configuration_set_names(&self) -> std::option::Option<& [std::string::String]> {
         self.configuration_set_names.as_deref()
     }
     /// <p>An array of filters to apply to the results that are returned.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::model::ConfigurationSetFilter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::model::ConfigurationSetFilter]> {
         self.filters.as_deref()
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per each request.</p>
@@ -9206,7 +6829,7 @@ impl DescribeConfigurationSetsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeConfigurationSetsInput {
+impl  std::fmt::Debug for DescribeConfigurationSetsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeConfigurationSetsInput");
         formatter.field("configuration_set_names", &self.configuration_set_names);
@@ -9218,19 +6841,16 @@ impl std::fmt::Debug for DescribeConfigurationSetsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeAccountLimitsInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DescribeAccountLimitsInput  {
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per each request.</p>
-    #[doc(hidden)]
-    pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]pub max_results: std::option::Option<i32>,
 }
 impl DescribeAccountLimitsInput {
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per each request.</p>
@@ -9238,7 +6858,7 @@ impl DescribeAccountLimitsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeAccountLimitsInput {
+impl  std::fmt::Debug for DescribeAccountLimitsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAccountLimitsInput");
         formatter.field("next_token", &self.next_token);
@@ -9248,19 +6868,16 @@ impl std::fmt::Debug for DescribeAccountLimitsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeAccountAttributesInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DescribeAccountAttributesInput  {
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per each request.</p>
-    #[doc(hidden)]
-    pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]pub max_results: std::option::Option<i32>,
 }
 impl DescribeAccountAttributesInput {
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per each request.</p>
@@ -9268,7 +6885,7 @@ impl DescribeAccountAttributesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeAccountAttributesInput {
+impl  std::fmt::Debug for DescribeAccountAttributesInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAccountAttributesInput");
         formatter.field("next_token", &self.next_token);
@@ -9278,10 +6895,10 @@ impl std::fmt::Debug for DescribeAccountAttributesInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteVoiceMessageSpendLimitOverrideInput {}
-impl std::fmt::Debug for DeleteVoiceMessageSpendLimitOverrideInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DeleteVoiceMessageSpendLimitOverrideInput  {
+}
+impl  std::fmt::Debug for DeleteVoiceMessageSpendLimitOverrideInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteVoiceMessageSpendLimitOverrideInput");
         formatter.finish()
@@ -9289,10 +6906,10 @@ impl std::fmt::Debug for DeleteVoiceMessageSpendLimitOverrideInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteTextMessageSpendLimitOverrideInput {}
-impl std::fmt::Debug for DeleteTextMessageSpendLimitOverrideInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DeleteTextMessageSpendLimitOverrideInput  {
+}
+impl  std::fmt::Debug for DeleteTextMessageSpendLimitOverrideInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteTextMessageSpendLimitOverrideInput");
         formatter.finish()
@@ -9300,20 +6917,18 @@ impl std::fmt::Debug for DeleteTextMessageSpendLimitOverrideInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeletePoolInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DeletePoolInput  {
     /// <p>The PoolId or PoolArn of the pool to delete. You can use <code>DescribePools</code> to find the values for PoolId and PoolArn .</p>
-    #[doc(hidden)]
-    pub pool_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub pool_id: std::option::Option<std::string::String>,
 }
 impl DeletePoolInput {
     /// <p>The PoolId or PoolArn of the pool to delete. You can use <code>DescribePools</code> to find the values for PoolId and PoolArn .</p>
-    pub fn pool_id(&self) -> std::option::Option<&str> {
+    pub fn pool_id(&self) -> std::option::Option<& str> {
         self.pool_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePoolInput {
+impl  std::fmt::Debug for DeletePoolInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeletePoolInput");
         formatter.field("pool_id", &self.pool_id);
@@ -9322,20 +6937,18 @@ impl std::fmt::Debug for DeletePoolInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteOptOutListInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DeleteOptOutListInput  {
     /// <p>The OptOutListName or OptOutListArn of the OptOutList to delete. You can use <code>DescribeOptOutLists</code> to find the values for OptOutListName and OptOutListArn.</p>
-    #[doc(hidden)]
-    pub opt_out_list_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub opt_out_list_name: std::option::Option<std::string::String>,
 }
 impl DeleteOptOutListInput {
     /// <p>The OptOutListName or OptOutListArn of the OptOutList to delete. You can use <code>DescribeOptOutLists</code> to find the values for OptOutListName and OptOutListArn.</p>
-    pub fn opt_out_list_name(&self) -> std::option::Option<&str> {
+    pub fn opt_out_list_name(&self) -> std::option::Option<& str> {
         self.opt_out_list_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteOptOutListInput {
+impl  std::fmt::Debug for DeleteOptOutListInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteOptOutListInput");
         formatter.field("opt_out_list_name", &self.opt_out_list_name);
@@ -9344,27 +6957,24 @@ impl std::fmt::Debug for DeleteOptOutListInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteOptedOutNumberInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DeleteOptedOutNumberInput  {
     /// <p>The OptOutListName or OptOutListArn to remove the phone number from.</p>
-    #[doc(hidden)]
-    pub opt_out_list_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub opt_out_list_name: std::option::Option<std::string::String>,
     /// <p>The phone number, in E.164 format, to remove from the OptOutList.</p>
-    #[doc(hidden)]
-    pub opted_out_number: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub opted_out_number: std::option::Option<std::string::String>,
 }
 impl DeleteOptedOutNumberInput {
     /// <p>The OptOutListName or OptOutListArn to remove the phone number from.</p>
-    pub fn opt_out_list_name(&self) -> std::option::Option<&str> {
+    pub fn opt_out_list_name(&self) -> std::option::Option<& str> {
         self.opt_out_list_name.as_deref()
     }
     /// <p>The phone number, in E.164 format, to remove from the OptOutList.</p>
-    pub fn opted_out_number(&self) -> std::option::Option<&str> {
+    pub fn opted_out_number(&self) -> std::option::Option<& str> {
         self.opted_out_number.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteOptedOutNumberInput {
+impl  std::fmt::Debug for DeleteOptedOutNumberInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteOptedOutNumberInput");
         formatter.field("opt_out_list_name", &self.opt_out_list_name);
@@ -9374,27 +6984,24 @@ impl std::fmt::Debug for DeleteOptedOutNumberInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteKeywordInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DeleteKeywordInput  {
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, PoolId or PoolArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn and <code>DescribePools</code> to find the values of PoolId and PoolArn.</p>
-    #[doc(hidden)]
-    pub origination_identity: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub origination_identity: std::option::Option<std::string::String>,
     /// <p>The keyword to delete.</p>
-    #[doc(hidden)]
-    pub keyword: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub keyword: std::option::Option<std::string::String>,
 }
 impl DeleteKeywordInput {
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, PoolId or PoolArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn and <code>DescribePools</code> to find the values of PoolId and PoolArn.</p>
-    pub fn origination_identity(&self) -> std::option::Option<&str> {
+    pub fn origination_identity(&self) -> std::option::Option<& str> {
         self.origination_identity.as_deref()
     }
     /// <p>The keyword to delete.</p>
-    pub fn keyword(&self) -> std::option::Option<&str> {
+    pub fn keyword(&self) -> std::option::Option<& str> {
         self.keyword.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteKeywordInput {
+impl  std::fmt::Debug for DeleteKeywordInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteKeywordInput");
         formatter.field("origination_identity", &self.origination_identity);
@@ -9404,27 +7011,24 @@ impl std::fmt::Debug for DeleteKeywordInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteEventDestinationInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DeleteEventDestinationInput  {
     /// <p>The name of the configuration set or the configuration set's Amazon Resource Name (ARN) to remove the event destination from. The ConfigurateSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
-    #[doc(hidden)]
-    pub configuration_set_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>The name of the event destination to delete.</p>
-    #[doc(hidden)]
-    pub event_destination_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub event_destination_name: std::option::Option<std::string::String>,
 }
 impl DeleteEventDestinationInput {
     /// <p>The name of the configuration set or the configuration set's Amazon Resource Name (ARN) to remove the event destination from. The ConfigurateSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>The name of the event destination to delete.</p>
-    pub fn event_destination_name(&self) -> std::option::Option<&str> {
+    pub fn event_destination_name(&self) -> std::option::Option<& str> {
         self.event_destination_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteEventDestinationInput {
+impl  std::fmt::Debug for DeleteEventDestinationInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteEventDestinationInput");
         formatter.field("configuration_set_name", &self.configuration_set_name);
@@ -9434,20 +7038,18 @@ impl std::fmt::Debug for DeleteEventDestinationInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteDefaultSenderIdInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DeleteDefaultSenderIdInput  {
     /// <p>The name of the configuration set or the configuration set Amazon Resource Name (ARN) to delete the default sender ID from. The ConfigurationSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
-    #[doc(hidden)]
-    pub configuration_set_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub configuration_set_name: std::option::Option<std::string::String>,
 }
 impl DeleteDefaultSenderIdInput {
     /// <p>The name of the configuration set or the configuration set Amazon Resource Name (ARN) to delete the default sender ID from. The ConfigurationSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDefaultSenderIdInput {
+impl  std::fmt::Debug for DeleteDefaultSenderIdInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDefaultSenderIdInput");
         formatter.field("configuration_set_name", &self.configuration_set_name);
@@ -9456,20 +7058,18 @@ impl std::fmt::Debug for DeleteDefaultSenderIdInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteDefaultMessageTypeInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DeleteDefaultMessageTypeInput  {
     /// <p>The name of the configuration set or the configuration set Amazon Resource Name (ARN) to delete the default message type from. The ConfigurationSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
-    #[doc(hidden)]
-    pub configuration_set_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub configuration_set_name: std::option::Option<std::string::String>,
 }
 impl DeleteDefaultMessageTypeInput {
     /// <p>The name of the configuration set or the configuration set Amazon Resource Name (ARN) to delete the default message type from. The ConfigurationSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDefaultMessageTypeInput {
+impl  std::fmt::Debug for DeleteDefaultMessageTypeInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDefaultMessageTypeInput");
         formatter.field("configuration_set_name", &self.configuration_set_name);
@@ -9478,20 +7078,18 @@ impl std::fmt::Debug for DeleteDefaultMessageTypeInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteConfigurationSetInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DeleteConfigurationSetInput  {
     /// <p>The name of the configuration set or the configuration set ARN that you want to delete. The ConfigurationSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
-    #[doc(hidden)]
-    pub configuration_set_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub configuration_set_name: std::option::Option<std::string::String>,
 }
 impl DeleteConfigurationSetInput {
     /// <p>The name of the configuration set or the configuration set ARN that you want to delete. The ConfigurationSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteConfigurationSetInput {
+impl  std::fmt::Debug for DeleteConfigurationSetInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteConfigurationSetInput");
         formatter.field("configuration_set_name", &self.configuration_set_name);
@@ -9500,39 +7098,32 @@ impl std::fmt::Debug for DeleteConfigurationSetInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreatePoolInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CreatePoolInput  {
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
-    #[doc(hidden)]
-    pub origination_identity: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub origination_identity: std::option::Option<std::string::String>,
     /// <p>The new two-character code, in ISO 3166-1 alpha-2 format, for the country or region of the new pool.</p>
-    #[doc(hidden)]
-    pub iso_country_code: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub iso_country_code: std::option::Option<std::string::String>,
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    #[doc(hidden)]
-    pub message_type: std::option::Option<crate::model::MessageType>,
+    #[doc(hidden)]pub message_type: std::option::Option<crate::model::MessageType>,
     /// <p>By default this is set to false. When set to true the pool can't be deleted. You can change this value using the <code>UpdatePool</code> action.</p>
-    #[doc(hidden)]
-    pub deletion_protection_enabled: std::option::Option<bool>,
+    #[doc(hidden)]pub deletion_protection_enabled: std::option::Option<bool>,
     /// <p>An array of tags (key and value pairs) associated with the pool.</p>
-    #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
-    #[doc(hidden)]
-    pub client_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub client_token: std::option::Option<std::string::String>,
 }
 impl CreatePoolInput {
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
-    pub fn origination_identity(&self) -> std::option::Option<&str> {
+    pub fn origination_identity(&self) -> std::option::Option<& str> {
         self.origination_identity.as_deref()
     }
     /// <p>The new two-character code, in ISO 3166-1 alpha-2 format, for the country or region of the new pool.</p>
-    pub fn iso_country_code(&self) -> std::option::Option<&str> {
+    pub fn iso_country_code(&self) -> std::option::Option<& str> {
         self.iso_country_code.as_deref()
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    pub fn message_type(&self) -> std::option::Option<&crate::model::MessageType> {
+    pub fn message_type(&self) -> std::option::Option<& crate::model::MessageType> {
         self.message_type.as_ref()
     }
     /// <p>By default this is set to false. When set to true the pool can't be deleted. You can change this value using the <code>UpdatePool</code> action.</p>
@@ -9540,24 +7131,21 @@ impl CreatePoolInput {
         self.deletion_protection_enabled
     }
     /// <p>An array of tags (key and value pairs) associated with the pool.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreatePoolInput {
+impl  std::fmt::Debug for CreatePoolInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePoolInput");
         formatter.field("origination_identity", &self.origination_identity);
         formatter.field("iso_country_code", &self.iso_country_code);
         formatter.field("message_type", &self.message_type);
-        formatter.field(
-            "deletion_protection_enabled",
-            &self.deletion_protection_enabled,
-        );
+        formatter.field("deletion_protection_enabled", &self.deletion_protection_enabled);
         formatter.field("tags", &self.tags);
         formatter.field("client_token", &self.client_token);
         formatter.finish()
@@ -9565,34 +7153,30 @@ impl std::fmt::Debug for CreatePoolInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateOptOutListInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CreateOptOutListInput  {
     /// <p>The name of the new OptOutList.</p>
-    #[doc(hidden)]
-    pub opt_out_list_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub opt_out_list_name: std::option::Option<std::string::String>,
     /// <p>An array of tags (key and value pairs) to associate with the new OptOutList.</p>
-    #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
-    #[doc(hidden)]
-    pub client_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateOptOutListInput {
     /// <p>The name of the new OptOutList.</p>
-    pub fn opt_out_list_name(&self) -> std::option::Option<&str> {
+    pub fn opt_out_list_name(&self) -> std::option::Option<& str> {
         self.opt_out_list_name.as_deref()
     }
     /// <p>An array of tags (key and value pairs) to associate with the new OptOutList.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateOptOutListInput {
+impl  std::fmt::Debug for CreateOptOutListInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateOptOutListInput");
         formatter.field("opt_out_list_name", &self.opt_out_list_name);
@@ -9603,79 +7187,61 @@ impl std::fmt::Debug for CreateOptOutListInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateEventDestinationInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CreateEventDestinationInput  {
     /// <p>Either the name of the configuration set or the configuration set ARN to apply event logging to. The ConfigurateSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
-    #[doc(hidden)]
-    pub configuration_set_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>The name that identifies the event destination.</p>
-    #[doc(hidden)]
-    pub event_destination_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub event_destination_name: std::option::Option<std::string::String>,
     /// <p>An array of event types that determine which events to log. If "ALL" is used, then Amazon Pinpoint logs every event type.</p>
-    #[doc(hidden)]
-    pub matching_event_types: std::option::Option<std::vec::Vec<crate::model::EventType>>,
+    #[doc(hidden)]pub matching_event_types: std::option::Option<std::vec::Vec<crate::model::EventType>>,
     /// <p>An object that contains information about an event destination for logging to Amazon CloudWatch logs.</p>
-    #[doc(hidden)]
-    pub cloud_watch_logs_destination: std::option::Option<crate::model::CloudWatchLogsDestination>,
+    #[doc(hidden)]pub cloud_watch_logs_destination: std::option::Option<crate::model::CloudWatchLogsDestination>,
     /// <p>An object that contains information about an event destination for logging to Amazon Kinesis Data Firehose.</p>
-    #[doc(hidden)]
-    pub kinesis_firehose_destination: std::option::Option<crate::model::KinesisFirehoseDestination>,
+    #[doc(hidden)]pub kinesis_firehose_destination: std::option::Option<crate::model::KinesisFirehoseDestination>,
     /// <p>An object that contains information about an event destination for logging to Amazon SNS.</p>
-    #[doc(hidden)]
-    pub sns_destination: std::option::Option<crate::model::SnsDestination>,
+    #[doc(hidden)]pub sns_destination: std::option::Option<crate::model::SnsDestination>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
-    #[doc(hidden)]
-    pub client_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateEventDestinationInput {
     /// <p>Either the name of the configuration set or the configuration set ARN to apply event logging to. The ConfigurateSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>The name that identifies the event destination.</p>
-    pub fn event_destination_name(&self) -> std::option::Option<&str> {
+    pub fn event_destination_name(&self) -> std::option::Option<& str> {
         self.event_destination_name.as_deref()
     }
     /// <p>An array of event types that determine which events to log. If "ALL" is used, then Amazon Pinpoint logs every event type.</p>
-    pub fn matching_event_types(&self) -> std::option::Option<&[crate::model::EventType]> {
+    pub fn matching_event_types(&self) -> std::option::Option<& [crate::model::EventType]> {
         self.matching_event_types.as_deref()
     }
     /// <p>An object that contains information about an event destination for logging to Amazon CloudWatch logs.</p>
-    pub fn cloud_watch_logs_destination(
-        &self,
-    ) -> std::option::Option<&crate::model::CloudWatchLogsDestination> {
+    pub fn cloud_watch_logs_destination(&self) -> std::option::Option<& crate::model::CloudWatchLogsDestination> {
         self.cloud_watch_logs_destination.as_ref()
     }
     /// <p>An object that contains information about an event destination for logging to Amazon Kinesis Data Firehose.</p>
-    pub fn kinesis_firehose_destination(
-        &self,
-    ) -> std::option::Option<&crate::model::KinesisFirehoseDestination> {
+    pub fn kinesis_firehose_destination(&self) -> std::option::Option<& crate::model::KinesisFirehoseDestination> {
         self.kinesis_firehose_destination.as_ref()
     }
     /// <p>An object that contains information about an event destination for logging to Amazon SNS.</p>
-    pub fn sns_destination(&self) -> std::option::Option<&crate::model::SnsDestination> {
+    pub fn sns_destination(&self) -> std::option::Option<& crate::model::SnsDestination> {
         self.sns_destination.as_ref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateEventDestinationInput {
+impl  std::fmt::Debug for CreateEventDestinationInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateEventDestinationInput");
         formatter.field("configuration_set_name", &self.configuration_set_name);
         formatter.field("event_destination_name", &self.event_destination_name);
         formatter.field("matching_event_types", &self.matching_event_types);
-        formatter.field(
-            "cloud_watch_logs_destination",
-            &self.cloud_watch_logs_destination,
-        );
-        formatter.field(
-            "kinesis_firehose_destination",
-            &self.kinesis_firehose_destination,
-        );
+        formatter.field("cloud_watch_logs_destination", &self.cloud_watch_logs_destination);
+        formatter.field("kinesis_firehose_destination", &self.kinesis_firehose_destination);
         formatter.field("sns_destination", &self.sns_destination);
         formatter.field("client_token", &self.client_token);
         formatter.finish()
@@ -9683,34 +7249,30 @@ impl std::fmt::Debug for CreateEventDestinationInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateConfigurationSetInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CreateConfigurationSetInput  {
     /// <p>The name to use for the new configuration set.</p>
-    #[doc(hidden)]
-    pub configuration_set_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>An array of key and value pair tags that's associated with the new configuration set. </p>
-    #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
-    #[doc(hidden)]
-    pub client_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateConfigurationSetInput {
     /// <p>The name to use for the new configuration set.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>An array of key and value pair tags that's associated with the new configuration set. </p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateConfigurationSetInput {
+impl  std::fmt::Debug for CreateConfigurationSetInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateConfigurationSetInput");
         formatter.field("configuration_set_name", &self.configuration_set_name);
@@ -9721,41 +7283,36 @@ impl std::fmt::Debug for CreateConfigurationSetInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AssociateOriginationIdentityInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct AssociateOriginationIdentityInput  {
     /// <p>The pool to update with the new Identity. This value can be either the PoolId or PoolArn, and you can find these values using <code>DescribePools</code>.</p>
-    #[doc(hidden)]
-    pub pool_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub pool_id: std::option::Option<std::string::String>,
     /// <p>The origination identity to use, such as PhoneNumberId, PhoneNumberArn, SenderId, or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn, while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
-    #[doc(hidden)]
-    pub origination_identity: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub origination_identity: std::option::Option<std::string::String>,
     /// <p>The new two-character code, in ISO 3166-1 alpha-2 format, for the country or region of the origination identity.</p>
-    #[doc(hidden)]
-    pub iso_country_code: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub iso_country_code: std::option::Option<std::string::String>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
-    #[doc(hidden)]
-    pub client_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub client_token: std::option::Option<std::string::String>,
 }
 impl AssociateOriginationIdentityInput {
     /// <p>The pool to update with the new Identity. This value can be either the PoolId or PoolArn, and you can find these values using <code>DescribePools</code>.</p>
-    pub fn pool_id(&self) -> std::option::Option<&str> {
+    pub fn pool_id(&self) -> std::option::Option<& str> {
         self.pool_id.as_deref()
     }
     /// <p>The origination identity to use, such as PhoneNumberId, PhoneNumberArn, SenderId, or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn, while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
-    pub fn origination_identity(&self) -> std::option::Option<&str> {
+    pub fn origination_identity(&self) -> std::option::Option<& str> {
         self.origination_identity.as_deref()
     }
     /// <p>The new two-character code, in ISO 3166-1 alpha-2 format, for the country or region of the origination identity.</p>
-    pub fn iso_country_code(&self) -> std::option::Option<&str> {
+    pub fn iso_country_code(&self) -> std::option::Option<& str> {
         self.iso_country_code.as_deref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateOriginationIdentityInput {
+impl  std::fmt::Debug for AssociateOriginationIdentityInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateOriginationIdentityInput");
         formatter.field("pool_id", &self.pool_id);
@@ -9765,3 +7322,4 @@ impl std::fmt::Debug for AssociateOriginationIdentityInput {
         formatter.finish()
     }
 }
+

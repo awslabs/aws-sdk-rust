@@ -3,13 +3,12 @@ use std::fmt::Write;
 
 /// See [`BatchCreateAttendeeInput`](crate::input::BatchCreateAttendeeInput).
 pub mod batch_create_attendee_input {
-
+    
     /// A builder for [`BatchCreateAttendeeInput`](crate::input::BatchCreateAttendeeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
-        pub(crate) attendees:
-            std::option::Option<std::vec::Vec<crate::model::CreateAttendeeRequestItem>>,
+        pub(crate) attendees: std::option::Option<std::vec::Vec<crate::model::CreateAttendeeRequestItem>>,
     }
     impl Builder {
         /// <p>The Amazon Chime SDK ID of the meeting to which you're adding attendees.</p>
@@ -19,8 +18,7 @@ pub mod batch_create_attendee_input {
         }
         /// <p>The Amazon Chime SDK ID of the meeting to which you're adding attendees.</p>
         pub fn set_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.meeting_id = input;
-            self
+            self.meeting_id = input; self
         }
         /// Appends an item to `attendees`.
         ///
@@ -29,157 +27,96 @@ pub mod batch_create_attendee_input {
         /// <p>The attendee information, including attendees' IDs and join tokens.</p>
         pub fn attendees(mut self, input: crate::model::CreateAttendeeRequestItem) -> Self {
             let mut v = self.attendees.unwrap_or_default();
-            v.push(input);
-            self.attendees = Some(v);
-            self
+                            v.push(input);
+                            self.attendees = Some(v);
+                            self
         }
         /// <p>The attendee information, including attendees' IDs and join tokens.</p>
-        pub fn set_attendees(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CreateAttendeeRequestItem>>,
-        ) -> Self {
-            self.attendees = input;
-            self
+        pub fn set_attendees(mut self, input: std::option::Option<std::vec::Vec<crate::model::CreateAttendeeRequestItem>>) -> Self {
+            self.attendees = input; self
         }
         /// Consumes the builder and constructs a [`BatchCreateAttendeeInput`](crate::input::BatchCreateAttendeeInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::BatchCreateAttendeeInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::BatchCreateAttendeeInput {
-                meeting_id: self.meeting_id,
-                attendees: self.attendees,
-            })
+        pub fn build(self) -> Result<crate::input::BatchCreateAttendeeInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::BatchCreateAttendeeInput {
+                    meeting_id: self.meeting_id
+                    ,
+                    attendees: self.attendees
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl BatchCreateAttendeeInput {
     /// Consumes the builder and constructs an Operation<[`BatchCreateAttendee`](crate::operation::BatchCreateAttendee)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::BatchCreateAttendee,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::BatchCreateAttendee, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::BatchCreateAttendeeInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::BatchCreateAttendeeInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.meeting_id;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "meeting_id", details: "cannot be empty or unset" })?;
                 let meeting_id = aws_smithy_http::label::fmt_string(input_1, false);
                 if meeting_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/meetings/{MeetingId}/attendees",
-                    MeetingId = meeting_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "meeting_id", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/meetings/{MeetingId}/attendees", MeetingId = meeting_id).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::BatchCreateAttendeeInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::BatchCreateAttendeeInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("operation", "batch-create");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::BatchCreateAttendeeInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::BatchCreateAttendeeInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_batch_create_attendee(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_batch_create_attendee(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::BatchCreateAttendee::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "BatchCreateAttendee",
-            "chimesdkmeetings",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::BatchCreateAttendee::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("BatchCreateAttendee", "chimesdkmeetings"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -191,13 +128,12 @@ impl BatchCreateAttendeeInput {
 
 /// See [`BatchUpdateAttendeeCapabilitiesExceptInput`](crate::input::BatchUpdateAttendeeCapabilitiesExceptInput).
 pub mod batch_update_attendee_capabilities_except_input {
-
+    
     /// A builder for [`BatchUpdateAttendeeCapabilitiesExceptInput`](crate::input::BatchUpdateAttendeeCapabilitiesExceptInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
-        pub(crate) excluded_attendee_ids:
-            std::option::Option<std::vec::Vec<crate::model::AttendeeIdItem>>,
+        pub(crate) excluded_attendee_ids: std::option::Option<std::vec::Vec<crate::model::AttendeeIdItem>>,
         pub(crate) capabilities: std::option::Option<crate::model::AttendeeCapabilities>,
     }
     impl Builder {
@@ -208,8 +144,7 @@ pub mod batch_update_attendee_capabilities_except_input {
         }
         /// <p>The ID of the meeting associated with the update request.</p>
         pub fn set_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.meeting_id = input;
-            self
+            self.meeting_id = input; self
         }
         /// Appends an item to `excluded_attendee_ids`.
         ///
@@ -218,17 +153,13 @@ pub mod batch_update_attendee_capabilities_except_input {
         /// <p>The <code>AttendeeIDs</code> that you want to exclude from one or more capabilities.</p>
         pub fn excluded_attendee_ids(mut self, input: crate::model::AttendeeIdItem) -> Self {
             let mut v = self.excluded_attendee_ids.unwrap_or_default();
-            v.push(input);
-            self.excluded_attendee_ids = Some(v);
-            self
+                            v.push(input);
+                            self.excluded_attendee_ids = Some(v);
+                            self
         }
         /// <p>The <code>AttendeeIDs</code> that you want to exclude from one or more capabilities.</p>
-        pub fn set_excluded_attendee_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AttendeeIdItem>>,
-        ) -> Self {
-            self.excluded_attendee_ids = input;
-            self
+        pub fn set_excluded_attendee_ids(mut self, input: std::option::Option<std::vec::Vec<crate::model::AttendeeIdItem>>) -> Self {
+            self.excluded_attendee_ids = input; self
         }
         /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to update.</p>
         pub fn capabilities(mut self, input: crate::model::AttendeeCapabilities) -> Self {
@@ -236,95 +167,56 @@ pub mod batch_update_attendee_capabilities_except_input {
             self
         }
         /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to update.</p>
-        pub fn set_capabilities(
-            mut self,
-            input: std::option::Option<crate::model::AttendeeCapabilities>,
-        ) -> Self {
-            self.capabilities = input;
-            self
+        pub fn set_capabilities(mut self, input: std::option::Option<crate::model::AttendeeCapabilities>) -> Self {
+            self.capabilities = input; self
         }
         /// Consumes the builder and constructs a [`BatchUpdateAttendeeCapabilitiesExceptInput`](crate::input::BatchUpdateAttendeeCapabilitiesExceptInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::BatchUpdateAttendeeCapabilitiesExceptInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::BatchUpdateAttendeeCapabilitiesExceptInput {
-                meeting_id: self.meeting_id,
-                excluded_attendee_ids: self.excluded_attendee_ids,
-                capabilities: self.capabilities,
-            })
+        pub fn build(self) -> Result<crate::input::BatchUpdateAttendeeCapabilitiesExceptInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::BatchUpdateAttendeeCapabilitiesExceptInput {
+                    meeting_id: self.meeting_id
+                    ,
+                    excluded_attendee_ids: self.excluded_attendee_ids
+                    ,
+                    capabilities: self.capabilities
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl BatchUpdateAttendeeCapabilitiesExceptInput {
     /// Consumes the builder and constructs an Operation<[`BatchUpdateAttendeeCapabilitiesExcept`](crate::operation::BatchUpdateAttendeeCapabilitiesExcept)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::BatchUpdateAttendeeCapabilitiesExcept,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::BatchUpdateAttendeeCapabilitiesExcept, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::BatchUpdateAttendeeCapabilitiesExceptInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::BatchUpdateAttendeeCapabilitiesExceptInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_2 = &_input.meeting_id;
-                let input_2 = input_2.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "meeting_id", details: "cannot be empty or unset" })?;
                 let meeting_id = aws_smithy_http::label::fmt_string(input_2, false);
                 if meeting_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/meetings/{MeetingId}/attendees/capabilities",
-                    MeetingId = meeting_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "meeting_id", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/meetings/{MeetingId}/attendees/capabilities", MeetingId = meeting_id).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::BatchUpdateAttendeeCapabilitiesExceptInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::BatchUpdateAttendeeCapabilitiesExceptInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("operation", "batch-update-except");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::BatchUpdateAttendeeCapabilitiesExceptInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::BatchUpdateAttendeeCapabilitiesExceptInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -332,58 +224,36 @@ impl BatchUpdateAttendeeCapabilitiesExceptInput {
             crate::operation_ser::serialize_operation_crate_operation_batch_update_attendee_capabilities_except(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::BatchUpdateAttendeeCapabilitiesExcept::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "BatchUpdateAttendeeCapabilitiesExcept",
-            "chimesdkmeetings",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::BatchUpdateAttendeeCapabilitiesExcept::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("BatchUpdateAttendeeCapabilitiesExcept", "chimesdkmeetings"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -395,9 +265,9 @@ impl BatchUpdateAttendeeCapabilitiesExceptInput {
 
 /// See [`CreateAttendeeInput`](crate::input::CreateAttendeeInput).
 pub mod create_attendee_input {
-
+    
     /// A builder for [`CreateAttendeeInput`](crate::input::CreateAttendeeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
         pub(crate) external_user_id: std::option::Option<std::string::String>,
@@ -411,8 +281,7 @@ pub mod create_attendee_input {
         }
         /// <p>The unique ID of the meeting.</p>
         pub fn set_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.meeting_id = input;
-            self
+            self.meeting_id = input; self
         }
         /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
         pub fn external_user_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -420,173 +289,112 @@ pub mod create_attendee_input {
             self
         }
         /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
-        pub fn set_external_user_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.external_user_id = input;
-            self
+        pub fn set_external_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.external_user_id = input; self
         }
-        /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to grant an attendee. If you don't specify capabilities, all users have send and receive capabilities on all media channels by default.</p> <note>
-        /// <p>You use the capabilities with a set of values that control what the capabilities can do, such as <code>SendReceive</code> data. For more information about those values, see .</p>
-        /// </note>
-        /// <p>When using capabilities, be aware of these corner cases:</p>
-        /// <ul>
-        /// <li> <p>You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless you also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you don't set the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request status code. However, you can set your <code>video</code> capability to receive and you set your <code>content</code> capability to not receive.</p> </li>
-        /// <li> <p>When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio will flow from the attendee to the other meeting participants.</p> </li>
-        /// <li> <p>When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video or content streams, remote attendess can receive those streams, but only after media renegotiation between the client and the Amazon Chime back-end server.</p> </li>
+        /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to grant an attendee. If you don't specify capabilities, all users have send and receive capabilities on all media channels by default.</p> <note> 
+        /// <p>You use the capabilities with a set of values that control what the capabilities can do, such as <code>SendReceive</code> data. For more information about those values, see .</p> 
+        /// </note> 
+        /// <p>When using capabilities, be aware of these corner cases:</p> 
+        /// <ul> 
+        /// <li> <p>You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless you also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you don't set the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request status code. However, you can set your <code>video</code> capability to receive and you set your <code>content</code> capability to not receive.</p> </li> 
+        /// <li> <p>When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio will flow from the attendee to the other meeting participants.</p> </li> 
+        /// <li> <p>When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video or content streams, remote attendess can receive those streams, but only after media renegotiation between the client and the Amazon Chime back-end server.</p> </li> 
         /// </ul>
         pub fn capabilities(mut self, input: crate::model::AttendeeCapabilities) -> Self {
             self.capabilities = Some(input);
             self
         }
-        /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to grant an attendee. If you don't specify capabilities, all users have send and receive capabilities on all media channels by default.</p> <note>
-        /// <p>You use the capabilities with a set of values that control what the capabilities can do, such as <code>SendReceive</code> data. For more information about those values, see .</p>
-        /// </note>
-        /// <p>When using capabilities, be aware of these corner cases:</p>
-        /// <ul>
-        /// <li> <p>You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless you also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you don't set the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request status code. However, you can set your <code>video</code> capability to receive and you set your <code>content</code> capability to not receive.</p> </li>
-        /// <li> <p>When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio will flow from the attendee to the other meeting participants.</p> </li>
-        /// <li> <p>When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video or content streams, remote attendess can receive those streams, but only after media renegotiation between the client and the Amazon Chime back-end server.</p> </li>
+        /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to grant an attendee. If you don't specify capabilities, all users have send and receive capabilities on all media channels by default.</p> <note> 
+        /// <p>You use the capabilities with a set of values that control what the capabilities can do, such as <code>SendReceive</code> data. For more information about those values, see .</p> 
+        /// </note> 
+        /// <p>When using capabilities, be aware of these corner cases:</p> 
+        /// <ul> 
+        /// <li> <p>You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless you also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you don't set the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request status code. However, you can set your <code>video</code> capability to receive and you set your <code>content</code> capability to not receive.</p> </li> 
+        /// <li> <p>When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio will flow from the attendee to the other meeting participants.</p> </li> 
+        /// <li> <p>When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video or content streams, remote attendess can receive those streams, but only after media renegotiation between the client and the Amazon Chime back-end server.</p> </li> 
         /// </ul>
-        pub fn set_capabilities(
-            mut self,
-            input: std::option::Option<crate::model::AttendeeCapabilities>,
-        ) -> Self {
-            self.capabilities = input;
-            self
+        pub fn set_capabilities(mut self, input: std::option::Option<crate::model::AttendeeCapabilities>) -> Self {
+            self.capabilities = input; self
         }
         /// Consumes the builder and constructs a [`CreateAttendeeInput`](crate::input::CreateAttendeeInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateAttendeeInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::CreateAttendeeInput {
-                meeting_id: self.meeting_id,
-                external_user_id: self.external_user_id,
-                capabilities: self.capabilities,
-            })
+        pub fn build(self) -> Result<crate::input::CreateAttendeeInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CreateAttendeeInput {
+                    meeting_id: self.meeting_id
+                    ,
+                    external_user_id: self.external_user_id
+                    ,
+                    capabilities: self.capabilities
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateAttendeeInput {
     /// Consumes the builder and constructs an Operation<[`CreateAttendee`](crate::operation::CreateAttendee)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateAttendee,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateAttendee, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateAttendeeInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::CreateAttendeeInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_3 = &_input.meeting_id;
-                let input_3 = input_3.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "meeting_id", details: "cannot be empty or unset" })?;
                 let meeting_id = aws_smithy_http::label::fmt_string(input_3, false);
                 if meeting_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/meetings/{MeetingId}/attendees",
-                    MeetingId = meeting_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "meeting_id", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/meetings/{MeetingId}/attendees", MeetingId = meeting_id).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreateAttendeeInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CreateAttendeeInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_attendee(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_attendee(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateAttendee::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateAttendee",
-            "chimesdkmeetings",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateAttendee::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateAttendee", "chimesdkmeetings"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -598,18 +406,16 @@ impl CreateAttendeeInput {
 
 /// See [`CreateMeetingInput`](crate::input::CreateMeetingInput).
 pub mod create_meeting_input {
-
+    
     /// A builder for [`CreateMeetingInput`](crate::input::CreateMeetingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
         pub(crate) media_region: std::option::Option<std::string::String>,
         pub(crate) meeting_host_id: std::option::Option<std::string::String>,
         pub(crate) external_meeting_id: std::option::Option<std::string::String>,
-        pub(crate) notifications_configuration:
-            std::option::Option<crate::model::NotificationsConfiguration>,
-        pub(crate) meeting_features:
-            std::option::Option<crate::model::MeetingFeaturesConfiguration>,
+        pub(crate) notifications_configuration: std::option::Option<crate::model::NotificationsConfiguration>,
+        pub(crate) meeting_features: std::option::Option<crate::model::MeetingFeaturesConfiguration>,
         pub(crate) primary_meeting_id: std::option::Option<std::string::String>,
         pub(crate) tenant_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -621,26 +427,21 @@ pub mod create_meeting_input {
             self
         }
         /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
-        pub fn set_client_request_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.client_request_token = input;
-            self
+        pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_request_token = input; self
         }
-        /// <p>The Region in which to create the meeting.</p>
-        /// <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p>
+        /// <p>The Region in which to create the meeting.</p> 
+        /// <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p> 
         /// <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
         pub fn media_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.media_region = Some(input.into());
             self
         }
-        /// <p>The Region in which to create the meeting.</p>
-        /// <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p>
+        /// <p>The Region in which to create the meeting.</p> 
+        /// <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p> 
         /// <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
         pub fn set_media_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.media_region = input;
-            self
+            self.media_region = input; self
         }
         /// <p>Reserved.</p>
         pub fn meeting_host_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -648,12 +449,8 @@ pub mod create_meeting_input {
             self
         }
         /// <p>Reserved.</p>
-        pub fn set_meeting_host_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.meeting_host_id = input;
-            self
+        pub fn set_meeting_host_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.meeting_host_id = input; self
         }
         /// <p>The external meeting ID.</p>
         pub fn external_meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -661,44 +458,26 @@ pub mod create_meeting_input {
             self
         }
         /// <p>The external meeting ID.</p>
-        pub fn set_external_meeting_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.external_meeting_id = input;
-            self
+        pub fn set_external_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.external_meeting_id = input; self
         }
         /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
-        pub fn notifications_configuration(
-            mut self,
-            input: crate::model::NotificationsConfiguration,
-        ) -> Self {
+        pub fn notifications_configuration(mut self, input: crate::model::NotificationsConfiguration) -> Self {
             self.notifications_configuration = Some(input);
             self
         }
         /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
-        pub fn set_notifications_configuration(
-            mut self,
-            input: std::option::Option<crate::model::NotificationsConfiguration>,
-        ) -> Self {
-            self.notifications_configuration = input;
-            self
+        pub fn set_notifications_configuration(mut self, input: std::option::Option<crate::model::NotificationsConfiguration>) -> Self {
+            self.notifications_configuration = input; self
         }
         /// <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
-        pub fn meeting_features(
-            mut self,
-            input: crate::model::MeetingFeaturesConfiguration,
-        ) -> Self {
+        pub fn meeting_features(mut self, input: crate::model::MeetingFeaturesConfiguration) -> Self {
             self.meeting_features = Some(input);
             self
         }
         /// <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
-        pub fn set_meeting_features(
-            mut self,
-            input: std::option::Option<crate::model::MeetingFeaturesConfiguration>,
-        ) -> Self {
-            self.meeting_features = input;
-            self
+        pub fn set_meeting_features(mut self, input: std::option::Option<crate::model::MeetingFeaturesConfiguration>) -> Self {
+            self.meeting_features = input; self
         }
         /// <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
         pub fn primary_meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -706,12 +485,8 @@ pub mod create_meeting_input {
             self
         }
         /// <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
-        pub fn set_primary_meeting_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.primary_meeting_id = input;
-            self
+        pub fn set_primary_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.primary_meeting_id = input; self
         }
         /// Appends an item to `tenant_ids`.
         ///
@@ -720,186 +495,144 @@ pub mod create_meeting_input {
         /// <p>A consistent and opaque identifier, created and maintained by the builder to represent a segment of their users.</p>
         pub fn tenant_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tenant_ids.unwrap_or_default();
-            v.push(input.into());
-            self.tenant_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.tenant_ids = Some(v);
+                            self
         }
         /// <p>A consistent and opaque identifier, created and maintained by the builder to represent a segment of their users.</p>
-        pub fn set_tenant_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.tenant_ids = input;
-            self
+        pub fn set_tenant_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.tenant_ids = input; self
         }
         /// Appends an item to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Applies one or more tags to an Amazon Chime SDK meeting. Note the following:</p>
-        /// <ul>
-        /// <li> <p>Not all resources have tags. For a list of services with resources that support tagging using this operation, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>. If the resource doesn't yet support this operation, the resource's service might support tagging using its own API operations. For more information, refer to the documentation for that service.</p> </li>
-        /// <li> <p>Each resource can have up to 50 tags. For other limits, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag Naming and Usage Conventions</a> in the <i>AWS General Reference</i>.</p> </li>
-        /// <li> <p>You can only tag resources that are located in the specified AWS Region for the AWS account.</p> </li>
-        /// <li> <p>To add tags to a resource, you need the necessary permissions for the service that the resource belongs to as well as permissions for adding tags. For more information, see the documentation for each service.</p> </li>
-        /// </ul> <important>
-        /// <p>Do not store personally identifiable information (PII) or other confidential or sensitive information in tags. We use tags to provide you with billing and administration services. Tags are not intended to be used for private or sensitive data.</p>
-        /// </important>
-        /// <p> <b>Minimum permissions</b> </p>
-        /// <p> In addition to the <code>tag:TagResources </code>permission required by this operation, you must also have the tagging permission defined by the service that created the resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code> operation, you must have both of the following permissions:</p>
-        /// <p> <code>tag:TagResources</code> </p>
-        /// <p> <code>ChimeSDKMeetings:CreateTags</code> </p> <note>
-        /// <p>Some services might have specific requirements for tagging some resources. For example, to tag an Amazon S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions don't work, check the documentation for that service's tagging APIs for more information.</p>
+        /// <p>Applies one or more tags to an Amazon Chime SDK meeting. Note the following:</p> 
+        /// <ul> 
+        /// <li> <p>Not all resources have tags. For a list of services with resources that support tagging using this operation, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>. If the resource doesn't yet support this operation, the resource's service might support tagging using its own API operations. For more information, refer to the documentation for that service.</p> </li> 
+        /// <li> <p>Each resource can have up to 50 tags. For other limits, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag Naming and Usage Conventions</a> in the <i>AWS General Reference</i>.</p> </li> 
+        /// <li> <p>You can only tag resources that are located in the specified AWS Region for the AWS account.</p> </li> 
+        /// <li> <p>To add tags to a resource, you need the necessary permissions for the service that the resource belongs to as well as permissions for adding tags. For more information, see the documentation for each service.</p> </li> 
+        /// </ul> <important> 
+        /// <p>Do not store personally identifiable information (PII) or other confidential or sensitive information in tags. We use tags to provide you with billing and administration services. Tags are not intended to be used for private or sensitive data.</p> 
+        /// </important> 
+        /// <p> <b>Minimum permissions</b> </p> 
+        /// <p> In addition to the <code>tag:TagResources </code>permission required by this operation, you must also have the tagging permission defined by the service that created the resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code> operation, you must have both of the following permissions:</p> 
+        /// <p> <code>tag:TagResources</code> </p> 
+        /// <p> <code>ChimeSDKMeetings:CreateTags</code> </p> <note> 
+        /// <p>Some services might have specific requirements for tagging some resources. For example, to tag an Amazon S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions don't work, check the documentation for that service's tagging APIs for more information.</p> 
         /// </note>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
-        /// <p>Applies one or more tags to an Amazon Chime SDK meeting. Note the following:</p>
-        /// <ul>
-        /// <li> <p>Not all resources have tags. For a list of services with resources that support tagging using this operation, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>. If the resource doesn't yet support this operation, the resource's service might support tagging using its own API operations. For more information, refer to the documentation for that service.</p> </li>
-        /// <li> <p>Each resource can have up to 50 tags. For other limits, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag Naming and Usage Conventions</a> in the <i>AWS General Reference</i>.</p> </li>
-        /// <li> <p>You can only tag resources that are located in the specified AWS Region for the AWS account.</p> </li>
-        /// <li> <p>To add tags to a resource, you need the necessary permissions for the service that the resource belongs to as well as permissions for adding tags. For more information, see the documentation for each service.</p> </li>
-        /// </ul> <important>
-        /// <p>Do not store personally identifiable information (PII) or other confidential or sensitive information in tags. We use tags to provide you with billing and administration services. Tags are not intended to be used for private or sensitive data.</p>
-        /// </important>
-        /// <p> <b>Minimum permissions</b> </p>
-        /// <p> In addition to the <code>tag:TagResources </code>permission required by this operation, you must also have the tagging permission defined by the service that created the resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code> operation, you must have both of the following permissions:</p>
-        /// <p> <code>tag:TagResources</code> </p>
-        /// <p> <code>ChimeSDKMeetings:CreateTags</code> </p> <note>
-        /// <p>Some services might have specific requirements for tagging some resources. For example, to tag an Amazon S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions don't work, check the documentation for that service's tagging APIs for more information.</p>
+        /// <p>Applies one or more tags to an Amazon Chime SDK meeting. Note the following:</p> 
+        /// <ul> 
+        /// <li> <p>Not all resources have tags. For a list of services with resources that support tagging using this operation, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>. If the resource doesn't yet support this operation, the resource's service might support tagging using its own API operations. For more information, refer to the documentation for that service.</p> </li> 
+        /// <li> <p>Each resource can have up to 50 tags. For other limits, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag Naming and Usage Conventions</a> in the <i>AWS General Reference</i>.</p> </li> 
+        /// <li> <p>You can only tag resources that are located in the specified AWS Region for the AWS account.</p> </li> 
+        /// <li> <p>To add tags to a resource, you need the necessary permissions for the service that the resource belongs to as well as permissions for adding tags. For more information, see the documentation for each service.</p> </li> 
+        /// </ul> <important> 
+        /// <p>Do not store personally identifiable information (PII) or other confidential or sensitive information in tags. We use tags to provide you with billing and administration services. Tags are not intended to be used for private or sensitive data.</p> 
+        /// </important> 
+        /// <p> <b>Minimum permissions</b> </p> 
+        /// <p> In addition to the <code>tag:TagResources </code>permission required by this operation, you must also have the tagging permission defined by the service that created the resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code> operation, you must have both of the following permissions:</p> 
+        /// <p> <code>tag:TagResources</code> </p> 
+        /// <p> <code>ChimeSDKMeetings:CreateTags</code> </p> <note> 
+        /// <p>Some services might have specific requirements for tagging some resources. For example, to tag an Amazon S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions don't work, check the documentation for that service's tagging APIs for more information.</p> 
         /// </note>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateMeetingInput`](crate::input::CreateMeetingInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateMeetingInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::CreateMeetingInput {
-                client_request_token: self.client_request_token,
-                media_region: self.media_region,
-                meeting_host_id: self.meeting_host_id,
-                external_meeting_id: self.external_meeting_id,
-                notifications_configuration: self.notifications_configuration,
-                meeting_features: self.meeting_features,
-                primary_meeting_id: self.primary_meeting_id,
-                tenant_ids: self.tenant_ids,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::CreateMeetingInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CreateMeetingInput {
+                    client_request_token: self.client_request_token
+                    ,
+                    media_region: self.media_region
+                    ,
+                    meeting_host_id: self.meeting_host_id
+                    ,
+                    external_meeting_id: self.external_meeting_id
+                    ,
+                    notifications_configuration: self.notifications_configuration
+                    ,
+                    meeting_features: self.meeting_features
+                    ,
+                    primary_meeting_id: self.primary_meeting_id
+                    ,
+                    tenant_ids: self.tenant_ids
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateMeetingInput {
     /// Consumes the builder and constructs an Operation<[`CreateMeeting`](crate::operation::CreateMeeting)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        mut self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateMeeting,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateMeeting, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         if self.client_request_token.is_none() {
-            self.client_request_token = Some(_config.make_token.make_idempotency_token());
-        }
+                                self.client_request_token = Some(_config.make_token.make_idempotency_token());
+                            }
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateMeetingInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::CreateMeetingInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/meetings").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreateMeetingInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CreateMeetingInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_meeting(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_meeting(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateMeeting::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateMeeting",
-            "chimesdkmeetings",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateMeeting::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateMeeting", "chimesdkmeetings"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -911,20 +644,17 @@ impl CreateMeetingInput {
 
 /// See [`CreateMeetingWithAttendeesInput`](crate::input::CreateMeetingWithAttendeesInput).
 pub mod create_meeting_with_attendees_input {
-
+    
     /// A builder for [`CreateMeetingWithAttendeesInput`](crate::input::CreateMeetingWithAttendeesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
         pub(crate) media_region: std::option::Option<std::string::String>,
         pub(crate) meeting_host_id: std::option::Option<std::string::String>,
         pub(crate) external_meeting_id: std::option::Option<std::string::String>,
-        pub(crate) meeting_features:
-            std::option::Option<crate::model::MeetingFeaturesConfiguration>,
-        pub(crate) notifications_configuration:
-            std::option::Option<crate::model::NotificationsConfiguration>,
-        pub(crate) attendees:
-            std::option::Option<std::vec::Vec<crate::model::CreateAttendeeRequestItem>>,
+        pub(crate) meeting_features: std::option::Option<crate::model::MeetingFeaturesConfiguration>,
+        pub(crate) notifications_configuration: std::option::Option<crate::model::NotificationsConfiguration>,
+        pub(crate) attendees: std::option::Option<std::vec::Vec<crate::model::CreateAttendeeRequestItem>>,
         pub(crate) primary_meeting_id: std::option::Option<std::string::String>,
         pub(crate) tenant_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -936,26 +666,21 @@ pub mod create_meeting_with_attendees_input {
             self
         }
         /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
-        pub fn set_client_request_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.client_request_token = input;
-            self
+        pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_request_token = input; self
         }
-        /// <p>The Region in which to create the meeting.</p>
-        /// <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p>
+        /// <p>The Region in which to create the meeting.</p> 
+        /// <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p> 
         /// <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
         pub fn media_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.media_region = Some(input.into());
             self
         }
-        /// <p>The Region in which to create the meeting.</p>
-        /// <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p>
+        /// <p>The Region in which to create the meeting.</p> 
+        /// <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p> 
         /// <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
         pub fn set_media_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.media_region = input;
-            self
+            self.media_region = input; self
         }
         /// <p>Reserved.</p>
         pub fn meeting_host_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -963,12 +688,8 @@ pub mod create_meeting_with_attendees_input {
             self
         }
         /// <p>Reserved.</p>
-        pub fn set_meeting_host_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.meeting_host_id = input;
-            self
+        pub fn set_meeting_host_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.meeting_host_id = input; self
         }
         /// <p>The external meeting ID.</p>
         pub fn external_meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -976,44 +697,26 @@ pub mod create_meeting_with_attendees_input {
             self
         }
         /// <p>The external meeting ID.</p>
-        pub fn set_external_meeting_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.external_meeting_id = input;
-            self
+        pub fn set_external_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.external_meeting_id = input; self
         }
         /// <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
-        pub fn meeting_features(
-            mut self,
-            input: crate::model::MeetingFeaturesConfiguration,
-        ) -> Self {
+        pub fn meeting_features(mut self, input: crate::model::MeetingFeaturesConfiguration) -> Self {
             self.meeting_features = Some(input);
             self
         }
         /// <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
-        pub fn set_meeting_features(
-            mut self,
-            input: std::option::Option<crate::model::MeetingFeaturesConfiguration>,
-        ) -> Self {
-            self.meeting_features = input;
-            self
+        pub fn set_meeting_features(mut self, input: std::option::Option<crate::model::MeetingFeaturesConfiguration>) -> Self {
+            self.meeting_features = input; self
         }
         /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
-        pub fn notifications_configuration(
-            mut self,
-            input: crate::model::NotificationsConfiguration,
-        ) -> Self {
+        pub fn notifications_configuration(mut self, input: crate::model::NotificationsConfiguration) -> Self {
             self.notifications_configuration = Some(input);
             self
         }
         /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
-        pub fn set_notifications_configuration(
-            mut self,
-            input: std::option::Option<crate::model::NotificationsConfiguration>,
-        ) -> Self {
-            self.notifications_configuration = input;
-            self
+        pub fn set_notifications_configuration(mut self, input: std::option::Option<crate::model::NotificationsConfiguration>) -> Self {
+            self.notifications_configuration = input; self
         }
         /// Appends an item to `attendees`.
         ///
@@ -1022,17 +725,13 @@ pub mod create_meeting_with_attendees_input {
         /// <p>The attendee information, including attendees' IDs and join tokens.</p>
         pub fn attendees(mut self, input: crate::model::CreateAttendeeRequestItem) -> Self {
             let mut v = self.attendees.unwrap_or_default();
-            v.push(input);
-            self.attendees = Some(v);
-            self
+                            v.push(input);
+                            self.attendees = Some(v);
+                            self
         }
         /// <p>The attendee information, including attendees' IDs and join tokens.</p>
-        pub fn set_attendees(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CreateAttendeeRequestItem>>,
-        ) -> Self {
-            self.attendees = input;
-            self
+        pub fn set_attendees(mut self, input: std::option::Option<std::vec::Vec<crate::model::CreateAttendeeRequestItem>>) -> Self {
+            self.attendees = input; self
         }
         /// <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
         pub fn primary_meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1040,12 +739,8 @@ pub mod create_meeting_with_attendees_input {
             self
         }
         /// <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
-        pub fn set_primary_meeting_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.primary_meeting_id = input;
-            self
+        pub fn set_primary_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.primary_meeting_id = input; self
         }
         /// Appends an item to `tenant_ids`.
         ///
@@ -1054,17 +749,13 @@ pub mod create_meeting_with_attendees_input {
         /// <p>A consistent and opaque identifier, created and maintained by the builder to represent a segment of their users.</p>
         pub fn tenant_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tenant_ids.unwrap_or_default();
-            v.push(input.into());
-            self.tenant_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.tenant_ids = Some(v);
+                            self
         }
         /// <p>A consistent and opaque identifier, created and maintained by the builder to represent a segment of their users.</p>
-        pub fn set_tenant_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.tenant_ids = input;
-            self
+        pub fn set_tenant_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.tenant_ids = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -1073,91 +764,72 @@ pub mod create_meeting_with_attendees_input {
         /// <p>The tags in the request.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags in the request.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateMeetingWithAttendeesInput`](crate::input::CreateMeetingWithAttendeesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateMeetingWithAttendeesInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::CreateMeetingWithAttendeesInput {
-                client_request_token: self.client_request_token,
-                media_region: self.media_region,
-                meeting_host_id: self.meeting_host_id,
-                external_meeting_id: self.external_meeting_id,
-                meeting_features: self.meeting_features,
-                notifications_configuration: self.notifications_configuration,
-                attendees: self.attendees,
-                primary_meeting_id: self.primary_meeting_id,
-                tenant_ids: self.tenant_ids,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::CreateMeetingWithAttendeesInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::CreateMeetingWithAttendeesInput {
+                    client_request_token: self.client_request_token
+                    ,
+                    media_region: self.media_region
+                    ,
+                    meeting_host_id: self.meeting_host_id
+                    ,
+                    external_meeting_id: self.external_meeting_id
+                    ,
+                    meeting_features: self.meeting_features
+                    ,
+                    notifications_configuration: self.notifications_configuration
+                    ,
+                    attendees: self.attendees
+                    ,
+                    primary_meeting_id: self.primary_meeting_id
+                    ,
+                    tenant_ids: self.tenant_ids
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateMeetingWithAttendeesInput {
     /// Consumes the builder and constructs an Operation<[`CreateMeetingWithAttendees`](crate::operation::CreateMeetingWithAttendees)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        mut self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateMeetingWithAttendees,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateMeetingWithAttendees, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         if self.client_request_token.is_none() {
-            self.client_request_token = Some(_config.make_token.make_idempotency_token());
-        }
+                                self.client_request_token = Some(_config.make_token.make_idempotency_token());
+                            }
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateMeetingWithAttendeesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::CreateMeetingWithAttendeesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/meetings").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::CreateMeetingWithAttendeesInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::CreateMeetingWithAttendeesInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("operation", "create-attendees");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreateMeetingWithAttendeesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::CreateMeetingWithAttendeesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -1165,58 +837,36 @@ impl CreateMeetingWithAttendeesInput {
             crate::operation_ser::serialize_operation_crate_operation_create_meeting_with_attendees(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateMeetingWithAttendees::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateMeetingWithAttendees",
-            "chimesdkmeetings",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateMeetingWithAttendees::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateMeetingWithAttendees", "chimesdkmeetings"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1228,9 +878,9 @@ impl CreateMeetingWithAttendeesInput {
 
 /// See [`DeleteAttendeeInput`](crate::input::DeleteAttendeeInput).
 pub mod delete_attendee_input {
-
+    
     /// A builder for [`DeleteAttendeeInput`](crate::input::DeleteAttendeeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
         pub(crate) attendee_id: std::option::Option<std::string::String>,
@@ -1243,8 +893,7 @@ pub mod delete_attendee_input {
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
         pub fn set_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.meeting_id = input;
-            self
+            self.meeting_id = input; self
         }
         /// <p>The Amazon Chime SDK attendee ID.</p>
         pub fn attendee_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1253,84 +902,47 @@ pub mod delete_attendee_input {
         }
         /// <p>The Amazon Chime SDK attendee ID.</p>
         pub fn set_attendee_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.attendee_id = input;
-            self
+            self.attendee_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteAttendeeInput`](crate::input::DeleteAttendeeInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteAttendeeInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DeleteAttendeeInput {
-                meeting_id: self.meeting_id,
-                attendee_id: self.attendee_id,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteAttendeeInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DeleteAttendeeInput {
+                    meeting_id: self.meeting_id
+                    ,
+                    attendee_id: self.attendee_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteAttendeeInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAttendee`](crate::operation::DeleteAttendee)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteAttendee,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteAttendee, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteAttendeeInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteAttendeeInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_4 = &_input.meeting_id;
-                let input_4 = input_4.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_4 = input_4.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "meeting_id", details: "cannot be empty or unset" })?;
                 let meeting_id = aws_smithy_http::label::fmt_string(input_4, false);
                 if meeting_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    });
-                }
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "meeting_id", details: "cannot be empty or unset" })
+                            }
                 let input_5 = &_input.attendee_id;
-                let input_5 = input_5.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "attendee_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_5 = input_5.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "attendee_id", details: "cannot be empty or unset" })?;
                 let attendee_id = aws_smithy_http::label::fmt_string(input_5, false);
                 if attendee_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "attendee_id",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/meetings/{MeetingId}/attendees/{AttendeeId}",
-                    MeetingId = meeting_id,
-                    AttendeeId = attendee_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "attendee_id", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/meetings/{MeetingId}/attendees/{AttendeeId}", MeetingId = meeting_id, AttendeeId = attendee_id).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DeleteAttendeeInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DeleteAttendeeInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -1339,54 +951,37 @@ impl DeleteAttendeeInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteAttendee::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteAttendee",
-            "chimesdkmeetings",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteAttendee::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteAttendee", "chimesdkmeetings"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1398,9 +993,9 @@ impl DeleteAttendeeInput {
 
 /// See [`DeleteMeetingInput`](crate::input::DeleteMeetingInput).
 pub mod delete_meeting_input {
-
+    
     /// A builder for [`DeleteMeetingInput`](crate::input::DeleteMeetingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
     }
@@ -1412,64 +1007,39 @@ pub mod delete_meeting_input {
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
         pub fn set_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.meeting_id = input;
-            self
+            self.meeting_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteMeetingInput`](crate::input::DeleteMeetingInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteMeetingInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::DeleteMeetingInput {
-                meeting_id: self.meeting_id,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteMeetingInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::DeleteMeetingInput {
+                    meeting_id: self.meeting_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteMeetingInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMeeting`](crate::operation::DeleteMeeting)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteMeeting,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteMeeting, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteMeetingInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteMeetingInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_6 = &_input.meeting_id;
-                let input_6 = input_6.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_6 = input_6.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "meeting_id", details: "cannot be empty or unset" })?;
                 let meeting_id = aws_smithy_http::label::fmt_string(input_6, false);
                 if meeting_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(output, "/meetings/{MeetingId}", MeetingId = meeting_id)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "meeting_id", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/meetings/{MeetingId}", MeetingId = meeting_id).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DeleteMeetingInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::DeleteMeetingInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -1478,54 +1048,37 @@ impl DeleteMeetingInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteMeeting::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteMeeting",
-            "chimesdkmeetings",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteMeeting::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteMeeting", "chimesdkmeetings"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1537,9 +1090,9 @@ impl DeleteMeetingInput {
 
 /// See [`GetAttendeeInput`](crate::input::GetAttendeeInput).
 pub mod get_attendee_input {
-
+    
     /// A builder for [`GetAttendeeInput`](crate::input::GetAttendeeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
         pub(crate) attendee_id: std::option::Option<std::string::String>,
@@ -1552,8 +1105,7 @@ pub mod get_attendee_input {
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
         pub fn set_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.meeting_id = input;
-            self
+            self.meeting_id = input; self
         }
         /// <p>The Amazon Chime SDK attendee ID.</p>
         pub fn attendee_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1562,84 +1114,47 @@ pub mod get_attendee_input {
         }
         /// <p>The Amazon Chime SDK attendee ID.</p>
         pub fn set_attendee_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.attendee_id = input;
-            self
+            self.attendee_id = input; self
         }
         /// Consumes the builder and constructs a [`GetAttendeeInput`](crate::input::GetAttendeeInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetAttendeeInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::GetAttendeeInput {
-                meeting_id: self.meeting_id,
-                attendee_id: self.attendee_id,
-            })
+        pub fn build(self) -> Result<crate::input::GetAttendeeInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::GetAttendeeInput {
+                    meeting_id: self.meeting_id
+                    ,
+                    attendee_id: self.attendee_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetAttendeeInput {
     /// Consumes the builder and constructs an Operation<[`GetAttendee`](crate::operation::GetAttendee)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetAttendee,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetAttendee, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetAttendeeInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::GetAttendeeInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_7 = &_input.meeting_id;
-                let input_7 = input_7.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_7 = input_7.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "meeting_id", details: "cannot be empty or unset" })?;
                 let meeting_id = aws_smithy_http::label::fmt_string(input_7, false);
                 if meeting_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    });
-                }
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "meeting_id", details: "cannot be empty or unset" })
+                            }
                 let input_8 = &_input.attendee_id;
-                let input_8 = input_8.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "attendee_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_8 = input_8.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "attendee_id", details: "cannot be empty or unset" })?;
                 let attendee_id = aws_smithy_http::label::fmt_string(input_8, false);
                 if attendee_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "attendee_id",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/meetings/{MeetingId}/attendees/{AttendeeId}",
-                    MeetingId = meeting_id,
-                    AttendeeId = attendee_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "attendee_id", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/meetings/{MeetingId}/attendees/{AttendeeId}", MeetingId = meeting_id, AttendeeId = attendee_id).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::GetAttendeeInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::GetAttendeeInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1648,54 +1163,37 @@ impl GetAttendeeInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetAttendee::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetAttendee",
-            "chimesdkmeetings",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetAttendee::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetAttendee", "chimesdkmeetings"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1707,9 +1205,9 @@ impl GetAttendeeInput {
 
 /// See [`GetMeetingInput`](crate::input::GetMeetingInput).
 pub mod get_meeting_input {
-
+    
     /// A builder for [`GetMeetingInput`](crate::input::GetMeetingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
     }
@@ -1721,63 +1219,39 @@ pub mod get_meeting_input {
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
         pub fn set_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.meeting_id = input;
-            self
+            self.meeting_id = input; self
         }
         /// Consumes the builder and constructs a [`GetMeetingInput`](crate::input::GetMeetingInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetMeetingInput, aws_smithy_http::operation::BuildError> {
-            Ok(crate::input::GetMeetingInput {
-                meeting_id: self.meeting_id,
-            })
+        pub fn build(self) -> Result<crate::input::GetMeetingInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::GetMeetingInput {
+                    meeting_id: self.meeting_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetMeetingInput {
     /// Consumes the builder and constructs an Operation<[`GetMeeting`](crate::operation::GetMeeting)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetMeeting,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetMeeting, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetMeetingInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::GetMeetingInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_9 = &_input.meeting_id;
-                let input_9 = input_9.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_9 = input_9.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "meeting_id", details: "cannot be empty or unset" })?;
                 let meeting_id = aws_smithy_http::label::fmt_string(input_9, false);
                 if meeting_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(output, "/meetings/{MeetingId}", MeetingId = meeting_id)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "meeting_id", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/meetings/{MeetingId}", MeetingId = meeting_id).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::GetMeetingInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::GetMeetingInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1786,54 +1260,37 @@ impl GetMeetingInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetMeeting::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetMeeting",
-            "chimesdkmeetings",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetMeeting::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetMeeting", "chimesdkmeetings"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1845,9 +1302,9 @@ impl GetMeetingInput {
 
 /// See [`ListAttendeesInput`](crate::input::ListAttendeesInput).
 pub mod list_attendees_input {
-
+    
     /// A builder for [`ListAttendeesInput`](crate::input::ListAttendeesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1861,8 +1318,7 @@ pub mod list_attendees_input {
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
         pub fn set_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.meeting_id = input;
-            self
+            self.meeting_id = input; self
         }
         /// <p>The token to use to retrieve the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1871,8 +1327,7 @@ pub mod list_attendees_input {
         }
         /// <p>The token to use to retrieve the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum number of results to return in a single call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -1881,86 +1336,53 @@ pub mod list_attendees_input {
         }
         /// <p>The maximum number of results to return in a single call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`ListAttendeesInput`](crate::input::ListAttendeesInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListAttendeesInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::ListAttendeesInput {
-                meeting_id: self.meeting_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            })
+        pub fn build(self) -> Result<crate::input::ListAttendeesInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListAttendeesInput {
+                    meeting_id: self.meeting_id
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListAttendeesInput {
     /// Consumes the builder and constructs an Operation<[`ListAttendees`](crate::operation::ListAttendees)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListAttendees,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListAttendees, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListAttendeesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListAttendeesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_10 = &_input.meeting_id;
-                let input_10 = input_10.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_10 = input_10.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "meeting_id", details: "cannot be empty or unset" })?;
                 let meeting_id = aws_smithy_http::label::fmt_string(input_10, false);
                 if meeting_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/meetings/{MeetingId}/attendees",
-                    MeetingId = meeting_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "meeting_id", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/meetings/{MeetingId}/attendees", MeetingId = meeting_id).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListAttendeesInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::ListAttendeesInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_11) = &_input.next_token {
                     query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_11));
                 }
                 if let Some(inner_12) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_12).encode(),
-                    );
+                    query.push_kv("max-results", aws_smithy_types::primitive::Encoder::from(*inner_12).encode());
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListAttendeesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListAttendeesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1970,54 +1392,37 @@ impl ListAttendeesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListAttendees::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListAttendees",
-            "chimesdkmeetings",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListAttendees::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListAttendees", "chimesdkmeetings"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2029,9 +1434,9 @@ impl ListAttendeesInput {
 
 /// See [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
 pub mod list_tags_for_resource_input {
-
+    
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -2043,59 +1448,40 @@ pub mod list_tags_for_resource_input {
         }
         /// <p>The ARN of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::ListTagsForResourceInput {
-                resource_arn: self.resource_arn,
-            })
+        pub fn build(self) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::ListTagsForResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListTagsForResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListTagsForResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListTagsForResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/tags").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListTagsForResourceInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::ListTagsForResourceInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_13) = &_input.resource_arn {
                     query.push_kv("arn", &aws_smithy_http::query::fmt_string(&inner_13));
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ListTagsForResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::ListTagsForResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2105,54 +1491,37 @@ impl ListTagsForResourceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListTagsForResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListTagsForResource",
-            "chimesdkmeetings",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListTagsForResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListTagsForResource", "chimesdkmeetings"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2164,13 +1533,12 @@ impl ListTagsForResourceInput {
 
 /// See [`StartMeetingTranscriptionInput`](crate::input::StartMeetingTranscriptionInput).
 pub mod start_meeting_transcription_input {
-
+    
     /// A builder for [`StartMeetingTranscriptionInput`](crate::input::StartMeetingTranscriptionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
-        pub(crate) transcription_configuration:
-            std::option::Option<crate::model::TranscriptionConfiguration>,
+        pub(crate) transcription_configuration: std::option::Option<crate::model::TranscriptionConfiguration>,
     }
     impl Builder {
         /// <p>The unique ID of the meeting being transcribed.</p>
@@ -2180,168 +1548,99 @@ pub mod start_meeting_transcription_input {
         }
         /// <p>The unique ID of the meeting being transcribed.</p>
         pub fn set_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.meeting_id = input;
-            self
+            self.meeting_id = input; self
         }
         /// <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
-        pub fn transcription_configuration(
-            mut self,
-            input: crate::model::TranscriptionConfiguration,
-        ) -> Self {
+        pub fn transcription_configuration(mut self, input: crate::model::TranscriptionConfiguration) -> Self {
             self.transcription_configuration = Some(input);
             self
         }
         /// <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
-        pub fn set_transcription_configuration(
-            mut self,
-            input: std::option::Option<crate::model::TranscriptionConfiguration>,
-        ) -> Self {
-            self.transcription_configuration = input;
-            self
+        pub fn set_transcription_configuration(mut self, input: std::option::Option<crate::model::TranscriptionConfiguration>) -> Self {
+            self.transcription_configuration = input; self
         }
         /// Consumes the builder and constructs a [`StartMeetingTranscriptionInput`](crate::input::StartMeetingTranscriptionInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::StartMeetingTranscriptionInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::StartMeetingTranscriptionInput {
-                meeting_id: self.meeting_id,
-                transcription_configuration: self.transcription_configuration,
-            })
+        pub fn build(self) -> Result<crate::input::StartMeetingTranscriptionInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::StartMeetingTranscriptionInput {
+                    meeting_id: self.meeting_id
+                    ,
+                    transcription_configuration: self.transcription_configuration
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl StartMeetingTranscriptionInput {
     /// Consumes the builder and constructs an Operation<[`StartMeetingTranscription`](crate::operation::StartMeetingTranscription)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::StartMeetingTranscription,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::StartMeetingTranscription, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::StartMeetingTranscriptionInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::StartMeetingTranscriptionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_14 = &_input.meeting_id;
-                let input_14 = input_14.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_14 = input_14.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "meeting_id", details: "cannot be empty or unset" })?;
                 let meeting_id = aws_smithy_http::label::fmt_string(input_14, false);
                 if meeting_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/meetings/{MeetingId}/transcription",
-                    MeetingId = meeting_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "meeting_id", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/meetings/{MeetingId}/transcription", MeetingId = meeting_id).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::StartMeetingTranscriptionInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::StartMeetingTranscriptionInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("operation", "start");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::StartMeetingTranscriptionInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::StartMeetingTranscriptionInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_meeting_transcription(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_start_meeting_transcription(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::StartMeetingTranscription::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "StartMeetingTranscription",
-            "chimesdkmeetings",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::StartMeetingTranscription::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("StartMeetingTranscription", "chimesdkmeetings"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2353,9 +1652,9 @@ impl StartMeetingTranscriptionInput {
 
 /// See [`StopMeetingTranscriptionInput`](crate::input::StopMeetingTranscriptionInput).
 pub mod stop_meeting_transcription_input {
-
+    
     /// A builder for [`StopMeetingTranscriptionInput`](crate::input::StopMeetingTranscriptionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
     }
@@ -2367,78 +1666,44 @@ pub mod stop_meeting_transcription_input {
         }
         /// <p>The unique ID of the meeting for which you stop transcription.</p>
         pub fn set_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.meeting_id = input;
-            self
+            self.meeting_id = input; self
         }
         /// Consumes the builder and constructs a [`StopMeetingTranscriptionInput`](crate::input::StopMeetingTranscriptionInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::StopMeetingTranscriptionInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::StopMeetingTranscriptionInput {
-                meeting_id: self.meeting_id,
-            })
+        pub fn build(self) -> Result<crate::input::StopMeetingTranscriptionInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::StopMeetingTranscriptionInput {
+                    meeting_id: self.meeting_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl StopMeetingTranscriptionInput {
     /// Consumes the builder and constructs an Operation<[`StopMeetingTranscription`](crate::operation::StopMeetingTranscription)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::StopMeetingTranscription,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::StopMeetingTranscription, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::StopMeetingTranscriptionInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::StopMeetingTranscriptionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_15 = &_input.meeting_id;
-                let input_15 = input_15.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_15 = input_15.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "meeting_id", details: "cannot be empty or unset" })?;
                 let meeting_id = aws_smithy_http::label::fmt_string(input_15, false);
                 if meeting_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/meetings/{MeetingId}/transcription",
-                    MeetingId = meeting_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "meeting_id", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/meetings/{MeetingId}/transcription", MeetingId = meeting_id).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::StopMeetingTranscriptionInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::StopMeetingTranscriptionInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("operation", "stop");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::StopMeetingTranscriptionInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::StopMeetingTranscriptionInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2448,54 +1713,37 @@ impl StopMeetingTranscriptionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::StopMeetingTranscription::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "StopMeetingTranscription",
-            "chimesdkmeetings",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::StopMeetingTranscription::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("StopMeetingTranscription", "chimesdkmeetings"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2507,9 +1755,9 @@ impl StopMeetingTranscriptionInput {
 
 /// See [`TagResourceInput`](crate::input::TagResourceInput).
 pub mod tag_resource_input {
-
+    
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2522,8 +1770,7 @@ pub mod tag_resource_input {
         }
         /// <p>The ARN of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -2532,138 +1779,90 @@ pub mod tag_resource_input {
         /// <p>Lists the requested tags.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>Lists the requested tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::TagResourceInput {
-                resource_arn: self.resource_arn,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::TagResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::TagResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::TagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::TagResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/tags").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::TagResourceInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::TagResourceInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("operation", "tag-resource");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::TagResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::TagResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::TagResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "TagResource",
-            "chimesdkmeetings",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("TagResource", "chimesdkmeetings"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2675,9 +1874,9 @@ impl TagResourceInput {
 
 /// See [`UntagResourceInput`](crate::input::UntagResourceInput).
 pub mod untag_resource_input {
-
+    
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2690,8 +1889,7 @@ pub mod untag_resource_input {
         }
         /// <p>The ARN of the resource that you're removing tags from.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Appends an item to `tag_keys`.
         ///
@@ -2700,138 +1898,90 @@ pub mod untag_resource_input {
         /// <p>The tag keys being removed from the resources.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-            v.push(input.into());
-            self.tag_keys = Some(v);
-            self
+                            v.push(input.into());
+                            self.tag_keys = Some(v);
+                            self
         }
         /// <p>The tag keys being removed from the resources.</p>
-        pub fn set_tag_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.tag_keys = input;
-            self
+        pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.tag_keys = input; self
         }
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
-        {
-            Ok(crate::input::UntagResourceInput {
-                resource_arn: self.resource_arn,
-                tag_keys: self.tag_keys,
-            })
+        pub fn build(self) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::UntagResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                    tag_keys: self.tag_keys
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UntagResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UntagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UntagResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/tags").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::UntagResourceInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("operation", "untag-resource");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::UntagResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::UntagResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UntagResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UntagResource",
-            "chimesdkmeetings",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UntagResource", "chimesdkmeetings"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2843,9 +1993,9 @@ impl UntagResourceInput {
 
 /// See [`UpdateAttendeeCapabilitiesInput`](crate::input::UpdateAttendeeCapabilitiesInput).
 pub mod update_attendee_capabilities_input {
-
+    
     /// A builder for [`UpdateAttendeeCapabilitiesInput`](crate::input::UpdateAttendeeCapabilitiesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
         pub(crate) attendee_id: std::option::Option<std::string::String>,
@@ -2859,8 +2009,7 @@ pub mod update_attendee_capabilities_input {
         }
         /// <p>The ID of the meeting associated with the update request.</p>
         pub fn set_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.meeting_id = input;
-            self
+            self.meeting_id = input; self
         }
         /// <p>The ID of the attendee associated with the update request.</p>
         pub fn attendee_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2869,8 +2018,7 @@ pub mod update_attendee_capabilities_input {
         }
         /// <p>The ID of the attendee associated with the update request.</p>
         pub fn set_attendee_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.attendee_id = input;
-            self
+            self.attendee_id = input; self
         }
         /// <p>The capabilties that you want to update.</p>
         pub fn capabilities(mut self, input: crate::model::AttendeeCapabilities) -> Self {
@@ -2878,163 +2026,93 @@ pub mod update_attendee_capabilities_input {
             self
         }
         /// <p>The capabilties that you want to update.</p>
-        pub fn set_capabilities(
-            mut self,
-            input: std::option::Option<crate::model::AttendeeCapabilities>,
-        ) -> Self {
-            self.capabilities = input;
-            self
+        pub fn set_capabilities(mut self, input: std::option::Option<crate::model::AttendeeCapabilities>) -> Self {
+            self.capabilities = input; self
         }
         /// Consumes the builder and constructs a [`UpdateAttendeeCapabilitiesInput`](crate::input::UpdateAttendeeCapabilitiesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::UpdateAttendeeCapabilitiesInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::UpdateAttendeeCapabilitiesInput {
-                meeting_id: self.meeting_id,
-                attendee_id: self.attendee_id,
-                capabilities: self.capabilities,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateAttendeeCapabilitiesInput, aws_smithy_http::operation::BuildError> {
+            Ok(
+                crate::input::UpdateAttendeeCapabilitiesInput {
+                    meeting_id: self.meeting_id
+                    ,
+                    attendee_id: self.attendee_id
+                    ,
+                    capabilities: self.capabilities
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateAttendeeCapabilitiesInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAttendeeCapabilities`](crate::operation::UpdateAttendeeCapabilities)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateAttendeeCapabilities,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
+    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateAttendeeCapabilities, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateAttendeeCapabilitiesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateAttendeeCapabilitiesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_16 = &_input.meeting_id;
-                let input_16 = input_16.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_16 = input_16.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "meeting_id", details: "cannot be empty or unset" })?;
                 let meeting_id = aws_smithy_http::label::fmt_string(input_16, false);
                 if meeting_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    });
-                }
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "meeting_id", details: "cannot be empty or unset" })
+                            }
                 let input_17 = &_input.attendee_id;
-                let input_17 = input_17.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "attendee_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_17 = input_17.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "attendee_id", details: "cannot be empty or unset" })?;
                 let attendee_id = aws_smithy_http::label::fmt_string(input_17, false);
                 if attendee_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "attendee_id",
-                        details: "cannot be empty or unset",
-                    });
-                }
-                write!(
-                    output,
-                    "/meetings/{MeetingId}/attendees/{AttendeeId}/capabilities",
-                    MeetingId = meeting_id,
-                    AttendeeId = attendee_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "attendee_id", details: "cannot be empty or unset" })
+                            }
+                write!(output, "/meetings/{MeetingId}/attendees/{AttendeeId}/capabilities", MeetingId = meeting_id, AttendeeId = attendee_id).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::UpdateAttendeeCapabilitiesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
+                            input: &crate::input::UpdateAttendeeCapabilitiesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_attendee_capabilities(
-                &self,
-            )?,
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_attendee_capabilities(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                            aws_types::os_shim_internal::Env::real(),
+                            crate::API_METADATA.clone(),
+                        );
+                        if let Some(app_name) = _config.app_name() {
+                            user_agent = user_agent.with_app_name(app_name.clone());
+                        }
+                        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
+                            request.properties_mut()
+                                .insert::<aws_smithy_http::endpoint::Result>(_config
+                                    .endpoint_resolver
+                                    .resolve_endpoint(&endpoint_params));
         if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateAttendeeCapabilities::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateAttendeeCapabilities",
-            "chimesdkmeetings",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateAttendeeCapabilities::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateAttendeeCapabilities", "chimesdkmeetings"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3045,34 +2123,30 @@ impl UpdateAttendeeCapabilitiesInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateAttendeeCapabilitiesInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct UpdateAttendeeCapabilitiesInput  {
     /// <p>The ID of the meeting associated with the update request.</p>
-    #[doc(hidden)]
-    pub meeting_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub meeting_id: std::option::Option<std::string::String>,
     /// <p>The ID of the attendee associated with the update request.</p>
-    #[doc(hidden)]
-    pub attendee_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub attendee_id: std::option::Option<std::string::String>,
     /// <p>The capabilties that you want to update.</p>
-    #[doc(hidden)]
-    pub capabilities: std::option::Option<crate::model::AttendeeCapabilities>,
+    #[doc(hidden)]pub capabilities: std::option::Option<crate::model::AttendeeCapabilities>,
 }
 impl UpdateAttendeeCapabilitiesInput {
     /// <p>The ID of the meeting associated with the update request.</p>
-    pub fn meeting_id(&self) -> std::option::Option<&str> {
+    pub fn meeting_id(&self) -> std::option::Option<& str> {
         self.meeting_id.as_deref()
     }
     /// <p>The ID of the attendee associated with the update request.</p>
-    pub fn attendee_id(&self) -> std::option::Option<&str> {
+    pub fn attendee_id(&self) -> std::option::Option<& str> {
         self.attendee_id.as_deref()
     }
     /// <p>The capabilties that you want to update.</p>
-    pub fn capabilities(&self) -> std::option::Option<&crate::model::AttendeeCapabilities> {
+    pub fn capabilities(&self) -> std::option::Option<& crate::model::AttendeeCapabilities> {
         self.capabilities.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateAttendeeCapabilitiesInput {
+impl  std::fmt::Debug for UpdateAttendeeCapabilitiesInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAttendeeCapabilitiesInput");
         formatter.field("meeting_id", &self.meeting_id);
@@ -3083,27 +2157,24 @@ impl std::fmt::Debug for UpdateAttendeeCapabilitiesInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UntagResourceInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct UntagResourceInput  {
     /// <p>The ARN of the resource that you're removing tags from.</p>
-    #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag keys being removed from the resources.</p>
-    #[doc(hidden)]
-    pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
     /// <p>The ARN of the resource that you're removing tags from.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The tag keys being removed from the resources.</p>
-    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
+impl  std::fmt::Debug for UntagResourceInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -3113,27 +2184,24 @@ impl std::fmt::Debug for UntagResourceInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct TagResourceInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct TagResourceInput  {
     /// <p>The ARN of the resource.</p>
-    #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Lists the requested tags.</p>
-    #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
     /// <p>The ARN of the resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>Lists the requested tags.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
+impl  std::fmt::Debug for TagResourceInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -3143,20 +2211,18 @@ impl std::fmt::Debug for TagResourceInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct StopMeetingTranscriptionInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct StopMeetingTranscriptionInput  {
     /// <p>The unique ID of the meeting for which you stop transcription.</p>
-    #[doc(hidden)]
-    pub meeting_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub meeting_id: std::option::Option<std::string::String>,
 }
 impl StopMeetingTranscriptionInput {
     /// <p>The unique ID of the meeting for which you stop transcription.</p>
-    pub fn meeting_id(&self) -> std::option::Option<&str> {
+    pub fn meeting_id(&self) -> std::option::Option<& str> {
         self.meeting_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopMeetingTranscriptionInput {
+impl  std::fmt::Debug for StopMeetingTranscriptionInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopMeetingTranscriptionInput");
         formatter.field("meeting_id", &self.meeting_id);
@@ -3165,55 +2231,45 @@ impl std::fmt::Debug for StopMeetingTranscriptionInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct StartMeetingTranscriptionInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct StartMeetingTranscriptionInput  {
     /// <p>The unique ID of the meeting being transcribed.</p>
-    #[doc(hidden)]
-    pub meeting_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub meeting_id: std::option::Option<std::string::String>,
     /// <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
-    #[doc(hidden)]
-    pub transcription_configuration: std::option::Option<crate::model::TranscriptionConfiguration>,
+    #[doc(hidden)]pub transcription_configuration: std::option::Option<crate::model::TranscriptionConfiguration>,
 }
 impl StartMeetingTranscriptionInput {
     /// <p>The unique ID of the meeting being transcribed.</p>
-    pub fn meeting_id(&self) -> std::option::Option<&str> {
+    pub fn meeting_id(&self) -> std::option::Option<& str> {
         self.meeting_id.as_deref()
     }
     /// <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
-    pub fn transcription_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::TranscriptionConfiguration> {
+    pub fn transcription_configuration(&self) -> std::option::Option<& crate::model::TranscriptionConfiguration> {
         self.transcription_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for StartMeetingTranscriptionInput {
+impl  std::fmt::Debug for StartMeetingTranscriptionInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartMeetingTranscriptionInput");
         formatter.field("meeting_id", &self.meeting_id);
-        formatter.field(
-            "transcription_configuration",
-            &self.transcription_configuration,
-        );
+        formatter.field("transcription_configuration", &self.transcription_configuration);
         formatter.finish()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListTagsForResourceInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListTagsForResourceInput  {
     /// <p>The ARN of the resource.</p>
-    #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
     /// <p>The ARN of the resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
+impl  std::fmt::Debug for ListTagsForResourceInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -3222,26 +2278,22 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListAttendeesInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct ListAttendeesInput  {
     /// <p>The Amazon Chime SDK meeting ID.</p>
-    #[doc(hidden)]
-    pub meeting_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub meeting_id: std::option::Option<std::string::String>,
     /// <p>The token to use to retrieve the next page of results.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
-    #[doc(hidden)]
-    pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]pub max_results: std::option::Option<i32>,
 }
 impl ListAttendeesInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
-    pub fn meeting_id(&self) -> std::option::Option<&str> {
+    pub fn meeting_id(&self) -> std::option::Option<& str> {
         self.meeting_id.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in a single call.</p>
@@ -3249,7 +2301,7 @@ impl ListAttendeesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAttendeesInput {
+impl  std::fmt::Debug for ListAttendeesInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAttendeesInput");
         formatter.field("meeting_id", &self.meeting_id);
@@ -3260,20 +2312,18 @@ impl std::fmt::Debug for ListAttendeesInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetMeetingInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct GetMeetingInput  {
     /// <p>The Amazon Chime SDK meeting ID.</p>
-    #[doc(hidden)]
-    pub meeting_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub meeting_id: std::option::Option<std::string::String>,
 }
 impl GetMeetingInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
-    pub fn meeting_id(&self) -> std::option::Option<&str> {
+    pub fn meeting_id(&self) -> std::option::Option<& str> {
         self.meeting_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetMeetingInput {
+impl  std::fmt::Debug for GetMeetingInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMeetingInput");
         formatter.field("meeting_id", &self.meeting_id);
@@ -3282,27 +2332,24 @@ impl std::fmt::Debug for GetMeetingInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetAttendeeInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct GetAttendeeInput  {
     /// <p>The Amazon Chime SDK meeting ID.</p>
-    #[doc(hidden)]
-    pub meeting_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub meeting_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Chime SDK attendee ID.</p>
-    #[doc(hidden)]
-    pub attendee_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub attendee_id: std::option::Option<std::string::String>,
 }
 impl GetAttendeeInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
-    pub fn meeting_id(&self) -> std::option::Option<&str> {
+    pub fn meeting_id(&self) -> std::option::Option<& str> {
         self.meeting_id.as_deref()
     }
     /// <p>The Amazon Chime SDK attendee ID.</p>
-    pub fn attendee_id(&self) -> std::option::Option<&str> {
+    pub fn attendee_id(&self) -> std::option::Option<& str> {
         self.attendee_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetAttendeeInput {
+impl  std::fmt::Debug for GetAttendeeInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAttendeeInput");
         formatter.field("meeting_id", &self.meeting_id);
@@ -3312,20 +2359,18 @@ impl std::fmt::Debug for GetAttendeeInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteMeetingInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DeleteMeetingInput  {
     /// <p>The Amazon Chime SDK meeting ID.</p>
-    #[doc(hidden)]
-    pub meeting_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub meeting_id: std::option::Option<std::string::String>,
 }
 impl DeleteMeetingInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
-    pub fn meeting_id(&self) -> std::option::Option<&str> {
+    pub fn meeting_id(&self) -> std::option::Option<& str> {
         self.meeting_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteMeetingInput {
+impl  std::fmt::Debug for DeleteMeetingInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteMeetingInput");
         formatter.field("meeting_id", &self.meeting_id);
@@ -3334,27 +2379,24 @@ impl std::fmt::Debug for DeleteMeetingInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteAttendeeInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct DeleteAttendeeInput  {
     /// <p>The Amazon Chime SDK meeting ID.</p>
-    #[doc(hidden)]
-    pub meeting_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub meeting_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Chime SDK attendee ID.</p>
-    #[doc(hidden)]
-    pub attendee_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub attendee_id: std::option::Option<std::string::String>,
 }
 impl DeleteAttendeeInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
-    pub fn meeting_id(&self) -> std::option::Option<&str> {
+    pub fn meeting_id(&self) -> std::option::Option<& str> {
         self.meeting_id.as_deref()
     }
     /// <p>The Amazon Chime SDK attendee ID.</p>
-    pub fn attendee_id(&self) -> std::option::Option<&str> {
+    pub fn attendee_id(&self) -> std::option::Option<& str> {
         self.attendee_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAttendeeInput {
+impl  std::fmt::Debug for DeleteAttendeeInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAttendeeInput");
         formatter.field("meeting_id", &self.meeting_id);
@@ -3364,91 +2406,76 @@ impl std::fmt::Debug for DeleteAttendeeInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateMeetingWithAttendeesInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CreateMeetingWithAttendeesInput  {
     /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
-    #[doc(hidden)]
-    pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>The Region in which to create the meeting.</p>
-    /// <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p>
+    #[doc(hidden)]pub client_request_token: std::option::Option<std::string::String>,
+    /// <p>The Region in which to create the meeting.</p> 
+    /// <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p> 
     /// <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
-    #[doc(hidden)]
-    pub media_region: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub media_region: std::option::Option<std::string::String>,
     /// <p>Reserved.</p>
-    #[doc(hidden)]
-    pub meeting_host_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub meeting_host_id: std::option::Option<std::string::String>,
     /// <p>The external meeting ID.</p>
-    #[doc(hidden)]
-    pub external_meeting_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub external_meeting_id: std::option::Option<std::string::String>,
     /// <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
-    #[doc(hidden)]
-    pub meeting_features: std::option::Option<crate::model::MeetingFeaturesConfiguration>,
+    #[doc(hidden)]pub meeting_features: std::option::Option<crate::model::MeetingFeaturesConfiguration>,
     /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
-    #[doc(hidden)]
-    pub notifications_configuration: std::option::Option<crate::model::NotificationsConfiguration>,
+    #[doc(hidden)]pub notifications_configuration: std::option::Option<crate::model::NotificationsConfiguration>,
     /// <p>The attendee information, including attendees' IDs and join tokens.</p>
-    #[doc(hidden)]
-    pub attendees: std::option::Option<std::vec::Vec<crate::model::CreateAttendeeRequestItem>>,
+    #[doc(hidden)]pub attendees: std::option::Option<std::vec::Vec<crate::model::CreateAttendeeRequestItem>>,
     /// <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
-    #[doc(hidden)]
-    pub primary_meeting_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub primary_meeting_id: std::option::Option<std::string::String>,
     /// <p>A consistent and opaque identifier, created and maintained by the builder to represent a segment of their users.</p>
-    #[doc(hidden)]
-    pub tenant_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]pub tenant_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The tags in the request.</p>
-    #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateMeetingWithAttendeesInput {
     /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
-    pub fn client_request_token(&self) -> std::option::Option<&str> {
+    pub fn client_request_token(&self) -> std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
-    /// <p>The Region in which to create the meeting.</p>
-    /// <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p>
+    /// <p>The Region in which to create the meeting.</p> 
+    /// <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p> 
     /// <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
-    pub fn media_region(&self) -> std::option::Option<&str> {
+    pub fn media_region(&self) -> std::option::Option<& str> {
         self.media_region.as_deref()
     }
     /// <p>Reserved.</p>
-    pub fn meeting_host_id(&self) -> std::option::Option<&str> {
+    pub fn meeting_host_id(&self) -> std::option::Option<& str> {
         self.meeting_host_id.as_deref()
     }
     /// <p>The external meeting ID.</p>
-    pub fn external_meeting_id(&self) -> std::option::Option<&str> {
+    pub fn external_meeting_id(&self) -> std::option::Option<& str> {
         self.external_meeting_id.as_deref()
     }
     /// <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
-    pub fn meeting_features(
-        &self,
-    ) -> std::option::Option<&crate::model::MeetingFeaturesConfiguration> {
+    pub fn meeting_features(&self) -> std::option::Option<& crate::model::MeetingFeaturesConfiguration> {
         self.meeting_features.as_ref()
     }
     /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
-    pub fn notifications_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::NotificationsConfiguration> {
+    pub fn notifications_configuration(&self) -> std::option::Option<& crate::model::NotificationsConfiguration> {
         self.notifications_configuration.as_ref()
     }
     /// <p>The attendee information, including attendees' IDs and join tokens.</p>
-    pub fn attendees(&self) -> std::option::Option<&[crate::model::CreateAttendeeRequestItem]> {
+    pub fn attendees(&self) -> std::option::Option<& [crate::model::CreateAttendeeRequestItem]> {
         self.attendees.as_deref()
     }
     /// <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
-    pub fn primary_meeting_id(&self) -> std::option::Option<&str> {
+    pub fn primary_meeting_id(&self) -> std::option::Option<& str> {
         self.primary_meeting_id.as_deref()
     }
     /// <p>A consistent and opaque identifier, created and maintained by the builder to represent a segment of their users.</p>
-    pub fn tenant_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tenant_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.tenant_ids.as_deref()
     }
     /// <p>The tags in the request.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateMeetingWithAttendeesInput {
+impl  std::fmt::Debug for CreateMeetingWithAttendeesInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMeetingWithAttendeesInput");
         formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
@@ -3456,10 +2483,7 @@ impl std::fmt::Debug for CreateMeetingWithAttendeesInput {
         formatter.field("meeting_host_id", &"*** Sensitive Data Redacted ***");
         formatter.field("external_meeting_id", &"*** Sensitive Data Redacted ***");
         formatter.field("meeting_features", &self.meeting_features);
-        formatter.field(
-            "notifications_configuration",
-            &self.notifications_configuration,
-        );
+        formatter.field("notifications_configuration", &self.notifications_configuration);
         formatter.field("attendees", &self.attendees);
         formatter.field("primary_meeting_id", &self.primary_meeting_id);
         formatter.field("tenant_ids", &self.tenant_ids);
@@ -3469,122 +2493,105 @@ impl std::fmt::Debug for CreateMeetingWithAttendeesInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateMeetingInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CreateMeetingInput  {
     /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
-    #[doc(hidden)]
-    pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>The Region in which to create the meeting.</p>
-    /// <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p>
+    #[doc(hidden)]pub client_request_token: std::option::Option<std::string::String>,
+    /// <p>The Region in which to create the meeting.</p> 
+    /// <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p> 
     /// <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
-    #[doc(hidden)]
-    pub media_region: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub media_region: std::option::Option<std::string::String>,
     /// <p>Reserved.</p>
-    #[doc(hidden)]
-    pub meeting_host_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub meeting_host_id: std::option::Option<std::string::String>,
     /// <p>The external meeting ID.</p>
-    #[doc(hidden)]
-    pub external_meeting_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub external_meeting_id: std::option::Option<std::string::String>,
     /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
-    #[doc(hidden)]
-    pub notifications_configuration: std::option::Option<crate::model::NotificationsConfiguration>,
+    #[doc(hidden)]pub notifications_configuration: std::option::Option<crate::model::NotificationsConfiguration>,
     /// <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
-    #[doc(hidden)]
-    pub meeting_features: std::option::Option<crate::model::MeetingFeaturesConfiguration>,
+    #[doc(hidden)]pub meeting_features: std::option::Option<crate::model::MeetingFeaturesConfiguration>,
     /// <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
-    #[doc(hidden)]
-    pub primary_meeting_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub primary_meeting_id: std::option::Option<std::string::String>,
     /// <p>A consistent and opaque identifier, created and maintained by the builder to represent a segment of their users.</p>
-    #[doc(hidden)]
-    pub tenant_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Applies one or more tags to an Amazon Chime SDK meeting. Note the following:</p>
-    /// <ul>
-    /// <li> <p>Not all resources have tags. For a list of services with resources that support tagging using this operation, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>. If the resource doesn't yet support this operation, the resource's service might support tagging using its own API operations. For more information, refer to the documentation for that service.</p> </li>
-    /// <li> <p>Each resource can have up to 50 tags. For other limits, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag Naming and Usage Conventions</a> in the <i>AWS General Reference</i>.</p> </li>
-    /// <li> <p>You can only tag resources that are located in the specified AWS Region for the AWS account.</p> </li>
-    /// <li> <p>To add tags to a resource, you need the necessary permissions for the service that the resource belongs to as well as permissions for adding tags. For more information, see the documentation for each service.</p> </li>
-    /// </ul> <important>
-    /// <p>Do not store personally identifiable information (PII) or other confidential or sensitive information in tags. We use tags to provide you with billing and administration services. Tags are not intended to be used for private or sensitive data.</p>
-    /// </important>
-    /// <p> <b>Minimum permissions</b> </p>
-    /// <p> In addition to the <code>tag:TagResources </code>permission required by this operation, you must also have the tagging permission defined by the service that created the resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code> operation, you must have both of the following permissions:</p>
-    /// <p> <code>tag:TagResources</code> </p>
-    /// <p> <code>ChimeSDKMeetings:CreateTags</code> </p> <note>
-    /// <p>Some services might have specific requirements for tagging some resources. For example, to tag an Amazon S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions don't work, check the documentation for that service's tagging APIs for more information.</p>
+    #[doc(hidden)]pub tenant_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Applies one or more tags to an Amazon Chime SDK meeting. Note the following:</p> 
+    /// <ul> 
+    /// <li> <p>Not all resources have tags. For a list of services with resources that support tagging using this operation, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>. If the resource doesn't yet support this operation, the resource's service might support tagging using its own API operations. For more information, refer to the documentation for that service.</p> </li> 
+    /// <li> <p>Each resource can have up to 50 tags. For other limits, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag Naming and Usage Conventions</a> in the <i>AWS General Reference</i>.</p> </li> 
+    /// <li> <p>You can only tag resources that are located in the specified AWS Region for the AWS account.</p> </li> 
+    /// <li> <p>To add tags to a resource, you need the necessary permissions for the service that the resource belongs to as well as permissions for adding tags. For more information, see the documentation for each service.</p> </li> 
+    /// </ul> <important> 
+    /// <p>Do not store personally identifiable information (PII) or other confidential or sensitive information in tags. We use tags to provide you with billing and administration services. Tags are not intended to be used for private or sensitive data.</p> 
+    /// </important> 
+    /// <p> <b>Minimum permissions</b> </p> 
+    /// <p> In addition to the <code>tag:TagResources </code>permission required by this operation, you must also have the tagging permission defined by the service that created the resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code> operation, you must have both of the following permissions:</p> 
+    /// <p> <code>tag:TagResources</code> </p> 
+    /// <p> <code>ChimeSDKMeetings:CreateTags</code> </p> <note> 
+    /// <p>Some services might have specific requirements for tagging some resources. For example, to tag an Amazon S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions don't work, check the documentation for that service's tagging APIs for more information.</p> 
     /// </note>
-    #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateMeetingInput {
     /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
-    pub fn client_request_token(&self) -> std::option::Option<&str> {
+    pub fn client_request_token(&self) -> std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
-    /// <p>The Region in which to create the meeting.</p>
-    /// <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p>
+    /// <p>The Region in which to create the meeting.</p> 
+    /// <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p> 
     /// <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
-    pub fn media_region(&self) -> std::option::Option<&str> {
+    pub fn media_region(&self) -> std::option::Option<& str> {
         self.media_region.as_deref()
     }
     /// <p>Reserved.</p>
-    pub fn meeting_host_id(&self) -> std::option::Option<&str> {
+    pub fn meeting_host_id(&self) -> std::option::Option<& str> {
         self.meeting_host_id.as_deref()
     }
     /// <p>The external meeting ID.</p>
-    pub fn external_meeting_id(&self) -> std::option::Option<&str> {
+    pub fn external_meeting_id(&self) -> std::option::Option<& str> {
         self.external_meeting_id.as_deref()
     }
     /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
-    pub fn notifications_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::NotificationsConfiguration> {
+    pub fn notifications_configuration(&self) -> std::option::Option<& crate::model::NotificationsConfiguration> {
         self.notifications_configuration.as_ref()
     }
     /// <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
-    pub fn meeting_features(
-        &self,
-    ) -> std::option::Option<&crate::model::MeetingFeaturesConfiguration> {
+    pub fn meeting_features(&self) -> std::option::Option<& crate::model::MeetingFeaturesConfiguration> {
         self.meeting_features.as_ref()
     }
     /// <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
-    pub fn primary_meeting_id(&self) -> std::option::Option<&str> {
+    pub fn primary_meeting_id(&self) -> std::option::Option<& str> {
         self.primary_meeting_id.as_deref()
     }
     /// <p>A consistent and opaque identifier, created and maintained by the builder to represent a segment of their users.</p>
-    pub fn tenant_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tenant_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.tenant_ids.as_deref()
     }
-    /// <p>Applies one or more tags to an Amazon Chime SDK meeting. Note the following:</p>
-    /// <ul>
-    /// <li> <p>Not all resources have tags. For a list of services with resources that support tagging using this operation, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>. If the resource doesn't yet support this operation, the resource's service might support tagging using its own API operations. For more information, refer to the documentation for that service.</p> </li>
-    /// <li> <p>Each resource can have up to 50 tags. For other limits, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag Naming and Usage Conventions</a> in the <i>AWS General Reference</i>.</p> </li>
-    /// <li> <p>You can only tag resources that are located in the specified AWS Region for the AWS account.</p> </li>
-    /// <li> <p>To add tags to a resource, you need the necessary permissions for the service that the resource belongs to as well as permissions for adding tags. For more information, see the documentation for each service.</p> </li>
-    /// </ul> <important>
-    /// <p>Do not store personally identifiable information (PII) or other confidential or sensitive information in tags. We use tags to provide you with billing and administration services. Tags are not intended to be used for private or sensitive data.</p>
-    /// </important>
-    /// <p> <b>Minimum permissions</b> </p>
-    /// <p> In addition to the <code>tag:TagResources </code>permission required by this operation, you must also have the tagging permission defined by the service that created the resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code> operation, you must have both of the following permissions:</p>
-    /// <p> <code>tag:TagResources</code> </p>
-    /// <p> <code>ChimeSDKMeetings:CreateTags</code> </p> <note>
-    /// <p>Some services might have specific requirements for tagging some resources. For example, to tag an Amazon S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions don't work, check the documentation for that service's tagging APIs for more information.</p>
+    /// <p>Applies one or more tags to an Amazon Chime SDK meeting. Note the following:</p> 
+    /// <ul> 
+    /// <li> <p>Not all resources have tags. For a list of services with resources that support tagging using this operation, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>. If the resource doesn't yet support this operation, the resource's service might support tagging using its own API operations. For more information, refer to the documentation for that service.</p> </li> 
+    /// <li> <p>Each resource can have up to 50 tags. For other limits, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag Naming and Usage Conventions</a> in the <i>AWS General Reference</i>.</p> </li> 
+    /// <li> <p>You can only tag resources that are located in the specified AWS Region for the AWS account.</p> </li> 
+    /// <li> <p>To add tags to a resource, you need the necessary permissions for the service that the resource belongs to as well as permissions for adding tags. For more information, see the documentation for each service.</p> </li> 
+    /// </ul> <important> 
+    /// <p>Do not store personally identifiable information (PII) or other confidential or sensitive information in tags. We use tags to provide you with billing and administration services. Tags are not intended to be used for private or sensitive data.</p> 
+    /// </important> 
+    /// <p> <b>Minimum permissions</b> </p> 
+    /// <p> In addition to the <code>tag:TagResources </code>permission required by this operation, you must also have the tagging permission defined by the service that created the resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code> operation, you must have both of the following permissions:</p> 
+    /// <p> <code>tag:TagResources</code> </p> 
+    /// <p> <code>ChimeSDKMeetings:CreateTags</code> </p> <note> 
+    /// <p>Some services might have specific requirements for tagging some resources. For example, to tag an Amazon S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions don't work, check the documentation for that service's tagging APIs for more information.</p> 
     /// </note>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateMeetingInput {
+impl  std::fmt::Debug for CreateMeetingInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMeetingInput");
         formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
         formatter.field("media_region", &self.media_region);
         formatter.field("meeting_host_id", &"*** Sensitive Data Redacted ***");
         formatter.field("external_meeting_id", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "notifications_configuration",
-            &self.notifications_configuration,
-        );
+        formatter.field("notifications_configuration", &self.notifications_configuration);
         formatter.field("meeting_features", &self.meeting_features);
         formatter.field("primary_meeting_id", &self.primary_meeting_id);
         formatter.field("tenant_ids", &self.tenant_ids);
@@ -3594,50 +2601,46 @@ impl std::fmt::Debug for CreateMeetingInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateAttendeeInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct CreateAttendeeInput  {
     /// <p>The unique ID of the meeting.</p>
-    #[doc(hidden)]
-    pub meeting_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub meeting_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
-    #[doc(hidden)]
-    pub external_user_id: std::option::Option<std::string::String>,
-    /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to grant an attendee. If you don't specify capabilities, all users have send and receive capabilities on all media channels by default.</p> <note>
-    /// <p>You use the capabilities with a set of values that control what the capabilities can do, such as <code>SendReceive</code> data. For more information about those values, see .</p>
-    /// </note>
-    /// <p>When using capabilities, be aware of these corner cases:</p>
-    /// <ul>
-    /// <li> <p>You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless you also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you don't set the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request status code. However, you can set your <code>video</code> capability to receive and you set your <code>content</code> capability to not receive.</p> </li>
-    /// <li> <p>When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio will flow from the attendee to the other meeting participants.</p> </li>
-    /// <li> <p>When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video or content streams, remote attendess can receive those streams, but only after media renegotiation between the client and the Amazon Chime back-end server.</p> </li>
+    #[doc(hidden)]pub external_user_id: std::option::Option<std::string::String>,
+    /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to grant an attendee. If you don't specify capabilities, all users have send and receive capabilities on all media channels by default.</p> <note> 
+    /// <p>You use the capabilities with a set of values that control what the capabilities can do, such as <code>SendReceive</code> data. For more information about those values, see .</p> 
+    /// </note> 
+    /// <p>When using capabilities, be aware of these corner cases:</p> 
+    /// <ul> 
+    /// <li> <p>You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless you also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you don't set the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request status code. However, you can set your <code>video</code> capability to receive and you set your <code>content</code> capability to not receive.</p> </li> 
+    /// <li> <p>When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio will flow from the attendee to the other meeting participants.</p> </li> 
+    /// <li> <p>When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video or content streams, remote attendess can receive those streams, but only after media renegotiation between the client and the Amazon Chime back-end server.</p> </li> 
     /// </ul>
-    #[doc(hidden)]
-    pub capabilities: std::option::Option<crate::model::AttendeeCapabilities>,
+    #[doc(hidden)]pub capabilities: std::option::Option<crate::model::AttendeeCapabilities>,
 }
 impl CreateAttendeeInput {
     /// <p>The unique ID of the meeting.</p>
-    pub fn meeting_id(&self) -> std::option::Option<&str> {
+    pub fn meeting_id(&self) -> std::option::Option<& str> {
         self.meeting_id.as_deref()
     }
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
-    pub fn external_user_id(&self) -> std::option::Option<&str> {
+    pub fn external_user_id(&self) -> std::option::Option<& str> {
         self.external_user_id.as_deref()
     }
-    /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to grant an attendee. If you don't specify capabilities, all users have send and receive capabilities on all media channels by default.</p> <note>
-    /// <p>You use the capabilities with a set of values that control what the capabilities can do, such as <code>SendReceive</code> data. For more information about those values, see .</p>
-    /// </note>
-    /// <p>When using capabilities, be aware of these corner cases:</p>
-    /// <ul>
-    /// <li> <p>You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless you also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you don't set the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request status code. However, you can set your <code>video</code> capability to receive and you set your <code>content</code> capability to not receive.</p> </li>
-    /// <li> <p>When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio will flow from the attendee to the other meeting participants.</p> </li>
-    /// <li> <p>When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video or content streams, remote attendess can receive those streams, but only after media renegotiation between the client and the Amazon Chime back-end server.</p> </li>
+    /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to grant an attendee. If you don't specify capabilities, all users have send and receive capabilities on all media channels by default.</p> <note> 
+    /// <p>You use the capabilities with a set of values that control what the capabilities can do, such as <code>SendReceive</code> data. For more information about those values, see .</p> 
+    /// </note> 
+    /// <p>When using capabilities, be aware of these corner cases:</p> 
+    /// <ul> 
+    /// <li> <p>You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless you also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you don't set the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request status code. However, you can set your <code>video</code> capability to receive and you set your <code>content</code> capability to not receive.</p> </li> 
+    /// <li> <p>When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio will flow from the attendee to the other meeting participants.</p> </li> 
+    /// <li> <p>When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video or content streams, remote attendess can receive those streams, but only after media renegotiation between the client and the Amazon Chime back-end server.</p> </li> 
     /// </ul>
-    pub fn capabilities(&self) -> std::option::Option<&crate::model::AttendeeCapabilities> {
+    pub fn capabilities(&self) -> std::option::Option<& crate::model::AttendeeCapabilities> {
         self.capabilities.as_ref()
     }
 }
-impl std::fmt::Debug for CreateAttendeeInput {
+impl  std::fmt::Debug for CreateAttendeeInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAttendeeInput");
         formatter.field("meeting_id", &self.meeting_id);
@@ -3648,34 +2651,30 @@ impl std::fmt::Debug for CreateAttendeeInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct BatchUpdateAttendeeCapabilitiesExceptInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct BatchUpdateAttendeeCapabilitiesExceptInput  {
     /// <p>The ID of the meeting associated with the update request.</p>
-    #[doc(hidden)]
-    pub meeting_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub meeting_id: std::option::Option<std::string::String>,
     /// <p>The <code>AttendeeIDs</code> that you want to exclude from one or more capabilities.</p>
-    #[doc(hidden)]
-    pub excluded_attendee_ids: std::option::Option<std::vec::Vec<crate::model::AttendeeIdItem>>,
+    #[doc(hidden)]pub excluded_attendee_ids: std::option::Option<std::vec::Vec<crate::model::AttendeeIdItem>>,
     /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to update.</p>
-    #[doc(hidden)]
-    pub capabilities: std::option::Option<crate::model::AttendeeCapabilities>,
+    #[doc(hidden)]pub capabilities: std::option::Option<crate::model::AttendeeCapabilities>,
 }
 impl BatchUpdateAttendeeCapabilitiesExceptInput {
     /// <p>The ID of the meeting associated with the update request.</p>
-    pub fn meeting_id(&self) -> std::option::Option<&str> {
+    pub fn meeting_id(&self) -> std::option::Option<& str> {
         self.meeting_id.as_deref()
     }
     /// <p>The <code>AttendeeIDs</code> that you want to exclude from one or more capabilities.</p>
-    pub fn excluded_attendee_ids(&self) -> std::option::Option<&[crate::model::AttendeeIdItem]> {
+    pub fn excluded_attendee_ids(&self) -> std::option::Option<& [crate::model::AttendeeIdItem]> {
         self.excluded_attendee_ids.as_deref()
     }
     /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to update.</p>
-    pub fn capabilities(&self) -> std::option::Option<&crate::model::AttendeeCapabilities> {
+    pub fn capabilities(&self) -> std::option::Option<& crate::model::AttendeeCapabilities> {
         self.capabilities.as_ref()
     }
 }
-impl std::fmt::Debug for BatchUpdateAttendeeCapabilitiesExceptInput {
+impl  std::fmt::Debug for BatchUpdateAttendeeCapabilitiesExceptInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchUpdateAttendeeCapabilitiesExceptInput");
         formatter.field("meeting_id", &self.meeting_id);
@@ -3686,27 +2685,24 @@ impl std::fmt::Debug for BatchUpdateAttendeeCapabilitiesExceptInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct BatchCreateAttendeeInput {
+#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
+pub struct BatchCreateAttendeeInput  {
     /// <p>The Amazon Chime SDK ID of the meeting to which you're adding attendees.</p>
-    #[doc(hidden)]
-    pub meeting_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]pub meeting_id: std::option::Option<std::string::String>,
     /// <p>The attendee information, including attendees' IDs and join tokens.</p>
-    #[doc(hidden)]
-    pub attendees: std::option::Option<std::vec::Vec<crate::model::CreateAttendeeRequestItem>>,
+    #[doc(hidden)]pub attendees: std::option::Option<std::vec::Vec<crate::model::CreateAttendeeRequestItem>>,
 }
 impl BatchCreateAttendeeInput {
     /// <p>The Amazon Chime SDK ID of the meeting to which you're adding attendees.</p>
-    pub fn meeting_id(&self) -> std::option::Option<&str> {
+    pub fn meeting_id(&self) -> std::option::Option<& str> {
         self.meeting_id.as_deref()
     }
     /// <p>The attendee information, including attendees' IDs and join tokens.</p>
-    pub fn attendees(&self) -> std::option::Option<&[crate::model::CreateAttendeeRequestItem]> {
+    pub fn attendees(&self) -> std::option::Option<& [crate::model::CreateAttendeeRequestItem]> {
         self.attendees.as_deref()
     }
 }
-impl std::fmt::Debug for BatchCreateAttendeeInput {
+impl  std::fmt::Debug for BatchCreateAttendeeInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchCreateAttendeeInput");
         formatter.field("meeting_id", &self.meeting_id);
@@ -3714,3 +2710,4 @@ impl std::fmt::Debug for BatchCreateAttendeeInput {
         formatter.finish()
     }
 }
+
