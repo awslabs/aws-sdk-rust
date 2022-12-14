@@ -88,7 +88,7 @@ where
     }
 
     fn call(&mut self, req: Operation<ResponseHandler, RetryPolicy>) -> Self::Future {
-        let (req, parts) = req.into_request_response();
+        let (mut req, parts) = req.into_request_response();
         let handler = parts.response_handler;
         // send_operation records the full request-response lifecycle.
         // NOTE: For operations that stream output, only the setup is captured in this span.
@@ -103,6 +103,7 @@ where
         if let Some(metadata) = parts.metadata {
             span.record("operation", &metadata.name());
             span.record("service", &metadata.service());
+            req.properties_mut().insert(metadata);
         }
         let resp = self.inner.call(req);
         let fut = async move {
