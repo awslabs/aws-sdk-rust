@@ -4910,9 +4910,22 @@ impl ListRecipeVersionsInput {
                 if let Some(inner_33) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_33));
                 }
-                if let Some(inner_34) = &_input.name {
-                    query.push_kv("name", &aws_smithy_http::query::fmt_string(&inner_34));
+                let inner_34 = &_input.name;
+                let inner_34 = inner_34.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_34.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("name", &aws_smithy_http::query::fmt_string(&inner_34));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -6674,10 +6687,15 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_50) = &_input.tag_keys {
-                    for inner_51 in inner_50 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_51));
-                    }
+                let inner_50 = &_input.tag_keys;
+                let inner_50 = inner_50.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_51 in inner_50 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_51));
                 }
                 Ok(())
             }

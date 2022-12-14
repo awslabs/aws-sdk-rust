@@ -3336,12 +3336,25 @@ impl GetProgrammaticAccessCredentialsInput {
                             .encode(),
                     );
                 }
-                if let Some(inner_22) = &_input.environment_id {
-                    query.push_kv(
-                        "environmentId",
-                        &aws_smithy_http::query::fmt_string(&inner_22),
+                let inner_22 = &_input.environment_id;
+                let inner_22 = inner_22.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "environment_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_22.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "environment_id",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "environmentId",
+                    &aws_smithy_http::query::fmt_string(&inner_22),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -4327,12 +4340,11 @@ impl ListPermissionGroupsInput {
                 if let Some(inner_32) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_32));
                 }
-                if _input.max_results != 0 {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
-                }
+                let inner_33 = &_input.max_results;
+                query.push_kv(
+                    "maxResults",
+                    aws_smithy_types::primitive::Encoder::from(*inner_33).encode(),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -4485,15 +4497,15 @@ impl ListPermissionGroupsByUserInput {
                 _input: &crate::input::ListPermissionGroupsByUserInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_33 = &_input.user_id;
-                let input_33 = input_33.as_ref().ok_or_else(|| {
+                let input_34 = &_input.user_id;
+                let input_34 = input_34.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "user_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let user_id = aws_smithy_http::label::fmt_string(
-                    input_33,
+                    input_34,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if user_id.is_empty() {
@@ -4513,15 +4525,14 @@ impl ListPermissionGroupsByUserInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_34) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_34));
+                if let Some(inner_35) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_35));
                 }
-                if _input.max_results != 0 {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
-                }
+                let inner_36 = &_input.max_results;
+                query.push_kv(
+                    "maxResults",
+                    aws_smithy_types::primitive::Encoder::from(*inner_36).encode(),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -4668,15 +4679,14 @@ impl ListUsersInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_35) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_35));
+                if let Some(inner_37) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_37));
                 }
-                if _input.max_results != 0 {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
-                }
+                let inner_38 = &_input.max_results;
+                query.push_kv(
+                    "maxResults",
+                    aws_smithy_types::primitive::Encoder::from(*inner_38).encode(),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -4830,15 +4840,15 @@ impl ListUsersByPermissionGroupInput {
                 _input: &crate::input::ListUsersByPermissionGroupInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_36 = &_input.permission_group_id;
-                let input_36 = input_36.as_ref().ok_or_else(|| {
+                let input_39 = &_input.permission_group_id;
+                let input_39 = input_39.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "permission_group_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let permission_group_id = aws_smithy_http::label::fmt_string(
-                    input_36,
+                    input_39,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if permission_group_id.is_empty() {
@@ -4862,15 +4872,14 @@ impl ListUsersByPermissionGroupInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_37) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_37));
+                if let Some(inner_40) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_40));
                 }
-                if _input.max_results != 0 {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
-                }
+                let inner_41 = &_input.max_results;
+                query.push_kv(
+                    "maxResults",
+                    aws_smithy_types::primitive::Encoder::from(*inner_41).encode(),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -5014,15 +5023,15 @@ impl ResetUserPasswordInput {
                 _input: &crate::input::ResetUserPasswordInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_38 = &_input.user_id;
-                let input_38 = input_38.as_ref().ok_or_else(|| {
+                let input_42 = &_input.user_id;
+                let input_42 = input_42.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "user_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let user_id = aws_smithy_http::label::fmt_string(
-                    input_38,
+                    input_42,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if user_id.is_empty() {
@@ -5291,15 +5300,15 @@ impl UpdateChangesetInput {
                 _input: &crate::input::UpdateChangesetInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_39 = &_input.dataset_id;
-                let input_39 = input_39.as_ref().ok_or_else(|| {
+                let input_43 = &_input.dataset_id;
+                let input_43 = input_43.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "dataset_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let dataset_id = aws_smithy_http::label::fmt_string(
-                    input_39,
+                    input_43,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if dataset_id.is_empty() {
@@ -5310,15 +5319,15 @@ impl UpdateChangesetInput {
                         ),
                     );
                 }
-                let input_40 = &_input.changeset_id;
-                let input_40 = input_40.as_ref().ok_or_else(|| {
+                let input_44 = &_input.changeset_id;
+                let input_44 = input_44.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "changeset_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let changeset_id = aws_smithy_http::label::fmt_string(
-                    input_40,
+                    input_44,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if changeset_id.is_empty() {
@@ -5567,15 +5576,15 @@ impl UpdateDatasetInput {
                 _input: &crate::input::UpdateDatasetInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_41 = &_input.dataset_id;
-                let input_41 = input_41.as_ref().ok_or_else(|| {
+                let input_45 = &_input.dataset_id;
+                let input_45 = input_45.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "dataset_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let dataset_id = aws_smithy_http::label::fmt_string(
-                    input_41,
+                    input_45,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if dataset_id.is_empty() {
@@ -5818,15 +5827,15 @@ impl UpdatePermissionGroupInput {
                 _input: &crate::input::UpdatePermissionGroupInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_42 = &_input.permission_group_id;
-                let input_42 = input_42.as_ref().ok_or_else(|| {
+                let input_46 = &_input.permission_group_id;
+                let input_46 = input_46.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "permission_group_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let permission_group_id = aws_smithy_http::label::fmt_string(
-                    input_42,
+                    input_46,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if permission_group_id.is_empty() {
@@ -6081,15 +6090,15 @@ impl UpdateUserInput {
                 _input: &crate::input::UpdateUserInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_43 = &_input.user_id;
-                let input_43 = input_43.as_ref().ok_or_else(|| {
+                let input_47 = &_input.user_id;
+                let input_47 = input_47.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "user_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let user_id = aws_smithy_http::label::fmt_string(
-                    input_43,
+                    input_47,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if user_id.is_empty() {

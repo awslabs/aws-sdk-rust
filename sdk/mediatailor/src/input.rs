@@ -4740,12 +4740,25 @@ impl ListAlertsInput {
                 if let Some(inner_38) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_38));
                 }
-                if let Some(inner_39) = &_input.resource_arn {
-                    query.push_kv(
-                        "resourceArn",
-                        &aws_smithy_http::query::fmt_string(&inner_39),
+                let inner_39 = &_input.resource_arn;
+                let inner_39 = inner_39.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_39.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "resourceArn",
+                    &aws_smithy_http::query::fmt_string(&inner_39),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -7186,10 +7199,15 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_54) = &_input.tag_keys {
-                    for inner_55 in inner_54 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_55));
-                    }
+                let inner_54 = &_input.tag_keys;
+                let inner_54 = inner_54.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_55 in inner_54 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_55));
                 }
                 Ok(())
             }

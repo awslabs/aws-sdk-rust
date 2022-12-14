@@ -15930,12 +15930,38 @@ impl GetUsageInput {
                 if let Some(inner_162) = &_input.key_id {
                     query.push_kv("keyId", &aws_smithy_http::query::fmt_string(&inner_162));
                 }
-                if let Some(inner_163) = &_input.start_date {
-                    query.push_kv("startDate", &aws_smithy_http::query::fmt_string(&inner_163));
+                let inner_163 = &_input.start_date;
+                let inner_163 = inner_163.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "start_date",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_163.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "start_date",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
-                if let Some(inner_164) = &_input.end_date {
-                    query.push_kv("endDate", &aws_smithy_http::query::fmt_string(&inner_164));
+                query.push_kv("startDate", &aws_smithy_http::query::fmt_string(&inner_163));
+                let inner_164 = &_input.end_date;
+                let inner_164 = inner_164.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "end_date",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_164.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "end_date",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("endDate", &aws_smithy_http::query::fmt_string(&inner_164));
                 if let Some(inner_165) = &_input.position {
                     query.push_kv("position", &aws_smithy_http::query::fmt_string(&inner_165));
                 }
@@ -17153,9 +17179,14 @@ impl ImportApiKeysInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("mode", "import");
-                if let Some(inner_180) = &_input.format {
-                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_180));
-                }
+                let inner_180 = &_input.format;
+                let inner_180 = inner_180.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "format",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_180));
                 if _input.fail_on_warnings {
                     query.push_kv(
                         "failonwarnings",
@@ -20743,10 +20774,15 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_210) = &_input.tag_keys {
-                    for inner_211 in inner_210 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_211));
-                    }
+                let inner_210 = &_input.tag_keys;
+                let inner_210 = inner_210.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_211 in inner_210 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_211));
                 }
                 Ok(())
             }

@@ -159,9 +159,22 @@ impl AbortMultipartUploadInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("x-id", "AbortMultipartUpload");
-                if let Some(inner_3) = &_input.upload_id {
-                    query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_3));
+                let inner_3 = &_input.upload_id;
+                let inner_3 = inner_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "upload_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_3.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "upload_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_3));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -520,9 +533,22 @@ impl CompleteMultipartUploadInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("x-id", "CompleteMultipartUpload");
-                if let Some(inner_6) = &_input.upload_id {
-                    query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_6));
+                let inner_6 = &_input.upload_id;
+                let inner_6 = inner_6.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "upload_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_6.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "upload_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_6));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -2695,9 +2721,22 @@ impl DeleteBucketAnalyticsConfigurationInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("analytics");
-                if let Some(inner_14) = &_input.id {
-                    query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_14));
+                let inner_14 = &_input.id;
+                let inner_14 = inner_14.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_14.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_14));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -3222,9 +3261,22 @@ impl DeleteBucketIntelligentTieringConfigurationInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("intelligent-tiering");
-                if let Some(inner_18) = &_input.id {
-                    query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_18));
+                let inner_18 = &_input.id;
+                let inner_18 = inner_18.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_18.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_18));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -3411,9 +3463,22 @@ impl DeleteBucketInventoryConfigurationInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("inventory");
-                if let Some(inner_20) = &_input.id {
-                    query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_20));
+                let inner_20 = &_input.id;
+                let inner_20 = inner_20.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_20.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_20));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -3777,9 +3842,22 @@ impl DeleteBucketMetricsConfigurationInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("metrics");
-                if let Some(inner_23) = &_input.id {
-                    query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_23));
+                let inner_23 = &_input.id;
+                let inner_23 = inner_23.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_23.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_23));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -6320,9 +6398,22 @@ impl GetBucketAnalyticsConfigurationInput {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("analytics");
                 query.push_kv("x-id", "GetBucketAnalyticsConfiguration");
-                if let Some(inner_43) = &_input.id {
-                    query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_43));
+                let inner_43 = &_input.id;
+                let inner_43 = inner_43.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_43.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_43));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -6845,9 +6936,22 @@ impl GetBucketIntelligentTieringConfigurationInput {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("intelligent-tiering");
                 query.push_kv("x-id", "GetBucketIntelligentTieringConfiguration");
-                if let Some(inner_47) = &_input.id {
-                    query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_47));
+                let inner_47 = &_input.id;
+                let inner_47 = inner_47.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_47.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_47));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -7034,9 +7138,22 @@ impl GetBucketInventoryConfigurationInput {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("inventory");
                 query.push_kv("x-id", "GetBucketInventoryConfiguration");
-                if let Some(inner_49) = &_input.id {
-                    query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_49));
+                let inner_49 = &_input.id;
+                let inner_49 = inner_49.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_49.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_49));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -7750,9 +7867,22 @@ impl GetBucketMetricsConfigurationInput {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("metrics");
                 query.push_kv("x-id", "GetBucketMetricsConfiguration");
-                if let Some(inner_54) = &_input.id {
-                    query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_54));
+                let inner_54 = &_input.id;
+                let inner_54 = inner_54.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_54.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_54));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -14874,9 +15004,22 @@ impl ListPartsInput {
                         &aws_smithy_http::query::fmt_string(&inner_138),
                     );
                 }
-                if let Some(inner_139) = &_input.upload_id {
-                    query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_139));
+                let inner_139 = &_input.upload_id;
+                let inner_139 = inner_139.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "upload_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_139.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "upload_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_139));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -15667,9 +15810,22 @@ impl PutBucketAnalyticsConfigurationInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("analytics");
-                if let Some(inner_143) = &_input.id {
-                    query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_143));
+                let inner_143 = &_input.id;
+                let inner_143 = inner_143.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_143.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_143));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -16398,9 +16554,22 @@ impl PutBucketIntelligentTieringConfigurationInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("intelligent-tiering");
-                if let Some(inner_147) = &_input.id {
-                    query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_147));
+                let inner_147 = &_input.id;
+                let inner_147 = inner_147.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_147.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_147));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -16618,9 +16787,22 @@ impl PutBucketInventoryConfigurationInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("inventory");
-                if let Some(inner_149) = &_input.id {
-                    query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_149));
+                let inner_149 = &_input.id;
+                let inner_149 = inner_149.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_149.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_149));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -17348,9 +17530,22 @@ impl PutBucketMetricsConfigurationInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("metrics");
-                if let Some(inner_153) = &_input.id {
-                    query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_153));
+                let inner_153 = &_input.id;
+                let inner_153 = inner_153.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_153.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_153));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -23451,15 +23646,27 @@ impl UploadPartInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("x-id", "UploadPart");
-                if _input.part_number != 0 {
-                    query.push_kv(
-                        "partNumber",
-                        aws_smithy_types::primitive::Encoder::from(_input.part_number).encode(),
+                let inner_187 = &_input.part_number;
+                query.push_kv(
+                    "partNumber",
+                    aws_smithy_types::primitive::Encoder::from(*inner_187).encode(),
+                );
+                let inner_188 = &_input.upload_id;
+                let inner_188 = inner_188.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "upload_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_188.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "upload_id",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_187) = &_input.upload_id {
-                    query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_187));
-                }
+                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_188));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -23616,15 +23823,15 @@ impl UploadPartInput {
                 _input: &crate::input::UploadPartInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_188 = &_input.bucket;
-                let input_188 = input_188.as_ref().ok_or_else(|| {
+                let input_189 = &_input.bucket;
+                let input_189 = input_189.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "bucket",
                         "cannot be empty or unset",
                     )
                 })?;
                 let bucket = aws_smithy_http::label::fmt_string(
-                    input_188,
+                    input_189,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if bucket.is_empty() {
@@ -23635,15 +23842,15 @@ impl UploadPartInput {
                         ),
                     );
                 }
-                let input_189 = &_input.key;
-                let input_189 = input_189.as_ref().ok_or_else(|| {
+                let input_190 = &_input.key;
+                let input_190 = input_190.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "key",
                         "cannot be empty or unset",
                     )
                 })?;
                 let key = aws_smithy_http::label::fmt_string(
-                    input_189,
+                    input_190,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if key.is_empty() {
@@ -23664,15 +23871,27 @@ impl UploadPartInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("x-id", "UploadPart");
-                if _input.part_number != 0 {
-                    query.push_kv(
-                        "partNumber",
-                        aws_smithy_types::primitive::Encoder::from(_input.part_number).encode(),
+                let inner_191 = &_input.part_number;
+                query.push_kv(
+                    "partNumber",
+                    aws_smithy_types::primitive::Encoder::from(*inner_191).encode(),
+                );
+                let inner_192 = &_input.upload_id;
+                let inner_192 = inner_192.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "upload_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_192.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "upload_id",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_190) = &_input.upload_id {
-                    query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_190));
-                }
+                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_192));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -24168,15 +24387,15 @@ impl UploadPartCopyInput {
                 _input: &crate::input::UploadPartCopyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_191 = &_input.bucket;
-                let input_191 = input_191.as_ref().ok_or_else(|| {
+                let input_193 = &_input.bucket;
+                let input_193 = input_193.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "bucket",
                         "cannot be empty or unset",
                     )
                 })?;
                 let bucket = aws_smithy_http::label::fmt_string(
-                    input_191,
+                    input_193,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if bucket.is_empty() {
@@ -24187,15 +24406,15 @@ impl UploadPartCopyInput {
                         ),
                     );
                 }
-                let input_192 = &_input.key;
-                let input_192 = input_192.as_ref().ok_or_else(|| {
+                let input_194 = &_input.key;
+                let input_194 = input_194.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "key",
                         "cannot be empty or unset",
                     )
                 })?;
                 let key = aws_smithy_http::label::fmt_string(
-                    input_192,
+                    input_194,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if key.is_empty() {
@@ -24216,15 +24435,27 @@ impl UploadPartCopyInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("x-id", "UploadPartCopy");
-                if _input.part_number != 0 {
-                    query.push_kv(
-                        "partNumber",
-                        aws_smithy_types::primitive::Encoder::from(_input.part_number).encode(),
+                let inner_195 = &_input.part_number;
+                query.push_kv(
+                    "partNumber",
+                    aws_smithy_types::primitive::Encoder::from(*inner_195).encode(),
+                );
+                let inner_196 = &_input.upload_id;
+                let inner_196 = inner_196.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "upload_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_196.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "upload_id",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_193) = &_input.upload_id {
-                    query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_193));
-                }
+                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_196));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

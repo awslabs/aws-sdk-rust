@@ -840,9 +840,22 @@ impl DeleteReplicationSetInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_1) = &_input.arn {
-                    query.push_kv("arn", &aws_smithy_http::query::fmt_string(&inner_1));
+                let inner_1 = &_input.arn;
+                let inner_1 = inner_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_1.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("arn", &aws_smithy_http::query::fmt_string(&inner_1));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -1430,9 +1443,22 @@ impl GetIncidentRecordInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_2) = &_input.arn {
-                    query.push_kv("arn", &aws_smithy_http::query::fmt_string(&inner_2));
+                let inner_2 = &_input.arn;
+                let inner_2 = inner_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_2.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("arn", &aws_smithy_http::query::fmt_string(&inner_2));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -1567,9 +1593,22 @@ impl GetReplicationSetInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_3) = &_input.arn {
-                    query.push_kv("arn", &aws_smithy_http::query::fmt_string(&inner_3));
+                let inner_3 = &_input.arn;
+                let inner_3 = inner_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_3.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("arn", &aws_smithy_http::query::fmt_string(&inner_3));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -1730,9 +1769,22 @@ impl GetResourcePoliciesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_4) = &_input.resource_arn {
-                    query.push_kv("resourceArn", &aws_smithy_http::query::fmt_string(&inner_4));
+                let inner_4 = &_input.resource_arn;
+                let inner_4 = inner_4.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_4.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("resourceArn", &aws_smithy_http::query::fmt_string(&inner_4));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -1879,9 +1931,22 @@ impl GetResponsePlanInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_5) = &_input.arn {
-                    query.push_kv("arn", &aws_smithy_http::query::fmt_string(&inner_5));
+                let inner_5 = &_input.arn;
+                let inner_5 = inner_5.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_5.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("arn", &aws_smithy_http::query::fmt_string(&inner_5));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -2033,15 +2098,41 @@ impl GetTimelineEventInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_6) = &_input.incident_record_arn {
-                    query.push_kv(
-                        "incidentRecordArn",
-                        &aws_smithy_http::query::fmt_string(&inner_6),
+                let inner_6 = &_input.incident_record_arn;
+                let inner_6 = inner_6.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "incident_record_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_6.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "incident_record_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_7) = &_input.event_id {
-                    query.push_kv("eventId", &aws_smithy_http::query::fmt_string(&inner_7));
+                query.push_kv(
+                    "incidentRecordArn",
+                    &aws_smithy_http::query::fmt_string(&inner_6),
+                );
+                let inner_7 = &_input.event_id;
+                let inner_7 = inner_7.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "event_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_7.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "event_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("eventId", &aws_smithy_http::query::fmt_string(&inner_7));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -3858,10 +3949,15 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_11) = &_input.tag_keys {
-                    for inner_12 in inner_11 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_12));
-                    }
+                let inner_11 = &_input.tag_keys;
+                let inner_11 = inner_11.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_12 in inner_11 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_12));
                 }
                 Ok(())
             }

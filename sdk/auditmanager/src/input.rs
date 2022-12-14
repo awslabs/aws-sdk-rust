@@ -2552,12 +2552,17 @@ impl DeleteAssessmentFrameworkShareInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_13) = &_input.request_type {
-                    query.push_kv(
-                        "requestType",
-                        &aws_smithy_http::query::fmt_string(&inner_13),
-                    );
-                }
+                let inner_13 = &_input.request_type;
+                let inner_13 = inner_13.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "request_type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "requestType",
+                    &aws_smithy_http::query::fmt_string(&inner_13),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -6481,18 +6486,44 @@ impl ListAssessmentControlInsightsByControlDomainInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_52) = &_input.control_domain_id {
-                    query.push_kv(
-                        "controlDomainId",
-                        &aws_smithy_http::query::fmt_string(&inner_52),
+                let inner_52 = &_input.control_domain_id;
+                let inner_52 = inner_52.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "control_domain_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_52.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "control_domain_id",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_53) = &_input.assessment_id {
-                    query.push_kv(
-                        "assessmentId",
-                        &aws_smithy_http::query::fmt_string(&inner_53),
+                query.push_kv(
+                    "controlDomainId",
+                    &aws_smithy_http::query::fmt_string(&inner_52),
+                );
+                let inner_53 = &_input.assessment_id;
+                let inner_53 = inner_53.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "assessment_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_53.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "assessment_id",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "assessmentId",
+                    &aws_smithy_http::query::fmt_string(&inner_53),
+                );
                 if let Some(inner_54) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_54));
                 }
@@ -6666,12 +6697,17 @@ impl ListAssessmentFrameworksInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_56) = &_input.framework_type {
-                    query.push_kv(
-                        "frameworkType",
-                        &aws_smithy_http::query::fmt_string(&inner_56),
-                    );
-                }
+                let inner_56 = &_input.framework_type;
+                let inner_56 = inner_56.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "framework_type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "frameworkType",
+                    &aws_smithy_http::query::fmt_string(&inner_56),
+                );
                 if let Some(inner_57) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_57));
                 }
@@ -6845,12 +6881,17 @@ impl ListAssessmentFrameworkShareRequestsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_59) = &_input.request_type {
-                    query.push_kv(
-                        "requestType",
-                        &aws_smithy_http::query::fmt_string(&inner_59),
-                    );
-                }
+                let inner_59 = &_input.request_type;
+                let inner_59 = inner_59.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "request_type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "requestType",
+                    &aws_smithy_http::query::fmt_string(&inner_59),
+                );
                 if let Some(inner_60) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_60));
                 }
@@ -7511,12 +7552,25 @@ impl ListControlDomainInsightsByAssessmentInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_69) = &_input.assessment_id {
-                    query.push_kv(
-                        "assessmentId",
-                        &aws_smithy_http::query::fmt_string(&inner_69),
+                let inner_69 = &_input.assessment_id;
+                let inner_69 = inner_69.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "assessment_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_69.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "assessment_id",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "assessmentId",
+                    &aws_smithy_http::query::fmt_string(&inner_69),
+                );
                 if let Some(inner_70) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_70));
                 }
@@ -7689,12 +7743,25 @@ impl ListControlInsightsByControlDomainInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_72) = &_input.control_domain_id {
-                    query.push_kv(
-                        "controlDomainId",
-                        &aws_smithy_http::query::fmt_string(&inner_72),
+                let inner_72 = &_input.control_domain_id;
+                let inner_72 = inner_72.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "control_domain_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_72.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "control_domain_id",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "controlDomainId",
+                    &aws_smithy_http::query::fmt_string(&inner_72),
+                );
                 if let Some(inner_73) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_73));
                 }
@@ -7865,12 +7932,17 @@ impl ListControlsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_75) = &_input.control_type {
-                    query.push_kv(
-                        "controlType",
-                        &aws_smithy_http::query::fmt_string(&inner_75),
-                    );
-                }
+                let inner_75 = &_input.control_type;
+                let inner_75 = inner_75.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "control_type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "controlType",
+                    &aws_smithy_http::query::fmt_string(&inner_75),
+                );
                 if let Some(inner_76) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_76));
                 }
@@ -8040,9 +8112,14 @@ impl ListKeywordsForDataSourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_78) = &_input.source {
-                    query.push_kv("source", &aws_smithy_http::query::fmt_string(&inner_78));
-                }
+                let inner_78 = &_input.source;
+                let inner_78 = inner_78.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "source",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv("source", &aws_smithy_http::query::fmt_string(&inner_78));
                 if let Some(inner_79) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_79));
                 }
@@ -9228,10 +9305,15 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_87) = &_input.tag_keys {
-                    for inner_88 in inner_87 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_88));
-                    }
+                let inner_87 = &_input.tag_keys;
+                let inner_87 = inner_87.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_88 in inner_87 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_88));
                 }
                 Ok(())
             }

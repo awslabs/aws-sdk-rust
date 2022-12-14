@@ -1517,9 +1517,22 @@ impl ListExecutionsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_14) = &_input.task_id {
-                    query.push_kv("taskId", &aws_smithy_http::query::fmt_string(&inner_14));
+                let inner_14 = &_input.task_id;
+                let inner_14 = inner_14.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "task_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_14.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "task_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("taskId", &aws_smithy_http::query::fmt_string(&inner_14));
                 if let Some(inner_15) = &_input.state {
                     query.push_kv("state", &aws_smithy_http::query::fmt_string(&inner_15));
                 }
@@ -2212,10 +2225,15 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_24) = &_input.tag_keys {
-                    for inner_25 in inner_24 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_25));
-                    }
+                let inner_24 = &_input.tag_keys;
+                let inner_24 = inner_24.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_25 in inner_24 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_25));
                 }
                 Ok(())
             }

@@ -2096,12 +2096,25 @@ impl UpdateConnectorInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_12) = &_input.current_version {
-                    query.push_kv(
-                        "currentVersion",
-                        &aws_smithy_http::query::fmt_string(&inner_12),
+                let inner_12 = &_input.current_version;
+                let inner_12 = inner_12.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "current_version",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_12.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "current_version",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "currentVersion",
+                    &aws_smithy_http::query::fmt_string(&inner_12),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

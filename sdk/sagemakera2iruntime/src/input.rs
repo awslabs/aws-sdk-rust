@@ -457,12 +457,25 @@ impl ListHumanLoopsInput {
                         )?,
                     );
                 }
-                if let Some(inner_5) = &_input.flow_definition_arn {
-                    query.push_kv(
-                        "FlowDefinitionArn",
-                        &aws_smithy_http::query::fmt_string(&inner_5),
+                let inner_5 = &_input.flow_definition_arn;
+                let inner_5 = inner_5.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "flow_definition_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_5.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "flow_definition_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "FlowDefinitionArn",
+                    &aws_smithy_http::query::fmt_string(&inner_5),
+                );
                 if let Some(inner_6) = &_input.sort_order {
                     query.push_kv("SortOrder", &aws_smithy_http::query::fmt_string(&inner_6));
                 }

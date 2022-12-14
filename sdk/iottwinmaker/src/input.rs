@@ -4534,16 +4534,34 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_27) = &_input.resource_arn {
-                    query.push_kv(
-                        "resourceARN",
-                        &aws_smithy_http::query::fmt_string(&inner_27),
+                let inner_27 = &_input.resource_arn;
+                let inner_27 = inner_27.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_27.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_28) = &_input.tag_keys {
-                    for inner_29 in inner_28 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_29));
-                    }
+                query.push_kv(
+                    "resourceARN",
+                    &aws_smithy_http::query::fmt_string(&inner_27),
+                );
+                let inner_28 = &_input.tag_keys;
+                let inner_28 = inner_28.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_29 in inner_28 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_29));
                 }
                 Ok(())
             }

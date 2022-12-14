@@ -120,7 +120,7 @@ version = "3.2.0"
 
 [dev-dependencies.tokio]
 version = "1"
-features = ["macros", "test-util", "rt"]
+features = ["macros", "test-util", "rt", "rt-multi-thread"]
 
 [dev-dependencies.tracing-subscriber]
 version = "0.3.15"

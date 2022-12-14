@@ -64,12 +64,25 @@ impl GetLatestConfigurationInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_1) = &_input.configuration_token {
-                    query.push_kv(
+                let inner_1 = &_input.configuration_token;
+                let inner_1 = inner_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
                         "configuration_token",
-                        &aws_smithy_http::query::fmt_string(&inner_1),
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_1.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "configuration_token",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "configuration_token",
+                    &aws_smithy_http::query::fmt_string(&inner_1),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

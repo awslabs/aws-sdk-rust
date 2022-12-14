@@ -2770,12 +2770,25 @@ impl ListAppInstanceUsersInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_23) = &_input.app_instance_arn {
-                    query.push_kv(
-                        "app-instance-arn",
-                        &aws_smithy_http::query::fmt_string(&inner_23),
+                let inner_23 = &_input.app_instance_arn;
+                let inner_23 = inner_23.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "app_instance_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_23.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "app_instance_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "app-instance-arn",
+                    &aws_smithy_http::query::fmt_string(&inner_23),
+                );
                 if let Some(inner_24) = &_input.max_results {
                     query.push_kv(
                         "max-results",
@@ -2921,9 +2934,22 @@ impl ListTagsForResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_26) = &_input.resource_arn {
-                    query.push_kv("arn", &aws_smithy_http::query::fmt_string(&inner_26));
+                let inner_26 = &_input.resource_arn;
+                let inner_26 = inner_26.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_26.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("arn", &aws_smithy_http::query::fmt_string(&inner_26));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

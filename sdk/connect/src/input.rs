@@ -9603,12 +9603,17 @@ impl DescribeInstanceStorageConfigInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_68) = &_input.resource_type {
-                    query.push_kv(
-                        "resourceType",
-                        &aws_smithy_http::query::fmt_string(&inner_68),
-                    );
-                }
+                let inner_68 = &_input.resource_type;
+                let inner_68 = inner_68.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "resourceType",
+                    &aws_smithy_http::query::fmt_string(&inner_68),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -11387,9 +11392,22 @@ impl DisassociateApprovedOriginInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_86) = &_input.origin {
-                    query.push_kv("origin", &aws_smithy_http::query::fmt_string(&inner_86));
+                let inner_86 = &_input.origin;
+                let inner_86 = inner_86.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "origin",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_86.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "origin",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("origin", &aws_smithy_http::query::fmt_string(&inner_86));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -11791,12 +11809,17 @@ impl DisassociateInstanceStorageConfigInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_90) = &_input.resource_type {
-                    query.push_kv(
-                        "resourceType",
-                        &aws_smithy_http::query::fmt_string(&inner_90),
-                    );
-                }
+                let inner_90 = &_input.resource_type;
+                let inner_90 = inner_90.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "resourceType",
+                    &aws_smithy_http::query::fmt_string(&inner_90),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -11969,12 +11992,25 @@ impl DisassociateLambdaFunctionInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_92) = &_input.function_arn {
-                    query.push_kv(
-                        "functionArn",
-                        &aws_smithy_http::query::fmt_string(&inner_92),
+                let inner_92 = &_input.function_arn;
+                let inner_92 = inner_92.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "function_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_92.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "function_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "functionArn",
+                    &aws_smithy_http::query::fmt_string(&inner_92),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -12159,12 +12195,38 @@ impl DisassociateLexBotInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_94) = &_input.bot_name {
-                    query.push_kv("botName", &aws_smithy_http::query::fmt_string(&inner_94));
+                let inner_94 = &_input.bot_name;
+                let inner_94 = inner_94.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bot_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_94.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bot_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
-                if let Some(inner_95) = &_input.lex_region {
-                    query.push_kv("lexRegion", &aws_smithy_http::query::fmt_string(&inner_95));
+                query.push_kv("botName", &aws_smithy_http::query::fmt_string(&inner_94));
+                let inner_95 = &_input.lex_region;
+                let inner_95 = inner_95.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "lex_region",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_95.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "lex_region",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("lexRegion", &aws_smithy_http::query::fmt_string(&inner_95));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -12340,9 +12402,22 @@ impl DisassociatePhoneNumberContactFlowInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_97) = &_input.instance_id {
-                    query.push_kv("instanceId", &aws_smithy_http::query::fmt_string(&inner_97));
+                let inner_97 = &_input.instance_id;
+                let inner_97 = inner_97.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "instance_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_97.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "instance_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("instanceId", &aws_smithy_http::query::fmt_string(&inner_97));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -15442,12 +15517,17 @@ impl ListBotsInput {
                         aws_smithy_types::primitive::Encoder::from(*inner_123).encode(),
                     );
                 }
-                if let Some(inner_124) = &_input.lex_version {
-                    query.push_kv(
-                        "lexVersion",
-                        &aws_smithy_http::query::fmt_string(&inner_124),
-                    );
-                }
+                let inner_124 = &_input.lex_version;
+                let inner_124 = inner_124.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "lex_version",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "lexVersion",
+                    &aws_smithy_http::query::fmt_string(&inner_124),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -16112,13 +16192,18 @@ impl ListContactReferencesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_135) = &_input.reference_types {
-                    for inner_136 in inner_135 {
-                        query.push_kv(
-                            "referenceTypes",
-                            &aws_smithy_http::query::fmt_string(&inner_136),
-                        );
-                    }
+                let inner_135 = &_input.reference_types;
+                let inner_135 = inner_135.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "reference_types",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_136 in inner_135 {
+                    query.push_kv(
+                        "referenceTypes",
+                        &aws_smithy_http::query::fmt_string(&inner_136),
+                    );
                 }
                 if let Some(inner_137) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_137));
@@ -17070,12 +17155,17 @@ impl ListInstanceStorageConfigsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_147) = &_input.resource_type {
-                    query.push_kv(
-                        "resourceType",
-                        &aws_smithy_http::query::fmt_string(&inner_147),
-                    );
-                }
+                let inner_147 = &_input.resource_type;
+                let inner_147 = inner_147.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "resourceType",
+                    &aws_smithy_http::query::fmt_string(&inner_147),
+                );
                 if let Some(inner_148) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_148));
                 }
@@ -25353,10 +25443,15 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_222) = &_input.tag_keys {
-                    for inner_223 in inner_222 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_223));
-                    }
+                let inner_222 = &_input.tag_keys;
+                let inner_222 = inner_222.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_223 in inner_222 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_223));
                 }
                 Ok(())
             }
@@ -28071,12 +28166,17 @@ impl UpdateInstanceStorageConfigInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_244) = &_input.resource_type {
-                    query.push_kv(
-                        "resourceType",
-                        &aws_smithy_http::query::fmt_string(&inner_244),
-                    );
-                }
+                let inner_244 = &_input.resource_type;
+                let inner_244 = inner_244.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "resourceType",
+                    &aws_smithy_http::query::fmt_string(&inner_244),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

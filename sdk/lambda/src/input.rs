@@ -3951,9 +3951,22 @@ impl DeleteProvisionedConcurrencyConfigInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_24) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_24));
+                let inner_24 = &_input.qualifier;
+                let inner_24 = inner_24.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "qualifier",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_24.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "qualifier",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_24));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -5983,9 +5996,22 @@ impl GetLayerVersionByArnInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("find", "LayerVersion");
-                if let Some(inner_41) = &_input.arn {
-                    query.push_kv("Arn", &aws_smithy_http::query::fmt_string(&inner_41));
+                let inner_41 = &_input.arn;
+                let inner_41 = inner_41.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_41.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("Arn", &aws_smithy_http::query::fmt_string(&inner_41));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -6540,9 +6566,22 @@ impl GetProvisionedConcurrencyConfigInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_47) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_47));
+                let inner_47 = &_input.qualifier;
+                let inner_47 = inner_47.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "qualifier",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_47.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "qualifier",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_47));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -10766,9 +10805,22 @@ impl PutProvisionedConcurrencyConfigInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_97) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_97));
+                let inner_97 = &_input.qualifier;
+                let inner_97 = inner_97.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "qualifier",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_97.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "qualifier",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_97));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -11623,10 +11675,15 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_108) = &_input.tag_keys {
-                    for inner_109 in inner_108 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_109));
-                    }
+                let inner_108 = &_input.tag_keys;
+                let inner_108 = inner_108.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_109 in inner_108 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_109));
                 }
                 Ok(())
             }

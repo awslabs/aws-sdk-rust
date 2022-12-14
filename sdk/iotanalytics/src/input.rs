@@ -4111,12 +4111,25 @@ impl ListTagsForResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_29) = &_input.resource_arn {
-                    query.push_kv(
-                        "resourceArn",
-                        &aws_smithy_http::query::fmt_string(&inner_29),
+                let inner_29 = &_input.resource_arn;
+                let inner_29 = inner_29.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_29.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "resourceArn",
+                    &aws_smithy_http::query::fmt_string(&inner_29),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -5031,12 +5044,25 @@ impl TagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_35) = &_input.resource_arn {
-                    query.push_kv(
-                        "resourceArn",
-                        &aws_smithy_http::query::fmt_string(&inner_35),
+                let inner_35 = &_input.resource_arn;
+                let inner_35 = inner_35.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_35.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "resourceArn",
+                    &aws_smithy_http::query::fmt_string(&inner_35),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -5206,16 +5232,34 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_36) = &_input.resource_arn {
-                    query.push_kv(
-                        "resourceArn",
-                        &aws_smithy_http::query::fmt_string(&inner_36),
+                let inner_36 = &_input.resource_arn;
+                let inner_36 = inner_36.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_36.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_37) = &_input.tag_keys {
-                    for inner_38 in inner_37 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_38));
-                    }
+                query.push_kv(
+                    "resourceArn",
+                    &aws_smithy_http::query::fmt_string(&inner_36),
+                );
+                let inner_37 = &_input.tag_keys;
+                let inner_37 = inner_37.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_38 in inner_37 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_38));
                 }
                 Ok(())
             }

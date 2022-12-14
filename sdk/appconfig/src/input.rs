@@ -3307,9 +3307,22 @@ impl GetConfigurationInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_21) = &_input.client_id {
-                    query.push_kv("client_id", &aws_smithy_http::query::fmt_string(&inner_21));
+                let inner_21 = &_input.client_id;
+                let inner_21 = inner_21.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "client_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_21.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "client_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("client_id", &aws_smithy_http::query::fmt_string(&inner_21));
                 if let Some(inner_22) = &_input.client_configuration_version {
                     query.push_kv(
                         "client_configuration_version",
@@ -7177,10 +7190,15 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_72) = &_input.tag_keys {
-                    for inner_73 in inner_72 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_73));
-                    }
+                let inner_72 = &_input.tag_keys;
+                let inner_72 = inner_72.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_73 in inner_72 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_73));
                 }
                 Ok(())
             }
@@ -8801,12 +8819,25 @@ impl ValidateConfigurationInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_84) = &_input.configuration_version {
-                    query.push_kv(
+                let inner_84 = &_input.configuration_version;
+                let inner_84 = inner_84.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
                         "configuration_version",
-                        &aws_smithy_http::query::fmt_string(&inner_84),
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_84.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "configuration_version",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "configuration_version",
+                    &aws_smithy_http::query::fmt_string(&inner_84),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

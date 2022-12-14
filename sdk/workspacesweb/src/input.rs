@@ -100,12 +100,25 @@ impl AssociateBrowserSettingsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_2) = &_input.browser_settings_arn {
-                    query.push_kv(
-                        "browserSettingsArn",
-                        &aws_smithy_http::query::fmt_string(&inner_2),
+                let inner_2 = &_input.browser_settings_arn;
+                let inner_2 = inner_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "browser_settings_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_2.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "browser_settings_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "browserSettingsArn",
+                    &aws_smithy_http::query::fmt_string(&inner_2),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -281,12 +294,25 @@ impl AssociateNetworkSettingsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_4) = &_input.network_settings_arn {
-                    query.push_kv(
-                        "networkSettingsArn",
-                        &aws_smithy_http::query::fmt_string(&inner_4),
+                let inner_4 = &_input.network_settings_arn;
+                let inner_4 = inner_4.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "network_settings_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_4.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "network_settings_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "networkSettingsArn",
+                    &aws_smithy_http::query::fmt_string(&inner_4),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -462,12 +488,25 @@ impl AssociateTrustStoreInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_6) = &_input.trust_store_arn {
-                    query.push_kv(
-                        "trustStoreArn",
-                        &aws_smithy_http::query::fmt_string(&inner_6),
+                let inner_6 = &_input.trust_store_arn;
+                let inner_6 = inner_6.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "trust_store_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_6.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "trust_store_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "trustStoreArn",
+                    &aws_smithy_http::query::fmt_string(&inner_6),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -643,12 +682,25 @@ impl AssociateUserSettingsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_8) = &_input.user_settings_arn {
-                    query.push_kv(
-                        "userSettingsArn",
-                        &aws_smithy_http::query::fmt_string(&inner_8),
+                let inner_8 = &_input.user_settings_arn;
+                let inner_8 = inner_8.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "user_settings_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_8.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "user_settings_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "userSettingsArn",
+                    &aws_smithy_http::query::fmt_string(&inner_8),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -4700,9 +4752,22 @@ impl GetTrustStoreCertificateInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_26) = &_input.thumbprint {
-                    query.push_kv("thumbprint", &aws_smithy_http::query::fmt_string(&inner_26));
+                let inner_26 = &_input.thumbprint;
+                let inner_26 = inner_26.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "thumbprint",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_26.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "thumbprint",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("thumbprint", &aws_smithy_http::query::fmt_string(&inner_26));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -6547,10 +6612,15 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_47) = &_input.tag_keys {
-                    for inner_48 in inner_47 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_48));
-                    }
+                let inner_47 = &_input.tag_keys;
+                let inner_47 = inner_47.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_48 in inner_47 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_48));
                 }
                 Ok(())
             }

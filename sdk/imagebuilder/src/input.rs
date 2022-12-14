@@ -2491,12 +2491,25 @@ impl DeleteComponentInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_1) = &_input.component_build_version_arn {
-                    query.push_kv(
-                        "componentBuildVersionArn",
-                        &aws_smithy_http::query::fmt_string(&inner_1),
+                let inner_1 = &_input.component_build_version_arn;
+                let inner_1 = inner_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "component_build_version_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_1.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "component_build_version_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "componentBuildVersionArn",
+                    &aws_smithy_http::query::fmt_string(&inner_1),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -2636,12 +2649,25 @@ impl DeleteContainerRecipeInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_2) = &_input.container_recipe_arn {
-                    query.push_kv(
-                        "containerRecipeArn",
-                        &aws_smithy_http::query::fmt_string(&inner_2),
+                let inner_2 = &_input.container_recipe_arn;
+                let inner_2 = inner_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "container_recipe_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_2.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "container_recipe_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "containerRecipeArn",
+                    &aws_smithy_http::query::fmt_string(&inner_2),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -2785,12 +2811,25 @@ impl DeleteDistributionConfigurationInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_3) = &_input.distribution_configuration_arn {
-                    query.push_kv(
-                        "distributionConfigurationArn",
-                        &aws_smithy_http::query::fmt_string(&inner_3),
+                let inner_3 = &_input.distribution_configuration_arn;
+                let inner_3 = inner_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "distribution_configuration_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_3.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "distribution_configuration_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "distributionConfigurationArn",
+                    &aws_smithy_http::query::fmt_string(&inner_3),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -2928,12 +2967,25 @@ impl DeleteImageInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_4) = &_input.image_build_version_arn {
-                    query.push_kv(
-                        "imageBuildVersionArn",
-                        &aws_smithy_http::query::fmt_string(&inner_4),
+                let inner_4 = &_input.image_build_version_arn;
+                let inner_4 = inner_4.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "image_build_version_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_4.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "image_build_version_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "imageBuildVersionArn",
+                    &aws_smithy_http::query::fmt_string(&inner_4),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -3073,12 +3125,25 @@ impl DeleteImagePipelineInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_5) = &_input.image_pipeline_arn {
-                    query.push_kv(
-                        "imagePipelineArn",
-                        &aws_smithy_http::query::fmt_string(&inner_5),
+                let inner_5 = &_input.image_pipeline_arn;
+                let inner_5 = inner_5.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "image_pipeline_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_5.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "image_pipeline_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "imagePipelineArn",
+                    &aws_smithy_http::query::fmt_string(&inner_5),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -3218,12 +3283,25 @@ impl DeleteImageRecipeInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_6) = &_input.image_recipe_arn {
-                    query.push_kv(
-                        "imageRecipeArn",
-                        &aws_smithy_http::query::fmt_string(&inner_6),
+                let inner_6 = &_input.image_recipe_arn;
+                let inner_6 = inner_6.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "image_recipe_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_6.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "image_recipe_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "imageRecipeArn",
+                    &aws_smithy_http::query::fmt_string(&inner_6),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -3367,12 +3445,25 @@ impl DeleteInfrastructureConfigurationInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_7) = &_input.infrastructure_configuration_arn {
-                    query.push_kv(
-                        "infrastructureConfigurationArn",
-                        &aws_smithy_http::query::fmt_string(&inner_7),
+                let inner_7 = &_input.infrastructure_configuration_arn;
+                let inner_7 = inner_7.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "infrastructure_configuration_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_7.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "infrastructure_configuration_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "infrastructureConfigurationArn",
+                    &aws_smithy_http::query::fmt_string(&inner_7),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -3513,12 +3604,25 @@ impl GetComponentInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_8) = &_input.component_build_version_arn {
-                    query.push_kv(
-                        "componentBuildVersionArn",
-                        &aws_smithy_http::query::fmt_string(&inner_8),
+                let inner_8 = &_input.component_build_version_arn;
+                let inner_8 = inner_8.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "component_build_version_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_8.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "component_build_version_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "componentBuildVersionArn",
+                    &aws_smithy_http::query::fmt_string(&inner_8),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -3658,12 +3762,25 @@ impl GetComponentPolicyInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_9) = &_input.component_arn {
-                    query.push_kv(
-                        "componentArn",
-                        &aws_smithy_http::query::fmt_string(&inner_9),
+                let inner_9 = &_input.component_arn;
+                let inner_9 = inner_9.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "component_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_9.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "component_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "componentArn",
+                    &aws_smithy_http::query::fmt_string(&inner_9),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -3803,12 +3920,25 @@ impl GetContainerRecipeInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_10) = &_input.container_recipe_arn {
-                    query.push_kv(
-                        "containerRecipeArn",
-                        &aws_smithy_http::query::fmt_string(&inner_10),
+                let inner_10 = &_input.container_recipe_arn;
+                let inner_10 = inner_10.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "container_recipe_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_10.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "container_recipe_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "containerRecipeArn",
+                    &aws_smithy_http::query::fmt_string(&inner_10),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -3948,12 +4078,25 @@ impl GetContainerRecipePolicyInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_11) = &_input.container_recipe_arn {
-                    query.push_kv(
-                        "containerRecipeArn",
-                        &aws_smithy_http::query::fmt_string(&inner_11),
+                let inner_11 = &_input.container_recipe_arn;
+                let inner_11 = inner_11.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "container_recipe_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_11.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "container_recipe_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "containerRecipeArn",
+                    &aws_smithy_http::query::fmt_string(&inner_11),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -4096,12 +4239,25 @@ impl GetDistributionConfigurationInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_12) = &_input.distribution_configuration_arn {
-                    query.push_kv(
-                        "distributionConfigurationArn",
-                        &aws_smithy_http::query::fmt_string(&inner_12),
+                let inner_12 = &_input.distribution_configuration_arn;
+                let inner_12 = inner_12.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "distribution_configuration_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_12.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "distribution_configuration_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "distributionConfigurationArn",
+                    &aws_smithy_http::query::fmt_string(&inner_12),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -4239,12 +4395,25 @@ impl GetImageInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_13) = &_input.image_build_version_arn {
-                    query.push_kv(
-                        "imageBuildVersionArn",
-                        &aws_smithy_http::query::fmt_string(&inner_13),
+                let inner_13 = &_input.image_build_version_arn;
+                let inner_13 = inner_13.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "image_build_version_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_13.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "image_build_version_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "imageBuildVersionArn",
+                    &aws_smithy_http::query::fmt_string(&inner_13),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -4382,12 +4551,25 @@ impl GetImagePipelineInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_14) = &_input.image_pipeline_arn {
-                    query.push_kv(
-                        "imagePipelineArn",
-                        &aws_smithy_http::query::fmt_string(&inner_14),
+                let inner_14 = &_input.image_pipeline_arn;
+                let inner_14 = inner_14.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "image_pipeline_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_14.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "image_pipeline_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "imagePipelineArn",
+                    &aws_smithy_http::query::fmt_string(&inner_14),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -4522,9 +4704,22 @@ impl GetImagePolicyInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_15) = &_input.image_arn {
-                    query.push_kv("imageArn", &aws_smithy_http::query::fmt_string(&inner_15));
+                let inner_15 = &_input.image_arn;
+                let inner_15 = inner_15.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "image_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_15.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "image_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("imageArn", &aws_smithy_http::query::fmt_string(&inner_15));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -4662,12 +4857,25 @@ impl GetImageRecipeInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_16) = &_input.image_recipe_arn {
-                    query.push_kv(
-                        "imageRecipeArn",
-                        &aws_smithy_http::query::fmt_string(&inner_16),
+                let inner_16 = &_input.image_recipe_arn;
+                let inner_16 = inner_16.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "image_recipe_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_16.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "image_recipe_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "imageRecipeArn",
+                    &aws_smithy_http::query::fmt_string(&inner_16),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -4807,12 +5015,25 @@ impl GetImageRecipePolicyInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_17) = &_input.image_recipe_arn {
-                    query.push_kv(
-                        "imageRecipeArn",
-                        &aws_smithy_http::query::fmt_string(&inner_17),
+                let inner_17 = &_input.image_recipe_arn;
+                let inner_17 = inner_17.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "image_recipe_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_17.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "image_recipe_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "imageRecipeArn",
+                    &aws_smithy_http::query::fmt_string(&inner_17),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -4956,12 +5177,25 @@ impl GetInfrastructureConfigurationInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_18) = &_input.infrastructure_configuration_arn {
-                    query.push_kv(
-                        "infrastructureConfigurationArn",
-                        &aws_smithy_http::query::fmt_string(&inner_18),
+                let inner_18 = &_input.infrastructure_configuration_arn;
+                let inner_18 = inner_18.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "infrastructure_configuration_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_18.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "infrastructure_configuration_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "infrastructureConfigurationArn",
+                    &aws_smithy_http::query::fmt_string(&inner_18),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -8987,10 +9221,15 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_22) = &_input.tag_keys {
-                    for inner_23 in inner_22 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_23));
-                    }
+                let inner_22 = &_input.tag_keys;
+                let inner_22 = inner_22.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_23 in inner_22 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_23));
                 }
                 Ok(())
             }

@@ -3511,12 +3511,25 @@ impl DisableOrganizationAdminAccountInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_7) = &_input.admin_account_id {
-                    query.push_kv(
-                        "adminAccountId",
-                        &aws_smithy_http::query::fmt_string(&inner_7),
+                let inner_7 = &_input.admin_account_id;
+                let inner_7 = inner_7.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "admin_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_7.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "admin_account_id",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "adminAccountId",
+                    &aws_smithy_http::query::fmt_string(&inner_7),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -9438,10 +9451,15 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_25) = &_input.tag_keys {
-                    for inner_26 in inner_25 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_26));
-                    }
+                let inner_25 = &_input.tag_keys;
+                let inner_25 = inner_25.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_26 in inner_25 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_26));
                 }
                 Ok(())
             }

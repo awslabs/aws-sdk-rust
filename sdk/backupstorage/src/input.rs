@@ -1295,15 +1295,33 @@ impl NotifyObjectCompleteInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_18) = &_input.object_checksum {
-                    query.push_kv("checksum", &aws_smithy_http::query::fmt_string(&inner_18));
-                }
-                if let Some(inner_19) = &_input.object_checksum_algorithm {
-                    query.push_kv(
-                        "checksum-algorithm",
-                        &aws_smithy_http::query::fmt_string(&inner_19),
+                let inner_18 = &_input.object_checksum;
+                let inner_18 = inner_18.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "object_checksum",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_18.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "object_checksum",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv("checksum", &aws_smithy_http::query::fmt_string(&inner_18));
+                let inner_19 = &_input.object_checksum_algorithm;
+                let inner_19 = inner_19.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "object_checksum_algorithm",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "checksum-algorithm",
+                    &aws_smithy_http::query::fmt_string(&inner_19),
+                );
                 if let Some(inner_20) = &_input.metadata_string {
                     query.push_kv(
                         "metadata-string",
@@ -1621,21 +1639,38 @@ impl PutChunkInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if _input.length != 0 {
-                    query.push_kv(
-                        "length",
-                        aws_smithy_types::primitive::Encoder::from(_input.length).encode(),
+                let inner_26 = &_input.length;
+                query.push_kv(
+                    "length",
+                    aws_smithy_types::primitive::Encoder::from(*inner_26).encode(),
+                );
+                let inner_27 = &_input.checksum;
+                let inner_27 = inner_27.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "checksum",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_27.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "checksum",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_26) = &_input.checksum {
-                    query.push_kv("checksum", &aws_smithy_http::query::fmt_string(&inner_26));
-                }
-                if let Some(inner_27) = &_input.checksum_algorithm {
-                    query.push_kv(
-                        "checksum-algorithm",
-                        &aws_smithy_http::query::fmt_string(&inner_27),
-                    );
-                }
+                query.push_kv("checksum", &aws_smithy_http::query::fmt_string(&inner_27));
+                let inner_28 = &_input.checksum_algorithm;
+                let inner_28 = inner_28.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "checksum_algorithm",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "checksum-algorithm",
+                    &aws_smithy_http::query::fmt_string(&inner_28),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -1914,15 +1949,15 @@ impl PutObjectInput {
                 _input: &crate::input::PutObjectInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_28 = &_input.backup_job_id;
-                let input_28 = input_28.as_ref().ok_or_else(|| {
+                let input_29 = &_input.backup_job_id;
+                let input_29 = input_29.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "backup_job_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let backup_job_id = aws_smithy_http::label::fmt_string(
-                    input_28,
+                    input_29,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if backup_job_id.is_empty() {
@@ -1933,15 +1968,15 @@ impl PutObjectInput {
                         ),
                     );
                 }
-                let input_29 = &_input.object_name;
-                let input_29 = input_29.as_ref().ok_or_else(|| {
+                let input_30 = &_input.object_name;
+                let input_30 = input_30.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "object_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let object_name = aws_smithy_http::label::fmt_string(
-                    input_29,
+                    input_30,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if object_name.is_empty() {
@@ -1966,10 +2001,10 @@ impl PutObjectInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_30) = &_input.metadata_string {
+                if let Some(inner_31) = &_input.metadata_string {
                     query.push_kv(
                         "metadata-string",
-                        &aws_smithy_http::query::fmt_string(&inner_30),
+                        &aws_smithy_http::query::fmt_string(&inner_31),
                     );
                 }
                 if _input.inline_chunk_length != 0 {
@@ -1979,25 +2014,25 @@ impl PutObjectInput {
                             .encode(),
                     );
                 }
-                if let Some(inner_31) = &_input.inline_chunk_checksum {
-                    query.push_kv("checksum", &aws_smithy_http::query::fmt_string(&inner_31));
+                if let Some(inner_32) = &_input.inline_chunk_checksum {
+                    query.push_kv("checksum", &aws_smithy_http::query::fmt_string(&inner_32));
                 }
-                if let Some(inner_32) = &_input.inline_chunk_checksum_algorithm {
+                if let Some(inner_33) = &_input.inline_chunk_checksum_algorithm {
                     query.push_kv(
                         "checksum-algorithm",
-                        &aws_smithy_http::query::fmt_string(&inner_32),
-                    );
-                }
-                if let Some(inner_33) = &_input.object_checksum {
-                    query.push_kv(
-                        "object-checksum",
                         &aws_smithy_http::query::fmt_string(&inner_33),
                     );
                 }
-                if let Some(inner_34) = &_input.object_checksum_algorithm {
+                if let Some(inner_34) = &_input.object_checksum {
+                    query.push_kv(
+                        "object-checksum",
+                        &aws_smithy_http::query::fmt_string(&inner_34),
+                    );
+                }
+                if let Some(inner_35) = &_input.object_checksum_algorithm {
                     query.push_kv(
                         "object-checksum-algorithm",
-                        &aws_smithy_http::query::fmt_string(&inner_34),
+                        &aws_smithy_http::query::fmt_string(&inner_35),
                     );
                 }
                 if _input.throw_on_duplicate {
@@ -2177,15 +2212,15 @@ impl StartObjectInput {
                 _input: &crate::input::StartObjectInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_35 = &_input.backup_job_id;
-                let input_35 = input_35.as_ref().ok_or_else(|| {
+                let input_36 = &_input.backup_job_id;
+                let input_36 = input_36.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "backup_job_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let backup_job_id = aws_smithy_http::label::fmt_string(
-                    input_35,
+                    input_36,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if backup_job_id.is_empty() {
@@ -2196,15 +2231,15 @@ impl StartObjectInput {
                         ),
                     );
                 }
-                let input_36 = &_input.object_name;
-                let input_36 = input_36.as_ref().ok_or_else(|| {
+                let input_37 = &_input.object_name;
+                let input_37 = input_37.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "object_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let object_name = aws_smithy_http::label::fmt_string(
-                    input_36,
+                    input_37,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if object_name.is_empty() {

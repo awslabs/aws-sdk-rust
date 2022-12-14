@@ -2169,12 +2169,17 @@ impl GetSiteAddressInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_13) = &_input.address_type {
-                    query.push_kv(
-                        "AddressType",
-                        &aws_smithy_http::query::fmt_string(&inner_13),
-                    );
-                }
+                let inner_13 = &_input.address_type;
+                let inner_13 = inner_13.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "address_type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "AddressType",
+                    &aws_smithy_http::query::fmt_string(&inner_13),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -4047,10 +4052,15 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_49) = &_input.tag_keys {
-                    for inner_50 in inner_49 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_50));
-                    }
+                let inner_49 = &_input.tag_keys;
+                let inner_49 = inner_49.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_50 in inner_49 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_50));
                 }
                 Ok(())
             }

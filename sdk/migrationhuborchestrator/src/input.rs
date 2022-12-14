@@ -1021,12 +1021,38 @@ impl DeleteWorkflowStepInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_3) = &_input.step_group_id {
-                    query.push_kv("stepGroupId", &aws_smithy_http::query::fmt_string(&inner_3));
+                let inner_3 = &_input.step_group_id;
+                let inner_3 = inner_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "step_group_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_3.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "step_group_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
-                if let Some(inner_4) = &_input.workflow_id {
-                    query.push_kv("workflowId", &aws_smithy_http::query::fmt_string(&inner_4));
+                query.push_kv("stepGroupId", &aws_smithy_http::query::fmt_string(&inner_3));
+                let inner_4 = &_input.workflow_id;
+                let inner_4 = inner_4.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "workflow_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_4.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "workflow_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("workflowId", &aws_smithy_http::query::fmt_string(&inner_4));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -1195,9 +1221,22 @@ impl DeleteWorkflowStepGroupInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_6) = &_input.workflow_id {
-                    query.push_kv("workflowId", &aws_smithy_http::query::fmt_string(&inner_6));
+                let inner_6 = &_input.workflow_id;
+                let inner_6 = inner_6.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "workflow_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_6.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "workflow_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("workflowId", &aws_smithy_http::query::fmt_string(&inner_6));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -1522,15 +1561,41 @@ impl GetTemplateStepInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_9) = &_input.template_id {
-                    query.push_kv("templateId", &aws_smithy_http::query::fmt_string(&inner_9));
-                }
-                if let Some(inner_10) = &_input.step_group_id {
-                    query.push_kv(
-                        "stepGroupId",
-                        &aws_smithy_http::query::fmt_string(&inner_10),
+                let inner_9 = &_input.template_id;
+                let inner_9 = inner_9.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "template_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_9.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "template_id",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv("templateId", &aws_smithy_http::query::fmt_string(&inner_9));
+                let inner_10 = &_input.step_group_id;
+                let inner_10 = inner_10.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "step_group_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_10.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "step_group_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                query.push_kv(
+                    "stepGroupId",
+                    &aws_smithy_http::query::fmt_string(&inner_10),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -2039,15 +2104,41 @@ impl GetWorkflowStepInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_15) = &_input.workflow_id {
-                    query.push_kv("workflowId", &aws_smithy_http::query::fmt_string(&inner_15));
-                }
-                if let Some(inner_16) = &_input.step_group_id {
-                    query.push_kv(
-                        "stepGroupId",
-                        &aws_smithy_http::query::fmt_string(&inner_16),
+                let inner_15 = &_input.workflow_id;
+                let inner_15 = inner_15.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "workflow_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_15.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "workflow_id",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv("workflowId", &aws_smithy_http::query::fmt_string(&inner_15));
+                let inner_16 = &_input.step_group_id;
+                let inner_16 = inner_16.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "step_group_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_16.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "step_group_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                query.push_kv(
+                    "stepGroupId",
+                    &aws_smithy_http::query::fmt_string(&inner_16),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -2216,9 +2307,22 @@ impl GetWorkflowStepGroupInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_18) = &_input.workflow_id {
-                    query.push_kv("workflowId", &aws_smithy_http::query::fmt_string(&inner_18));
+                let inner_18 = &_input.workflow_id;
+                let inner_18 = inner_18.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "workflow_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_18.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "workflow_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("workflowId", &aws_smithy_http::query::fmt_string(&inner_18));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -3069,15 +3173,41 @@ impl ListTemplateStepsInput {
                 if let Some(inner_25) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_25));
                 }
-                if let Some(inner_26) = &_input.template_id {
-                    query.push_kv("templateId", &aws_smithy_http::query::fmt_string(&inner_26));
-                }
-                if let Some(inner_27) = &_input.step_group_id {
-                    query.push_kv(
-                        "stepGroupId",
-                        &aws_smithy_http::query::fmt_string(&inner_27),
+                let inner_26 = &_input.template_id;
+                let inner_26 = inner_26.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "template_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_26.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "template_id",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv("templateId", &aws_smithy_http::query::fmt_string(&inner_26));
+                let inner_27 = &_input.step_group_id;
+                let inner_27 = inner_27.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "step_group_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_27.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "step_group_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                query.push_kv(
+                    "stepGroupId",
+                    &aws_smithy_http::query::fmt_string(&inner_27),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -3474,9 +3604,22 @@ impl ListWorkflowStepGroupsInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_34) = &_input.workflow_id {
-                    query.push_kv("workflowId", &aws_smithy_http::query::fmt_string(&inner_34));
+                let inner_34 = &_input.workflow_id;
+                let inner_34 = inner_34.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "workflow_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_34.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "workflow_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("workflowId", &aws_smithy_http::query::fmt_string(&inner_34));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -3888,15 +4031,41 @@ impl RetryWorkflowStepInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_39) = &_input.workflow_id {
-                    query.push_kv("workflowId", &aws_smithy_http::query::fmt_string(&inner_39));
-                }
-                if let Some(inner_40) = &_input.step_group_id {
-                    query.push_kv(
-                        "stepGroupId",
-                        &aws_smithy_http::query::fmt_string(&inner_40),
+                let inner_39 = &_input.workflow_id;
+                let inner_39 = inner_39.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "workflow_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_39.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "workflow_id",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv("workflowId", &aws_smithy_http::query::fmt_string(&inner_39));
+                let inner_40 = &_input.step_group_id;
+                let inner_40 = inner_40.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "step_group_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_40.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "step_group_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                query.push_kv(
+                    "stepGroupId",
+                    &aws_smithy_http::query::fmt_string(&inner_40),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -4549,10 +4718,15 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_45) = &_input.tag_keys {
-                    for inner_46 in inner_45 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_46));
-                    }
+                let inner_45 = &_input.tag_keys;
+                let inner_45 = inner_45.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_46 in inner_45 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_46));
                 }
                 Ok(())
             }
@@ -5364,9 +5538,22 @@ impl UpdateWorkflowStepGroupInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_50) = &_input.workflow_id {
-                    query.push_kv("workflowId", &aws_smithy_http::query::fmt_string(&inner_50));
+                let inner_50 = &_input.workflow_id;
+                let inner_50 = inner_50.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "workflow_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_50.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "workflow_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("workflowId", &aws_smithy_http::query::fmt_string(&inner_50));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

@@ -344,9 +344,22 @@ impl GetSnapshotBlockInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_4) = &_input.block_token {
-                    query.push_kv("blockToken", &aws_smithy_http::query::fmt_string(&inner_4));
+                let inner_4 = &_input.block_token;
+                let inner_4 = inner_4.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "block_token",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_4.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "block_token",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("blockToken", &aws_smithy_http::query::fmt_string(&inner_4));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

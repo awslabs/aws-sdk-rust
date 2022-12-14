@@ -1207,10 +1207,15 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_15) = &_input.tag_keys {
-                    for inner_16 in inner_15 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_16));
-                    }
+                let inner_15 = &_input.tag_keys;
+                let inner_15 = inner_15.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_16 in inner_15 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_16));
                 }
                 Ok(())
             }

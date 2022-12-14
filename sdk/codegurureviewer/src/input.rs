@@ -687,12 +687,25 @@ impl DescribeRecommendationFeedbackInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_3) = &_input.recommendation_id {
-                    query.push_kv(
-                        "RecommendationId",
-                        &aws_smithy_http::query::fmt_string(&inner_3),
+                let inner_3 = &_input.recommendation_id;
+                let inner_3 = inner_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "recommendation_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_3.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "recommendation_id",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "RecommendationId",
+                    &aws_smithy_http::query::fmt_string(&inner_3),
+                );
                 if let Some(inner_4) = &_input.user_id {
                     query.push_kv("UserId", &aws_smithy_http::query::fmt_string(&inner_4));
                 }
@@ -1262,9 +1275,14 @@ impl ListCodeReviewsInput {
                         );
                     }
                 }
-                if let Some(inner_13) = &_input.r#type {
-                    query.push_kv("Type", &aws_smithy_http::query::fmt_string(&inner_13));
-                }
+                let inner_13 = &_input.r#type;
+                let inner_13 = inner_13.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "r#type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv("Type", &aws_smithy_http::query::fmt_string(&inner_13));
                 if let Some(inner_14) = &_input.max_results {
                     query.push_kv(
                         "MaxResults",
@@ -2723,10 +2741,15 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_39) = &_input.tag_keys {
-                    for inner_40 in inner_39 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_40));
-                    }
+                let inner_39 = &_input.tag_keys;
+                let inner_39 = inner_39.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_40 in inner_39 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_40));
                 }
                 Ok(())
             }

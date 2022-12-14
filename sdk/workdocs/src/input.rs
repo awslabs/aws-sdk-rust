@@ -4814,12 +4814,25 @@ impl DescribeGroupsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_52) = &_input.search_query {
-                    query.push_kv(
-                        "searchQuery",
-                        &aws_smithy_http::query::fmt_string(&inner_52),
+                let inner_52 = &_input.search_query;
+                let inner_52 = inner_52.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "search_query",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_52.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "search_query",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "searchQuery",
+                    &aws_smithy_http::query::fmt_string(&inner_52),
+                );
                 if let Some(inner_53) = &_input.organization_id {
                     query.push_kv(
                         "organizationId",

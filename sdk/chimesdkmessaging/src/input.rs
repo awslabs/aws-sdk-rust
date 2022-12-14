@@ -3858,12 +3858,25 @@ impl DescribeChannelMembershipForAppInstanceUserInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("scope", "app-instance-user-membership");
-                if let Some(inner_28) = &_input.app_instance_user_arn {
-                    query.push_kv(
-                        "app-instance-user-arn",
-                        &aws_smithy_http::query::fmt_string(&inner_28),
+                let inner_28 = &_input.app_instance_user_arn;
+                let inner_28 = inner_28.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "app_instance_user_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_28.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "app_instance_user_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "app-instance-user-arn",
+                    &aws_smithy_http::query::fmt_string(&inner_28),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -4052,12 +4065,25 @@ impl DescribeChannelModeratedByAppInstanceUserInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("scope", "app-instance-user-moderated-channel");
-                if let Some(inner_30) = &_input.app_instance_user_arn {
-                    query.push_kv(
-                        "app-instance-user-arn",
-                        &aws_smithy_http::query::fmt_string(&inner_30),
+                let inner_30 = &_input.app_instance_user_arn;
+                let inner_30 = inner_30.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "app_instance_user_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_30.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "app_instance_user_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "app-instance-user-arn",
+                    &aws_smithy_http::query::fmt_string(&inner_30),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -5607,12 +5633,25 @@ impl ListChannelFlowsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_46) = &_input.app_instance_arn {
-                    query.push_kv(
-                        "app-instance-arn",
-                        &aws_smithy_http::query::fmt_string(&inner_46),
+                let inner_46 = &_input.app_instance_arn;
+                let inner_46 = inner_46.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "app_instance_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_46.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "app_instance_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "app-instance-arn",
+                    &aws_smithy_http::query::fmt_string(&inner_46),
+                );
                 if let Some(inner_47) = &_input.max_results {
                     query.push_kv(
                         "max-results",
@@ -6762,12 +6801,25 @@ impl ListChannelsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_67) = &_input.app_instance_arn {
-                    query.push_kv(
-                        "app-instance-arn",
-                        &aws_smithy_http::query::fmt_string(&inner_67),
+                let inner_67 = &_input.app_instance_arn;
+                let inner_67 = inner_67.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "app_instance_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_67.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "app_instance_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "app-instance-arn",
+                    &aws_smithy_http::query::fmt_string(&inner_67),
+                );
                 if let Some(inner_68) = &_input.privacy {
                     query.push_kv("privacy", &aws_smithy_http::query::fmt_string(&inner_68));
                 }
@@ -6945,12 +6997,25 @@ impl ListChannelsAssociatedWithChannelFlowInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("scope", "channel-flow-associations");
-                if let Some(inner_71) = &_input.channel_flow_arn {
-                    query.push_kv(
-                        "channel-flow-arn",
-                        &aws_smithy_http::query::fmt_string(&inner_71),
+                let inner_71 = &_input.channel_flow_arn;
+                let inner_71 = inner_71.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "channel_flow_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_71.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "channel_flow_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "channel-flow-arn",
+                    &aws_smithy_http::query::fmt_string(&inner_71),
+                );
                 if let Some(inner_72) = &_input.max_results {
                     query.push_kv(
                         "max-results",
@@ -7495,9 +7560,22 @@ impl ListTagsForResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_80) = &_input.resource_arn {
-                    query.push_kv("arn", &aws_smithy_http::query::fmt_string(&inner_80));
+                let inner_80 = &_input.resource_arn;
+                let inner_80 = inner_80.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_80.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("arn", &aws_smithy_http::query::fmt_string(&inner_80));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

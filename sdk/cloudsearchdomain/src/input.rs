@@ -344,9 +344,22 @@ impl SearchInput {
                         aws_smithy_types::primitive::Encoder::from(_input.partial).encode(),
                     );
                 }
-                if let Some(inner_6) = &_input.query {
-                    query.push_kv("q", &aws_smithy_http::query::fmt_string(&inner_6));
+                let inner_6 = &_input.query;
+                let inner_6 = inner_6.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "query",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_6.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "query",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("q", &aws_smithy_http::query::fmt_string(&inner_6));
                 if let Some(inner_7) = &_input.query_options {
                     query.push_kv("q.options", &aws_smithy_http::query::fmt_string(&inner_7));
                 }
@@ -532,12 +545,38 @@ impl SuggestInput {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("format", "sdk");
                 query.push_kv("pretty", "true");
-                if let Some(inner_12) = &_input.query {
-                    query.push_kv("q", &aws_smithy_http::query::fmt_string(&inner_12));
+                let inner_12 = &_input.query;
+                let inner_12 = inner_12.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "query",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_12.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "query",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
-                if let Some(inner_13) = &_input.suggester {
-                    query.push_kv("suggester", &aws_smithy_http::query::fmt_string(&inner_13));
+                query.push_kv("q", &aws_smithy_http::query::fmt_string(&inner_12));
+                let inner_13 = &_input.suggester;
+                let inner_13 = inner_13.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "suggester",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_13.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "suggester",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("suggester", &aws_smithy_http::query::fmt_string(&inner_13));
                 if _input.size != 0 {
                     query.push_kv(
                         "size",

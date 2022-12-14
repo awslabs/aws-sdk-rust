@@ -5437,12 +5437,25 @@ impl ListTagsForResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_70) = &_input.resource_arn {
-                    query.push_kv(
-                        "resourceArn",
-                        &aws_smithy_http::query::fmt_string(&inner_70),
+                let inner_70 = &_input.resource_arn;
+                let inner_70 = inner_70.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_70.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "resourceArn",
+                    &aws_smithy_http::query::fmt_string(&inner_70),
+                );
                 if let Some(inner_71) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_71));
                 }
@@ -6439,12 +6452,25 @@ impl TagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_89) = &_input.resource_arn {
-                    query.push_kv(
-                        "resourceArn",
-                        &aws_smithy_http::query::fmt_string(&inner_89),
+                let inner_89 = &_input.resource_arn;
+                let inner_89 = inner_89.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_89.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "resourceArn",
+                    &aws_smithy_http::query::fmt_string(&inner_89),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -6614,12 +6640,25 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_90) = &_input.resource_arn {
-                    query.push_kv(
-                        "resourceArn",
-                        &aws_smithy_http::query::fmt_string(&inner_90),
+                let inner_90 = &_input.resource_arn;
+                let inner_90 = inner_90.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_90.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "resourceArn",
+                    &aws_smithy_http::query::fmt_string(&inner_90),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

@@ -939,12 +939,25 @@ impl DeleteResourceShareInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_1) = &_input.resource_share_arn {
-                    query.push_kv(
-                        "resourceShareArn",
-                        &aws_smithy_http::query::fmt_string(&inner_1),
+                let inner_1 = &_input.resource_share_arn;
+                let inner_1 = inner_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_share_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_1.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_share_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "resourceShareArn",
+                    &aws_smithy_http::query::fmt_string(&inner_1),
+                );
                 if let Some(inner_2) = &_input.client_token {
                     query.push_kv("clientToken", &aws_smithy_http::query::fmt_string(&inner_2));
                 }
@@ -4087,12 +4100,25 @@ impl PromoteResourceShareCreatedFromPolicyInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_3) = &_input.resource_share_arn {
-                    query.push_kv(
-                        "resourceShareArn",
-                        &aws_smithy_http::query::fmt_string(&inner_3),
+                let inner_3 = &_input.resource_share_arn;
+                let inner_3 = inner_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_share_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_3.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_share_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "resourceShareArn",
+                    &aws_smithy_http::query::fmt_string(&inner_3),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

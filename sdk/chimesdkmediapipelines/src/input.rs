@@ -1662,9 +1662,22 @@ impl ListTagsForResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_9) = &_input.resource_arn {
-                    query.push_kv("arn", &aws_smithy_http::query::fmt_string(&inner_9));
+                let inner_9 = &_input.resource_arn;
+                let inner_9 = inner_9.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_9.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("arn", &aws_smithy_http::query::fmt_string(&inner_9));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

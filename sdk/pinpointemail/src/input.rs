@@ -1785,13 +1785,18 @@ impl GetBlacklistReportsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_7) = &_input.blacklist_item_names {
-                    for inner_8 in inner_7 {
-                        query.push_kv(
-                            "BlacklistItemNames",
-                            &aws_smithy_http::query::fmt_string(&inner_8),
-                        );
-                    }
+                let inner_7 = &_input.blacklist_item_names;
+                let inner_7 = inner_7.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "blacklist_item_names",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_8 in inner_7 {
+                    query.push_kv(
+                        "BlacklistItemNames",
+                        &aws_smithy_http::query::fmt_string(&inner_8),
+                    );
                 }
                 Ok(())
             }
@@ -3026,24 +3031,34 @@ impl GetDomainStatisticsReportInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_18) = &_input.start_date {
-                    query.push_kv(
-                        "StartDate",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_18,
-                            aws_smithy_types::date_time::Format::DateTime,
-                        )?,
-                    );
-                }
-                if let Some(inner_19) = &_input.end_date {
-                    query.push_kv(
-                        "EndDate",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_19,
-                            aws_smithy_types::date_time::Format::DateTime,
-                        )?,
-                    );
-                }
+                let inner_18 = &_input.start_date;
+                let inner_18 = inner_18.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "start_date",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "StartDate",
+                    &aws_smithy_http::query::fmt_timestamp(
+                        inner_18,
+                        aws_smithy_types::date_time::Format::DateTime,
+                    )?,
+                );
+                let inner_19 = &_input.end_date;
+                let inner_19 = inner_19.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "end_date",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "EndDate",
+                    &aws_smithy_http::query::fmt_timestamp(
+                        inner_19,
+                        aws_smithy_types::date_time::Format::DateTime,
+                    )?,
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -3890,24 +3905,34 @@ impl ListDomainDeliverabilityCampaignsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_28) = &_input.start_date {
-                    query.push_kv(
-                        "StartDate",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_28,
-                            aws_smithy_types::date_time::Format::DateTime,
-                        )?,
-                    );
-                }
-                if let Some(inner_29) = &_input.end_date {
-                    query.push_kv(
-                        "EndDate",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_29,
-                            aws_smithy_types::date_time::Format::DateTime,
-                        )?,
-                    );
-                }
+                let inner_28 = &_input.start_date;
+                let inner_28 = inner_28.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "start_date",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "StartDate",
+                    &aws_smithy_http::query::fmt_timestamp(
+                        inner_28,
+                        aws_smithy_types::date_time::Format::DateTime,
+                    )?,
+                );
+                let inner_29 = &_input.end_date;
+                let inner_29 = inner_29.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "end_date",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "EndDate",
+                    &aws_smithy_http::query::fmt_timestamp(
+                        inner_29,
+                        aws_smithy_types::date_time::Format::DateTime,
+                    )?,
+                );
                 if let Some(inner_30) = &_input.next_token {
                     query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_30));
                 }
@@ -4212,12 +4237,25 @@ impl ListTagsForResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_34) = &_input.resource_arn {
-                    query.push_kv(
-                        "ResourceArn",
-                        &aws_smithy_http::query::fmt_string(&inner_34),
+                let inner_34 = &_input.resource_arn;
+                let inner_34 = inner_34.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_34.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "ResourceArn",
+                    &aws_smithy_http::query::fmt_string(&inner_34),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -6907,16 +6945,34 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_44) = &_input.resource_arn {
-                    query.push_kv(
-                        "ResourceArn",
-                        &aws_smithy_http::query::fmt_string(&inner_44),
+                let inner_44 = &_input.resource_arn;
+                let inner_44 = inner_44.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_44.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_45) = &_input.tag_keys {
-                    for inner_46 in inner_45 {
-                        query.push_kv("TagKeys", &aws_smithy_http::query::fmt_string(&inner_46));
-                    }
+                query.push_kv(
+                    "ResourceArn",
+                    &aws_smithy_http::query::fmt_string(&inner_44),
+                );
+                let inner_45 = &_input.tag_keys;
+                let inner_45 = inner_45.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_46 in inner_45 {
+                    query.push_kv("TagKeys", &aws_smithy_http::query::fmt_string(&inner_46));
                 }
                 Ok(())
             }

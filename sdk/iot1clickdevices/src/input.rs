@@ -1118,15 +1118,20 @@ impl ListDeviceEventsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_8) = &_input.from_time_stamp {
-                    query.push_kv(
-                        "fromTimeStamp",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_8,
-                            aws_smithy_types::date_time::Format::DateTime,
-                        )?,
-                    );
-                }
+                let inner_8 = &_input.from_time_stamp;
+                let inner_8 = inner_8.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "from_time_stamp",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "fromTimeStamp",
+                    &aws_smithy_http::query::fmt_timestamp(
+                        inner_8,
+                        aws_smithy_types::date_time::Format::DateTime,
+                    )?,
+                );
                 if _input.max_results != 0 {
                     query.push_kv(
                         "maxResults",
@@ -1136,15 +1141,20 @@ impl ListDeviceEventsInput {
                 if let Some(inner_9) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_9));
                 }
-                if let Some(inner_10) = &_input.to_time_stamp {
-                    query.push_kv(
-                        "toTimeStamp",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_10,
-                            aws_smithy_types::date_time::Format::DateTime,
-                        )?,
-                    );
-                }
+                let inner_10 = &_input.to_time_stamp;
+                let inner_10 = inner_10.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "to_time_stamp",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "toTimeStamp",
+                    &aws_smithy_http::query::fmt_timestamp(
+                        inner_10,
+                        aws_smithy_types::date_time::Format::DateTime,
+                    )?,
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -1975,10 +1985,15 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_17) = &_input.tag_keys {
-                    for inner_18 in inner_17 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_18));
-                    }
+                let inner_17 = &_input.tag_keys;
+                let inner_17 = inner_17.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_18 in inner_17 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_18));
                 }
                 Ok(())
             }

@@ -11532,12 +11532,11 @@ impl UpdateJobPriorityInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if _input.priority != 0 {
-                    query.push_kv(
-                        "priority",
-                        aws_smithy_types::primitive::Encoder::from(_input.priority).encode(),
-                    );
-                }
+                let inner_56 = &_input.priority;
+                query.push_kv(
+                    "priority",
+                    aws_smithy_types::primitive::Encoder::from(*inner_56).encode(),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -11719,15 +11718,15 @@ impl UpdateJobStatusInput {
                 _input: &crate::input::UpdateJobStatusInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_56 = &_input.job_id;
-                let input_56 = input_56.as_ref().ok_or_else(|| {
+                let input_57 = &_input.job_id;
+                let input_57 = input_57.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "job_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let job_id = aws_smithy_http::label::fmt_string(
-                    input_56,
+                    input_57,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if job_id.is_empty() {
@@ -11747,16 +11746,21 @@ impl UpdateJobStatusInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_57) = &_input.requested_job_status {
-                    query.push_kv(
-                        "requestedJobStatus",
-                        &aws_smithy_http::query::fmt_string(&inner_57),
-                    );
-                }
-                if let Some(inner_58) = &_input.status_update_reason {
+                let inner_58 = &_input.requested_job_status;
+                let inner_58 = inner_58.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "requested_job_status",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "requestedJobStatus",
+                    &aws_smithy_http::query::fmt_string(&inner_58),
+                );
+                if let Some(inner_59) = &_input.status_update_reason {
                     query.push_kv(
                         "statusUpdateReason",
-                        &aws_smithy_http::query::fmt_string(&inner_58),
+                        &aws_smithy_http::query::fmt_string(&inner_59),
                     );
                 }
                 Ok(())

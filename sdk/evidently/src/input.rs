@@ -4682,9 +4682,14 @@ impl ListSegmentReferencesInput {
                 if let Some(inner_40) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_40));
                 }
-                if let Some(inner_41) = &_input.r#type {
-                    query.push_kv("type", &aws_smithy_http::query::fmt_string(&inner_41));
-                }
+                let inner_41 = &_input.r#type;
+                let inner_41 = inner_41.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "r#type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv("type", &aws_smithy_http::query::fmt_string(&inner_41));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -6530,10 +6535,15 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_56) = &_input.tag_keys {
-                    for inner_57 in inner_56 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_57));
-                    }
+                let inner_56 = &_input.tag_keys;
+                let inner_56 = inner_56.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_57 in inner_56 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_57));
                 }
                 Ok(())
             }

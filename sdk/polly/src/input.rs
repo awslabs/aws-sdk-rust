@@ -1653,12 +1653,17 @@ impl SynthesizeSpeechInput {
                         );
                     }
                 }
-                if let Some(inner_16) = &_input.output_format {
-                    query.push_kv(
-                        "OutputFormat",
-                        &aws_smithy_http::query::fmt_string(&inner_16),
-                    );
-                }
+                let inner_16 = &_input.output_format;
+                let inner_16 = inner_16.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "output_format",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "OutputFormat",
+                    &aws_smithy_http::query::fmt_string(&inner_16),
+                );
                 if let Some(inner_17) = &_input.sample_rate {
                     query.push_kv("SampleRate", &aws_smithy_http::query::fmt_string(&inner_17));
                 }
@@ -1670,15 +1675,33 @@ impl SynthesizeSpeechInput {
                         );
                     }
                 }
-                if let Some(inner_20) = &_input.text {
-                    query.push_kv("Text", &aws_smithy_http::query::fmt_string(&inner_20));
+                let inner_20 = &_input.text;
+                let inner_20 = inner_20.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "text",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_20.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "text",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("Text", &aws_smithy_http::query::fmt_string(&inner_20));
                 if let Some(inner_21) = &_input.text_type {
                     query.push_kv("TextType", &aws_smithy_http::query::fmt_string(&inner_21));
                 }
-                if let Some(inner_22) = &_input.voice_id {
-                    query.push_kv("VoiceId", &aws_smithy_http::query::fmt_string(&inner_22));
-                }
+                let inner_22 = &_input.voice_id;
+                let inner_22 = inner_22.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "voice_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv("VoiceId", &aws_smithy_http::query::fmt_string(&inner_22));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

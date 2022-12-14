@@ -14355,37 +14355,56 @@ impl GetContainerServiceMetricDataInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_5) = &_input.metric_name {
-                    query.push_kv("metricName", &aws_smithy_http::query::fmt_string(&inner_5));
-                }
-                if let Some(inner_6) = &_input.start_time {
-                    query.push_kv(
-                        "startTime",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_6,
-                            aws_smithy_types::date_time::Format::DateTime,
-                        )?,
-                    );
-                }
-                if let Some(inner_7) = &_input.end_time {
-                    query.push_kv(
-                        "endTime",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_7,
-                            aws_smithy_types::date_time::Format::DateTime,
-                        )?,
-                    );
-                }
-                if _input.period != 0 {
-                    query.push_kv(
-                        "period",
-                        aws_smithy_types::primitive::Encoder::from(_input.period).encode(),
-                    );
-                }
-                if let Some(inner_8) = &_input.statistics {
-                    for inner_9 in inner_8 {
-                        query.push_kv("statistics", &aws_smithy_http::query::fmt_string(&inner_9));
-                    }
+                let inner_5 = &_input.metric_name;
+                let inner_5 = inner_5.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "metric_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv("metricName", &aws_smithy_http::query::fmt_string(&inner_5));
+                let inner_6 = &_input.start_time;
+                let inner_6 = inner_6.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "start_time",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "startTime",
+                    &aws_smithy_http::query::fmt_timestamp(
+                        inner_6,
+                        aws_smithy_types::date_time::Format::DateTime,
+                    )?,
+                );
+                let inner_7 = &_input.end_time;
+                let inner_7 = inner_7.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "end_time",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "endTime",
+                    &aws_smithy_http::query::fmt_timestamp(
+                        inner_7,
+                        aws_smithy_types::date_time::Format::DateTime,
+                    )?,
+                );
+                let inner_8 = &_input.period;
+                query.push_kv(
+                    "period",
+                    aws_smithy_types::primitive::Encoder::from(*inner_8).encode(),
+                );
+                let inner_9 = &_input.statistics;
+                let inner_9 = inner_9.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "statistics",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_10 in inner_9 {
+                    query.push_kv("statistics", &aws_smithy_http::query::fmt_string(&inner_10));
                 }
                 Ok(())
             }
@@ -14671,10 +14690,10 @@ impl GetContainerServicesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_10) = &_input.service_name {
+                if let Some(inner_11) = &_input.service_name {
                     query.push_kv(
                         "serviceName",
-                        &aws_smithy_http::query::fmt_string(&inner_10),
+                        &aws_smithy_http::query::fmt_string(&inner_11),
                     );
                 }
                 Ok(())

@@ -9190,12 +9190,30 @@ impl ListHostedZonesByVpcInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_66) = &_input.vpc_id {
-                    query.push_kv("vpcid", &aws_smithy_http::query::fmt_string(&inner_66));
+                let inner_66 = &_input.vpc_id;
+                let inner_66 = inner_66.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "vpc_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_66.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "vpc_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
-                if let Some(inner_67) = &_input.vpc_region {
-                    query.push_kv("vpcregion", &aws_smithy_http::query::fmt_string(&inner_67));
-                }
+                query.push_kv("vpcid", &aws_smithy_http::query::fmt_string(&inner_66));
+                let inner_67 = &_input.vpc_region;
+                let inner_67 = inner_67.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "vpc_region",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv("vpcregion", &aws_smithy_http::query::fmt_string(&inner_67));
                 if let Some(inner_68) = &_input.max_items {
                     query.push_kv(
                         "maxitems",
@@ -10779,9 +10797,22 @@ impl ListTrafficPolicyInstancesByHostedZoneInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_89) = &_input.hosted_zone_id {
-                    query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_89));
+                let inner_89 = &_input.hosted_zone_id;
+                let inner_89 = inner_89.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "hosted_zone_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_89.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "hosted_zone_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_89));
                 if let Some(inner_90) = &_input.traffic_policy_instance_name_marker {
                     query.push_kv(
                         "trafficpolicyinstancename",
@@ -11024,15 +11055,33 @@ impl ListTrafficPolicyInstancesByPolicyInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_93) = &_input.traffic_policy_id {
-                    query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_93));
-                }
-                if let Some(inner_94) = &_input.traffic_policy_version {
-                    query.push_kv(
-                        "version",
-                        aws_smithy_types::primitive::Encoder::from(*inner_94).encode(),
+                let inner_93 = &_input.traffic_policy_id;
+                let inner_93 = inner_93.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "traffic_policy_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_93.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "traffic_policy_id",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_93));
+                let inner_94 = &_input.traffic_policy_version;
+                let inner_94 = inner_94.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "traffic_policy_version",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "version",
+                    aws_smithy_types::primitive::Encoder::from(*inner_94).encode(),
+                );
                 if let Some(inner_95) = &_input.hosted_zone_id_marker {
                     query.push_kv(
                         "hostedzoneid",
@@ -11667,24 +11716,55 @@ impl TestDnsAnswerInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_105) = &_input.hosted_zone_id {
-                    query.push_kv(
-                        "hostedzoneid",
-                        &aws_smithy_http::query::fmt_string(&inner_105),
+                let inner_105 = &_input.hosted_zone_id;
+                let inner_105 = inner_105.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "hosted_zone_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_105.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "hosted_zone_id",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_106) = &_input.record_name {
-                    query.push_kv(
-                        "recordname",
-                        &aws_smithy_http::query::fmt_string(&inner_106),
+                query.push_kv(
+                    "hostedzoneid",
+                    &aws_smithy_http::query::fmt_string(&inner_105),
+                );
+                let inner_106 = &_input.record_name;
+                let inner_106 = inner_106.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "record_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_106.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "record_name",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_107) = &_input.record_type {
-                    query.push_kv(
-                        "recordtype",
-                        &aws_smithy_http::query::fmt_string(&inner_107),
-                    );
-                }
+                query.push_kv(
+                    "recordname",
+                    &aws_smithy_http::query::fmt_string(&inner_106),
+                );
+                let inner_107 = &_input.record_type;
+                let inner_107 = inner_107.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "record_type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "recordtype",
+                    &aws_smithy_http::query::fmt_string(&inner_107),
+                );
                 if let Some(inner_108) = &_input.resolver_ip {
                     query.push_kv(
                         "resolverip",

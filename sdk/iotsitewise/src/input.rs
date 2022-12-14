@@ -304,15 +304,54 @@ impl AssociateTimeSeriesToAssetPropertyInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_2) = &_input.alias {
-                    query.push_kv("alias", &aws_smithy_http::query::fmt_string(&inner_2));
+                let inner_2 = &_input.alias;
+                let inner_2 = inner_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "alias",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_2.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "alias",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
-                if let Some(inner_3) = &_input.asset_id {
-                    query.push_kv("assetId", &aws_smithy_http::query::fmt_string(&inner_3));
+                query.push_kv("alias", &aws_smithy_http::query::fmt_string(&inner_2));
+                let inner_3 = &_input.asset_id;
+                let inner_3 = inner_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "asset_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_3.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "asset_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
-                if let Some(inner_4) = &_input.property_id {
-                    query.push_kv("propertyId", &aws_smithy_http::query::fmt_string(&inner_4));
+                query.push_kv("assetId", &aws_smithy_http::query::fmt_string(&inner_3));
+                let inner_4 = &_input.property_id;
+                let inner_4 = inner_4.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "property_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_4.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "property_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("propertyId", &aws_smithy_http::query::fmt_string(&inner_4));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -7222,15 +7261,54 @@ impl DisassociateTimeSeriesFromAssetPropertyInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_39) = &_input.alias {
-                    query.push_kv("alias", &aws_smithy_http::query::fmt_string(&inner_39));
+                let inner_39 = &_input.alias;
+                let inner_39 = inner_39.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "alias",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_39.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "alias",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
-                if let Some(inner_40) = &_input.asset_id {
-                    query.push_kv("assetId", &aws_smithy_http::query::fmt_string(&inner_40));
+                query.push_kv("alias", &aws_smithy_http::query::fmt_string(&inner_39));
+                let inner_40 = &_input.asset_id;
+                let inner_40 = inner_40.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "asset_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_40.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "asset_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
-                if let Some(inner_41) = &_input.property_id {
-                    query.push_kv("propertyId", &aws_smithy_http::query::fmt_string(&inner_41));
+                query.push_kv("assetId", &aws_smithy_http::query::fmt_string(&inner_40));
+                let inner_41 = &_input.property_id;
+                let inner_41 = inner_41.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "property_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_41.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "property_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("propertyId", &aws_smithy_http::query::fmt_string(&inner_41));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -7548,40 +7626,68 @@ impl GetAssetPropertyAggregatesInput {
                         &aws_smithy_http::query::fmt_string(&inner_44),
                     );
                 }
-                if let Some(inner_45) = &_input.aggregate_types {
-                    for inner_46 in inner_45 {
-                        query.push_kv(
-                            "aggregateTypes",
-                            &aws_smithy_http::query::fmt_string(&inner_46),
-                        );
-                    }
+                let inner_45 = &_input.aggregate_types;
+                let inner_45 = inner_45.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aggregate_types",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_46 in inner_45 {
+                    query.push_kv(
+                        "aggregateTypes",
+                        &aws_smithy_http::query::fmt_string(&inner_46),
+                    );
                 }
-                if let Some(inner_47) = &_input.resolution {
-                    query.push_kv("resolution", &aws_smithy_http::query::fmt_string(&inner_47));
+                let inner_47 = &_input.resolution;
+                let inner_47 = inner_47.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resolution",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_47.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resolution",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("resolution", &aws_smithy_http::query::fmt_string(&inner_47));
                 if let Some(inner_48) = &_input.qualities {
                     for inner_49 in inner_48 {
                         query.push_kv("qualities", &aws_smithy_http::query::fmt_string(&inner_49));
                     }
                 }
-                if let Some(inner_50) = &_input.start_date {
-                    query.push_kv(
-                        "startDate",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_50,
-                            aws_smithy_types::date_time::Format::DateTime,
-                        )?,
-                    );
-                }
-                if let Some(inner_51) = &_input.end_date {
-                    query.push_kv(
-                        "endDate",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_51,
-                            aws_smithy_types::date_time::Format::DateTime,
-                        )?,
-                    );
-                }
+                let inner_50 = &_input.start_date;
+                let inner_50 = inner_50.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "start_date",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "startDate",
+                    &aws_smithy_http::query::fmt_timestamp(
+                        inner_50,
+                        aws_smithy_types::date_time::Format::DateTime,
+                    )?,
+                );
+                let inner_51 = &_input.end_date;
+                let inner_51 = inner_51.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "end_date",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "endDate",
+                    &aws_smithy_http::query::fmt_timestamp(
+                        inner_51,
+                        aws_smithy_types::date_time::Format::DateTime,
+                    )?,
+                );
                 if let Some(inner_52) = &_input.time_ordering {
                     query.push_kv(
                         "timeOrdering",
@@ -8402,39 +8508,59 @@ impl GetInterpolatedAssetPropertyValuesInput {
                         &aws_smithy_http::query::fmt_string(&inner_70),
                     );
                 }
-                if let Some(inner_71) = &_input.start_time_in_seconds {
-                    query.push_kv(
-                        "startTimeInSeconds",
-                        aws_smithy_types::primitive::Encoder::from(*inner_71).encode(),
-                    );
-                }
+                let inner_71 = &_input.start_time_in_seconds;
+                let inner_71 = inner_71.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "start_time_in_seconds",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "startTimeInSeconds",
+                    aws_smithy_types::primitive::Encoder::from(*inner_71).encode(),
+                );
                 if let Some(inner_72) = &_input.start_time_offset_in_nanos {
                     query.push_kv(
                         "startTimeOffsetInNanos",
                         aws_smithy_types::primitive::Encoder::from(*inner_72).encode(),
                     );
                 }
-                if let Some(inner_73) = &_input.end_time_in_seconds {
-                    query.push_kv(
-                        "endTimeInSeconds",
-                        aws_smithy_types::primitive::Encoder::from(*inner_73).encode(),
-                    );
-                }
+                let inner_73 = &_input.end_time_in_seconds;
+                let inner_73 = inner_73.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "end_time_in_seconds",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "endTimeInSeconds",
+                    aws_smithy_types::primitive::Encoder::from(*inner_73).encode(),
+                );
                 if let Some(inner_74) = &_input.end_time_offset_in_nanos {
                     query.push_kv(
                         "endTimeOffsetInNanos",
                         aws_smithy_types::primitive::Encoder::from(*inner_74).encode(),
                     );
                 }
-                if let Some(inner_75) = &_input.quality {
-                    query.push_kv("quality", &aws_smithy_http::query::fmt_string(&inner_75));
-                }
-                if let Some(inner_76) = &_input.interval_in_seconds {
-                    query.push_kv(
-                        "intervalInSeconds",
-                        aws_smithy_types::primitive::Encoder::from(*inner_76).encode(),
-                    );
-                }
+                let inner_75 = &_input.quality;
+                let inner_75 = inner_75.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "quality",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv("quality", &aws_smithy_http::query::fmt_string(&inner_75));
+                let inner_76 = &_input.interval_in_seconds;
+                let inner_76 = inner_76.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "interval_in_seconds",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "intervalInSeconds",
+                    aws_smithy_types::primitive::Encoder::from(*inner_76).encode(),
+                );
                 if let Some(inner_77) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_77));
                 }
@@ -8444,9 +8570,22 @@ impl GetInterpolatedAssetPropertyValuesInput {
                         aws_smithy_types::primitive::Encoder::from(*inner_78).encode(),
                     );
                 }
-                if let Some(inner_79) = &_input.r#type {
-                    query.push_kv("type", &aws_smithy_http::query::fmt_string(&inner_79));
+                let inner_79 = &_input.r#type;
+                let inner_79 = inner_79.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "r#type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_79.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "r#type",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("type", &aws_smithy_http::query::fmt_string(&inner_79));
                 if let Some(inner_80) = &_input.interval_window_in_seconds {
                     query.push_kv(
                         "intervalWindowInSeconds",
@@ -9067,12 +9206,17 @@ impl ListAssetRelationshipsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_91) = &_input.traversal_type {
-                    query.push_kv(
-                        "traversalType",
-                        &aws_smithy_http::query::fmt_string(&inner_91),
-                    );
-                }
+                let inner_91 = &_input.traversal_type;
+                let inner_91 = inner_91.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "traversal_type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "traversalType",
+                    &aws_smithy_http::query::fmt_string(&inner_91),
+                );
                 if let Some(inner_92) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_92));
                 }
@@ -9873,9 +10017,22 @@ impl ListDashboardsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_106) = &_input.project_id {
-                    query.push_kv("projectId", &aws_smithy_http::query::fmt_string(&inner_106));
+                let inner_106 = &_input.project_id;
+                let inner_106 = inner_106.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "project_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_106.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "project_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("projectId", &aws_smithy_http::query::fmt_string(&inner_106));
                 if let Some(inner_107) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_107));
                 }
@@ -10562,9 +10719,22 @@ impl ListProjectsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_116) = &_input.portal_id {
-                    query.push_kv("portalId", &aws_smithy_http::query::fmt_string(&inner_116));
+                let inner_116 = &_input.portal_id;
+                let inner_116 = inner_116.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "portal_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_116.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "portal_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("portalId", &aws_smithy_http::query::fmt_string(&inner_116));
                 if let Some(inner_117) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_117));
                 }
@@ -10712,12 +10882,25 @@ impl ListTagsForResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_119) = &_input.resource_arn {
-                    query.push_kv(
-                        "resourceArn",
-                        &aws_smithy_http::query::fmt_string(&inner_119),
+                let inner_119 = &_input.resource_arn;
+                let inner_119 = inner_119.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_119.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "resourceArn",
+                    &aws_smithy_http::query::fmt_string(&inner_119),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -11629,12 +11812,25 @@ impl TagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_125) = &_input.resource_arn {
-                    query.push_kv(
-                        "resourceArn",
-                        &aws_smithy_http::query::fmt_string(&inner_125),
+                let inner_125 = &_input.resource_arn;
+                let inner_125 = inner_125.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_125.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "resourceArn",
+                    &aws_smithy_http::query::fmt_string(&inner_125),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -11806,16 +12002,34 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_126) = &_input.resource_arn {
-                    query.push_kv(
-                        "resourceArn",
-                        &aws_smithy_http::query::fmt_string(&inner_126),
+                let inner_126 = &_input.resource_arn;
+                let inner_126 = inner_126.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_126.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_127) = &_input.tag_keys {
-                    for inner_128 in inner_127 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_128));
-                    }
+                query.push_kv(
+                    "resourceArn",
+                    &aws_smithy_http::query::fmt_string(&inner_126),
+                );
+                let inner_127 = &_input.tag_keys;
+                let inner_127 = inner_127.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_128 in inner_127 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_128));
                 }
                 Ok(())
             }

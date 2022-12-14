@@ -1611,15 +1611,33 @@ impl DeleteLensInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_7) = &_input.client_request_token {
-                    query.push_kv(
-                        "ClientRequestToken",
-                        &aws_smithy_http::query::fmt_string(&inner_7),
+                let inner_7 = &_input.client_request_token;
+                let inner_7 = inner_7.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "client_request_token",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_7.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "client_request_token",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_8) = &_input.lens_status {
-                    query.push_kv("LensStatus", &aws_smithy_http::query::fmt_string(&inner_8));
-                }
+                query.push_kv(
+                    "ClientRequestToken",
+                    &aws_smithy_http::query::fmt_string(&inner_7),
+                );
+                let inner_8 = &_input.lens_status;
+                let inner_8 = inner_8.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "lens_status",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv("LensStatus", &aws_smithy_http::query::fmt_string(&inner_8));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -1840,12 +1858,25 @@ impl DeleteLensShareInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_11) = &_input.client_request_token {
-                    query.push_kv(
-                        "ClientRequestToken",
-                        &aws_smithy_http::query::fmt_string(&inner_11),
+                let inner_11 = &_input.client_request_token;
+                let inner_11 = inner_11.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "client_request_token",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_11.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "client_request_token",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "ClientRequestToken",
+                    &aws_smithy_http::query::fmt_string(&inner_11),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -2024,12 +2055,25 @@ impl DeleteWorkloadInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_13) = &_input.client_request_token {
-                    query.push_kv(
-                        "ClientRequestToken",
-                        &aws_smithy_http::query::fmt_string(&inner_13),
+                let inner_13 = &_input.client_request_token;
+                let inner_13 = inner_13.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "client_request_token",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_13.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "client_request_token",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "ClientRequestToken",
+                    &aws_smithy_http::query::fmt_string(&inner_13),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -2246,12 +2290,25 @@ impl DeleteWorkloadShareInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_16) = &_input.client_request_token {
-                    query.push_kv(
-                        "ClientRequestToken",
-                        &aws_smithy_http::query::fmt_string(&inner_16),
+                let inner_16 = &_input.client_request_token;
+                let inner_16 = inner_16.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "client_request_token",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_16.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "client_request_token",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "ClientRequestToken",
+                    &aws_smithy_http::query::fmt_string(&inner_16),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -6882,10 +6939,15 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_65) = &_input.tag_keys {
-                    for inner_66 in inner_65 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_66));
-                    }
+                let inner_65 = &_input.tag_keys;
+                let inner_65 = inner_65.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_66 in inner_65 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_66));
                 }
                 Ok(())
             }

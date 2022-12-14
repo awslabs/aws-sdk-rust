@@ -5652,9 +5652,22 @@ impl ListTagsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_36) = &_input.arn {
-                    query.push_kv("arn", &aws_smithy_http::query::fmt_string(&inner_36));
+                let inner_36 = &_input.arn;
+                let inner_36 = inner_36.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_36.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("arn", &aws_smithy_http::query::fmt_string(&inner_36));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

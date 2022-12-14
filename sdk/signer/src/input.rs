@@ -2307,9 +2307,22 @@ impl RemoveProfilePermissionInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_31) = &_input.revision_id {
-                    query.push_kv("revisionId", &aws_smithy_http::query::fmt_string(&inner_31));
+                let inner_31 = &_input.revision_id;
+                let inner_31 = inner_31.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "revision_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_31.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "revision_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("revisionId", &aws_smithy_http::query::fmt_string(&inner_31));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -3268,10 +3281,15 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_36) = &_input.tag_keys {
-                    for inner_37 in inner_36 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_37));
-                    }
+                let inner_36 = &_input.tag_keys;
+                let inner_36 = inner_36.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_37 in inner_36 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_37));
                 }
                 Ok(())
             }

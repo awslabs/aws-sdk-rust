@@ -74,12 +74,38 @@ impl CancelChangeSetInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_1) = &_input.catalog {
-                    query.push_kv("catalog", &aws_smithy_http::query::fmt_string(&inner_1));
+                let inner_1 = &_input.catalog;
+                let inner_1 = inner_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "catalog",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_1.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "catalog",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
-                if let Some(inner_2) = &_input.change_set_id {
-                    query.push_kv("changeSetId", &aws_smithy_http::query::fmt_string(&inner_2));
+                query.push_kv("catalog", &aws_smithy_http::query::fmt_string(&inner_1));
+                let inner_2 = &_input.change_set_id;
+                let inner_2 = inner_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "change_set_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_2.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "change_set_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("changeSetId", &aws_smithy_http::query::fmt_string(&inner_2));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -231,12 +257,38 @@ impl DescribeChangeSetInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_3) = &_input.catalog {
-                    query.push_kv("catalog", &aws_smithy_http::query::fmt_string(&inner_3));
+                let inner_3 = &_input.catalog;
+                let inner_3 = inner_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "catalog",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_3.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "catalog",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
-                if let Some(inner_4) = &_input.change_set_id {
-                    query.push_kv("changeSetId", &aws_smithy_http::query::fmt_string(&inner_4));
+                query.push_kv("catalog", &aws_smithy_http::query::fmt_string(&inner_3));
+                let inner_4 = &_input.change_set_id;
+                let inner_4 = inner_4.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "change_set_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_4.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "change_set_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("changeSetId", &aws_smithy_http::query::fmt_string(&inner_4));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -383,12 +435,38 @@ impl DescribeEntityInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_5) = &_input.catalog {
-                    query.push_kv("catalog", &aws_smithy_http::query::fmt_string(&inner_5));
+                let inner_5 = &_input.catalog;
+                let inner_5 = inner_5.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "catalog",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_5.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "catalog",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
-                if let Some(inner_6) = &_input.entity_id {
-                    query.push_kv("entityId", &aws_smithy_http::query::fmt_string(&inner_6));
+                query.push_kv("catalog", &aws_smithy_http::query::fmt_string(&inner_5));
+                let inner_6 = &_input.entity_id;
+                let inner_6 = inner_6.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "entity_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_6.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "entity_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("entityId", &aws_smithy_http::query::fmt_string(&inner_6));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

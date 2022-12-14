@@ -4096,10 +4096,15 @@ impl DeleteTagsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_16) = &_input.tag_keys {
-                    for inner_17 in inner_16 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_17));
-                    }
+                let inner_16 = &_input.tag_keys;
+                let inner_16 = inner_16.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_17 in inner_16 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_17));
                 }
                 Ok(())
             }
@@ -6195,12 +6200,25 @@ impl ListInputDeviceTransfersInput {
                 if let Some(inner_32) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_32));
                 }
-                if let Some(inner_33) = &_input.transfer_type {
-                    query.push_kv(
-                        "transferType",
-                        &aws_smithy_http::query::fmt_string(&inner_33),
+                let inner_33 = &_input.transfer_type;
+                let inner_33 = inner_33.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "transfer_type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_33.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "transfer_type",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "transferType",
+                    &aws_smithy_http::query::fmt_string(&inner_33),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

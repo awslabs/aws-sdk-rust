@@ -2436,9 +2436,22 @@ impl ExportSchemaInput {
                         &aws_smithy_http::query::fmt_string(&inner_23),
                     );
                 }
-                if let Some(inner_24) = &_input.r#type {
-                    query.push_kv("type", &aws_smithy_http::query::fmt_string(&inner_24));
+                let inner_24 = &_input.r#type;
+                let inner_24 = inner_24.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "r#type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_24.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "r#type",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("type", &aws_smithy_http::query::fmt_string(&inner_24));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -4586,9 +4599,22 @@ impl SearchSchemasInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_49) = &_input.keywords {
-                    query.push_kv("keywords", &aws_smithy_http::query::fmt_string(&inner_49));
+                let inner_49 = &_input.keywords;
+                let inner_49 = inner_49.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "keywords",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_49.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "keywords",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("keywords", &aws_smithy_http::query::fmt_string(&inner_49));
                 if _input.limit != 0 {
                     query.push_kv(
                         "limit",
@@ -5268,10 +5294,15 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_55) = &_input.tag_keys {
-                    for inner_56 in inner_55 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_56));
-                    }
+                let inner_55 = &_input.tag_keys;
+                let inner_55 = inner_55.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_56 in inner_55 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_56));
                 }
                 Ok(())
             }

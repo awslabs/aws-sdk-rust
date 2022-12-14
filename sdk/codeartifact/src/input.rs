@@ -117,24 +117,63 @@ impl AssociateExternalConnectionInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_1) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_1));
+                let inner_1 = &_input.domain;
+                let inner_1 = inner_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_1.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_1));
                 if let Some(inner_2) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
                         &aws_smithy_http::query::fmt_string(&inner_2),
                     );
                 }
-                if let Some(inner_3) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_3));
-                }
-                if let Some(inner_4) = &_input.external_connection {
-                    query.push_kv(
-                        "external-connection",
-                        &aws_smithy_http::query::fmt_string(&inner_4),
+                let inner_3 = &_input.repository;
+                let inner_3 = inner_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "repository",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_3.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_3));
+                let inner_4 = &_input.external_connection;
+                let inner_4 = inner_4.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "external_connection",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_4.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "external_connection",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                query.push_kv(
+                    "external-connection",
+                    &aws_smithy_http::query::fmt_string(&inner_4),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -444,36 +483,93 @@ impl CopyPackageVersionsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_5) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_5));
+                let inner_5 = &_input.domain;
+                let inner_5 = inner_5.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_5.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_5));
                 if let Some(inner_6) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
                         &aws_smithy_http::query::fmt_string(&inner_6),
                     );
                 }
-                if let Some(inner_7) = &_input.source_repository {
-                    query.push_kv(
-                        "source-repository",
-                        &aws_smithy_http::query::fmt_string(&inner_7),
+                let inner_7 = &_input.source_repository;
+                let inner_7 = inner_7.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "source_repository",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_7.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "source_repository",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_8) = &_input.destination_repository {
-                    query.push_kv(
-                        "destination-repository",
-                        &aws_smithy_http::query::fmt_string(&inner_8),
+                query.push_kv(
+                    "source-repository",
+                    &aws_smithy_http::query::fmt_string(&inner_7),
+                );
+                let inner_8 = &_input.destination_repository;
+                let inner_8 = inner_8.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "destination_repository",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_8.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "destination_repository",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_9) = &_input.format {
-                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_9));
-                }
+                query.push_kv(
+                    "destination-repository",
+                    &aws_smithy_http::query::fmt_string(&inner_8),
+                );
+                let inner_9 = &_input.format;
+                let inner_9 = inner_9.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "format",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_9));
                 if let Some(inner_10) = &_input.namespace {
                     query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_10));
                 }
-                if let Some(inner_11) = &_input.package {
-                    query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_11));
+                let inner_11 = &_input.package;
+                let inner_11 = inner_11.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "package",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_11.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "package",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_11));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -662,9 +758,22 @@ impl CreateDomainInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_12) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_12));
+                let inner_12 = &_input.domain;
+                let inner_12 = inner_12.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_12.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_12));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -893,18 +1002,44 @@ impl CreateRepositoryInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_13) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_13));
+                let inner_13 = &_input.domain;
+                let inner_13 = inner_13.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_13.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_13));
                 if let Some(inner_14) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
                         &aws_smithy_http::query::fmt_string(&inner_14),
                     );
                 }
-                if let Some(inner_15) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_15));
+                let inner_15 = &_input.repository;
+                let inner_15 = inner_15.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "repository",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_15.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_15));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -1065,9 +1200,22 @@ impl DeleteDomainInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_16) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_16));
+                let inner_16 = &_input.domain;
+                let inner_16 = inner_16.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_16.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_16));
                 if let Some(inner_17) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
@@ -1237,9 +1385,22 @@ impl DeleteDomainPermissionsPolicyInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_18) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_18));
+                let inner_18 = &_input.domain;
+                let inner_18 = inner_18.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_18.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_18));
                 if let Some(inner_19) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
@@ -1497,27 +1658,71 @@ impl DeletePackageVersionsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_21) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_21));
+                let inner_21 = &_input.domain;
+                let inner_21 = inner_21.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_21.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_21));
                 if let Some(inner_22) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
                         &aws_smithy_http::query::fmt_string(&inner_22),
                     );
                 }
-                if let Some(inner_23) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_23));
+                let inner_23 = &_input.repository;
+                let inner_23 = inner_23.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "repository",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_23.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
-                if let Some(inner_24) = &_input.format {
-                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_24));
-                }
+                query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_23));
+                let inner_24 = &_input.format;
+                let inner_24 = inner_24.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "format",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_24));
                 if let Some(inner_25) = &_input.namespace {
                     query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_25));
                 }
-                if let Some(inner_26) = &_input.package {
-                    query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_26));
+                let inner_26 = &_input.package;
+                let inner_26 = inner_26.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "package",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_26.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "package",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_26));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -1694,18 +1899,44 @@ impl DeleteRepositoryInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_27) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_27));
+                let inner_27 = &_input.domain;
+                let inner_27 = inner_27.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_27.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_27));
                 if let Some(inner_28) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
                         &aws_smithy_http::query::fmt_string(&inner_28),
                     );
                 }
-                if let Some(inner_29) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_29));
+                let inner_29 = &_input.repository;
+                let inner_29 = inner_29.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "repository",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_29.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_29));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -1882,18 +2113,44 @@ impl DeleteRepositoryPermissionsPolicyInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_30) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_30));
+                let inner_30 = &_input.domain;
+                let inner_30 = inner_30.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_30.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_30));
                 if let Some(inner_31) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
                         &aws_smithy_http::query::fmt_string(&inner_31),
                     );
                 }
-                if let Some(inner_32) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_32));
+                let inner_32 = &_input.repository;
+                let inner_32 = inner_32.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "repository",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_32.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_32));
                 if let Some(inner_33) = &_input.policy_revision {
                     query.push_kv(
                         "policy-revision",
@@ -2046,9 +2303,22 @@ impl DescribeDomainInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_34) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_34));
+                let inner_34 = &_input.domain;
+                let inner_34 = inner_34.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_34.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_34));
                 if let Some(inner_35) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
@@ -2262,27 +2532,71 @@ impl DescribePackageInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_36) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_36));
+                let inner_36 = &_input.domain;
+                let inner_36 = inner_36.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_36.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_36));
                 if let Some(inner_37) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
                         &aws_smithy_http::query::fmt_string(&inner_37),
                     );
                 }
-                if let Some(inner_38) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_38));
+                let inner_38 = &_input.repository;
+                let inner_38 = inner_38.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "repository",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_38.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
-                if let Some(inner_39) = &_input.format {
-                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_39));
-                }
+                query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_38));
+                let inner_39 = &_input.format;
+                let inner_39 = inner_39.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "format",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_39));
                 if let Some(inner_40) = &_input.namespace {
                     query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_40));
                 }
-                if let Some(inner_41) = &_input.package {
-                    query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_41));
+                let inner_41 = &_input.package;
+                let inner_41 = inner_41.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "package",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_41.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "package",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_41));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -2507,30 +2821,87 @@ impl DescribePackageVersionInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_42) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_42));
+                let inner_42 = &_input.domain;
+                let inner_42 = inner_42.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_42.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_42));
                 if let Some(inner_43) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
                         &aws_smithy_http::query::fmt_string(&inner_43),
                     );
                 }
-                if let Some(inner_44) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_44));
+                let inner_44 = &_input.repository;
+                let inner_44 = inner_44.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "repository",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_44.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
-                if let Some(inner_45) = &_input.format {
-                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_45));
-                }
+                query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_44));
+                let inner_45 = &_input.format;
+                let inner_45 = inner_45.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "format",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_45));
                 if let Some(inner_46) = &_input.namespace {
                     query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_46));
                 }
-                if let Some(inner_47) = &_input.package {
-                    query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_47));
+                let inner_47 = &_input.package;
+                let inner_47 = inner_47.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "package",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_47.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "package",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
-                if let Some(inner_48) = &_input.package_version {
-                    query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_48));
+                query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_47));
+                let inner_48 = &_input.package_version;
+                let inner_48 = inner_48.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "package_version",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_48.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "package_version",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_48));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -2691,18 +3062,44 @@ impl DescribeRepositoryInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_49) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_49));
+                let inner_49 = &_input.domain;
+                let inner_49 = inner_49.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_49.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_49));
                 if let Some(inner_50) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
                         &aws_smithy_http::query::fmt_string(&inner_50),
                     );
                 }
-                if let Some(inner_51) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_51));
+                let inner_51 = &_input.repository;
+                let inner_51 = inner_51.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "repository",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_51.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_51));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -2879,24 +3276,63 @@ impl DisassociateExternalConnectionInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_52) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_52));
+                let inner_52 = &_input.domain;
+                let inner_52 = inner_52.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_52.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_52));
                 if let Some(inner_53) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
                         &aws_smithy_http::query::fmt_string(&inner_53),
                     );
                 }
-                if let Some(inner_54) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_54));
-                }
-                if let Some(inner_55) = &_input.external_connection {
-                    query.push_kv(
-                        "external-connection",
-                        &aws_smithy_http::query::fmt_string(&inner_55),
+                let inner_54 = &_input.repository;
+                let inner_54 = inner_54.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "repository",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_54.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_54));
+                let inner_55 = &_input.external_connection;
+                let inner_55 = inner_55.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "external_connection",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_55.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "external_connection",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                query.push_kv(
+                    "external-connection",
+                    &aws_smithy_http::query::fmt_string(&inner_55),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -3171,27 +3607,71 @@ impl DisposePackageVersionsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_56) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_56));
+                let inner_56 = &_input.domain;
+                let inner_56 = inner_56.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_56.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_56));
                 if let Some(inner_57) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
                         &aws_smithy_http::query::fmt_string(&inner_57),
                     );
                 }
-                if let Some(inner_58) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_58));
+                let inner_58 = &_input.repository;
+                let inner_58 = inner_58.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "repository",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_58.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
-                if let Some(inner_59) = &_input.format {
-                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_59));
-                }
+                query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_58));
+                let inner_59 = &_input.format;
+                let inner_59 = inner_59.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "format",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_59));
                 if let Some(inner_60) = &_input.namespace {
                     query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_60));
                 }
-                if let Some(inner_61) = &_input.package {
-                    query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_61));
+                let inner_61 = &_input.package;
+                let inner_61 = inner_61.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "package",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_61.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "package",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_61));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -3368,9 +3848,22 @@ impl GetAuthorizationTokenInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_62) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_62));
+                let inner_62 = &_input.domain;
+                let inner_62 = inner_62.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_62.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_62));
                 if let Some(inner_63) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
@@ -3531,9 +4024,22 @@ impl GetDomainPermissionsPolicyInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_65) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_65));
+                let inner_65 = &_input.domain;
+                let inner_65 = inner_65.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_65.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_65));
                 if let Some(inner_66) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
@@ -3791,33 +4297,103 @@ impl GetPackageVersionAssetInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_67) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_67));
+                let inner_67 = &_input.domain;
+                let inner_67 = inner_67.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_67.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_67));
                 if let Some(inner_68) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
                         &aws_smithy_http::query::fmt_string(&inner_68),
                     );
                 }
-                if let Some(inner_69) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_69));
+                let inner_69 = &_input.repository;
+                let inner_69 = inner_69.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "repository",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_69.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
-                if let Some(inner_70) = &_input.format {
-                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_70));
-                }
+                query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_69));
+                let inner_70 = &_input.format;
+                let inner_70 = inner_70.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "format",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_70));
                 if let Some(inner_71) = &_input.namespace {
                     query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_71));
                 }
-                if let Some(inner_72) = &_input.package {
-                    query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_72));
+                let inner_72 = &_input.package;
+                let inner_72 = inner_72.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "package",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_72.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "package",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
-                if let Some(inner_73) = &_input.package_version {
-                    query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_73));
+                query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_72));
+                let inner_73 = &_input.package_version;
+                let inner_73 = inner_73.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "package_version",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_73.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "package_version",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
-                if let Some(inner_74) = &_input.asset {
-                    query.push_kv("asset", &aws_smithy_http::query::fmt_string(&inner_74));
+                query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_73));
+                let inner_74 = &_input.asset;
+                let inner_74 = inner_74.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "asset",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_74.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "asset",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("asset", &aws_smithy_http::query::fmt_string(&inner_74));
                 if let Some(inner_75) = &_input.package_version_revision {
                     query.push_kv("revision", &aws_smithy_http::query::fmt_string(&inner_75));
                 }
@@ -4045,30 +4621,87 @@ impl GetPackageVersionReadmeInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_76) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_76));
+                let inner_76 = &_input.domain;
+                let inner_76 = inner_76.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_76.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_76));
                 if let Some(inner_77) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
                         &aws_smithy_http::query::fmt_string(&inner_77),
                     );
                 }
-                if let Some(inner_78) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_78));
+                let inner_78 = &_input.repository;
+                let inner_78 = inner_78.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "repository",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_78.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
-                if let Some(inner_79) = &_input.format {
-                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_79));
-                }
+                query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_78));
+                let inner_79 = &_input.format;
+                let inner_79 = inner_79.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "format",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_79));
                 if let Some(inner_80) = &_input.namespace {
                     query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_80));
                 }
-                if let Some(inner_81) = &_input.package {
-                    query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_81));
+                let inner_81 = &_input.package;
+                let inner_81 = inner_81.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "package",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_81.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "package",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
-                if let Some(inner_82) = &_input.package_version {
-                    query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_82));
+                query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_81));
+                let inner_82 = &_input.package_version;
+                let inner_82 = inner_82.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "package_version",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_82.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "package_version",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_82));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -4244,21 +4877,52 @@ impl GetRepositoryEndpointInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_83) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_83));
+                let inner_83 = &_input.domain;
+                let inner_83 = inner_83.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_83.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_83));
                 if let Some(inner_84) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
                         &aws_smithy_http::query::fmt_string(&inner_84),
                     );
                 }
-                if let Some(inner_85) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_85));
+                let inner_85 = &_input.repository;
+                let inner_85 = inner_85.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "repository",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_85.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
-                if let Some(inner_86) = &_input.format {
-                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_86));
-                }
+                query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_85));
+                let inner_86 = &_input.format;
+                let inner_86 = inner_86.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "format",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_86));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -4420,18 +5084,44 @@ impl GetRepositoryPermissionsPolicyInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_87) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_87));
+                let inner_87 = &_input.domain;
+                let inner_87 = inner_87.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_87.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_87));
                 if let Some(inner_88) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
                         &aws_smithy_http::query::fmt_string(&inner_88),
                     );
                 }
-                if let Some(inner_89) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_89));
+                let inner_89 = &_input.repository;
+                let inner_89 = inner_89.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "repository",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_89.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_89));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -4848,18 +5538,44 @@ impl ListPackagesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_90) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_90));
+                let inner_90 = &_input.domain;
+                let inner_90 = inner_90.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_90.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_90));
                 if let Some(inner_91) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
                         &aws_smithy_http::query::fmt_string(&inner_91),
                     );
                 }
-                if let Some(inner_92) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_92));
+                let inner_92 = &_input.repository;
+                let inner_92 = inner_92.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "repository",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_92.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_92));
                 if let Some(inner_93) = &_input.format {
                     query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_93));
                 }
@@ -5135,33 +5851,90 @@ impl ListPackageVersionAssetsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_100) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_100));
+                let inner_100 = &_input.domain;
+                let inner_100 = inner_100.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_100.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_100));
                 if let Some(inner_101) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
                         &aws_smithy_http::query::fmt_string(&inner_101),
                     );
                 }
-                if let Some(inner_102) = &_input.repository {
-                    query.push_kv(
+                let inner_102 = &_input.repository;
+                let inner_102 = inner_102.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
                         "repository",
-                        &aws_smithy_http::query::fmt_string(&inner_102),
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_102.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_103) = &_input.format {
-                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_103));
-                }
+                query.push_kv(
+                    "repository",
+                    &aws_smithy_http::query::fmt_string(&inner_102),
+                );
+                let inner_103 = &_input.format;
+                let inner_103 = inner_103.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "format",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_103));
                 if let Some(inner_104) = &_input.namespace {
                     query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_104));
                 }
-                if let Some(inner_105) = &_input.package {
-                    query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_105));
+                let inner_105 = &_input.package;
+                let inner_105 = inner_105.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "package",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_105.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "package",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
-                if let Some(inner_106) = &_input.package_version {
-                    query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_106));
+                query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_105));
+                let inner_106 = &_input.package_version;
+                let inner_106 = inner_106.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "package_version",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_106.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "package_version",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_106));
                 if let Some(inner_107) = &_input.max_results {
                     query.push_kv(
                         "max-results",
@@ -5411,33 +6184,90 @@ impl ListPackageVersionDependenciesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_109) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_109));
+                let inner_109 = &_input.domain;
+                let inner_109 = inner_109.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_109.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_109));
                 if let Some(inner_110) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
                         &aws_smithy_http::query::fmt_string(&inner_110),
                     );
                 }
-                if let Some(inner_111) = &_input.repository {
-                    query.push_kv(
+                let inner_111 = &_input.repository;
+                let inner_111 = inner_111.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
                         "repository",
-                        &aws_smithy_http::query::fmt_string(&inner_111),
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_111.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_112) = &_input.format {
-                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_112));
-                }
+                query.push_kv(
+                    "repository",
+                    &aws_smithy_http::query::fmt_string(&inner_111),
+                );
+                let inner_112 = &_input.format;
+                let inner_112 = inner_112.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "format",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_112));
                 if let Some(inner_113) = &_input.namespace {
                     query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_113));
                 }
-                if let Some(inner_114) = &_input.package {
-                    query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_114));
+                let inner_114 = &_input.package;
+                let inner_114 = inner_114.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "package",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_114.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "package",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
-                if let Some(inner_115) = &_input.package_version {
-                    query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_115));
+                query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_114));
+                let inner_115 = &_input.package_version;
+                let inner_115 = inner_115.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "package_version",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_115.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "package_version",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_115));
                 if let Some(inner_116) = &_input.next_token {
                     query.push_kv(
                         "next-token",
@@ -5722,30 +6552,74 @@ impl ListPackageVersionsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_117) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_117));
+                let inner_117 = &_input.domain;
+                let inner_117 = inner_117.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_117.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_117));
                 if let Some(inner_118) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
                         &aws_smithy_http::query::fmt_string(&inner_118),
                     );
                 }
-                if let Some(inner_119) = &_input.repository {
-                    query.push_kv(
+                let inner_119 = &_input.repository;
+                let inner_119 = inner_119.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
                         "repository",
-                        &aws_smithy_http::query::fmt_string(&inner_119),
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_119.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_120) = &_input.format {
-                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_120));
-                }
+                query.push_kv(
+                    "repository",
+                    &aws_smithy_http::query::fmt_string(&inner_119),
+                );
+                let inner_120 = &_input.format;
+                let inner_120 = inner_120.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "format",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_120));
                 if let Some(inner_121) = &_input.namespace {
                     query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_121));
                 }
-                if let Some(inner_122) = &_input.package {
-                    query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_122));
+                let inner_122 = &_input.package;
+                let inner_122 = inner_122.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "package",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_122.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "package",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_122));
                 if let Some(inner_123) = &_input.status {
                     query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_123));
                 }
@@ -6153,9 +7027,22 @@ impl ListRepositoriesInDomainInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_131) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_131));
+                let inner_131 = &_input.domain;
+                let inner_131 = inner_131.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_131.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_131));
                 if let Some(inner_132) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
@@ -6322,12 +7209,25 @@ impl ListTagsForResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_137) = &_input.resource_arn {
-                    query.push_kv(
-                        "resourceArn",
-                        &aws_smithy_http::query::fmt_string(&inner_137),
+                let inner_137 = &_input.resource_arn;
+                let inner_137 = inner_137.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_137.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "resourceArn",
+                    &aws_smithy_http::query::fmt_string(&inner_137),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -6737,30 +7637,74 @@ impl PutPackageOriginConfigurationInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_138) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_138));
+                let inner_138 = &_input.domain;
+                let inner_138 = inner_138.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_138.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_138));
                 if let Some(inner_139) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
                         &aws_smithy_http::query::fmt_string(&inner_139),
                     );
                 }
-                if let Some(inner_140) = &_input.repository {
-                    query.push_kv(
+                let inner_140 = &_input.repository;
+                let inner_140 = inner_140.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
                         "repository",
-                        &aws_smithy_http::query::fmt_string(&inner_140),
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_140.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_141) = &_input.format {
-                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_141));
-                }
+                query.push_kv(
+                    "repository",
+                    &aws_smithy_http::query::fmt_string(&inner_140),
+                );
+                let inner_141 = &_input.format;
+                let inner_141 = inner_141.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "format",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_141));
                 if let Some(inner_142) = &_input.namespace {
                     query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_142));
                 }
-                if let Some(inner_143) = &_input.package {
-                    query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_143));
+                let inner_143 = &_input.package;
+                let inner_143 = inner_143.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "package",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_143.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "package",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_143));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -6965,21 +7909,47 @@ impl PutRepositoryPermissionsPolicyInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_144) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_144));
+                let inner_144 = &_input.domain;
+                let inner_144 = inner_144.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_144.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_144));
                 if let Some(inner_145) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
                         &aws_smithy_http::query::fmt_string(&inner_145),
                     );
                 }
-                if let Some(inner_146) = &_input.repository {
-                    query.push_kv(
+                let inner_146 = &_input.repository;
+                let inner_146 = inner_146.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
                         "repository",
-                        &aws_smithy_http::query::fmt_string(&inner_146),
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_146.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "repository",
+                    &aws_smithy_http::query::fmt_string(&inner_146),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -7148,12 +8118,25 @@ impl TagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_147) = &_input.resource_arn {
-                    query.push_kv(
-                        "resourceArn",
-                        &aws_smithy_http::query::fmt_string(&inner_147),
+                let inner_147 = &_input.resource_arn;
+                let inner_147 = inner_147.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_147.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "resourceArn",
+                    &aws_smithy_http::query::fmt_string(&inner_147),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -7323,12 +8306,25 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_148) = &_input.resource_arn {
-                    query.push_kv(
-                        "resourceArn",
-                        &aws_smithy_http::query::fmt_string(&inner_148),
+                let inner_148 = &_input.resource_arn;
+                let inner_148 = inner_148.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_148.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "resourceArn",
+                    &aws_smithy_http::query::fmt_string(&inner_148),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -7633,30 +8629,74 @@ impl UpdatePackageVersionsStatusInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_149) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_149));
+                let inner_149 = &_input.domain;
+                let inner_149 = inner_149.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_149.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_149));
                 if let Some(inner_150) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
                         &aws_smithy_http::query::fmt_string(&inner_150),
                     );
                 }
-                if let Some(inner_151) = &_input.repository {
-                    query.push_kv(
+                let inner_151 = &_input.repository;
+                let inner_151 = inner_151.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
                         "repository",
-                        &aws_smithy_http::query::fmt_string(&inner_151),
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_151.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_152) = &_input.format {
-                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_152));
-                }
+                query.push_kv(
+                    "repository",
+                    &aws_smithy_http::query::fmt_string(&inner_151),
+                );
+                let inner_152 = &_input.format;
+                let inner_152 = inner_152.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "format",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_152));
                 if let Some(inner_153) = &_input.namespace {
                     query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_153));
                 }
-                if let Some(inner_154) = &_input.package {
-                    query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_154));
+                let inner_154 = &_input.package;
+                let inner_154 = inner_154.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "package",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_154.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "package",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_154));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -7863,21 +8903,47 @@ impl UpdateRepositoryInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_155) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_155));
+                let inner_155 = &_input.domain;
+                let inner_155 = inner_155.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_155.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_155));
                 if let Some(inner_156) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
                         &aws_smithy_http::query::fmt_string(&inner_156),
                     );
                 }
-                if let Some(inner_157) = &_input.repository {
-                    query.push_kv(
+                let inner_157 = &_input.repository;
+                let inner_157 = inner_157.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
                         "repository",
-                        &aws_smithy_http::query::fmt_string(&inner_157),
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_157.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "repository",
+                    &aws_smithy_http::query::fmt_string(&inner_157),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

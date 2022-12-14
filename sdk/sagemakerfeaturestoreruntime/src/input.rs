@@ -266,15 +266,41 @@ impl DeleteRecordInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_2) = &_input.record_identifier_value_as_string {
-                    query.push_kv(
-                        "RecordIdentifierValueAsString",
-                        &aws_smithy_http::query::fmt_string(&inner_2),
+                let inner_2 = &_input.record_identifier_value_as_string;
+                let inner_2 = inner_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "record_identifier_value_as_string",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_2.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "record_identifier_value_as_string",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_3) = &_input.event_time {
-                    query.push_kv("EventTime", &aws_smithy_http::query::fmt_string(&inner_3));
+                query.push_kv(
+                    "RecordIdentifierValueAsString",
+                    &aws_smithy_http::query::fmt_string(&inner_2),
+                );
+                let inner_3 = &_input.event_time;
+                let inner_3 = inner_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "event_time",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_3.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "event_time",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("EventTime", &aws_smithy_http::query::fmt_string(&inner_3));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -475,12 +501,25 @@ impl GetRecordInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_5) = &_input.record_identifier_value_as_string {
-                    query.push_kv(
-                        "RecordIdentifierValueAsString",
-                        &aws_smithy_http::query::fmt_string(&inner_5),
+                let inner_5 = &_input.record_identifier_value_as_string;
+                let inner_5 = inner_5.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "record_identifier_value_as_string",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_5.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "record_identifier_value_as_string",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "RecordIdentifierValueAsString",
+                    &aws_smithy_http::query::fmt_string(&inner_5),
+                );
                 if let Some(inner_6) = &_input.feature_names {
                     for inner_7 in inner_6 {
                         query.push_kv("FeatureName", &aws_smithy_http::query::fmt_string(&inner_7));

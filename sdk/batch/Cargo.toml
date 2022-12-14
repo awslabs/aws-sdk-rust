@@ -73,7 +73,7 @@ version = "1.0.0"
 
 [dev-dependencies.tokio]
 version = "1"
-features = ["macros", "test-util", "rt"]
+features = ["macros", "test-util", "rt", "rt-multi-thread"]
 
 [features]
 rustls = ["aws-smithy-client/rustls"]

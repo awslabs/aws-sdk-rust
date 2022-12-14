@@ -556,9 +556,22 @@ impl DescribeProjectInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_6) = &_input.project_id {
-                    query.push_kv("projectId", &aws_smithy_http::query::fmt_string(&inner_6));
+                let inner_6 = &_input.project_id;
+                let inner_6 = inner_6.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "project_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_6.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "project_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("projectId", &aws_smithy_http::query::fmt_string(&inner_6));
                 if _input.sync_from_resources {
                     query.push_kv(
                         "syncFromResources",
@@ -1352,9 +1365,22 @@ impl UpdateProjectInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_13) = &_input.project_id {
-                    query.push_kv("projectId", &aws_smithy_http::query::fmt_string(&inner_13));
+                let inner_13 = &_input.project_id;
+                let inner_13 = inner_13.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "project_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_13.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "project_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("projectId", &aws_smithy_http::query::fmt_string(&inner_13));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

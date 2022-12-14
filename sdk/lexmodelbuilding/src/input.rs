@@ -4121,21 +4121,57 @@ impl GetExportInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_51) = &_input.name {
-                    query.push_kv("name", &aws_smithy_http::query::fmt_string(&inner_51));
-                }
-                if let Some(inner_52) = &_input.version {
-                    query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_52));
-                }
-                if let Some(inner_53) = &_input.resource_type {
-                    query.push_kv(
-                        "resourceType",
-                        &aws_smithy_http::query::fmt_string(&inner_53),
+                let inner_51 = &_input.name;
+                let inner_51 = inner_51.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_51.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_54) = &_input.export_type {
-                    query.push_kv("exportType", &aws_smithy_http::query::fmt_string(&inner_54));
+                query.push_kv("name", &aws_smithy_http::query::fmt_string(&inner_51));
+                let inner_52 = &_input.version;
+                let inner_52 = inner_52.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "version",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_52.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "version",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_52));
+                let inner_53 = &_input.resource_type;
+                let inner_53 = inner_53.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "resourceType",
+                    &aws_smithy_http::query::fmt_string(&inner_53),
+                );
+                let inner_54 = &_input.export_type;
+                let inner_54 = inner_54.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "export_type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv("exportType", &aws_smithy_http::query::fmt_string(&inner_54));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -5952,20 +5988,30 @@ impl GetUtterancesViewInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("view", "aggregation");
-                if let Some(inner_80) = &_input.bot_versions {
-                    for inner_81 in inner_80 {
-                        query.push_kv(
-                            "bot_versions",
-                            &aws_smithy_http::query::fmt_string(&inner_81),
-                        );
-                    }
-                }
-                if let Some(inner_82) = &_input.status_type {
+                let inner_80 = &_input.bot_versions;
+                let inner_80 = inner_80.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bot_versions",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_81 in inner_80 {
                     query.push_kv(
-                        "status_type",
-                        &aws_smithy_http::query::fmt_string(&inner_82),
+                        "bot_versions",
+                        &aws_smithy_http::query::fmt_string(&inner_81),
                     );
                 }
+                let inner_82 = &_input.status_type;
+                let inner_82 = inner_82.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "status_type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "status_type",
+                    &aws_smithy_http::query::fmt_string(&inner_82),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -8360,10 +8406,15 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_91) = &_input.tag_keys {
-                    for inner_92 in inner_91 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_92));
-                    }
+                let inner_91 = &_input.tag_keys;
+                let inner_91 = inner_91.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_92 in inner_91 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_92));
                 }
                 Ok(())
             }

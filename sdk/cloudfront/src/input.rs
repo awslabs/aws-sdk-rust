@@ -98,9 +98,22 @@ impl AssociateAliasInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_2) = &_input.alias {
-                    query.push_kv("Alias", &aws_smithy_http::query::fmt_string(&inner_2));
+                let inner_2 = &_input.alias;
+                let inner_2 = inner_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "alias",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_2.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "alias",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("Alias", &aws_smithy_http::query::fmt_string(&inner_2));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -9678,15 +9691,41 @@ impl ListConflictingAliasesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_52) = &_input.distribution_id {
-                    query.push_kv(
-                        "DistributionId",
-                        &aws_smithy_http::query::fmt_string(&inner_52),
+                let inner_52 = &_input.distribution_id;
+                let inner_52 = inner_52.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "distribution_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_52.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "distribution_id",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_53) = &_input.alias {
-                    query.push_kv("Alias", &aws_smithy_http::query::fmt_string(&inner_53));
+                query.push_kv(
+                    "DistributionId",
+                    &aws_smithy_http::query::fmt_string(&inner_52),
+                );
+                let inner_53 = &_input.alias;
+                let inner_53 = inner_53.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "alias",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_53.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "alias",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("Alias", &aws_smithy_http::query::fmt_string(&inner_53));
                 if let Some(inner_54) = &_input.marker {
                     query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_54));
                 }
@@ -12990,9 +13029,22 @@ impl ListTagsForResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_99) = &_input.resource {
-                    query.push_kv("Resource", &aws_smithy_http::query::fmt_string(&inner_99));
+                let inner_99 = &_input.resource;
+                let inner_99 = inner_99.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_99.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("Resource", &aws_smithy_http::query::fmt_string(&inner_99));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -13299,9 +13351,22 @@ impl TagResourceInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("Operation", "Tag");
-                if let Some(inner_101) = &_input.resource {
-                    query.push_kv("Resource", &aws_smithy_http::query::fmt_string(&inner_101));
+                let inner_101 = &_input.resource;
+                let inner_101 = inner_101.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_101.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("Resource", &aws_smithy_http::query::fmt_string(&inner_101));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -13666,9 +13731,22 @@ impl UntagResourceInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("Operation", "Untag");
-                if let Some(inner_103) = &_input.resource {
-                    query.push_kv("Resource", &aws_smithy_http::query::fmt_string(&inner_103));
+                let inner_103 = &_input.resource;
+                let inner_103 = inner_103.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_103.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("Resource", &aws_smithy_http::query::fmt_string(&inner_103));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

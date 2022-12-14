@@ -1441,9 +1441,22 @@ impl GetAccessPreviewInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_9) = &_input.analyzer_arn {
-                    query.push_kv("analyzerArn", &aws_smithy_http::query::fmt_string(&inner_9));
+                let inner_9 = &_input.analyzer_arn;
+                let inner_9 = inner_9.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "analyzer_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_9.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "analyzer_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("analyzerArn", &aws_smithy_http::query::fmt_string(&inner_9));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -1592,18 +1605,44 @@ impl GetAnalyzedResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_10) = &_input.analyzer_arn {
-                    query.push_kv(
-                        "analyzerArn",
-                        &aws_smithy_http::query::fmt_string(&inner_10),
+                let inner_10 = &_input.analyzer_arn;
+                let inner_10 = inner_10.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "analyzer_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_10.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "analyzer_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_11) = &_input.resource_arn {
-                    query.push_kv(
-                        "resourceArn",
-                        &aws_smithy_http::query::fmt_string(&inner_11),
+                query.push_kv(
+                    "analyzerArn",
+                    &aws_smithy_http::query::fmt_string(&inner_10),
+                );
+                let inner_11 = &_input.resource_arn;
+                let inner_11 = inner_11.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_11.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "resourceArn",
+                    &aws_smithy_http::query::fmt_string(&inner_11),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -2107,12 +2146,25 @@ impl GetFindingInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_16) = &_input.analyzer_arn {
-                    query.push_kv(
-                        "analyzerArn",
-                        &aws_smithy_http::query::fmt_string(&inner_16),
+                let inner_16 = &_input.analyzer_arn;
+                let inner_16 = inner_16.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "analyzer_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_16.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "analyzer_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "analyzerArn",
+                    &aws_smithy_http::query::fmt_string(&inner_16),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -2711,12 +2763,25 @@ impl ListAccessPreviewsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_21) = &_input.analyzer_arn {
-                    query.push_kv(
-                        "analyzerArn",
-                        &aws_smithy_http::query::fmt_string(&inner_21),
+                let inner_21 = &_input.analyzer_arn;
+                let inner_21 = inner_21.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "analyzer_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_21.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "analyzer_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "analyzerArn",
+                    &aws_smithy_http::query::fmt_string(&inner_21),
+                );
                 if let Some(inner_22) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_22));
                 }
@@ -4507,10 +4572,15 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_36) = &_input.tag_keys {
-                    for inner_37 in inner_36 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_37));
-                    }
+                let inner_36 = &_input.tag_keys;
+                let inner_36 = inner_36.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_37 in inner_36 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_37));
                 }
                 Ok(())
             }

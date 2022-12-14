@@ -14767,12 +14767,17 @@ impl GetDashboardEmbedUrlInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_158) = &_input.identity_type {
-                    query.push_kv(
-                        "creds-type",
-                        &aws_smithy_http::query::fmt_string(&inner_158),
-                    );
-                }
+                let inner_158 = &_input.identity_type;
+                let inner_158 = inner_158.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "identity_type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "creds-type",
+                    &aws_smithy_http::query::fmt_string(&inner_158),
+                );
                 if let Some(inner_159) = &_input.session_lifetime_in_minutes {
                     query.push_kv(
                         "session-lifetime",
@@ -21766,10 +21771,15 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_262) = &_input.tag_keys {
-                    for inner_263 in inner_262 {
-                        query.push_kv("keys", &aws_smithy_http::query::fmt_string(&inner_263));
-                    }
+                let inner_262 = &_input.tag_keys;
+                let inner_262 = inner_262.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_263 in inner_262 {
+                    query.push_kv("keys", &aws_smithy_http::query::fmt_string(&inner_263));
                 }
                 Ok(())
             }

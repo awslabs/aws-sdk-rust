@@ -3997,23 +3997,54 @@ impl GetLaunchProfileInitializationInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_29) = &_input.launch_profile_protocol_versions {
-                    for inner_30 in inner_29 {
-                        query.push_kv(
-                            "launchProfileProtocolVersions",
-                            &aws_smithy_http::query::fmt_string(&inner_30),
-                        );
-                    }
-                }
-                if let Some(inner_31) = &_input.launch_purpose {
+                let inner_29 = &_input.launch_profile_protocol_versions;
+                let inner_29 = inner_29.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "launch_profile_protocol_versions",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_30 in inner_29 {
                     query.push_kv(
-                        "launchPurpose",
-                        &aws_smithy_http::query::fmt_string(&inner_31),
+                        "launchProfileProtocolVersions",
+                        &aws_smithy_http::query::fmt_string(&inner_30),
                     );
                 }
-                if let Some(inner_32) = &_input.platform {
-                    query.push_kv("platform", &aws_smithy_http::query::fmt_string(&inner_32));
+                let inner_31 = &_input.launch_purpose;
+                let inner_31 = inner_31.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "launch_purpose",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_31.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "launch_purpose",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv(
+                    "launchPurpose",
+                    &aws_smithy_http::query::fmt_string(&inner_31),
+                );
+                let inner_32 = &_input.platform;
+                let inner_32 = inner_32.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "platform",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_32.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "platform",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                query.push_kv("platform", &aws_smithy_http::query::fmt_string(&inner_32));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -8706,10 +8737,15 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_95) = &_input.tag_keys {
-                    for inner_96 in inner_95 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_96));
-                    }
+                let inner_95 = &_input.tag_keys;
+                let inner_95 = inner_95.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_96 in inner_95 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_96));
                 }
                 Ok(())
             }

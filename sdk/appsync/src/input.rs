@@ -5115,9 +5115,14 @@ impl GetIntrospectionSchemaInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_34) = &_input.format {
-                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_34));
-                }
+                let inner_34 = &_input.format;
+                let inner_34 = inner_34.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "format",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_34));
                 if let Some(inner_35) = &_input.include_directives {
                     query.push_kv(
                         "includeDirectives",
@@ -5691,9 +5696,14 @@ impl GetTypeInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_42) = &_input.format {
-                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_42));
-                }
+                let inner_42 = &_input.format;
+                let inner_42 = inner_42.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "format",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_42));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -7351,9 +7361,14 @@ impl ListTypesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_59) = &_input.format {
-                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_59));
-                }
+                let inner_59 = &_input.format;
+                let inner_59 = inner_59.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "format",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_59));
                 if let Some(inner_60) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_60));
                 }
@@ -7902,10 +7917,15 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_64) = &_input.tag_keys {
-                    for inner_65 in inner_64 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_65));
-                    }
+                let inner_64 = &_input.tag_keys;
+                let inner_64 = inner_64.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_65 in inner_64 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_65));
                 }
                 Ok(())
             }

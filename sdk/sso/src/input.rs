@@ -85,12 +85,38 @@ impl GetRoleCredentialsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_1) = &_input.role_name {
-                    query.push_kv("role_name", &aws_smithy_http::query::fmt_string(&inner_1));
+                let inner_1 = &_input.role_name;
+                let inner_1 = inner_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "role_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_1.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "role_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
-                if let Some(inner_2) = &_input.account_id {
-                    query.push_kv("account_id", &aws_smithy_http::query::fmt_string(&inner_2));
+                query.push_kv("role_name", &aws_smithy_http::query::fmt_string(&inner_1));
+                let inner_2 = &_input.account_id;
+                let inner_2 = inner_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_2.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("account_id", &aws_smithy_http::query::fmt_string(&inner_2));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -274,9 +300,22 @@ impl ListAccountRolesInput {
                         aws_smithy_types::primitive::Encoder::from(*inner_4).encode(),
                     );
                 }
-                if let Some(inner_5) = &_input.account_id {
-                    query.push_kv("account_id", &aws_smithy_http::query::fmt_string(&inner_5));
+                let inner_5 = &_input.account_id;
+                let inner_5 = inner_5.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_5.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("account_id", &aws_smithy_http::query::fmt_string(&inner_5));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
