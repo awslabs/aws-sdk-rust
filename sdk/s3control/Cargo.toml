@@ -94,7 +94,7 @@ version = "1.0.0"
 
 [dev-dependencies.tokio]
 version = "1.8.4"
-features = ["macros", "test-util"]
+features = ["macros", "test-util", "rt-multi-thread"]
 
 [dev-dependencies.tracing-subscriber]
 version = "0.3.15"
