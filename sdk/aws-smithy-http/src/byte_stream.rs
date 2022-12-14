@@ -123,7 +123,6 @@
 
 use crate::body::SdkBody;
 use crate::byte_stream::error::Error;
-use crate::callback::BodyCallback;
 use bytes::Buf;
 use bytes::Bytes;
 use bytes_utils::SegmentedBuf;
@@ -374,14 +373,6 @@ impl ByteStream {
         FsBuilder::new().file(file).build().await
     }
 
-    /// Set a callback on this `ByteStream`. The callback's methods will be called at various points
-    /// throughout this `ByteStream`'s life cycle. See the [`BodyCallback`](BodyCallback) trait for
-    /// more information.
-    pub fn with_body_callback(&mut self, body_callback: Box<dyn BodyCallback>) -> &mut Self {
-        self.inner.with_body_callback(body_callback);
-        self
-    }
-
     #[cfg(feature = "rt-tokio")]
     /// Convert this `ByteStream` into a struct that implements [`AsyncRead`](tokio::io::AsyncRead).
     ///
@@ -539,13 +530,6 @@ impl<B> Inner<B> {
             output.push(buf?);
         }
         Ok(AggregatedBytes(output))
-    }
-}
-
-impl Inner<SdkBody> {
-    fn with_body_callback(&mut self, body_callback: Box<dyn BodyCallback>) -> &mut Self {
-        self.body.with_callback(body_callback);
-        self
     }
 }
 
