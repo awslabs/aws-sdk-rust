@@ -7,7 +7,7 @@ pub fn serialize_structure_crate_input_create_chat_token_input(
         let mut object_2 = object.key("attributes").start_object();
         for (key_3, value_4) in var_1 {
             {
-                object_2.key(key_3).string(value_4.as_str());
+                object_2.key(key_3.as_str()).string(value_4.as_str());
             }
         }
         object_2.finish();
@@ -67,7 +67,7 @@ pub fn serialize_structure_crate_input_create_room_input(
         let mut object_14 = object.key("tags").start_object();
         for (key_15, value_16) in var_13 {
             {
-                object_14.key(key_15).string(value_16.as_str());
+                object_14.key(key_15.as_str()).string(value_16.as_str());
             }
         }
         object_14.finish();
@@ -159,7 +159,7 @@ pub fn serialize_structure_crate_input_send_event_input(
         let mut object_29 = object.key("attributes").start_object();
         for (key_30, value_31) in var_28 {
             {
-                object_29.key(key_30).string(value_31.as_str());
+                object_29.key(key_30.as_str()).string(value_31.as_str());
             }
         }
         object_29.finish();
@@ -181,7 +181,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_35 = object.key("tags").start_object();
         for (key_36, value_37) in var_34 {
             {
-                object_35.key(key_36).string(value_37.as_str());
+                object_35.key(key_36.as_str()).string(value_37.as_str());
             }
         }
         object_35.finish();

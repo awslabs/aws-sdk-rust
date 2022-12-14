@@ -26,7 +26,7 @@ pub fn serialize_structure_crate_input_create_assistant_input(
         let mut object_7 = object.key("tags").start_object();
         for (key_8, value_9) in var_6 {
             {
-                object_7.key(key_8).string(value_9.as_str());
+                object_7.key(key_8.as_str()).string(value_9.as_str());
             }
         }
         object_7.finish();
@@ -59,7 +59,7 @@ pub fn serialize_structure_crate_input_create_assistant_association_input(
         let mut object_16 = object.key("tags").start_object();
         for (key_17, value_18) in var_15 {
             {
-                object_16.key(key_17).string(value_18.as_str());
+                object_16.key(key_17.as_str()).string(value_18.as_str());
             }
         }
         object_16.finish();
@@ -78,7 +78,7 @@ pub fn serialize_structure_crate_input_create_content_input(
         let mut object_21 = object.key("metadata").start_object();
         for (key_22, value_23) in var_20 {
             {
-                object_21.key(key_22).string(value_23.as_str());
+                object_21.key(key_22.as_str()).string(value_23.as_str());
             }
         }
         object_21.finish();
@@ -93,7 +93,7 @@ pub fn serialize_structure_crate_input_create_content_input(
         let mut object_27 = object.key("tags").start_object();
         for (key_28, value_29) in var_26 {
             {
-                object_27.key(key_28).string(value_29.as_str());
+                object_27.key(key_28.as_str()).string(value_29.as_str());
             }
         }
         object_27.finish();
@@ -150,7 +150,7 @@ pub fn serialize_structure_crate_input_create_knowledge_base_input(
         let mut object_43 = object.key("tags").start_object();
         for (key_44, value_45) in var_42 {
             {
-                object_43.key(key_44).string(value_45.as_str());
+                object_43.key(key_44.as_str()).string(value_45.as_str());
             }
         }
         object_43.finish();
@@ -175,7 +175,7 @@ pub fn serialize_structure_crate_input_create_session_input(
         let mut object_50 = object.key("tags").start_object();
         for (key_51, value_52) in var_49 {
             {
-                object_50.key(key_51).string(value_52.as_str());
+                object_50.key(key_51.as_str()).string(value_52.as_str());
             }
         }
         object_50.finish();
@@ -278,7 +278,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_69 = object.key("tags").start_object();
         for (key_70, value_71) in var_68 {
             {
-                object_69.key(key_70).string(value_71.as_str());
+                object_69.key(key_70.as_str()).string(value_71.as_str());
             }
         }
         object_69.finish();
@@ -294,7 +294,7 @@ pub fn serialize_structure_crate_input_update_content_input(
         let mut object_73 = object.key("metadata").start_object();
         for (key_74, value_75) in var_72 {
             {
-                object_73.key(key_74).string(value_75.as_str());
+                object_73.key(key_74.as_str()).string(value_75.as_str());
             }
         }
         object_73.finish();

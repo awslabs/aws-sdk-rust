@@ -17,7 +17,7 @@ impl std::fmt::Debug for UnrecognizedPublicKeyEncodingException {
 }
 impl UnrecognizedPublicKeyEncodingException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -82,7 +82,7 @@ impl std::fmt::Debug for NoSuchEntityException {
 }
 impl NoSuchEntityException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -147,7 +147,7 @@ impl std::fmt::Debug for LimitExceededException {
 }
 impl LimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -212,7 +212,7 @@ impl std::fmt::Debug for InvalidPublicKeyException {
 }
 impl InvalidPublicKeyException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -277,7 +277,7 @@ impl std::fmt::Debug for DuplicateSshPublicKeyException {
 }
 impl DuplicateSshPublicKeyException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -345,7 +345,7 @@ impl std::fmt::Debug for ServiceFailureException {
 }
 impl ServiceFailureException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -410,7 +410,7 @@ impl std::fmt::Debug for MalformedCertificateException {
 }
 impl MalformedCertificateException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -475,7 +475,7 @@ impl std::fmt::Debug for InvalidCertificateException {
 }
 impl InvalidCertificateException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -540,7 +540,7 @@ impl std::fmt::Debug for EntityAlreadyExistsException {
 }
 impl EntityAlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -605,7 +605,7 @@ impl std::fmt::Debug for DuplicateCertificateException {
 }
 impl DuplicateCertificateException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -670,7 +670,7 @@ impl std::fmt::Debug for KeyPairMismatchException {
 }
 impl KeyPairMismatchException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -735,7 +735,7 @@ impl std::fmt::Debug for InvalidInputException {
 }
 impl InvalidInputException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -800,7 +800,7 @@ impl std::fmt::Debug for ConcurrentModificationException {
 }
 impl ConcurrentModificationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -865,7 +865,7 @@ impl std::fmt::Debug for EntityTemporarilyUnmodifiableException {
 }
 impl EntityTemporarilyUnmodifiableException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -930,7 +930,7 @@ impl std::fmt::Debug for UnmodifiableEntityException {
 }
 impl UnmodifiableEntityException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -995,7 +995,7 @@ impl std::fmt::Debug for PasswordPolicyViolationException {
 }
 impl PasswordPolicyViolationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1060,7 +1060,7 @@ impl std::fmt::Debug for MalformedPolicyDocumentException {
 }
 impl MalformedPolicyDocumentException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1125,7 +1125,7 @@ impl std::fmt::Debug for PolicyEvaluationException {
 }
 impl PolicyEvaluationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1190,7 +1190,7 @@ impl std::fmt::Debug for InvalidAuthenticationCodeException {
 }
 impl InvalidAuthenticationCodeException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1255,7 +1255,7 @@ impl std::fmt::Debug for PolicyNotAttachableException {
 }
 impl PolicyNotAttachableException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1320,7 +1320,7 @@ impl std::fmt::Debug for ServiceNotSupportedException {
 }
 impl ServiceNotSupportedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1385,7 +1385,7 @@ impl std::fmt::Debug for CredentialReportNotReadyException {
 }
 impl CredentialReportNotReadyException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1450,7 +1450,7 @@ impl std::fmt::Debug for CredentialReportNotPresentException {
 }
 impl CredentialReportNotPresentException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1515,7 +1515,7 @@ impl std::fmt::Debug for CredentialReportExpiredException {
 }
 impl CredentialReportExpiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1580,7 +1580,7 @@ impl std::fmt::Debug for ReportGenerationLimitExceededException {
 }
 impl ReportGenerationLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1645,7 +1645,7 @@ impl std::fmt::Debug for DeleteConflictException {
 }
 impl DeleteConflictException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1710,7 +1710,7 @@ impl std::fmt::Debug for InvalidUserTypeException {
 }
 impl InvalidUserTypeException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }

@@ -17,7 +17,7 @@ impl std::fmt::Debug for PriorRequestNotComplete {
 }
 impl PriorRequestNotComplete {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -82,7 +82,7 @@ impl std::fmt::Debug for NoSuchTrafficPolicyInstance {
 }
 impl NoSuchTrafficPolicyInstance {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -147,7 +147,7 @@ impl std::fmt::Debug for NoSuchTrafficPolicy {
 }
 impl NoSuchTrafficPolicy {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -212,7 +212,7 @@ impl std::fmt::Debug for InvalidInput {
 }
 impl InvalidInput {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -277,7 +277,7 @@ impl std::fmt::Debug for ConflictingTypes {
 }
 impl ConflictingTypes {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -342,7 +342,7 @@ impl std::fmt::Debug for ConcurrentModification {
 }
 impl ConcurrentModification {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -407,7 +407,7 @@ impl std::fmt::Debug for NoSuchHostedZone {
 }
 impl NoSuchHostedZone {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -472,7 +472,7 @@ impl std::fmt::Debug for NoSuchHealthCheck {
 }
 impl NoSuchHealthCheck {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -537,7 +537,7 @@ impl std::fmt::Debug for HealthCheckVersionMismatch {
 }
 impl HealthCheckVersionMismatch {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -602,7 +602,7 @@ impl std::fmt::Debug for InvalidPaginationToken {
 }
 impl InvalidPaginationToken {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -667,7 +667,7 @@ impl std::fmt::Debug for ThrottlingException {
 }
 impl ThrottlingException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -732,7 +732,7 @@ impl std::fmt::Debug for InvalidDomainName {
 }
 impl InvalidDomainName {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -797,7 +797,7 @@ impl std::fmt::Debug for NoSuchDelegationSet {
 }
 impl NoSuchDelegationSet {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -862,7 +862,7 @@ impl std::fmt::Debug for DelegationSetNotReusable {
 }
 impl DelegationSetNotReusable {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -927,7 +927,7 @@ impl std::fmt::Debug for IncompatibleVersion {
 }
 impl IncompatibleVersion {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -992,7 +992,7 @@ impl std::fmt::Debug for NoSuchCidrCollectionException {
 }
 impl NoSuchCidrCollectionException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1057,7 +1057,7 @@ impl std::fmt::Debug for NoSuchCidrLocationException {
 }
 impl NoSuchCidrLocationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1122,7 +1122,7 @@ impl std::fmt::Debug for NoSuchQueryLoggingConfig {
 }
 impl NoSuchQueryLoggingConfig {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1187,7 +1187,7 @@ impl std::fmt::Debug for HostedZoneNotPrivate {
 }
 impl HostedZoneNotPrivate {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1252,7 +1252,7 @@ impl std::fmt::Debug for NoSuchGeoLocation {
 }
 impl NoSuchGeoLocation {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1317,7 +1317,7 @@ impl std::fmt::Debug for InvalidArgument {
 }
 impl InvalidArgument {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1382,7 +1382,7 @@ impl std::fmt::Debug for NoSuchChange {
 }
 impl NoSuchChange {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1447,7 +1447,7 @@ impl std::fmt::Debug for KeySigningKeyWithActiveStatusNotFound {
 }
 impl KeySigningKeyWithActiveStatusNotFound {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1512,7 +1512,7 @@ impl std::fmt::Debug for InvalidKmsArn {
 }
 impl InvalidKmsArn {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1577,7 +1577,7 @@ impl std::fmt::Debug for InvalidKeySigningKeyStatus {
 }
 impl InvalidKeySigningKeyStatus {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1642,7 +1642,7 @@ impl std::fmt::Debug for HostedZonePartiallyDelegated {
 }
 impl HostedZonePartiallyDelegated {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1707,7 +1707,7 @@ impl std::fmt::Debug for DnssecNotFound {
 }
 impl DnssecNotFound {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1772,7 +1772,7 @@ impl std::fmt::Debug for VpcAssociationNotFound {
 }
 impl VpcAssociationNotFound {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1837,7 +1837,7 @@ impl std::fmt::Debug for LastVpcAssociation {
 }
 impl LastVpcAssociation {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1902,7 +1902,7 @@ impl std::fmt::Debug for InvalidVpcId {
 }
 impl InvalidVpcId {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1967,7 +1967,7 @@ impl std::fmt::Debug for KeySigningKeyInParentDsRecord {
 }
 impl KeySigningKeyInParentDsRecord {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2035,7 +2035,7 @@ impl std::fmt::Debug for VpcAssociationAuthorizationNotFound {
 }
 impl VpcAssociationAuthorizationNotFound {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2103,7 +2103,7 @@ impl std::fmt::Debug for TrafficPolicyInUse {
 }
 impl TrafficPolicyInUse {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2168,7 +2168,7 @@ impl std::fmt::Debug for DelegationSetInUse {
 }
 impl DelegationSetInUse {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2233,7 +2233,7 @@ impl std::fmt::Debug for NoSuchKeySigningKey {
 }
 impl NoSuchKeySigningKey {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2298,7 +2298,7 @@ impl std::fmt::Debug for InvalidSigningStatus {
 }
 impl InvalidSigningStatus {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2363,7 +2363,7 @@ impl std::fmt::Debug for HostedZoneNotEmpty {
 }
 impl HostedZoneNotEmpty {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2429,7 +2429,7 @@ impl std::fmt::Debug for HealthCheckInUse {
 }
 impl HealthCheckInUse {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2494,7 +2494,7 @@ impl std::fmt::Debug for CidrCollectionInUseException {
 }
 impl CidrCollectionInUseException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2559,7 +2559,7 @@ impl std::fmt::Debug for KeySigningKeyInUse {
 }
 impl KeySigningKeyInUse {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2624,7 +2624,7 @@ impl std::fmt::Debug for TooManyVpcAssociationAuthorizations {
 }
 impl TooManyVpcAssociationAuthorizations {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2693,7 +2693,7 @@ impl std::fmt::Debug for TooManyTrafficPolicyVersionsForCurrentPolicy {
 }
 impl TooManyTrafficPolicyVersionsForCurrentPolicy {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2758,7 +2758,7 @@ impl std::fmt::Debug for InvalidTrafficPolicyDocument {
 }
 impl InvalidTrafficPolicyDocument {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2823,7 +2823,7 @@ impl std::fmt::Debug for TrafficPolicyInstanceAlreadyExists {
 }
 impl TrafficPolicyInstanceAlreadyExists {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2891,7 +2891,7 @@ impl std::fmt::Debug for TooManyTrafficPolicyInstances {
 }
 impl TooManyTrafficPolicyInstances {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2956,7 +2956,7 @@ impl std::fmt::Debug for TrafficPolicyAlreadyExists {
 }
 impl TrafficPolicyAlreadyExists {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3024,7 +3024,7 @@ impl std::fmt::Debug for TooManyTrafficPolicies {
 }
 impl TooManyTrafficPolicies {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3089,7 +3089,7 @@ impl std::fmt::Debug for LimitsExceeded {
 }
 impl LimitsExceeded {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3154,7 +3154,7 @@ impl std::fmt::Debug for HostedZoneNotFound {
 }
 impl HostedZoneNotFound {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3219,7 +3219,7 @@ impl std::fmt::Debug for DelegationSetNotAvailable {
 }
 impl DelegationSetNotAvailable {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3284,7 +3284,7 @@ impl std::fmt::Debug for DelegationSetAlreadyReusable {
 }
 impl DelegationSetAlreadyReusable {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3349,7 +3349,7 @@ impl std::fmt::Debug for DelegationSetAlreadyCreated {
 }
 impl DelegationSetAlreadyCreated {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3414,7 +3414,7 @@ impl std::fmt::Debug for QueryLoggingConfigAlreadyExists {
 }
 impl QueryLoggingConfigAlreadyExists {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3479,7 +3479,7 @@ impl std::fmt::Debug for NoSuchCloudWatchLogsLogGroup {
 }
 impl NoSuchCloudWatchLogsLogGroup {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3550,7 +3550,7 @@ impl std::fmt::Debug for InsufficientCloudWatchLogsResourcePolicy {
 }
 impl InsufficientCloudWatchLogsResourcePolicy {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3615,7 +3615,7 @@ impl std::fmt::Debug for TooManyKeySigningKeys {
 }
 impl TooManyKeySigningKeys {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3680,7 +3680,7 @@ impl std::fmt::Debug for KeySigningKeyAlreadyExists {
 }
 impl KeySigningKeyAlreadyExists {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3745,7 +3745,7 @@ impl std::fmt::Debug for InvalidKeySigningKeyName {
 }
 impl InvalidKeySigningKeyName {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3814,7 +3814,7 @@ impl std::fmt::Debug for TooManyHostedZones {
 }
 impl TooManyHostedZones {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3879,7 +3879,7 @@ impl std::fmt::Debug for HostedZoneAlreadyExists {
 }
 impl HostedZoneAlreadyExists {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3949,7 +3949,7 @@ impl std::fmt::Debug for ConflictingDomainExists {
 }
 impl ConflictingDomainExists {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4017,7 +4017,7 @@ impl std::fmt::Debug for TooManyHealthChecks {
 }
 impl TooManyHealthChecks {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4086,7 +4086,7 @@ impl std::fmt::Debug for HealthCheckAlreadyExists {
 }
 impl HealthCheckAlreadyExists {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4151,7 +4151,7 @@ impl std::fmt::Debug for CidrCollectionAlreadyExistsException {
 }
 impl CidrCollectionAlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4226,7 +4226,7 @@ impl std::fmt::Debug for InvalidChangeBatch {
 }
 impl InvalidChangeBatch {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4312,7 +4312,7 @@ impl std::fmt::Debug for CidrCollectionVersionMismatchException {
 }
 impl CidrCollectionVersionMismatchException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4377,7 +4377,7 @@ impl std::fmt::Debug for CidrBlockInUseException {
 }
 impl CidrBlockInUseException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4442,7 +4442,7 @@ impl std::fmt::Debug for PublicZoneVpcAssociation {
 }
 impl PublicZoneVpcAssociation {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4507,7 +4507,7 @@ impl std::fmt::Debug for NotAuthorizedException {
 }
 impl NotAuthorizedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }

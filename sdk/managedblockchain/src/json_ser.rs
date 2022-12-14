@@ -59,7 +59,7 @@ pub fn serialize_structure_crate_input_create_network_input(
         let mut object_15 = object.key("Tags").start_object();
         for (key_16, value_17) in var_14 {
             {
-                object_15.key(key_16).string(value_17.as_str());
+                object_15.key(key_16.as_str()).string(value_17.as_str());
             }
         }
         object_15.finish();
@@ -94,7 +94,7 @@ pub fn serialize_structure_crate_input_create_node_input(
         let mut object_25 = object.key("Tags").start_object();
         for (key_26, value_27) in var_24 {
             {
-                object_25.key(key_26).string(value_27.as_str());
+                object_25.key(key_26.as_str()).string(value_27.as_str());
             }
         }
         object_25.finish();
@@ -124,7 +124,7 @@ pub fn serialize_structure_crate_input_create_proposal_input(
         let mut object_34 = object.key("Tags").start_object();
         for (key_35, value_36) in var_33 {
             {
-                object_34.key(key_35).string(value_36.as_str());
+                object_34.key(key_35.as_str()).string(value_36.as_str());
             }
         }
         object_34.finish();
@@ -140,7 +140,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_38 = object.key("Tags").start_object();
         for (key_39, value_40) in var_37 {
             {
-                object_38.key(key_39).string(value_40.as_str());
+                object_38.key(key_39.as_str()).string(value_40.as_str());
             }
         }
         object_38.finish();
@@ -224,7 +224,7 @@ pub fn serialize_structure_crate_model_member_configuration(
         let mut object_55 = object.key("Tags").start_object();
         for (key_56, value_57) in var_54 {
             {
-                object_55.key(key_56).string(value_57.as_str());
+                object_55.key(key_56.as_str()).string(value_57.as_str());
             }
         }
         object_55.finish();

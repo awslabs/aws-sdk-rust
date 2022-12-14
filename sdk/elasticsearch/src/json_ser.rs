@@ -41,7 +41,7 @@ pub fn serialize_structure_crate_input_create_elasticsearch_domain_input(
         let mut object_9 = object.key("AdvancedOptions").start_object();
         for (key_10, value_11) in var_8 {
             {
-                object_9.key(key_10).string(value_11.as_str());
+                object_9.key(key_10.as_str()).string(value_11.as_str());
             }
         }
         object_9.finish();
@@ -372,7 +372,7 @@ pub fn serialize_structure_crate_input_update_elasticsearch_domain_config_input(
         let mut object_81 = object.key("AdvancedOptions").start_object();
         for (key_82, value_83) in var_80 {
             {
-                object_81.key(key_82).string(value_83.as_str());
+                object_81.key(key_82.as_str()).string(value_83.as_str());
             }
         }
         object_81.finish();

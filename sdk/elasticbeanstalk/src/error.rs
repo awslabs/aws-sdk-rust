@@ -17,7 +17,7 @@ impl std::fmt::Debug for TooManyBucketsException {
 }
 impl TooManyBucketsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -82,7 +82,7 @@ impl std::fmt::Debug for InsufficientPrivilegesException {
 }
 impl InsufficientPrivilegesException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -148,7 +148,7 @@ impl std::fmt::Debug for TooManyTagsException {
 }
 impl TooManyTagsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -213,7 +213,7 @@ impl std::fmt::Debug for ResourceTypeNotSupportedException {
 }
 impl ResourceTypeNotSupportedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -278,7 +278,7 @@ impl std::fmt::Debug for ResourceNotFoundException {
 }
 impl ResourceNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -343,7 +343,7 @@ impl std::fmt::Debug for OperationInProgressException {
 }
 impl OperationInProgressException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -408,7 +408,7 @@ impl std::fmt::Debug for ElasticBeanstalkServiceException {
 }
 impl ElasticBeanstalkServiceException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -473,7 +473,7 @@ impl std::fmt::Debug for InvalidRequestException {
 }
 impl InvalidRequestException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -538,7 +538,7 @@ impl std::fmt::Debug for PlatformVersionStillReferencedException {
 }
 impl PlatformVersionStillReferencedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -603,7 +603,7 @@ impl std::fmt::Debug for SourceBundleDeletionException {
 }
 impl SourceBundleDeletionException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -673,7 +673,7 @@ impl std::fmt::Debug for S3LocationNotInServiceRegionException {
 }
 impl S3LocationNotInServiceRegionException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -738,7 +738,7 @@ impl std::fmt::Debug for S3SubscriptionRequiredException {
 }
 impl S3SubscriptionRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -803,7 +803,7 @@ impl std::fmt::Debug for TooManyPlatformsException {
 }
 impl TooManyPlatformsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -868,7 +868,7 @@ impl std::fmt::Debug for TooManyEnvironmentsException {
 }
 impl TooManyEnvironmentsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -933,7 +933,7 @@ impl std::fmt::Debug for TooManyConfigurationTemplatesException {
 }
 impl TooManyConfigurationTemplatesException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -998,7 +998,7 @@ impl std::fmt::Debug for TooManyApplicationVersionsException {
 }
 impl TooManyApplicationVersionsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1063,7 +1063,7 @@ impl std::fmt::Debug for TooManyApplicationsException {
 }
 impl TooManyApplicationsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1128,7 +1128,7 @@ impl std::fmt::Debug for CodeBuildNotInServiceRegionException {
 }
 impl CodeBuildNotInServiceRegionException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1193,7 +1193,7 @@ impl std::fmt::Debug for ManagedActionInvalidStateException {
 }
 impl ManagedActionInvalidStateException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }

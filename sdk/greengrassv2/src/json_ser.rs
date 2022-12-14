@@ -69,7 +69,7 @@ pub fn serialize_structure_crate_input_create_component_version_input(
         let mut object_15 = object.key("tags").start_object();
         for (key_16, value_17) in var_14 {
             {
-                object_15.key(key_16).string(value_17.as_str());
+                object_15.key(key_16.as_str()).string(value_17.as_str());
             }
         }
         object_15.finish();
@@ -88,7 +88,7 @@ pub fn serialize_structure_crate_input_create_deployment_input(
         let mut object_20 = object.key("components").start_object();
         for (key_21, value_22) in var_19 {
             {
-                let mut object_23 = object_20.key(key_21).start_object();
+                let mut object_23 = object_20.key(key_21.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_component_deployment_specification(&mut object_23, value_22)?;
                 object_23.finish();
             }
@@ -118,7 +118,7 @@ pub fn serialize_structure_crate_input_create_deployment_input(
         let mut object_30 = object.key("tags").start_object();
         for (key_31, value_32) in var_29 {
             {
-                object_30.key(key_31).string(value_32.as_str());
+                object_30.key(key_31.as_str()).string(value_32.as_str());
             }
         }
         object_30.finish();
@@ -166,7 +166,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_41 = object.key("tags").start_object();
         for (key_42, value_43) in var_40 {
             {
-                object_41.key(key_42).string(value_43.as_str());
+                object_41.key(key_42.as_str()).string(value_43.as_str());
             }
         }
         object_41.finish();
@@ -246,7 +246,7 @@ pub fn serialize_structure_crate_model_lambda_function_recipe_source(
         let mut object_58 = object.key("componentDependencies").start_object();
         for (key_59, value_60) in var_57 {
             {
-                let mut object_61 = object_58.key(key_59).start_object();
+                let mut object_61 = object_58.key(key_59.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_component_dependency_requirement(
                     &mut object_61,
                     value_60,
@@ -361,7 +361,7 @@ pub fn serialize_structure_crate_model_component_candidate(
         let mut object_83 = object.key("versionRequirements").start_object();
         for (key_84, value_85) in var_82 {
             {
-                object_83.key(key_84).string(value_85.as_str());
+                object_83.key(key_84.as_str()).string(value_85.as_str());
             }
         }
         object_83.finish();
@@ -380,7 +380,7 @@ pub fn serialize_structure_crate_model_component_platform(
         let mut object_88 = object.key("attributes").start_object();
         for (key_89, value_90) in var_87 {
             {
-                object_88.key(key_89).string(value_90.as_str());
+                object_88.key(key_89.as_str()).string(value_90.as_str());
             }
         }
         object_88.finish();
@@ -492,7 +492,7 @@ pub fn serialize_structure_crate_model_lambda_execution_parameters(
         let mut object_111 = object.key("environmentVariables").start_object();
         for (key_112, value_113) in var_110 {
             {
-                object_111.key(key_112).string(value_113.as_str());
+                object_111.key(key_112.as_str()).string(value_113.as_str());
             }
         }
         object_111.finish();

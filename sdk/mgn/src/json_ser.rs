@@ -27,7 +27,7 @@ pub fn serialize_structure_crate_input_create_launch_configuration_template_inpu
         let mut object_7 = object.key("tags").start_object();
         for (key_8, value_9) in var_6 {
             {
-                object_7.key(key_8).string(value_9.as_str());
+                object_7.key(key_8.as_str()).string(value_9.as_str());
             }
         }
         object_7.finish();
@@ -88,7 +88,7 @@ pub fn serialize_structure_crate_input_create_replication_configuration_template
         let mut object_22 = object.key("stagingAreaTags").start_object();
         for (key_23, value_24) in var_21 {
             {
-                object_22.key(key_23).string(value_24.as_str());
+                object_22.key(key_23.as_str()).string(value_24.as_str());
             }
         }
         object_22.finish();
@@ -97,7 +97,7 @@ pub fn serialize_structure_crate_input_create_replication_configuration_template
         let mut object_26 = object.key("tags").start_object();
         for (key_27, value_28) in var_25 {
             {
-                object_26.key(key_27).string(value_28.as_str());
+                object_26.key(key_27.as_str()).string(value_28.as_str());
             }
         }
         object_26.finish();
@@ -358,7 +358,7 @@ pub fn serialize_structure_crate_input_start_cutover_input(
         let mut object_61 = object.key("tags").start_object();
         for (key_62, value_63) in var_60 {
             {
-                object_61.key(key_62).string(value_63.as_str());
+                object_61.key(key_62.as_str()).string(value_63.as_str());
             }
         }
         object_61.finish();
@@ -393,7 +393,7 @@ pub fn serialize_structure_crate_input_start_test_input(
         let mut object_69 = object.key("tags").start_object();
         for (key_70, value_71) in var_68 {
             {
-                object_69.key(key_70).string(value_71.as_str());
+                object_69.key(key_70.as_str()).string(value_71.as_str());
             }
         }
         object_69.finish();
@@ -409,7 +409,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_73 = object.key("tags").start_object();
         for (key_74, value_75) in var_72 {
             {
-                object_73.key(key_74).string(value_75.as_str());
+                object_73.key(key_74.as_str()).string(value_75.as_str());
             }
         }
         object_73.finish();
@@ -434,7 +434,7 @@ pub fn serialize_structure_crate_input_terminate_target_instances_input(
         let mut object_80 = object.key("tags").start_object();
         for (key_81, value_82) in var_79 {
             {
-                object_80.key(key_81).string(value_82.as_str());
+                object_80.key(key_81.as_str()).string(value_82.as_str());
             }
         }
         object_80.finish();
@@ -575,7 +575,7 @@ pub fn serialize_structure_crate_input_update_replication_configuration_input(
         let mut object_115 = object.key("stagingAreaTags").start_object();
         for (key_116, value_117) in var_114 {
             {
-                object_115.key(key_116).string(value_117.as_str());
+                object_115.key(key_116.as_str()).string(value_117.as_str());
             }
         }
         object_115.finish();
@@ -651,7 +651,7 @@ pub fn serialize_structure_crate_input_update_replication_configuration_template
         let mut object_133 = object.key("stagingAreaTags").start_object();
         for (key_134, value_135) in var_132 {
             {
-                object_133.key(key_134).string(value_135.as_str());
+                object_133.key(key_134.as_str()).string(value_135.as_str());
             }
         }
         object_133.finish();
@@ -842,7 +842,7 @@ pub fn serialize_structure_crate_model_ssm_document(
         let mut object_171 = object.key("parameters").start_object();
         for (key_172, value_173) in var_170 {
             {
-                let mut array_174 = object_171.key(key_172).start_array();
+                let mut array_174 = object_171.key(key_172.as_str()).start_array();
                 for item_175 in value_173 {
                     {
                         let mut object_176 = array_174.value().start_object();

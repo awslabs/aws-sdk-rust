@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_crate_error_already_exists_exception_json_err(
+pub(crate) fn deser_structure_crate_error_already_exists_exception_json_err(
     value: &[u8],
     mut builder: crate::error::already_exists_exception::Builder,
 ) -> Result<crate::error::already_exists_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -47,7 +47,7 @@ pub fn deser_structure_crate_error_already_exists_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_entity_not_found_exception_json_err(
+pub(crate) fn deser_structure_crate_error_entity_not_found_exception_json_err(
     value: &[u8],
     mut builder: crate::error::entity_not_found_exception::Builder,
 ) -> Result<crate::error::entity_not_found_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -90,7 +90,7 @@ pub fn deser_structure_crate_error_entity_not_found_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_glue_encryption_exception_json_err(
+pub(crate) fn deser_structure_crate_error_glue_encryption_exception_json_err(
     value: &[u8],
     mut builder: crate::error::glue_encryption_exception::Builder,
 ) -> Result<crate::error::glue_encryption_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -132,7 +132,7 @@ pub fn deser_structure_crate_error_glue_encryption_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_internal_service_exception_json_err(
+pub(crate) fn deser_structure_crate_error_internal_service_exception_json_err(
     value: &[u8],
     mut builder: crate::error::internal_service_exception::Builder,
 ) -> Result<crate::error::internal_service_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -175,7 +175,7 @@ pub fn deser_structure_crate_error_internal_service_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_invalid_input_exception_json_err(
+pub(crate) fn deser_structure_crate_error_invalid_input_exception_json_err(
     value: &[u8],
     mut builder: crate::error::invalid_input_exception::Builder,
 ) -> Result<crate::error::invalid_input_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -217,7 +217,7 @@ pub fn deser_structure_crate_error_invalid_input_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_operation_timeout_exception_json_err(
+pub(crate) fn deser_structure_crate_error_operation_timeout_exception_json_err(
     value: &[u8],
     mut builder: crate::error::operation_timeout_exception::Builder,
 ) -> Result<crate::error::operation_timeout_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -260,7 +260,7 @@ pub fn deser_structure_crate_error_operation_timeout_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_resource_number_limit_exceeded_exception_json_err(
+pub(crate) fn deser_structure_crate_error_resource_number_limit_exceeded_exception_json_err(
     value: &[u8],
     mut builder: crate::error::resource_number_limit_exceeded_exception::Builder,
 ) -> Result<
@@ -305,7 +305,7 @@ pub fn deser_structure_crate_error_resource_number_limit_exceeded_exception_json
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_batch_create_partition(
+pub(crate) fn deser_operation_crate_operation_batch_create_partition(
     value: &[u8],
     mut builder: crate::output::batch_create_partition_output::Builder,
 ) -> Result<
@@ -348,7 +348,7 @@ pub fn deser_operation_crate_operation_batch_create_partition(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_batch_delete_connection(
+pub(crate) fn deser_operation_crate_operation_batch_delete_connection(
     value: &[u8],
     mut builder: crate::output::batch_delete_connection_output::Builder,
 ) -> Result<
@@ -396,7 +396,7 @@ pub fn deser_operation_crate_operation_batch_delete_connection(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_batch_delete_partition(
+pub(crate) fn deser_operation_crate_operation_batch_delete_partition(
     value: &[u8],
     mut builder: crate::output::batch_delete_partition_output::Builder,
 ) -> Result<
@@ -439,7 +439,7 @@ pub fn deser_operation_crate_operation_batch_delete_partition(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_resource_not_ready_exception_json_err(
+pub(crate) fn deser_structure_crate_error_resource_not_ready_exception_json_err(
     value: &[u8],
     mut builder: crate::error::resource_not_ready_exception::Builder,
 ) -> Result<crate::error::resource_not_ready_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -482,7 +482,7 @@ pub fn deser_structure_crate_error_resource_not_ready_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_batch_delete_table(
+pub(crate) fn deser_operation_crate_operation_batch_delete_table(
     value: &[u8],
     mut builder: crate::output::batch_delete_table_output::Builder,
 ) -> Result<crate::output::batch_delete_table_output::Builder, aws_smithy_json::deserialize::Error>
@@ -521,7 +521,7 @@ pub fn deser_operation_crate_operation_batch_delete_table(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_batch_delete_table_version(
+pub(crate) fn deser_operation_crate_operation_batch_delete_table_version(
     value: &[u8],
     mut builder: crate::output::batch_delete_table_version_output::Builder,
 ) -> Result<
@@ -564,7 +564,7 @@ pub fn deser_operation_crate_operation_batch_delete_table_version(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_batch_get_blueprints(
+pub(crate) fn deser_operation_crate_operation_batch_get_blueprints(
     value: &[u8],
     mut builder: crate::output::batch_get_blueprints_output::Builder,
 ) -> Result<crate::output::batch_get_blueprints_output::Builder, aws_smithy_json::deserialize::Error>
@@ -610,7 +610,7 @@ pub fn deser_operation_crate_operation_batch_get_blueprints(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_batch_get_crawlers(
+pub(crate) fn deser_operation_crate_operation_batch_get_crawlers(
     value: &[u8],
     mut builder: crate::output::batch_get_crawlers_output::Builder,
 ) -> Result<crate::output::batch_get_crawlers_output::Builder, aws_smithy_json::deserialize::Error>
@@ -656,7 +656,7 @@ pub fn deser_operation_crate_operation_batch_get_crawlers(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_batch_get_custom_entity_types(
+pub(crate) fn deser_operation_crate_operation_batch_get_custom_entity_types(
     value: &[u8],
     mut builder: crate::output::batch_get_custom_entity_types_output::Builder,
 ) -> Result<
@@ -704,7 +704,7 @@ pub fn deser_operation_crate_operation_batch_get_custom_entity_types(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_access_denied_exception_json_err(
+pub(crate) fn deser_structure_crate_error_access_denied_exception_json_err(
     value: &[u8],
     mut builder: crate::error::access_denied_exception::Builder,
 ) -> Result<crate::error::access_denied_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -746,7 +746,7 @@ pub fn deser_structure_crate_error_access_denied_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_batch_get_dev_endpoints(
+pub(crate) fn deser_operation_crate_operation_batch_get_dev_endpoints(
     value: &[u8],
     mut builder: crate::output::batch_get_dev_endpoints_output::Builder,
 ) -> Result<
@@ -796,7 +796,7 @@ pub fn deser_operation_crate_operation_batch_get_dev_endpoints(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_batch_get_jobs(
+pub(crate) fn deser_operation_crate_operation_batch_get_jobs(
     value: &[u8],
     mut builder: crate::output::batch_get_jobs_output::Builder,
 ) -> Result<crate::output::batch_get_jobs_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -839,7 +839,7 @@ pub fn deser_operation_crate_operation_batch_get_jobs(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_invalid_state_exception_json_err(
+pub(crate) fn deser_structure_crate_error_invalid_state_exception_json_err(
     value: &[u8],
     mut builder: crate::error::invalid_state_exception::Builder,
 ) -> Result<crate::error::invalid_state_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -881,7 +881,7 @@ pub fn deser_structure_crate_error_invalid_state_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_batch_get_partition(
+pub(crate) fn deser_operation_crate_operation_batch_get_partition(
     value: &[u8],
     mut builder: crate::output::batch_get_partition_output::Builder,
 ) -> Result<crate::output::batch_get_partition_output::Builder, aws_smithy_json::deserialize::Error>
@@ -927,7 +927,7 @@ pub fn deser_operation_crate_operation_batch_get_partition(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_batch_get_triggers(
+pub(crate) fn deser_operation_crate_operation_batch_get_triggers(
     value: &[u8],
     mut builder: crate::output::batch_get_triggers_output::Builder,
 ) -> Result<crate::output::batch_get_triggers_output::Builder, aws_smithy_json::deserialize::Error>
@@ -973,7 +973,7 @@ pub fn deser_operation_crate_operation_batch_get_triggers(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_batch_get_workflows(
+pub(crate) fn deser_operation_crate_operation_batch_get_workflows(
     value: &[u8],
     mut builder: crate::output::batch_get_workflows_output::Builder,
 ) -> Result<crate::output::batch_get_workflows_output::Builder, aws_smithy_json::deserialize::Error>
@@ -1019,7 +1019,7 @@ pub fn deser_operation_crate_operation_batch_get_workflows(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_batch_stop_job_run(
+pub(crate) fn deser_operation_crate_operation_batch_stop_job_run(
     value: &[u8],
     mut builder: crate::output::batch_stop_job_run_output::Builder,
 ) -> Result<crate::output::batch_stop_job_run_output::Builder, aws_smithy_json::deserialize::Error>
@@ -1063,7 +1063,7 @@ pub fn deser_operation_crate_operation_batch_stop_job_run(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_batch_update_partition(
+pub(crate) fn deser_operation_crate_operation_batch_update_partition(
     value: &[u8],
     mut builder: crate::output::batch_update_partition_output::Builder,
 ) -> Result<
@@ -1104,7 +1104,7 @@ pub fn deser_operation_crate_operation_batch_update_partition(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_cancel_ml_task_run(
+pub(crate) fn deser_operation_crate_operation_cancel_ml_task_run(
     value: &[u8],
     mut builder: crate::output::cancel_ml_task_run_output::Builder,
 ) -> Result<crate::output::cancel_ml_task_run_output::Builder, aws_smithy_json::deserialize::Error>
@@ -1168,7 +1168,7 @@ pub fn deser_operation_crate_operation_cancel_ml_task_run(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_illegal_session_state_exception_json_err(
+pub(crate) fn deser_structure_crate_error_illegal_session_state_exception_json_err(
     value: &[u8],
     mut builder: crate::error::illegal_session_state_exception::Builder,
 ) -> Result<
@@ -1213,7 +1213,7 @@ pub fn deser_structure_crate_error_illegal_session_state_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_check_schema_version_validity(
+pub(crate) fn deser_operation_crate_operation_check_schema_version_validity(
     value: &[u8],
     mut builder: crate::output::check_schema_version_validity_output::Builder,
 ) -> Result<
@@ -1265,7 +1265,7 @@ pub fn deser_operation_crate_operation_check_schema_version_validity(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_create_blueprint(
+pub(crate) fn deser_operation_crate_operation_create_blueprint(
     value: &[u8],
     mut builder: crate::output::create_blueprint_output::Builder,
 ) -> Result<crate::output::create_blueprint_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -1307,7 +1307,7 @@ pub fn deser_operation_crate_operation_create_blueprint(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(
+pub(crate) fn deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(
     value: &[u8],
     mut builder: crate::error::idempotent_parameter_mismatch_exception::Builder,
 ) -> Result<
@@ -1352,7 +1352,7 @@ pub fn deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_create_custom_entity_type(
+pub(crate) fn deser_operation_crate_operation_create_custom_entity_type(
     value: &[u8],
     mut builder: crate::output::create_custom_entity_type_output::Builder,
 ) -> Result<
@@ -1397,7 +1397,7 @@ pub fn deser_operation_crate_operation_create_custom_entity_type(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_concurrent_modification_exception_json_err(
+pub(crate) fn deser_structure_crate_error_concurrent_modification_exception_json_err(
     value: &[u8],
     mut builder: crate::error::concurrent_modification_exception::Builder,
 ) -> Result<
@@ -1442,7 +1442,7 @@ pub fn deser_structure_crate_error_concurrent_modification_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_validation_exception_json_err(
+pub(crate) fn deser_structure_crate_error_validation_exception_json_err(
     value: &[u8],
     mut builder: crate::error::validation_exception::Builder,
 ) -> Result<crate::error::validation_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -1484,7 +1484,7 @@ pub fn deser_structure_crate_error_validation_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_create_dev_endpoint(
+pub(crate) fn deser_operation_crate_operation_create_dev_endpoint(
     value: &[u8],
     mut builder: crate::output::create_dev_endpoint_output::Builder,
 ) -> Result<crate::output::create_dev_endpoint_output::Builder, aws_smithy_json::deserialize::Error>
@@ -1554,7 +1554,7 @@ pub fn deser_operation_crate_operation_create_dev_endpoint(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.try_into())
+                            .map(i32::try_from)
                             .transpose()?,
                         );
                     }
@@ -1563,7 +1563,7 @@ pub fn deser_operation_crate_operation_create_dev_endpoint(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.try_into())
+                            .map(i32::try_from)
                             .transpose()?,
                         );
                     }
@@ -1593,7 +1593,7 @@ pub fn deser_operation_crate_operation_create_dev_endpoint(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.try_into())
+                            .map(i32::try_from)
                             .transpose()?,
                         );
                     }
@@ -1683,7 +1683,7 @@ pub fn deser_operation_crate_operation_create_dev_endpoint(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_create_job(
+pub(crate) fn deser_operation_crate_operation_create_job(
     value: &[u8],
     mut builder: crate::output::create_job_output::Builder,
 ) -> Result<crate::output::create_job_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -1725,7 +1725,7 @@ pub fn deser_operation_crate_operation_create_job(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_create_ml_transform(
+pub(crate) fn deser_operation_crate_operation_create_ml_transform(
     value: &[u8],
     mut builder: crate::output::create_ml_transform_output::Builder,
 ) -> Result<crate::output::create_ml_transform_output::Builder, aws_smithy_json::deserialize::Error>
@@ -1768,7 +1768,7 @@ pub fn deser_operation_crate_operation_create_ml_transform(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_create_registry(
+pub(crate) fn deser_operation_crate_operation_create_registry(
     value: &[u8],
     mut builder: crate::output::create_registry_output::Builder,
 ) -> Result<crate::output::create_registry_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -1833,7 +1833,7 @@ pub fn deser_operation_crate_operation_create_registry(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_create_schema(
+pub(crate) fn deser_operation_crate_operation_create_schema(
     value: &[u8],
     mut builder: crate::output::create_schema_output::Builder,
 ) -> Result<crate::output::create_schema_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -1921,7 +1921,7 @@ pub fn deser_operation_crate_operation_create_schema(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.try_into())
+                            .map(i64::try_from)
                             .transpose()?,
                         );
                     }
@@ -1930,7 +1930,7 @@ pub fn deser_operation_crate_operation_create_schema(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.try_into())
+                            .map(i64::try_from)
                             .transpose()?,
                         );
                     }
@@ -1939,7 +1939,7 @@ pub fn deser_operation_crate_operation_create_schema(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.try_into())
+                            .map(i64::try_from)
                             .transpose()?,
                         );
                     }
@@ -2000,7 +2000,7 @@ pub fn deser_operation_crate_operation_create_schema(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_create_script(
+pub(crate) fn deser_operation_crate_operation_create_script(
     value: &[u8],
     mut builder: crate::output::create_script_output::Builder,
 ) -> Result<crate::output::create_script_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -2051,7 +2051,7 @@ pub fn deser_operation_crate_operation_create_script(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_create_security_configuration(
+pub(crate) fn deser_operation_crate_operation_create_security_configuration(
     value: &[u8],
     mut builder: crate::output::create_security_configuration_output::Builder,
 ) -> Result<
@@ -2104,7 +2104,7 @@ pub fn deser_operation_crate_operation_create_security_configuration(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_create_session(
+pub(crate) fn deser_operation_crate_operation_create_session(
     value: &[u8],
     mut builder: crate::output::create_session_output::Builder,
 ) -> Result<crate::output::create_session_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -2142,7 +2142,7 @@ pub fn deser_operation_crate_operation_create_session(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_create_trigger(
+pub(crate) fn deser_operation_crate_operation_create_trigger(
     value: &[u8],
     mut builder: crate::output::create_trigger_output::Builder,
 ) -> Result<crate::output::create_trigger_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -2184,7 +2184,7 @@ pub fn deser_operation_crate_operation_create_trigger(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_create_workflow(
+pub(crate) fn deser_operation_crate_operation_create_workflow(
     value: &[u8],
     mut builder: crate::output::create_workflow_output::Builder,
 ) -> Result<crate::output::create_workflow_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -2226,7 +2226,7 @@ pub fn deser_operation_crate_operation_create_workflow(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_delete_blueprint(
+pub(crate) fn deser_operation_crate_operation_delete_blueprint(
     value: &[u8],
     mut builder: crate::output::delete_blueprint_output::Builder,
 ) -> Result<crate::output::delete_blueprint_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -2268,7 +2268,7 @@ pub fn deser_operation_crate_operation_delete_blueprint(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_crawler_running_exception_json_err(
+pub(crate) fn deser_structure_crate_error_crawler_running_exception_json_err(
     value: &[u8],
     mut builder: crate::error::crawler_running_exception::Builder,
 ) -> Result<crate::error::crawler_running_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -2310,7 +2310,7 @@ pub fn deser_structure_crate_error_crawler_running_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_scheduler_transitioning_exception_json_err(
+pub(crate) fn deser_structure_crate_error_scheduler_transitioning_exception_json_err(
     value: &[u8],
     mut builder: crate::error::scheduler_transitioning_exception::Builder,
 ) -> Result<
@@ -2355,7 +2355,7 @@ pub fn deser_structure_crate_error_scheduler_transitioning_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_delete_custom_entity_type(
+pub(crate) fn deser_operation_crate_operation_delete_custom_entity_type(
     value: &[u8],
     mut builder: crate::output::delete_custom_entity_type_output::Builder,
 ) -> Result<
@@ -2400,7 +2400,7 @@ pub fn deser_operation_crate_operation_delete_custom_entity_type(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_delete_job(
+pub(crate) fn deser_operation_crate_operation_delete_job(
     value: &[u8],
     mut builder: crate::output::delete_job_output::Builder,
 ) -> Result<crate::output::delete_job_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -2442,7 +2442,7 @@ pub fn deser_operation_crate_operation_delete_job(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_delete_ml_transform(
+pub(crate) fn deser_operation_crate_operation_delete_ml_transform(
     value: &[u8],
     mut builder: crate::output::delete_ml_transform_output::Builder,
 ) -> Result<crate::output::delete_ml_transform_output::Builder, aws_smithy_json::deserialize::Error>
@@ -2485,7 +2485,7 @@ pub fn deser_operation_crate_operation_delete_ml_transform(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_conflict_exception_json_err(
+pub(crate) fn deser_structure_crate_error_conflict_exception_json_err(
     value: &[u8],
     mut builder: crate::error::conflict_exception::Builder,
 ) -> Result<crate::error::conflict_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -2527,7 +2527,7 @@ pub fn deser_structure_crate_error_conflict_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_delete_registry(
+pub(crate) fn deser_operation_crate_operation_delete_registry(
     value: &[u8],
     mut builder: crate::output::delete_registry_output::Builder,
 ) -> Result<crate::output::delete_registry_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -2590,7 +2590,7 @@ pub fn deser_operation_crate_operation_delete_registry(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_condition_check_failure_exception_json_err(
+pub(crate) fn deser_structure_crate_error_condition_check_failure_exception_json_err(
     value: &[u8],
     mut builder: crate::error::condition_check_failure_exception::Builder,
 ) -> Result<
@@ -2635,7 +2635,7 @@ pub fn deser_structure_crate_error_condition_check_failure_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_delete_schema(
+pub(crate) fn deser_operation_crate_operation_delete_schema(
     value: &[u8],
     mut builder: crate::output::delete_schema_output::Builder,
 ) -> Result<crate::output::delete_schema_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -2698,7 +2698,7 @@ pub fn deser_operation_crate_operation_delete_schema(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_delete_schema_versions(
+pub(crate) fn deser_operation_crate_operation_delete_schema_versions(
     value: &[u8],
     mut builder: crate::output::delete_schema_versions_output::Builder,
 ) -> Result<
@@ -2739,7 +2739,7 @@ pub fn deser_operation_crate_operation_delete_schema_versions(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_delete_session(
+pub(crate) fn deser_operation_crate_operation_delete_session(
     value: &[u8],
     mut builder: crate::output::delete_session_output::Builder,
 ) -> Result<crate::output::delete_session_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -2781,7 +2781,7 @@ pub fn deser_operation_crate_operation_delete_session(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_delete_trigger(
+pub(crate) fn deser_operation_crate_operation_delete_trigger(
     value: &[u8],
     mut builder: crate::output::delete_trigger_output::Builder,
 ) -> Result<crate::output::delete_trigger_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -2823,7 +2823,7 @@ pub fn deser_operation_crate_operation_delete_trigger(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_delete_workflow(
+pub(crate) fn deser_operation_crate_operation_delete_workflow(
     value: &[u8],
     mut builder: crate::output::delete_workflow_output::Builder,
 ) -> Result<crate::output::delete_workflow_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -2865,7 +2865,7 @@ pub fn deser_operation_crate_operation_delete_workflow(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_blueprint(
+pub(crate) fn deser_operation_crate_operation_get_blueprint(
     value: &[u8],
     mut builder: crate::output::get_blueprint_output::Builder,
 ) -> Result<crate::output::get_blueprint_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -2903,7 +2903,7 @@ pub fn deser_operation_crate_operation_get_blueprint(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_blueprint_run(
+pub(crate) fn deser_operation_crate_operation_get_blueprint_run(
     value: &[u8],
     mut builder: crate::output::get_blueprint_run_output::Builder,
 ) -> Result<crate::output::get_blueprint_run_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -2941,7 +2941,7 @@ pub fn deser_operation_crate_operation_get_blueprint_run(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_blueprint_runs(
+pub(crate) fn deser_operation_crate_operation_get_blueprint_runs(
     value: &[u8],
     mut builder: crate::output::get_blueprint_runs_output::Builder,
 ) -> Result<crate::output::get_blueprint_runs_output::Builder, aws_smithy_json::deserialize::Error>
@@ -2991,7 +2991,7 @@ pub fn deser_operation_crate_operation_get_blueprint_runs(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_catalog_import_status(
+pub(crate) fn deser_operation_crate_operation_get_catalog_import_status(
     value: &[u8],
     mut builder: crate::output::get_catalog_import_status_output::Builder,
 ) -> Result<
@@ -3034,7 +3034,7 @@ pub fn deser_operation_crate_operation_get_catalog_import_status(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_classifier(
+pub(crate) fn deser_operation_crate_operation_get_classifier(
     value: &[u8],
     mut builder: crate::output::get_classifier_output::Builder,
 ) -> Result<crate::output::get_classifier_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -3072,7 +3072,7 @@ pub fn deser_operation_crate_operation_get_classifier(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_classifiers(
+pub(crate) fn deser_operation_crate_operation_get_classifiers(
     value: &[u8],
     mut builder: crate::output::get_classifiers_output::Builder,
 ) -> Result<crate::output::get_classifiers_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -3121,7 +3121,7 @@ pub fn deser_operation_crate_operation_get_classifiers(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_column_statistics_for_partition(
+pub(crate) fn deser_operation_crate_operation_get_column_statistics_for_partition(
     value: &[u8],
     mut builder: crate::output::get_column_statistics_for_partition_output::Builder,
 ) -> Result<
@@ -3167,7 +3167,7 @@ pub fn deser_operation_crate_operation_get_column_statistics_for_partition(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_column_statistics_for_table(
+pub(crate) fn deser_operation_crate_operation_get_column_statistics_for_table(
     value: &[u8],
     mut builder: crate::output::get_column_statistics_for_table_output::Builder,
 ) -> Result<
@@ -3213,7 +3213,7 @@ pub fn deser_operation_crate_operation_get_column_statistics_for_table(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_connection(
+pub(crate) fn deser_operation_crate_operation_get_connection(
     value: &[u8],
     mut builder: crate::output::get_connection_output::Builder,
 ) -> Result<crate::output::get_connection_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -3251,7 +3251,7 @@ pub fn deser_operation_crate_operation_get_connection(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_connections(
+pub(crate) fn deser_operation_crate_operation_get_connections(
     value: &[u8],
     mut builder: crate::output::get_connections_output::Builder,
 ) -> Result<crate::output::get_connections_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -3300,7 +3300,7 @@ pub fn deser_operation_crate_operation_get_connections(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_crawler(
+pub(crate) fn deser_operation_crate_operation_get_crawler(
     value: &[u8],
     mut builder: crate::output::get_crawler_output::Builder,
 ) -> Result<crate::output::get_crawler_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -3338,7 +3338,7 @@ pub fn deser_operation_crate_operation_get_crawler(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_crawler_metrics(
+pub(crate) fn deser_operation_crate_operation_get_crawler_metrics(
     value: &[u8],
     mut builder: crate::output::get_crawler_metrics_output::Builder,
 ) -> Result<crate::output::get_crawler_metrics_output::Builder, aws_smithy_json::deserialize::Error>
@@ -3388,7 +3388,7 @@ pub fn deser_operation_crate_operation_get_crawler_metrics(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_crawlers(
+pub(crate) fn deser_operation_crate_operation_get_crawlers(
     value: &[u8],
     mut builder: crate::output::get_crawlers_output::Builder,
 ) -> Result<crate::output::get_crawlers_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -3435,7 +3435,7 @@ pub fn deser_operation_crate_operation_get_crawlers(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_custom_entity_type(
+pub(crate) fn deser_operation_crate_operation_get_custom_entity_type(
     value: &[u8],
     mut builder: crate::output::get_custom_entity_type_output::Builder,
 ) -> Result<
@@ -3494,7 +3494,7 @@ pub fn deser_operation_crate_operation_get_custom_entity_type(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_database(
+pub(crate) fn deser_operation_crate_operation_get_database(
     value: &[u8],
     mut builder: crate::output::get_database_output::Builder,
 ) -> Result<crate::output::get_database_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -3532,7 +3532,7 @@ pub fn deser_operation_crate_operation_get_database(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_databases(
+pub(crate) fn deser_operation_crate_operation_get_databases(
     value: &[u8],
     mut builder: crate::output::get_databases_output::Builder,
 ) -> Result<crate::output::get_databases_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -3579,7 +3579,7 @@ pub fn deser_operation_crate_operation_get_databases(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_data_catalog_encryption_settings(
+pub(crate) fn deser_operation_crate_operation_get_data_catalog_encryption_settings(
     value: &[u8],
     mut builder: crate::output::get_data_catalog_encryption_settings_output::Builder,
 ) -> Result<
@@ -3620,7 +3620,7 @@ pub fn deser_operation_crate_operation_get_data_catalog_encryption_settings(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_dataflow_graph(
+pub(crate) fn deser_operation_crate_operation_get_dataflow_graph(
     value: &[u8],
     mut builder: crate::output::get_dataflow_graph_output::Builder,
 ) -> Result<crate::output::get_dataflow_graph_output::Builder, aws_smithy_json::deserialize::Error>
@@ -3664,7 +3664,7 @@ pub fn deser_operation_crate_operation_get_dataflow_graph(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_dev_endpoint(
+pub(crate) fn deser_operation_crate_operation_get_dev_endpoint(
     value: &[u8],
     mut builder: crate::output::get_dev_endpoint_output::Builder,
 ) -> Result<crate::output::get_dev_endpoint_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -3702,7 +3702,7 @@ pub fn deser_operation_crate_operation_get_dev_endpoint(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_dev_endpoints(
+pub(crate) fn deser_operation_crate_operation_get_dev_endpoints(
     value: &[u8],
     mut builder: crate::output::get_dev_endpoints_output::Builder,
 ) -> Result<crate::output::get_dev_endpoints_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -3751,7 +3751,7 @@ pub fn deser_operation_crate_operation_get_dev_endpoints(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_job(
+pub(crate) fn deser_operation_crate_operation_get_job(
     value: &[u8],
     mut builder: crate::output::get_job_output::Builder,
 ) -> Result<crate::output::get_job_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -3788,7 +3788,7 @@ pub fn deser_operation_crate_operation_get_job(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_job_bookmark(
+pub(crate) fn deser_operation_crate_operation_get_job_bookmark(
     value: &[u8],
     mut builder: crate::output::get_job_bookmark_output::Builder,
 ) -> Result<crate::output::get_job_bookmark_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -3828,7 +3828,7 @@ pub fn deser_operation_crate_operation_get_job_bookmark(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_job_run(
+pub(crate) fn deser_operation_crate_operation_get_job_run(
     value: &[u8],
     mut builder: crate::output::get_job_run_output::Builder,
 ) -> Result<crate::output::get_job_run_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -3866,7 +3866,7 @@ pub fn deser_operation_crate_operation_get_job_run(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_job_runs(
+pub(crate) fn deser_operation_crate_operation_get_job_runs(
     value: &[u8],
     mut builder: crate::output::get_job_runs_output::Builder,
 ) -> Result<crate::output::get_job_runs_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -3913,7 +3913,7 @@ pub fn deser_operation_crate_operation_get_job_runs(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_jobs(
+pub(crate) fn deser_operation_crate_operation_get_jobs(
     value: &[u8],
     mut builder: crate::output::get_jobs_output::Builder,
 ) -> Result<crate::output::get_jobs_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -3960,7 +3960,7 @@ pub fn deser_operation_crate_operation_get_jobs(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_mapping(
+pub(crate) fn deser_operation_crate_operation_get_mapping(
     value: &[u8],
     mut builder: crate::output::get_mapping_output::Builder,
 ) -> Result<crate::output::get_mapping_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -3998,7 +3998,7 @@ pub fn deser_operation_crate_operation_get_mapping(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_ml_task_run(
+pub(crate) fn deser_operation_crate_operation_get_ml_task_run(
     value: &[u8],
     mut builder: crate::output::get_ml_task_run_output::Builder,
 ) -> Result<crate::output::get_ml_task_run_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -4096,7 +4096,7 @@ pub fn deser_operation_crate_operation_get_ml_task_run(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.try_into())
+                            .map(i32::try_from)
                             .transpose()?,
                         );
                     }
@@ -4119,7 +4119,7 @@ pub fn deser_operation_crate_operation_get_ml_task_run(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_ml_task_runs(
+pub(crate) fn deser_operation_crate_operation_get_ml_task_runs(
     value: &[u8],
     mut builder: crate::output::get_ml_task_runs_output::Builder,
 ) -> Result<crate::output::get_ml_task_runs_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -4166,7 +4166,7 @@ pub fn deser_operation_crate_operation_get_ml_task_runs(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_ml_transform(
+pub(crate) fn deser_operation_crate_operation_get_ml_transform(
     value: &[u8],
     mut builder: crate::output::get_ml_transform_output::Builder,
 ) -> Result<crate::output::get_ml_transform_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -4259,7 +4259,7 @@ pub fn deser_operation_crate_operation_get_ml_transform(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.try_into())
+                            .map(i32::try_from)
                             .transpose()?,
                         );
                     }
@@ -4313,7 +4313,7 @@ pub fn deser_operation_crate_operation_get_ml_transform(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.try_into())
+                            .map(i32::try_from)
                             .transpose()?,
                         );
                     }
@@ -4322,7 +4322,7 @@ pub fn deser_operation_crate_operation_get_ml_transform(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.try_into())
+                            .map(i32::try_from)
                             .transpose()?,
                         );
                     }
@@ -4331,7 +4331,7 @@ pub fn deser_operation_crate_operation_get_ml_transform(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.try_into())
+                            .map(i32::try_from)
                             .transpose()?,
                         );
                     }
@@ -4361,7 +4361,7 @@ pub fn deser_operation_crate_operation_get_ml_transform(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_ml_transforms(
+pub(crate) fn deser_operation_crate_operation_get_ml_transforms(
     value: &[u8],
     mut builder: crate::output::get_ml_transforms_output::Builder,
 ) -> Result<crate::output::get_ml_transforms_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -4410,7 +4410,7 @@ pub fn deser_operation_crate_operation_get_ml_transforms(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_partition(
+pub(crate) fn deser_operation_crate_operation_get_partition(
     value: &[u8],
     mut builder: crate::output::get_partition_output::Builder,
 ) -> Result<crate::output::get_partition_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -4448,7 +4448,7 @@ pub fn deser_operation_crate_operation_get_partition(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_partition_indexes(
+pub(crate) fn deser_operation_crate_operation_get_partition_indexes(
     value: &[u8],
     mut builder: crate::output::get_partition_indexes_output::Builder,
 ) -> Result<crate::output::get_partition_indexes_output::Builder, aws_smithy_json::deserialize::Error>
@@ -4496,7 +4496,7 @@ pub fn deser_operation_crate_operation_get_partition_indexes(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_partitions(
+pub(crate) fn deser_operation_crate_operation_get_partitions(
     value: &[u8],
     mut builder: crate::output::get_partitions_output::Builder,
 ) -> Result<crate::output::get_partitions_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -4545,7 +4545,7 @@ pub fn deser_operation_crate_operation_get_partitions(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_plan(
+pub(crate) fn deser_operation_crate_operation_get_plan(
     value: &[u8],
     mut builder: crate::output::get_plan_output::Builder,
 ) -> Result<crate::output::get_plan_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -4596,7 +4596,7 @@ pub fn deser_operation_crate_operation_get_plan(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_registry(
+pub(crate) fn deser_operation_crate_operation_get_registry(
     value: &[u8],
     mut builder: crate::output::get_registry_output::Builder,
 ) -> Result<crate::output::get_registry_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -4686,7 +4686,7 @@ pub fn deser_operation_crate_operation_get_registry(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_resource_policies(
+pub(crate) fn deser_operation_crate_operation_get_resource_policies(
     value: &[u8],
     mut builder: crate::output::get_resource_policies_output::Builder,
 ) -> Result<crate::output::get_resource_policies_output::Builder, aws_smithy_json::deserialize::Error>
@@ -4734,7 +4734,7 @@ pub fn deser_operation_crate_operation_get_resource_policies(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_resource_policy(
+pub(crate) fn deser_operation_crate_operation_get_resource_policy(
     value: &[u8],
     mut builder: crate::output::get_resource_policy_output::Builder,
 ) -> Result<crate::output::get_resource_policy_output::Builder, aws_smithy_json::deserialize::Error>
@@ -4802,7 +4802,7 @@ pub fn deser_operation_crate_operation_get_resource_policy(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_schema(
+pub(crate) fn deser_operation_crate_operation_get_schema(
     value: &[u8],
     mut builder: crate::output::get_schema_output::Builder,
 ) -> Result<crate::output::get_schema_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -4890,7 +4890,7 @@ pub fn deser_operation_crate_operation_get_schema(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.try_into())
+                            .map(i64::try_from)
                             .transpose()?,
                         );
                     }
@@ -4899,7 +4899,7 @@ pub fn deser_operation_crate_operation_get_schema(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.try_into())
+                            .map(i64::try_from)
                             .transpose()?,
                         );
                     }
@@ -4908,7 +4908,7 @@ pub fn deser_operation_crate_operation_get_schema(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.try_into())
+                            .map(i64::try_from)
                             .transpose()?,
                         );
                     }
@@ -4961,7 +4961,7 @@ pub fn deser_operation_crate_operation_get_schema(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_schema_by_definition(
+pub(crate) fn deser_operation_crate_operation_get_schema_by_definition(
     value: &[u8],
     mut builder: crate::output::get_schema_by_definition_output::Builder,
 ) -> Result<
@@ -5048,7 +5048,7 @@ pub fn deser_operation_crate_operation_get_schema_by_definition(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_schema_version(
+pub(crate) fn deser_operation_crate_operation_get_schema_version(
     value: &[u8],
     mut builder: crate::output::get_schema_version_output::Builder,
 ) -> Result<crate::output::get_schema_version_output::Builder, aws_smithy_json::deserialize::Error>
@@ -5107,7 +5107,7 @@ pub fn deser_operation_crate_operation_get_schema_version(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.try_into())
+                            .map(i64::try_from)
                             .transpose()?,
                         );
                     }
@@ -5151,7 +5151,7 @@ pub fn deser_operation_crate_operation_get_schema_version(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_schema_versions_diff(
+pub(crate) fn deser_operation_crate_operation_get_schema_versions_diff(
     value: &[u8],
     mut builder: crate::output::get_schema_versions_diff_output::Builder,
 ) -> Result<
@@ -5196,7 +5196,7 @@ pub fn deser_operation_crate_operation_get_schema_versions_diff(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_security_configuration(
+pub(crate) fn deser_operation_crate_operation_get_security_configuration(
     value: &[u8],
     mut builder: crate::output::get_security_configuration_output::Builder,
 ) -> Result<
@@ -5239,7 +5239,7 @@ pub fn deser_operation_crate_operation_get_security_configuration(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_security_configurations(
+pub(crate) fn deser_operation_crate_operation_get_security_configurations(
     value: &[u8],
     mut builder: crate::output::get_security_configurations_output::Builder,
 ) -> Result<
@@ -5289,7 +5289,7 @@ pub fn deser_operation_crate_operation_get_security_configurations(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_session(
+pub(crate) fn deser_operation_crate_operation_get_session(
     value: &[u8],
     mut builder: crate::output::get_session_output::Builder,
 ) -> Result<crate::output::get_session_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -5327,7 +5327,7 @@ pub fn deser_operation_crate_operation_get_session(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_statement(
+pub(crate) fn deser_operation_crate_operation_get_statement(
     value: &[u8],
     mut builder: crate::output::get_statement_output::Builder,
 ) -> Result<crate::output::get_statement_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -5365,7 +5365,7 @@ pub fn deser_operation_crate_operation_get_statement(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_table(
+pub(crate) fn deser_operation_crate_operation_get_table(
     value: &[u8],
     mut builder: crate::output::get_table_output::Builder,
 ) -> Result<crate::output::get_table_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -5403,7 +5403,7 @@ pub fn deser_operation_crate_operation_get_table(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_tables(
+pub(crate) fn deser_operation_crate_operation_get_tables(
     value: &[u8],
     mut builder: crate::output::get_tables_output::Builder,
 ) -> Result<crate::output::get_tables_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -5450,7 +5450,7 @@ pub fn deser_operation_crate_operation_get_tables(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_table_version(
+pub(crate) fn deser_operation_crate_operation_get_table_version(
     value: &[u8],
     mut builder: crate::output::get_table_version_output::Builder,
 ) -> Result<crate::output::get_table_version_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -5488,7 +5488,7 @@ pub fn deser_operation_crate_operation_get_table_version(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_table_versions(
+pub(crate) fn deser_operation_crate_operation_get_table_versions(
     value: &[u8],
     mut builder: crate::output::get_table_versions_output::Builder,
 ) -> Result<crate::output::get_table_versions_output::Builder, aws_smithy_json::deserialize::Error>
@@ -5536,7 +5536,7 @@ pub fn deser_operation_crate_operation_get_table_versions(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_tags(
+pub(crate) fn deser_operation_crate_operation_get_tags(
     value: &[u8],
     mut builder: crate::output::get_tags_output::Builder,
 ) -> Result<crate::output::get_tags_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -5574,7 +5574,7 @@ pub fn deser_operation_crate_operation_get_tags(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_trigger(
+pub(crate) fn deser_operation_crate_operation_get_trigger(
     value: &[u8],
     mut builder: crate::output::get_trigger_output::Builder,
 ) -> Result<crate::output::get_trigger_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -5612,7 +5612,7 @@ pub fn deser_operation_crate_operation_get_trigger(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_triggers(
+pub(crate) fn deser_operation_crate_operation_get_triggers(
     value: &[u8],
     mut builder: crate::output::get_triggers_output::Builder,
 ) -> Result<crate::output::get_triggers_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -5659,7 +5659,7 @@ pub fn deser_operation_crate_operation_get_triggers(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_permission_type_mismatch_exception_json_err(
+pub(crate) fn deser_structure_crate_error_permission_type_mismatch_exception_json_err(
     value: &[u8],
     mut builder: crate::error::permission_type_mismatch_exception::Builder,
 ) -> Result<
@@ -5704,7 +5704,7 @@ pub fn deser_structure_crate_error_permission_type_mismatch_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_unfiltered_partition_metadata(
+pub(crate) fn deser_operation_crate_operation_get_unfiltered_partition_metadata(
     value: &[u8],
     mut builder: crate::output::get_unfiltered_partition_metadata_output::Builder,
 ) -> Result<
@@ -5759,7 +5759,7 @@ pub fn deser_operation_crate_operation_get_unfiltered_partition_metadata(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_unfiltered_partitions_metadata(
+pub(crate) fn deser_operation_crate_operation_get_unfiltered_partitions_metadata(
     value: &[u8],
     mut builder: crate::output::get_unfiltered_partitions_metadata_output::Builder,
 ) -> Result<
@@ -5809,7 +5809,7 @@ pub fn deser_operation_crate_operation_get_unfiltered_partitions_metadata(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_unfiltered_table_metadata(
+pub(crate) fn deser_operation_crate_operation_get_unfiltered_table_metadata(
     value: &[u8],
     mut builder: crate::output::get_unfiltered_table_metadata_output::Builder,
 ) -> Result<
@@ -5869,7 +5869,7 @@ pub fn deser_operation_crate_operation_get_unfiltered_table_metadata(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_user_defined_function(
+pub(crate) fn deser_operation_crate_operation_get_user_defined_function(
     value: &[u8],
     mut builder: crate::output::get_user_defined_function_output::Builder,
 ) -> Result<
@@ -5912,7 +5912,7 @@ pub fn deser_operation_crate_operation_get_user_defined_function(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_user_defined_functions(
+pub(crate) fn deser_operation_crate_operation_get_user_defined_functions(
     value: &[u8],
     mut builder: crate::output::get_user_defined_functions_output::Builder,
 ) -> Result<
@@ -5962,7 +5962,7 @@ pub fn deser_operation_crate_operation_get_user_defined_functions(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_workflow(
+pub(crate) fn deser_operation_crate_operation_get_workflow(
     value: &[u8],
     mut builder: crate::output::get_workflow_output::Builder,
 ) -> Result<crate::output::get_workflow_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -6000,7 +6000,7 @@ pub fn deser_operation_crate_operation_get_workflow(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_workflow_run(
+pub(crate) fn deser_operation_crate_operation_get_workflow_run(
     value: &[u8],
     mut builder: crate::output::get_workflow_run_output::Builder,
 ) -> Result<crate::output::get_workflow_run_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -6038,7 +6038,7 @@ pub fn deser_operation_crate_operation_get_workflow_run(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_workflow_run_properties(
+pub(crate) fn deser_operation_crate_operation_get_workflow_run_properties(
     value: &[u8],
     mut builder: crate::output::get_workflow_run_properties_output::Builder,
 ) -> Result<
@@ -6079,7 +6079,7 @@ pub fn deser_operation_crate_operation_get_workflow_run_properties(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_workflow_runs(
+pub(crate) fn deser_operation_crate_operation_get_workflow_runs(
     value: &[u8],
     mut builder: crate::output::get_workflow_runs_output::Builder,
 ) -> Result<crate::output::get_workflow_runs_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -6126,7 +6126,7 @@ pub fn deser_operation_crate_operation_get_workflow_runs(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_blueprints(
+pub(crate) fn deser_operation_crate_operation_list_blueprints(
     value: &[u8],
     mut builder: crate::output::list_blueprints_output::Builder,
 ) -> Result<crate::output::list_blueprints_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -6175,7 +6175,7 @@ pub fn deser_operation_crate_operation_list_blueprints(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_crawlers(
+pub(crate) fn deser_operation_crate_operation_list_crawlers(
     value: &[u8],
     mut builder: crate::output::list_crawlers_output::Builder,
 ) -> Result<crate::output::list_crawlers_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -6224,7 +6224,7 @@ pub fn deser_operation_crate_operation_list_crawlers(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_crawls(
+pub(crate) fn deser_operation_crate_operation_list_crawls(
     value: &[u8],
     mut builder: crate::output::list_crawls_output::Builder,
 ) -> Result<crate::output::list_crawls_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -6273,7 +6273,7 @@ pub fn deser_operation_crate_operation_list_crawls(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_custom_entity_types(
+pub(crate) fn deser_operation_crate_operation_list_custom_entity_types(
     value: &[u8],
     mut builder: crate::output::list_custom_entity_types_output::Builder,
 ) -> Result<
@@ -6325,7 +6325,7 @@ pub fn deser_operation_crate_operation_list_custom_entity_types(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_dev_endpoints(
+pub(crate) fn deser_operation_crate_operation_list_dev_endpoints(
     value: &[u8],
     mut builder: crate::output::list_dev_endpoints_output::Builder,
 ) -> Result<crate::output::list_dev_endpoints_output::Builder, aws_smithy_json::deserialize::Error>
@@ -6373,7 +6373,7 @@ pub fn deser_operation_crate_operation_list_dev_endpoints(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_jobs(
+pub(crate) fn deser_operation_crate_operation_list_jobs(
     value: &[u8],
     mut builder: crate::output::list_jobs_output::Builder,
 ) -> Result<crate::output::list_jobs_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -6420,7 +6420,7 @@ pub fn deser_operation_crate_operation_list_jobs(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_ml_transforms(
+pub(crate) fn deser_operation_crate_operation_list_ml_transforms(
     value: &[u8],
     mut builder: crate::output::list_ml_transforms_output::Builder,
 ) -> Result<crate::output::list_ml_transforms_output::Builder, aws_smithy_json::deserialize::Error>
@@ -6470,7 +6470,7 @@ pub fn deser_operation_crate_operation_list_ml_transforms(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_registries(
+pub(crate) fn deser_operation_crate_operation_list_registries(
     value: &[u8],
     mut builder: crate::output::list_registries_output::Builder,
 ) -> Result<crate::output::list_registries_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -6517,7 +6517,7 @@ pub fn deser_operation_crate_operation_list_registries(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_schemas(
+pub(crate) fn deser_operation_crate_operation_list_schemas(
     value: &[u8],
     mut builder: crate::output::list_schemas_output::Builder,
 ) -> Result<crate::output::list_schemas_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -6564,7 +6564,7 @@ pub fn deser_operation_crate_operation_list_schemas(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_schema_versions(
+pub(crate) fn deser_operation_crate_operation_list_schema_versions(
     value: &[u8],
     mut builder: crate::output::list_schema_versions_output::Builder,
 ) -> Result<crate::output::list_schema_versions_output::Builder, aws_smithy_json::deserialize::Error>
@@ -6614,7 +6614,7 @@ pub fn deser_operation_crate_operation_list_schema_versions(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_sessions(
+pub(crate) fn deser_operation_crate_operation_list_sessions(
     value: &[u8],
     mut builder: crate::output::list_sessions_output::Builder,
 ) -> Result<crate::output::list_sessions_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -6668,7 +6668,7 @@ pub fn deser_operation_crate_operation_list_sessions(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_statements(
+pub(crate) fn deser_operation_crate_operation_list_statements(
     value: &[u8],
     mut builder: crate::output::list_statements_output::Builder,
 ) -> Result<crate::output::list_statements_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -6717,7 +6717,7 @@ pub fn deser_operation_crate_operation_list_statements(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_triggers(
+pub(crate) fn deser_operation_crate_operation_list_triggers(
     value: &[u8],
     mut builder: crate::output::list_triggers_output::Builder,
 ) -> Result<crate::output::list_triggers_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -6766,7 +6766,7 @@ pub fn deser_operation_crate_operation_list_triggers(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_workflows(
+pub(crate) fn deser_operation_crate_operation_list_workflows(
     value: &[u8],
     mut builder: crate::output::list_workflows_output::Builder,
 ) -> Result<crate::output::list_workflows_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -6815,7 +6815,7 @@ pub fn deser_operation_crate_operation_list_workflows(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_put_resource_policy(
+pub(crate) fn deser_operation_crate_operation_put_resource_policy(
     value: &[u8],
     mut builder: crate::output::put_resource_policy_output::Builder,
 ) -> Result<crate::output::put_resource_policy_output::Builder, aws_smithy_json::deserialize::Error>
@@ -6858,7 +6858,7 @@ pub fn deser_operation_crate_operation_put_resource_policy(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_put_schema_version_metadata(
+pub(crate) fn deser_operation_crate_operation_put_schema_version_metadata(
     value: &[u8],
     mut builder: crate::output::put_schema_version_metadata_output::Builder,
 ) -> Result<
@@ -6914,7 +6914,7 @@ pub fn deser_operation_crate_operation_put_schema_version_metadata(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.try_into())
+                            .map(i64::try_from)
                             .transpose()?,
                         );
                     }
@@ -6964,7 +6964,7 @@ pub fn deser_operation_crate_operation_put_schema_version_metadata(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_query_schema_version_metadata(
+pub(crate) fn deser_operation_crate_operation_query_schema_version_metadata(
     value: &[u8],
     mut builder: crate::output::query_schema_version_metadata_output::Builder,
 ) -> Result<
@@ -7025,7 +7025,7 @@ pub fn deser_operation_crate_operation_query_schema_version_metadata(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_register_schema_version(
+pub(crate) fn deser_operation_crate_operation_register_schema_version(
     value: &[u8],
     mut builder: crate::output::register_schema_version_output::Builder,
 ) -> Result<
@@ -7056,7 +7056,7 @@ pub fn deser_operation_crate_operation_register_schema_version(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.try_into())
+                            .map(i64::try_from)
                             .transpose()?,
                         );
                     }
@@ -7091,7 +7091,7 @@ pub fn deser_operation_crate_operation_register_schema_version(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_remove_schema_version_metadata(
+pub(crate) fn deser_operation_crate_operation_remove_schema_version_metadata(
     value: &[u8],
     mut builder: crate::output::remove_schema_version_metadata_output::Builder,
 ) -> Result<
@@ -7147,7 +7147,7 @@ pub fn deser_operation_crate_operation_remove_schema_version_metadata(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.try_into())
+                            .map(i64::try_from)
                             .transpose()?,
                         );
                     }
@@ -7197,7 +7197,7 @@ pub fn deser_operation_crate_operation_remove_schema_version_metadata(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_reset_job_bookmark(
+pub(crate) fn deser_operation_crate_operation_reset_job_bookmark(
     value: &[u8],
     mut builder: crate::output::reset_job_bookmark_output::Builder,
 ) -> Result<crate::output::reset_job_bookmark_output::Builder, aws_smithy_json::deserialize::Error>
@@ -7238,7 +7238,7 @@ pub fn deser_operation_crate_operation_reset_job_bookmark(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_concurrent_runs_exceeded_exception_json_err(
+pub(crate) fn deser_structure_crate_error_concurrent_runs_exceeded_exception_json_err(
     value: &[u8],
     mut builder: crate::error::concurrent_runs_exceeded_exception::Builder,
 ) -> Result<
@@ -7283,7 +7283,7 @@ pub fn deser_structure_crate_error_concurrent_runs_exceeded_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_illegal_workflow_state_exception_json_err(
+pub(crate) fn deser_structure_crate_error_illegal_workflow_state_exception_json_err(
     value: &[u8],
     mut builder: crate::error::illegal_workflow_state_exception::Builder,
 ) -> Result<
@@ -7328,7 +7328,7 @@ pub fn deser_structure_crate_error_illegal_workflow_state_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_resume_workflow_run(
+pub(crate) fn deser_operation_crate_operation_resume_workflow_run(
     value: &[u8],
     mut builder: crate::output::resume_workflow_run_output::Builder,
 ) -> Result<crate::output::resume_workflow_run_output::Builder, aws_smithy_json::deserialize::Error>
@@ -7376,7 +7376,7 @@ pub fn deser_operation_crate_operation_resume_workflow_run(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_run_statement(
+pub(crate) fn deser_operation_crate_operation_run_statement(
     value: &[u8],
     mut builder: crate::output::run_statement_output::Builder,
 ) -> Result<crate::output::run_statement_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -7395,7 +7395,7 @@ pub fn deser_operation_crate_operation_run_statement(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.try_into())
+                            .map(i32::try_from)
                             .transpose()?,
                         );
                     }
@@ -7418,7 +7418,7 @@ pub fn deser_operation_crate_operation_run_statement(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_search_tables(
+pub(crate) fn deser_operation_crate_operation_search_tables(
     value: &[u8],
     mut builder: crate::output::search_tables_output::Builder,
 ) -> Result<crate::output::search_tables_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -7465,7 +7465,7 @@ pub fn deser_operation_crate_operation_search_tables(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_illegal_blueprint_state_exception_json_err(
+pub(crate) fn deser_structure_crate_error_illegal_blueprint_state_exception_json_err(
     value: &[u8],
     mut builder: crate::error::illegal_blueprint_state_exception::Builder,
 ) -> Result<
@@ -7510,7 +7510,7 @@ pub fn deser_structure_crate_error_illegal_blueprint_state_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_start_blueprint_run(
+pub(crate) fn deser_operation_crate_operation_start_blueprint_run(
     value: &[u8],
     mut builder: crate::output::start_blueprint_run_output::Builder,
 ) -> Result<crate::output::start_blueprint_run_output::Builder, aws_smithy_json::deserialize::Error>
@@ -7553,7 +7553,7 @@ pub fn deser_operation_crate_operation_start_blueprint_run(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_no_schedule_exception_json_err(
+pub(crate) fn deser_structure_crate_error_no_schedule_exception_json_err(
     value: &[u8],
     mut builder: crate::error::no_schedule_exception::Builder,
 ) -> Result<crate::error::no_schedule_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -7595,7 +7595,7 @@ pub fn deser_structure_crate_error_no_schedule_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_scheduler_running_exception_json_err(
+pub(crate) fn deser_structure_crate_error_scheduler_running_exception_json_err(
     value: &[u8],
     mut builder: crate::error::scheduler_running_exception::Builder,
 ) -> Result<crate::error::scheduler_running_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -7638,7 +7638,7 @@ pub fn deser_structure_crate_error_scheduler_running_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_start_export_labels_task_run(
+pub(crate) fn deser_operation_crate_operation_start_export_labels_task_run(
     value: &[u8],
     mut builder: crate::output::start_export_labels_task_run_output::Builder,
 ) -> Result<
@@ -7683,7 +7683,7 @@ pub fn deser_operation_crate_operation_start_export_labels_task_run(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_start_import_labels_task_run(
+pub(crate) fn deser_operation_crate_operation_start_import_labels_task_run(
     value: &[u8],
     mut builder: crate::output::start_import_labels_task_run_output::Builder,
 ) -> Result<
@@ -7728,7 +7728,7 @@ pub fn deser_operation_crate_operation_start_import_labels_task_run(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_start_job_run(
+pub(crate) fn deser_operation_crate_operation_start_job_run(
     value: &[u8],
     mut builder: crate::output::start_job_run_output::Builder,
 ) -> Result<crate::output::start_job_run_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -7770,7 +7770,7 @@ pub fn deser_operation_crate_operation_start_job_run(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_ml_transform_not_ready_exception_json_err(
+pub(crate) fn deser_structure_crate_error_ml_transform_not_ready_exception_json_err(
     value: &[u8],
     mut builder: crate::error::ml_transform_not_ready_exception::Builder,
 ) -> Result<
@@ -7815,7 +7815,7 @@ pub fn deser_structure_crate_error_ml_transform_not_ready_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_start_ml_evaluation_task_run(
+pub(crate) fn deser_operation_crate_operation_start_ml_evaluation_task_run(
     value: &[u8],
     mut builder: crate::output::start_ml_evaluation_task_run_output::Builder,
 ) -> Result<
@@ -7860,7 +7860,7 @@ pub fn deser_operation_crate_operation_start_ml_evaluation_task_run(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_start_ml_labeling_set_generation_task_run(
+pub(crate) fn deser_operation_crate_operation_start_ml_labeling_set_generation_task_run(
     value: &[u8],
     mut builder: crate::output::start_ml_labeling_set_generation_task_run_output::Builder,
 ) -> Result<
@@ -7905,7 +7905,7 @@ pub fn deser_operation_crate_operation_start_ml_labeling_set_generation_task_run
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_start_trigger(
+pub(crate) fn deser_operation_crate_operation_start_trigger(
     value: &[u8],
     mut builder: crate::output::start_trigger_output::Builder,
 ) -> Result<crate::output::start_trigger_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -7947,7 +7947,7 @@ pub fn deser_operation_crate_operation_start_trigger(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_start_workflow_run(
+pub(crate) fn deser_operation_crate_operation_start_workflow_run(
     value: &[u8],
     mut builder: crate::output::start_workflow_run_output::Builder,
 ) -> Result<crate::output::start_workflow_run_output::Builder, aws_smithy_json::deserialize::Error>
@@ -7990,7 +7990,7 @@ pub fn deser_operation_crate_operation_start_workflow_run(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_crawler_not_running_exception_json_err(
+pub(crate) fn deser_structure_crate_error_crawler_not_running_exception_json_err(
     value: &[u8],
     mut builder: crate::error::crawler_not_running_exception::Builder,
 ) -> Result<crate::error::crawler_not_running_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -8033,7 +8033,7 @@ pub fn deser_structure_crate_error_crawler_not_running_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_crawler_stopping_exception_json_err(
+pub(crate) fn deser_structure_crate_error_crawler_stopping_exception_json_err(
     value: &[u8],
     mut builder: crate::error::crawler_stopping_exception::Builder,
 ) -> Result<crate::error::crawler_stopping_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -8076,7 +8076,7 @@ pub fn deser_structure_crate_error_crawler_stopping_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_scheduler_not_running_exception_json_err(
+pub(crate) fn deser_structure_crate_error_scheduler_not_running_exception_json_err(
     value: &[u8],
     mut builder: crate::error::scheduler_not_running_exception::Builder,
 ) -> Result<
@@ -8121,7 +8121,7 @@ pub fn deser_structure_crate_error_scheduler_not_running_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_stop_session(
+pub(crate) fn deser_operation_crate_operation_stop_session(
     value: &[u8],
     mut builder: crate::output::stop_session_output::Builder,
 ) -> Result<crate::output::stop_session_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -8163,7 +8163,7 @@ pub fn deser_operation_crate_operation_stop_session(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_stop_trigger(
+pub(crate) fn deser_operation_crate_operation_stop_trigger(
     value: &[u8],
     mut builder: crate::output::stop_trigger_output::Builder,
 ) -> Result<crate::output::stop_trigger_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -8205,7 +8205,7 @@ pub fn deser_operation_crate_operation_stop_trigger(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_update_blueprint(
+pub(crate) fn deser_operation_crate_operation_update_blueprint(
     value: &[u8],
     mut builder: crate::output::update_blueprint_output::Builder,
 ) -> Result<crate::output::update_blueprint_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -8247,7 +8247,7 @@ pub fn deser_operation_crate_operation_update_blueprint(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_version_mismatch_exception_json_err(
+pub(crate) fn deser_structure_crate_error_version_mismatch_exception_json_err(
     value: &[u8],
     mut builder: crate::error::version_mismatch_exception::Builder,
 ) -> Result<crate::error::version_mismatch_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -8290,7 +8290,7 @@ pub fn deser_structure_crate_error_version_mismatch_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_update_column_statistics_for_partition(
+pub(crate) fn deser_operation_crate_operation_update_column_statistics_for_partition(
     value: &[u8],
     mut builder: crate::output::update_column_statistics_for_partition_output::Builder,
 ) -> Result<
@@ -8331,7 +8331,7 @@ pub fn deser_operation_crate_operation_update_column_statistics_for_partition(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_update_column_statistics_for_table(
+pub(crate) fn deser_operation_crate_operation_update_column_statistics_for_table(
     value: &[u8],
     mut builder: crate::output::update_column_statistics_for_table_output::Builder,
 ) -> Result<
@@ -8372,7 +8372,7 @@ pub fn deser_operation_crate_operation_update_column_statistics_for_table(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_update_job(
+pub(crate) fn deser_operation_crate_operation_update_job(
     value: &[u8],
     mut builder: crate::output::update_job_output::Builder,
 ) -> Result<crate::output::update_job_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -8414,7 +8414,7 @@ pub fn deser_operation_crate_operation_update_job(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_update_ml_transform(
+pub(crate) fn deser_operation_crate_operation_update_ml_transform(
     value: &[u8],
     mut builder: crate::output::update_ml_transform_output::Builder,
 ) -> Result<crate::output::update_ml_transform_output::Builder, aws_smithy_json::deserialize::Error>
@@ -8457,7 +8457,7 @@ pub fn deser_operation_crate_operation_update_ml_transform(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_update_registry(
+pub(crate) fn deser_operation_crate_operation_update_registry(
     value: &[u8],
     mut builder: crate::output::update_registry_output::Builder,
 ) -> Result<crate::output::update_registry_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -8508,7 +8508,7 @@ pub fn deser_operation_crate_operation_update_registry(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_update_schema(
+pub(crate) fn deser_operation_crate_operation_update_schema(
     value: &[u8],
     mut builder: crate::output::update_schema_output::Builder,
 ) -> Result<crate::output::update_schema_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -8568,7 +8568,7 @@ pub fn deser_operation_crate_operation_update_schema(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_update_trigger(
+pub(crate) fn deser_operation_crate_operation_update_trigger(
     value: &[u8],
     mut builder: crate::output::update_trigger_output::Builder,
 ) -> Result<crate::output::update_trigger_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -8606,7 +8606,7 @@ pub fn deser_operation_crate_operation_update_trigger(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_update_workflow(
+pub(crate) fn deser_operation_crate_operation_update_workflow(
     value: &[u8],
     mut builder: crate::output::update_workflow_output::Builder,
 ) -> Result<crate::output::update_workflow_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -8648,7 +8648,7 @@ pub fn deser_operation_crate_operation_update_workflow(
     Ok(builder)
 }
 
-pub fn or_empty_doc(data: &[u8]) -> &[u8] {
+pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
     } else {
@@ -8656,8 +8656,8 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_partition_errors<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_partition_errors<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::PartitionError>>, aws_smithy_json::deserialize::Error>
 where
@@ -8692,8 +8692,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_name_string_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_name_string_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, aws_smithy_json::deserialize::Error>
 where
@@ -8731,8 +8731,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_com_amazonaws_glue_error_by_name<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_map_com_amazonaws_glue_error_by_name<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, crate::model::ErrorDetail>>,
@@ -8774,8 +8774,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_table_errors<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_table_errors<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::TableError>>, aws_smithy_json::deserialize::Error>
 where
@@ -8810,8 +8810,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_table_version_errors<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_table_version_errors<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::TableVersionError>>,
@@ -8851,8 +8851,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_blueprints<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_blueprints<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Blueprint>>, aws_smithy_json::deserialize::Error>
 where
@@ -8887,8 +8887,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_blueprint_names<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_blueprint_names<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, aws_smithy_json::deserialize::Error>
 where
@@ -8926,8 +8926,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_crawler_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_crawler_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Crawler>>, aws_smithy_json::deserialize::Error>
 where
@@ -8961,8 +8961,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_crawler_name_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_crawler_name_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, aws_smithy_json::deserialize::Error>
 where
@@ -9000,8 +9000,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_custom_entity_types<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_custom_entity_types<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::CustomEntityType>>,
@@ -9041,8 +9041,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_custom_entity_type_names<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_custom_entity_type_names<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, aws_smithy_json::deserialize::Error>
 where
@@ -9080,8 +9080,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_dev_endpoint_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_dev_endpoint_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::DevEndpoint>>, aws_smithy_json::deserialize::Error>
 where
@@ -9116,8 +9116,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_dev_endpoint_names<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_dev_endpoint_names<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, aws_smithy_json::deserialize::Error>
 where
@@ -9155,8 +9155,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_job_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_job_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Job>>, aws_smithy_json::deserialize::Error>
 where
@@ -9190,8 +9190,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_job_name_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_job_name_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, aws_smithy_json::deserialize::Error>
 where
@@ -9229,8 +9229,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_partition_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_partition_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Partition>>, aws_smithy_json::deserialize::Error>
 where
@@ -9265,8 +9265,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_batch_get_partition_value_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_batch_get_partition_value_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::PartitionValueList>>,
@@ -9306,8 +9306,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_trigger_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_trigger_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Trigger>>, aws_smithy_json::deserialize::Error>
 where
@@ -9341,8 +9341,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_trigger_name_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_trigger_name_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, aws_smithy_json::deserialize::Error>
 where
@@ -9380,8 +9380,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_workflows<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_workflows<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Workflow>>, aws_smithy_json::deserialize::Error>
 where
@@ -9416,8 +9416,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_workflow_names<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_workflow_names<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, aws_smithy_json::deserialize::Error>
 where
@@ -9455,8 +9455,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_batch_stop_job_run_successful_submission_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_batch_stop_job_run_successful_submission_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::BatchStopJobRunSuccessfulSubmission>>,
@@ -9495,8 +9495,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_batch_stop_job_run_error_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_batch_stop_job_run_error_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::BatchStopJobRunError>>,
@@ -9535,8 +9535,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_batch_update_partition_failure_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_batch_update_partition_failure_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::BatchUpdatePartitionFailureEntry>>,
@@ -9575,8 +9575,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_string_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_string_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, aws_smithy_json::deserialize::Error>
 where
@@ -9614,8 +9614,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_com_amazonaws_glue_map_value<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_map_com_amazonaws_glue_map_value<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -9660,8 +9660,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_com_amazonaws_glue_tags_map<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_map_com_amazonaws_glue_tags_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -9706,7 +9706,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_session<'a, I>(
+pub(crate) fn deser_structure_crate_model_session<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Session>, aws_smithy_json::deserialize::Error>
 where
@@ -9718,7 +9718,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Session::builder();
+            let mut builder = crate::model::session::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -9850,8 +9850,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_schema_version_error_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_schema_version_error_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::SchemaVersionErrorItem>>,
@@ -9890,7 +9890,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_blueprint<'a, I>(
+pub(crate) fn deser_structure_crate_model_blueprint<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Blueprint>, aws_smithy_json::deserialize::Error>
 where
@@ -9902,7 +9902,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Blueprint::builder();
+            let mut builder = crate::model::blueprint::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -10015,7 +10015,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_blueprint_run<'a, I>(
+pub(crate) fn deser_structure_crate_model_blueprint_run<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::BlueprintRun>, aws_smithy_json::deserialize::Error>
 where
@@ -10027,7 +10027,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::BlueprintRun::builder();
+            let mut builder = crate::model::blueprint_run::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -10144,8 +10144,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_blueprint_runs<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_blueprint_runs<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::BlueprintRun>>, aws_smithy_json::deserialize::Error>
 where
@@ -10180,7 +10180,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_catalog_import_status<'a, I>(
+pub(crate) fn deser_structure_crate_model_catalog_import_status<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CatalogImportStatus>, aws_smithy_json::deserialize::Error>
 where
@@ -10192,7 +10192,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::CatalogImportStatus::builder();
+            let mut builder = crate::model::catalog_import_status::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -10241,7 +10241,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_classifier<'a, I>(
+pub(crate) fn deser_structure_crate_model_classifier<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Classifier>, aws_smithy_json::deserialize::Error>
 where
@@ -10253,7 +10253,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Classifier::builder();
+            let mut builder = crate::model::classifier::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -10306,8 +10306,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_classifier_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_classifier_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Classifier>>, aws_smithy_json::deserialize::Error>
 where
@@ -10342,8 +10342,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_column_statistics_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_column_statistics_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::ColumnStatistics>>,
@@ -10383,8 +10383,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_column_errors<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_column_errors<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ColumnError>>, aws_smithy_json::deserialize::Error>
 where
@@ -10419,7 +10419,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_connection<'a, I>(
+pub(crate) fn deser_structure_crate_model_connection<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Connection>, aws_smithy_json::deserialize::Error>
 where
@@ -10431,7 +10431,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Connection::builder();
+            let mut builder = crate::model::connection::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -10526,8 +10526,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_connection_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_connection_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Connection>>, aws_smithy_json::deserialize::Error>
 where
@@ -10562,7 +10562,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_crawler<'a, I>(
+pub(crate) fn deser_structure_crate_model_crawler<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Crawler>, aws_smithy_json::deserialize::Error>
 where
@@ -10574,7 +10574,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Crawler::builder();
+            let mut builder = crate::model::crawler::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -10678,7 +10678,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -10710,7 +10710,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -10756,8 +10756,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_crawler_metrics_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_crawler_metrics_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::CrawlerMetrics>>, aws_smithy_json::deserialize::Error>
 where
@@ -10792,8 +10792,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_context_words<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_context_words<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, aws_smithy_json::deserialize::Error>
 where
@@ -10831,7 +10831,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_database<'a, I>(
+pub(crate) fn deser_structure_crate_model_database<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Database>, aws_smithy_json::deserialize::Error>
 where
@@ -10843,7 +10843,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Database::builder();
+            let mut builder = crate::model::database::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -10929,8 +10929,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_database_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_database_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Database>>, aws_smithy_json::deserialize::Error>
 where
@@ -10965,7 +10965,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_data_catalog_encryption_settings<'a, I>(
+pub(crate) fn deser_structure_crate_model_data_catalog_encryption_settings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DataCatalogEncryptionSettings>, aws_smithy_json::deserialize::Error>
 where
@@ -10977,7 +10977,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::DataCatalogEncryptionSettings::builder();
+            let mut builder = crate::model::data_catalog_encryption_settings::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -11012,8 +11012,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_dag_nodes<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_dag_nodes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::CodeGenNode>>, aws_smithy_json::deserialize::Error>
 where
@@ -11048,8 +11048,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_dag_edges<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_dag_edges<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::CodeGenEdge>>, aws_smithy_json::deserialize::Error>
 where
@@ -11084,7 +11084,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_dev_endpoint<'a, I>(
+pub(crate) fn deser_structure_crate_model_dev_endpoint<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DevEndpoint>, aws_smithy_json::deserialize::Error>
 where
@@ -11096,7 +11096,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::DevEndpoint::builder();
+            let mut builder = crate::model::dev_endpoint::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -11159,7 +11159,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -11207,7 +11207,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -11216,7 +11216,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -11339,7 +11339,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_job<'a, I>(
+pub(crate) fn deser_structure_crate_model_job<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Job>, aws_smithy_json::deserialize::Error>
 where
@@ -11351,7 +11351,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Job::builder();
+            let mut builder = crate::model::job::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -11445,7 +11445,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -11454,7 +11454,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -11463,7 +11463,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -11492,7 +11492,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -11555,7 +11555,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_job_bookmark_entry<'a, I>(
+pub(crate) fn deser_structure_crate_model_job_bookmark_entry<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::JobBookmarkEntry>, aws_smithy_json::deserialize::Error>
 where
@@ -11567,7 +11567,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::JobBookmarkEntry::builder();
+            let mut builder = crate::model::job_bookmark_entry::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -11587,7 +11587,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -11596,7 +11596,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -11605,7 +11605,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -11655,7 +11655,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_job_run<'a, I>(
+pub(crate) fn deser_structure_crate_model_job_run<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::JobRun>, aws_smithy_json::deserialize::Error>
 where
@@ -11667,7 +11667,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::JobRun::builder();
+            let mut builder = crate::model::job_run::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -11687,7 +11687,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -11780,7 +11780,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -11789,7 +11789,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -11798,7 +11798,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -11827,7 +11827,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -11902,8 +11902,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_job_run_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_job_run_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::JobRun>>, aws_smithy_json::deserialize::Error>
 where
@@ -11937,8 +11937,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_mapping_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_mapping_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::MappingEntry>>, aws_smithy_json::deserialize::Error>
 where
@@ -11973,7 +11973,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_task_run_properties<'a, I>(
+pub(crate) fn deser_structure_crate_model_task_run_properties<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::TaskRunProperties>, aws_smithy_json::deserialize::Error>
 where
@@ -11985,7 +11985,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::TaskRunProperties::builder();
+            let mut builder = crate::model::task_run_properties::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -12042,8 +12042,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_task_run_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_task_run_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::TaskRun>>, aws_smithy_json::deserialize::Error>
 where
@@ -12078,8 +12078,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_glue_tables<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_glue_tables<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::GlueTable>>, aws_smithy_json::deserialize::Error>
 where
@@ -12114,7 +12114,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_transform_parameters<'a, I>(
+pub(crate) fn deser_structure_crate_model_transform_parameters<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::TransformParameters>, aws_smithy_json::deserialize::Error>
 where
@@ -12126,7 +12126,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::TransformParameters::builder();
+            let mut builder = crate::model::transform_parameters::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -12168,7 +12168,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_evaluation_metrics<'a, I>(
+pub(crate) fn deser_structure_crate_model_evaluation_metrics<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::EvaluationMetrics>, aws_smithy_json::deserialize::Error>
 where
@@ -12180,7 +12180,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::EvaluationMetrics::builder();
+            let mut builder = crate::model::evaluation_metrics::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -12222,8 +12222,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_transform_schema<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_transform_schema<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::SchemaColumn>>, aws_smithy_json::deserialize::Error>
 where
@@ -12258,7 +12258,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_transform_encryption<'a, I>(
+pub(crate) fn deser_structure_crate_model_transform_encryption<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::TransformEncryption>, aws_smithy_json::deserialize::Error>
 where
@@ -12270,7 +12270,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::TransformEncryption::builder();
+            let mut builder = crate::model::transform_encryption::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -12309,8 +12309,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_transform_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_transform_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::MlTransform>>, aws_smithy_json::deserialize::Error>
 where
@@ -12345,7 +12345,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_partition<'a, I>(
+pub(crate) fn deser_structure_crate_model_partition<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Partition>, aws_smithy_json::deserialize::Error>
 where
@@ -12357,7 +12357,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Partition::builder();
+            let mut builder = crate::model::partition::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -12450,8 +12450,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_partition_index_descriptor_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_partition_index_descriptor_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::PartitionIndexDescriptor>>,
@@ -12490,8 +12490,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_get_resource_policies_response_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_get_resource_policies_response_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::GluePolicy>>, aws_smithy_json::deserialize::Error>
 where
@@ -12526,7 +12526,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_security_configuration<'a, I>(
+pub(crate) fn deser_structure_crate_model_security_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SecurityConfiguration>, aws_smithy_json::deserialize::Error>
 where
@@ -12538,7 +12538,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::SecurityConfiguration::builder();
+            let mut builder = crate::model::security_configuration::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -12585,8 +12585,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_security_configuration_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_security_configuration_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::SecurityConfiguration>>,
@@ -12626,7 +12626,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_statement<'a, I>(
+pub(crate) fn deser_structure_crate_model_statement<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Statement>, aws_smithy_json::deserialize::Error>
 where
@@ -12638,7 +12638,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Statement::builder();
+            let mut builder = crate::model::statement::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -12649,7 +12649,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -12692,7 +12692,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -12701,7 +12701,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -12724,7 +12724,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_table<'a, I>(
+pub(crate) fn deser_structure_crate_model_table<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Table>, aws_smithy_json::deserialize::Error>
 where
@@ -12736,7 +12736,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Table::builder();
+            let mut builder = crate::model::table::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -12815,7 +12815,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -12923,8 +12923,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_table_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_table_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Table>>, aws_smithy_json::deserialize::Error>
 where
@@ -12958,7 +12958,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_table_version<'a, I>(
+pub(crate) fn deser_structure_crate_model_table_version<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::TableVersion>, aws_smithy_json::deserialize::Error>
 where
@@ -12970,7 +12970,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::TableVersion::builder();
+            let mut builder = crate::model::table_version::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -13009,8 +13009,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_get_table_versions_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_get_table_versions_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::TableVersion>>, aws_smithy_json::deserialize::Error>
 where
@@ -13045,7 +13045,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_trigger<'a, I>(
+pub(crate) fn deser_structure_crate_model_trigger<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Trigger>, aws_smithy_json::deserialize::Error>
 where
@@ -13057,7 +13057,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Trigger::builder();
+            let mut builder = crate::model::trigger::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -13170,8 +13170,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_unfiltered_partition_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_unfiltered_partition_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::UnfilteredPartition>>,
@@ -13211,8 +13211,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_column_row_filter_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_column_row_filter_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ColumnRowFilter>>, aws_smithy_json::deserialize::Error>
 where
@@ -13249,7 +13249,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_user_defined_function<'a, I>(
+pub(crate) fn deser_structure_crate_model_user_defined_function<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::UserDefinedFunction>, aws_smithy_json::deserialize::Error>
 where
@@ -13261,7 +13261,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::UserDefinedFunction::builder();
+            let mut builder = crate::model::user_defined_function::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -13356,8 +13356,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_user_defined_function_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_user_defined_function_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::UserDefinedFunction>>,
@@ -13397,7 +13397,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_workflow<'a, I>(
+pub(crate) fn deser_structure_crate_model_workflow<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Workflow>, aws_smithy_json::deserialize::Error>
 where
@@ -13409,7 +13409,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Workflow::builder();
+            let mut builder = crate::model::workflow::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -13473,7 +13473,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -13501,7 +13501,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_workflow_run<'a, I>(
+pub(crate) fn deser_structure_crate_model_workflow_run<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::WorkflowRun>, aws_smithy_json::deserialize::Error>
 where
@@ -13513,7 +13513,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::WorkflowRun::builder();
+            let mut builder = crate::model::workflow_run::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -13625,8 +13625,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_com_amazonaws_glue_workflow_run_properties<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_map_com_amazonaws_glue_workflow_run_properties<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -13671,8 +13671,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_workflow_runs<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_workflow_runs<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::WorkflowRun>>, aws_smithy_json::deserialize::Error>
 where
@@ -13707,8 +13707,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_crawler_history_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_crawler_history_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::CrawlerHistory>>, aws_smithy_json::deserialize::Error>
 where
@@ -13743,8 +13743,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_dev_endpoint_name_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_dev_endpoint_name_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, aws_smithy_json::deserialize::Error>
 where
@@ -13782,8 +13782,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_transform_id_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_transform_id_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, aws_smithy_json::deserialize::Error>
 where
@@ -13821,8 +13821,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_registry_list_definition<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_registry_list_definition<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::RegistryListItem>>,
@@ -13862,8 +13862,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_schema_list_definition<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_schema_list_definition<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::SchemaListItem>>, aws_smithy_json::deserialize::Error>
 where
@@ -13900,8 +13900,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_schema_version_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_schema_version_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::SchemaVersionListItem>>,
@@ -13940,8 +13940,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_session_id_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_session_id_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, aws_smithy_json::deserialize::Error>
 where
@@ -13979,8 +13979,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_session_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_session_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Session>>, aws_smithy_json::deserialize::Error>
 where
@@ -14014,8 +14014,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_statement_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_statement_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Statement>>, aws_smithy_json::deserialize::Error>
 where
@@ -14050,8 +14050,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_com_amazonaws_glue_metadata_info_map<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_map_com_amazonaws_glue_metadata_info_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, crate::model::MetadataInfo>>,
@@ -14093,8 +14093,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_node_id_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_node_id_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, aws_smithy_json::deserialize::Error>
 where
@@ -14132,8 +14132,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_column_statistics_errors<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_column_statistics_errors<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::ColumnStatisticsError>>,
@@ -14173,7 +14173,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_partition_error<'a, I>(
+pub(crate) fn deser_structure_crate_model_partition_error<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::PartitionError>, aws_smithy_json::deserialize::Error>
 where
@@ -14185,7 +14185,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::PartitionError::builder();
+            let mut builder = crate::model::partition_error::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -14222,7 +14222,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_error_detail<'a, I>(
+pub(crate) fn deser_structure_crate_model_error_detail<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ErrorDetail>, aws_smithy_json::deserialize::Error>
 where
@@ -14234,7 +14234,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::ErrorDetail::builder();
+            let mut builder = crate::model::error_detail::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -14277,7 +14277,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_table_error<'a, I>(
+pub(crate) fn deser_structure_crate_model_table_error<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::TableError>, aws_smithy_json::deserialize::Error>
 where
@@ -14289,7 +14289,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::TableError::builder();
+            let mut builder = crate::model::table_error::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -14330,7 +14330,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_table_version_error<'a, I>(
+pub(crate) fn deser_structure_crate_model_table_version_error<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::TableVersionError>, aws_smithy_json::deserialize::Error>
 where
@@ -14342,7 +14342,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::TableVersionError::builder();
+            let mut builder = crate::model::table_version_error::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -14392,7 +14392,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_custom_entity_type<'a, I>(
+pub(crate) fn deser_structure_crate_model_custom_entity_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CustomEntityType>, aws_smithy_json::deserialize::Error>
 where
@@ -14404,7 +14404,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::CustomEntityType::builder();
+            let mut builder = crate::model::custom_entity_type::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -14454,7 +14454,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_partition_value_list<'a, I>(
+pub(crate) fn deser_structure_crate_model_partition_value_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::PartitionValueList>, aws_smithy_json::deserialize::Error>
 where
@@ -14466,7 +14466,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::PartitionValueList::builder();
+            let mut builder = crate::model::partition_value_list::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -14496,7 +14496,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_batch_stop_job_run_successful_submission<'a, I>(
+pub(crate) fn deser_structure_crate_model_batch_stop_job_run_successful_submission<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::BatchStopJobRunSuccessfulSubmission>,
@@ -14511,7 +14511,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::BatchStopJobRunSuccessfulSubmission::builder();
+            let mut builder =
+                crate::model::batch_stop_job_run_successful_submission::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -14554,7 +14555,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_batch_stop_job_run_error<'a, I>(
+pub(crate) fn deser_structure_crate_model_batch_stop_job_run_error<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::BatchStopJobRunError>, aws_smithy_json::deserialize::Error>
 where
@@ -14566,7 +14567,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::BatchStopJobRunError::builder();
+            let mut builder = crate::model::batch_stop_job_run_error::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -14616,7 +14617,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_batch_update_partition_failure_entry<'a, I>(
+pub(crate) fn deser_structure_crate_model_batch_update_partition_failure_entry<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::BatchUpdatePartitionFailureEntry>,
@@ -14631,7 +14632,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::BatchUpdatePartitionFailureEntry::builder();
+            let mut builder =
+                crate::model::batch_update_partition_failure_entry::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -14668,7 +14670,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_session_command<'a, I>(
+pub(crate) fn deser_structure_crate_model_session_command<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SessionCommand>, aws_smithy_json::deserialize::Error>
 where
@@ -14680,7 +14682,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::SessionCommand::builder();
+            let mut builder = crate::model::session_command::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -14723,8 +14725,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_com_amazonaws_glue_orchestration_arguments_map<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_map_com_amazonaws_glue_orchestration_arguments_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -14769,7 +14771,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_connections_list<'a, I>(
+pub(crate) fn deser_structure_crate_model_connections_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ConnectionsList>, aws_smithy_json::deserialize::Error>
 where
@@ -14781,7 +14783,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::ConnectionsList::builder();
+            let mut builder = crate::model::connections_list::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -14811,7 +14813,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_schema_version_error_item<'a, I>(
+pub(crate) fn deser_structure_crate_model_schema_version_error_item<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SchemaVersionErrorItem>, aws_smithy_json::deserialize::Error>
 where
@@ -14823,7 +14825,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::SchemaVersionErrorItem::builder();
+            let mut builder = crate::model::schema_version_error_item::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -14834,7 +14836,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -14864,7 +14866,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_last_active_definition<'a, I>(
+pub(crate) fn deser_structure_crate_model_last_active_definition<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::LastActiveDefinition>, aws_smithy_json::deserialize::Error>
 where
@@ -14876,7 +14878,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::LastActiveDefinition::builder();
+            let mut builder = crate::model::last_active_definition::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -14945,7 +14947,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_grok_classifier<'a, I>(
+pub(crate) fn deser_structure_crate_model_grok_classifier<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::GrokClassifier>, aws_smithy_json::deserialize::Error>
 where
@@ -14957,7 +14959,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::GrokClassifier::builder();
+            let mut builder = crate::model::grok_classifier::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -15002,7 +15004,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -15043,7 +15045,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_xml_classifier<'a, I>(
+pub(crate) fn deser_structure_crate_model_xml_classifier<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::XmlClassifier>, aws_smithy_json::deserialize::Error>
 where
@@ -15055,7 +15057,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::XmlClassifier::builder();
+            let mut builder = crate::model::xml_classifier::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -15100,7 +15102,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -15132,7 +15134,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_json_classifier<'a, I>(
+pub(crate) fn deser_structure_crate_model_json_classifier<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::JsonClassifier>, aws_smithy_json::deserialize::Error>
 where
@@ -15144,7 +15146,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::JsonClassifier::builder();
+            let mut builder = crate::model::json_classifier::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -15180,7 +15182,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -15212,7 +15214,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_csv_classifier<'a, I>(
+pub(crate) fn deser_structure_crate_model_csv_classifier<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CsvClassifier>, aws_smithy_json::deserialize::Error>
 where
@@ -15224,7 +15226,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::CsvClassifier::builder();
+            let mut builder = crate::model::csv_classifier::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -15260,7 +15262,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -15335,7 +15337,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_column_statistics<'a, I>(
+pub(crate) fn deser_structure_crate_model_column_statistics<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ColumnStatistics>, aws_smithy_json::deserialize::Error>
 where
@@ -15347,7 +15349,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::ColumnStatistics::builder();
+            let mut builder = crate::model::column_statistics::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -15403,7 +15405,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_column_error<'a, I>(
+pub(crate) fn deser_structure_crate_model_column_error<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ColumnError>, aws_smithy_json::deserialize::Error>
 where
@@ -15415,7 +15417,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::ColumnError::builder();
+            let mut builder = crate::model::column_error::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -15456,8 +15458,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_match_criteria<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_match_criteria<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, aws_smithy_json::deserialize::Error>
 where
@@ -15495,8 +15497,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_com_amazonaws_glue_connection_properties<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_map_com_amazonaws_glue_connection_properties<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<crate::model::ConnectionPropertyKey, std::string::String>>,
@@ -15543,7 +15545,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_physical_connection_requirements<'a, I>(
+pub(crate) fn deser_structure_crate_model_physical_connection_requirements<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::PhysicalConnectionRequirements>, aws_smithy_json::deserialize::Error>
 where
@@ -15555,7 +15557,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::PhysicalConnectionRequirements::builder();
+            let mut builder = crate::model::physical_connection_requirements::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -15603,7 +15605,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_crawler_targets<'a, I>(
+pub(crate) fn deser_structure_crate_model_crawler_targets<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CrawlerTargets>, aws_smithy_json::deserialize::Error>
 where
@@ -15615,7 +15617,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::CrawlerTargets::builder();
+            let mut builder = crate::model::crawler_targets::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -15670,8 +15672,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_classifier_name_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_classifier_name_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, aws_smithy_json::deserialize::Error>
 where
@@ -15709,7 +15711,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_recrawl_policy<'a, I>(
+pub(crate) fn deser_structure_crate_model_recrawl_policy<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RecrawlPolicy>, aws_smithy_json::deserialize::Error>
 where
@@ -15721,7 +15723,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::RecrawlPolicy::builder();
+            let mut builder = crate::model::recrawl_policy::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -15759,7 +15761,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_schema_change_policy<'a, I>(
+pub(crate) fn deser_structure_crate_model_schema_change_policy<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SchemaChangePolicy>, aws_smithy_json::deserialize::Error>
 where
@@ -15771,7 +15773,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::SchemaChangePolicy::builder();
+            let mut builder = crate::model::schema_change_policy::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -15820,7 +15822,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_lineage_configuration<'a, I>(
+pub(crate) fn deser_structure_crate_model_lineage_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::LineageConfiguration>, aws_smithy_json::deserialize::Error>
 where
@@ -15832,7 +15834,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::LineageConfiguration::builder();
+            let mut builder = crate::model::lineage_configuration::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -15870,7 +15872,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_schedule<'a, I>(
+pub(crate) fn deser_structure_crate_model_schedule<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Schedule>, aws_smithy_json::deserialize::Error>
 where
@@ -15882,7 +15884,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Schedule::builder();
+            let mut builder = crate::model::schedule::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -15928,7 +15930,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_last_crawl_info<'a, I>(
+pub(crate) fn deser_structure_crate_model_last_crawl_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::LastCrawlInfo>, aws_smithy_json::deserialize::Error>
 where
@@ -15940,7 +15942,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::LastCrawlInfo::builder();
+            let mut builder = crate::model::last_crawl_info::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -16022,7 +16024,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_lake_formation_configuration<'a, I>(
+pub(crate) fn deser_structure_crate_model_lake_formation_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::LakeFormationConfiguration>, aws_smithy_json::deserialize::Error>
 where
@@ -16034,7 +16036,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::LakeFormationConfiguration::builder();
+            let mut builder = crate::model::lake_formation_configuration::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -16075,7 +16077,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_crawler_metrics<'a, I>(
+pub(crate) fn deser_structure_crate_model_crawler_metrics<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CrawlerMetrics>, aws_smithy_json::deserialize::Error>
 where
@@ -16087,7 +16089,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::CrawlerMetrics::builder();
+            let mut builder = crate::model::crawler_metrics::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -16138,7 +16140,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -16147,7 +16149,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -16156,7 +16158,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -16179,8 +16181,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_com_amazonaws_glue_parameters_map<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_map_com_amazonaws_glue_parameters_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -16225,8 +16227,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_principal_permissions_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_principal_permissions_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::PrincipalPermissions>>,
@@ -16266,7 +16268,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_database_identifier<'a, I>(
+pub(crate) fn deser_structure_crate_model_database_identifier<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DatabaseIdentifier>, aws_smithy_json::deserialize::Error>
 where
@@ -16278,7 +16280,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::DatabaseIdentifier::builder();
+            let mut builder = crate::model::database_identifier::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -16321,7 +16323,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_encryption_at_rest<'a, I>(
+pub(crate) fn deser_structure_crate_model_encryption_at_rest<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::EncryptionAtRest>, aws_smithy_json::deserialize::Error>
 where
@@ -16333,7 +16335,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::EncryptionAtRest::builder();
+            let mut builder = crate::model::encryption_at_rest::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -16380,7 +16382,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_connection_password_encryption<'a, I>(
+pub(crate) fn deser_structure_crate_model_connection_password_encryption<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ConnectionPasswordEncryption>, aws_smithy_json::deserialize::Error>
 where
@@ -16392,7 +16394,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::ConnectionPasswordEncryption::builder();
+            let mut builder = crate::model::connection_password_encryption::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -16433,7 +16435,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_code_gen_node<'a, I>(
+pub(crate) fn deser_structure_crate_model_code_gen_node<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CodeGenNode>, aws_smithy_json::deserialize::Error>
 where
@@ -16445,7 +16447,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::CodeGenNode::builder();
+            let mut builder = crate::model::code_gen_node::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -16479,7 +16481,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -16502,7 +16504,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_code_gen_edge<'a, I>(
+pub(crate) fn deser_structure_crate_model_code_gen_edge<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CodeGenEdge>, aws_smithy_json::deserialize::Error>
 where
@@ -16514,7 +16516,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::CodeGenEdge::builder();
+            let mut builder = crate::model::code_gen_edge::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -16566,8 +16568,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_public_keys_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_public_keys_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, aws_smithy_json::deserialize::Error>
 where
@@ -16605,7 +16607,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_execution_property<'a, I>(
+pub(crate) fn deser_structure_crate_model_execution_property<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ExecutionProperty>, aws_smithy_json::deserialize::Error>
 where
@@ -16617,7 +16619,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::ExecutionProperty::builder();
+            let mut builder = crate::model::execution_property::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -16628,7 +16630,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -16651,7 +16653,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_job_command<'a, I>(
+pub(crate) fn deser_structure_crate_model_job_command<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::JobCommand>, aws_smithy_json::deserialize::Error>
 where
@@ -16663,7 +16665,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::JobCommand::builder();
+            let mut builder = crate::model::job_command::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -16715,8 +16717,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_com_amazonaws_glue_generic_map<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_map_com_amazonaws_glue_generic_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -16761,7 +16763,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_notification_property<'a, I>(
+pub(crate) fn deser_structure_crate_model_notification_property<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::NotificationProperty>, aws_smithy_json::deserialize::Error>
 where
@@ -16773,7 +16775,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::NotificationProperty::builder();
+            let mut builder = crate::model::notification_property::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -16784,7 +16786,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -16807,8 +16809,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_com_amazonaws_glue_code_gen_configuration_nodes<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_map_com_amazonaws_glue_code_gen_configuration_nodes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, crate::model::CodeGenConfigurationNode>>,
@@ -16851,8 +16853,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_predecessor_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_predecessor_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Predecessor>>, aws_smithy_json::deserialize::Error>
 where
@@ -16887,7 +16889,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_mapping_entry<'a, I>(
+pub(crate) fn deser_structure_crate_model_mapping_entry<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::MappingEntry>, aws_smithy_json::deserialize::Error>
 where
@@ -16899,7 +16901,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::MappingEntry::builder();
+            let mut builder = crate::model::mapping_entry::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -16978,7 +16980,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_import_labels_task_run_properties<'a, I>(
+pub(crate) fn deser_structure_crate_model_import_labels_task_run_properties<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ImportLabelsTaskRunProperties>, aws_smithy_json::deserialize::Error>
 where
@@ -16990,7 +16992,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::ImportLabelsTaskRunProperties::builder();
+            let mut builder = crate::model::import_labels_task_run_properties::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -17031,7 +17033,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_export_labels_task_run_properties<'a, I>(
+pub(crate) fn deser_structure_crate_model_export_labels_task_run_properties<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ExportLabelsTaskRunProperties>, aws_smithy_json::deserialize::Error>
 where
@@ -17043,7 +17045,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::ExportLabelsTaskRunProperties::builder();
+            let mut builder = crate::model::export_labels_task_run_properties::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -17077,7 +17079,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_labeling_set_generation_task_run_properties<'a, I>(
+pub(crate) fn deser_structure_crate_model_labeling_set_generation_task_run_properties<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::LabelingSetGenerationTaskRunProperties>,
@@ -17092,7 +17094,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::LabelingSetGenerationTaskRunProperties::builder();
+            let mut builder =
+                crate::model::labeling_set_generation_task_run_properties::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -17126,7 +17129,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_find_matches_task_run_properties<'a, I>(
+pub(crate) fn deser_structure_crate_model_find_matches_task_run_properties<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::FindMatchesTaskRunProperties>, aws_smithy_json::deserialize::Error>
 where
@@ -17138,7 +17141,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::FindMatchesTaskRunProperties::builder();
+            let mut builder = crate::model::find_matches_task_run_properties::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -17190,7 +17193,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_task_run<'a, I>(
+pub(crate) fn deser_structure_crate_model_task_run<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::TaskRun>, aws_smithy_json::deserialize::Error>
 where
@@ -17202,7 +17205,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::TaskRun::builder();
+            let mut builder = crate::model::task_run::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -17290,7 +17293,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -17313,7 +17316,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_glue_table<'a, I>(
+pub(crate) fn deser_structure_crate_model_glue_table<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::GlueTable>, aws_smithy_json::deserialize::Error>
 where
@@ -17325,7 +17328,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::GlueTable::builder();
+            let mut builder = crate::model::glue_table::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -17386,7 +17389,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_find_matches_parameters<'a, I>(
+pub(crate) fn deser_structure_crate_model_find_matches_parameters<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::FindMatchesParameters>, aws_smithy_json::deserialize::Error>
 where
@@ -17398,7 +17401,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::FindMatchesParameters::builder();
+            let mut builder = crate::model::find_matches_parameters::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -17455,7 +17458,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_find_matches_metrics<'a, I>(
+pub(crate) fn deser_structure_crate_model_find_matches_metrics<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::FindMatchesMetrics>, aws_smithy_json::deserialize::Error>
 where
@@ -17467,7 +17470,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::FindMatchesMetrics::builder();
+            let mut builder = crate::model::find_matches_metrics::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -17534,7 +17537,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_schema_column<'a, I>(
+pub(crate) fn deser_structure_crate_model_schema_column<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SchemaColumn>, aws_smithy_json::deserialize::Error>
 where
@@ -17546,7 +17549,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::SchemaColumn::builder();
+            let mut builder = crate::model::schema_column::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -17589,7 +17592,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_ml_user_data_encryption<'a, I>(
+pub(crate) fn deser_structure_crate_model_ml_user_data_encryption<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::MlUserDataEncryption>, aws_smithy_json::deserialize::Error>
 where
@@ -17601,7 +17604,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::MlUserDataEncryption::builder();
+            let mut builder = crate::model::ml_user_data_encryption::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -17650,7 +17653,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_ml_transform<'a, I>(
+pub(crate) fn deser_structure_crate_model_ml_transform<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::MlTransform>, aws_smithy_json::deserialize::Error>
 where
@@ -17662,7 +17665,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::MlTransform::builder();
+            let mut builder = crate::model::ml_transform::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -17746,7 +17749,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -17798,7 +17801,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -17807,7 +17810,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -17816,7 +17819,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -17844,8 +17847,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_value_string_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_value_string_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, aws_smithy_json::deserialize::Error>
 where
@@ -17883,7 +17886,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_storage_descriptor<'a, I>(
+pub(crate) fn deser_structure_crate_model_storage_descriptor<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::StorageDescriptor>, aws_smithy_json::deserialize::Error>
 where
@@ -17895,7 +17898,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::StorageDescriptor::builder();
+            let mut builder = crate::model::storage_descriptor::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -17952,7 +17955,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -18020,7 +18023,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_partition_index_descriptor<'a, I>(
+pub(crate) fn deser_structure_crate_model_partition_index_descriptor<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::PartitionIndexDescriptor>, aws_smithy_json::deserialize::Error>
 where
@@ -18032,7 +18035,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::PartitionIndexDescriptor::builder();
+            let mut builder = crate::model::partition_index_descriptor::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -18089,7 +18092,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_glue_policy<'a, I>(
+pub(crate) fn deser_structure_crate_model_glue_policy<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::GluePolicy>, aws_smithy_json::deserialize::Error>
 where
@@ -18101,7 +18104,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::GluePolicy::builder();
+            let mut builder = crate::model::glue_policy::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -18160,7 +18163,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_encryption_configuration<'a, I>(
+pub(crate) fn deser_structure_crate_model_encryption_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::EncryptionConfiguration>, aws_smithy_json::deserialize::Error>
 where
@@ -18172,7 +18175,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::EncryptionConfiguration::builder();
+            let mut builder = crate::model::encryption_configuration::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -18212,7 +18215,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_statement_output<'a, I>(
+pub(crate) fn deser_structure_crate_model_statement_output<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::StatementOutput>, aws_smithy_json::deserialize::Error>
 where
@@ -18224,7 +18227,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::StatementOutput::builder();
+            let mut builder = crate::model::statement_output::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -18240,7 +18243,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -18298,8 +18301,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_column_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_column_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Column>>, aws_smithy_json::deserialize::Error>
 where
@@ -18333,7 +18336,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_table_identifier<'a, I>(
+pub(crate) fn deser_structure_crate_model_table_identifier<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::TableIdentifier>, aws_smithy_json::deserialize::Error>
 where
@@ -18345,7 +18348,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::TableIdentifier::builder();
+            let mut builder = crate::model::table_identifier::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -18397,8 +18400,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_action_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_action_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Action>>, aws_smithy_json::deserialize::Error>
 where
@@ -18432,7 +18435,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_predicate<'a, I>(
+pub(crate) fn deser_structure_crate_model_predicate<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Predicate>, aws_smithy_json::deserialize::Error>
 where
@@ -18444,7 +18447,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Predicate::builder();
+            let mut builder = crate::model::predicate::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -18486,7 +18489,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_event_batching_condition<'a, I>(
+pub(crate) fn deser_structure_crate_model_event_batching_condition<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::EventBatchingCondition>, aws_smithy_json::deserialize::Error>
 where
@@ -18498,7 +18501,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::EventBatchingCondition::builder();
+            let mut builder = crate::model::event_batching_condition::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -18509,7 +18512,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -18518,7 +18521,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -18541,7 +18544,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_unfiltered_partition<'a, I>(
+pub(crate) fn deser_structure_crate_model_unfiltered_partition<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::UnfilteredPartition>, aws_smithy_json::deserialize::Error>
 where
@@ -18553,7 +18556,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::UnfilteredPartition::builder();
+            let mut builder = crate::model::unfiltered_partition::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -18597,7 +18600,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_column_row_filter<'a, I>(
+pub(crate) fn deser_structure_crate_model_column_row_filter<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ColumnRowFilter>, aws_smithy_json::deserialize::Error>
 where
@@ -18609,7 +18612,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::ColumnRowFilter::builder();
+            let mut builder = crate::model::column_row_filter::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -18652,8 +18655,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_resource_uri_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_resource_uri_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ResourceUri>>, aws_smithy_json::deserialize::Error>
 where
@@ -18688,7 +18691,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_workflow_graph<'a, I>(
+pub(crate) fn deser_structure_crate_model_workflow_graph<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::WorkflowGraph>, aws_smithy_json::deserialize::Error>
 where
@@ -18700,7 +18703,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::WorkflowGraph::builder();
+            let mut builder = crate::model::workflow_graph::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -18739,7 +18742,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_blueprint_details<'a, I>(
+pub(crate) fn deser_structure_crate_model_blueprint_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::BlueprintDetails>, aws_smithy_json::deserialize::Error>
 where
@@ -18751,7 +18754,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::BlueprintDetails::builder();
+            let mut builder = crate::model::blueprint_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -18794,7 +18797,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_workflow_run_statistics<'a, I>(
+pub(crate) fn deser_structure_crate_model_workflow_run_statistics<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::WorkflowRunStatistics>, aws_smithy_json::deserialize::Error>
 where
@@ -18806,7 +18809,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::WorkflowRunStatistics::builder();
+            let mut builder = crate::model::workflow_run_statistics::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -18817,7 +18820,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -18826,7 +18829,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -18835,7 +18838,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -18844,7 +18847,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -18853,7 +18856,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -18862,7 +18865,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -18871,7 +18874,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -18880,7 +18883,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -18903,7 +18906,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_starting_event_batch_condition<'a, I>(
+pub(crate) fn deser_structure_crate_model_starting_event_batch_condition<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::StartingEventBatchCondition>, aws_smithy_json::deserialize::Error>
 where
@@ -18915,7 +18918,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::StartingEventBatchCondition::builder();
+            let mut builder = crate::model::starting_event_batch_condition::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -18926,7 +18929,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -18935,7 +18938,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -18958,7 +18961,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_crawler_history<'a, I>(
+pub(crate) fn deser_structure_crate_model_crawler_history<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CrawlerHistory>, aws_smithy_json::deserialize::Error>
 where
@@ -18970,7 +18973,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::CrawlerHistory::builder();
+            let mut builder = crate::model::crawler_history::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -19086,7 +19089,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_registry_list_item<'a, I>(
+pub(crate) fn deser_structure_crate_model_registry_list_item<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RegistryListItem>, aws_smithy_json::deserialize::Error>
 where
@@ -19098,7 +19101,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::RegistryListItem::builder();
+            let mut builder = crate::model::registry_list_item::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -19180,7 +19183,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_schema_list_item<'a, I>(
+pub(crate) fn deser_structure_crate_model_schema_list_item<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SchemaListItem>, aws_smithy_json::deserialize::Error>
 where
@@ -19192,7 +19195,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::SchemaListItem::builder();
+            let mut builder = crate::model::schema_list_item::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -19283,7 +19286,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_schema_version_list_item<'a, I>(
+pub(crate) fn deser_structure_crate_model_schema_version_list_item<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SchemaVersionListItem>, aws_smithy_json::deserialize::Error>
 where
@@ -19295,7 +19298,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::SchemaVersionListItem::builder();
+            let mut builder = crate::model::schema_version_list_item::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -19324,7 +19327,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -19369,7 +19372,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_metadata_info<'a, I>(
+pub(crate) fn deser_structure_crate_model_metadata_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::MetadataInfo>, aws_smithy_json::deserialize::Error>
 where
@@ -19381,7 +19384,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::MetadataInfo::builder();
+            let mut builder = crate::model::metadata_info::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -19429,7 +19432,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_column_statistics_error<'a, I>(
+pub(crate) fn deser_structure_crate_model_column_statistics_error<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ColumnStatisticsError>, aws_smithy_json::deserialize::Error>
 where
@@ -19441,7 +19444,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::ColumnStatisticsError::builder();
+            let mut builder = crate::model::column_statistics_error::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -19478,8 +19481,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_bounded_partition_value_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_bounded_partition_value_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, aws_smithy_json::deserialize::Error>
 where
@@ -19517,8 +19520,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_orchestration_string_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_orchestration_string_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, aws_smithy_json::deserialize::Error>
 where
@@ -19556,7 +19559,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_error_details<'a, I>(
+pub(crate) fn deser_structure_crate_model_error_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ErrorDetails>, aws_smithy_json::deserialize::Error>
 where
@@ -19568,7 +19571,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::ErrorDetails::builder();
+            let mut builder = crate::model::error_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -19611,8 +19614,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_csv_header<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_csv_header<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, aws_smithy_json::deserialize::Error>
 where
@@ -19650,7 +19653,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_column_statistics_data<'a, I>(
+pub(crate) fn deser_structure_crate_model_column_statistics_data<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ColumnStatisticsData>, aws_smithy_json::deserialize::Error>
 where
@@ -19662,7 +19665,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::ColumnStatisticsData::builder();
+            let mut builder = crate::model::column_statistics_data::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -19735,8 +19738,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_security_group_id_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_security_group_id_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, aws_smithy_json::deserialize::Error>
 where
@@ -19774,8 +19777,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_s3_target_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_s3_target_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::S3Target>>, aws_smithy_json::deserialize::Error>
 where
@@ -19810,8 +19813,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_jdbc_target_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_jdbc_target_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::JdbcTarget>>, aws_smithy_json::deserialize::Error>
 where
@@ -19846,8 +19849,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_mongo_db_target_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_mongo_db_target_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::MongoDbTarget>>, aws_smithy_json::deserialize::Error>
 where
@@ -19882,8 +19885,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_dynamo_db_target_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_dynamo_db_target_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::DynamoDbTarget>>, aws_smithy_json::deserialize::Error>
 where
@@ -19920,8 +19923,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_catalog_target_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_catalog_target_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::CatalogTarget>>, aws_smithy_json::deserialize::Error>
 where
@@ -19956,8 +19959,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_delta_target_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_delta_target_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::DeltaTarget>>, aws_smithy_json::deserialize::Error>
 where
@@ -19992,7 +19995,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_principal_permissions<'a, I>(
+pub(crate) fn deser_structure_crate_model_principal_permissions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::PrincipalPermissions>, aws_smithy_json::deserialize::Error>
 where
@@ -20004,7 +20007,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::PrincipalPermissions::builder();
+            let mut builder = crate::model::principal_permissions::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -20039,8 +20042,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_code_gen_node_args<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_code_gen_node_args<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::CodeGenNodeArg>>, aws_smithy_json::deserialize::Error>
 where
@@ -20077,7 +20080,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_code_gen_configuration_node<'a, I>(
+pub(crate) fn deser_structure_crate_model_code_gen_configuration_node<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CodeGenConfigurationNode>, aws_smithy_json::deserialize::Error>
 where
@@ -20089,7 +20092,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::CodeGenConfigurationNode::builder();
+            let mut builder = crate::model::code_gen_configuration_node::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -20394,7 +20397,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_predecessor<'a, I>(
+pub(crate) fn deser_structure_crate_model_predecessor<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Predecessor>, aws_smithy_json::deserialize::Error>
 where
@@ -20406,7 +20409,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Predecessor::builder();
+            let mut builder = crate::model::predecessor::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -20449,7 +20452,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_confusion_matrix<'a, I>(
+pub(crate) fn deser_structure_crate_model_confusion_matrix<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ConfusionMatrix>, aws_smithy_json::deserialize::Error>
 where
@@ -20461,7 +20464,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::ConfusionMatrix::builder();
+            let mut builder = crate::model::confusion_matrix::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -20472,7 +20475,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -20481,7 +20484,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -20490,7 +20493,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -20499,7 +20502,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -20522,8 +20525,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_column_importance_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_column_importance_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::ColumnImportance>>,
@@ -20563,8 +20566,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_location_string_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_location_string_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, aws_smithy_json::deserialize::Error>
 where
@@ -20602,7 +20605,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_ser_de_info<'a, I>(
+pub(crate) fn deser_structure_crate_model_ser_de_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SerDeInfo>, aws_smithy_json::deserialize::Error>
 where
@@ -20614,7 +20617,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::SerDeInfo::builder();
+            let mut builder = crate::model::ser_de_info::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -20664,8 +20667,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_order_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_order_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Order>>, aws_smithy_json::deserialize::Error>
 where
@@ -20699,7 +20702,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_skewed_info<'a, I>(
+pub(crate) fn deser_structure_crate_model_skewed_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SkewedInfo>, aws_smithy_json::deserialize::Error>
 where
@@ -20711,7 +20714,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::SkewedInfo::builder();
+            let mut builder = crate::model::skewed_info::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -20753,7 +20756,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_schema_reference<'a, I>(
+pub(crate) fn deser_structure_crate_model_schema_reference<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SchemaReference>, aws_smithy_json::deserialize::Error>
 where
@@ -20765,7 +20768,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::SchemaReference::builder();
+            let mut builder = crate::model::schema_reference::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -20792,7 +20795,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -20815,8 +20818,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_key_schema_element_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_key_schema_element_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::KeySchemaElement>>,
@@ -20856,8 +20859,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_backfill_errors<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_backfill_errors<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::BackfillError>>, aws_smithy_json::deserialize::Error>
 where
@@ -20892,8 +20895,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_s3_encryption_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_s3_encryption_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::S3Encryption>>, aws_smithy_json::deserialize::Error>
 where
@@ -20928,7 +20931,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_cloud_watch_encryption<'a, I>(
+pub(crate) fn deser_structure_crate_model_cloud_watch_encryption<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CloudWatchEncryption>, aws_smithy_json::deserialize::Error>
 where
@@ -20940,7 +20943,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::CloudWatchEncryption::builder();
+            let mut builder = crate::model::cloud_watch_encryption::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -20987,7 +20990,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_job_bookmarks_encryption<'a, I>(
+pub(crate) fn deser_structure_crate_model_job_bookmarks_encryption<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::JobBookmarksEncryption>, aws_smithy_json::deserialize::Error>
 where
@@ -20999,7 +21002,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::JobBookmarksEncryption::builder();
+            let mut builder = crate::model::job_bookmarks_encryption::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -21048,7 +21051,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_statement_output_data<'a, I>(
+pub(crate) fn deser_structure_crate_model_statement_output_data<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::StatementOutputData>, aws_smithy_json::deserialize::Error>
 where
@@ -21060,7 +21063,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::StatementOutputData::builder();
+            let mut builder = crate::model::statement_output_data::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -21094,7 +21097,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_column<'a, I>(
+pub(crate) fn deser_structure_crate_model_column<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Column>, aws_smithy_json::deserialize::Error>
 where
@@ -21106,7 +21109,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Column::builder();
+            let mut builder = crate::model::column::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -21165,7 +21168,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_action<'a, I>(
+pub(crate) fn deser_structure_crate_model_action<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Action>, aws_smithy_json::deserialize::Error>
 where
@@ -21177,7 +21180,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Action::builder();
+            let mut builder = crate::model::action::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -21204,7 +21207,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -21250,8 +21253,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_condition_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_condition_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Condition>>, aws_smithy_json::deserialize::Error>
 where
@@ -21286,7 +21289,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_resource_uri<'a, I>(
+pub(crate) fn deser_structure_crate_model_resource_uri<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ResourceUri>, aws_smithy_json::deserialize::Error>
 where
@@ -21298,7 +21301,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::ResourceUri::builder();
+            let mut builder = crate::model::resource_uri::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -21344,8 +21347,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_node_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_node_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Node>>, aws_smithy_json::deserialize::Error>
 where
@@ -21379,8 +21382,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_edge_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_edge_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Edge>>, aws_smithy_json::deserialize::Error>
 where
@@ -21414,8 +21417,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_other_metadata_value_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_other_metadata_value_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::OtherMetadataValueListItem>>,
@@ -21454,7 +21457,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_boolean_column_statistics_data<'a, I>(
+pub(crate) fn deser_structure_crate_model_boolean_column_statistics_data<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::BooleanColumnStatisticsData>, aws_smithy_json::deserialize::Error>
 where
@@ -21466,7 +21469,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::BooleanColumnStatisticsData::builder();
+            let mut builder = crate::model::boolean_column_statistics_data::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -21477,7 +21480,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -21486,7 +21489,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -21495,7 +21498,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -21518,7 +21521,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_date_column_statistics_data<'a, I>(
+pub(crate) fn deser_structure_crate_model_date_column_statistics_data<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DateColumnStatisticsData>, aws_smithy_json::deserialize::Error>
 where
@@ -21530,7 +21533,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::DateColumnStatisticsData::builder();
+            let mut builder = crate::model::date_column_statistics_data::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -21557,7 +21560,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -21566,7 +21569,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -21589,7 +21592,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_decimal_column_statistics_data<'a, I>(
+pub(crate) fn deser_structure_crate_model_decimal_column_statistics_data<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DecimalColumnStatisticsData>, aws_smithy_json::deserialize::Error>
 where
@@ -21601,7 +21604,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::DecimalColumnStatisticsData::builder();
+            let mut builder = crate::model::decimal_column_statistics_data::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -21626,7 +21629,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -21635,7 +21638,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -21658,7 +21661,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_double_column_statistics_data<'a, I>(
+pub(crate) fn deser_structure_crate_model_double_column_statistics_data<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DoubleColumnStatisticsData>, aws_smithy_json::deserialize::Error>
 where
@@ -21670,7 +21673,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::DoubleColumnStatisticsData::builder();
+            let mut builder = crate::model::double_column_statistics_data::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -21697,7 +21700,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -21706,7 +21709,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -21729,7 +21732,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_long_column_statistics_data<'a, I>(
+pub(crate) fn deser_structure_crate_model_long_column_statistics_data<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::LongColumnStatisticsData>, aws_smithy_json::deserialize::Error>
 where
@@ -21741,7 +21744,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::LongColumnStatisticsData::builder();
+            let mut builder = crate::model::long_column_statistics_data::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -21752,7 +21755,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -21761,7 +21764,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -21770,7 +21773,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -21779,7 +21782,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -21802,7 +21805,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_string_column_statistics_data<'a, I>(
+pub(crate) fn deser_structure_crate_model_string_column_statistics_data<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::StringColumnStatisticsData>, aws_smithy_json::deserialize::Error>
 where
@@ -21814,7 +21817,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::StringColumnStatisticsData::builder();
+            let mut builder = crate::model::string_column_statistics_data::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -21825,7 +21828,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -21842,7 +21845,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -21851,7 +21854,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -21874,7 +21877,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_binary_column_statistics_data<'a, I>(
+pub(crate) fn deser_structure_crate_model_binary_column_statistics_data<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::BinaryColumnStatisticsData>, aws_smithy_json::deserialize::Error>
 where
@@ -21886,7 +21889,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::BinaryColumnStatisticsData::builder();
+            let mut builder = crate::model::binary_column_statistics_data::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -21897,7 +21900,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -21914,7 +21917,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -21937,7 +21940,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_s3_target<'a, I>(
+pub(crate) fn deser_structure_crate_model_s3_target<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::S3Target>, aws_smithy_json::deserialize::Error>
 where
@@ -21949,7 +21952,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::S3Target::builder();
+            let mut builder = crate::model::s3_target::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -21985,7 +21988,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -22026,7 +22029,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_jdbc_target<'a, I>(
+pub(crate) fn deser_structure_crate_model_jdbc_target<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::JdbcTarget>, aws_smithy_json::deserialize::Error>
 where
@@ -22038,7 +22041,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::JdbcTarget::builder();
+            let mut builder = crate::model::jdbc_target::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -22088,7 +22091,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_mongo_db_target<'a, I>(
+pub(crate) fn deser_structure_crate_model_mongo_db_target<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::MongoDbTarget>, aws_smithy_json::deserialize::Error>
 where
@@ -22100,7 +22103,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::MongoDbTarget::builder();
+            let mut builder = crate::model::mongo_db_target::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -22150,7 +22153,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_dynamo_db_target<'a, I>(
+pub(crate) fn deser_structure_crate_model_dynamo_db_target<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DynamoDbTarget>, aws_smithy_json::deserialize::Error>
 where
@@ -22162,7 +22165,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::DynamoDbTarget::builder();
+            let mut builder = crate::model::dynamo_db_target::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -22211,7 +22214,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_catalog_target<'a, I>(
+pub(crate) fn deser_structure_crate_model_catalog_target<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CatalogTarget>, aws_smithy_json::deserialize::Error>
 where
@@ -22223,7 +22226,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::CatalogTarget::builder();
+            let mut builder = crate::model::catalog_target::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -22289,7 +22292,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_delta_target<'a, I>(
+pub(crate) fn deser_structure_crate_model_delta_target<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DeltaTarget>, aws_smithy_json::deserialize::Error>
 where
@@ -22301,7 +22304,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::DeltaTarget::builder();
+            let mut builder = crate::model::delta_target::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -22349,7 +22352,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_data_lake_principal<'a, I>(
+pub(crate) fn deser_structure_crate_model_data_lake_principal<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DataLakePrincipal>, aws_smithy_json::deserialize::Error>
 where
@@ -22361,7 +22364,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::DataLakePrincipal::builder();
+            let mut builder = crate::model::data_lake_principal::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -22395,8 +22398,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_permission_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_permission_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Permission>>, aws_smithy_json::deserialize::Error>
 where
@@ -22437,7 +22440,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_code_gen_node_arg<'a, I>(
+pub(crate) fn deser_structure_crate_model_code_gen_node_arg<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CodeGenNodeArg>, aws_smithy_json::deserialize::Error>
 where
@@ -22449,7 +22452,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::CodeGenNodeArg::builder();
+            let mut builder = crate::model::code_gen_node_arg::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -22499,7 +22502,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_athena_connector_source<'a, I>(
+pub(crate) fn deser_structure_crate_model_athena_connector_source<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AthenaConnectorSource>, aws_smithy_json::deserialize::Error>
 where
@@ -22511,7 +22514,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::AthenaConnectorSource::builder();
+            let mut builder = crate::model::athena_connector_source::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -22597,7 +22600,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_jdbc_connector_source<'a, I>(
+pub(crate) fn deser_structure_crate_model_jdbc_connector_source<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::JdbcConnectorSource>, aws_smithy_json::deserialize::Error>
 where
@@ -22609,7 +22612,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::JdbcConnectorSource::builder();
+            let mut builder = crate::model::jdbc_connector_source::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -22700,7 +22703,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_spark_connector_source<'a, I>(
+pub(crate) fn deser_structure_crate_model_spark_connector_source<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SparkConnectorSource>, aws_smithy_json::deserialize::Error>
 where
@@ -22712,7 +22715,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::SparkConnectorSource::builder();
+            let mut builder = crate::model::spark_connector_source::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -22785,7 +22788,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_catalog_source<'a, I>(
+pub(crate) fn deser_structure_crate_model_catalog_source<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CatalogSource>, aws_smithy_json::deserialize::Error>
 where
@@ -22797,7 +22800,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::CatalogSource::builder();
+            let mut builder = crate::model::catalog_source::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -22849,7 +22852,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_redshift_source<'a, I>(
+pub(crate) fn deser_structure_crate_model_redshift_source<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RedshiftSource>, aws_smithy_json::deserialize::Error>
 where
@@ -22861,7 +22864,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::RedshiftSource::builder();
+            let mut builder = crate::model::redshift_source::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -22931,7 +22934,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_s3_catalog_source<'a, I>(
+pub(crate) fn deser_structure_crate_model_s3_catalog_source<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::S3CatalogSource>, aws_smithy_json::deserialize::Error>
 where
@@ -22943,7 +22946,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::S3CatalogSource::builder();
+            let mut builder = crate::model::s3_catalog_source::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -23009,7 +23012,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_s3_csv_source<'a, I>(
+pub(crate) fn deser_structure_crate_model_s3_csv_source<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::S3CsvSource>, aws_smithy_json::deserialize::Error>
 where
@@ -23021,7 +23024,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::S3CsvSource::builder();
+            let mut builder = crate::model::s3_csv_source::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -23089,7 +23092,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -23098,7 +23101,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -23201,7 +23204,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_s3_json_source<'a, I>(
+pub(crate) fn deser_structure_crate_model_s3_json_source<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::S3JsonSource>, aws_smithy_json::deserialize::Error>
 where
@@ -23213,7 +23216,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::S3JsonSource::builder();
+            let mut builder = crate::model::s3_json_source::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -23281,7 +23284,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -23290,7 +23293,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -23341,7 +23344,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_s3_parquet_source<'a, I>(
+pub(crate) fn deser_structure_crate_model_s3_parquet_source<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::S3ParquetSource>, aws_smithy_json::deserialize::Error>
 where
@@ -23353,7 +23356,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::S3ParquetSource::builder();
+            let mut builder = crate::model::s3_parquet_source::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -23421,7 +23424,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -23430,7 +23433,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -23465,7 +23468,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_relational_catalog_source<'a, I>(
+pub(crate) fn deser_structure_crate_model_relational_catalog_source<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RelationalCatalogSource>, aws_smithy_json::deserialize::Error>
 where
@@ -23477,7 +23480,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::RelationalCatalogSource::builder();
+            let mut builder = crate::model::relational_catalog_source::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -23529,7 +23532,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_dynamo_db_catalog_source<'a, I>(
+pub(crate) fn deser_structure_crate_model_dynamo_db_catalog_source<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DynamoDbCatalogSource>, aws_smithy_json::deserialize::Error>
 where
@@ -23541,7 +23544,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::DynamoDbCatalogSource::builder();
+            let mut builder = crate::model::dynamo_db_catalog_source::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -23593,7 +23596,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_jdbc_connector_target<'a, I>(
+pub(crate) fn deser_structure_crate_model_jdbc_connector_target<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::JdbcConnectorTarget>, aws_smithy_json::deserialize::Error>
 where
@@ -23605,7 +23608,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::JdbcConnectorTarget::builder();
+            let mut builder = crate::model::jdbc_connector_target::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -23694,7 +23697,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_spark_connector_target<'a, I>(
+pub(crate) fn deser_structure_crate_model_spark_connector_target<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SparkConnectorTarget>, aws_smithy_json::deserialize::Error>
 where
@@ -23706,7 +23709,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::SparkConnectorTarget::builder();
+            let mut builder = crate::model::spark_connector_target::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -23786,7 +23789,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_basic_catalog_target<'a, I>(
+pub(crate) fn deser_structure_crate_model_basic_catalog_target<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::BasicCatalogTarget>, aws_smithy_json::deserialize::Error>
 where
@@ -23798,7 +23801,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::BasicCatalogTarget::builder();
+            let mut builder = crate::model::basic_catalog_target::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -23857,7 +23860,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_redshift_target<'a, I>(
+pub(crate) fn deser_structure_crate_model_redshift_target<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RedshiftTarget>, aws_smithy_json::deserialize::Error>
 where
@@ -23869,7 +23872,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::RedshiftTarget::builder();
+            let mut builder = crate::model::redshift_target::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -23951,7 +23954,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_s3_catalog_target<'a, I>(
+pub(crate) fn deser_structure_crate_model_s3_catalog_target<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::S3CatalogTarget>, aws_smithy_json::deserialize::Error>
 where
@@ -23963,7 +23966,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::S3CatalogTarget::builder();
+            let mut builder = crate::model::s3_catalog_target::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -24032,7 +24035,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_s3_glue_parquet_target<'a, I>(
+pub(crate) fn deser_structure_crate_model_s3_glue_parquet_target<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::S3GlueParquetTarget>, aws_smithy_json::deserialize::Error>
 where
@@ -24044,7 +24047,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::S3GlueParquetTarget::builder();
+            let mut builder = crate::model::s3_glue_parquet_target::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -24117,7 +24120,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_s3_direct_target<'a, I>(
+pub(crate) fn deser_structure_crate_model_s3_direct_target<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::S3DirectTarget>, aws_smithy_json::deserialize::Error>
 where
@@ -24129,7 +24132,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::S3DirectTarget::builder();
+            let mut builder = crate::model::s3_direct_target::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -24210,7 +24213,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_apply_mapping<'a, I>(
+pub(crate) fn deser_structure_crate_model_apply_mapping<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ApplyMapping>, aws_smithy_json::deserialize::Error>
 where
@@ -24222,7 +24225,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::ApplyMapping::builder();
+            let mut builder = crate::model::apply_mapping::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -24270,7 +24273,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_select_fields<'a, I>(
+pub(crate) fn deser_structure_crate_model_select_fields<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SelectFields>, aws_smithy_json::deserialize::Error>
 where
@@ -24282,7 +24285,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::SelectFields::builder();
+            let mut builder = crate::model::select_fields::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -24328,7 +24331,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_drop_fields<'a, I>(
+pub(crate) fn deser_structure_crate_model_drop_fields<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DropFields>, aws_smithy_json::deserialize::Error>
 where
@@ -24340,7 +24343,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::DropFields::builder();
+            let mut builder = crate::model::drop_fields::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -24386,7 +24389,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_rename_field<'a, I>(
+pub(crate) fn deser_structure_crate_model_rename_field<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RenameField>, aws_smithy_json::deserialize::Error>
 where
@@ -24398,7 +24401,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::RenameField::builder();
+            let mut builder = crate::model::rename_field::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -24449,7 +24452,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_spigot<'a, I>(
+pub(crate) fn deser_structure_crate_model_spigot<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Spigot>, aws_smithy_json::deserialize::Error>
 where
@@ -24461,7 +24464,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Spigot::builder();
+            let mut builder = crate::model::spigot::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -24497,7 +24500,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -24528,7 +24531,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_join<'a, I>(
+pub(crate) fn deser_structure_crate_model_join<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Join>, aws_smithy_json::deserialize::Error>
 where
@@ -24540,7 +24543,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Join::builder();
+            let mut builder = crate::model::join::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -24600,7 +24603,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_split_fields<'a, I>(
+pub(crate) fn deser_structure_crate_model_split_fields<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SplitFields>, aws_smithy_json::deserialize::Error>
 where
@@ -24612,7 +24615,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::SplitFields::builder();
+            let mut builder = crate::model::split_fields::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -24658,7 +24661,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_select_from_collection<'a, I>(
+pub(crate) fn deser_structure_crate_model_select_from_collection<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SelectFromCollection>, aws_smithy_json::deserialize::Error>
 where
@@ -24670,7 +24673,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::SelectFromCollection::builder();
+            let mut builder = crate::model::select_from_collection::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -24697,7 +24700,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -24720,7 +24723,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_fill_missing_values<'a, I>(
+pub(crate) fn deser_structure_crate_model_fill_missing_values<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::FillMissingValues>, aws_smithy_json::deserialize::Error>
 where
@@ -24732,7 +24735,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::FillMissingValues::builder();
+            let mut builder = crate::model::fill_missing_values::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -24791,7 +24794,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_filter<'a, I>(
+pub(crate) fn deser_structure_crate_model_filter<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Filter>, aws_smithy_json::deserialize::Error>
 where
@@ -24803,7 +24806,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Filter::builder();
+            let mut builder = crate::model::filter::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -24862,7 +24865,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_custom_code<'a, I>(
+pub(crate) fn deser_structure_crate_model_custom_code<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CustomCode>, aws_smithy_json::deserialize::Error>
 where
@@ -24874,7 +24877,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::CustomCode::builder();
+            let mut builder = crate::model::custom_code::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -24940,7 +24943,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_spark_sql<'a, I>(
+pub(crate) fn deser_structure_crate_model_spark_sql<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SparkSql>, aws_smithy_json::deserialize::Error>
 where
@@ -24952,7 +24955,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::SparkSql::builder();
+            let mut builder = crate::model::spark_sql::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -25016,7 +25019,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_direct_kinesis_source<'a, I>(
+pub(crate) fn deser_structure_crate_model_direct_kinesis_source<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DirectKinesisSource>, aws_smithy_json::deserialize::Error>
 where
@@ -25028,7 +25031,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::DirectKinesisSource::builder();
+            let mut builder = crate::model::direct_kinesis_source::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -25048,7 +25051,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -25088,7 +25091,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_direct_kafka_source<'a, I>(
+pub(crate) fn deser_structure_crate_model_direct_kafka_source<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DirectKafkaSource>, aws_smithy_json::deserialize::Error>
 where
@@ -25100,7 +25103,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::DirectKafkaSource::builder();
+            let mut builder = crate::model::direct_kafka_source::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -25125,7 +25128,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -25160,7 +25163,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_catalog_kinesis_source<'a, I>(
+pub(crate) fn deser_structure_crate_model_catalog_kinesis_source<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CatalogKinesisSource>, aws_smithy_json::deserialize::Error>
 where
@@ -25172,7 +25175,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::CatalogKinesisSource::builder();
+            let mut builder = crate::model::catalog_kinesis_source::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -25192,7 +25195,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -25250,7 +25253,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_catalog_kafka_source<'a, I>(
+pub(crate) fn deser_structure_crate_model_catalog_kafka_source<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CatalogKafkaSource>, aws_smithy_json::deserialize::Error>
 where
@@ -25262,7 +25265,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::CatalogKafkaSource::builder();
+            let mut builder = crate::model::catalog_kafka_source::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -25282,7 +25285,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -25340,7 +25343,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_drop_null_fields<'a, I>(
+pub(crate) fn deser_structure_crate_model_drop_null_fields<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DropNullFields>, aws_smithy_json::deserialize::Error>
 where
@@ -25352,7 +25355,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::DropNullFields::builder();
+            let mut builder = crate::model::drop_null_fields::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -25403,7 +25406,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_merge<'a, I>(
+pub(crate) fn deser_structure_crate_model_merge<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Merge>, aws_smithy_json::deserialize::Error>
 where
@@ -25415,7 +25418,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Merge::builder();
+            let mut builder = crate::model::merge::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -25470,7 +25473,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_union<'a, I>(
+pub(crate) fn deser_structure_crate_model_union<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Union>, aws_smithy_json::deserialize::Error>
 where
@@ -25482,7 +25485,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Union::builder();
+            let mut builder = crate::model::union::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -25535,7 +25538,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_pii_detection<'a, I>(
+pub(crate) fn deser_structure_crate_model_pii_detection<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::PiiDetection>, aws_smithy_json::deserialize::Error>
 where
@@ -25547,7 +25550,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::PiiDetection::builder();
+            let mut builder = crate::model::pii_detection::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -25639,7 +25642,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_aggregate<'a, I>(
+pub(crate) fn deser_structure_crate_model_aggregate<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Aggregate>, aws_smithy_json::deserialize::Error>
 where
@@ -25651,7 +25654,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Aggregate::builder();
+            let mut builder = crate::model::aggregate::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -25702,7 +25705,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_drop_duplicates<'a, I>(
+pub(crate) fn deser_structure_crate_model_drop_duplicates<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DropDuplicates>, aws_smithy_json::deserialize::Error>
 where
@@ -25714,7 +25717,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::DropDuplicates::builder();
+            let mut builder = crate::model::drop_duplicates::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -25760,7 +25763,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_governed_catalog_target<'a, I>(
+pub(crate) fn deser_structure_crate_model_governed_catalog_target<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::GovernedCatalogTarget>, aws_smithy_json::deserialize::Error>
 where
@@ -25772,7 +25775,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::GovernedCatalogTarget::builder();
+            let mut builder = crate::model::governed_catalog_target::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -25841,7 +25844,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_governed_catalog_source<'a, I>(
+pub(crate) fn deser_structure_crate_model_governed_catalog_source<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::GovernedCatalogSource>, aws_smithy_json::deserialize::Error>
 where
@@ -25853,7 +25856,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::GovernedCatalogSource::builder();
+            let mut builder = crate::model::governed_catalog_source::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -25919,7 +25922,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_microsoft_sql_server_catalog_source<'a, I>(
+pub(crate) fn deser_structure_crate_model_microsoft_sql_server_catalog_source<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::MicrosoftSqlServerCatalogSource>,
@@ -25934,7 +25937,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::MicrosoftSqlServerCatalogSource::builder();
+            let mut builder = crate::model::microsoft_sql_server_catalog_source::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -25986,7 +25989,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_my_sql_catalog_source<'a, I>(
+pub(crate) fn deser_structure_crate_model_my_sql_catalog_source<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::MySqlCatalogSource>, aws_smithy_json::deserialize::Error>
 where
@@ -25998,7 +26001,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::MySqlCatalogSource::builder();
+            let mut builder = crate::model::my_sql_catalog_source::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -26050,7 +26053,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_oracle_sql_catalog_source<'a, I>(
+pub(crate) fn deser_structure_crate_model_oracle_sql_catalog_source<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::OracleSqlCatalogSource>, aws_smithy_json::deserialize::Error>
 where
@@ -26062,7 +26065,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::OracleSqlCatalogSource::builder();
+            let mut builder = crate::model::oracle_sql_catalog_source::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -26114,7 +26117,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_postgre_sql_catalog_source<'a, I>(
+pub(crate) fn deser_structure_crate_model_postgre_sql_catalog_source<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::PostgreSqlCatalogSource>, aws_smithy_json::deserialize::Error>
 where
@@ -26126,7 +26129,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::PostgreSqlCatalogSource::builder();
+            let mut builder = crate::model::postgre_sql_catalog_source::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -26178,7 +26181,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_microsoft_sql_server_catalog_target<'a, I>(
+pub(crate) fn deser_structure_crate_model_microsoft_sql_server_catalog_target<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::MicrosoftSqlServerCatalogTarget>,
@@ -26193,7 +26196,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::MicrosoftSqlServerCatalogTarget::builder();
+            let mut builder = crate::model::microsoft_sql_server_catalog_target::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -26252,7 +26255,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_my_sql_catalog_target<'a, I>(
+pub(crate) fn deser_structure_crate_model_my_sql_catalog_target<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::MySqlCatalogTarget>, aws_smithy_json::deserialize::Error>
 where
@@ -26264,7 +26267,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::MySqlCatalogTarget::builder();
+            let mut builder = crate::model::my_sql_catalog_target::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -26323,7 +26326,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_oracle_sql_catalog_target<'a, I>(
+pub(crate) fn deser_structure_crate_model_oracle_sql_catalog_target<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::OracleSqlCatalogTarget>, aws_smithy_json::deserialize::Error>
 where
@@ -26335,7 +26338,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::OracleSqlCatalogTarget::builder();
+            let mut builder = crate::model::oracle_sql_catalog_target::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -26394,7 +26397,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_postgre_sql_catalog_target<'a, I>(
+pub(crate) fn deser_structure_crate_model_postgre_sql_catalog_target<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::PostgreSqlCatalogTarget>, aws_smithy_json::deserialize::Error>
 where
@@ -26406,7 +26409,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::PostgreSqlCatalogTarget::builder();
+            let mut builder = crate::model::postgre_sql_catalog_target::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -26465,7 +26468,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_column_importance<'a, I>(
+pub(crate) fn deser_structure_crate_model_column_importance<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ColumnImportance>, aws_smithy_json::deserialize::Error>
 where
@@ -26477,7 +26480,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::ColumnImportance::builder();
+            let mut builder = crate::model::column_importance::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -26519,7 +26522,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_order<'a, I>(
+pub(crate) fn deser_structure_crate_model_order<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Order>, aws_smithy_json::deserialize::Error>
 where
@@ -26531,7 +26534,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Order::builder();
+            let mut builder = crate::model::order::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -26551,7 +26554,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -26574,8 +26577,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_column_value_string_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_column_value_string_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, aws_smithy_json::deserialize::Error>
 where
@@ -26613,8 +26616,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_com_amazonaws_glue_location_map<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_map_com_amazonaws_glue_location_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -26659,7 +26662,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_schema_id<'a, I>(
+pub(crate) fn deser_structure_crate_model_schema_id<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SchemaId>, aws_smithy_json::deserialize::Error>
 where
@@ -26671,7 +26674,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::SchemaId::builder();
+            let mut builder = crate::model::schema_id::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -26723,7 +26726,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_key_schema_element<'a, I>(
+pub(crate) fn deser_structure_crate_model_key_schema_element<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::KeySchemaElement>, aws_smithy_json::deserialize::Error>
 where
@@ -26735,7 +26738,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::KeySchemaElement::builder();
+            let mut builder = crate::model::key_schema_element::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -26778,7 +26781,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_backfill_error<'a, I>(
+pub(crate) fn deser_structure_crate_model_backfill_error<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::BackfillError>, aws_smithy_json::deserialize::Error>
 where
@@ -26790,7 +26793,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::BackfillError::builder();
+            let mut builder = crate::model::backfill_error::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -26833,7 +26836,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_s3_encryption<'a, I>(
+pub(crate) fn deser_structure_crate_model_s3_encryption<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::S3Encryption>, aws_smithy_json::deserialize::Error>
 where
@@ -26845,7 +26848,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::S3Encryption::builder();
+            let mut builder = crate::model::s3_encryption::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -26892,7 +26895,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_condition<'a, I>(
+pub(crate) fn deser_structure_crate_model_condition<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Condition>, aws_smithy_json::deserialize::Error>
 where
@@ -26904,7 +26907,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Condition::builder();
+            let mut builder = crate::model::condition::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -26984,7 +26987,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_node<'a, I>(
+pub(crate) fn deser_structure_crate_model_node<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Node>, aws_smithy_json::deserialize::Error>
 where
@@ -26996,7 +26999,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Node::builder();
+            let mut builder = crate::model::node::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -27066,7 +27069,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_edge<'a, I>(
+pub(crate) fn deser_structure_crate_model_edge<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Edge>, aws_smithy_json::deserialize::Error>
 where
@@ -27078,7 +27081,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Edge::builder();
+            let mut builder = crate::model::edge::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -27121,7 +27124,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_other_metadata_value_list_item<'a, I>(
+pub(crate) fn deser_structure_crate_model_other_metadata_value_list_item<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::OtherMetadataValueListItem>, aws_smithy_json::deserialize::Error>
 where
@@ -27133,7 +27136,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::OtherMetadataValueListItem::builder();
+            let mut builder = crate::model::other_metadata_value_list_item::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -27176,7 +27179,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_decimal_number<'a, I>(
+pub(crate) fn deser_structure_crate_model_decimal_number<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DecimalNumber>, aws_smithy_json::deserialize::Error>
 where
@@ -27188,7 +27191,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::DecimalNumber::builder();
+            let mut builder = crate::model::decimal_number::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -27206,7 +27209,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -27229,8 +27232,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_path_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_path_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, aws_smithy_json::deserialize::Error>
 where
@@ -27268,8 +27271,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_catalog_tables_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_catalog_tables_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, aws_smithy_json::deserialize::Error>
 where
@@ -27307,8 +27310,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_glue_schemas<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_glue_schemas<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::GlueSchema>>, aws_smithy_json::deserialize::Error>
 where
@@ -27343,7 +27346,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_jdbc_connector_options<'a, I>(
+pub(crate) fn deser_structure_crate_model_jdbc_connector_options<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::JdbcConnectorOptions>, aws_smithy_json::deserialize::Error>
 where
@@ -27355,7 +27358,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::JdbcConnectorOptions::builder();
+            let mut builder = crate::model::jdbc_connector_options::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -27384,7 +27387,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -27393,7 +27396,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -27402,7 +27405,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -27444,8 +27447,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_com_amazonaws_glue_additional_options<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_map_com_amazonaws_glue_additional_options<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -27490,7 +27493,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_s3_source_additional_options<'a, I>(
+pub(crate) fn deser_structure_crate_model_s3_source_additional_options<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::S3SourceAdditionalOptions>, aws_smithy_json::deserialize::Error>
 where
@@ -27502,7 +27505,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::S3SourceAdditionalOptions::builder();
+            let mut builder = crate::model::s3_source_additional_options::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -27513,7 +27516,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -27522,7 +27525,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -27545,8 +27548,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_enclosed_in_string_properties<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_enclosed_in_string_properties<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, aws_smithy_json::deserialize::Error>
 where
@@ -27584,7 +27587,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_s3_direct_source_additional_options<'a, I>(
+pub(crate) fn deser_structure_crate_model_s3_direct_source_additional_options<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::S3DirectSourceAdditionalOptions>,
@@ -27599,7 +27602,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::S3DirectSourceAdditionalOptions::builder();
+            let mut builder = crate::model::s3_direct_source_additional_options::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -27610,7 +27613,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -27619,7 +27622,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -27658,8 +27661,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_one_input<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_one_input<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, aws_smithy_json::deserialize::Error>
 where
@@ -27697,7 +27700,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_upsert_redshift_target_options<'a, I>(
+pub(crate) fn deser_structure_crate_model_upsert_redshift_target_options<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::UpsertRedshiftTargetOptions>, aws_smithy_json::deserialize::Error>
 where
@@ -27709,7 +27712,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::UpsertRedshiftTargetOptions::builder();
+            let mut builder = crate::model::upsert_redshift_target_options::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -27757,8 +27760,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_glue_studio_path_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_glue_studio_path_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
@@ -27797,7 +27800,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_catalog_schema_change_policy<'a, I>(
+pub(crate) fn deser_structure_crate_model_catalog_schema_change_policy<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CatalogSchemaChangePolicy>, aws_smithy_json::deserialize::Error>
 where
@@ -27809,7 +27812,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::CatalogSchemaChangePolicy::builder();
+            let mut builder = crate::model::catalog_schema_change_policy::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -27854,7 +27857,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_direct_schema_change_policy<'a, I>(
+pub(crate) fn deser_structure_crate_model_direct_schema_change_policy<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DirectSchemaChangePolicy>, aws_smithy_json::deserialize::Error>
 where
@@ -27866,7 +27869,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::DirectSchemaChangePolicy::builder();
+            let mut builder = crate::model::direct_schema_change_policy::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -27929,8 +27932,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_mappings<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_mappings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Mapping>>, aws_smithy_json::deserialize::Error>
 where
@@ -27964,8 +27967,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_two_inputs<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_two_inputs<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, aws_smithy_json::deserialize::Error>
 where
@@ -28003,8 +28006,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_join_columns<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_join_columns<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::JoinColumn>>, aws_smithy_json::deserialize::Error>
 where
@@ -28039,8 +28042,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_filter_expressions<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_filter_expressions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::FilterExpression>>,
@@ -28080,8 +28083,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_many_inputs<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_many_inputs<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, aws_smithy_json::deserialize::Error>
 where
@@ -28119,8 +28122,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_sql_aliases<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_sql_aliases<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::SqlAlias>>, aws_smithy_json::deserialize::Error>
 where
@@ -28155,7 +28158,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_kinesis_streaming_source_options<'a, I>(
+pub(crate) fn deser_structure_crate_model_kinesis_streaming_source_options<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::KinesisStreamingSourceOptions>, aws_smithy_json::deserialize::Error>
 where
@@ -28167,7 +28170,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::KinesisStreamingSourceOptions::builder();
+            let mut builder = crate::model::kinesis_streaming_source_options::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -28227,7 +28230,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -28236,7 +28239,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -28245,7 +28248,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -28261,7 +28264,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -28270,7 +28273,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -28279,7 +28282,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -28288,7 +28291,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -28297,7 +28300,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -28354,7 +28357,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_streaming_data_preview_options<'a, I>(
+pub(crate) fn deser_structure_crate_model_streaming_data_preview_options<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::StreamingDataPreviewOptions>, aws_smithy_json::deserialize::Error>
 where
@@ -28366,7 +28369,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::StreamingDataPreviewOptions::builder();
+            let mut builder = crate::model::streaming_data_preview_options::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -28377,7 +28380,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -28386,7 +28389,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -28409,7 +28412,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_kafka_streaming_source_options<'a, I>(
+pub(crate) fn deser_structure_crate_model_kafka_streaming_source_options<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::KafkaStreamingSourceOptions>, aws_smithy_json::deserialize::Error>
 where
@@ -28421,7 +28424,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::KafkaStreamingSourceOptions::builder();
+            let mut builder = crate::model::kafka_streaming_source_options::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -28522,7 +28525,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -28531,7 +28534,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -28540,7 +28543,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -28549,7 +28552,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -28558,7 +28561,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -28581,7 +28584,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_null_check_box_list<'a, I>(
+pub(crate) fn deser_structure_crate_model_null_check_box_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::NullCheckBoxList>, aws_smithy_json::deserialize::Error>
 where
@@ -28593,7 +28596,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::NullCheckBoxList::builder();
+            let mut builder = crate::model::null_check_box_list::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -28639,8 +28642,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_null_value_fields<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_null_value_fields<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::NullValueField>>, aws_smithy_json::deserialize::Error>
 where
@@ -28677,8 +28680,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_aggregate_operations<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_aggregate_operations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::AggregateOperation>>,
@@ -28718,8 +28721,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_limited_path_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_limited_path_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
@@ -28759,8 +28762,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_backfill_errored_partitions_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_backfill_errored_partitions_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::PartitionValueList>>,
@@ -28800,7 +28803,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_trigger_node_details<'a, I>(
+pub(crate) fn deser_structure_crate_model_trigger_node_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::TriggerNodeDetails>, aws_smithy_json::deserialize::Error>
 where
@@ -28812,7 +28815,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::TriggerNodeDetails::builder();
+            let mut builder = crate::model::trigger_node_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -28842,7 +28845,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_job_node_details<'a, I>(
+pub(crate) fn deser_structure_crate_model_job_node_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::JobNodeDetails>, aws_smithy_json::deserialize::Error>
 where
@@ -28854,7 +28857,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::JobNodeDetails::builder();
+            let mut builder = crate::model::job_node_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -28886,7 +28889,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_crawler_node_details<'a, I>(
+pub(crate) fn deser_structure_crate_model_crawler_node_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CrawlerNodeDetails>, aws_smithy_json::deserialize::Error>
 where
@@ -28898,7 +28901,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::CrawlerNodeDetails::builder();
+            let mut builder = crate::model::crawler_node_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -28930,7 +28933,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_glue_schema<'a, I>(
+pub(crate) fn deser_structure_crate_model_glue_schema<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::GlueSchema>, aws_smithy_json::deserialize::Error>
 where
@@ -28942,7 +28945,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::GlueSchema::builder();
+            let mut builder = crate::model::glue_schema::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -28972,8 +28975,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_com_amazonaws_glue_jdbc_data_type_mapping<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_map_com_amazonaws_glue_jdbc_data_type_mapping<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<crate::model::JdbcDataType, crate::model::GlueRecordType>>,
@@ -29023,8 +29026,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_enclosed_in_string_properties_min_one<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_enclosed_in_string_properties_min_one<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, aws_smithy_json::deserialize::Error>
 where
@@ -29062,7 +29065,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_mapping<'a, I>(
+pub(crate) fn deser_structure_crate_model_mapping<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Mapping>, aws_smithy_json::deserialize::Error>
 where
@@ -29074,7 +29077,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Mapping::builder();
+            let mut builder = crate::model::mapping::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -29145,7 +29148,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_join_column<'a, I>(
+pub(crate) fn deser_structure_crate_model_join_column<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::JoinColumn>, aws_smithy_json::deserialize::Error>
 where
@@ -29157,7 +29160,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::JoinColumn::builder();
+            let mut builder = crate::model::join_column::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -29196,7 +29199,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_filter_expression<'a, I>(
+pub(crate) fn deser_structure_crate_model_filter_expression<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::FilterExpression>, aws_smithy_json::deserialize::Error>
 where
@@ -29208,7 +29211,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::FilterExpression::builder();
+            let mut builder = crate::model::filter_expression::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -29260,7 +29263,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_sql_alias<'a, I>(
+pub(crate) fn deser_structure_crate_model_sql_alias<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SqlAlias>, aws_smithy_json::deserialize::Error>
 where
@@ -29272,7 +29275,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::SqlAlias::builder();
+            let mut builder = crate::model::sql_alias::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -29315,7 +29318,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_null_value_field<'a, I>(
+pub(crate) fn deser_structure_crate_model_null_value_field<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::NullValueField>, aws_smithy_json::deserialize::Error>
 where
@@ -29327,7 +29330,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::NullValueField::builder();
+            let mut builder = crate::model::null_value_field::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -29368,7 +29371,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_aggregate_operation<'a, I>(
+pub(crate) fn deser_structure_crate_model_aggregate_operation<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AggregateOperation>, aws_smithy_json::deserialize::Error>
 where
@@ -29380,7 +29383,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::AggregateOperation::builder();
+            let mut builder = crate::model::aggregate_operation::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -29422,8 +29425,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_limited_string_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_limited_string_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, aws_smithy_json::deserialize::Error>
 where
@@ -29461,8 +29464,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_crawl_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_crawl_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Crawl>>, aws_smithy_json::deserialize::Error>
 where
@@ -29496,8 +29499,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_glue_studio_schema_column_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_glue_studio_schema_column_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::GlueStudioSchemaColumn>>,
@@ -29536,8 +29539,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_glue_filter_values<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_glue_filter_values<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::FilterValue>>, aws_smithy_json::deserialize::Error>
 where
@@ -29572,7 +29575,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_datatype<'a, I>(
+pub(crate) fn deser_structure_crate_model_datatype<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Datatype>, aws_smithy_json::deserialize::Error>
 where
@@ -29584,7 +29587,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Datatype::builder();
+            let mut builder = crate::model::datatype::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -29627,7 +29630,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_crawl<'a, I>(
+pub(crate) fn deser_structure_crate_model_crawl<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Crawl>, aws_smithy_json::deserialize::Error>
 where
@@ -29639,7 +29642,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Crawl::builder();
+            let mut builder = crate::model::crawl::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -29719,7 +29722,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_glue_studio_schema_column<'a, I>(
+pub(crate) fn deser_structure_crate_model_glue_studio_schema_column<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::GlueStudioSchemaColumn>, aws_smithy_json::deserialize::Error>
 where
@@ -29731,7 +29734,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::GlueStudioSchemaColumn::builder();
+            let mut builder = crate::model::glue_studio_schema_column::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -29774,7 +29777,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_filter_value<'a, I>(
+pub(crate) fn deser_structure_crate_model_filter_value<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::FilterValue>, aws_smithy_json::deserialize::Error>
 where
@@ -29786,7 +29789,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::FilterValue::builder();
+            let mut builder = crate::model::filter_value::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

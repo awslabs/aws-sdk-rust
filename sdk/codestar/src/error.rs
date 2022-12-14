@@ -17,7 +17,7 @@ impl std::fmt::Debug for ValidationException {
 }
 impl ValidationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -82,7 +82,7 @@ impl std::fmt::Debug for UserProfileNotFoundException {
 }
 impl UserProfileNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -147,7 +147,7 @@ impl std::fmt::Debug for TeamMemberNotFoundException {
 }
 impl TeamMemberNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -212,7 +212,7 @@ impl std::fmt::Debug for ProjectNotFoundException {
 }
 impl ProjectNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -277,7 +277,7 @@ impl std::fmt::Debug for ProjectConfigurationException {
 }
 impl ProjectConfigurationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -342,7 +342,7 @@ impl std::fmt::Debug for LimitExceededException {
 }
 impl LimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -407,7 +407,7 @@ impl std::fmt::Debug for InvalidServiceRoleException {
 }
 impl InvalidServiceRoleException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -472,7 +472,7 @@ impl std::fmt::Debug for ConcurrentModificationException {
 }
 impl ConcurrentModificationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -537,7 +537,7 @@ impl std::fmt::Debug for InvalidNextTokenException {
 }
 impl InvalidNextTokenException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -602,7 +602,7 @@ impl std::fmt::Debug for UserProfileAlreadyExistsException {
 }
 impl UserProfileAlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -667,7 +667,7 @@ impl std::fmt::Debug for ProjectCreationFailedException {
 }
 impl ProjectCreationFailedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -732,7 +732,7 @@ impl std::fmt::Debug for ProjectAlreadyExistsException {
 }
 impl ProjectAlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -797,7 +797,7 @@ impl std::fmt::Debug for TeamMemberAlreadyAssociatedException {
 }
 impl TeamMemberAlreadyAssociatedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }

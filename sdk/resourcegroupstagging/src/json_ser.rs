@@ -170,7 +170,7 @@ pub fn serialize_structure_crate_input_tag_resources_input(
         let mut object_41 = object.key("Tags").start_object();
         for (key_42, value_43) in var_40 {
             {
-                object_41.key(key_42).string(value_43.as_str());
+                object_41.key(key_42.as_str()).string(value_43.as_str());
             }
         }
         object_41.finish();

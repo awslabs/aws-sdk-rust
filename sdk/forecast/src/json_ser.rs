@@ -420,7 +420,7 @@ pub fn serialize_structure_crate_input_create_predictor_input(
         let mut object_118 = object.key("TrainingParameters").start_object();
         for (key_119, value_120) in var_117 {
             {
-                object_118.key(key_119).string(value_120.as_str());
+                object_118.key(key_119.as_str()).string(value_120.as_str());
             }
         }
         object_118.finish();
@@ -1731,7 +1731,7 @@ pub fn serialize_structure_crate_model_attribute_config(
         let mut object_362 = object.key("Transformations").start_object();
         for (key_363, value_364) in var_361 {
             {
-                object_362.key(key_363).string(value_364.as_str());
+                object_362.key(key_363.as_str()).string(value_364.as_str());
             }
         }
         object_362.finish();
@@ -1750,7 +1750,7 @@ pub fn serialize_structure_crate_model_additional_dataset(
         let mut object_367 = object.key("Configuration").start_object();
         for (key_368, value_369) in var_366 {
             {
-                let mut array_370 = object_367.key(key_368).start_array();
+                let mut array_370 = object_367.key(key_368.as_str()).start_array();
                 for item_371 in value_369 {
                     {
                         array_370.value().string(item_371.as_str());
@@ -2016,7 +2016,7 @@ pub fn serialize_structure_crate_model_featurization_method(
         let mut object_421 = object.key("FeaturizationMethodParameters").start_object();
         for (key_422, value_423) in var_420 {
             {
-                object_421.key(key_422).string(value_423.as_str());
+                object_421.key(key_422.as_str()).string(value_423.as_str());
             }
         }
         object_421.finish();

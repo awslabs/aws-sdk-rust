@@ -252,7 +252,7 @@ pub fn serialize_structure_crate_input_create_data_set_input(
         let mut object_70 = object.key("FieldFolders").start_object();
         for (key_71, value_72) in var_69 {
             {
-                let mut object_73 = object_70.key(key_71).start_object();
+                let mut object_73 = object_70.key(key_71.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_field_folder(
                     &mut object_73,
                     value_72,
@@ -269,7 +269,7 @@ pub fn serialize_structure_crate_input_create_data_set_input(
         let mut object_76 = object.key("LogicalTableMap").start_object();
         for (key_77, value_78) in var_75 {
             {
-                let mut object_79 = object_76.key(key_77).start_object();
+                let mut object_79 = object_76.key(key_77.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_logical_table(
                     &mut object_79,
                     value_78,
@@ -300,7 +300,7 @@ pub fn serialize_structure_crate_input_create_data_set_input(
         let mut object_86 = object.key("PhysicalTableMap").start_object();
         for (key_87, value_88) in var_85 {
             {
-                let mut object_89 = object_86.key(key_87).start_object();
+                let mut object_89 = object_86.key(key_87.as_str()).start_object();
                 crate::json_ser::serialize_union_crate_model_physical_table(
                     &mut object_89,
                     value_88,
@@ -480,7 +480,7 @@ pub fn serialize_structure_crate_input_create_iam_policy_assignment_input(
         let mut object_133 = object.key("Identities").start_object();
         for (key_134, value_135) in var_132 {
             {
-                let mut array_136 = object_133.key(key_134).start_array();
+                let mut array_136 = object_133.key(key_134.as_str()).start_array();
                 for item_137 in value_135 {
                     {
                         array_136.value().string(item_137.as_str());
@@ -1148,7 +1148,7 @@ pub fn serialize_structure_crate_input_update_data_set_input(
         let mut object_285 = object.key("FieldFolders").start_object();
         for (key_286, value_287) in var_284 {
             {
-                let mut object_288 = object_285.key(key_286).start_object();
+                let mut object_288 = object_285.key(key_286.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_field_folder(
                     &mut object_288,
                     value_287,
@@ -1165,7 +1165,7 @@ pub fn serialize_structure_crate_input_update_data_set_input(
         let mut object_291 = object.key("LogicalTableMap").start_object();
         for (key_292, value_293) in var_290 {
             {
-                let mut object_294 = object_291.key(key_292).start_object();
+                let mut object_294 = object_291.key(key_292.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_logical_table(
                     &mut object_294,
                     value_293,
@@ -1182,7 +1182,7 @@ pub fn serialize_structure_crate_input_update_data_set_input(
         let mut object_297 = object.key("PhysicalTableMap").start_object();
         for (key_298, value_299) in var_296 {
             {
-                let mut object_300 = object_297.key(key_298).start_object();
+                let mut object_300 = object_297.key(key_298.as_str()).start_object();
                 crate::json_ser::serialize_union_crate_model_physical_table(
                     &mut object_300,
                     value_299,
@@ -1388,7 +1388,7 @@ pub fn serialize_structure_crate_input_update_iam_policy_assignment_input(
         let mut object_342 = object.key("Identities").start_object();
         for (key_343, value_344) in var_341 {
             {
-                let mut array_345 = object_342.key(key_343).start_array();
+                let mut array_345 = object_342.key(key_343.as_str()).start_array();
                 for item_346 in value_344 {
                     {
                         array_345.value().string(item_346.as_str());
@@ -1416,7 +1416,7 @@ pub fn serialize_structure_crate_input_update_ip_restriction_input(
         let mut object_350 = object.key("IpRestrictionRuleMap").start_object();
         for (key_351, value_352) in var_349 {
             {
-                object_350.key(key_351).string(value_352.as_str());
+                object_350.key(key_351.as_str()).string(value_352.as_str());
             }
         }
         object_350.finish();

@@ -15,7 +15,7 @@ pub fn serialize_structure_crate_input_create_suite_definition_input(
         let mut object_4 = object.key("tags").start_object();
         for (key_5, value_6) in var_3 {
             {
-                object_4.key(key_5).string(value_6.as_str());
+                object_4.key(key_5.as_str()).string(value_6.as_str());
             }
         }
         object_4.finish();
@@ -42,7 +42,7 @@ pub fn serialize_structure_crate_input_start_suite_run_input(
         let mut object_11 = object.key("tags").start_object();
         for (key_12, value_13) in var_10 {
             {
-                object_11.key(key_12).string(value_13.as_str());
+                object_11.key(key_12.as_str()).string(value_13.as_str());
             }
         }
         object_11.finish();
@@ -58,7 +58,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_15 = object.key("tags").start_object();
         for (key_16, value_17) in var_14 {
             {
-                object_15.key(key_16).string(value_17.as_str());
+                object_15.key(key_16.as_str()).string(value_17.as_str());
             }
         }
         object_15.finish();

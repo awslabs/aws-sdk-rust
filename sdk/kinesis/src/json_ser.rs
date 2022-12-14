@@ -10,7 +10,7 @@ pub fn serialize_structure_crate_input_add_tags_to_stream_input(
         let mut object_3 = object.key("Tags").start_object();
         for (key_4, value_5) in var_2 {
             {
-                object_3.key(key_4).string(value_5.as_str());
+                object_3.key(key_4.as_str()).string(value_5.as_str());
             }
         }
         object_3.finish();

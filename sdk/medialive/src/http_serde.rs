@@ -4,7 +4,7 @@ pub fn add_headers_describe_input_device_thumbnail(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_1) = &input.accept {
-        let formatted_2 = AsRef::<str>::as_ref(inner_1);
+        let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value =
@@ -34,7 +34,7 @@ pub fn deser_payload_describe_input_device_thumbnail_describe_input_device_thumb
     Ok(aws_smithy_http::byte_stream::ByteStream::new(body))
 }
 
-pub fn deser_header_describe_input_device_thumbnail_describe_input_device_thumbnail_output_content_length(
+pub(crate) fn deser_header_describe_input_device_thumbnail_describe_input_device_thumbnail_output_content_length(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i64>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Content-Length").iter();
@@ -49,7 +49,7 @@ pub fn deser_header_describe_input_device_thumbnail_describe_input_device_thumbn
     }
 }
 
-pub fn deser_header_describe_input_device_thumbnail_describe_input_device_thumbnail_output_content_type(
+pub(crate) fn deser_header_describe_input_device_thumbnail_describe_input_device_thumbnail_output_content_type(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::ContentType>,
@@ -59,7 +59,7 @@ pub fn deser_header_describe_input_device_thumbnail_describe_input_device_thumbn
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_describe_input_device_thumbnail_describe_input_device_thumbnail_output_e_tag(
+pub(crate) fn deser_header_describe_input_device_thumbnail_describe_input_device_thumbnail_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -69,7 +69,7 @@ pub fn deser_header_describe_input_device_thumbnail_describe_input_device_thumbn
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_describe_input_device_thumbnail_describe_input_device_thumbnail_output_last_modified(
+pub(crate) fn deser_header_describe_input_device_thumbnail_describe_input_device_thumbnail_output_last_modified(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<aws_smithy_types::DateTime>,

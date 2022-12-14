@@ -17,7 +17,7 @@ impl std::fmt::Debug for WafStaleDataException {
 }
 impl WafStaleDataException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -82,7 +82,7 @@ impl std::fmt::Debug for WafNonexistentItemException {
 }
 impl WafNonexistentItemException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -156,7 +156,7 @@ impl std::fmt::Debug for WafNonexistentContainerException {
 }
 impl WafNonexistentContainerException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -224,7 +224,7 @@ impl std::fmt::Debug for WafLimitsExceededException {
 }
 impl WafLimitsExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -326,7 +326,7 @@ impl std::fmt::Debug for WafInvalidParameterException {
 }
 impl WafInvalidParameterException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -443,7 +443,7 @@ impl std::fmt::Debug for WafInvalidOperationException {
 }
 impl WafInvalidOperationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -511,7 +511,7 @@ impl std::fmt::Debug for WafInvalidAccountException {
 }
 impl WafInvalidAccountException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -576,7 +576,7 @@ impl std::fmt::Debug for WafInternalErrorException {
 }
 impl WafInternalErrorException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -641,7 +641,7 @@ impl std::fmt::Debug for WafSubscriptionNotFoundException {
 }
 impl WafSubscriptionNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -713,7 +713,7 @@ impl std::fmt::Debug for WafReferencedItemException {
 }
 impl WafReferencedItemException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -778,7 +778,7 @@ impl std::fmt::Debug for WafInvalidRegexPatternException {
 }
 impl WafInvalidRegexPatternException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -846,7 +846,7 @@ impl std::fmt::Debug for WafDisallowedNameException {
 }
 impl WafDisallowedNameException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -911,7 +911,7 @@ impl std::fmt::Debug for WafTagOperationInternalErrorException {
 }
 impl WafTagOperationInternalErrorException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -979,7 +979,7 @@ impl std::fmt::Debug for WafTagOperationException {
 }
 impl WafTagOperationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1044,7 +1044,7 @@ impl std::fmt::Debug for WafBadRequestException {
 }
 impl WafBadRequestException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1120,7 +1120,7 @@ impl std::fmt::Debug for WafInvalidPermissionPolicyException {
 }
 impl WafInvalidPermissionPolicyException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1188,7 +1188,7 @@ impl std::fmt::Debug for WafServiceLinkedRoleErrorException {
 }
 impl WafServiceLinkedRoleErrorException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1262,7 +1262,7 @@ impl std::fmt::Debug for WafNonEmptyEntityException {
 }
 impl WafNonEmptyEntityException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1354,7 +1354,7 @@ impl std::fmt::Debug for WafEntityMigrationException {
 }
 impl WafEntityMigrationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }

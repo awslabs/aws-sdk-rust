@@ -4,7 +4,7 @@ pub fn add_headers_abort_multipart_upload(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_1) = &input.request_payer {
-        let formatted_2 = AsRef::<str>::as_ref(inner_1);
+        let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value =
@@ -21,7 +21,7 @@ pub fn add_headers_abort_multipart_upload(
         }
     }
     if let Some(inner_3) = &input.expected_bucket_owner {
-        let formatted_4 = AsRef::<str>::as_ref(inner_3);
+        let formatted_4 = inner_3.as_str();
         if !formatted_4.is_empty() {
             let header_value = formatted_4;
             let header_value =
@@ -45,7 +45,7 @@ pub fn add_headers_complete_multipart_upload(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_5) = &input.checksum_crc32 {
-        let formatted_6 = AsRef::<str>::as_ref(inner_5);
+        let formatted_6 = inner_5.as_str();
         if !formatted_6.is_empty() {
             let header_value = formatted_6;
             let header_value =
@@ -62,7 +62,7 @@ pub fn add_headers_complete_multipart_upload(
         }
     }
     if let Some(inner_7) = &input.checksum_crc32_c {
-        let formatted_8 = AsRef::<str>::as_ref(inner_7);
+        let formatted_8 = inner_7.as_str();
         if !formatted_8.is_empty() {
             let header_value = formatted_8;
             let header_value =
@@ -79,7 +79,7 @@ pub fn add_headers_complete_multipart_upload(
         }
     }
     if let Some(inner_9) = &input.checksum_sha1 {
-        let formatted_10 = AsRef::<str>::as_ref(inner_9);
+        let formatted_10 = inner_9.as_str();
         if !formatted_10.is_empty() {
             let header_value = formatted_10;
             let header_value =
@@ -96,7 +96,7 @@ pub fn add_headers_complete_multipart_upload(
         }
     }
     if let Some(inner_11) = &input.checksum_sha256 {
-        let formatted_12 = AsRef::<str>::as_ref(inner_11);
+        let formatted_12 = inner_11.as_str();
         if !formatted_12.is_empty() {
             let header_value = formatted_12;
             let header_value =
@@ -113,7 +113,7 @@ pub fn add_headers_complete_multipart_upload(
         }
     }
     if let Some(inner_13) = &input.request_payer {
-        let formatted_14 = AsRef::<str>::as_ref(inner_13);
+        let formatted_14 = inner_13.as_str();
         if !formatted_14.is_empty() {
             let header_value = formatted_14;
             let header_value =
@@ -130,7 +130,7 @@ pub fn add_headers_complete_multipart_upload(
         }
     }
     if let Some(inner_15) = &input.expected_bucket_owner {
-        let formatted_16 = AsRef::<str>::as_ref(inner_15);
+        let formatted_16 = inner_15.as_str();
         if !formatted_16.is_empty() {
             let header_value = formatted_16;
             let header_value =
@@ -147,7 +147,7 @@ pub fn add_headers_complete_multipart_upload(
         }
     }
     if let Some(inner_17) = &input.sse_customer_algorithm {
-        let formatted_18 = AsRef::<str>::as_ref(inner_17);
+        let formatted_18 = inner_17.as_str();
         if !formatted_18.is_empty() {
             let header_value = formatted_18;
             let header_value =
@@ -167,7 +167,7 @@ pub fn add_headers_complete_multipart_upload(
         }
     }
     if let Some(inner_19) = &input.sse_customer_key {
-        let formatted_20 = AsRef::<str>::as_ref(inner_19);
+        let formatted_20 = inner_19.as_str();
         if !formatted_20.is_empty() {
             let header_value = formatted_20;
             let header_value =
@@ -184,7 +184,7 @@ pub fn add_headers_complete_multipart_upload(
         }
     }
     if let Some(inner_21) = &input.sse_customer_key_md5 {
-        let formatted_22 = AsRef::<str>::as_ref(inner_21);
+        let formatted_22 = inner_21.as_str();
         if !formatted_22.is_empty() {
             let header_value = formatted_22;
             let header_value =
@@ -211,7 +211,7 @@ pub fn add_headers_copy_object(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_23) = &input.acl {
-        let formatted_24 = AsRef::<str>::as_ref(inner_23);
+        let formatted_24 = inner_23.as_str();
         if !formatted_24.is_empty() {
             let header_value = formatted_24;
             let header_value =
@@ -228,7 +228,7 @@ pub fn add_headers_copy_object(
         }
     }
     if let Some(inner_25) = &input.cache_control {
-        let formatted_26 = AsRef::<str>::as_ref(inner_25);
+        let formatted_26 = inner_25.as_str();
         if !formatted_26.is_empty() {
             let header_value = formatted_26;
             let header_value =
@@ -245,7 +245,7 @@ pub fn add_headers_copy_object(
         }
     }
     if let Some(inner_27) = &input.checksum_algorithm {
-        let formatted_28 = AsRef::<str>::as_ref(inner_27);
+        let formatted_28 = inner_27.as_str();
         if !formatted_28.is_empty() {
             let header_value = formatted_28;
             let header_value =
@@ -262,7 +262,7 @@ pub fn add_headers_copy_object(
         }
     }
     if let Some(inner_29) = &input.content_disposition {
-        let formatted_30 = AsRef::<str>::as_ref(inner_29);
+        let formatted_30 = inner_29.as_str();
         if !formatted_30.is_empty() {
             let header_value = formatted_30;
             let header_value =
@@ -279,7 +279,7 @@ pub fn add_headers_copy_object(
         }
     }
     if let Some(inner_31) = &input.content_encoding {
-        let formatted_32 = AsRef::<str>::as_ref(inner_31);
+        let formatted_32 = inner_31.as_str();
         if !formatted_32.is_empty() {
             let header_value = formatted_32;
             let header_value =
@@ -296,7 +296,7 @@ pub fn add_headers_copy_object(
         }
     }
     if let Some(inner_33) = &input.content_language {
-        let formatted_34 = AsRef::<str>::as_ref(inner_33);
+        let formatted_34 = inner_33.as_str();
         if !formatted_34.is_empty() {
             let header_value = formatted_34;
             let header_value =
@@ -313,7 +313,7 @@ pub fn add_headers_copy_object(
         }
     }
     if let Some(inner_35) = &input.content_type {
-        let formatted_36 = AsRef::<str>::as_ref(inner_35);
+        let formatted_36 = inner_35.as_str();
         if !formatted_36.is_empty() {
             let header_value = formatted_36;
             let header_value =
@@ -330,7 +330,7 @@ pub fn add_headers_copy_object(
         }
     }
     if let Some(inner_37) = &input.copy_source {
-        let formatted_38 = AsRef::<str>::as_ref(inner_37);
+        let formatted_38 = inner_37.as_str();
         if !formatted_38.is_empty() {
             let header_value = formatted_38;
             let header_value =
@@ -347,7 +347,7 @@ pub fn add_headers_copy_object(
         }
     }
     if let Some(inner_39) = &input.copy_source_if_match {
-        let formatted_40 = AsRef::<str>::as_ref(inner_39);
+        let formatted_40 = inner_39.as_str();
         if !formatted_40.is_empty() {
             let header_value = formatted_40;
             let header_value =
@@ -381,7 +381,7 @@ pub fn add_headers_copy_object(
         }
     }
     if let Some(inner_43) = &input.copy_source_if_none_match {
-        let formatted_44 = AsRef::<str>::as_ref(inner_43);
+        let formatted_44 = inner_43.as_str();
         if !formatted_44.is_empty() {
             let header_value = formatted_44;
             let header_value =
@@ -432,7 +432,7 @@ pub fn add_headers_copy_object(
         }
     }
     if let Some(inner_49) = &input.grant_full_control {
-        let formatted_50 = AsRef::<str>::as_ref(inner_49);
+        let formatted_50 = inner_49.as_str();
         if !formatted_50.is_empty() {
             let header_value = formatted_50;
             let header_value =
@@ -449,7 +449,7 @@ pub fn add_headers_copy_object(
         }
     }
     if let Some(inner_51) = &input.grant_read {
-        let formatted_52 = AsRef::<str>::as_ref(inner_51);
+        let formatted_52 = inner_51.as_str();
         if !formatted_52.is_empty() {
             let header_value = formatted_52;
             let header_value =
@@ -466,7 +466,7 @@ pub fn add_headers_copy_object(
         }
     }
     if let Some(inner_53) = &input.grant_read_acp {
-        let formatted_54 = AsRef::<str>::as_ref(inner_53);
+        let formatted_54 = inner_53.as_str();
         if !formatted_54.is_empty() {
             let header_value = formatted_54;
             let header_value =
@@ -483,7 +483,7 @@ pub fn add_headers_copy_object(
         }
     }
     if let Some(inner_55) = &input.grant_write_acp {
-        let formatted_56 = AsRef::<str>::as_ref(inner_55);
+        let formatted_56 = inner_55.as_str();
         if !formatted_56.is_empty() {
             let header_value = formatted_56;
             let header_value =
@@ -500,7 +500,7 @@ pub fn add_headers_copy_object(
         }
     }
     if let Some(inner_57) = &input.metadata_directive {
-        let formatted_58 = AsRef::<str>::as_ref(inner_57);
+        let formatted_58 = inner_57.as_str();
         if !formatted_58.is_empty() {
             let header_value = formatted_58;
             let header_value =
@@ -517,7 +517,7 @@ pub fn add_headers_copy_object(
         }
     }
     if let Some(inner_59) = &input.tagging_directive {
-        let formatted_60 = AsRef::<str>::as_ref(inner_59);
+        let formatted_60 = inner_59.as_str();
         if !formatted_60.is_empty() {
             let header_value = formatted_60;
             let header_value =
@@ -534,7 +534,7 @@ pub fn add_headers_copy_object(
         }
     }
     if let Some(inner_61) = &input.server_side_encryption {
-        let formatted_62 = AsRef::<str>::as_ref(inner_61);
+        let formatted_62 = inner_61.as_str();
         if !formatted_62.is_empty() {
             let header_value = formatted_62;
             let header_value =
@@ -551,7 +551,7 @@ pub fn add_headers_copy_object(
         }
     }
     if let Some(inner_63) = &input.storage_class {
-        let formatted_64 = AsRef::<str>::as_ref(inner_63);
+        let formatted_64 = inner_63.as_str();
         if !formatted_64.is_empty() {
             let header_value = formatted_64;
             let header_value =
@@ -568,7 +568,7 @@ pub fn add_headers_copy_object(
         }
     }
     if let Some(inner_65) = &input.website_redirect_location {
-        let formatted_66 = AsRef::<str>::as_ref(inner_65);
+        let formatted_66 = inner_65.as_str();
         if !formatted_66.is_empty() {
             let header_value = formatted_66;
             let header_value =
@@ -585,7 +585,7 @@ pub fn add_headers_copy_object(
         }
     }
     if let Some(inner_67) = &input.sse_customer_algorithm {
-        let formatted_68 = AsRef::<str>::as_ref(inner_67);
+        let formatted_68 = inner_67.as_str();
         if !formatted_68.is_empty() {
             let header_value = formatted_68;
             let header_value =
@@ -605,7 +605,7 @@ pub fn add_headers_copy_object(
         }
     }
     if let Some(inner_69) = &input.sse_customer_key {
-        let formatted_70 = AsRef::<str>::as_ref(inner_69);
+        let formatted_70 = inner_69.as_str();
         if !formatted_70.is_empty() {
             let header_value = formatted_70;
             let header_value =
@@ -622,7 +622,7 @@ pub fn add_headers_copy_object(
         }
     }
     if let Some(inner_71) = &input.sse_customer_key_md5 {
-        let formatted_72 = AsRef::<str>::as_ref(inner_71);
+        let formatted_72 = inner_71.as_str();
         if !formatted_72.is_empty() {
             let header_value = formatted_72;
             let header_value =
@@ -642,7 +642,7 @@ pub fn add_headers_copy_object(
         }
     }
     if let Some(inner_73) = &input.ssekms_key_id {
-        let formatted_74 = AsRef::<str>::as_ref(inner_73);
+        let formatted_74 = inner_73.as_str();
         if !formatted_74.is_empty() {
             let header_value = formatted_74;
             let header_value =
@@ -659,7 +659,7 @@ pub fn add_headers_copy_object(
         }
     }
     if let Some(inner_75) = &input.ssekms_encryption_context {
-        let formatted_76 = AsRef::<str>::as_ref(inner_75);
+        let formatted_76 = inner_75.as_str();
         if !formatted_76.is_empty() {
             let header_value = formatted_76;
             let header_value =
@@ -697,7 +697,7 @@ pub fn add_headers_copy_object(
         }
     }
     if let Some(inner_78) = &input.copy_source_sse_customer_algorithm {
-        let formatted_79 = AsRef::<str>::as_ref(inner_78);
+        let formatted_79 = inner_78.as_str();
         if !formatted_79.is_empty() {
             let header_value = formatted_79;
             let header_value =
@@ -717,7 +717,7 @@ pub fn add_headers_copy_object(
         }
     }
     if let Some(inner_80) = &input.copy_source_sse_customer_key {
-        let formatted_81 = AsRef::<str>::as_ref(inner_80);
+        let formatted_81 = inner_80.as_str();
         if !formatted_81.is_empty() {
             let header_value = formatted_81;
             let header_value =
@@ -737,7 +737,7 @@ pub fn add_headers_copy_object(
         }
     }
     if let Some(inner_82) = &input.copy_source_sse_customer_key_md5 {
-        let formatted_83 = AsRef::<str>::as_ref(inner_82);
+        let formatted_83 = inner_82.as_str();
         if !formatted_83.is_empty() {
             let header_value = formatted_83;
             let header_value =
@@ -757,7 +757,7 @@ pub fn add_headers_copy_object(
         }
     }
     if let Some(inner_84) = &input.request_payer {
-        let formatted_85 = AsRef::<str>::as_ref(inner_84);
+        let formatted_85 = inner_84.as_str();
         if !formatted_85.is_empty() {
             let header_value = formatted_85;
             let header_value =
@@ -774,7 +774,7 @@ pub fn add_headers_copy_object(
         }
     }
     if let Some(inner_86) = &input.tagging {
-        let formatted_87 = AsRef::<str>::as_ref(inner_86);
+        let formatted_87 = inner_86.as_str();
         if !formatted_87.is_empty() {
             let header_value = formatted_87;
             let header_value =
@@ -791,7 +791,7 @@ pub fn add_headers_copy_object(
         }
     }
     if let Some(inner_88) = &input.object_lock_mode {
-        let formatted_89 = AsRef::<str>::as_ref(inner_88);
+        let formatted_89 = inner_88.as_str();
         if !formatted_89.is_empty() {
             let header_value = formatted_89;
             let header_value =
@@ -825,7 +825,7 @@ pub fn add_headers_copy_object(
         }
     }
     if let Some(inner_92) = &input.object_lock_legal_hold_status {
-        let formatted_93 = AsRef::<str>::as_ref(inner_92);
+        let formatted_93 = inner_92.as_str();
         if !formatted_93.is_empty() {
             let header_value = formatted_93;
             let header_value =
@@ -842,7 +842,7 @@ pub fn add_headers_copy_object(
         }
     }
     if let Some(inner_94) = &input.expected_bucket_owner {
-        let formatted_95 = AsRef::<str>::as_ref(inner_94);
+        let formatted_95 = inner_94.as_str();
         if !formatted_95.is_empty() {
             let header_value = formatted_95;
             let header_value =
@@ -859,7 +859,7 @@ pub fn add_headers_copy_object(
         }
     }
     if let Some(inner_96) = &input.expected_source_bucket_owner {
-        let formatted_97 = AsRef::<str>::as_ref(inner_96);
+        let formatted_97 = inner_96.as_str();
         if !formatted_97.is_empty() {
             let header_value = formatted_97;
             let header_value =
@@ -885,7 +885,7 @@ pub fn add_headers_copy_object(
                         details: format!("`{}` cannot be used as a header name: {}", k, err),
                     },
                 )?;
-            let header_value = AsRef::<str>::as_ref(v);
+            let header_value = v.as_str();
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                     aws_smithy_http::operation::BuildError::InvalidField {
@@ -904,7 +904,7 @@ pub fn add_headers_create_bucket(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_99) = &input.acl {
-        let formatted_100 = AsRef::<str>::as_ref(inner_99);
+        let formatted_100 = inner_99.as_str();
         if !formatted_100.is_empty() {
             let header_value = formatted_100;
             let header_value =
@@ -921,7 +921,7 @@ pub fn add_headers_create_bucket(
         }
     }
     if let Some(inner_101) = &input.grant_full_control {
-        let formatted_102 = AsRef::<str>::as_ref(inner_101);
+        let formatted_102 = inner_101.as_str();
         if !formatted_102.is_empty() {
             let header_value = formatted_102;
             let header_value =
@@ -938,7 +938,7 @@ pub fn add_headers_create_bucket(
         }
     }
     if let Some(inner_103) = &input.grant_read {
-        let formatted_104 = AsRef::<str>::as_ref(inner_103);
+        let formatted_104 = inner_103.as_str();
         if !formatted_104.is_empty() {
             let header_value = formatted_104;
             let header_value =
@@ -955,7 +955,7 @@ pub fn add_headers_create_bucket(
         }
     }
     if let Some(inner_105) = &input.grant_read_acp {
-        let formatted_106 = AsRef::<str>::as_ref(inner_105);
+        let formatted_106 = inner_105.as_str();
         if !formatted_106.is_empty() {
             let header_value = formatted_106;
             let header_value =
@@ -972,7 +972,7 @@ pub fn add_headers_create_bucket(
         }
     }
     if let Some(inner_107) = &input.grant_write {
-        let formatted_108 = AsRef::<str>::as_ref(inner_107);
+        let formatted_108 = inner_107.as_str();
         if !formatted_108.is_empty() {
             let header_value = formatted_108;
             let header_value =
@@ -989,7 +989,7 @@ pub fn add_headers_create_bucket(
         }
     }
     if let Some(inner_109) = &input.grant_write_acp {
-        let formatted_110 = AsRef::<str>::as_ref(inner_109);
+        let formatted_110 = inner_109.as_str();
         if !formatted_110.is_empty() {
             let header_value = formatted_110;
             let header_value =
@@ -1025,7 +1025,7 @@ pub fn add_headers_create_bucket(
         }
     }
     if let Some(inner_112) = &input.object_ownership {
-        let formatted_113 = AsRef::<str>::as_ref(inner_112);
+        let formatted_113 = inner_112.as_str();
         if !formatted_113.is_empty() {
             let header_value = formatted_113;
             let header_value =
@@ -1049,7 +1049,7 @@ pub fn add_headers_create_multipart_upload(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_114) = &input.acl {
-        let formatted_115 = AsRef::<str>::as_ref(inner_114);
+        let formatted_115 = inner_114.as_str();
         if !formatted_115.is_empty() {
             let header_value = formatted_115;
             let header_value =
@@ -1066,7 +1066,7 @@ pub fn add_headers_create_multipart_upload(
         }
     }
     if let Some(inner_116) = &input.cache_control {
-        let formatted_117 = AsRef::<str>::as_ref(inner_116);
+        let formatted_117 = inner_116.as_str();
         if !formatted_117.is_empty() {
             let header_value = formatted_117;
             let header_value =
@@ -1083,7 +1083,7 @@ pub fn add_headers_create_multipart_upload(
         }
     }
     if let Some(inner_118) = &input.content_disposition {
-        let formatted_119 = AsRef::<str>::as_ref(inner_118);
+        let formatted_119 = inner_118.as_str();
         if !formatted_119.is_empty() {
             let header_value = formatted_119;
             let header_value =
@@ -1100,7 +1100,7 @@ pub fn add_headers_create_multipart_upload(
         }
     }
     if let Some(inner_120) = &input.content_encoding {
-        let formatted_121 = AsRef::<str>::as_ref(inner_120);
+        let formatted_121 = inner_120.as_str();
         if !formatted_121.is_empty() {
             let header_value = formatted_121;
             let header_value =
@@ -1117,7 +1117,7 @@ pub fn add_headers_create_multipart_upload(
         }
     }
     if let Some(inner_122) = &input.content_language {
-        let formatted_123 = AsRef::<str>::as_ref(inner_122);
+        let formatted_123 = inner_122.as_str();
         if !formatted_123.is_empty() {
             let header_value = formatted_123;
             let header_value =
@@ -1134,7 +1134,7 @@ pub fn add_headers_create_multipart_upload(
         }
     }
     if let Some(inner_124) = &input.content_type {
-        let formatted_125 = AsRef::<str>::as_ref(inner_124);
+        let formatted_125 = inner_124.as_str();
         if !formatted_125.is_empty() {
             let header_value = formatted_125;
             let header_value =
@@ -1168,7 +1168,7 @@ pub fn add_headers_create_multipart_upload(
         }
     }
     if let Some(inner_128) = &input.grant_full_control {
-        let formatted_129 = AsRef::<str>::as_ref(inner_128);
+        let formatted_129 = inner_128.as_str();
         if !formatted_129.is_empty() {
             let header_value = formatted_129;
             let header_value =
@@ -1185,7 +1185,7 @@ pub fn add_headers_create_multipart_upload(
         }
     }
     if let Some(inner_130) = &input.grant_read {
-        let formatted_131 = AsRef::<str>::as_ref(inner_130);
+        let formatted_131 = inner_130.as_str();
         if !formatted_131.is_empty() {
             let header_value = formatted_131;
             let header_value =
@@ -1202,7 +1202,7 @@ pub fn add_headers_create_multipart_upload(
         }
     }
     if let Some(inner_132) = &input.grant_read_acp {
-        let formatted_133 = AsRef::<str>::as_ref(inner_132);
+        let formatted_133 = inner_132.as_str();
         if !formatted_133.is_empty() {
             let header_value = formatted_133;
             let header_value =
@@ -1219,7 +1219,7 @@ pub fn add_headers_create_multipart_upload(
         }
     }
     if let Some(inner_134) = &input.grant_write_acp {
-        let formatted_135 = AsRef::<str>::as_ref(inner_134);
+        let formatted_135 = inner_134.as_str();
         if !formatted_135.is_empty() {
             let header_value = formatted_135;
             let header_value =
@@ -1236,7 +1236,7 @@ pub fn add_headers_create_multipart_upload(
         }
     }
     if let Some(inner_136) = &input.server_side_encryption {
-        let formatted_137 = AsRef::<str>::as_ref(inner_136);
+        let formatted_137 = inner_136.as_str();
         if !formatted_137.is_empty() {
             let header_value = formatted_137;
             let header_value =
@@ -1253,7 +1253,7 @@ pub fn add_headers_create_multipart_upload(
         }
     }
     if let Some(inner_138) = &input.storage_class {
-        let formatted_139 = AsRef::<str>::as_ref(inner_138);
+        let formatted_139 = inner_138.as_str();
         if !formatted_139.is_empty() {
             let header_value = formatted_139;
             let header_value =
@@ -1270,7 +1270,7 @@ pub fn add_headers_create_multipart_upload(
         }
     }
     if let Some(inner_140) = &input.website_redirect_location {
-        let formatted_141 = AsRef::<str>::as_ref(inner_140);
+        let formatted_141 = inner_140.as_str();
         if !formatted_141.is_empty() {
             let header_value = formatted_141;
             let header_value =
@@ -1287,7 +1287,7 @@ pub fn add_headers_create_multipart_upload(
         }
     }
     if let Some(inner_142) = &input.sse_customer_algorithm {
-        let formatted_143 = AsRef::<str>::as_ref(inner_142);
+        let formatted_143 = inner_142.as_str();
         if !formatted_143.is_empty() {
             let header_value = formatted_143;
             let header_value =
@@ -1307,7 +1307,7 @@ pub fn add_headers_create_multipart_upload(
         }
     }
     if let Some(inner_144) = &input.sse_customer_key {
-        let formatted_145 = AsRef::<str>::as_ref(inner_144);
+        let formatted_145 = inner_144.as_str();
         if !formatted_145.is_empty() {
             let header_value = formatted_145;
             let header_value =
@@ -1324,7 +1324,7 @@ pub fn add_headers_create_multipart_upload(
         }
     }
     if let Some(inner_146) = &input.sse_customer_key_md5 {
-        let formatted_147 = AsRef::<str>::as_ref(inner_146);
+        let formatted_147 = inner_146.as_str();
         if !formatted_147.is_empty() {
             let header_value = formatted_147;
             let header_value =
@@ -1344,7 +1344,7 @@ pub fn add_headers_create_multipart_upload(
         }
     }
     if let Some(inner_148) = &input.ssekms_key_id {
-        let formatted_149 = AsRef::<str>::as_ref(inner_148);
+        let formatted_149 = inner_148.as_str();
         if !formatted_149.is_empty() {
             let header_value = formatted_149;
             let header_value =
@@ -1361,7 +1361,7 @@ pub fn add_headers_create_multipart_upload(
         }
     }
     if let Some(inner_150) = &input.ssekms_encryption_context {
-        let formatted_151 = AsRef::<str>::as_ref(inner_150);
+        let formatted_151 = inner_150.as_str();
         if !formatted_151.is_empty() {
             let header_value = formatted_151;
             let header_value =
@@ -1399,7 +1399,7 @@ pub fn add_headers_create_multipart_upload(
         }
     }
     if let Some(inner_153) = &input.request_payer {
-        let formatted_154 = AsRef::<str>::as_ref(inner_153);
+        let formatted_154 = inner_153.as_str();
         if !formatted_154.is_empty() {
             let header_value = formatted_154;
             let header_value =
@@ -1416,7 +1416,7 @@ pub fn add_headers_create_multipart_upload(
         }
     }
     if let Some(inner_155) = &input.tagging {
-        let formatted_156 = AsRef::<str>::as_ref(inner_155);
+        let formatted_156 = inner_155.as_str();
         if !formatted_156.is_empty() {
             let header_value = formatted_156;
             let header_value =
@@ -1433,7 +1433,7 @@ pub fn add_headers_create_multipart_upload(
         }
     }
     if let Some(inner_157) = &input.object_lock_mode {
-        let formatted_158 = AsRef::<str>::as_ref(inner_157);
+        let formatted_158 = inner_157.as_str();
         if !formatted_158.is_empty() {
             let header_value = formatted_158;
             let header_value =
@@ -1467,7 +1467,7 @@ pub fn add_headers_create_multipart_upload(
         }
     }
     if let Some(inner_161) = &input.object_lock_legal_hold_status {
-        let formatted_162 = AsRef::<str>::as_ref(inner_161);
+        let formatted_162 = inner_161.as_str();
         if !formatted_162.is_empty() {
             let header_value = formatted_162;
             let header_value =
@@ -1484,7 +1484,7 @@ pub fn add_headers_create_multipart_upload(
         }
     }
     if let Some(inner_163) = &input.expected_bucket_owner {
-        let formatted_164 = AsRef::<str>::as_ref(inner_163);
+        let formatted_164 = inner_163.as_str();
         if !formatted_164.is_empty() {
             let header_value = formatted_164;
             let header_value =
@@ -1501,7 +1501,7 @@ pub fn add_headers_create_multipart_upload(
         }
     }
     if let Some(inner_165) = &input.checksum_algorithm {
-        let formatted_166 = AsRef::<str>::as_ref(inner_165);
+        let formatted_166 = inner_165.as_str();
         if !formatted_166.is_empty() {
             let header_value = formatted_166;
             let header_value =
@@ -1527,7 +1527,7 @@ pub fn add_headers_create_multipart_upload(
                         details: format!("`{}` cannot be used as a header name: {}", k, err),
                     },
                 )?;
-            let header_value = AsRef::<str>::as_ref(v);
+            let header_value = v.as_str();
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                     aws_smithy_http::operation::BuildError::InvalidField {
@@ -1546,7 +1546,7 @@ pub fn add_headers_delete_bucket(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_168) = &input.expected_bucket_owner {
-        let formatted_169 = AsRef::<str>::as_ref(inner_168);
+        let formatted_169 = inner_168.as_str();
         if !formatted_169.is_empty() {
             let header_value = formatted_169;
             let header_value =
@@ -1570,7 +1570,7 @@ pub fn add_headers_delete_bucket_analytics_configuration(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_170) = &input.expected_bucket_owner {
-        let formatted_171 = AsRef::<str>::as_ref(inner_170);
+        let formatted_171 = inner_170.as_str();
         if !formatted_171.is_empty() {
             let header_value = formatted_171;
             let header_value =
@@ -1594,7 +1594,7 @@ pub fn add_headers_delete_bucket_cors(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_172) = &input.expected_bucket_owner {
-        let formatted_173 = AsRef::<str>::as_ref(inner_172);
+        let formatted_173 = inner_172.as_str();
         if !formatted_173.is_empty() {
             let header_value = formatted_173;
             let header_value =
@@ -1618,7 +1618,7 @@ pub fn add_headers_delete_bucket_encryption(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_174) = &input.expected_bucket_owner {
-        let formatted_175 = AsRef::<str>::as_ref(inner_174);
+        let formatted_175 = inner_174.as_str();
         if !formatted_175.is_empty() {
             let header_value = formatted_175;
             let header_value =
@@ -1642,7 +1642,7 @@ pub fn add_headers_delete_bucket_inventory_configuration(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_176) = &input.expected_bucket_owner {
-        let formatted_177 = AsRef::<str>::as_ref(inner_176);
+        let formatted_177 = inner_176.as_str();
         if !formatted_177.is_empty() {
             let header_value = formatted_177;
             let header_value =
@@ -1666,7 +1666,7 @@ pub fn add_headers_delete_bucket_lifecycle(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_178) = &input.expected_bucket_owner {
-        let formatted_179 = AsRef::<str>::as_ref(inner_178);
+        let formatted_179 = inner_178.as_str();
         if !formatted_179.is_empty() {
             let header_value = formatted_179;
             let header_value =
@@ -1690,7 +1690,7 @@ pub fn add_headers_delete_bucket_metrics_configuration(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_180) = &input.expected_bucket_owner {
-        let formatted_181 = AsRef::<str>::as_ref(inner_180);
+        let formatted_181 = inner_180.as_str();
         if !formatted_181.is_empty() {
             let header_value = formatted_181;
             let header_value =
@@ -1714,7 +1714,7 @@ pub fn add_headers_delete_bucket_ownership_controls(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_182) = &input.expected_bucket_owner {
-        let formatted_183 = AsRef::<str>::as_ref(inner_182);
+        let formatted_183 = inner_182.as_str();
         if !formatted_183.is_empty() {
             let header_value = formatted_183;
             let header_value =
@@ -1738,7 +1738,7 @@ pub fn add_headers_delete_bucket_policy(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_184) = &input.expected_bucket_owner {
-        let formatted_185 = AsRef::<str>::as_ref(inner_184);
+        let formatted_185 = inner_184.as_str();
         if !formatted_185.is_empty() {
             let header_value = formatted_185;
             let header_value =
@@ -1762,7 +1762,7 @@ pub fn add_headers_delete_bucket_replication(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_186) = &input.expected_bucket_owner {
-        let formatted_187 = AsRef::<str>::as_ref(inner_186);
+        let formatted_187 = inner_186.as_str();
         if !formatted_187.is_empty() {
             let header_value = formatted_187;
             let header_value =
@@ -1786,7 +1786,7 @@ pub fn add_headers_delete_bucket_tagging(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_188) = &input.expected_bucket_owner {
-        let formatted_189 = AsRef::<str>::as_ref(inner_188);
+        let formatted_189 = inner_188.as_str();
         if !formatted_189.is_empty() {
             let header_value = formatted_189;
             let header_value =
@@ -1810,7 +1810,7 @@ pub fn add_headers_delete_bucket_website(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_190) = &input.expected_bucket_owner {
-        let formatted_191 = AsRef::<str>::as_ref(inner_190);
+        let formatted_191 = inner_190.as_str();
         if !formatted_191.is_empty() {
             let header_value = formatted_191;
             let header_value =
@@ -1834,7 +1834,7 @@ pub fn add_headers_delete_object(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_192) = &input.mfa {
-        let formatted_193 = AsRef::<str>::as_ref(inner_192);
+        let formatted_193 = inner_192.as_str();
         if !formatted_193.is_empty() {
             let header_value = formatted_193;
             let header_value =
@@ -1851,7 +1851,7 @@ pub fn add_headers_delete_object(
         }
     }
     if let Some(inner_194) = &input.request_payer {
-        let formatted_195 = AsRef::<str>::as_ref(inner_194);
+        let formatted_195 = inner_194.as_str();
         if !formatted_195.is_empty() {
             let header_value = formatted_195;
             let header_value =
@@ -1887,7 +1887,7 @@ pub fn add_headers_delete_object(
         }
     }
     if let Some(inner_197) = &input.expected_bucket_owner {
-        let formatted_198 = AsRef::<str>::as_ref(inner_197);
+        let formatted_198 = inner_197.as_str();
         if !formatted_198.is_empty() {
             let header_value = formatted_198;
             let header_value =
@@ -1911,7 +1911,7 @@ pub fn add_headers_delete_objects(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_199) = &input.mfa {
-        let formatted_200 = AsRef::<str>::as_ref(inner_199);
+        let formatted_200 = inner_199.as_str();
         if !formatted_200.is_empty() {
             let header_value = formatted_200;
             let header_value =
@@ -1928,7 +1928,7 @@ pub fn add_headers_delete_objects(
         }
     }
     if let Some(inner_201) = &input.request_payer {
-        let formatted_202 = AsRef::<str>::as_ref(inner_201);
+        let formatted_202 = inner_201.as_str();
         if !formatted_202.is_empty() {
             let header_value = formatted_202;
             let header_value =
@@ -1964,7 +1964,7 @@ pub fn add_headers_delete_objects(
         }
     }
     if let Some(inner_204) = &input.expected_bucket_owner {
-        let formatted_205 = AsRef::<str>::as_ref(inner_204);
+        let formatted_205 = inner_204.as_str();
         if !formatted_205.is_empty() {
             let header_value = formatted_205;
             let header_value =
@@ -1981,7 +1981,7 @@ pub fn add_headers_delete_objects(
         }
     }
     if let Some(inner_206) = &input.checksum_algorithm {
-        let formatted_207 = AsRef::<str>::as_ref(inner_206);
+        let formatted_207 = inner_206.as_str();
         if !formatted_207.is_empty() {
             let header_value = formatted_207;
             let header_value =
@@ -2005,7 +2005,7 @@ pub fn add_headers_delete_object_tagging(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_208) = &input.expected_bucket_owner {
-        let formatted_209 = AsRef::<str>::as_ref(inner_208);
+        let formatted_209 = inner_208.as_str();
         if !formatted_209.is_empty() {
             let header_value = formatted_209;
             let header_value =
@@ -2029,7 +2029,7 @@ pub fn add_headers_delete_public_access_block(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_210) = &input.expected_bucket_owner {
-        let formatted_211 = AsRef::<str>::as_ref(inner_210);
+        let formatted_211 = inner_210.as_str();
         if !formatted_211.is_empty() {
             let header_value = formatted_211;
             let header_value =
@@ -2053,7 +2053,7 @@ pub fn add_headers_get_bucket_accelerate_configuration(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_212) = &input.expected_bucket_owner {
-        let formatted_213 = AsRef::<str>::as_ref(inner_212);
+        let formatted_213 = inner_212.as_str();
         if !formatted_213.is_empty() {
             let header_value = formatted_213;
             let header_value =
@@ -2077,7 +2077,7 @@ pub fn add_headers_get_bucket_acl(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_214) = &input.expected_bucket_owner {
-        let formatted_215 = AsRef::<str>::as_ref(inner_214);
+        let formatted_215 = inner_214.as_str();
         if !formatted_215.is_empty() {
             let header_value = formatted_215;
             let header_value =
@@ -2101,7 +2101,7 @@ pub fn add_headers_get_bucket_analytics_configuration(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_216) = &input.expected_bucket_owner {
-        let formatted_217 = AsRef::<str>::as_ref(inner_216);
+        let formatted_217 = inner_216.as_str();
         if !formatted_217.is_empty() {
             let header_value = formatted_217;
             let header_value =
@@ -2125,7 +2125,7 @@ pub fn add_headers_get_bucket_cors(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_218) = &input.expected_bucket_owner {
-        let formatted_219 = AsRef::<str>::as_ref(inner_218);
+        let formatted_219 = inner_218.as_str();
         if !formatted_219.is_empty() {
             let header_value = formatted_219;
             let header_value =
@@ -2149,7 +2149,7 @@ pub fn add_headers_get_bucket_encryption(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_220) = &input.expected_bucket_owner {
-        let formatted_221 = AsRef::<str>::as_ref(inner_220);
+        let formatted_221 = inner_220.as_str();
         if !formatted_221.is_empty() {
             let header_value = formatted_221;
             let header_value =
@@ -2173,7 +2173,7 @@ pub fn add_headers_get_bucket_inventory_configuration(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_222) = &input.expected_bucket_owner {
-        let formatted_223 = AsRef::<str>::as_ref(inner_222);
+        let formatted_223 = inner_222.as_str();
         if !formatted_223.is_empty() {
             let header_value = formatted_223;
             let header_value =
@@ -2197,7 +2197,7 @@ pub fn add_headers_get_bucket_lifecycle_configuration(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_224) = &input.expected_bucket_owner {
-        let formatted_225 = AsRef::<str>::as_ref(inner_224);
+        let formatted_225 = inner_224.as_str();
         if !formatted_225.is_empty() {
             let header_value = formatted_225;
             let header_value =
@@ -2221,7 +2221,7 @@ pub fn add_headers_get_bucket_location(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_226) = &input.expected_bucket_owner {
-        let formatted_227 = AsRef::<str>::as_ref(inner_226);
+        let formatted_227 = inner_226.as_str();
         if !formatted_227.is_empty() {
             let header_value = formatted_227;
             let header_value =
@@ -2245,7 +2245,7 @@ pub fn add_headers_get_bucket_logging(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_228) = &input.expected_bucket_owner {
-        let formatted_229 = AsRef::<str>::as_ref(inner_228);
+        let formatted_229 = inner_228.as_str();
         if !formatted_229.is_empty() {
             let header_value = formatted_229;
             let header_value =
@@ -2269,7 +2269,7 @@ pub fn add_headers_get_bucket_metrics_configuration(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_230) = &input.expected_bucket_owner {
-        let formatted_231 = AsRef::<str>::as_ref(inner_230);
+        let formatted_231 = inner_230.as_str();
         if !formatted_231.is_empty() {
             let header_value = formatted_231;
             let header_value =
@@ -2293,7 +2293,7 @@ pub fn add_headers_get_bucket_notification_configuration(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_232) = &input.expected_bucket_owner {
-        let formatted_233 = AsRef::<str>::as_ref(inner_232);
+        let formatted_233 = inner_232.as_str();
         if !formatted_233.is_empty() {
             let header_value = formatted_233;
             let header_value =
@@ -2317,7 +2317,7 @@ pub fn add_headers_get_bucket_ownership_controls(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_234) = &input.expected_bucket_owner {
-        let formatted_235 = AsRef::<str>::as_ref(inner_234);
+        let formatted_235 = inner_234.as_str();
         if !formatted_235.is_empty() {
             let header_value = formatted_235;
             let header_value =
@@ -2341,7 +2341,7 @@ pub fn add_headers_get_bucket_policy(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_236) = &input.expected_bucket_owner {
-        let formatted_237 = AsRef::<str>::as_ref(inner_236);
+        let formatted_237 = inner_236.as_str();
         if !formatted_237.is_empty() {
             let header_value = formatted_237;
             let header_value =
@@ -2365,7 +2365,7 @@ pub fn add_headers_get_bucket_policy_status(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_238) = &input.expected_bucket_owner {
-        let formatted_239 = AsRef::<str>::as_ref(inner_238);
+        let formatted_239 = inner_238.as_str();
         if !formatted_239.is_empty() {
             let header_value = formatted_239;
             let header_value =
@@ -2389,7 +2389,7 @@ pub fn add_headers_get_bucket_replication(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_240) = &input.expected_bucket_owner {
-        let formatted_241 = AsRef::<str>::as_ref(inner_240);
+        let formatted_241 = inner_240.as_str();
         if !formatted_241.is_empty() {
             let header_value = formatted_241;
             let header_value =
@@ -2413,7 +2413,7 @@ pub fn add_headers_get_bucket_request_payment(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_242) = &input.expected_bucket_owner {
-        let formatted_243 = AsRef::<str>::as_ref(inner_242);
+        let formatted_243 = inner_242.as_str();
         if !formatted_243.is_empty() {
             let header_value = formatted_243;
             let header_value =
@@ -2437,7 +2437,7 @@ pub fn add_headers_get_bucket_tagging(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_244) = &input.expected_bucket_owner {
-        let formatted_245 = AsRef::<str>::as_ref(inner_244);
+        let formatted_245 = inner_244.as_str();
         if !formatted_245.is_empty() {
             let header_value = formatted_245;
             let header_value =
@@ -2461,7 +2461,7 @@ pub fn add_headers_get_bucket_versioning(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_246) = &input.expected_bucket_owner {
-        let formatted_247 = AsRef::<str>::as_ref(inner_246);
+        let formatted_247 = inner_246.as_str();
         if !formatted_247.is_empty() {
             let header_value = formatted_247;
             let header_value =
@@ -2485,7 +2485,7 @@ pub fn add_headers_get_bucket_website(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_248) = &input.expected_bucket_owner {
-        let formatted_249 = AsRef::<str>::as_ref(inner_248);
+        let formatted_249 = inner_248.as_str();
         if !formatted_249.is_empty() {
             let header_value = formatted_249;
             let header_value =
@@ -2509,7 +2509,7 @@ pub fn add_headers_get_object(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_250) = &input.if_match {
-        let formatted_251 = AsRef::<str>::as_ref(inner_250);
+        let formatted_251 = inner_250.as_str();
         if !formatted_251.is_empty() {
             let header_value = formatted_251;
             let header_value =
@@ -2543,7 +2543,7 @@ pub fn add_headers_get_object(
         }
     }
     if let Some(inner_254) = &input.if_none_match {
-        let formatted_255 = AsRef::<str>::as_ref(inner_254);
+        let formatted_255 = inner_254.as_str();
         if !formatted_255.is_empty() {
             let header_value = formatted_255;
             let header_value =
@@ -2577,7 +2577,7 @@ pub fn add_headers_get_object(
         }
     }
     if let Some(inner_258) = &input.range {
-        let formatted_259 = AsRef::<str>::as_ref(inner_258);
+        let formatted_259 = inner_258.as_str();
         if !formatted_259.is_empty() {
             let header_value = formatted_259;
             let header_value =
@@ -2594,7 +2594,7 @@ pub fn add_headers_get_object(
         }
     }
     if let Some(inner_260) = &input.sse_customer_algorithm {
-        let formatted_261 = AsRef::<str>::as_ref(inner_260);
+        let formatted_261 = inner_260.as_str();
         if !formatted_261.is_empty() {
             let header_value = formatted_261;
             let header_value =
@@ -2614,7 +2614,7 @@ pub fn add_headers_get_object(
         }
     }
     if let Some(inner_262) = &input.sse_customer_key {
-        let formatted_263 = AsRef::<str>::as_ref(inner_262);
+        let formatted_263 = inner_262.as_str();
         if !formatted_263.is_empty() {
             let header_value = formatted_263;
             let header_value =
@@ -2631,7 +2631,7 @@ pub fn add_headers_get_object(
         }
     }
     if let Some(inner_264) = &input.sse_customer_key_md5 {
-        let formatted_265 = AsRef::<str>::as_ref(inner_264);
+        let formatted_265 = inner_264.as_str();
         if !formatted_265.is_empty() {
             let header_value = formatted_265;
             let header_value =
@@ -2651,7 +2651,7 @@ pub fn add_headers_get_object(
         }
     }
     if let Some(inner_266) = &input.request_payer {
-        let formatted_267 = AsRef::<str>::as_ref(inner_266);
+        let formatted_267 = inner_266.as_str();
         if !formatted_267.is_empty() {
             let header_value = formatted_267;
             let header_value =
@@ -2668,7 +2668,7 @@ pub fn add_headers_get_object(
         }
     }
     if let Some(inner_268) = &input.expected_bucket_owner {
-        let formatted_269 = AsRef::<str>::as_ref(inner_268);
+        let formatted_269 = inner_268.as_str();
         if !formatted_269.is_empty() {
             let header_value = formatted_269;
             let header_value =
@@ -2685,7 +2685,7 @@ pub fn add_headers_get_object(
         }
     }
     if let Some(inner_270) = &input.checksum_mode {
-        let formatted_271 = AsRef::<str>::as_ref(inner_270);
+        let formatted_271 = inner_270.as_str();
         if !formatted_271.is_empty() {
             let header_value = formatted_271;
             let header_value =
@@ -2709,7 +2709,7 @@ pub fn add_headers_get_object_acl(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_272) = &input.request_payer {
-        let formatted_273 = AsRef::<str>::as_ref(inner_272);
+        let formatted_273 = inner_272.as_str();
         if !formatted_273.is_empty() {
             let header_value = formatted_273;
             let header_value =
@@ -2726,7 +2726,7 @@ pub fn add_headers_get_object_acl(
         }
     }
     if let Some(inner_274) = &input.expected_bucket_owner {
-        let formatted_275 = AsRef::<str>::as_ref(inner_274);
+        let formatted_275 = inner_274.as_str();
         if !formatted_275.is_empty() {
             let header_value = formatted_275;
             let header_value =
@@ -2768,7 +2768,7 @@ pub fn add_headers_get_object_attributes(
         }
     }
     if let Some(inner_277) = &input.part_number_marker {
-        let formatted_278 = AsRef::<str>::as_ref(inner_277);
+        let formatted_278 = inner_277.as_str();
         if !formatted_278.is_empty() {
             let header_value = formatted_278;
             let header_value =
@@ -2785,7 +2785,7 @@ pub fn add_headers_get_object_attributes(
         }
     }
     if let Some(inner_279) = &input.sse_customer_algorithm {
-        let formatted_280 = AsRef::<str>::as_ref(inner_279);
+        let formatted_280 = inner_279.as_str();
         if !formatted_280.is_empty() {
             let header_value = formatted_280;
             let header_value =
@@ -2805,7 +2805,7 @@ pub fn add_headers_get_object_attributes(
         }
     }
     if let Some(inner_281) = &input.sse_customer_key {
-        let formatted_282 = AsRef::<str>::as_ref(inner_281);
+        let formatted_282 = inner_281.as_str();
         if !formatted_282.is_empty() {
             let header_value = formatted_282;
             let header_value =
@@ -2822,7 +2822,7 @@ pub fn add_headers_get_object_attributes(
         }
     }
     if let Some(inner_283) = &input.sse_customer_key_md5 {
-        let formatted_284 = AsRef::<str>::as_ref(inner_283);
+        let formatted_284 = inner_283.as_str();
         if !formatted_284.is_empty() {
             let header_value = formatted_284;
             let header_value =
@@ -2842,7 +2842,7 @@ pub fn add_headers_get_object_attributes(
         }
     }
     if let Some(inner_285) = &input.request_payer {
-        let formatted_286 = AsRef::<str>::as_ref(inner_285);
+        let formatted_286 = inner_285.as_str();
         if !formatted_286.is_empty() {
             let header_value = formatted_286;
             let header_value =
@@ -2859,7 +2859,7 @@ pub fn add_headers_get_object_attributes(
         }
     }
     if let Some(inner_287) = &input.expected_bucket_owner {
-        let formatted_288 = AsRef::<str>::as_ref(inner_287);
+        let formatted_288 = inner_287.as_str();
         if !formatted_288.is_empty() {
             let header_value = formatted_288;
             let header_value =
@@ -2877,8 +2877,7 @@ pub fn add_headers_get_object_attributes(
     }
     if let Some(inner_289) = &input.object_attributes {
         for inner_290 in inner_289 {
-            let formatted_291 =
-                aws_smithy_http::header::quote_header_value(AsRef::<str>::as_ref(inner_290));
+            let formatted_291 = aws_smithy_http::header::quote_header_value(inner_290.as_str());
             if !formatted_291.is_empty() {
                 let header_value = formatted_291;
                 let header_value =
@@ -2903,7 +2902,7 @@ pub fn add_headers_get_object_legal_hold(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_292) = &input.request_payer {
-        let formatted_293 = AsRef::<str>::as_ref(inner_292);
+        let formatted_293 = inner_292.as_str();
         if !formatted_293.is_empty() {
             let header_value = formatted_293;
             let header_value =
@@ -2920,7 +2919,7 @@ pub fn add_headers_get_object_legal_hold(
         }
     }
     if let Some(inner_294) = &input.expected_bucket_owner {
-        let formatted_295 = AsRef::<str>::as_ref(inner_294);
+        let formatted_295 = inner_294.as_str();
         if !formatted_295.is_empty() {
             let header_value = formatted_295;
             let header_value =
@@ -2944,7 +2943,7 @@ pub fn add_headers_get_object_lock_configuration(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_296) = &input.expected_bucket_owner {
-        let formatted_297 = AsRef::<str>::as_ref(inner_296);
+        let formatted_297 = inner_296.as_str();
         if !formatted_297.is_empty() {
             let header_value = formatted_297;
             let header_value =
@@ -2968,7 +2967,7 @@ pub fn add_headers_get_object_retention(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_298) = &input.request_payer {
-        let formatted_299 = AsRef::<str>::as_ref(inner_298);
+        let formatted_299 = inner_298.as_str();
         if !formatted_299.is_empty() {
             let header_value = formatted_299;
             let header_value =
@@ -2985,7 +2984,7 @@ pub fn add_headers_get_object_retention(
         }
     }
     if let Some(inner_300) = &input.expected_bucket_owner {
-        let formatted_301 = AsRef::<str>::as_ref(inner_300);
+        let formatted_301 = inner_300.as_str();
         if !formatted_301.is_empty() {
             let header_value = formatted_301;
             let header_value =
@@ -3009,7 +3008,7 @@ pub fn add_headers_get_object_tagging(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_302) = &input.expected_bucket_owner {
-        let formatted_303 = AsRef::<str>::as_ref(inner_302);
+        let formatted_303 = inner_302.as_str();
         if !formatted_303.is_empty() {
             let header_value = formatted_303;
             let header_value =
@@ -3026,7 +3025,7 @@ pub fn add_headers_get_object_tagging(
         }
     }
     if let Some(inner_304) = &input.request_payer {
-        let formatted_305 = AsRef::<str>::as_ref(inner_304);
+        let formatted_305 = inner_304.as_str();
         if !formatted_305.is_empty() {
             let header_value = formatted_305;
             let header_value =
@@ -3050,7 +3049,7 @@ pub fn add_headers_get_object_torrent(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_306) = &input.request_payer {
-        let formatted_307 = AsRef::<str>::as_ref(inner_306);
+        let formatted_307 = inner_306.as_str();
         if !formatted_307.is_empty() {
             let header_value = formatted_307;
             let header_value =
@@ -3067,7 +3066,7 @@ pub fn add_headers_get_object_torrent(
         }
     }
     if let Some(inner_308) = &input.expected_bucket_owner {
-        let formatted_309 = AsRef::<str>::as_ref(inner_308);
+        let formatted_309 = inner_308.as_str();
         if !formatted_309.is_empty() {
             let header_value = formatted_309;
             let header_value =
@@ -3091,7 +3090,7 @@ pub fn add_headers_get_public_access_block(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_310) = &input.expected_bucket_owner {
-        let formatted_311 = AsRef::<str>::as_ref(inner_310);
+        let formatted_311 = inner_310.as_str();
         if !formatted_311.is_empty() {
             let header_value = formatted_311;
             let header_value =
@@ -3115,7 +3114,7 @@ pub fn add_headers_head_bucket(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_312) = &input.expected_bucket_owner {
-        let formatted_313 = AsRef::<str>::as_ref(inner_312);
+        let formatted_313 = inner_312.as_str();
         if !formatted_313.is_empty() {
             let header_value = formatted_313;
             let header_value =
@@ -3139,7 +3138,7 @@ pub fn add_headers_head_object(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_314) = &input.if_match {
-        let formatted_315 = AsRef::<str>::as_ref(inner_314);
+        let formatted_315 = inner_314.as_str();
         if !formatted_315.is_empty() {
             let header_value = formatted_315;
             let header_value =
@@ -3173,7 +3172,7 @@ pub fn add_headers_head_object(
         }
     }
     if let Some(inner_318) = &input.if_none_match {
-        let formatted_319 = AsRef::<str>::as_ref(inner_318);
+        let formatted_319 = inner_318.as_str();
         if !formatted_319.is_empty() {
             let header_value = formatted_319;
             let header_value =
@@ -3207,7 +3206,7 @@ pub fn add_headers_head_object(
         }
     }
     if let Some(inner_322) = &input.range {
-        let formatted_323 = AsRef::<str>::as_ref(inner_322);
+        let formatted_323 = inner_322.as_str();
         if !formatted_323.is_empty() {
             let header_value = formatted_323;
             let header_value =
@@ -3224,7 +3223,7 @@ pub fn add_headers_head_object(
         }
     }
     if let Some(inner_324) = &input.sse_customer_algorithm {
-        let formatted_325 = AsRef::<str>::as_ref(inner_324);
+        let formatted_325 = inner_324.as_str();
         if !formatted_325.is_empty() {
             let header_value = formatted_325;
             let header_value =
@@ -3244,7 +3243,7 @@ pub fn add_headers_head_object(
         }
     }
     if let Some(inner_326) = &input.sse_customer_key {
-        let formatted_327 = AsRef::<str>::as_ref(inner_326);
+        let formatted_327 = inner_326.as_str();
         if !formatted_327.is_empty() {
             let header_value = formatted_327;
             let header_value =
@@ -3261,7 +3260,7 @@ pub fn add_headers_head_object(
         }
     }
     if let Some(inner_328) = &input.sse_customer_key_md5 {
-        let formatted_329 = AsRef::<str>::as_ref(inner_328);
+        let formatted_329 = inner_328.as_str();
         if !formatted_329.is_empty() {
             let header_value = formatted_329;
             let header_value =
@@ -3281,7 +3280,7 @@ pub fn add_headers_head_object(
         }
     }
     if let Some(inner_330) = &input.request_payer {
-        let formatted_331 = AsRef::<str>::as_ref(inner_330);
+        let formatted_331 = inner_330.as_str();
         if !formatted_331.is_empty() {
             let header_value = formatted_331;
             let header_value =
@@ -3298,7 +3297,7 @@ pub fn add_headers_head_object(
         }
     }
     if let Some(inner_332) = &input.expected_bucket_owner {
-        let formatted_333 = AsRef::<str>::as_ref(inner_332);
+        let formatted_333 = inner_332.as_str();
         if !formatted_333.is_empty() {
             let header_value = formatted_333;
             let header_value =
@@ -3315,7 +3314,7 @@ pub fn add_headers_head_object(
         }
     }
     if let Some(inner_334) = &input.checksum_mode {
-        let formatted_335 = AsRef::<str>::as_ref(inner_334);
+        let formatted_335 = inner_334.as_str();
         if !formatted_335.is_empty() {
             let header_value = formatted_335;
             let header_value =
@@ -3339,7 +3338,7 @@ pub fn add_headers_list_bucket_analytics_configurations(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_336) = &input.expected_bucket_owner {
-        let formatted_337 = AsRef::<str>::as_ref(inner_336);
+        let formatted_337 = inner_336.as_str();
         if !formatted_337.is_empty() {
             let header_value = formatted_337;
             let header_value =
@@ -3363,7 +3362,7 @@ pub fn add_headers_list_bucket_inventory_configurations(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_338) = &input.expected_bucket_owner {
-        let formatted_339 = AsRef::<str>::as_ref(inner_338);
+        let formatted_339 = inner_338.as_str();
         if !formatted_339.is_empty() {
             let header_value = formatted_339;
             let header_value =
@@ -3387,7 +3386,7 @@ pub fn add_headers_list_bucket_metrics_configurations(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_340) = &input.expected_bucket_owner {
-        let formatted_341 = AsRef::<str>::as_ref(inner_340);
+        let formatted_341 = inner_340.as_str();
         if !formatted_341.is_empty() {
             let header_value = formatted_341;
             let header_value =
@@ -3411,7 +3410,7 @@ pub fn add_headers_list_multipart_uploads(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_342) = &input.expected_bucket_owner {
-        let formatted_343 = AsRef::<str>::as_ref(inner_342);
+        let formatted_343 = inner_342.as_str();
         if !formatted_343.is_empty() {
             let header_value = formatted_343;
             let header_value =
@@ -3435,7 +3434,7 @@ pub fn add_headers_list_objects(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_344) = &input.request_payer {
-        let formatted_345 = AsRef::<str>::as_ref(inner_344);
+        let formatted_345 = inner_344.as_str();
         if !formatted_345.is_empty() {
             let header_value = formatted_345;
             let header_value =
@@ -3452,7 +3451,7 @@ pub fn add_headers_list_objects(
         }
     }
     if let Some(inner_346) = &input.expected_bucket_owner {
-        let formatted_347 = AsRef::<str>::as_ref(inner_346);
+        let formatted_347 = inner_346.as_str();
         if !formatted_347.is_empty() {
             let header_value = formatted_347;
             let header_value =
@@ -3476,7 +3475,7 @@ pub fn add_headers_list_objects_v2(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_348) = &input.request_payer {
-        let formatted_349 = AsRef::<str>::as_ref(inner_348);
+        let formatted_349 = inner_348.as_str();
         if !formatted_349.is_empty() {
             let header_value = formatted_349;
             let header_value =
@@ -3493,7 +3492,7 @@ pub fn add_headers_list_objects_v2(
         }
     }
     if let Some(inner_350) = &input.expected_bucket_owner {
-        let formatted_351 = AsRef::<str>::as_ref(inner_350);
+        let formatted_351 = inner_350.as_str();
         if !formatted_351.is_empty() {
             let header_value = formatted_351;
             let header_value =
@@ -3517,7 +3516,7 @@ pub fn add_headers_list_object_versions(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_352) = &input.expected_bucket_owner {
-        let formatted_353 = AsRef::<str>::as_ref(inner_352);
+        let formatted_353 = inner_352.as_str();
         if !formatted_353.is_empty() {
             let header_value = formatted_353;
             let header_value =
@@ -3541,7 +3540,7 @@ pub fn add_headers_list_parts(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_354) = &input.request_payer {
-        let formatted_355 = AsRef::<str>::as_ref(inner_354);
+        let formatted_355 = inner_354.as_str();
         if !formatted_355.is_empty() {
             let header_value = formatted_355;
             let header_value =
@@ -3558,7 +3557,7 @@ pub fn add_headers_list_parts(
         }
     }
     if let Some(inner_356) = &input.expected_bucket_owner {
-        let formatted_357 = AsRef::<str>::as_ref(inner_356);
+        let formatted_357 = inner_356.as_str();
         if !formatted_357.is_empty() {
             let header_value = formatted_357;
             let header_value =
@@ -3575,7 +3574,7 @@ pub fn add_headers_list_parts(
         }
     }
     if let Some(inner_358) = &input.sse_customer_algorithm {
-        let formatted_359 = AsRef::<str>::as_ref(inner_358);
+        let formatted_359 = inner_358.as_str();
         if !formatted_359.is_empty() {
             let header_value = formatted_359;
             let header_value =
@@ -3595,7 +3594,7 @@ pub fn add_headers_list_parts(
         }
     }
     if let Some(inner_360) = &input.sse_customer_key {
-        let formatted_361 = AsRef::<str>::as_ref(inner_360);
+        let formatted_361 = inner_360.as_str();
         if !formatted_361.is_empty() {
             let header_value = formatted_361;
             let header_value =
@@ -3612,7 +3611,7 @@ pub fn add_headers_list_parts(
         }
     }
     if let Some(inner_362) = &input.sse_customer_key_md5 {
-        let formatted_363 = AsRef::<str>::as_ref(inner_362);
+        let formatted_363 = inner_362.as_str();
         if !formatted_363.is_empty() {
             let header_value = formatted_363;
             let header_value =
@@ -3639,7 +3638,7 @@ pub fn add_headers_put_bucket_accelerate_configuration(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_364) = &input.expected_bucket_owner {
-        let formatted_365 = AsRef::<str>::as_ref(inner_364);
+        let formatted_365 = inner_364.as_str();
         if !formatted_365.is_empty() {
             let header_value = formatted_365;
             let header_value =
@@ -3656,7 +3655,7 @@ pub fn add_headers_put_bucket_accelerate_configuration(
         }
     }
     if let Some(inner_366) = &input.checksum_algorithm {
-        let formatted_367 = AsRef::<str>::as_ref(inner_366);
+        let formatted_367 = inner_366.as_str();
         if !formatted_367.is_empty() {
             let header_value = formatted_367;
             let header_value =
@@ -3680,7 +3679,7 @@ pub fn add_headers_put_bucket_acl(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_368) = &input.acl {
-        let formatted_369 = AsRef::<str>::as_ref(inner_368);
+        let formatted_369 = inner_368.as_str();
         if !formatted_369.is_empty() {
             let header_value = formatted_369;
             let header_value =
@@ -3697,7 +3696,7 @@ pub fn add_headers_put_bucket_acl(
         }
     }
     if let Some(inner_370) = &input.content_md5 {
-        let formatted_371 = AsRef::<str>::as_ref(inner_370);
+        let formatted_371 = inner_370.as_str();
         if !formatted_371.is_empty() {
             let header_value = formatted_371;
             let header_value =
@@ -3714,7 +3713,7 @@ pub fn add_headers_put_bucket_acl(
         }
     }
     if let Some(inner_372) = &input.checksum_algorithm {
-        let formatted_373 = AsRef::<str>::as_ref(inner_372);
+        let formatted_373 = inner_372.as_str();
         if !formatted_373.is_empty() {
             let header_value = formatted_373;
             let header_value =
@@ -3731,7 +3730,7 @@ pub fn add_headers_put_bucket_acl(
         }
     }
     if let Some(inner_374) = &input.grant_full_control {
-        let formatted_375 = AsRef::<str>::as_ref(inner_374);
+        let formatted_375 = inner_374.as_str();
         if !formatted_375.is_empty() {
             let header_value = formatted_375;
             let header_value =
@@ -3748,7 +3747,7 @@ pub fn add_headers_put_bucket_acl(
         }
     }
     if let Some(inner_376) = &input.grant_read {
-        let formatted_377 = AsRef::<str>::as_ref(inner_376);
+        let formatted_377 = inner_376.as_str();
         if !formatted_377.is_empty() {
             let header_value = formatted_377;
             let header_value =
@@ -3765,7 +3764,7 @@ pub fn add_headers_put_bucket_acl(
         }
     }
     if let Some(inner_378) = &input.grant_read_acp {
-        let formatted_379 = AsRef::<str>::as_ref(inner_378);
+        let formatted_379 = inner_378.as_str();
         if !formatted_379.is_empty() {
             let header_value = formatted_379;
             let header_value =
@@ -3782,7 +3781,7 @@ pub fn add_headers_put_bucket_acl(
         }
     }
     if let Some(inner_380) = &input.grant_write {
-        let formatted_381 = AsRef::<str>::as_ref(inner_380);
+        let formatted_381 = inner_380.as_str();
         if !formatted_381.is_empty() {
             let header_value = formatted_381;
             let header_value =
@@ -3799,7 +3798,7 @@ pub fn add_headers_put_bucket_acl(
         }
     }
     if let Some(inner_382) = &input.grant_write_acp {
-        let formatted_383 = AsRef::<str>::as_ref(inner_382);
+        let formatted_383 = inner_382.as_str();
         if !formatted_383.is_empty() {
             let header_value = formatted_383;
             let header_value =
@@ -3816,7 +3815,7 @@ pub fn add_headers_put_bucket_acl(
         }
     }
     if let Some(inner_384) = &input.expected_bucket_owner {
-        let formatted_385 = AsRef::<str>::as_ref(inner_384);
+        let formatted_385 = inner_384.as_str();
         if !formatted_385.is_empty() {
             let header_value = formatted_385;
             let header_value =
@@ -3840,7 +3839,7 @@ pub fn add_headers_put_bucket_analytics_configuration(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_386) = &input.expected_bucket_owner {
-        let formatted_387 = AsRef::<str>::as_ref(inner_386);
+        let formatted_387 = inner_386.as_str();
         if !formatted_387.is_empty() {
             let header_value = formatted_387;
             let header_value =
@@ -3864,7 +3863,7 @@ pub fn add_headers_put_bucket_cors(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_388) = &input.content_md5 {
-        let formatted_389 = AsRef::<str>::as_ref(inner_388);
+        let formatted_389 = inner_388.as_str();
         if !formatted_389.is_empty() {
             let header_value = formatted_389;
             let header_value =
@@ -3881,7 +3880,7 @@ pub fn add_headers_put_bucket_cors(
         }
     }
     if let Some(inner_390) = &input.checksum_algorithm {
-        let formatted_391 = AsRef::<str>::as_ref(inner_390);
+        let formatted_391 = inner_390.as_str();
         if !formatted_391.is_empty() {
             let header_value = formatted_391;
             let header_value =
@@ -3898,7 +3897,7 @@ pub fn add_headers_put_bucket_cors(
         }
     }
     if let Some(inner_392) = &input.expected_bucket_owner {
-        let formatted_393 = AsRef::<str>::as_ref(inner_392);
+        let formatted_393 = inner_392.as_str();
         if !formatted_393.is_empty() {
             let header_value = formatted_393;
             let header_value =
@@ -3922,7 +3921,7 @@ pub fn add_headers_put_bucket_encryption(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_394) = &input.content_md5 {
-        let formatted_395 = AsRef::<str>::as_ref(inner_394);
+        let formatted_395 = inner_394.as_str();
         if !formatted_395.is_empty() {
             let header_value = formatted_395;
             let header_value =
@@ -3939,7 +3938,7 @@ pub fn add_headers_put_bucket_encryption(
         }
     }
     if let Some(inner_396) = &input.checksum_algorithm {
-        let formatted_397 = AsRef::<str>::as_ref(inner_396);
+        let formatted_397 = inner_396.as_str();
         if !formatted_397.is_empty() {
             let header_value = formatted_397;
             let header_value =
@@ -3956,7 +3955,7 @@ pub fn add_headers_put_bucket_encryption(
         }
     }
     if let Some(inner_398) = &input.expected_bucket_owner {
-        let formatted_399 = AsRef::<str>::as_ref(inner_398);
+        let formatted_399 = inner_398.as_str();
         if !formatted_399.is_empty() {
             let header_value = formatted_399;
             let header_value =
@@ -3980,7 +3979,7 @@ pub fn add_headers_put_bucket_inventory_configuration(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_400) = &input.expected_bucket_owner {
-        let formatted_401 = AsRef::<str>::as_ref(inner_400);
+        let formatted_401 = inner_400.as_str();
         if !formatted_401.is_empty() {
             let header_value = formatted_401;
             let header_value =
@@ -4004,7 +4003,7 @@ pub fn add_headers_put_bucket_lifecycle_configuration(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_402) = &input.checksum_algorithm {
-        let formatted_403 = AsRef::<str>::as_ref(inner_402);
+        let formatted_403 = inner_402.as_str();
         if !formatted_403.is_empty() {
             let header_value = formatted_403;
             let header_value =
@@ -4021,7 +4020,7 @@ pub fn add_headers_put_bucket_lifecycle_configuration(
         }
     }
     if let Some(inner_404) = &input.expected_bucket_owner {
-        let formatted_405 = AsRef::<str>::as_ref(inner_404);
+        let formatted_405 = inner_404.as_str();
         if !formatted_405.is_empty() {
             let header_value = formatted_405;
             let header_value =
@@ -4045,7 +4044,7 @@ pub fn add_headers_put_bucket_logging(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_406) = &input.content_md5 {
-        let formatted_407 = AsRef::<str>::as_ref(inner_406);
+        let formatted_407 = inner_406.as_str();
         if !formatted_407.is_empty() {
             let header_value = formatted_407;
             let header_value =
@@ -4062,7 +4061,7 @@ pub fn add_headers_put_bucket_logging(
         }
     }
     if let Some(inner_408) = &input.checksum_algorithm {
-        let formatted_409 = AsRef::<str>::as_ref(inner_408);
+        let formatted_409 = inner_408.as_str();
         if !formatted_409.is_empty() {
             let header_value = formatted_409;
             let header_value =
@@ -4079,7 +4078,7 @@ pub fn add_headers_put_bucket_logging(
         }
     }
     if let Some(inner_410) = &input.expected_bucket_owner {
-        let formatted_411 = AsRef::<str>::as_ref(inner_410);
+        let formatted_411 = inner_410.as_str();
         if !formatted_411.is_empty() {
             let header_value = formatted_411;
             let header_value =
@@ -4103,7 +4102,7 @@ pub fn add_headers_put_bucket_metrics_configuration(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_412) = &input.expected_bucket_owner {
-        let formatted_413 = AsRef::<str>::as_ref(inner_412);
+        let formatted_413 = inner_412.as_str();
         if !formatted_413.is_empty() {
             let header_value = formatted_413;
             let header_value =
@@ -4127,7 +4126,7 @@ pub fn add_headers_put_bucket_notification_configuration(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_414) = &input.expected_bucket_owner {
-        let formatted_415 = AsRef::<str>::as_ref(inner_414);
+        let formatted_415 = inner_414.as_str();
         if !formatted_415.is_empty() {
             let header_value = formatted_415;
             let header_value =
@@ -4170,7 +4169,7 @@ pub fn add_headers_put_bucket_ownership_controls(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_417) = &input.content_md5 {
-        let formatted_418 = AsRef::<str>::as_ref(inner_417);
+        let formatted_418 = inner_417.as_str();
         if !formatted_418.is_empty() {
             let header_value = formatted_418;
             let header_value =
@@ -4187,7 +4186,7 @@ pub fn add_headers_put_bucket_ownership_controls(
         }
     }
     if let Some(inner_419) = &input.expected_bucket_owner {
-        let formatted_420 = AsRef::<str>::as_ref(inner_419);
+        let formatted_420 = inner_419.as_str();
         if !formatted_420.is_empty() {
             let header_value = formatted_420;
             let header_value =
@@ -4211,7 +4210,7 @@ pub fn add_headers_put_bucket_policy(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_421) = &input.content_md5 {
-        let formatted_422 = AsRef::<str>::as_ref(inner_421);
+        let formatted_422 = inner_421.as_str();
         if !formatted_422.is_empty() {
             let header_value = formatted_422;
             let header_value =
@@ -4228,7 +4227,7 @@ pub fn add_headers_put_bucket_policy(
         }
     }
     if let Some(inner_423) = &input.checksum_algorithm {
-        let formatted_424 = AsRef::<str>::as_ref(inner_423);
+        let formatted_424 = inner_423.as_str();
         if !formatted_424.is_empty() {
             let header_value = formatted_424;
             let header_value =
@@ -4264,7 +4263,7 @@ pub fn add_headers_put_bucket_policy(
         }
     }
     if let Some(inner_426) = &input.expected_bucket_owner {
-        let formatted_427 = AsRef::<str>::as_ref(inner_426);
+        let formatted_427 = inner_426.as_str();
         if !formatted_427.is_empty() {
             let header_value = formatted_427;
             let header_value =
@@ -4288,7 +4287,7 @@ pub fn add_headers_put_bucket_replication(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_428) = &input.content_md5 {
-        let formatted_429 = AsRef::<str>::as_ref(inner_428);
+        let formatted_429 = inner_428.as_str();
         if !formatted_429.is_empty() {
             let header_value = formatted_429;
             let header_value =
@@ -4305,7 +4304,7 @@ pub fn add_headers_put_bucket_replication(
         }
     }
     if let Some(inner_430) = &input.checksum_algorithm {
-        let formatted_431 = AsRef::<str>::as_ref(inner_430);
+        let formatted_431 = inner_430.as_str();
         if !formatted_431.is_empty() {
             let header_value = formatted_431;
             let header_value =
@@ -4322,7 +4321,7 @@ pub fn add_headers_put_bucket_replication(
         }
     }
     if let Some(inner_432) = &input.token {
-        let formatted_433 = AsRef::<str>::as_ref(inner_432);
+        let formatted_433 = inner_432.as_str();
         if !formatted_433.is_empty() {
             let header_value = formatted_433;
             let header_value =
@@ -4339,7 +4338,7 @@ pub fn add_headers_put_bucket_replication(
         }
     }
     if let Some(inner_434) = &input.expected_bucket_owner {
-        let formatted_435 = AsRef::<str>::as_ref(inner_434);
+        let formatted_435 = inner_434.as_str();
         if !formatted_435.is_empty() {
             let header_value = formatted_435;
             let header_value =
@@ -4363,7 +4362,7 @@ pub fn add_headers_put_bucket_request_payment(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_436) = &input.content_md5 {
-        let formatted_437 = AsRef::<str>::as_ref(inner_436);
+        let formatted_437 = inner_436.as_str();
         if !formatted_437.is_empty() {
             let header_value = formatted_437;
             let header_value =
@@ -4380,7 +4379,7 @@ pub fn add_headers_put_bucket_request_payment(
         }
     }
     if let Some(inner_438) = &input.checksum_algorithm {
-        let formatted_439 = AsRef::<str>::as_ref(inner_438);
+        let formatted_439 = inner_438.as_str();
         if !formatted_439.is_empty() {
             let header_value = formatted_439;
             let header_value =
@@ -4397,7 +4396,7 @@ pub fn add_headers_put_bucket_request_payment(
         }
     }
     if let Some(inner_440) = &input.expected_bucket_owner {
-        let formatted_441 = AsRef::<str>::as_ref(inner_440);
+        let formatted_441 = inner_440.as_str();
         if !formatted_441.is_empty() {
             let header_value = formatted_441;
             let header_value =
@@ -4421,7 +4420,7 @@ pub fn add_headers_put_bucket_tagging(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_442) = &input.content_md5 {
-        let formatted_443 = AsRef::<str>::as_ref(inner_442);
+        let formatted_443 = inner_442.as_str();
         if !formatted_443.is_empty() {
             let header_value = formatted_443;
             let header_value =
@@ -4438,7 +4437,7 @@ pub fn add_headers_put_bucket_tagging(
         }
     }
     if let Some(inner_444) = &input.checksum_algorithm {
-        let formatted_445 = AsRef::<str>::as_ref(inner_444);
+        let formatted_445 = inner_444.as_str();
         if !formatted_445.is_empty() {
             let header_value = formatted_445;
             let header_value =
@@ -4455,7 +4454,7 @@ pub fn add_headers_put_bucket_tagging(
         }
     }
     if let Some(inner_446) = &input.expected_bucket_owner {
-        let formatted_447 = AsRef::<str>::as_ref(inner_446);
+        let formatted_447 = inner_446.as_str();
         if !formatted_447.is_empty() {
             let header_value = formatted_447;
             let header_value =
@@ -4479,7 +4478,7 @@ pub fn add_headers_put_bucket_versioning(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_448) = &input.content_md5 {
-        let formatted_449 = AsRef::<str>::as_ref(inner_448);
+        let formatted_449 = inner_448.as_str();
         if !formatted_449.is_empty() {
             let header_value = formatted_449;
             let header_value =
@@ -4496,7 +4495,7 @@ pub fn add_headers_put_bucket_versioning(
         }
     }
     if let Some(inner_450) = &input.checksum_algorithm {
-        let formatted_451 = AsRef::<str>::as_ref(inner_450);
+        let formatted_451 = inner_450.as_str();
         if !formatted_451.is_empty() {
             let header_value = formatted_451;
             let header_value =
@@ -4513,7 +4512,7 @@ pub fn add_headers_put_bucket_versioning(
         }
     }
     if let Some(inner_452) = &input.mfa {
-        let formatted_453 = AsRef::<str>::as_ref(inner_452);
+        let formatted_453 = inner_452.as_str();
         if !formatted_453.is_empty() {
             let header_value = formatted_453;
             let header_value =
@@ -4530,7 +4529,7 @@ pub fn add_headers_put_bucket_versioning(
         }
     }
     if let Some(inner_454) = &input.expected_bucket_owner {
-        let formatted_455 = AsRef::<str>::as_ref(inner_454);
+        let formatted_455 = inner_454.as_str();
         if !formatted_455.is_empty() {
             let header_value = formatted_455;
             let header_value =
@@ -4554,7 +4553,7 @@ pub fn add_headers_put_bucket_website(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_456) = &input.content_md5 {
-        let formatted_457 = AsRef::<str>::as_ref(inner_456);
+        let formatted_457 = inner_456.as_str();
         if !formatted_457.is_empty() {
             let header_value = formatted_457;
             let header_value =
@@ -4571,7 +4570,7 @@ pub fn add_headers_put_bucket_website(
         }
     }
     if let Some(inner_458) = &input.checksum_algorithm {
-        let formatted_459 = AsRef::<str>::as_ref(inner_458);
+        let formatted_459 = inner_458.as_str();
         if !formatted_459.is_empty() {
             let header_value = formatted_459;
             let header_value =
@@ -4588,7 +4587,7 @@ pub fn add_headers_put_bucket_website(
         }
     }
     if let Some(inner_460) = &input.expected_bucket_owner {
-        let formatted_461 = AsRef::<str>::as_ref(inner_460);
+        let formatted_461 = inner_460.as_str();
         if !formatted_461.is_empty() {
             let header_value = formatted_461;
             let header_value =
@@ -4612,7 +4611,7 @@ pub fn add_headers_put_object(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_462) = &input.acl {
-        let formatted_463 = AsRef::<str>::as_ref(inner_462);
+        let formatted_463 = inner_462.as_str();
         if !formatted_463.is_empty() {
             let header_value = formatted_463;
             let header_value =
@@ -4629,7 +4628,7 @@ pub fn add_headers_put_object(
         }
     }
     if let Some(inner_464) = &input.cache_control {
-        let formatted_465 = AsRef::<str>::as_ref(inner_464);
+        let formatted_465 = inner_464.as_str();
         if !formatted_465.is_empty() {
             let header_value = formatted_465;
             let header_value =
@@ -4646,7 +4645,7 @@ pub fn add_headers_put_object(
         }
     }
     if let Some(inner_466) = &input.content_disposition {
-        let formatted_467 = AsRef::<str>::as_ref(inner_466);
+        let formatted_467 = inner_466.as_str();
         if !formatted_467.is_empty() {
             let header_value = formatted_467;
             let header_value =
@@ -4663,7 +4662,7 @@ pub fn add_headers_put_object(
         }
     }
     if let Some(inner_468) = &input.content_encoding {
-        let formatted_469 = AsRef::<str>::as_ref(inner_468);
+        let formatted_469 = inner_468.as_str();
         if !formatted_469.is_empty() {
             let header_value = formatted_469;
             let header_value =
@@ -4680,7 +4679,7 @@ pub fn add_headers_put_object(
         }
     }
     if let Some(inner_470) = &input.content_language {
-        let formatted_471 = AsRef::<str>::as_ref(inner_470);
+        let formatted_471 = inner_470.as_str();
         if !formatted_471.is_empty() {
             let header_value = formatted_471;
             let header_value =
@@ -4715,7 +4714,7 @@ pub fn add_headers_put_object(
         }
     }
     if let Some(inner_473) = &input.content_md5 {
-        let formatted_474 = AsRef::<str>::as_ref(inner_473);
+        let formatted_474 = inner_473.as_str();
         if !formatted_474.is_empty() {
             let header_value = formatted_474;
             let header_value =
@@ -4732,7 +4731,7 @@ pub fn add_headers_put_object(
         }
     }
     if let Some(inner_475) = &input.content_type {
-        let formatted_476 = AsRef::<str>::as_ref(inner_475);
+        let formatted_476 = inner_475.as_str();
         if !formatted_476.is_empty() {
             let header_value = formatted_476;
             let header_value =
@@ -4749,7 +4748,7 @@ pub fn add_headers_put_object(
         }
     }
     if let Some(inner_477) = &input.checksum_algorithm {
-        let formatted_478 = AsRef::<str>::as_ref(inner_477);
+        let formatted_478 = inner_477.as_str();
         if !formatted_478.is_empty() {
             let header_value = formatted_478;
             let header_value =
@@ -4766,7 +4765,7 @@ pub fn add_headers_put_object(
         }
     }
     if let Some(inner_479) = &input.checksum_crc32 {
-        let formatted_480 = AsRef::<str>::as_ref(inner_479);
+        let formatted_480 = inner_479.as_str();
         if !formatted_480.is_empty() {
             let header_value = formatted_480;
             let header_value =
@@ -4783,7 +4782,7 @@ pub fn add_headers_put_object(
         }
     }
     if let Some(inner_481) = &input.checksum_crc32_c {
-        let formatted_482 = AsRef::<str>::as_ref(inner_481);
+        let formatted_482 = inner_481.as_str();
         if !formatted_482.is_empty() {
             let header_value = formatted_482;
             let header_value =
@@ -4800,7 +4799,7 @@ pub fn add_headers_put_object(
         }
     }
     if let Some(inner_483) = &input.checksum_sha1 {
-        let formatted_484 = AsRef::<str>::as_ref(inner_483);
+        let formatted_484 = inner_483.as_str();
         if !formatted_484.is_empty() {
             let header_value = formatted_484;
             let header_value =
@@ -4817,7 +4816,7 @@ pub fn add_headers_put_object(
         }
     }
     if let Some(inner_485) = &input.checksum_sha256 {
-        let formatted_486 = AsRef::<str>::as_ref(inner_485);
+        let formatted_486 = inner_485.as_str();
         if !formatted_486.is_empty() {
             let header_value = formatted_486;
             let header_value =
@@ -4851,7 +4850,7 @@ pub fn add_headers_put_object(
         }
     }
     if let Some(inner_489) = &input.grant_full_control {
-        let formatted_490 = AsRef::<str>::as_ref(inner_489);
+        let formatted_490 = inner_489.as_str();
         if !formatted_490.is_empty() {
             let header_value = formatted_490;
             let header_value =
@@ -4868,7 +4867,7 @@ pub fn add_headers_put_object(
         }
     }
     if let Some(inner_491) = &input.grant_read {
-        let formatted_492 = AsRef::<str>::as_ref(inner_491);
+        let formatted_492 = inner_491.as_str();
         if !formatted_492.is_empty() {
             let header_value = formatted_492;
             let header_value =
@@ -4885,7 +4884,7 @@ pub fn add_headers_put_object(
         }
     }
     if let Some(inner_493) = &input.grant_read_acp {
-        let formatted_494 = AsRef::<str>::as_ref(inner_493);
+        let formatted_494 = inner_493.as_str();
         if !formatted_494.is_empty() {
             let header_value = formatted_494;
             let header_value =
@@ -4902,7 +4901,7 @@ pub fn add_headers_put_object(
         }
     }
     if let Some(inner_495) = &input.grant_write_acp {
-        let formatted_496 = AsRef::<str>::as_ref(inner_495);
+        let formatted_496 = inner_495.as_str();
         if !formatted_496.is_empty() {
             let header_value = formatted_496;
             let header_value =
@@ -4919,7 +4918,7 @@ pub fn add_headers_put_object(
         }
     }
     if let Some(inner_497) = &input.server_side_encryption {
-        let formatted_498 = AsRef::<str>::as_ref(inner_497);
+        let formatted_498 = inner_497.as_str();
         if !formatted_498.is_empty() {
             let header_value = formatted_498;
             let header_value =
@@ -4936,7 +4935,7 @@ pub fn add_headers_put_object(
         }
     }
     if let Some(inner_499) = &input.storage_class {
-        let formatted_500 = AsRef::<str>::as_ref(inner_499);
+        let formatted_500 = inner_499.as_str();
         if !formatted_500.is_empty() {
             let header_value = formatted_500;
             let header_value =
@@ -4953,7 +4952,7 @@ pub fn add_headers_put_object(
         }
     }
     if let Some(inner_501) = &input.website_redirect_location {
-        let formatted_502 = AsRef::<str>::as_ref(inner_501);
+        let formatted_502 = inner_501.as_str();
         if !formatted_502.is_empty() {
             let header_value = formatted_502;
             let header_value =
@@ -4970,7 +4969,7 @@ pub fn add_headers_put_object(
         }
     }
     if let Some(inner_503) = &input.sse_customer_algorithm {
-        let formatted_504 = AsRef::<str>::as_ref(inner_503);
+        let formatted_504 = inner_503.as_str();
         if !formatted_504.is_empty() {
             let header_value = formatted_504;
             let header_value =
@@ -4990,7 +4989,7 @@ pub fn add_headers_put_object(
         }
     }
     if let Some(inner_505) = &input.sse_customer_key {
-        let formatted_506 = AsRef::<str>::as_ref(inner_505);
+        let formatted_506 = inner_505.as_str();
         if !formatted_506.is_empty() {
             let header_value = formatted_506;
             let header_value =
@@ -5007,7 +5006,7 @@ pub fn add_headers_put_object(
         }
     }
     if let Some(inner_507) = &input.sse_customer_key_md5 {
-        let formatted_508 = AsRef::<str>::as_ref(inner_507);
+        let formatted_508 = inner_507.as_str();
         if !formatted_508.is_empty() {
             let header_value = formatted_508;
             let header_value =
@@ -5027,7 +5026,7 @@ pub fn add_headers_put_object(
         }
     }
     if let Some(inner_509) = &input.ssekms_key_id {
-        let formatted_510 = AsRef::<str>::as_ref(inner_509);
+        let formatted_510 = inner_509.as_str();
         if !formatted_510.is_empty() {
             let header_value = formatted_510;
             let header_value =
@@ -5044,7 +5043,7 @@ pub fn add_headers_put_object(
         }
     }
     if let Some(inner_511) = &input.ssekms_encryption_context {
-        let formatted_512 = AsRef::<str>::as_ref(inner_511);
+        let formatted_512 = inner_511.as_str();
         if !formatted_512.is_empty() {
             let header_value = formatted_512;
             let header_value =
@@ -5082,7 +5081,7 @@ pub fn add_headers_put_object(
         }
     }
     if let Some(inner_514) = &input.request_payer {
-        let formatted_515 = AsRef::<str>::as_ref(inner_514);
+        let formatted_515 = inner_514.as_str();
         if !formatted_515.is_empty() {
             let header_value = formatted_515;
             let header_value =
@@ -5099,7 +5098,7 @@ pub fn add_headers_put_object(
         }
     }
     if let Some(inner_516) = &input.tagging {
-        let formatted_517 = AsRef::<str>::as_ref(inner_516);
+        let formatted_517 = inner_516.as_str();
         if !formatted_517.is_empty() {
             let header_value = formatted_517;
             let header_value =
@@ -5116,7 +5115,7 @@ pub fn add_headers_put_object(
         }
     }
     if let Some(inner_518) = &input.object_lock_mode {
-        let formatted_519 = AsRef::<str>::as_ref(inner_518);
+        let formatted_519 = inner_518.as_str();
         if !formatted_519.is_empty() {
             let header_value = formatted_519;
             let header_value =
@@ -5150,7 +5149,7 @@ pub fn add_headers_put_object(
         }
     }
     if let Some(inner_522) = &input.object_lock_legal_hold_status {
-        let formatted_523 = AsRef::<str>::as_ref(inner_522);
+        let formatted_523 = inner_522.as_str();
         if !formatted_523.is_empty() {
             let header_value = formatted_523;
             let header_value =
@@ -5167,7 +5166,7 @@ pub fn add_headers_put_object(
         }
     }
     if let Some(inner_524) = &input.expected_bucket_owner {
-        let formatted_525 = AsRef::<str>::as_ref(inner_524);
+        let formatted_525 = inner_524.as_str();
         if !formatted_525.is_empty() {
             let header_value = formatted_525;
             let header_value =
@@ -5193,7 +5192,7 @@ pub fn add_headers_put_object(
                         details: format!("`{}` cannot be used as a header name: {}", k, err),
                     },
                 )?;
-            let header_value = AsRef::<str>::as_ref(v);
+            let header_value = v.as_str();
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                     aws_smithy_http::operation::BuildError::InvalidField {
@@ -5212,7 +5211,7 @@ pub fn add_headers_put_object_acl(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_527) = &input.acl {
-        let formatted_528 = AsRef::<str>::as_ref(inner_527);
+        let formatted_528 = inner_527.as_str();
         if !formatted_528.is_empty() {
             let header_value = formatted_528;
             let header_value =
@@ -5229,7 +5228,7 @@ pub fn add_headers_put_object_acl(
         }
     }
     if let Some(inner_529) = &input.content_md5 {
-        let formatted_530 = AsRef::<str>::as_ref(inner_529);
+        let formatted_530 = inner_529.as_str();
         if !formatted_530.is_empty() {
             let header_value = formatted_530;
             let header_value =
@@ -5246,7 +5245,7 @@ pub fn add_headers_put_object_acl(
         }
     }
     if let Some(inner_531) = &input.checksum_algorithm {
-        let formatted_532 = AsRef::<str>::as_ref(inner_531);
+        let formatted_532 = inner_531.as_str();
         if !formatted_532.is_empty() {
             let header_value = formatted_532;
             let header_value =
@@ -5263,7 +5262,7 @@ pub fn add_headers_put_object_acl(
         }
     }
     if let Some(inner_533) = &input.grant_full_control {
-        let formatted_534 = AsRef::<str>::as_ref(inner_533);
+        let formatted_534 = inner_533.as_str();
         if !formatted_534.is_empty() {
             let header_value = formatted_534;
             let header_value =
@@ -5280,7 +5279,7 @@ pub fn add_headers_put_object_acl(
         }
     }
     if let Some(inner_535) = &input.grant_read {
-        let formatted_536 = AsRef::<str>::as_ref(inner_535);
+        let formatted_536 = inner_535.as_str();
         if !formatted_536.is_empty() {
             let header_value = formatted_536;
             let header_value =
@@ -5297,7 +5296,7 @@ pub fn add_headers_put_object_acl(
         }
     }
     if let Some(inner_537) = &input.grant_read_acp {
-        let formatted_538 = AsRef::<str>::as_ref(inner_537);
+        let formatted_538 = inner_537.as_str();
         if !formatted_538.is_empty() {
             let header_value = formatted_538;
             let header_value =
@@ -5314,7 +5313,7 @@ pub fn add_headers_put_object_acl(
         }
     }
     if let Some(inner_539) = &input.grant_write {
-        let formatted_540 = AsRef::<str>::as_ref(inner_539);
+        let formatted_540 = inner_539.as_str();
         if !formatted_540.is_empty() {
             let header_value = formatted_540;
             let header_value =
@@ -5331,7 +5330,7 @@ pub fn add_headers_put_object_acl(
         }
     }
     if let Some(inner_541) = &input.grant_write_acp {
-        let formatted_542 = AsRef::<str>::as_ref(inner_541);
+        let formatted_542 = inner_541.as_str();
         if !formatted_542.is_empty() {
             let header_value = formatted_542;
             let header_value =
@@ -5348,7 +5347,7 @@ pub fn add_headers_put_object_acl(
         }
     }
     if let Some(inner_543) = &input.request_payer {
-        let formatted_544 = AsRef::<str>::as_ref(inner_543);
+        let formatted_544 = inner_543.as_str();
         if !formatted_544.is_empty() {
             let header_value = formatted_544;
             let header_value =
@@ -5365,7 +5364,7 @@ pub fn add_headers_put_object_acl(
         }
     }
     if let Some(inner_545) = &input.expected_bucket_owner {
-        let formatted_546 = AsRef::<str>::as_ref(inner_545);
+        let formatted_546 = inner_545.as_str();
         if !formatted_546.is_empty() {
             let header_value = formatted_546;
             let header_value =
@@ -5389,7 +5388,7 @@ pub fn add_headers_put_object_legal_hold(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_547) = &input.request_payer {
-        let formatted_548 = AsRef::<str>::as_ref(inner_547);
+        let formatted_548 = inner_547.as_str();
         if !formatted_548.is_empty() {
             let header_value = formatted_548;
             let header_value =
@@ -5406,7 +5405,7 @@ pub fn add_headers_put_object_legal_hold(
         }
     }
     if let Some(inner_549) = &input.content_md5 {
-        let formatted_550 = AsRef::<str>::as_ref(inner_549);
+        let formatted_550 = inner_549.as_str();
         if !formatted_550.is_empty() {
             let header_value = formatted_550;
             let header_value =
@@ -5423,7 +5422,7 @@ pub fn add_headers_put_object_legal_hold(
         }
     }
     if let Some(inner_551) = &input.checksum_algorithm {
-        let formatted_552 = AsRef::<str>::as_ref(inner_551);
+        let formatted_552 = inner_551.as_str();
         if !formatted_552.is_empty() {
             let header_value = formatted_552;
             let header_value =
@@ -5440,7 +5439,7 @@ pub fn add_headers_put_object_legal_hold(
         }
     }
     if let Some(inner_553) = &input.expected_bucket_owner {
-        let formatted_554 = AsRef::<str>::as_ref(inner_553);
+        let formatted_554 = inner_553.as_str();
         if !formatted_554.is_empty() {
             let header_value = formatted_554;
             let header_value =
@@ -5464,7 +5463,7 @@ pub fn add_headers_put_object_lock_configuration(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_555) = &input.request_payer {
-        let formatted_556 = AsRef::<str>::as_ref(inner_555);
+        let formatted_556 = inner_555.as_str();
         if !formatted_556.is_empty() {
             let header_value = formatted_556;
             let header_value =
@@ -5481,7 +5480,7 @@ pub fn add_headers_put_object_lock_configuration(
         }
     }
     if let Some(inner_557) = &input.token {
-        let formatted_558 = AsRef::<str>::as_ref(inner_557);
+        let formatted_558 = inner_557.as_str();
         if !formatted_558.is_empty() {
             let header_value = formatted_558;
             let header_value =
@@ -5498,7 +5497,7 @@ pub fn add_headers_put_object_lock_configuration(
         }
     }
     if let Some(inner_559) = &input.content_md5 {
-        let formatted_560 = AsRef::<str>::as_ref(inner_559);
+        let formatted_560 = inner_559.as_str();
         if !formatted_560.is_empty() {
             let header_value = formatted_560;
             let header_value =
@@ -5515,7 +5514,7 @@ pub fn add_headers_put_object_lock_configuration(
         }
     }
     if let Some(inner_561) = &input.checksum_algorithm {
-        let formatted_562 = AsRef::<str>::as_ref(inner_561);
+        let formatted_562 = inner_561.as_str();
         if !formatted_562.is_empty() {
             let header_value = formatted_562;
             let header_value =
@@ -5532,7 +5531,7 @@ pub fn add_headers_put_object_lock_configuration(
         }
     }
     if let Some(inner_563) = &input.expected_bucket_owner {
-        let formatted_564 = AsRef::<str>::as_ref(inner_563);
+        let formatted_564 = inner_563.as_str();
         if !formatted_564.is_empty() {
             let header_value = formatted_564;
             let header_value =
@@ -5556,7 +5555,7 @@ pub fn add_headers_put_object_retention(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_565) = &input.request_payer {
-        let formatted_566 = AsRef::<str>::as_ref(inner_565);
+        let formatted_566 = inner_565.as_str();
         if !formatted_566.is_empty() {
             let header_value = formatted_566;
             let header_value =
@@ -5592,7 +5591,7 @@ pub fn add_headers_put_object_retention(
         }
     }
     if let Some(inner_568) = &input.content_md5 {
-        let formatted_569 = AsRef::<str>::as_ref(inner_568);
+        let formatted_569 = inner_568.as_str();
         if !formatted_569.is_empty() {
             let header_value = formatted_569;
             let header_value =
@@ -5609,7 +5608,7 @@ pub fn add_headers_put_object_retention(
         }
     }
     if let Some(inner_570) = &input.checksum_algorithm {
-        let formatted_571 = AsRef::<str>::as_ref(inner_570);
+        let formatted_571 = inner_570.as_str();
         if !formatted_571.is_empty() {
             let header_value = formatted_571;
             let header_value =
@@ -5626,7 +5625,7 @@ pub fn add_headers_put_object_retention(
         }
     }
     if let Some(inner_572) = &input.expected_bucket_owner {
-        let formatted_573 = AsRef::<str>::as_ref(inner_572);
+        let formatted_573 = inner_572.as_str();
         if !formatted_573.is_empty() {
             let header_value = formatted_573;
             let header_value =
@@ -5650,7 +5649,7 @@ pub fn add_headers_put_object_tagging(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_574) = &input.content_md5 {
-        let formatted_575 = AsRef::<str>::as_ref(inner_574);
+        let formatted_575 = inner_574.as_str();
         if !formatted_575.is_empty() {
             let header_value = formatted_575;
             let header_value =
@@ -5667,7 +5666,7 @@ pub fn add_headers_put_object_tagging(
         }
     }
     if let Some(inner_576) = &input.checksum_algorithm {
-        let formatted_577 = AsRef::<str>::as_ref(inner_576);
+        let formatted_577 = inner_576.as_str();
         if !formatted_577.is_empty() {
             let header_value = formatted_577;
             let header_value =
@@ -5684,7 +5683,7 @@ pub fn add_headers_put_object_tagging(
         }
     }
     if let Some(inner_578) = &input.expected_bucket_owner {
-        let formatted_579 = AsRef::<str>::as_ref(inner_578);
+        let formatted_579 = inner_578.as_str();
         if !formatted_579.is_empty() {
             let header_value = formatted_579;
             let header_value =
@@ -5701,7 +5700,7 @@ pub fn add_headers_put_object_tagging(
         }
     }
     if let Some(inner_580) = &input.request_payer {
-        let formatted_581 = AsRef::<str>::as_ref(inner_580);
+        let formatted_581 = inner_580.as_str();
         if !formatted_581.is_empty() {
             let header_value = formatted_581;
             let header_value =
@@ -5725,7 +5724,7 @@ pub fn add_headers_put_public_access_block(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_582) = &input.content_md5 {
-        let formatted_583 = AsRef::<str>::as_ref(inner_582);
+        let formatted_583 = inner_582.as_str();
         if !formatted_583.is_empty() {
             let header_value = formatted_583;
             let header_value =
@@ -5742,7 +5741,7 @@ pub fn add_headers_put_public_access_block(
         }
     }
     if let Some(inner_584) = &input.checksum_algorithm {
-        let formatted_585 = AsRef::<str>::as_ref(inner_584);
+        let formatted_585 = inner_584.as_str();
         if !formatted_585.is_empty() {
             let header_value = formatted_585;
             let header_value =
@@ -5759,7 +5758,7 @@ pub fn add_headers_put_public_access_block(
         }
     }
     if let Some(inner_586) = &input.expected_bucket_owner {
-        let formatted_587 = AsRef::<str>::as_ref(inner_586);
+        let formatted_587 = inner_586.as_str();
         if !formatted_587.is_empty() {
             let header_value = formatted_587;
             let header_value =
@@ -5783,7 +5782,7 @@ pub fn add_headers_restore_object(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_588) = &input.request_payer {
-        let formatted_589 = AsRef::<str>::as_ref(inner_588);
+        let formatted_589 = inner_588.as_str();
         if !formatted_589.is_empty() {
             let header_value = formatted_589;
             let header_value =
@@ -5800,7 +5799,7 @@ pub fn add_headers_restore_object(
         }
     }
     if let Some(inner_590) = &input.checksum_algorithm {
-        let formatted_591 = AsRef::<str>::as_ref(inner_590);
+        let formatted_591 = inner_590.as_str();
         if !formatted_591.is_empty() {
             let header_value = formatted_591;
             let header_value =
@@ -5817,7 +5816,7 @@ pub fn add_headers_restore_object(
         }
     }
     if let Some(inner_592) = &input.expected_bucket_owner {
-        let formatted_593 = AsRef::<str>::as_ref(inner_592);
+        let formatted_593 = inner_592.as_str();
         if !formatted_593.is_empty() {
             let header_value = formatted_593;
             let header_value =
@@ -5841,7 +5840,7 @@ pub fn add_headers_select_object_content(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_594) = &input.sse_customer_algorithm {
-        let formatted_595 = AsRef::<str>::as_ref(inner_594);
+        let formatted_595 = inner_594.as_str();
         if !formatted_595.is_empty() {
             let header_value = formatted_595;
             let header_value =
@@ -5861,7 +5860,7 @@ pub fn add_headers_select_object_content(
         }
     }
     if let Some(inner_596) = &input.sse_customer_key {
-        let formatted_597 = AsRef::<str>::as_ref(inner_596);
+        let formatted_597 = inner_596.as_str();
         if !formatted_597.is_empty() {
             let header_value = formatted_597;
             let header_value =
@@ -5878,7 +5877,7 @@ pub fn add_headers_select_object_content(
         }
     }
     if let Some(inner_598) = &input.sse_customer_key_md5 {
-        let formatted_599 = AsRef::<str>::as_ref(inner_598);
+        let formatted_599 = inner_598.as_str();
         if !formatted_599.is_empty() {
             let header_value = formatted_599;
             let header_value =
@@ -5898,7 +5897,7 @@ pub fn add_headers_select_object_content(
         }
     }
     if let Some(inner_600) = &input.expected_bucket_owner {
-        let formatted_601 = AsRef::<str>::as_ref(inner_600);
+        let formatted_601 = inner_600.as_str();
         if !formatted_601.is_empty() {
             let header_value = formatted_601;
             let header_value =
@@ -5940,7 +5939,7 @@ pub fn add_headers_upload_part(
         }
     }
     if let Some(inner_603) = &input.content_md5 {
-        let formatted_604 = AsRef::<str>::as_ref(inner_603);
+        let formatted_604 = inner_603.as_str();
         if !formatted_604.is_empty() {
             let header_value = formatted_604;
             let header_value =
@@ -5957,7 +5956,7 @@ pub fn add_headers_upload_part(
         }
     }
     if let Some(inner_605) = &input.checksum_algorithm {
-        let formatted_606 = AsRef::<str>::as_ref(inner_605);
+        let formatted_606 = inner_605.as_str();
         if !formatted_606.is_empty() {
             let header_value = formatted_606;
             let header_value =
@@ -5974,7 +5973,7 @@ pub fn add_headers_upload_part(
         }
     }
     if let Some(inner_607) = &input.checksum_crc32 {
-        let formatted_608 = AsRef::<str>::as_ref(inner_607);
+        let formatted_608 = inner_607.as_str();
         if !formatted_608.is_empty() {
             let header_value = formatted_608;
             let header_value =
@@ -5991,7 +5990,7 @@ pub fn add_headers_upload_part(
         }
     }
     if let Some(inner_609) = &input.checksum_crc32_c {
-        let formatted_610 = AsRef::<str>::as_ref(inner_609);
+        let formatted_610 = inner_609.as_str();
         if !formatted_610.is_empty() {
             let header_value = formatted_610;
             let header_value =
@@ -6008,7 +6007,7 @@ pub fn add_headers_upload_part(
         }
     }
     if let Some(inner_611) = &input.checksum_sha1 {
-        let formatted_612 = AsRef::<str>::as_ref(inner_611);
+        let formatted_612 = inner_611.as_str();
         if !formatted_612.is_empty() {
             let header_value = formatted_612;
             let header_value =
@@ -6025,7 +6024,7 @@ pub fn add_headers_upload_part(
         }
     }
     if let Some(inner_613) = &input.checksum_sha256 {
-        let formatted_614 = AsRef::<str>::as_ref(inner_613);
+        let formatted_614 = inner_613.as_str();
         if !formatted_614.is_empty() {
             let header_value = formatted_614;
             let header_value =
@@ -6042,7 +6041,7 @@ pub fn add_headers_upload_part(
         }
     }
     if let Some(inner_615) = &input.sse_customer_algorithm {
-        let formatted_616 = AsRef::<str>::as_ref(inner_615);
+        let formatted_616 = inner_615.as_str();
         if !formatted_616.is_empty() {
             let header_value = formatted_616;
             let header_value =
@@ -6062,7 +6061,7 @@ pub fn add_headers_upload_part(
         }
     }
     if let Some(inner_617) = &input.sse_customer_key {
-        let formatted_618 = AsRef::<str>::as_ref(inner_617);
+        let formatted_618 = inner_617.as_str();
         if !formatted_618.is_empty() {
             let header_value = formatted_618;
             let header_value =
@@ -6079,7 +6078,7 @@ pub fn add_headers_upload_part(
         }
     }
     if let Some(inner_619) = &input.sse_customer_key_md5 {
-        let formatted_620 = AsRef::<str>::as_ref(inner_619);
+        let formatted_620 = inner_619.as_str();
         if !formatted_620.is_empty() {
             let header_value = formatted_620;
             let header_value =
@@ -6099,7 +6098,7 @@ pub fn add_headers_upload_part(
         }
     }
     if let Some(inner_621) = &input.request_payer {
-        let formatted_622 = AsRef::<str>::as_ref(inner_621);
+        let formatted_622 = inner_621.as_str();
         if !formatted_622.is_empty() {
             let header_value = formatted_622;
             let header_value =
@@ -6116,7 +6115,7 @@ pub fn add_headers_upload_part(
         }
     }
     if let Some(inner_623) = &input.expected_bucket_owner {
-        let formatted_624 = AsRef::<str>::as_ref(inner_623);
+        let formatted_624 = inner_623.as_str();
         if !formatted_624.is_empty() {
             let header_value = formatted_624;
             let header_value =
@@ -6140,7 +6139,7 @@ pub fn add_headers_upload_part_copy(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_625) = &input.copy_source {
-        let formatted_626 = AsRef::<str>::as_ref(inner_625);
+        let formatted_626 = inner_625.as_str();
         if !formatted_626.is_empty() {
             let header_value = formatted_626;
             let header_value =
@@ -6157,7 +6156,7 @@ pub fn add_headers_upload_part_copy(
         }
     }
     if let Some(inner_627) = &input.copy_source_if_match {
-        let formatted_628 = AsRef::<str>::as_ref(inner_627);
+        let formatted_628 = inner_627.as_str();
         if !formatted_628.is_empty() {
             let header_value = formatted_628;
             let header_value =
@@ -6191,7 +6190,7 @@ pub fn add_headers_upload_part_copy(
         }
     }
     if let Some(inner_631) = &input.copy_source_if_none_match {
-        let formatted_632 = AsRef::<str>::as_ref(inner_631);
+        let formatted_632 = inner_631.as_str();
         if !formatted_632.is_empty() {
             let header_value = formatted_632;
             let header_value =
@@ -6225,7 +6224,7 @@ pub fn add_headers_upload_part_copy(
         }
     }
     if let Some(inner_635) = &input.copy_source_range {
-        let formatted_636 = AsRef::<str>::as_ref(inner_635);
+        let formatted_636 = inner_635.as_str();
         if !formatted_636.is_empty() {
             let header_value = formatted_636;
             let header_value =
@@ -6242,7 +6241,7 @@ pub fn add_headers_upload_part_copy(
         }
     }
     if let Some(inner_637) = &input.sse_customer_algorithm {
-        let formatted_638 = AsRef::<str>::as_ref(inner_637);
+        let formatted_638 = inner_637.as_str();
         if !formatted_638.is_empty() {
             let header_value = formatted_638;
             let header_value =
@@ -6262,7 +6261,7 @@ pub fn add_headers_upload_part_copy(
         }
     }
     if let Some(inner_639) = &input.sse_customer_key {
-        let formatted_640 = AsRef::<str>::as_ref(inner_639);
+        let formatted_640 = inner_639.as_str();
         if !formatted_640.is_empty() {
             let header_value = formatted_640;
             let header_value =
@@ -6279,7 +6278,7 @@ pub fn add_headers_upload_part_copy(
         }
     }
     if let Some(inner_641) = &input.sse_customer_key_md5 {
-        let formatted_642 = AsRef::<str>::as_ref(inner_641);
+        let formatted_642 = inner_641.as_str();
         if !formatted_642.is_empty() {
             let header_value = formatted_642;
             let header_value =
@@ -6299,7 +6298,7 @@ pub fn add_headers_upload_part_copy(
         }
     }
     if let Some(inner_643) = &input.copy_source_sse_customer_algorithm {
-        let formatted_644 = AsRef::<str>::as_ref(inner_643);
+        let formatted_644 = inner_643.as_str();
         if !formatted_644.is_empty() {
             let header_value = formatted_644;
             let header_value =
@@ -6319,7 +6318,7 @@ pub fn add_headers_upload_part_copy(
         }
     }
     if let Some(inner_645) = &input.copy_source_sse_customer_key {
-        let formatted_646 = AsRef::<str>::as_ref(inner_645);
+        let formatted_646 = inner_645.as_str();
         if !formatted_646.is_empty() {
             let header_value = formatted_646;
             let header_value =
@@ -6339,7 +6338,7 @@ pub fn add_headers_upload_part_copy(
         }
     }
     if let Some(inner_647) = &input.copy_source_sse_customer_key_md5 {
-        let formatted_648 = AsRef::<str>::as_ref(inner_647);
+        let formatted_648 = inner_647.as_str();
         if !formatted_648.is_empty() {
             let header_value = formatted_648;
             let header_value =
@@ -6359,7 +6358,7 @@ pub fn add_headers_upload_part_copy(
         }
     }
     if let Some(inner_649) = &input.request_payer {
-        let formatted_650 = AsRef::<str>::as_ref(inner_649);
+        let formatted_650 = inner_649.as_str();
         if !formatted_650.is_empty() {
             let header_value = formatted_650;
             let header_value =
@@ -6376,7 +6375,7 @@ pub fn add_headers_upload_part_copy(
         }
     }
     if let Some(inner_651) = &input.expected_bucket_owner {
-        let formatted_652 = AsRef::<str>::as_ref(inner_651);
+        let formatted_652 = inner_651.as_str();
         if !formatted_652.is_empty() {
             let header_value = formatted_652;
             let header_value =
@@ -6393,7 +6392,7 @@ pub fn add_headers_upload_part_copy(
         }
     }
     if let Some(inner_653) = &input.expected_source_bucket_owner {
-        let formatted_654 = AsRef::<str>::as_ref(inner_653);
+        let formatted_654 = inner_653.as_str();
         if !formatted_654.is_empty() {
             let header_value = formatted_654;
             let header_value =
@@ -6417,7 +6416,7 @@ pub fn add_headers_write_get_object_response(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_655) = &input.request_route {
-        let formatted_656 = AsRef::<str>::as_ref(inner_655);
+        let formatted_656 = inner_655.as_str();
         if !formatted_656.is_empty() {
             let header_value = formatted_656;
             let header_value =
@@ -6434,7 +6433,7 @@ pub fn add_headers_write_get_object_response(
         }
     }
     if let Some(inner_657) = &input.request_token {
-        let formatted_658 = AsRef::<str>::as_ref(inner_657);
+        let formatted_658 = inner_657.as_str();
         if !formatted_658.is_empty() {
             let header_value = formatted_658;
             let header_value =
@@ -6469,7 +6468,7 @@ pub fn add_headers_write_get_object_response(
         }
     }
     if let Some(inner_660) = &input.error_code {
-        let formatted_661 = AsRef::<str>::as_ref(inner_660);
+        let formatted_661 = inner_660.as_str();
         if !formatted_661.is_empty() {
             let header_value = formatted_661;
             let header_value =
@@ -6486,7 +6485,7 @@ pub fn add_headers_write_get_object_response(
         }
     }
     if let Some(inner_662) = &input.error_message {
-        let formatted_663 = AsRef::<str>::as_ref(inner_662);
+        let formatted_663 = inner_662.as_str();
         if !formatted_663.is_empty() {
             let header_value = formatted_663;
             let header_value =
@@ -6503,7 +6502,7 @@ pub fn add_headers_write_get_object_response(
         }
     }
     if let Some(inner_664) = &input.accept_ranges {
-        let formatted_665 = AsRef::<str>::as_ref(inner_664);
+        let formatted_665 = inner_664.as_str();
         if !formatted_665.is_empty() {
             let header_value = formatted_665;
             let header_value =
@@ -6520,7 +6519,7 @@ pub fn add_headers_write_get_object_response(
         }
     }
     if let Some(inner_666) = &input.cache_control {
-        let formatted_667 = AsRef::<str>::as_ref(inner_666);
+        let formatted_667 = inner_666.as_str();
         if !formatted_667.is_empty() {
             let header_value = formatted_667;
             let header_value =
@@ -6537,7 +6536,7 @@ pub fn add_headers_write_get_object_response(
         }
     }
     if let Some(inner_668) = &input.content_disposition {
-        let formatted_669 = AsRef::<str>::as_ref(inner_668);
+        let formatted_669 = inner_668.as_str();
         if !formatted_669.is_empty() {
             let header_value = formatted_669;
             let header_value =
@@ -6554,7 +6553,7 @@ pub fn add_headers_write_get_object_response(
         }
     }
     if let Some(inner_670) = &input.content_encoding {
-        let formatted_671 = AsRef::<str>::as_ref(inner_670);
+        let formatted_671 = inner_670.as_str();
         if !formatted_671.is_empty() {
             let header_value = formatted_671;
             let header_value =
@@ -6571,7 +6570,7 @@ pub fn add_headers_write_get_object_response(
         }
     }
     if let Some(inner_672) = &input.content_language {
-        let formatted_673 = AsRef::<str>::as_ref(inner_672);
+        let formatted_673 = inner_672.as_str();
         if !formatted_673.is_empty() {
             let header_value = formatted_673;
             let header_value =
@@ -6606,7 +6605,7 @@ pub fn add_headers_write_get_object_response(
         }
     }
     if let Some(inner_675) = &input.content_range {
-        let formatted_676 = AsRef::<str>::as_ref(inner_675);
+        let formatted_676 = inner_675.as_str();
         if !formatted_676.is_empty() {
             let header_value = formatted_676;
             let header_value =
@@ -6623,7 +6622,7 @@ pub fn add_headers_write_get_object_response(
         }
     }
     if let Some(inner_677) = &input.content_type {
-        let formatted_678 = AsRef::<str>::as_ref(inner_677);
+        let formatted_678 = inner_677.as_str();
         if !formatted_678.is_empty() {
             let header_value = formatted_678;
             let header_value =
@@ -6640,7 +6639,7 @@ pub fn add_headers_write_get_object_response(
         }
     }
     if let Some(inner_679) = &input.checksum_crc32 {
-        let formatted_680 = AsRef::<str>::as_ref(inner_679);
+        let formatted_680 = inner_679.as_str();
         if !formatted_680.is_empty() {
             let header_value = formatted_680;
             let header_value =
@@ -6657,7 +6656,7 @@ pub fn add_headers_write_get_object_response(
         }
     }
     if let Some(inner_681) = &input.checksum_crc32_c {
-        let formatted_682 = AsRef::<str>::as_ref(inner_681);
+        let formatted_682 = inner_681.as_str();
         if !formatted_682.is_empty() {
             let header_value = formatted_682;
             let header_value =
@@ -6674,7 +6673,7 @@ pub fn add_headers_write_get_object_response(
         }
     }
     if let Some(inner_683) = &input.checksum_sha1 {
-        let formatted_684 = AsRef::<str>::as_ref(inner_683);
+        let formatted_684 = inner_683.as_str();
         if !formatted_684.is_empty() {
             let header_value = formatted_684;
             let header_value =
@@ -6691,7 +6690,7 @@ pub fn add_headers_write_get_object_response(
         }
     }
     if let Some(inner_685) = &input.checksum_sha256 {
-        let formatted_686 = AsRef::<str>::as_ref(inner_685);
+        let formatted_686 = inner_685.as_str();
         if !formatted_686.is_empty() {
             let header_value = formatted_686;
             let header_value =
@@ -6726,7 +6725,7 @@ pub fn add_headers_write_get_object_response(
         }
     }
     if let Some(inner_688) = &input.e_tag {
-        let formatted_689 = AsRef::<str>::as_ref(inner_688);
+        let formatted_689 = inner_688.as_str();
         if !formatted_689.is_empty() {
             let header_value = formatted_689;
             let header_value =
@@ -6760,7 +6759,7 @@ pub fn add_headers_write_get_object_response(
         }
     }
     if let Some(inner_692) = &input.expiration {
-        let formatted_693 = AsRef::<str>::as_ref(inner_692);
+        let formatted_693 = inner_692.as_str();
         if !formatted_693.is_empty() {
             let header_value = formatted_693;
             let header_value =
@@ -6812,7 +6811,7 @@ pub fn add_headers_write_get_object_response(
         }
     }
     if let Some(inner_697) = &input.object_lock_mode {
-        let formatted_698 = AsRef::<str>::as_ref(inner_697);
+        let formatted_698 = inner_697.as_str();
         if !formatted_698.is_empty() {
             let header_value = formatted_698;
             let header_value =
@@ -6829,7 +6828,7 @@ pub fn add_headers_write_get_object_response(
         }
     }
     if let Some(inner_699) = &input.object_lock_legal_hold_status {
-        let formatted_700 = AsRef::<str>::as_ref(inner_699);
+        let formatted_700 = inner_699.as_str();
         if !formatted_700.is_empty() {
             let header_value = formatted_700;
             let header_value =
@@ -6887,7 +6886,7 @@ pub fn add_headers_write_get_object_response(
         }
     }
     if let Some(inner_704) = &input.replication_status {
-        let formatted_705 = AsRef::<str>::as_ref(inner_704);
+        let formatted_705 = inner_704.as_str();
         if !formatted_705.is_empty() {
             let header_value = formatted_705;
             let header_value =
@@ -6904,7 +6903,7 @@ pub fn add_headers_write_get_object_response(
         }
     }
     if let Some(inner_706) = &input.request_charged {
-        let formatted_707 = AsRef::<str>::as_ref(inner_706);
+        let formatted_707 = inner_706.as_str();
         if !formatted_707.is_empty() {
             let header_value = formatted_707;
             let header_value =
@@ -6921,7 +6920,7 @@ pub fn add_headers_write_get_object_response(
         }
     }
     if let Some(inner_708) = &input.restore {
-        let formatted_709 = AsRef::<str>::as_ref(inner_708);
+        let formatted_709 = inner_708.as_str();
         if !formatted_709.is_empty() {
             let header_value = formatted_709;
             let header_value =
@@ -6938,7 +6937,7 @@ pub fn add_headers_write_get_object_response(
         }
     }
     if let Some(inner_710) = &input.server_side_encryption {
-        let formatted_711 = AsRef::<str>::as_ref(inner_710);
+        let formatted_711 = inner_710.as_str();
         if !formatted_711.is_empty() {
             let header_value = formatted_711;
             let header_value =
@@ -6958,7 +6957,7 @@ pub fn add_headers_write_get_object_response(
         }
     }
     if let Some(inner_712) = &input.sse_customer_algorithm {
-        let formatted_713 = AsRef::<str>::as_ref(inner_712);
+        let formatted_713 = inner_712.as_str();
         if !formatted_713.is_empty() {
             let header_value = formatted_713;
             let header_value =
@@ -6978,7 +6977,7 @@ pub fn add_headers_write_get_object_response(
         }
     }
     if let Some(inner_714) = &input.ssekms_key_id {
-        let formatted_715 = AsRef::<str>::as_ref(inner_714);
+        let formatted_715 = inner_714.as_str();
         if !formatted_715.is_empty() {
             let header_value = formatted_715;
             let header_value =
@@ -6998,7 +6997,7 @@ pub fn add_headers_write_get_object_response(
         }
     }
     if let Some(inner_716) = &input.sse_customer_key_md5 {
-        let formatted_717 = AsRef::<str>::as_ref(inner_716);
+        let formatted_717 = inner_716.as_str();
         if !formatted_717.is_empty() {
             let header_value = formatted_717;
             let header_value =
@@ -7018,7 +7017,7 @@ pub fn add_headers_write_get_object_response(
         }
     }
     if let Some(inner_718) = &input.storage_class {
-        let formatted_719 = AsRef::<str>::as_ref(inner_718);
+        let formatted_719 = inner_718.as_str();
         if !formatted_719.is_empty() {
             let header_value = formatted_719;
             let header_value =
@@ -7053,7 +7052,7 @@ pub fn add_headers_write_get_object_response(
         }
     }
     if let Some(inner_721) = &input.version_id {
-        let formatted_722 = AsRef::<str>::as_ref(inner_721);
+        let formatted_722 = inner_721.as_str();
         if !formatted_722.is_empty() {
             let header_value = formatted_722;
             let header_value =
@@ -7100,7 +7099,7 @@ pub fn add_headers_write_get_object_response(
                         details: format!("`{}` cannot be used as a header name: {}", k, err),
                     },
                 )?;
-            let header_value = AsRef::<str>::as_ref(v);
+            let header_value = v.as_str();
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                     aws_smithy_http::operation::BuildError::InvalidField {
@@ -7114,7 +7113,7 @@ pub fn add_headers_write_get_object_response(
     Ok(builder)
 }
 
-pub fn deser_header_abort_multipart_upload_abort_multipart_upload_output_request_charged(
+pub(crate) fn deser_header_abort_multipart_upload_abort_multipart_upload_output_request_charged(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::RequestCharged>,
@@ -7124,7 +7123,7 @@ pub fn deser_header_abort_multipart_upload_abort_multipart_upload_output_request
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_complete_multipart_upload_complete_multipart_upload_output_bucket_key_enabled(
+pub(crate) fn deser_header_complete_multipart_upload_complete_multipart_upload_output_bucket_key_enabled(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<bool>, aws_smithy_http::header::ParseError> {
     let headers = header_map
@@ -7141,7 +7140,7 @@ pub fn deser_header_complete_multipart_upload_complete_multipart_upload_output_b
     }
 }
 
-pub fn deser_header_complete_multipart_upload_complete_multipart_upload_output_expiration(
+pub(crate) fn deser_header_complete_multipart_upload_complete_multipart_upload_output_expiration(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -7151,7 +7150,7 @@ pub fn deser_header_complete_multipart_upload_complete_multipart_upload_output_e
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_complete_multipart_upload_complete_multipart_upload_output_request_charged(
+pub(crate) fn deser_header_complete_multipart_upload_complete_multipart_upload_output_request_charged(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::RequestCharged>,
@@ -7161,7 +7160,7 @@ pub fn deser_header_complete_multipart_upload_complete_multipart_upload_output_r
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_complete_multipart_upload_complete_multipart_upload_output_ssekms_key_id(
+pub(crate) fn deser_header_complete_multipart_upload_complete_multipart_upload_output_ssekms_key_id(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -7173,7 +7172,7 @@ pub fn deser_header_complete_multipart_upload_complete_multipart_upload_output_s
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_complete_multipart_upload_complete_multipart_upload_output_server_side_encryption(
+pub(crate) fn deser_header_complete_multipart_upload_complete_multipart_upload_output_server_side_encryption(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::ServerSideEncryption>,
@@ -7183,7 +7182,7 @@ pub fn deser_header_complete_multipart_upload_complete_multipart_upload_output_s
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_complete_multipart_upload_complete_multipart_upload_output_version_id(
+pub(crate) fn deser_header_complete_multipart_upload_complete_multipart_upload_output_version_id(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -7193,7 +7192,7 @@ pub fn deser_header_complete_multipart_upload_complete_multipart_upload_output_v
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_copy_object_copy_object_output_bucket_key_enabled(
+pub(crate) fn deser_header_copy_object_copy_object_output_bucket_key_enabled(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<bool>, aws_smithy_http::header::ParseError> {
     let headers = header_map
@@ -7221,7 +7220,7 @@ pub fn deser_payload_copy_object_copy_object_output_copy_object_result(
     }).transpose()
 }
 
-pub fn deser_header_copy_object_copy_object_output_copy_source_version_id(
+pub(crate) fn deser_header_copy_object_copy_object_output_copy_source_version_id(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -7231,7 +7230,7 @@ pub fn deser_header_copy_object_copy_object_output_copy_source_version_id(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_copy_object_copy_object_output_expiration(
+pub(crate) fn deser_header_copy_object_copy_object_output_expiration(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -7241,7 +7240,7 @@ pub fn deser_header_copy_object_copy_object_output_expiration(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_copy_object_copy_object_output_request_charged(
+pub(crate) fn deser_header_copy_object_copy_object_output_request_charged(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::RequestCharged>,
@@ -7251,7 +7250,7 @@ pub fn deser_header_copy_object_copy_object_output_request_charged(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_copy_object_copy_object_output_sse_customer_algorithm(
+pub(crate) fn deser_header_copy_object_copy_object_output_sse_customer_algorithm(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -7263,7 +7262,7 @@ pub fn deser_header_copy_object_copy_object_output_sse_customer_algorithm(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_copy_object_copy_object_output_sse_customer_key_md5(
+pub(crate) fn deser_header_copy_object_copy_object_output_sse_customer_key_md5(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -7275,7 +7274,7 @@ pub fn deser_header_copy_object_copy_object_output_sse_customer_key_md5(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_copy_object_copy_object_output_ssekms_encryption_context(
+pub(crate) fn deser_header_copy_object_copy_object_output_ssekms_encryption_context(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -7287,7 +7286,7 @@ pub fn deser_header_copy_object_copy_object_output_ssekms_encryption_context(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_copy_object_copy_object_output_ssekms_key_id(
+pub(crate) fn deser_header_copy_object_copy_object_output_ssekms_key_id(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -7299,7 +7298,7 @@ pub fn deser_header_copy_object_copy_object_output_ssekms_key_id(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_copy_object_copy_object_output_server_side_encryption(
+pub(crate) fn deser_header_copy_object_copy_object_output_server_side_encryption(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::ServerSideEncryption>,
@@ -7309,7 +7308,7 @@ pub fn deser_header_copy_object_copy_object_output_server_side_encryption(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_copy_object_copy_object_output_version_id(
+pub(crate) fn deser_header_copy_object_copy_object_output_version_id(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -7319,7 +7318,7 @@ pub fn deser_header_copy_object_copy_object_output_version_id(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_bucket_create_bucket_output_location(
+pub(crate) fn deser_header_create_bucket_create_bucket_output_location(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -7329,7 +7328,7 @@ pub fn deser_header_create_bucket_create_bucket_output_location(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_multipart_upload_create_multipart_upload_output_abort_date(
+pub(crate) fn deser_header_create_multipart_upload_create_multipart_upload_output_abort_date(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<aws_smithy_types::DateTime>,
@@ -7350,7 +7349,7 @@ pub fn deser_header_create_multipart_upload_create_multipart_upload_output_abort
     }
 }
 
-pub fn deser_header_create_multipart_upload_create_multipart_upload_output_abort_rule_id(
+pub(crate) fn deser_header_create_multipart_upload_create_multipart_upload_output_abort_rule_id(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -7360,7 +7359,7 @@ pub fn deser_header_create_multipart_upload_create_multipart_upload_output_abort
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_multipart_upload_create_multipart_upload_output_bucket_key_enabled(
+pub(crate) fn deser_header_create_multipart_upload_create_multipart_upload_output_bucket_key_enabled(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<bool>, aws_smithy_http::header::ParseError> {
     let headers = header_map
@@ -7377,7 +7376,7 @@ pub fn deser_header_create_multipart_upload_create_multipart_upload_output_bucke
     }
 }
 
-pub fn deser_header_create_multipart_upload_create_multipart_upload_output_checksum_algorithm(
+pub(crate) fn deser_header_create_multipart_upload_create_multipart_upload_output_checksum_algorithm(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::ChecksumAlgorithm>,
@@ -7387,7 +7386,7 @@ pub fn deser_header_create_multipart_upload_create_multipart_upload_output_check
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_multipart_upload_create_multipart_upload_output_request_charged(
+pub(crate) fn deser_header_create_multipart_upload_create_multipart_upload_output_request_charged(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::RequestCharged>,
@@ -7397,7 +7396,7 @@ pub fn deser_header_create_multipart_upload_create_multipart_upload_output_reque
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_multipart_upload_create_multipart_upload_output_sse_customer_algorithm(
+pub(crate) fn deser_header_create_multipart_upload_create_multipart_upload_output_sse_customer_algorithm(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -7409,7 +7408,7 @@ pub fn deser_header_create_multipart_upload_create_multipart_upload_output_sse_c
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_multipart_upload_create_multipart_upload_output_sse_customer_key_md5(
+pub(crate) fn deser_header_create_multipart_upload_create_multipart_upload_output_sse_customer_key_md5(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -7421,7 +7420,7 @@ pub fn deser_header_create_multipart_upload_create_multipart_upload_output_sse_c
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_multipart_upload_create_multipart_upload_output_ssekms_encryption_context(
+pub(crate) fn deser_header_create_multipart_upload_create_multipart_upload_output_ssekms_encryption_context(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -7433,7 +7432,7 @@ pub fn deser_header_create_multipart_upload_create_multipart_upload_output_ssekm
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_multipart_upload_create_multipart_upload_output_ssekms_key_id(
+pub(crate) fn deser_header_create_multipart_upload_create_multipart_upload_output_ssekms_key_id(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -7445,7 +7444,7 @@ pub fn deser_header_create_multipart_upload_create_multipart_upload_output_ssekm
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_multipart_upload_create_multipart_upload_output_server_side_encryption(
+pub(crate) fn deser_header_create_multipart_upload_create_multipart_upload_output_server_side_encryption(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::ServerSideEncryption>,
@@ -7455,7 +7454,7 @@ pub fn deser_header_create_multipart_upload_create_multipart_upload_output_serve
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_delete_object_delete_object_output_delete_marker(
+pub(crate) fn deser_header_delete_object_delete_object_output_delete_marker(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<bool>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-amz-delete-marker").iter();
@@ -7470,7 +7469,7 @@ pub fn deser_header_delete_object_delete_object_output_delete_marker(
     }
 }
 
-pub fn deser_header_delete_object_delete_object_output_request_charged(
+pub(crate) fn deser_header_delete_object_delete_object_output_request_charged(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::RequestCharged>,
@@ -7480,7 +7479,7 @@ pub fn deser_header_delete_object_delete_object_output_request_charged(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_delete_object_delete_object_output_version_id(
+pub(crate) fn deser_header_delete_object_delete_object_output_version_id(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -7490,7 +7489,7 @@ pub fn deser_header_delete_object_delete_object_output_version_id(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_delete_objects_delete_objects_output_request_charged(
+pub(crate) fn deser_header_delete_objects_delete_objects_output_request_charged(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::RequestCharged>,
@@ -7500,7 +7499,7 @@ pub fn deser_header_delete_objects_delete_objects_output_request_charged(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_delete_object_tagging_delete_object_tagging_output_version_id(
+pub(crate) fn deser_header_delete_object_tagging_delete_object_tagging_output_version_id(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -7611,7 +7610,7 @@ pub fn deser_payload_get_bucket_replication_get_bucket_replication_output_replic
     }).transpose()
 }
 
-pub fn deser_header_get_object_get_object_output_accept_ranges(
+pub(crate) fn deser_header_get_object_get_object_output_accept_ranges(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -7629,7 +7628,7 @@ pub fn deser_payload_get_object_get_object_output_body(
     Ok(aws_smithy_http::byte_stream::ByteStream::new(body))
 }
 
-pub fn deser_header_get_object_get_object_output_bucket_key_enabled(
+pub(crate) fn deser_header_get_object_get_object_output_bucket_key_enabled(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<bool>, aws_smithy_http::header::ParseError> {
     let headers = header_map
@@ -7646,7 +7645,7 @@ pub fn deser_header_get_object_get_object_output_bucket_key_enabled(
     }
 }
 
-pub fn deser_header_get_object_get_object_output_cache_control(
+pub(crate) fn deser_header_get_object_get_object_output_cache_control(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -7656,7 +7655,7 @@ pub fn deser_header_get_object_get_object_output_cache_control(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_object_get_object_output_checksum_crc32(
+pub(crate) fn deser_header_get_object_get_object_output_checksum_crc32(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -7666,7 +7665,7 @@ pub fn deser_header_get_object_get_object_output_checksum_crc32(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_object_get_object_output_checksum_crc32_c(
+pub(crate) fn deser_header_get_object_get_object_output_checksum_crc32_c(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -7676,7 +7675,7 @@ pub fn deser_header_get_object_get_object_output_checksum_crc32_c(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_object_get_object_output_checksum_sha1(
+pub(crate) fn deser_header_get_object_get_object_output_checksum_sha1(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -7686,7 +7685,7 @@ pub fn deser_header_get_object_get_object_output_checksum_sha1(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_object_get_object_output_checksum_sha256(
+pub(crate) fn deser_header_get_object_get_object_output_checksum_sha256(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -7696,7 +7695,7 @@ pub fn deser_header_get_object_get_object_output_checksum_sha256(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_object_get_object_output_content_disposition(
+pub(crate) fn deser_header_get_object_get_object_output_content_disposition(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -7706,7 +7705,7 @@ pub fn deser_header_get_object_get_object_output_content_disposition(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_object_get_object_output_content_encoding(
+pub(crate) fn deser_header_get_object_get_object_output_content_encoding(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -7716,7 +7715,7 @@ pub fn deser_header_get_object_get_object_output_content_encoding(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_object_get_object_output_content_language(
+pub(crate) fn deser_header_get_object_get_object_output_content_language(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -7726,7 +7725,7 @@ pub fn deser_header_get_object_get_object_output_content_language(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_object_get_object_output_content_length(
+pub(crate) fn deser_header_get_object_get_object_output_content_length(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i64>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Content-Length").iter();
@@ -7741,7 +7740,7 @@ pub fn deser_header_get_object_get_object_output_content_length(
     }
 }
 
-pub fn deser_header_get_object_get_object_output_content_range(
+pub(crate) fn deser_header_get_object_get_object_output_content_range(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -7751,7 +7750,7 @@ pub fn deser_header_get_object_get_object_output_content_range(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_object_get_object_output_content_type(
+pub(crate) fn deser_header_get_object_get_object_output_content_type(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -7761,7 +7760,7 @@ pub fn deser_header_get_object_get_object_output_content_type(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_object_get_object_output_delete_marker(
+pub(crate) fn deser_header_get_object_get_object_output_delete_marker(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<bool>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-amz-delete-marker").iter();
@@ -7776,7 +7775,7 @@ pub fn deser_header_get_object_get_object_output_delete_marker(
     }
 }
 
-pub fn deser_header_get_object_get_object_output_e_tag(
+pub(crate) fn deser_header_get_object_get_object_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -7786,7 +7785,7 @@ pub fn deser_header_get_object_get_object_output_e_tag(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_object_get_object_output_expiration(
+pub(crate) fn deser_header_get_object_get_object_output_expiration(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -7796,7 +7795,7 @@ pub fn deser_header_get_object_get_object_output_expiration(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_object_get_object_output_expires(
+pub(crate) fn deser_header_get_object_get_object_output_expires(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<aws_smithy_types::DateTime>,
@@ -7817,7 +7816,7 @@ pub fn deser_header_get_object_get_object_output_expires(
     }
 }
 
-pub fn deser_header_get_object_get_object_output_last_modified(
+pub(crate) fn deser_header_get_object_get_object_output_last_modified(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<aws_smithy_types::DateTime>,
@@ -7838,7 +7837,7 @@ pub fn deser_header_get_object_get_object_output_last_modified(
     }
 }
 
-pub fn deser_prefix_header_get_object_get_object_output_metadata(
+pub(crate) fn deser_prefix_header_get_object_get_object_output_metadata(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -7848,13 +7847,13 @@ pub fn deser_prefix_header_get_object_get_object_output_metadata(
     let out: std::result::Result<_, _> = headers.map(|(key, header_name)| {
                             let values = header_map.get_all(header_name);
                             crate::http_serde::deser_prefix_header_get_object_get_object_output_metadata_inner(values.iter()).map(|v| (key.to_string(), v.expect(
-                                "we have checked there is at least one value for this header name; please file a bug report under https://github.com/awslabs/smithy-rs/issues
-                            ")))
+                                "we have checked there is at least one value for this header name; please file a bug report under https://github.com/awslabs/smithy-rs/issues"
+                            )))
                         }).collect();
     out.map(Some)
 }
 
-pub fn deser_header_get_object_get_object_output_missing_meta(
+pub(crate) fn deser_header_get_object_get_object_output_missing_meta(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-amz-missing-meta").iter();
@@ -7869,7 +7868,7 @@ pub fn deser_header_get_object_get_object_output_missing_meta(
     }
 }
 
-pub fn deser_header_get_object_get_object_output_object_lock_legal_hold_status(
+pub(crate) fn deser_header_get_object_get_object_output_object_lock_legal_hold_status(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::ObjectLockLegalHoldStatus>,
@@ -7879,7 +7878,7 @@ pub fn deser_header_get_object_get_object_output_object_lock_legal_hold_status(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_object_get_object_output_object_lock_mode(
+pub(crate) fn deser_header_get_object_get_object_output_object_lock_mode(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::ObjectLockMode>,
@@ -7889,7 +7888,7 @@ pub fn deser_header_get_object_get_object_output_object_lock_mode(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_object_get_object_output_object_lock_retain_until_date(
+pub(crate) fn deser_header_get_object_get_object_output_object_lock_retain_until_date(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<aws_smithy_types::DateTime>,
@@ -7912,7 +7911,7 @@ pub fn deser_header_get_object_get_object_output_object_lock_retain_until_date(
     }
 }
 
-pub fn deser_header_get_object_get_object_output_parts_count(
+pub(crate) fn deser_header_get_object_get_object_output_parts_count(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-amz-mp-parts-count").iter();
@@ -7927,7 +7926,7 @@ pub fn deser_header_get_object_get_object_output_parts_count(
     }
 }
 
-pub fn deser_header_get_object_get_object_output_replication_status(
+pub(crate) fn deser_header_get_object_get_object_output_replication_status(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::ReplicationStatus>,
@@ -7937,7 +7936,7 @@ pub fn deser_header_get_object_get_object_output_replication_status(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_object_get_object_output_request_charged(
+pub(crate) fn deser_header_get_object_get_object_output_request_charged(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::RequestCharged>,
@@ -7947,7 +7946,7 @@ pub fn deser_header_get_object_get_object_output_request_charged(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_object_get_object_output_restore(
+pub(crate) fn deser_header_get_object_get_object_output_restore(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -7957,7 +7956,7 @@ pub fn deser_header_get_object_get_object_output_restore(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_object_get_object_output_sse_customer_algorithm(
+pub(crate) fn deser_header_get_object_get_object_output_sse_customer_algorithm(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -7969,7 +7968,7 @@ pub fn deser_header_get_object_get_object_output_sse_customer_algorithm(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_object_get_object_output_sse_customer_key_md5(
+pub(crate) fn deser_header_get_object_get_object_output_sse_customer_key_md5(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -7981,7 +7980,7 @@ pub fn deser_header_get_object_get_object_output_sse_customer_key_md5(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_object_get_object_output_ssekms_key_id(
+pub(crate) fn deser_header_get_object_get_object_output_ssekms_key_id(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -7993,7 +7992,7 @@ pub fn deser_header_get_object_get_object_output_ssekms_key_id(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_object_get_object_output_server_side_encryption(
+pub(crate) fn deser_header_get_object_get_object_output_server_side_encryption(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::ServerSideEncryption>,
@@ -8003,7 +8002,7 @@ pub fn deser_header_get_object_get_object_output_server_side_encryption(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_object_get_object_output_storage_class(
+pub(crate) fn deser_header_get_object_get_object_output_storage_class(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::StorageClass>,
@@ -8013,7 +8012,7 @@ pub fn deser_header_get_object_get_object_output_storage_class(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_object_get_object_output_tag_count(
+pub(crate) fn deser_header_get_object_get_object_output_tag_count(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-amz-tagging-count").iter();
@@ -8028,7 +8027,7 @@ pub fn deser_header_get_object_get_object_output_tag_count(
     }
 }
 
-pub fn deser_header_get_object_get_object_output_version_id(
+pub(crate) fn deser_header_get_object_get_object_output_version_id(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8038,7 +8037,7 @@ pub fn deser_header_get_object_get_object_output_version_id(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_object_get_object_output_website_redirect_location(
+pub(crate) fn deser_header_get_object_get_object_output_website_redirect_location(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8048,7 +8047,7 @@ pub fn deser_header_get_object_get_object_output_website_redirect_location(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_object_acl_get_object_acl_output_request_charged(
+pub(crate) fn deser_header_get_object_acl_get_object_acl_output_request_charged(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::RequestCharged>,
@@ -8058,7 +8057,7 @@ pub fn deser_header_get_object_acl_get_object_acl_output_request_charged(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_object_attributes_get_object_attributes_output_delete_marker(
+pub(crate) fn deser_header_get_object_attributes_get_object_attributes_output_delete_marker(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<bool>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-amz-delete-marker").iter();
@@ -8073,7 +8072,7 @@ pub fn deser_header_get_object_attributes_get_object_attributes_output_delete_ma
     }
 }
 
-pub fn deser_header_get_object_attributes_get_object_attributes_output_last_modified(
+pub(crate) fn deser_header_get_object_attributes_get_object_attributes_output_last_modified(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<aws_smithy_types::DateTime>,
@@ -8094,7 +8093,7 @@ pub fn deser_header_get_object_attributes_get_object_attributes_output_last_modi
     }
 }
 
-pub fn deser_header_get_object_attributes_get_object_attributes_output_request_charged(
+pub(crate) fn deser_header_get_object_attributes_get_object_attributes_output_request_charged(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::RequestCharged>,
@@ -8104,7 +8103,7 @@ pub fn deser_header_get_object_attributes_get_object_attributes_output_request_c
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_object_attributes_get_object_attributes_output_version_id(
+pub(crate) fn deser_header_get_object_attributes_get_object_attributes_output_version_id(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8147,7 +8146,7 @@ pub fn deser_payload_get_object_retention_get_object_retention_output_retention(
     }).transpose()
 }
 
-pub fn deser_header_get_object_tagging_get_object_tagging_output_version_id(
+pub(crate) fn deser_header_get_object_tagging_get_object_tagging_output_version_id(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8168,7 +8167,7 @@ pub fn deser_payload_get_object_torrent_get_object_torrent_output_body(
     Ok(aws_smithy_http::byte_stream::ByteStream::new(body))
 }
 
-pub fn deser_header_get_object_torrent_get_object_torrent_output_request_charged(
+pub(crate) fn deser_header_get_object_torrent_get_object_torrent_output_request_charged(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::RequestCharged>,
@@ -8189,7 +8188,7 @@ pub fn deser_payload_get_public_access_block_get_public_access_block_output_publ
     }).transpose()
 }
 
-pub fn deser_header_head_object_head_object_output_accept_ranges(
+pub(crate) fn deser_header_head_object_head_object_output_accept_ranges(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8199,7 +8198,7 @@ pub fn deser_header_head_object_head_object_output_accept_ranges(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_head_object_head_object_output_archive_status(
+pub(crate) fn deser_header_head_object_head_object_output_archive_status(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::ArchiveStatus>,
@@ -8209,7 +8208,7 @@ pub fn deser_header_head_object_head_object_output_archive_status(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_head_object_head_object_output_bucket_key_enabled(
+pub(crate) fn deser_header_head_object_head_object_output_bucket_key_enabled(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<bool>, aws_smithy_http::header::ParseError> {
     let headers = header_map
@@ -8226,7 +8225,7 @@ pub fn deser_header_head_object_head_object_output_bucket_key_enabled(
     }
 }
 
-pub fn deser_header_head_object_head_object_output_cache_control(
+pub(crate) fn deser_header_head_object_head_object_output_cache_control(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8236,7 +8235,7 @@ pub fn deser_header_head_object_head_object_output_cache_control(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_head_object_head_object_output_checksum_crc32(
+pub(crate) fn deser_header_head_object_head_object_output_checksum_crc32(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8246,7 +8245,7 @@ pub fn deser_header_head_object_head_object_output_checksum_crc32(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_head_object_head_object_output_checksum_crc32_c(
+pub(crate) fn deser_header_head_object_head_object_output_checksum_crc32_c(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8256,7 +8255,7 @@ pub fn deser_header_head_object_head_object_output_checksum_crc32_c(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_head_object_head_object_output_checksum_sha1(
+pub(crate) fn deser_header_head_object_head_object_output_checksum_sha1(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8266,7 +8265,7 @@ pub fn deser_header_head_object_head_object_output_checksum_sha1(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_head_object_head_object_output_checksum_sha256(
+pub(crate) fn deser_header_head_object_head_object_output_checksum_sha256(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8276,7 +8275,7 @@ pub fn deser_header_head_object_head_object_output_checksum_sha256(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_head_object_head_object_output_content_disposition(
+pub(crate) fn deser_header_head_object_head_object_output_content_disposition(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8286,7 +8285,7 @@ pub fn deser_header_head_object_head_object_output_content_disposition(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_head_object_head_object_output_content_encoding(
+pub(crate) fn deser_header_head_object_head_object_output_content_encoding(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8296,7 +8295,7 @@ pub fn deser_header_head_object_head_object_output_content_encoding(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_head_object_head_object_output_content_language(
+pub(crate) fn deser_header_head_object_head_object_output_content_language(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8306,7 +8305,7 @@ pub fn deser_header_head_object_head_object_output_content_language(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_head_object_head_object_output_content_length(
+pub(crate) fn deser_header_head_object_head_object_output_content_length(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i64>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Content-Length").iter();
@@ -8321,7 +8320,7 @@ pub fn deser_header_head_object_head_object_output_content_length(
     }
 }
 
-pub fn deser_header_head_object_head_object_output_content_type(
+pub(crate) fn deser_header_head_object_head_object_output_content_type(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8331,7 +8330,7 @@ pub fn deser_header_head_object_head_object_output_content_type(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_head_object_head_object_output_delete_marker(
+pub(crate) fn deser_header_head_object_head_object_output_delete_marker(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<bool>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-amz-delete-marker").iter();
@@ -8346,7 +8345,7 @@ pub fn deser_header_head_object_head_object_output_delete_marker(
     }
 }
 
-pub fn deser_header_head_object_head_object_output_e_tag(
+pub(crate) fn deser_header_head_object_head_object_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8356,7 +8355,7 @@ pub fn deser_header_head_object_head_object_output_e_tag(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_head_object_head_object_output_expiration(
+pub(crate) fn deser_header_head_object_head_object_output_expiration(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8366,7 +8365,7 @@ pub fn deser_header_head_object_head_object_output_expiration(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_head_object_head_object_output_expires(
+pub(crate) fn deser_header_head_object_head_object_output_expires(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<aws_smithy_types::DateTime>,
@@ -8387,7 +8386,7 @@ pub fn deser_header_head_object_head_object_output_expires(
     }
 }
 
-pub fn deser_header_head_object_head_object_output_last_modified(
+pub(crate) fn deser_header_head_object_head_object_output_last_modified(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<aws_smithy_types::DateTime>,
@@ -8408,7 +8407,7 @@ pub fn deser_header_head_object_head_object_output_last_modified(
     }
 }
 
-pub fn deser_prefix_header_head_object_head_object_output_metadata(
+pub(crate) fn deser_prefix_header_head_object_head_object_output_metadata(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -8418,13 +8417,13 @@ pub fn deser_prefix_header_head_object_head_object_output_metadata(
     let out: std::result::Result<_, _> = headers.map(|(key, header_name)| {
                             let values = header_map.get_all(header_name);
                             crate::http_serde::deser_prefix_header_head_object_head_object_output_metadata_inner(values.iter()).map(|v| (key.to_string(), v.expect(
-                                "we have checked there is at least one value for this header name; please file a bug report under https://github.com/awslabs/smithy-rs/issues
-                            ")))
+                                "we have checked there is at least one value for this header name; please file a bug report under https://github.com/awslabs/smithy-rs/issues"
+                            )))
                         }).collect();
     out.map(Some)
 }
 
-pub fn deser_header_head_object_head_object_output_missing_meta(
+pub(crate) fn deser_header_head_object_head_object_output_missing_meta(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-amz-missing-meta").iter();
@@ -8439,7 +8438,7 @@ pub fn deser_header_head_object_head_object_output_missing_meta(
     }
 }
 
-pub fn deser_header_head_object_head_object_output_object_lock_legal_hold_status(
+pub(crate) fn deser_header_head_object_head_object_output_object_lock_legal_hold_status(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::ObjectLockLegalHoldStatus>,
@@ -8449,7 +8448,7 @@ pub fn deser_header_head_object_head_object_output_object_lock_legal_hold_status
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_head_object_head_object_output_object_lock_mode(
+pub(crate) fn deser_header_head_object_head_object_output_object_lock_mode(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::ObjectLockMode>,
@@ -8459,7 +8458,7 @@ pub fn deser_header_head_object_head_object_output_object_lock_mode(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_head_object_head_object_output_object_lock_retain_until_date(
+pub(crate) fn deser_header_head_object_head_object_output_object_lock_retain_until_date(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<aws_smithy_types::DateTime>,
@@ -8482,7 +8481,7 @@ pub fn deser_header_head_object_head_object_output_object_lock_retain_until_date
     }
 }
 
-pub fn deser_header_head_object_head_object_output_parts_count(
+pub(crate) fn deser_header_head_object_head_object_output_parts_count(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-amz-mp-parts-count").iter();
@@ -8497,7 +8496,7 @@ pub fn deser_header_head_object_head_object_output_parts_count(
     }
 }
 
-pub fn deser_header_head_object_head_object_output_replication_status(
+pub(crate) fn deser_header_head_object_head_object_output_replication_status(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::ReplicationStatus>,
@@ -8507,7 +8506,7 @@ pub fn deser_header_head_object_head_object_output_replication_status(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_head_object_head_object_output_request_charged(
+pub(crate) fn deser_header_head_object_head_object_output_request_charged(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::RequestCharged>,
@@ -8517,7 +8516,7 @@ pub fn deser_header_head_object_head_object_output_request_charged(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_head_object_head_object_output_restore(
+pub(crate) fn deser_header_head_object_head_object_output_restore(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8527,7 +8526,7 @@ pub fn deser_header_head_object_head_object_output_restore(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_head_object_head_object_output_sse_customer_algorithm(
+pub(crate) fn deser_header_head_object_head_object_output_sse_customer_algorithm(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8539,7 +8538,7 @@ pub fn deser_header_head_object_head_object_output_sse_customer_algorithm(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_head_object_head_object_output_sse_customer_key_md5(
+pub(crate) fn deser_header_head_object_head_object_output_sse_customer_key_md5(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8551,7 +8550,7 @@ pub fn deser_header_head_object_head_object_output_sse_customer_key_md5(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_head_object_head_object_output_ssekms_key_id(
+pub(crate) fn deser_header_head_object_head_object_output_ssekms_key_id(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8563,7 +8562,7 @@ pub fn deser_header_head_object_head_object_output_ssekms_key_id(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_head_object_head_object_output_server_side_encryption(
+pub(crate) fn deser_header_head_object_head_object_output_server_side_encryption(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::ServerSideEncryption>,
@@ -8573,7 +8572,7 @@ pub fn deser_header_head_object_head_object_output_server_side_encryption(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_head_object_head_object_output_storage_class(
+pub(crate) fn deser_header_head_object_head_object_output_storage_class(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::StorageClass>,
@@ -8583,7 +8582,7 @@ pub fn deser_header_head_object_head_object_output_storage_class(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_head_object_head_object_output_version_id(
+pub(crate) fn deser_header_head_object_head_object_output_version_id(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8593,7 +8592,7 @@ pub fn deser_header_head_object_head_object_output_version_id(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_head_object_head_object_output_website_redirect_location(
+pub(crate) fn deser_header_head_object_head_object_output_website_redirect_location(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8603,7 +8602,7 @@ pub fn deser_header_head_object_head_object_output_website_redirect_location(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_list_parts_list_parts_output_abort_date(
+pub(crate) fn deser_header_list_parts_list_parts_output_abort_date(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<aws_smithy_types::DateTime>,
@@ -8624,7 +8623,7 @@ pub fn deser_header_list_parts_list_parts_output_abort_date(
     }
 }
 
-pub fn deser_header_list_parts_list_parts_output_abort_rule_id(
+pub(crate) fn deser_header_list_parts_list_parts_output_abort_rule_id(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8634,7 +8633,7 @@ pub fn deser_header_list_parts_list_parts_output_abort_rule_id(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_list_parts_list_parts_output_request_charged(
+pub(crate) fn deser_header_list_parts_list_parts_output_request_charged(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::RequestCharged>,
@@ -8644,7 +8643,7 @@ pub fn deser_header_list_parts_list_parts_output_request_charged(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_object_put_object_output_bucket_key_enabled(
+pub(crate) fn deser_header_put_object_put_object_output_bucket_key_enabled(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<bool>, aws_smithy_http::header::ParseError> {
     let headers = header_map
@@ -8661,7 +8660,7 @@ pub fn deser_header_put_object_put_object_output_bucket_key_enabled(
     }
 }
 
-pub fn deser_header_put_object_put_object_output_checksum_crc32(
+pub(crate) fn deser_header_put_object_put_object_output_checksum_crc32(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8671,7 +8670,7 @@ pub fn deser_header_put_object_put_object_output_checksum_crc32(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_object_put_object_output_checksum_crc32_c(
+pub(crate) fn deser_header_put_object_put_object_output_checksum_crc32_c(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8681,7 +8680,7 @@ pub fn deser_header_put_object_put_object_output_checksum_crc32_c(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_object_put_object_output_checksum_sha1(
+pub(crate) fn deser_header_put_object_put_object_output_checksum_sha1(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8691,7 +8690,7 @@ pub fn deser_header_put_object_put_object_output_checksum_sha1(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_object_put_object_output_checksum_sha256(
+pub(crate) fn deser_header_put_object_put_object_output_checksum_sha256(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8701,7 +8700,7 @@ pub fn deser_header_put_object_put_object_output_checksum_sha256(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_object_put_object_output_e_tag(
+pub(crate) fn deser_header_put_object_put_object_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8711,7 +8710,7 @@ pub fn deser_header_put_object_put_object_output_e_tag(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_object_put_object_output_expiration(
+pub(crate) fn deser_header_put_object_put_object_output_expiration(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8721,7 +8720,7 @@ pub fn deser_header_put_object_put_object_output_expiration(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_object_put_object_output_request_charged(
+pub(crate) fn deser_header_put_object_put_object_output_request_charged(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::RequestCharged>,
@@ -8731,7 +8730,7 @@ pub fn deser_header_put_object_put_object_output_request_charged(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_object_put_object_output_sse_customer_algorithm(
+pub(crate) fn deser_header_put_object_put_object_output_sse_customer_algorithm(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8743,7 +8742,7 @@ pub fn deser_header_put_object_put_object_output_sse_customer_algorithm(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_object_put_object_output_sse_customer_key_md5(
+pub(crate) fn deser_header_put_object_put_object_output_sse_customer_key_md5(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8755,7 +8754,7 @@ pub fn deser_header_put_object_put_object_output_sse_customer_key_md5(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_object_put_object_output_ssekms_encryption_context(
+pub(crate) fn deser_header_put_object_put_object_output_ssekms_encryption_context(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8767,7 +8766,7 @@ pub fn deser_header_put_object_put_object_output_ssekms_encryption_context(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_object_put_object_output_ssekms_key_id(
+pub(crate) fn deser_header_put_object_put_object_output_ssekms_key_id(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8779,7 +8778,7 @@ pub fn deser_header_put_object_put_object_output_ssekms_key_id(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_object_put_object_output_server_side_encryption(
+pub(crate) fn deser_header_put_object_put_object_output_server_side_encryption(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::ServerSideEncryption>,
@@ -8789,7 +8788,7 @@ pub fn deser_header_put_object_put_object_output_server_side_encryption(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_object_put_object_output_version_id(
+pub(crate) fn deser_header_put_object_put_object_output_version_id(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8799,7 +8798,7 @@ pub fn deser_header_put_object_put_object_output_version_id(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_object_acl_put_object_acl_output_request_charged(
+pub(crate) fn deser_header_put_object_acl_put_object_acl_output_request_charged(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::RequestCharged>,
@@ -8809,7 +8808,7 @@ pub fn deser_header_put_object_acl_put_object_acl_output_request_charged(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_object_legal_hold_put_object_legal_hold_output_request_charged(
+pub(crate) fn deser_header_put_object_legal_hold_put_object_legal_hold_output_request_charged(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::RequestCharged>,
@@ -8819,7 +8818,7 @@ pub fn deser_header_put_object_legal_hold_put_object_legal_hold_output_request_c
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_object_lock_configuration_put_object_lock_configuration_output_request_charged(
+pub(crate) fn deser_header_put_object_lock_configuration_put_object_lock_configuration_output_request_charged(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::RequestCharged>,
@@ -8829,7 +8828,7 @@ pub fn deser_header_put_object_lock_configuration_put_object_lock_configuration_
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_object_retention_put_object_retention_output_request_charged(
+pub(crate) fn deser_header_put_object_retention_put_object_retention_output_request_charged(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::RequestCharged>,
@@ -8839,7 +8838,7 @@ pub fn deser_header_put_object_retention_put_object_retention_output_request_cha
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_object_tagging_put_object_tagging_output_version_id(
+pub(crate) fn deser_header_put_object_tagging_put_object_tagging_output_version_id(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8849,7 +8848,7 @@ pub fn deser_header_put_object_tagging_put_object_tagging_output_version_id(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_restore_object_restore_object_output_request_charged(
+pub(crate) fn deser_header_restore_object_restore_object_output_request_charged(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::RequestCharged>,
@@ -8859,7 +8858,7 @@ pub fn deser_header_restore_object_restore_object_output_request_charged(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_restore_object_restore_object_output_restore_output_path(
+pub(crate) fn deser_header_restore_object_restore_object_output_restore_output_path(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8886,7 +8885,7 @@ pub fn deser_payload_select_object_content_select_object_content_output_payload(
     ))
 }
 
-pub fn deser_header_upload_part_upload_part_output_bucket_key_enabled(
+pub(crate) fn deser_header_upload_part_upload_part_output_bucket_key_enabled(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<bool>, aws_smithy_http::header::ParseError> {
     let headers = header_map
@@ -8903,7 +8902,7 @@ pub fn deser_header_upload_part_upload_part_output_bucket_key_enabled(
     }
 }
 
-pub fn deser_header_upload_part_upload_part_output_checksum_crc32(
+pub(crate) fn deser_header_upload_part_upload_part_output_checksum_crc32(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8913,7 +8912,7 @@ pub fn deser_header_upload_part_upload_part_output_checksum_crc32(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_upload_part_upload_part_output_checksum_crc32_c(
+pub(crate) fn deser_header_upload_part_upload_part_output_checksum_crc32_c(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8923,7 +8922,7 @@ pub fn deser_header_upload_part_upload_part_output_checksum_crc32_c(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_upload_part_upload_part_output_checksum_sha1(
+pub(crate) fn deser_header_upload_part_upload_part_output_checksum_sha1(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8933,7 +8932,7 @@ pub fn deser_header_upload_part_upload_part_output_checksum_sha1(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_upload_part_upload_part_output_checksum_sha256(
+pub(crate) fn deser_header_upload_part_upload_part_output_checksum_sha256(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8943,7 +8942,7 @@ pub fn deser_header_upload_part_upload_part_output_checksum_sha256(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_upload_part_upload_part_output_e_tag(
+pub(crate) fn deser_header_upload_part_upload_part_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8953,7 +8952,7 @@ pub fn deser_header_upload_part_upload_part_output_e_tag(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_upload_part_upload_part_output_request_charged(
+pub(crate) fn deser_header_upload_part_upload_part_output_request_charged(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::RequestCharged>,
@@ -8963,7 +8962,7 @@ pub fn deser_header_upload_part_upload_part_output_request_charged(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_upload_part_upload_part_output_sse_customer_algorithm(
+pub(crate) fn deser_header_upload_part_upload_part_output_sse_customer_algorithm(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8975,7 +8974,7 @@ pub fn deser_header_upload_part_upload_part_output_sse_customer_algorithm(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_upload_part_upload_part_output_sse_customer_key_md5(
+pub(crate) fn deser_header_upload_part_upload_part_output_sse_customer_key_md5(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8987,7 +8986,7 @@ pub fn deser_header_upload_part_upload_part_output_sse_customer_key_md5(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_upload_part_upload_part_output_ssekms_key_id(
+pub(crate) fn deser_header_upload_part_upload_part_output_ssekms_key_id(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -8999,7 +8998,7 @@ pub fn deser_header_upload_part_upload_part_output_ssekms_key_id(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_upload_part_upload_part_output_server_side_encryption(
+pub(crate) fn deser_header_upload_part_upload_part_output_server_side_encryption(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::ServerSideEncryption>,
@@ -9009,7 +9008,7 @@ pub fn deser_header_upload_part_upload_part_output_server_side_encryption(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_upload_part_copy_upload_part_copy_output_bucket_key_enabled(
+pub(crate) fn deser_header_upload_part_copy_upload_part_copy_output_bucket_key_enabled(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<bool>, aws_smithy_http::header::ParseError> {
     let headers = header_map
@@ -9037,7 +9036,7 @@ pub fn deser_payload_upload_part_copy_upload_part_copy_output_copy_part_result(
     }).transpose()
 }
 
-pub fn deser_header_upload_part_copy_upload_part_copy_output_copy_source_version_id(
+pub(crate) fn deser_header_upload_part_copy_upload_part_copy_output_copy_source_version_id(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -9047,7 +9046,7 @@ pub fn deser_header_upload_part_copy_upload_part_copy_output_copy_source_version
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_upload_part_copy_upload_part_copy_output_request_charged(
+pub(crate) fn deser_header_upload_part_copy_upload_part_copy_output_request_charged(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::RequestCharged>,
@@ -9057,7 +9056,7 @@ pub fn deser_header_upload_part_copy_upload_part_copy_output_request_charged(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_upload_part_copy_upload_part_copy_output_sse_customer_algorithm(
+pub(crate) fn deser_header_upload_part_copy_upload_part_copy_output_sse_customer_algorithm(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -9069,7 +9068,7 @@ pub fn deser_header_upload_part_copy_upload_part_copy_output_sse_customer_algori
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_upload_part_copy_upload_part_copy_output_sse_customer_key_md5(
+pub(crate) fn deser_header_upload_part_copy_upload_part_copy_output_sse_customer_key_md5(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -9081,7 +9080,7 @@ pub fn deser_header_upload_part_copy_upload_part_copy_output_sse_customer_key_md
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_upload_part_copy_upload_part_copy_output_ssekms_key_id(
+pub(crate) fn deser_header_upload_part_copy_upload_part_copy_output_ssekms_key_id(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -9093,7 +9092,7 @@ pub fn deser_header_upload_part_copy_upload_part_copy_output_ssekms_key_id(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_upload_part_copy_upload_part_copy_output_server_side_encryption(
+pub(crate) fn deser_header_upload_part_copy_upload_part_copy_output_server_side_encryption(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::ServerSideEncryption>,

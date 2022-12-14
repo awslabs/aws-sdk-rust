@@ -16,7 +16,7 @@ pub fn serialize_structure_crate_input_query_forecast_input(
         let mut object_5 = object.key("Filters").start_object();
         for (key_6, value_7) in var_4 {
             {
-                object_5.key(key_6).string(value_7.as_str());
+                object_5.key(key_6.as_str()).string(value_7.as_str());
             }
         }
         object_5.finish();
@@ -44,7 +44,7 @@ pub fn serialize_structure_crate_input_query_what_if_forecast_input(
         let mut object_13 = object.key("Filters").start_object();
         for (key_14, value_15) in var_12 {
             {
-                object_13.key(key_14).string(value_15.as_str());
+                object_13.key(key_14.as_str()).string(value_15.as_str());
             }
         }
         object_13.finish();

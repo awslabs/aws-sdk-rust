@@ -140,7 +140,7 @@ pub fn serialize_structure_crate_input_create_association_input(
         let mut object_33 = object.key("Parameters").start_object();
         for (key_34, value_35) in var_32 {
             {
-                let mut array_36 = object_33.key(key_34).start_array();
+                let mut array_36 = object_33.key(key_34.as_str()).start_array();
                 for item_37 in value_35 {
                     {
                         array_36.value().string(item_37.as_str());
@@ -234,7 +234,7 @@ pub fn serialize_structure_crate_input_create_association_input(
                 let mut object_62 = array_60.value().start_object();
                 for (key_63, value_64) in item_61 {
                     {
-                        let mut array_65 = object_62.key(key_63).start_array();
+                        let mut array_65 = object_62.key(key_63.as_str()).start_array();
                         for item_66 in value_64 {
                             {
                                 array_65.value().string(item_66.as_str());
@@ -431,7 +431,7 @@ pub fn serialize_structure_crate_input_create_ops_item_input(
         let mut object_111 = object.key("OperationalData").start_object();
         for (key_112, value_113) in var_110 {
             {
-                let mut object_114 = object_111.key(key_112).start_object();
+                let mut object_114 = object_111.key(key_112.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_ops_item_data_value(
                     &mut object_114,
                     value_113,
@@ -532,7 +532,7 @@ pub fn serialize_structure_crate_input_create_ops_metadata_input(
         let mut object_138 = object.key("Metadata").start_object();
         for (key_139, value_140) in var_137 {
             {
-                let mut object_141 = object_138.key(key_139).start_object();
+                let mut object_141 = object_138.key(key_139.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_metadata_value(
                     &mut object_141,
                     value_140,
@@ -3020,7 +3020,7 @@ pub fn serialize_structure_crate_input_register_task_with_maintenance_window_inp
         let mut object_653 = object.key("TaskParameters").start_object();
         for (key_654, value_655) in var_652 {
             {
-                let mut object_656 = object_653.key(key_654).start_object();
+                let mut object_656 = object_653.key(key_654.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_maintenance_window_task_parameter_value_expression(&mut object_656, value_655)?;
                 object_656.finish();
             }
@@ -3128,7 +3128,7 @@ pub fn serialize_structure_crate_input_send_automation_signal_input(
         let mut object_680 = object.key("Payload").start_object();
         for (key_681, value_682) in var_679 {
             {
-                let mut array_683 = object_680.key(key_681).start_array();
+                let mut array_683 = object_680.key(key_681.as_str()).start_array();
                 for item_684 in value_682 {
                     {
                         array_683.value().string(item_684.as_str());
@@ -3191,7 +3191,7 @@ pub fn serialize_structure_crate_input_send_command_input(
         let mut object_699 = object.key("Parameters").start_object();
         for (key_700, value_701) in var_698 {
             {
-                let mut array_702 = object_699.key(key_700).start_array();
+                let mut array_702 = object_699.key(key_700.as_str()).start_array();
                 for item_703 in value_701 {
                     {
                         array_702.value().string(item_703.as_str());
@@ -3277,7 +3277,7 @@ pub fn serialize_structure_crate_input_start_automation_execution_input(
         let mut object_722 = object.key("Parameters").start_object();
         for (key_723, value_724) in var_721 {
             {
-                let mut array_725 = object_722.key(key_723).start_array();
+                let mut array_725 = object_722.key(key_723.as_str()).start_array();
                 for item_726 in value_724 {
                     {
                         array_725.value().string(item_726.as_str());
@@ -3315,7 +3315,7 @@ pub fn serialize_structure_crate_input_start_automation_execution_input(
                 let mut object_737 = array_735.value().start_object();
                 for (key_738, value_739) in item_736 {
                     {
-                        let mut array_740 = object_737.key(key_738).start_array();
+                        let mut array_740 = object_737.key(key_738.as_str()).start_array();
                         for item_741 in value_739 {
                             {
                                 array_740.value().string(item_741.as_str());
@@ -3390,7 +3390,7 @@ pub fn serialize_structure_crate_input_start_change_request_execution_input(
         let mut object_758 = object.key("Parameters").start_object();
         for (key_759, value_760) in var_757 {
             {
-                let mut array_761 = object_758.key(key_759).start_array();
+                let mut array_761 = object_758.key(key_759.as_str()).start_array();
                 for item_762 in value_760 {
                     {
                         array_761.value().string(item_762.as_str());
@@ -3463,7 +3463,7 @@ pub fn serialize_structure_crate_input_start_session_input(
         let mut object_779 = object.key("Parameters").start_object();
         for (key_780, value_781) in var_778 {
             {
-                let mut array_782 = object_779.key(key_780).start_array();
+                let mut array_782 = object_779.key(key_780.as_str()).start_array();
                 for item_783 in value_781 {
                     {
                         array_782.value().string(item_783.as_str());
@@ -3536,7 +3536,7 @@ pub fn serialize_structure_crate_input_update_association_input(
         let mut object_794 = object.key("Parameters").start_object();
         for (key_795, value_796) in var_793 {
             {
-                let mut array_797 = object_794.key(key_795).start_array();
+                let mut array_797 = object_794.key(key_795.as_str()).start_array();
                 for item_798 in value_796 {
                     {
                         array_797.value().string(item_798.as_str());
@@ -3639,7 +3639,7 @@ pub fn serialize_structure_crate_input_update_association_input(
                 let mut object_826 = array_824.value().start_object();
                 for (key_827, value_828) in item_825 {
                     {
-                        let mut array_829 = object_826.key(key_827).start_array();
+                        let mut array_829 = object_826.key(key_827.as_str()).start_array();
                         for item_830 in value_828 {
                             {
                                 array_829.value().string(item_830.as_str());
@@ -3883,7 +3883,7 @@ pub fn serialize_structure_crate_input_update_maintenance_window_task_input(
         let mut object_886 = object.key("TaskParameters").start_object();
         for (key_887, value_888) in var_885 {
             {
-                let mut object_889 = object_886.key(key_887).start_object();
+                let mut object_889 = object_886.key(key_887.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_maintenance_window_task_parameter_value_expression(&mut object_889, value_888)?;
                 object_889.finish();
             }
@@ -3959,7 +3959,7 @@ pub fn serialize_structure_crate_input_update_ops_item_input(
         let mut object_907 = object.key("OperationalData").start_object();
         for (key_908, value_909) in var_906 {
             {
-                let mut object_910 = object_907.key(key_908).start_object();
+                let mut object_910 = object_907.key(key_908.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_ops_item_data_value(
                     &mut object_910,
                     value_909,
@@ -4061,7 +4061,7 @@ pub fn serialize_structure_crate_input_update_ops_metadata_input(
         let mut object_934 = object.key("MetadataToUpdate").start_object();
         for (key_935, value_936) in var_933 {
             {
-                let mut object_937 = object_934.key(key_935).start_object();
+                let mut object_937 = object_934.key(key_935.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_metadata_value(
                     &mut object_937,
                     value_936,
@@ -4332,7 +4332,7 @@ pub fn serialize_structure_crate_model_create_association_batch_request_entry(
         let mut object_994 = object.key("Parameters").start_object();
         for (key_995, value_996) in var_993 {
             {
-                let mut array_997 = object_994.key(key_995).start_array();
+                let mut array_997 = object_994.key(key_995.as_str()).start_array();
                 for item_998 in value_996 {
                     {
                         array_997.value().string(item_998.as_str());
@@ -4432,7 +4432,7 @@ pub fn serialize_structure_crate_model_create_association_batch_request_entry(
                 let mut object_1024 = array_1022.value().start_object();
                 for (key_1025, value_1026) in item_1023 {
                     {
-                        let mut array_1027 = object_1024.key(key_1025).start_array();
+                        let mut array_1027 = object_1024.key(key_1025.as_str()).start_array();
                         for item_1028 in value_1026 {
                             {
                                 array_1027.value().string(item_1028.as_str());
@@ -5102,7 +5102,9 @@ pub fn serialize_structure_crate_model_ops_aggregator(
         let mut object_1164 = object.key("Values").start_object();
         for (key_1165, value_1166) in var_1163 {
             {
-                object_1164.key(key_1165).string(value_1166.as_str());
+                object_1164
+                    .key(key_1165.as_str())
+                    .string(value_1166.as_str());
             }
         }
         object_1164.finish();
@@ -5329,7 +5331,9 @@ pub fn serialize_structure_crate_model_compliance_item_entry(
         let mut object_1213 = object.key("Details").start_object();
         for (key_1214, value_1215) in var_1212 {
             {
-                object_1213.key(key_1214).string(value_1215.as_str());
+                object_1213
+                    .key(key_1214.as_str())
+                    .string(value_1215.as_str());
             }
         }
         object_1213.finish();
@@ -5360,7 +5364,9 @@ pub fn serialize_structure_crate_model_inventory_item(
                 let mut object_1223 = array_1221.value().start_object();
                 for (key_1224, value_1225) in item_1222 {
                     {
-                        object_1223.key(key_1224).string(value_1225.as_str());
+                        object_1223
+                            .key(key_1224.as_str())
+                            .string(value_1225.as_str());
                     }
                 }
                 object_1223.finish();
@@ -5372,7 +5378,9 @@ pub fn serialize_structure_crate_model_inventory_item(
         let mut object_1227 = object.key("Context").start_object();
         for (key_1228, value_1229) in var_1226 {
             {
-                object_1227.key(key_1228).string(value_1229.as_str());
+                object_1227
+                    .key(key_1228.as_str())
+                    .string(value_1229.as_str());
             }
         }
         object_1227.finish();
@@ -5501,7 +5509,7 @@ pub fn serialize_structure_crate_model_runbook(
         let mut object_1253 = object.key("Parameters").start_object();
         for (key_1254, value_1255) in var_1252 {
             {
-                let mut array_1256 = object_1253.key(key_1254).start_array();
+                let mut array_1256 = object_1253.key(key_1254.as_str()).start_array();
                 for item_1257 in value_1255 {
                     {
                         array_1256.value().string(item_1257.as_str());
@@ -5536,7 +5544,7 @@ pub fn serialize_structure_crate_model_runbook(
                 let mut object_1266 = array_1264.value().start_object();
                 for (key_1267, value_1268) in item_1265 {
                     {
-                        let mut array_1269 = object_1266.key(key_1267).start_array();
+                        let mut array_1269 = object_1266.key(key_1267.as_str()).start_array();
                         for item_1270 in value_1268 {
                             {
                                 array_1269.value().string(item_1270.as_str());
@@ -5794,7 +5802,7 @@ pub fn serialize_structure_crate_model_maintenance_window_run_command_parameters
         let mut object_1322 = object.key("Parameters").start_object();
         for (key_1323, value_1324) in var_1321 {
             {
-                let mut array_1325 = object_1322.key(key_1323).start_array();
+                let mut array_1325 = object_1322.key(key_1323.as_str()).start_array();
                 for item_1326 in value_1324 {
                     {
                         array_1325.value().string(item_1326.as_str());
@@ -5828,7 +5836,7 @@ pub fn serialize_structure_crate_model_maintenance_window_automation_parameters(
         let mut object_1331 = object.key("Parameters").start_object();
         for (key_1332, value_1333) in var_1330 {
             {
-                let mut array_1334 = object_1331.key(key_1332).start_array();
+                let mut array_1334 = object_1331.key(key_1332.as_str()).start_array();
                 for item_1335 in value_1333 {
                     {
                         array_1334.value().string(item_1335.as_str());

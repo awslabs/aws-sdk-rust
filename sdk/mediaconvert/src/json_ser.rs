@@ -71,7 +71,7 @@ pub fn serialize_structure_crate_input_create_job_input(
         let mut object_18 = object.key("tags").start_object();
         for (key_19, value_20) in var_17 {
             {
-                object_18.key(key_19).string(value_20.as_str());
+                object_18.key(key_19.as_str()).string(value_20.as_str());
             }
         }
         object_18.finish();
@@ -80,7 +80,7 @@ pub fn serialize_structure_crate_input_create_job_input(
         let mut object_22 = object.key("userMetadata").start_object();
         for (key_23, value_24) in var_21 {
             {
-                object_22.key(key_23).string(value_24.as_str());
+                object_22.key(key_23.as_str()).string(value_24.as_str());
             }
         }
         object_22.finish();
@@ -147,7 +147,7 @@ pub fn serialize_structure_crate_input_create_job_template_input(
         let mut object_39 = object.key("tags").start_object();
         for (key_40, value_41) in var_38 {
             {
-                object_39.key(key_40).string(value_41.as_str());
+                object_39.key(key_40.as_str()).string(value_41.as_str());
             }
         }
         object_39.finish();
@@ -177,7 +177,7 @@ pub fn serialize_structure_crate_input_create_preset_input(
         let mut object_48 = object.key("tags").start_object();
         for (key_49, value_50) in var_47 {
             {
-                object_48.key(key_49).string(value_50.as_str());
+                object_48.key(key_49.as_str()).string(value_50.as_str());
             }
         }
         object_48.finish();
@@ -213,7 +213,7 @@ pub fn serialize_structure_crate_input_create_queue_input(
         let mut object_58 = object.key("tags").start_object();
         for (key_59, value_60) in var_57 {
             {
-                object_58.key(key_59).string(value_60.as_str());
+                object_58.key(key_59.as_str()).string(value_60.as_str());
             }
         }
         object_58.finish();
@@ -263,7 +263,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_67 = object.key("tags").start_object();
         for (key_68, value_69) in var_66 {
             {
-                object_67.key(key_68).string(value_69.as_str());
+                object_67.key(key_68.as_str()).string(value_69.as_str());
             }
         }
         object_67.finish();
@@ -763,7 +763,7 @@ pub fn serialize_structure_crate_model_input(
         let mut object_172 = object.key("audioSelectorGroups").start_object();
         for (key_173, value_174) in var_171 {
             {
-                let mut object_175 = object_172.key(key_173).start_object();
+                let mut object_175 = object_172.key(key_173.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_audio_selector_group(
                     &mut object_175,
                     value_174,
@@ -777,7 +777,7 @@ pub fn serialize_structure_crate_model_input(
         let mut object_177 = object.key("audioSelectors").start_object();
         for (key_178, value_179) in var_176 {
             {
-                let mut object_180 = object_177.key(key_178).start_object();
+                let mut object_180 = object_177.key(key_178.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_audio_selector(
                     &mut object_180,
                     value_179,
@@ -791,7 +791,7 @@ pub fn serialize_structure_crate_model_input(
         let mut object_182 = object.key("captionSelectors").start_object();
         for (key_183, value_184) in var_181 {
             {
-                let mut object_185 = object_182.key(key_183).start_object();
+                let mut object_185 = object_182.key(key_183.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_caption_selector(
                     &mut object_185,
                     value_184,
@@ -1142,7 +1142,7 @@ pub fn serialize_structure_crate_model_input_template(
         let mut object_263 = object.key("audioSelectorGroups").start_object();
         for (key_264, value_265) in var_262 {
             {
-                let mut object_266 = object_263.key(key_264).start_object();
+                let mut object_266 = object_263.key(key_264.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_audio_selector_group(
                     &mut object_266,
                     value_265,
@@ -1156,7 +1156,7 @@ pub fn serialize_structure_crate_model_input_template(
         let mut object_268 = object.key("audioSelectors").start_object();
         for (key_269, value_270) in var_267 {
             {
-                let mut object_271 = object_268.key(key_269).start_object();
+                let mut object_271 = object_268.key(key_269.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_audio_selector(
                     &mut object_271,
                     value_270,
@@ -1170,7 +1170,7 @@ pub fn serialize_structure_crate_model_input_template(
         let mut object_273 = object.key("captionSelectors").start_object();
         for (key_274, value_275) in var_272 {
             {
-                let mut object_276 = object_273.key(key_274).start_object();
+                let mut object_276 = object_273.key(key_274.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_caption_selector(
                     &mut object_276,
                     value_275,

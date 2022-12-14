@@ -348,7 +348,7 @@ pub fn serialize_structure_crate_input_create_function_input(
         let mut object_89 = object.key("Tags").start_object();
         for (key_90, value_91) in var_88 {
             {
-                object_89.key(key_90).string(value_91.as_str());
+                object_89.key(key_90.as_str()).string(value_91.as_str());
             }
         }
         object_89.finish();
@@ -513,7 +513,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_121 = object.key("Tags").start_object();
         for (key_122, value_123) in var_120 {
             {
-                object_121.key(key_122).string(value_123.as_str());
+                object_121.key(key_122.as_str()).string(value_123.as_str());
             }
         }
         object_121.finish();
@@ -847,7 +847,7 @@ pub fn serialize_structure_crate_model_alias_routing_configuration(
         let mut object_198 = object.key("AdditionalVersionWeights").start_object();
         for (key_199, value_200) in var_197 {
             {
-                object_198.key(key_199).number(
+                object_198.key(key_199.as_str()).number(
                     #[allow(clippy::useless_conversion)]
                     aws_smithy_types::Number::Float((*value_200).into()),
                 );
@@ -1018,7 +1018,7 @@ pub fn serialize_structure_crate_model_environment(
         let mut object_230 = object.key("Variables").start_object();
         for (key_231, value_232) in var_229 {
             {
-                object_230.key(key_231).string(value_232.as_str());
+                object_230.key(key_231.as_str()).string(value_232.as_str());
             }
         }
         object_230.finish();

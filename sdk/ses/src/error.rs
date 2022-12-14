@@ -27,7 +27,7 @@ impl std::fmt::Debug for TemplateDoesNotExistException {
 }
 impl TemplateDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -117,7 +117,7 @@ impl std::fmt::Debug for InvalidTemplateException {
 }
 impl InvalidTemplateException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -207,7 +207,7 @@ impl std::fmt::Debug for RuleSetDoesNotExistException {
 }
 impl RuleSetDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -294,7 +294,7 @@ impl std::fmt::Debug for RuleDoesNotExistException {
 }
 impl RuleDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -371,7 +371,7 @@ impl std::fmt::Debug for LimitExceededException {
 }
 impl LimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -446,7 +446,7 @@ impl std::fmt::Debug for InvalidSnsTopicException {
 }
 impl InvalidSnsTopicException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -533,7 +533,7 @@ impl std::fmt::Debug for InvalidS3ConfigurationException {
 }
 impl InvalidS3ConfigurationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -620,7 +620,7 @@ impl std::fmt::Debug for InvalidLambdaFunctionException {
 }
 impl InvalidLambdaFunctionException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -707,7 +707,7 @@ impl std::fmt::Debug for FromEmailAddressNotVerifiedException {
 }
 impl FromEmailAddressNotVerifiedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -800,7 +800,7 @@ impl std::fmt::Debug for CustomVerificationEmailTemplateDoesNotExistException {
 }
 impl CustomVerificationEmailTemplateDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -887,7 +887,7 @@ impl std::fmt::Debug for CustomVerificationEmailInvalidContentException {
 }
 impl CustomVerificationEmailInvalidContentException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -962,7 +962,7 @@ impl std::fmt::Debug for TrackingOptionsDoesNotExistException {
 }
 impl TrackingOptionsDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1046,7 +1046,7 @@ impl std::fmt::Debug for InvalidTrackingOptionsException {
 }
 impl InvalidTrackingOptionsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1121,7 +1121,7 @@ impl std::fmt::Debug for ConfigurationSetDoesNotExistException {
 }
 impl ConfigurationSetDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1219,7 +1219,7 @@ impl std::fmt::Debug for InvalidSnsDestinationException {
 }
 impl InvalidSnsDestinationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1335,7 +1335,7 @@ impl std::fmt::Debug for InvalidFirehoseDestinationException {
 }
 impl InvalidFirehoseDestinationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1448,7 +1448,7 @@ impl std::fmt::Debug for InvalidCloudWatchDestinationException {
 }
 impl InvalidCloudWatchDestinationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1561,7 +1561,7 @@ impl std::fmt::Debug for EventDestinationDoesNotExistException {
 }
 impl EventDestinationDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1666,7 +1666,7 @@ impl std::fmt::Debug for MissingRenderingAttributeException {
 }
 impl MissingRenderingAttributeException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1756,7 +1756,7 @@ impl std::fmt::Debug for InvalidRenderingParameterException {
 }
 impl InvalidRenderingParameterException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1836,7 +1836,7 @@ impl std::fmt::Debug for MessageRejected {
 }
 impl MessageRejected {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1901,7 +1901,7 @@ impl std::fmt::Debug for MailFromDomainNotVerifiedException {
 }
 impl MailFromDomainNotVerifiedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1977,7 +1977,7 @@ impl std::fmt::Debug for ConfigurationSetSendingPausedException {
 }
 impl ConfigurationSetSendingPausedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2058,7 +2058,7 @@ impl std::fmt::Debug for AccountSendingPausedException {
 }
 impl AccountSendingPausedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2123,7 +2123,7 @@ impl std::fmt::Debug for ProductionAccessNotGrantedException {
 }
 impl ProductionAccessNotGrantedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2188,7 +2188,7 @@ impl std::fmt::Debug for InvalidPolicyException {
 }
 impl InvalidPolicyException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2253,7 +2253,7 @@ impl std::fmt::Debug for InvalidDeliveryOptionsException {
 }
 impl InvalidDeliveryOptionsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2328,7 +2328,7 @@ impl std::fmt::Debug for CannotDeleteException {
 }
 impl CannotDeleteException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2415,7 +2415,7 @@ impl std::fmt::Debug for AlreadyExistsException {
 }
 impl AlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2505,7 +2505,7 @@ impl std::fmt::Debug for CustomVerificationEmailTemplateAlreadyExistsException {
 }
 impl CustomVerificationEmailTemplateAlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2602,7 +2602,7 @@ impl std::fmt::Debug for TrackingOptionsAlreadyExistsException {
 }
 impl TrackingOptionsAlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2700,7 +2700,7 @@ impl std::fmt::Debug for EventDestinationAlreadyExistsException {
 }
 impl EventDestinationAlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2795,7 +2795,7 @@ impl std::fmt::Debug for InvalidConfigurationSetException {
 }
 impl InvalidConfigurationSetException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2870,7 +2870,7 @@ impl std::fmt::Debug for ConfigurationSetAlreadyExistsException {
 }
 impl ConfigurationSetAlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }

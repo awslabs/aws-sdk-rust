@@ -1477,7 +1477,7 @@ pub fn serialize_structure_crate_model_input_transformer(
         let mut object_294 = object.key("InputPathsMap").start_object();
         for (key_295, value_296) in var_293 {
             {
-                object_294.key(key_295).string(value_296.as_str());
+                object_294.key(key_295.as_str()).string(value_296.as_str());
             }
         }
         object_294.finish();
@@ -1677,7 +1677,7 @@ pub fn serialize_structure_crate_model_http_parameters(
         let mut object_339 = object.key("HeaderParameters").start_object();
         for (key_340, value_341) in var_338 {
             {
-                object_339.key(key_340).string(value_341.as_str());
+                object_339.key(key_340.as_str()).string(value_341.as_str());
             }
         }
         object_339.finish();
@@ -1686,7 +1686,7 @@ pub fn serialize_structure_crate_model_http_parameters(
         let mut object_343 = object.key("QueryStringParameters").start_object();
         for (key_344, value_345) in var_342 {
             {
-                object_343.key(key_344).string(value_345.as_str());
+                object_343.key(key_344.as_str()).string(value_345.as_str());
             }
         }
         object_343.finish();

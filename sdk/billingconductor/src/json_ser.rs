@@ -121,7 +121,7 @@ pub fn serialize_structure_crate_input_create_billing_group_input(
         let mut object_29 = object.key("Tags").start_object();
         for (key_30, value_31) in var_28 {
             {
-                object_29.key(key_30).string(value_31.as_str());
+                object_29.key(key_30.as_str()).string(value_31.as_str());
             }
         }
         object_29.finish();
@@ -162,7 +162,7 @@ pub fn serialize_structure_crate_input_create_custom_line_item_input(
         let mut object_40 = object.key("Tags").start_object();
         for (key_41, value_42) in var_39 {
             {
-                object_40.key(key_41).string(value_42.as_str());
+                object_40.key(key_41.as_str()).string(value_42.as_str());
             }
         }
         object_40.finish();
@@ -193,7 +193,7 @@ pub fn serialize_structure_crate_input_create_pricing_plan_input(
         let mut object_49 = object.key("Tags").start_object();
         for (key_50, value_51) in var_48 {
             {
-                object_49.key(key_50).string(value_51.as_str());
+                object_49.key(key_50.as_str()).string(value_51.as_str());
             }
         }
         object_49.finish();
@@ -227,7 +227,7 @@ pub fn serialize_structure_crate_input_create_pricing_rule_input(
         let mut object_58 = object.key("Tags").start_object();
         for (key_59, value_60) in var_57 {
             {
-                object_58.key(key_59).string(value_60.as_str());
+                object_58.key(key_59.as_str()).string(value_60.as_str());
             }
         }
         object_58.finish();
@@ -559,7 +559,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_120 = object.key("Tags").start_object();
         for (key_121, value_122) in var_119 {
             {
-                object_120.key(key_121).string(value_122.as_str());
+                object_120.key(key_121.as_str()).string(value_122.as_str());
             }
         }
         object_120.finish();

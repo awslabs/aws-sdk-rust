@@ -18,7 +18,7 @@ impl std::fmt::Debug for ResourceNotFoundException {
 }
 impl ResourceNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -83,7 +83,7 @@ impl std::fmt::Debug for NotAuthorizedException {
 }
 impl NotAuthorizedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -148,7 +148,7 @@ impl std::fmt::Debug for InvalidArgumentException {
 }
 impl InvalidArgumentException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -213,7 +213,7 @@ impl std::fmt::Debug for ClientLimitExceededException {
 }
 impl ClientLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -278,7 +278,7 @@ impl std::fmt::Debug for UnsupportedStreamMediaTypeException {
 }
 impl UnsupportedStreamMediaTypeException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -343,7 +343,7 @@ impl std::fmt::Debug for NoDataRetentionException {
 }
 impl NoDataRetentionException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -408,7 +408,7 @@ impl std::fmt::Debug for MissingCodecPrivateDataException {
 }
 impl MissingCodecPrivateDataException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -473,7 +473,7 @@ impl std::fmt::Debug for InvalidCodecPrivateDataException {
 }
 impl InvalidCodecPrivateDataException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -538,7 +538,7 @@ impl std::fmt::Debug for InvalidMediaFrameException {
 }
 impl InvalidMediaFrameException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }

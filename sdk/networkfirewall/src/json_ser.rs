@@ -976,7 +976,7 @@ pub fn serialize_structure_crate_model_rule_variables(
         let mut object_198 = object.key("IPSets").start_object();
         for (key_199, value_200) in var_197 {
             {
-                let mut object_201 = object_198.key(key_199).start_object();
+                let mut object_201 = object_198.key(key_199.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_ip_set(
                     &mut object_201,
                     value_200,
@@ -990,7 +990,7 @@ pub fn serialize_structure_crate_model_rule_variables(
         let mut object_203 = object.key("PortSets").start_object();
         for (key_204, value_205) in var_202 {
             {
-                let mut object_206 = object_203.key(key_204).start_object();
+                let mut object_206 = object_203.key(key_204.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_port_set(
                     &mut object_206,
                     value_205,
@@ -1011,7 +1011,7 @@ pub fn serialize_structure_crate_model_reference_sets(
         let mut object_208 = object.key("IPSetReferences").start_object();
         for (key_209, value_210) in var_207 {
             {
-                let mut object_211 = object_208.key(key_209).start_object();
+                let mut object_211 = object_208.key(key_209.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_ip_set_reference(
                     &mut object_211,
                     value_210,
@@ -1088,7 +1088,7 @@ pub fn serialize_structure_crate_model_log_destination_config(
         let mut object_225 = object.key("LogDestination").start_object();
         for (key_226, value_227) in var_224 {
             {
-                object_225.key(key_226).string(value_227.as_str());
+                object_225.key(key_226.as_str()).string(value_227.as_str());
             }
         }
         object_225.finish();

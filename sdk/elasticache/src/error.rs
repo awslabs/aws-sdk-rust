@@ -17,7 +17,7 @@ impl std::fmt::Debug for TestFailoverNotAvailableFault {
 }
 impl TestFailoverNotAvailableFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -82,7 +82,7 @@ impl std::fmt::Debug for ReplicationGroupNotFoundFault {
 }
 impl ReplicationGroupNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -147,7 +147,7 @@ impl std::fmt::Debug for NodeGroupNotFoundFault {
 }
 impl NodeGroupNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -212,7 +212,7 @@ impl std::fmt::Debug for InvalidReplicationGroupStateFault {
 }
 impl InvalidReplicationGroupStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -277,7 +277,7 @@ impl std::fmt::Debug for InvalidParameterValueException {
 }
 impl InvalidParameterValueException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -342,7 +342,7 @@ impl std::fmt::Debug for InvalidParameterCombinationException {
 }
 impl InvalidParameterCombinationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -407,7 +407,7 @@ impl std::fmt::Debug for InvalidKmsKeyFault {
 }
 impl InvalidKmsKeyFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -472,7 +472,7 @@ impl std::fmt::Debug for InvalidCacheClusterStateFault {
 }
 impl InvalidCacheClusterStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -537,7 +537,7 @@ impl std::fmt::Debug for ApiCallRateForCustomerExceededFault {
 }
 impl ApiCallRateForCustomerExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -605,7 +605,7 @@ impl std::fmt::Debug for ReplicationGroupAlreadyUnderMigrationFault {
 }
 impl ReplicationGroupAlreadyUnderMigrationFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -670,7 +670,7 @@ impl std::fmt::Debug for InvalidCacheSecurityGroupStateFault {
 }
 impl InvalidCacheSecurityGroupStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -735,7 +735,7 @@ impl std::fmt::Debug for CacheSecurityGroupNotFoundFault {
 }
 impl CacheSecurityGroupNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -800,7 +800,7 @@ impl std::fmt::Debug for AuthorizationNotFoundFault {
 }
 impl AuthorizationNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -865,7 +865,7 @@ impl std::fmt::Debug for InvalidGlobalReplicationGroupStateFault {
 }
 impl InvalidGlobalReplicationGroupStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -930,7 +930,7 @@ impl std::fmt::Debug for InvalidCacheParameterGroupStateFault {
 }
 impl InvalidCacheParameterGroupStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -995,7 +995,7 @@ impl std::fmt::Debug for CacheParameterGroupNotFoundFault {
 }
 impl CacheParameterGroupNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1060,7 +1060,7 @@ impl std::fmt::Debug for UserNotFoundFault {
 }
 impl UserNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1125,7 +1125,7 @@ impl std::fmt::Debug for UserGroupNotFoundFault {
 }
 impl UserGroupNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1190,7 +1190,7 @@ impl std::fmt::Debug for TagNotFoundFault {
 }
 impl TagNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1255,7 +1255,7 @@ impl std::fmt::Debug for SnapshotNotFoundFault {
 }
 impl SnapshotNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1320,7 +1320,7 @@ impl std::fmt::Debug for ReservedCacheNodeNotFoundFault {
 }
 impl ReservedCacheNodeNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1385,7 +1385,7 @@ impl std::fmt::Debug for InvalidArnFault {
 }
 impl InvalidArnFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1450,7 +1450,7 @@ impl std::fmt::Debug for CacheSubnetGroupNotFoundFault {
 }
 impl CacheSubnetGroupNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1515,7 +1515,7 @@ impl std::fmt::Debug for CacheClusterNotFoundFault {
 }
 impl CacheClusterNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1580,7 +1580,7 @@ impl std::fmt::Debug for GlobalReplicationGroupNotFoundFault {
 }
 impl GlobalReplicationGroupNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1645,7 +1645,7 @@ impl std::fmt::Debug for TagQuotaPerResourceExceeded {
 }
 impl TagQuotaPerResourceExceeded {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1710,7 +1710,7 @@ impl std::fmt::Debug for ReservedCacheNodesOfferingNotFoundFault {
 }
 impl ReservedCacheNodesOfferingNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1775,7 +1775,7 @@ impl std::fmt::Debug for ReservedCacheNodeQuotaExceededFault {
 }
 impl ReservedCacheNodeQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1840,7 +1840,7 @@ impl std::fmt::Debug for ReservedCacheNodeAlreadyExistsFault {
 }
 impl ReservedCacheNodeAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1905,7 +1905,7 @@ impl std::fmt::Debug for ServiceLinkedRoleNotFoundFault {
 }
 impl ServiceLinkedRoleNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1970,7 +1970,7 @@ impl std::fmt::Debug for InvalidUserGroupStateFault {
 }
 impl InvalidUserGroupStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2035,7 +2035,7 @@ impl std::fmt::Debug for DuplicateUserNameFault {
 }
 impl DuplicateUserNameFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2100,7 +2100,7 @@ impl std::fmt::Debug for DefaultUserRequired {
 }
 impl DefaultUserRequired {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2165,7 +2165,7 @@ impl std::fmt::Debug for InvalidUserStateFault {
 }
 impl InvalidUserStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2230,7 +2230,7 @@ impl std::fmt::Debug for NodeQuotaForCustomerExceededFault {
 }
 impl NodeQuotaForCustomerExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2295,7 +2295,7 @@ impl std::fmt::Debug for NodeGroupsPerReplicationGroupQuotaExceededFault {
 }
 impl NodeGroupsPerReplicationGroupQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2361,7 +2361,7 @@ impl std::fmt::Debug for InvalidVpcNetworkStateFault {
 }
 impl InvalidVpcNetworkStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2429,7 +2429,7 @@ impl std::fmt::Debug for InsufficientCacheClusterCapacityFault {
 }
 impl InsufficientCacheClusterCapacityFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2494,7 +2494,7 @@ impl std::fmt::Debug for NodeQuotaForClusterExceededFault {
 }
 impl NodeQuotaForClusterExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2559,7 +2559,7 @@ impl std::fmt::Debug for SubnetNotAllowedFault {
 }
 impl SubnetNotAllowedFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2624,7 +2624,7 @@ impl std::fmt::Debug for SubnetInUse {
 }
 impl SubnetInUse {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2689,7 +2689,7 @@ impl std::fmt::Debug for InvalidSubnet {
 }
 impl InvalidSubnet {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2754,7 +2754,7 @@ impl std::fmt::Debug for CacheSubnetQuotaExceededFault {
 }
 impl CacheSubnetQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2819,7 +2819,7 @@ impl std::fmt::Debug for NoOperationFault {
 }
 impl NoOperationFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2884,7 +2884,7 @@ impl std::fmt::Debug for ClusterQuotaForCustomerExceededFault {
 }
 impl ClusterQuotaForCustomerExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2949,7 +2949,7 @@ impl std::fmt::Debug for ServiceUpdateNotFoundFault {
 }
 impl ServiceUpdateNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3014,7 +3014,7 @@ impl std::fmt::Debug for DefaultUserAssociatedToUserGroupFault {
 }
 impl DefaultUserAssociatedToUserGroupFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3079,7 +3079,7 @@ impl std::fmt::Debug for InvalidSnapshotStateFault {
 }
 impl InvalidSnapshotStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3144,7 +3144,7 @@ impl std::fmt::Debug for SnapshotQuotaExceededFault {
 }
 impl SnapshotQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3214,7 +3214,7 @@ impl std::fmt::Debug for SnapshotFeatureNotSupportedFault {
 }
 impl SnapshotFeatureNotSupportedFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3279,7 +3279,7 @@ impl std::fmt::Debug for SnapshotAlreadyExistsFault {
 }
 impl SnapshotAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3344,7 +3344,7 @@ impl std::fmt::Debug for CacheSubnetGroupInUse {
 }
 impl CacheSubnetGroupInUse {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3409,7 +3409,7 @@ impl std::fmt::Debug for UserGroupQuotaExceededFault {
 }
 impl UserGroupQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3474,7 +3474,7 @@ impl std::fmt::Debug for UserGroupAlreadyExistsFault {
 }
 impl UserGroupAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3539,7 +3539,7 @@ impl std::fmt::Debug for UserQuotaExceededFault {
 }
 impl UserQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3604,7 +3604,7 @@ impl std::fmt::Debug for UserAlreadyExistsFault {
 }
 impl UserAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3669,7 +3669,7 @@ impl std::fmt::Debug for ReplicationGroupAlreadyExistsFault {
 }
 impl ReplicationGroupAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3734,7 +3734,7 @@ impl std::fmt::Debug for GlobalReplicationGroupAlreadyExistsFault {
 }
 impl GlobalReplicationGroupAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3799,7 +3799,7 @@ impl std::fmt::Debug for CacheSubnetGroupQuotaExceededFault {
 }
 impl CacheSubnetGroupQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3864,7 +3864,7 @@ impl std::fmt::Debug for CacheSubnetGroupAlreadyExistsFault {
 }
 impl CacheSubnetGroupAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3929,7 +3929,7 @@ impl std::fmt::Debug for CacheSecurityGroupQuotaExceededFault {
 }
 impl CacheSecurityGroupQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3994,7 +3994,7 @@ impl std::fmt::Debug for CacheSecurityGroupAlreadyExistsFault {
 }
 impl CacheSecurityGroupAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4059,7 +4059,7 @@ impl std::fmt::Debug for CacheParameterGroupQuotaExceededFault {
 }
 impl CacheParameterGroupQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4124,7 +4124,7 @@ impl std::fmt::Debug for CacheParameterGroupAlreadyExistsFault {
 }
 impl CacheParameterGroupAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4189,7 +4189,7 @@ impl std::fmt::Debug for CacheClusterAlreadyExistsFault {
 }
 impl CacheClusterAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4254,7 +4254,7 @@ impl std::fmt::Debug for ReplicationGroupNotUnderMigrationFault {
 }
 impl ReplicationGroupNotUnderMigrationFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4319,7 +4319,7 @@ impl std::fmt::Debug for AuthorizationAlreadyExistsFault {
 }
 impl AuthorizationAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }

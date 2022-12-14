@@ -70,7 +70,7 @@ pub fn serialize_structure_crate_input_create_canary_input(
         let mut object_17 = object.key("Tags").start_object();
         for (key_18, value_19) in var_16 {
             {
-                object_17.key(key_18).string(value_19.as_str());
+                object_17.key(key_18.as_str()).string(value_19.as_str());
             }
         }
         object_17.finish();
@@ -94,7 +94,7 @@ pub fn serialize_structure_crate_input_create_group_input(
         let mut object_24 = object.key("Tags").start_object();
         for (key_25, value_26) in var_23 {
             {
-                object_24.key(key_25).string(value_26.as_str());
+                object_24.key(key_25.as_str()).string(value_26.as_str());
             }
         }
         object_24.finish();
@@ -250,7 +250,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_49 = object.key("Tags").start_object();
         for (key_50, value_51) in var_48 {
             {
-                object_49.key(key_50).string(value_51.as_str());
+                object_49.key(key_50.as_str()).string(value_51.as_str());
             }
         }
         object_49.finish();
@@ -390,7 +390,7 @@ pub fn serialize_structure_crate_model_canary_run_config_input(
         let mut object_80 = object.key("EnvironmentVariables").start_object();
         for (key_81, value_82) in var_79 {
             {
-                object_80.key(key_81).string(value_82.as_str());
+                object_80.key(key_81.as_str()).string(value_82.as_str());
             }
         }
         object_80.finish();

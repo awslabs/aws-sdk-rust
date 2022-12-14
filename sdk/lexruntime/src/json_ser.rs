@@ -24,7 +24,7 @@ pub fn serialize_structure_crate_input_post_text_input(
         let mut object_7 = object.key("requestAttributes").start_object();
         for (key_8, value_9) in var_6 {
             {
-                object_7.key(key_8).string(value_9.as_str());
+                object_7.key(key_8.as_str()).string(value_9.as_str());
             }
         }
         object_7.finish();
@@ -33,7 +33,7 @@ pub fn serialize_structure_crate_input_post_text_input(
         let mut object_11 = object.key("sessionAttributes").start_object();
         for (key_12, value_13) in var_10 {
             {
-                object_11.key(key_12).string(value_13.as_str());
+                object_11.key(key_12.as_str()).string(value_13.as_str());
             }
         }
         object_11.finish();
@@ -82,7 +82,7 @@ pub fn serialize_structure_crate_input_put_session_input(
         let mut object_25 = object.key("sessionAttributes").start_object();
         for (key_26, value_27) in var_24 {
             {
-                object_25.key(key_26).string(value_27.as_str());
+                object_25.key(key_26.as_str()).string(value_27.as_str());
             }
         }
         object_25.finish();
@@ -109,7 +109,7 @@ pub fn serialize_structure_crate_model_active_context(
         let mut object_32 = object.key("parameters").start_object();
         for (key_33, value_34) in var_31 {
             {
-                object_32.key(key_33).string(value_34.as_str());
+                object_32.key(key_33.as_str()).string(value_34.as_str());
             }
         }
         object_32.finish();
@@ -131,7 +131,7 @@ pub fn serialize_structure_crate_model_dialog_action(
         let mut object_38 = object.key("slots").start_object();
         for (key_39, value_40) in var_37 {
             {
-                object_38.key(key_39).string(value_40.as_str());
+                object_38.key(key_39.as_str()).string(value_40.as_str());
             }
         }
         object_38.finish();
@@ -165,7 +165,7 @@ pub fn serialize_structure_crate_model_intent_summary(
         let mut object_48 = object.key("slots").start_object();
         for (key_49, value_50) in var_47 {
             {
-                object_48.key(key_49).string(value_50.as_str());
+                object_48.key(key_49.as_str()).string(value_50.as_str());
             }
         }
         object_48.finish();

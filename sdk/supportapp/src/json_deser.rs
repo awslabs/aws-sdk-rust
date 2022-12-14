@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_crate_error_access_denied_exception_json_err(
+pub(crate) fn deser_structure_crate_error_access_denied_exception_json_err(
     value: &[u8],
     mut builder: crate::error::access_denied_exception::Builder,
 ) -> Result<crate::error::access_denied_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -47,7 +47,7 @@ pub fn deser_structure_crate_error_access_denied_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_conflict_exception_json_err(
+pub(crate) fn deser_structure_crate_error_conflict_exception_json_err(
     value: &[u8],
     mut builder: crate::error::conflict_exception::Builder,
 ) -> Result<crate::error::conflict_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -89,7 +89,7 @@ pub fn deser_structure_crate_error_conflict_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_internal_server_exception_json_err(
+pub(crate) fn deser_structure_crate_error_internal_server_exception_json_err(
     value: &[u8],
     mut builder: crate::error::internal_server_exception::Builder,
 ) -> Result<crate::error::internal_server_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -131,7 +131,7 @@ pub fn deser_structure_crate_error_internal_server_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_service_quota_exceeded_exception_json_err(
+pub(crate) fn deser_structure_crate_error_service_quota_exceeded_exception_json_err(
     value: &[u8],
     mut builder: crate::error::service_quota_exceeded_exception::Builder,
 ) -> Result<
@@ -176,7 +176,7 @@ pub fn deser_structure_crate_error_service_quota_exceeded_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_validation_exception_json_err(
+pub(crate) fn deser_structure_crate_error_validation_exception_json_err(
     value: &[u8],
     mut builder: crate::error::validation_exception::Builder,
 ) -> Result<crate::error::validation_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -218,7 +218,7 @@ pub fn deser_structure_crate_error_validation_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_resource_not_found_exception_json_err(
+pub(crate) fn deser_structure_crate_error_resource_not_found_exception_json_err(
     value: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -261,7 +261,7 @@ pub fn deser_structure_crate_error_resource_not_found_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_account_alias(
+pub(crate) fn deser_operation_crate_operation_get_account_alias(
     value: &[u8],
     mut builder: crate::output::get_account_alias_output::Builder,
 ) -> Result<crate::output::get_account_alias_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -303,7 +303,7 @@ pub fn deser_operation_crate_operation_get_account_alias(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_slack_channel_configurations(
+pub(crate) fn deser_operation_crate_operation_list_slack_channel_configurations(
     value: &[u8],
     mut builder: crate::output::list_slack_channel_configurations_output::Builder,
 ) -> Result<
@@ -353,7 +353,7 @@ pub fn deser_operation_crate_operation_list_slack_channel_configurations(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_slack_workspace_configurations(
+pub(crate) fn deser_operation_crate_operation_list_slack_workspace_configurations(
     value: &[u8],
     mut builder: crate::output::list_slack_workspace_configurations_output::Builder,
 ) -> Result<
@@ -403,7 +403,7 @@ pub fn deser_operation_crate_operation_list_slack_workspace_configurations(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_update_slack_channel_configuration(
+pub(crate) fn deser_operation_crate_operation_update_slack_channel_configuration(
     value: &[u8],
     mut builder: crate::output::update_slack_channel_configuration_output::Builder,
 ) -> Result<
@@ -509,7 +509,7 @@ pub fn deser_operation_crate_operation_update_slack_channel_configuration(
     Ok(builder)
 }
 
-pub fn or_empty_doc(data: &[u8]) -> &[u8] {
+pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
     } else {
@@ -517,8 +517,8 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_supportapp_slack_channel_configuration_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_supportapp_slack_channel_configuration_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::SlackChannelConfiguration>>,
@@ -557,8 +557,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_supportapp_slack_workspace_configuration_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_supportapp_slack_workspace_configuration_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::SlackWorkspaceConfiguration>>,
@@ -597,7 +597,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_slack_channel_configuration<'a, I>(
+pub(crate) fn deser_structure_crate_model_slack_channel_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SlackChannelConfiguration>, aws_smithy_json::deserialize::Error>
 where
@@ -609,7 +609,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::SlackChannelConfiguration::builder();
+            let mut builder = crate::model::slack_channel_configuration::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -706,7 +706,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_slack_workspace_configuration<'a, I>(
+pub(crate) fn deser_structure_crate_model_slack_workspace_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SlackWorkspaceConfiguration>, aws_smithy_json::deserialize::Error>
 where
@@ -718,7 +718,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::SlackWorkspaceConfiguration::builder();
+            let mut builder = crate::model::slack_workspace_configuration::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

@@ -17,7 +17,7 @@ impl std::fmt::Debug for ServiceNotFound {
 }
 impl ServiceNotFound {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -82,7 +82,7 @@ impl std::fmt::Debug for InvalidInput {
 }
 impl InvalidInput {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -157,7 +157,7 @@ impl std::fmt::Debug for DuplicateRequest {
 }
 impl DuplicateRequest {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -237,7 +237,7 @@ impl std::fmt::Debug for ResourceInUse {
 }
 impl ResourceInUse {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -302,7 +302,7 @@ impl std::fmt::Debug for NamespaceNotFound {
 }
 impl NamespaceNotFound {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -367,7 +367,7 @@ impl std::fmt::Debug for InstanceNotFound {
 }
 impl InstanceNotFound {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -432,7 +432,7 @@ impl std::fmt::Debug for CustomHealthNotFound {
 }
 impl CustomHealthNotFound {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -497,7 +497,7 @@ impl std::fmt::Debug for ResourceNotFoundException {
 }
 impl ResourceNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -572,7 +572,7 @@ impl std::fmt::Debug for TooManyTagsException {
 }
 impl TooManyTagsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -652,7 +652,7 @@ impl std::fmt::Debug for ResourceLimitExceeded {
 }
 impl ResourceLimitExceeded {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -717,7 +717,7 @@ impl std::fmt::Debug for OperationNotFound {
 }
 impl OperationNotFound {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -782,7 +782,7 @@ impl std::fmt::Debug for RequestLimitExceeded {
 }
 impl RequestLimitExceeded {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -865,7 +865,7 @@ impl std::fmt::Debug for ServiceAlreadyExists {
 }
 impl ServiceAlreadyExists {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -975,7 +975,7 @@ impl std::fmt::Debug for NamespaceAlreadyExists {
 }
 impl NamespaceAlreadyExists {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }

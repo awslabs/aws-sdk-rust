@@ -68,7 +68,7 @@ pub fn serialize_structure_crate_input_create_detector_input(
         let mut object_13 = object.key("tags").start_object();
         for (key_14, value_15) in var_12 {
             {
-                object_13.key(key_14).string(value_15.as_str());
+                object_13.key(key_14.as_str()).string(value_15.as_str());
             }
         }
         object_13.finish();
@@ -107,7 +107,7 @@ pub fn serialize_structure_crate_input_create_filter_input(
         let mut object_23 = object.key("tags").start_object();
         for (key_24, value_25) in var_22 {
             {
-                object_23.key(key_24).string(value_25.as_str());
+                object_23.key(key_24.as_str()).string(value_25.as_str());
             }
         }
         object_23.finish();
@@ -138,7 +138,7 @@ pub fn serialize_structure_crate_input_create_ip_set_input(
         let mut object_31 = object.key("tags").start_object();
         for (key_32, value_33) in var_30 {
             {
-                object_31.key(key_32).string(value_33.as_str());
+                object_31.key(key_32.as_str()).string(value_33.as_str());
             }
         }
         object_31.finish();
@@ -227,7 +227,7 @@ pub fn serialize_structure_crate_input_create_threat_intel_set_input(
         let mut object_50 = object.key("tags").start_object();
         for (key_51, value_52) in var_49 {
             {
-                object_50.key(key_51).string(value_52.as_str());
+                object_50.key(key_51.as_str()).string(value_52.as_str());
             }
         }
         object_50.finish();
@@ -555,7 +555,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_112 = object.key("tags").start_object();
         for (key_113, value_114) in var_111 {
             {
-                object_112.key(key_113).string(value_114.as_str());
+                object_112.key(key_113.as_str()).string(value_114.as_str());
             }
         }
         object_112.finish();
@@ -799,7 +799,7 @@ pub fn serialize_structure_crate_model_finding_criteria(
         let mut object_153 = object.key("criterion").start_object();
         for (key_154, value_155) in var_152 {
             {
-                let mut object_156 = object_153.key(key_154).start_object();
+                let mut object_156 = object_153.key(key_154.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_condition(
                     &mut object_156,
                     value_155,

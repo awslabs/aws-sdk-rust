@@ -20,7 +20,7 @@ pub fn serialize_structure_crate_input_create_application_input(
         let mut object_7 = object.key("initialCapacity").start_object();
         for (key_8, value_9) in var_6 {
             {
-                let mut object_10 = object_7.key(key_8).start_object();
+                let mut object_10 = object_7.key(key_8.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_initial_capacity_config(
                     &mut object_10,
                     value_9,
@@ -56,7 +56,7 @@ pub fn serialize_structure_crate_input_create_application_input(
         let mut object_18 = object.key("tags").start_object();
         for (key_19, value_20) in var_17 {
             {
-                object_18.key(key_19).string(value_20.as_str());
+                object_18.key(key_19.as_str()).string(value_20.as_str());
             }
         }
         object_18.finish();
@@ -103,7 +103,7 @@ pub fn serialize_structure_crate_input_start_job_run_input(
         let mut object_31 = object.key("tags").start_object();
         for (key_32, value_33) in var_30 {
             {
-                object_31.key(key_32).string(value_33.as_str());
+                object_31.key(key_32.as_str()).string(value_33.as_str());
             }
         }
         object_31.finish();
@@ -119,7 +119,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_35 = object.key("tags").start_object();
         for (key_36, value_37) in var_34 {
             {
-                object_35.key(key_36).string(value_37.as_str());
+                object_35.key(key_36.as_str()).string(value_37.as_str());
             }
         }
         object_35.finish();
@@ -148,7 +148,7 @@ pub fn serialize_structure_crate_input_update_application_input(
         let mut object_44 = object.key("initialCapacity").start_object();
         for (key_45, value_46) in var_43 {
             {
-                let mut object_47 = object_44.key(key_45).start_object();
+                let mut object_47 = object_44.key(key_45.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_initial_capacity_config(
                     &mut object_47,
                     value_46,
@@ -345,7 +345,7 @@ pub fn serialize_structure_crate_model_configuration(
         let mut object_79 = object.key("properties").start_object();
         for (key_80, value_81) in var_78 {
             {
-                object_79.key(key_80).string(value_81.as_str());
+                object_79.key(key_80.as_str()).string(value_81.as_str());
             }
         }
         object_79.finish();

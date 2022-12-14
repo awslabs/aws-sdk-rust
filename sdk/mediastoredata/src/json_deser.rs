@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_crate_error_container_not_found_exception_json_err(
+pub(crate) fn deser_structure_crate_error_container_not_found_exception_json_err(
     value: &[u8],
     mut builder: crate::error::container_not_found_exception::Builder,
 ) -> Result<crate::error::container_not_found_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -48,7 +48,7 @@ pub fn deser_structure_crate_error_container_not_found_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_internal_server_error_json_err(
+pub(crate) fn deser_structure_crate_error_internal_server_error_json_err(
     value: &[u8],
     mut builder: crate::error::internal_server_error::Builder,
 ) -> Result<crate::error::internal_server_error::Builder, aws_smithy_json::deserialize::Error> {
@@ -90,7 +90,7 @@ pub fn deser_structure_crate_error_internal_server_error_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_object_not_found_exception_json_err(
+pub(crate) fn deser_structure_crate_error_object_not_found_exception_json_err(
     value: &[u8],
     mut builder: crate::error::object_not_found_exception::Builder,
 ) -> Result<crate::error::object_not_found_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -133,7 +133,7 @@ pub fn deser_structure_crate_error_object_not_found_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_requested_range_not_satisfiable_exception_json_err(
+pub(crate) fn deser_structure_crate_error_requested_range_not_satisfiable_exception_json_err(
     value: &[u8],
     mut builder: crate::error::requested_range_not_satisfiable_exception::Builder,
 ) -> Result<
@@ -178,7 +178,7 @@ pub fn deser_structure_crate_error_requested_range_not_satisfiable_exception_jso
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_items(
+pub(crate) fn deser_operation_crate_operation_list_items(
     value: &[u8],
     mut builder: crate::output::list_items_output::Builder,
 ) -> Result<crate::output::list_items_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -227,7 +227,7 @@ pub fn deser_operation_crate_operation_list_items(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_put_object(
+pub(crate) fn deser_operation_crate_operation_put_object(
     value: &[u8],
     mut builder: crate::output::put_object_output::Builder,
 ) -> Result<crate::output::put_object_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -290,7 +290,7 @@ pub fn deser_operation_crate_operation_put_object(
     Ok(builder)
 }
 
-pub fn or_empty_doc(data: &[u8]) -> &[u8] {
+pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
     } else {
@@ -298,8 +298,8 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_mediastoredata_item_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_mediastoredata_item_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Item>>, aws_smithy_json::deserialize::Error>
 where
@@ -333,7 +333,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_item<'a, I>(
+pub(crate) fn deser_structure_crate_model_item<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Item>, aws_smithy_json::deserialize::Error>
 where
@@ -345,7 +345,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Item::builder();
+            let mut builder = crate::model::item::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -403,7 +403,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }

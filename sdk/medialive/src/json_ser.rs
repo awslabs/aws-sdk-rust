@@ -208,7 +208,7 @@ pub fn serialize_structure_crate_input_create_channel_input(
         let mut object_53 = object.key("tags").start_object();
         for (key_54, value_55) in var_52 {
             {
-                object_53.key(key_54).string(value_55.as_str());
+                object_53.key(key_54.as_str()).string(value_55.as_str());
             }
         }
         object_53.finish();
@@ -306,7 +306,7 @@ pub fn serialize_structure_crate_input_create_input_input(
         let mut object_81 = object.key("tags").start_object();
         for (key_82, value_83) in var_80 {
             {
-                object_81.key(key_82).string(value_83.as_str());
+                object_81.key(key_82.as_str()).string(value_83.as_str());
             }
         }
         object_81.finish();
@@ -330,7 +330,7 @@ pub fn serialize_structure_crate_input_create_input_security_group_input(
         let mut object_88 = object.key("tags").start_object();
         for (key_89, value_90) in var_87 {
             {
-                object_88.key(key_89).string(value_90.as_str());
+                object_88.key(key_89.as_str()).string(value_90.as_str());
             }
         }
         object_88.finish();
@@ -383,7 +383,7 @@ pub fn serialize_structure_crate_input_create_multiplex_input(
         let mut object_103 = object.key("tags").start_object();
         for (key_104, value_105) in var_102 {
             {
-                object_103.key(key_104).string(value_105.as_str());
+                object_103.key(key_104.as_str()).string(value_105.as_str());
             }
         }
         object_103.finish();
@@ -423,7 +423,7 @@ pub fn serialize_structure_crate_input_create_partner_input_input(
         let mut object_112 = object.key("tags").start_object();
         for (key_113, value_114) in var_111 {
             {
-                object_112.key(key_113).string(value_114.as_str());
+                object_112.key(key_113.as_str()).string(value_114.as_str());
             }
         }
         object_112.finish();
@@ -439,7 +439,7 @@ pub fn serialize_structure_crate_input_create_tags_input(
         let mut object_116 = object.key("tags").start_object();
         for (key_117, value_118) in var_115 {
             {
-                object_116.key(key_117).string(value_118.as_str());
+                object_116.key(key_117.as_str()).string(value_118.as_str());
             }
         }
         object_116.finish();
@@ -478,7 +478,7 @@ pub fn serialize_structure_crate_input_purchase_offering_input(
         let mut object_125 = object.key("tags").start_object();
         for (key_126, value_127) in var_124 {
             {
-                object_125.key(key_126).string(value_127.as_str());
+                object_125.key(key_126.as_str()).string(value_127.as_str());
             }
         }
         object_125.finish();
@@ -724,7 +724,7 @@ pub fn serialize_structure_crate_input_update_input_security_group_input(
         let mut object_183 = object.key("tags").start_object();
         for (key_184, value_185) in var_182 {
             {
-                object_183.key(key_184).string(value_185.as_str());
+                object_183.key(key_184.as_str()).string(value_185.as_str());
             }
         }
         object_183.finish();

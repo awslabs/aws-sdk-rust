@@ -21,7 +21,7 @@ pub fn serialize_structure_crate_input_create_savings_plan_input(
         let mut object_6 = object.key("tags").start_object();
         for (key_7, value_8) in var_5 {
             {
-                object_6.key(key_7).string(value_8.as_str());
+                object_6.key(key_7.as_str()).string(value_8.as_str());
             }
         }
         object_6.finish();
@@ -357,7 +357,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_95 = object.key("tags").start_object();
         for (key_96, value_97) in var_94 {
             {
-                object_95.key(key_96).string(value_97.as_str());
+                object_95.key(key_96.as_str()).string(value_97.as_str());
             }
         }
         object_95.finish();

@@ -29,7 +29,7 @@ pub fn serialize_structure_crate_input_create_access_preview_input(
         let mut object_7 = object.key("configurations").start_object();
         for (key_8, value_9) in var_6 {
             {
-                let mut object_10 = object_7.key(key_8).start_object();
+                let mut object_10 = object_7.key(key_8.as_str()).start_object();
                 crate::json_ser::serialize_union_crate_model_configuration(
                     &mut object_10,
                     value_9,
@@ -70,7 +70,7 @@ pub fn serialize_structure_crate_input_create_analyzer_input(
         let mut object_18 = object.key("tags").start_object();
         for (key_19, value_20) in var_17 {
             {
-                object_18.key(key_19).string(value_20.as_str());
+                object_18.key(key_19.as_str()).string(value_20.as_str());
             }
         }
         object_18.finish();
@@ -92,7 +92,7 @@ pub fn serialize_structure_crate_input_create_archive_rule_input(
         let mut object_24 = object.key("filter").start_object();
         for (key_25, value_26) in var_23 {
             {
-                let mut object_27 = object_24.key(key_25).start_object();
+                let mut object_27 = object_24.key(key_25.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_criterion(
                     &mut object_27,
                     value_26,
@@ -119,7 +119,7 @@ pub fn serialize_structure_crate_input_list_access_preview_findings_input(
         let mut object_31 = object.key("filter").start_object();
         for (key_32, value_33) in var_30 {
             {
-                let mut object_34 = object_31.key(key_32).start_object();
+                let mut object_34 = object_31.key(key_32.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_criterion(
                     &mut object_34,
                     value_33,
@@ -174,7 +174,7 @@ pub fn serialize_structure_crate_input_list_findings_input(
         let mut object_43 = object.key("filter").start_object();
         for (key_44, value_45) in var_42 {
             {
-                let mut object_46 = object_43.key(key_44).start_object();
+                let mut object_46 = object_43.key(key_44.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_criterion(
                     &mut object_46,
                     value_45,
@@ -248,7 +248,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_59 = object.key("tags").start_object();
         for (key_60, value_61) in var_58 {
             {
-                object_59.key(key_60).string(value_61.as_str());
+                object_59.key(key_60.as_str()).string(value_61.as_str());
             }
         }
         object_59.finish();
@@ -267,7 +267,7 @@ pub fn serialize_structure_crate_input_update_archive_rule_input(
         let mut object_64 = object.key("filter").start_object();
         for (key_65, value_66) in var_63 {
             {
-                let mut object_67 = object_64.key(key_65).start_object();
+                let mut object_67 = object_64.key(key_65.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_criterion(
                     &mut object_67,
                     value_66,
@@ -394,7 +394,7 @@ pub fn serialize_structure_crate_model_inline_archive_rule(
         let mut object_86 = object.key("filter").start_object();
         for (key_87, value_88) in var_85 {
             {
-                let mut object_89 = object_86.key(key_87).start_object();
+                let mut object_89 = object_86.key(key_87.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_criterion(
                     &mut object_89,
                     value_88,
@@ -516,7 +516,7 @@ pub fn serialize_structure_crate_model_kms_key_configuration(
         let mut object_112 = object.key("keyPolicies").start_object();
         for (key_113, value_114) in var_111 {
             {
-                object_112.key(key_113).string(value_114.as_str());
+                object_112.key(key_113.as_str()).string(value_114.as_str());
             }
         }
         object_112.finish();
@@ -584,7 +584,7 @@ pub fn serialize_structure_crate_model_s3_bucket_configuration(
         let mut object_129 = object.key("accessPoints").start_object();
         for (key_130, value_131) in var_128 {
             {
-                let mut object_132 = object_129.key(key_130).start_object();
+                let mut object_132 = object_129.key(key_130.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_s3_access_point_configuration(
                     &mut object_132,
                     value_131,
@@ -724,7 +724,7 @@ pub fn serialize_structure_crate_model_kms_grant_constraints(
         let mut object_158 = object.key("encryptionContextEquals").start_object();
         for (key_159, value_160) in var_157 {
             {
-                object_158.key(key_159).string(value_160.as_str());
+                object_158.key(key_159.as_str()).string(value_160.as_str());
             }
         }
         object_158.finish();
@@ -733,7 +733,7 @@ pub fn serialize_structure_crate_model_kms_grant_constraints(
         let mut object_162 = object.key("encryptionContextSubset").start_object();
         for (key_163, value_164) in var_161 {
             {
-                object_162.key(key_163).string(value_164.as_str());
+                object_162.key(key_163.as_str()).string(value_164.as_str());
             }
         }
         object_162.finish();

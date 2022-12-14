@@ -146,7 +146,7 @@ pub fn serialize_structure_crate_input_create_assessment_input(
         let mut object_33 = object.key("tags").start_object();
         for (key_34, value_35) in var_32 {
             {
-                object_33.key(key_34).string(value_35.as_str());
+                object_33.key(key_34.as_str()).string(value_35.as_str());
             }
         }
         object_33.finish();
@@ -182,7 +182,7 @@ pub fn serialize_structure_crate_input_create_assessment_framework_input(
         let mut object_44 = object.key("tags").start_object();
         for (key_45, value_46) in var_43 {
             {
-                object_44.key(key_45).string(value_46.as_str());
+                object_44.key(key_45.as_str()).string(value_46.as_str());
             }
         }
         object_44.finish();
@@ -237,7 +237,7 @@ pub fn serialize_structure_crate_input_create_control_input(
         let mut object_58 = object.key("tags").start_object();
         for (key_59, value_60) in var_57 {
             {
-                object_58.key(key_59).string(value_60.as_str());
+                object_58.key(key_59.as_str()).string(value_60.as_str());
             }
         }
         object_58.finish();
@@ -315,7 +315,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_71 = object.key("tags").start_object();
         for (key_72, value_73) in var_70 {
             {
-                object_71.key(key_72).string(value_73.as_str());
+                object_71.key(key_72.as_str()).string(value_73.as_str());
             }
         }
         object_71.finish();

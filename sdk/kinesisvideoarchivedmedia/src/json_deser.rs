@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_crate_error_client_limit_exceeded_exception_json_err(
+pub(crate) fn deser_structure_crate_error_client_limit_exceeded_exception_json_err(
     value: &[u8],
     mut builder: crate::error::client_limit_exceeded_exception::Builder,
 ) -> Result<
@@ -50,7 +50,7 @@ pub fn deser_structure_crate_error_client_limit_exceeded_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_invalid_argument_exception_json_err(
+pub(crate) fn deser_structure_crate_error_invalid_argument_exception_json_err(
     value: &[u8],
     mut builder: crate::error::invalid_argument_exception::Builder,
 ) -> Result<crate::error::invalid_argument_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -93,7 +93,7 @@ pub fn deser_structure_crate_error_invalid_argument_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_invalid_codec_private_data_exception_json_err(
+pub(crate) fn deser_structure_crate_error_invalid_codec_private_data_exception_json_err(
     value: &[u8],
     mut builder: crate::error::invalid_codec_private_data_exception::Builder,
 ) -> Result<
@@ -138,7 +138,7 @@ pub fn deser_structure_crate_error_invalid_codec_private_data_exception_json_err
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_invalid_media_frame_exception_json_err(
+pub(crate) fn deser_structure_crate_error_invalid_media_frame_exception_json_err(
     value: &[u8],
     mut builder: crate::error::invalid_media_frame_exception::Builder,
 ) -> Result<crate::error::invalid_media_frame_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -181,7 +181,7 @@ pub fn deser_structure_crate_error_invalid_media_frame_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_missing_codec_private_data_exception_json_err(
+pub(crate) fn deser_structure_crate_error_missing_codec_private_data_exception_json_err(
     value: &[u8],
     mut builder: crate::error::missing_codec_private_data_exception::Builder,
 ) -> Result<
@@ -226,7 +226,7 @@ pub fn deser_structure_crate_error_missing_codec_private_data_exception_json_err
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_no_data_retention_exception_json_err(
+pub(crate) fn deser_structure_crate_error_no_data_retention_exception_json_err(
     value: &[u8],
     mut builder: crate::error::no_data_retention_exception::Builder,
 ) -> Result<crate::error::no_data_retention_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -269,7 +269,7 @@ pub fn deser_structure_crate_error_no_data_retention_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_not_authorized_exception_json_err(
+pub(crate) fn deser_structure_crate_error_not_authorized_exception_json_err(
     value: &[u8],
     mut builder: crate::error::not_authorized_exception::Builder,
 ) -> Result<crate::error::not_authorized_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -311,7 +311,7 @@ pub fn deser_structure_crate_error_not_authorized_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_resource_not_found_exception_json_err(
+pub(crate) fn deser_structure_crate_error_resource_not_found_exception_json_err(
     value: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -354,7 +354,7 @@ pub fn deser_structure_crate_error_resource_not_found_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_unsupported_stream_media_type_exception_json_err(
+pub(crate) fn deser_structure_crate_error_unsupported_stream_media_type_exception_json_err(
     value: &[u8],
     mut builder: crate::error::unsupported_stream_media_type_exception::Builder,
 ) -> Result<
@@ -399,7 +399,7 @@ pub fn deser_structure_crate_error_unsupported_stream_media_type_exception_json_
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_dash_streaming_session_url(
+pub(crate) fn deser_operation_crate_operation_get_dash_streaming_session_url(
     value: &[u8],
     mut builder: crate::output::get_dash_streaming_session_url_output::Builder,
 ) -> Result<
@@ -444,7 +444,7 @@ pub fn deser_operation_crate_operation_get_dash_streaming_session_url(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_hls_streaming_session_url(
+pub(crate) fn deser_operation_crate_operation_get_hls_streaming_session_url(
     value: &[u8],
     mut builder: crate::output::get_hls_streaming_session_url_output::Builder,
 ) -> Result<
@@ -489,7 +489,7 @@ pub fn deser_operation_crate_operation_get_hls_streaming_session_url(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_images(
+pub(crate) fn deser_operation_crate_operation_get_images(
     value: &[u8],
     mut builder: crate::output::get_images_output::Builder,
 ) -> Result<crate::output::get_images_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -536,7 +536,7 @@ pub fn deser_operation_crate_operation_get_images(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_fragments(
+pub(crate) fn deser_operation_crate_operation_list_fragments(
     value: &[u8],
     mut builder: crate::output::list_fragments_output::Builder,
 ) -> Result<crate::output::list_fragments_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -583,7 +583,7 @@ pub fn deser_operation_crate_operation_list_fragments(
     Ok(builder)
 }
 
-pub fn or_empty_doc(data: &[u8]) -> &[u8] {
+pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
     } else {
@@ -591,8 +591,8 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_kinesisvideoarchivedmedia_images<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_kinesisvideoarchivedmedia_images<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Image>>, aws_smithy_json::deserialize::Error>
 where
@@ -626,8 +626,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_kinesisvideoarchivedmedia_fragment_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_kinesisvideoarchivedmedia_fragment_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Fragment>>, aws_smithy_json::deserialize::Error>
 where
@@ -662,7 +662,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_image<'a, I>(
+pub(crate) fn deser_structure_crate_model_image<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Image>, aws_smithy_json::deserialize::Error>
 where
@@ -674,7 +674,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Image::builder();
+            let mut builder = crate::model::image::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -728,7 +728,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_fragment<'a, I>(
+pub(crate) fn deser_structure_crate_model_fragment<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Fragment>, aws_smithy_json::deserialize::Error>
 where
@@ -740,7 +740,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Fragment::builder();
+            let mut builder = crate::model::fragment::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -760,7 +760,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -785,7 +785,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }

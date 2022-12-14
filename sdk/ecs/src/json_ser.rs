@@ -2426,7 +2426,7 @@ pub fn serialize_structure_crate_model_container_definition(
         let mut object_556 = object.key("dockerLabels").start_object();
         for (key_557, value_558) in var_555 {
             {
-                object_556.key(key_557).string(value_558.as_str());
+                object_556.key(key_557.as_str()).string(value_558.as_str());
             }
         }
         object_556.finish();
@@ -3098,7 +3098,7 @@ pub fn serialize_structure_crate_model_log_configuration(
         let mut object_687 = object.key("options").start_object();
         for (key_688, value_689) in var_686 {
             {
-                object_687.key(key_688).string(value_689.as_str());
+                object_687.key(key_688.as_str()).string(value_689.as_str());
             }
         }
         object_687.finish();
@@ -3194,7 +3194,7 @@ pub fn serialize_structure_crate_model_firelens_configuration(
         let mut object_707 = object.key("options").start_object();
         for (key_708, value_709) in var_706 {
             {
-                object_707.key(key_708).string(value_709.as_str());
+                object_707.key(key_708.as_str()).string(value_709.as_str());
             }
         }
         object_707.finish();
@@ -3229,7 +3229,7 @@ pub fn serialize_structure_crate_model_docker_volume_configuration(
         let mut object_715 = object.key("driverOpts").start_object();
         for (key_716, value_717) in var_714 {
             {
-                object_715.key(key_716).string(value_717.as_str());
+                object_715.key(key_716.as_str()).string(value_717.as_str());
             }
         }
         object_715.finish();
@@ -3238,7 +3238,7 @@ pub fn serialize_structure_crate_model_docker_volume_configuration(
         let mut object_719 = object.key("labels").start_object();
         for (key_720, value_721) in var_718 {
             {
-                object_719.key(key_720).string(value_721.as_str());
+                object_719.key(key_720.as_str()).string(value_721.as_str());
             }
         }
         object_719.finish();

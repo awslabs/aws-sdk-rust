@@ -17,7 +17,7 @@ impl std::fmt::Debug for ResourceNotFoundException {
 }
 impl ResourceNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -82,7 +82,7 @@ impl std::fmt::Debug for ResourceInUseException {
 }
 impl ResourceInUseException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -150,7 +150,7 @@ impl std::fmt::Debug for LimitExceededException {
 }
 impl LimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -215,7 +215,7 @@ impl std::fmt::Debug for InvalidEndpointException {
 }
 impl InvalidEndpointException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -280,7 +280,7 @@ impl std::fmt::Debug for InternalServerError {
 }
 impl InternalServerError {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -345,7 +345,7 @@ impl std::fmt::Debug for TransactionConflictException {
 }
 impl TransactionConflictException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -410,7 +410,7 @@ impl std::fmt::Debug for RequestLimitExceeded {
 }
 impl RequestLimitExceeded {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -475,7 +475,7 @@ impl std::fmt::Debug for ProvisionedThroughputExceededException {
 }
 impl ProvisionedThroughputExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -540,7 +540,7 @@ impl std::fmt::Debug for ItemCollectionSizeLimitExceededException {
 }
 impl ItemCollectionSizeLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -605,7 +605,7 @@ impl std::fmt::Debug for ConditionalCheckFailedException {
 }
 impl ConditionalCheckFailedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -670,7 +670,7 @@ impl std::fmt::Debug for ReplicaNotFoundException {
 }
 impl ReplicaNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -735,7 +735,7 @@ impl std::fmt::Debug for IndexNotFoundException {
 }
 impl IndexNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -800,7 +800,7 @@ impl std::fmt::Debug for GlobalTableNotFoundException {
 }
 impl GlobalTableNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -865,7 +865,7 @@ impl std::fmt::Debug for TableNotFoundException {
 }
 impl TableNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -930,7 +930,7 @@ impl std::fmt::Debug for ReplicaAlreadyExistsException {
 }
 impl ReplicaAlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -995,7 +995,7 @@ impl std::fmt::Debug for ContinuousBackupsUnavailableException {
 }
 impl ContinuousBackupsUnavailableException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1060,7 +1060,7 @@ impl std::fmt::Debug for TransactionInProgressException {
 }
 impl TransactionInProgressException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1219,7 +1219,7 @@ impl std::fmt::Debug for TransactionCanceledException {
 }
 impl TransactionCanceledException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1306,7 +1306,7 @@ impl std::fmt::Debug for IdempotentParameterMismatchException {
 }
 impl IdempotentParameterMismatchException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1371,7 +1371,7 @@ impl std::fmt::Debug for TableInUseException {
 }
 impl TableInUseException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1436,7 +1436,7 @@ impl std::fmt::Debug for TableAlreadyExistsException {
 }
 impl TableAlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1501,7 +1501,7 @@ impl std::fmt::Debug for PointInTimeRecoveryUnavailableException {
 }
 impl PointInTimeRecoveryUnavailableException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1566,7 +1566,7 @@ impl std::fmt::Debug for InvalidRestoreTimeException {
 }
 impl InvalidRestoreTimeException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1631,7 +1631,7 @@ impl std::fmt::Debug for BackupNotFoundException {
 }
 impl BackupNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1696,7 +1696,7 @@ impl std::fmt::Debug for BackupInUseException {
 }
 impl BackupInUseException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1761,7 +1761,7 @@ impl std::fmt::Debug for ImportConflictException {
 }
 impl ImportConflictException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1826,7 +1826,7 @@ impl std::fmt::Debug for InvalidExportTimeException {
 }
 impl InvalidExportTimeException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1891,7 +1891,7 @@ impl std::fmt::Debug for ExportConflictException {
 }
 impl ExportConflictException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1956,7 +1956,7 @@ impl std::fmt::Debug for DuplicateItemException {
 }
 impl DuplicateItemException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2021,7 +2021,7 @@ impl std::fmt::Debug for ImportNotFoundException {
 }
 impl ImportNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2086,7 +2086,7 @@ impl std::fmt::Debug for ExportNotFoundException {
 }
 impl ExportNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2151,7 +2151,7 @@ impl std::fmt::Debug for GlobalTableAlreadyExistsException {
 }
 impl GlobalTableAlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }

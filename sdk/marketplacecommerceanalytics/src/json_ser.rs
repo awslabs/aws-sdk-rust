@@ -27,7 +27,7 @@ pub fn serialize_structure_crate_input_generate_data_set_input(
         let mut object_8 = object.key("customerDefinedValues").start_object();
         for (key_9, value_10) in var_7 {
             {
-                object_8.key(key_9).string(value_10.as_str());
+                object_8.key(key_9.as_str()).string(value_10.as_str());
             }
         }
         object_8.finish();
@@ -65,7 +65,7 @@ pub fn serialize_structure_crate_input_start_support_data_export_input(
         let mut object_18 = object.key("customerDefinedValues").start_object();
         for (key_19, value_20) in var_17 {
             {
-                object_18.key(key_19).string(value_20.as_str());
+                object_18.key(key_19.as_str()).string(value_20.as_str());
             }
         }
         object_18.finish();

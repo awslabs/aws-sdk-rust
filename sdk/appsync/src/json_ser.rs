@@ -223,7 +223,7 @@ pub fn serialize_structure_crate_input_create_graphql_api_input(
         let mut object_45 = object.key("tags").start_object();
         for (key_46, value_47) in var_44 {
             {
-                object_45.key(key_46).string(value_47.as_str());
+                object_45.key(key_46.as_str()).string(value_47.as_str());
             }
         }
         object_45.finish();
@@ -330,7 +330,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_67 = object.key("tags").start_object();
         for (key_68, value_69) in var_66 {
             {
-                object_67.key(key_68).string(value_69.as_str());
+                object_67.key(key_68.as_str()).string(value_69.as_str());
             }
         }
         object_67.finish();

@@ -2709,7 +2709,7 @@ pub fn serialize_structure_crate_model_facet_attribute_definition(
         let mut object_529 = object.key("Rules").start_object();
         for (key_530, value_531) in var_528 {
             {
-                let mut object_532 = object_529.key(key_530).start_object();
+                let mut object_532 = object_529.key(key_530.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_rule(&mut object_532, value_531)?;
                 object_532.finish();
             }
@@ -2757,7 +2757,7 @@ pub fn serialize_structure_crate_model_typed_link_attribute_definition(
         let mut object_540 = object.key("Rules").start_object();
         for (key_541, value_542) in var_539 {
             {
-                let mut object_543 = object_540.key(key_541).start_object();
+                let mut object_543 = object_540.key(key_541.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_rule(&mut object_543, value_542)?;
                 object_543.finish();
             }
@@ -2848,7 +2848,7 @@ pub fn serialize_structure_crate_model_rule(
         let mut object_559 = object.key("Parameters").start_object();
         for (key_560, value_561) in var_558 {
             {
-                object_559.key(key_560).string(value_561.as_str());
+                object_559.key(key_560.as_str()).string(value_561.as_str());
             }
         }
         object_559.finish();

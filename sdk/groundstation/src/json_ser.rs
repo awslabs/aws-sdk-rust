@@ -15,7 +15,7 @@ pub fn serialize_structure_crate_input_create_config_input(
         let mut object_5 = object.key("tags").start_object();
         for (key_6, value_7) in var_4 {
             {
-                object_5.key(key_6).string(value_7.as_str());
+                object_5.key(key_6.as_str()).string(value_7.as_str());
             }
         }
         object_5.finish();
@@ -45,7 +45,7 @@ pub fn serialize_structure_crate_input_create_dataflow_endpoint_group_input(
         let mut object_13 = object.key("tags").start_object();
         for (key_14, value_15) in var_12 {
             {
-                object_13.key(key_14).string(value_15.as_str());
+                object_13.key(key_14.as_str()).string(value_15.as_str());
             }
         }
         object_13.finish();
@@ -97,7 +97,7 @@ pub fn serialize_structure_crate_input_create_mission_profile_input(
         let mut object_26 = object.key("tags").start_object();
         for (key_27, value_28) in var_25 {
             {
-                object_26.key(key_27).string(value_28.as_str());
+                object_26.key(key_27.as_str()).string(value_28.as_str());
             }
         }
         object_26.finish();
@@ -198,7 +198,7 @@ pub fn serialize_structure_crate_input_reserve_contact_input(
         let mut object_48 = object.key("tags").start_object();
         for (key_49, value_50) in var_47 {
             {
-                object_48.key(key_49).string(value_50.as_str());
+                object_48.key(key_49.as_str()).string(value_50.as_str());
             }
         }
         object_48.finish();
@@ -214,7 +214,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_52 = object.key("tags").start_object();
         for (key_53, value_54) in var_51 {
             {
-                object_52.key(key_53).string(value_54.as_str());
+                object_52.key(key_53.as_str()).string(value_54.as_str());
             }
         }
         object_52.finish();

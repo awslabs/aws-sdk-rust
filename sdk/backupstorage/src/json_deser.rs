@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_crate_error_access_denied_exception_json_err(
+pub(crate) fn deser_structure_crate_error_access_denied_exception_json_err(
     value: &[u8],
     mut builder: crate::error::access_denied_exception::Builder,
 ) -> Result<crate::error::access_denied_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -47,7 +47,7 @@ pub fn deser_structure_crate_error_access_denied_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_illegal_argument_exception_json_err(
+pub(crate) fn deser_structure_crate_error_illegal_argument_exception_json_err(
     value: &[u8],
     mut builder: crate::error::illegal_argument_exception::Builder,
 ) -> Result<crate::error::illegal_argument_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -90,7 +90,7 @@ pub fn deser_structure_crate_error_illegal_argument_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_resource_not_found_exception_json_err(
+pub(crate) fn deser_structure_crate_error_resource_not_found_exception_json_err(
     value: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -133,7 +133,7 @@ pub fn deser_structure_crate_error_resource_not_found_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_retryable_exception_json_err(
+pub(crate) fn deser_structure_crate_error_retryable_exception_json_err(
     value: &[u8],
     mut builder: crate::error::retryable_exception::Builder,
 ) -> Result<crate::error::retryable_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -175,7 +175,7 @@ pub fn deser_structure_crate_error_retryable_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_service_internal_exception_json_err(
+pub(crate) fn deser_structure_crate_error_service_internal_exception_json_err(
     value: &[u8],
     mut builder: crate::error::service_internal_exception::Builder,
 ) -> Result<crate::error::service_internal_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -218,7 +218,7 @@ pub fn deser_structure_crate_error_service_internal_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_service_unavailable_exception_json_err(
+pub(crate) fn deser_structure_crate_error_service_unavailable_exception_json_err(
     value: &[u8],
     mut builder: crate::error::service_unavailable_exception::Builder,
 ) -> Result<crate::error::service_unavailable_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -261,7 +261,7 @@ pub fn deser_structure_crate_error_service_unavailable_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_throttling_exception_json_err(
+pub(crate) fn deser_structure_crate_error_throttling_exception_json_err(
     value: &[u8],
     mut builder: crate::error::throttling_exception::Builder,
 ) -> Result<crate::error::throttling_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -303,7 +303,7 @@ pub fn deser_structure_crate_error_throttling_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_kms_invalid_key_usage_exception_json_err(
+pub(crate) fn deser_structure_crate_error_kms_invalid_key_usage_exception_json_err(
     value: &[u8],
     mut builder: crate::error::kms_invalid_key_usage_exception::Builder,
 ) -> Result<
@@ -348,7 +348,7 @@ pub fn deser_structure_crate_error_kms_invalid_key_usage_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_chunks(
+pub(crate) fn deser_operation_crate_operation_list_chunks(
     value: &[u8],
     mut builder: crate::output::list_chunks_output::Builder,
 ) -> Result<crate::output::list_chunks_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -397,7 +397,7 @@ pub fn deser_operation_crate_operation_list_chunks(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_objects(
+pub(crate) fn deser_operation_crate_operation_list_objects(
     value: &[u8],
     mut builder: crate::output::list_objects_output::Builder,
 ) -> Result<crate::output::list_objects_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -446,7 +446,7 @@ pub fn deser_operation_crate_operation_list_objects(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_not_readable_input_stream_exception_json_err(
+pub(crate) fn deser_structure_crate_error_not_readable_input_stream_exception_json_err(
     value: &[u8],
     mut builder: crate::error::not_readable_input_stream_exception::Builder,
 ) -> Result<
@@ -491,7 +491,7 @@ pub fn deser_structure_crate_error_not_readable_input_stream_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_notify_object_complete(
+pub(crate) fn deser_operation_crate_operation_notify_object_complete(
     value: &[u8],
     mut builder: crate::output::notify_object_complete_output::Builder,
 ) -> Result<
@@ -549,7 +549,7 @@ pub fn deser_operation_crate_operation_notify_object_complete(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_put_chunk(
+pub(crate) fn deser_operation_crate_operation_put_chunk(
     value: &[u8],
     mut builder: crate::output::put_chunk_output::Builder,
 ) -> Result<crate::output::put_chunk_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -603,7 +603,7 @@ pub fn deser_operation_crate_operation_put_chunk(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_put_object(
+pub(crate) fn deser_operation_crate_operation_put_object(
     value: &[u8],
     mut builder: crate::output::put_object_output::Builder,
 ) -> Result<crate::output::put_object_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -679,7 +679,7 @@ pub fn deser_operation_crate_operation_put_object(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_data_already_exists_exception_json_err(
+pub(crate) fn deser_structure_crate_error_data_already_exists_exception_json_err(
     value: &[u8],
     mut builder: crate::error::data_already_exists_exception::Builder,
 ) -> Result<crate::error::data_already_exists_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -740,7 +740,7 @@ pub fn deser_structure_crate_error_data_already_exists_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_start_object(
+pub(crate) fn deser_operation_crate_operation_start_object(
     value: &[u8],
     mut builder: crate::output::start_object_output::Builder,
 ) -> Result<crate::output::start_object_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -782,7 +782,7 @@ pub fn deser_operation_crate_operation_start_object(
     Ok(builder)
 }
 
-pub fn or_empty_doc(data: &[u8]) -> &[u8] {
+pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
     } else {
@@ -790,8 +790,8 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_backupstorage_chunk_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_backupstorage_chunk_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Chunk>>, aws_smithy_json::deserialize::Error>
 where
@@ -825,8 +825,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_backupstorage_object_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_backupstorage_object_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::BackupObject>>, aws_smithy_json::deserialize::Error>
 where
@@ -861,7 +861,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_chunk<'a, I>(
+pub(crate) fn deser_structure_crate_model_chunk<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Chunk>, aws_smithy_json::deserialize::Error>
 where
@@ -873,7 +873,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Chunk::builder();
+            let mut builder = crate::model::chunk::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -884,7 +884,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -893,7 +893,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -947,7 +947,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_backup_object<'a, I>(
+pub(crate) fn deser_structure_crate_model_backup_object<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::BackupObject>, aws_smithy_json::deserialize::Error>
 where
@@ -959,7 +959,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::BackupObject::builder();
+            let mut builder = crate::model::backup_object::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -979,7 +979,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }

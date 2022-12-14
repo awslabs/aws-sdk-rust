@@ -583,7 +583,7 @@ pub fn serialize_structure_crate_input_start_medical_transcription_job_input(
         let mut object_110 = object.key("KMSEncryptionContext").start_object();
         for (key_111, value_112) in var_109 {
             {
-                object_110.key(key_111).string(value_112.as_str());
+                object_110.key(key_111.as_str()).string(value_112.as_str());
             }
         }
         object_110.finish();
@@ -660,7 +660,7 @@ pub fn serialize_structure_crate_input_start_transcription_job_input(
         let mut object_132 = object.key("KMSEncryptionContext").start_object();
         for (key_133, value_134) in var_131 {
             {
-                object_132.key(key_133).string(value_134.as_str());
+                object_132.key(key_133.as_str()).string(value_134.as_str());
             }
         }
         object_132.finish();

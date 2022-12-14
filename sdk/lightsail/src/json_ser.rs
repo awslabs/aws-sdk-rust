@@ -260,7 +260,7 @@ pub fn serialize_structure_crate_input_create_container_service_input(
         let mut object_55 = object.key("publicDomainNames").start_object();
         for (key_56, value_57) in var_54 {
             {
-                let mut array_58 = object_55.key(key_56).start_array();
+                let mut array_58 = object_55.key(key_56.as_str()).start_array();
                 for item_59 in value_57 {
                     {
                         array_58.value().string(item_59.as_str());
@@ -301,7 +301,7 @@ pub fn serialize_structure_crate_input_create_container_service_deployment_input
         let mut object_66 = object.key("containers").start_object();
         for (key_67, value_68) in var_65 {
             {
-                let mut object_69 = object_66.key(key_67).start_object();
+                let mut object_69 = object_66.key(key_67.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_container(
                     &mut object_69,
                     value_68,
@@ -619,7 +619,7 @@ pub fn serialize_structure_crate_input_create_instances_from_snapshot_input(
         let mut object_152 = object.key("attachedDiskMapping").start_object();
         for (key_153, value_154) in var_151 {
             {
-                let mut array_155 = object_152.key(key_153).start_array();
+                let mut array_155 = object_152.key(key_153.as_str()).start_array();
                 for item_156 in value_154 {
                     {
                         let mut object_157 = array_155.value().start_object();
@@ -2606,7 +2606,7 @@ pub fn serialize_structure_crate_input_update_container_service_input(
         let mut object_494 = object.key("publicDomainNames").start_object();
         for (key_495, value_496) in var_493 {
             {
-                let mut array_497 = object_494.key(key_495).start_array();
+                let mut array_497 = object_494.key(key_495.as_str()).start_array();
                 for item_498 in value_496 {
                     {
                         array_497.value().string(item_498.as_str());
@@ -2900,7 +2900,7 @@ pub fn serialize_structure_crate_model_container_service_deployment_request(
         let mut object_559 = object.key("containers").start_object();
         for (key_560, value_561) in var_558 {
             {
-                let mut object_562 = object_559.key(key_560).start_object();
+                let mut object_562 = object_559.key(key_560.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_container(
                     &mut object_562,
                     value_561,
@@ -2953,7 +2953,7 @@ pub fn serialize_structure_crate_model_container(
         let mut object_572 = object.key("environment").start_object();
         for (key_573, value_574) in var_571 {
             {
-                object_572.key(key_573).string(value_574.as_str());
+                object_572.key(key_573.as_str()).string(value_574.as_str());
             }
         }
         object_572.finish();
@@ -2962,7 +2962,7 @@ pub fn serialize_structure_crate_model_container(
         let mut object_576 = object.key("ports").start_object();
         for (key_577, value_578) in var_575 {
             {
-                object_576.key(key_577).string(value_578.as_str());
+                object_576.key(key_577.as_str()).string(value_578.as_str());
             }
         }
         object_576.finish();
@@ -3123,7 +3123,7 @@ pub fn serialize_structure_crate_model_domain_entry(
         let mut object_609 = object.key("options").start_object();
         for (key_610, value_611) in var_608 {
             {
-                object_609.key(key_610).string(value_611.as_str());
+                object_609.key(key_610.as_str()).string(value_611.as_str());
             }
         }
         object_609.finish();

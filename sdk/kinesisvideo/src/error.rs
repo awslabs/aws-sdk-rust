@@ -17,7 +17,7 @@ impl std::fmt::Debug for VersionMismatchException {
 }
 impl VersionMismatchException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -82,7 +82,7 @@ impl std::fmt::Debug for ResourceNotFoundException {
 }
 impl ResourceNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -148,7 +148,7 @@ impl std::fmt::Debug for ResourceInUseException {
 }
 impl ResourceInUseException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -213,7 +213,7 @@ impl std::fmt::Debug for NotAuthorizedException {
 }
 impl NotAuthorizedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -278,7 +278,7 @@ impl std::fmt::Debug for InvalidArgumentException {
 }
 impl InvalidArgumentException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -343,7 +343,7 @@ impl std::fmt::Debug for ClientLimitExceededException {
 }
 impl ClientLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -408,7 +408,7 @@ impl std::fmt::Debug for AccessDeniedException {
 }
 impl AccessDeniedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -473,7 +473,7 @@ impl std::fmt::Debug for NoDataRetentionException {
 }
 impl NoDataRetentionException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -538,7 +538,7 @@ impl std::fmt::Debug for InvalidResourceFormatException {
 }
 impl InvalidResourceFormatException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -603,7 +603,7 @@ impl std::fmt::Debug for TagsPerResourceExceededLimitException {
 }
 impl TagsPerResourceExceededLimitException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -668,7 +668,7 @@ impl std::fmt::Debug for InvalidDeviceException {
 }
 impl InvalidDeviceException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -733,7 +733,7 @@ impl std::fmt::Debug for DeviceStreamLimitExceededException {
 }
 impl DeviceStreamLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -798,7 +798,7 @@ impl std::fmt::Debug for AccountStreamLimitExceededException {
 }
 impl AccountStreamLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -863,7 +863,7 @@ impl std::fmt::Debug for AccountChannelLimitExceededException {
 }
 impl AccountChannelLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }

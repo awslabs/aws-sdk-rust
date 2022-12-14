@@ -12,7 +12,7 @@ pub fn serialize_structure_crate_input_create_backup_plan_input(
         let mut object_4 = object.key("BackupPlanTags").start_object();
         for (key_5, value_6) in var_3 {
             {
-                object_4.key(key_5).string(value_6.as_str());
+                object_4.key(key_5.as_str()).string(value_6.as_str());
             }
         }
         object_4.finish();
@@ -46,7 +46,7 @@ pub fn serialize_structure_crate_input_create_backup_vault_input(
         let mut object_12 = object.key("BackupVaultTags").start_object();
         for (key_13, value_14) in var_11 {
             {
-                object_12.key(key_13).string(value_14.as_str());
+                object_12.key(key_13.as_str()).string(value_14.as_str());
             }
         }
         object_12.finish();
@@ -88,7 +88,7 @@ pub fn serialize_structure_crate_input_create_framework_input(
         let mut object_24 = object.key("FrameworkTags").start_object();
         for (key_25, value_26) in var_23 {
             {
-                object_24.key(key_25).string(value_26.as_str());
+                object_24.key(key_25.as_str()).string(value_26.as_str());
             }
         }
         object_24.finish();
@@ -124,7 +124,7 @@ pub fn serialize_structure_crate_input_create_report_plan_input(
         let mut object_34 = object.key("ReportPlanTags").start_object();
         for (key_35, value_36) in var_33 {
             {
-                object_34.key(key_35).string(value_36.as_str());
+                object_34.key(key_35.as_str()).string(value_36.as_str());
             }
         }
         object_34.finish();
@@ -209,7 +209,7 @@ pub fn serialize_structure_crate_input_start_backup_job_input(
         let mut object_49 = object.key("BackupOptions").start_object();
         for (key_50, value_51) in var_48 {
             {
-                object_49.key(key_50).string(value_51.as_str());
+                object_49.key(key_50.as_str()).string(value_51.as_str());
             }
         }
         object_49.finish();
@@ -238,7 +238,7 @@ pub fn serialize_structure_crate_input_start_backup_job_input(
         let mut object_59 = object.key("RecoveryPointTags").start_object();
         for (key_60, value_61) in var_58 {
             {
-                object_59.key(key_60).string(value_61.as_str());
+                object_59.key(key_60.as_str()).string(value_61.as_str());
             }
         }
         object_59.finish();
@@ -308,7 +308,7 @@ pub fn serialize_structure_crate_input_start_restore_job_input(
         let mut object_75 = object.key("Metadata").start_object();
         for (key_76, value_77) in var_74 {
             {
-                object_75.key(key_76).string(value_77.as_str());
+                object_75.key(key_76.as_str()).string(value_77.as_str());
             }
         }
         object_75.finish();
@@ -330,7 +330,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_81 = object.key("Tags").start_object();
         for (key_82, value_83) in var_80 {
             {
-                object_81.key(key_82).string(value_83.as_str());
+                object_81.key(key_82.as_str()).string(value_83.as_str());
             }
         }
         object_81.finish();
@@ -401,7 +401,7 @@ pub fn serialize_structure_crate_input_update_global_settings_input(
         let mut object_96 = object.key("GlobalSettings").start_object();
         for (key_97, value_98) in var_95 {
             {
-                object_96.key(key_97).string(value_98.as_str());
+                object_96.key(key_97.as_str()).string(value_98.as_str());
             }
         }
         object_96.finish();
@@ -431,7 +431,7 @@ pub fn serialize_structure_crate_input_update_region_settings_input(
             .start_object();
         for (key_103, value_104) in var_101 {
             {
-                object_102.key(key_103).boolean(*value_104);
+                object_102.key(key_103.as_str()).boolean(*value_104);
             }
         }
         object_102.finish();
@@ -440,7 +440,7 @@ pub fn serialize_structure_crate_input_update_region_settings_input(
         let mut object_106 = object.key("ResourceTypeOptInPreference").start_object();
         for (key_107, value_108) in var_105 {
             {
-                object_106.key(key_107).boolean(*value_108);
+                object_106.key(key_107.as_str()).boolean(*value_108);
             }
         }
         object_106.finish();
@@ -691,7 +691,7 @@ pub fn serialize_structure_crate_model_backup_rule_input(
         let mut object_164 = object.key("RecoveryPointTags").start_object();
         for (key_165, value_166) in var_163 {
             {
-                object_164.key(key_165).string(value_166.as_str());
+                object_164.key(key_165.as_str()).string(value_166.as_str());
             }
         }
         object_164.finish();
@@ -727,7 +727,7 @@ pub fn serialize_structure_crate_model_advanced_backup_setting(
         let mut object_174 = object.key("BackupOptions").start_object();
         for (key_175, value_176) in var_173 {
             {
-                object_174.key(key_175).string(value_176.as_str());
+                object_174.key(key_175.as_str()).string(value_176.as_str());
             }
         }
         object_174.finish();
@@ -853,7 +853,7 @@ pub fn serialize_structure_crate_model_control_scope(
         let mut object_205 = object.key("Tags").start_object();
         for (key_206, value_207) in var_204 {
             {
-                object_205.key(key_206).string(value_207.as_str());
+                object_205.key(key_206.as_str()).string(value_207.as_str());
             }
         }
         object_205.finish();

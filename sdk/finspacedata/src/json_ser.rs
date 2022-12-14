@@ -23,7 +23,7 @@ pub fn serialize_structure_crate_input_create_changeset_input(
         let mut object_5 = object.key("formatParams").start_object();
         for (key_6, value_7) in var_4 {
             {
-                object_5.key(key_6).string(value_7.as_str());
+                object_5.key(key_6.as_str()).string(value_7.as_str());
             }
         }
         object_5.finish();
@@ -32,7 +32,7 @@ pub fn serialize_structure_crate_input_create_changeset_input(
         let mut object_9 = object.key("sourceParams").start_object();
         for (key_10, value_11) in var_8 {
             {
-                object_9.key(key_10).string(value_11.as_str());
+                object_9.key(key_10.as_str()).string(value_11.as_str());
             }
         }
         object_9.finish();
@@ -232,7 +232,7 @@ pub fn serialize_structure_crate_input_update_changeset_input(
         let mut object_52 = object.key("formatParams").start_object();
         for (key_53, value_54) in var_51 {
             {
-                object_52.key(key_53).string(value_54.as_str());
+                object_52.key(key_53.as_str()).string(value_54.as_str());
             }
         }
         object_52.finish();
@@ -241,7 +241,7 @@ pub fn serialize_structure_crate_input_update_changeset_input(
         let mut object_56 = object.key("sourceParams").start_object();
         for (key_57, value_58) in var_55 {
             {
-                object_56.key(key_57).string(value_58.as_str());
+                object_56.key(key_57.as_str()).string(value_58.as_str());
             }
         }
         object_56.finish();
@@ -396,7 +396,7 @@ pub fn serialize_structure_crate_model_data_view_destination_type_params(
             .start_object();
         for (key_92, value_93) in var_90 {
             {
-                object_91.key(key_92).string(value_93.as_str());
+                object_91.key(key_92.as_str()).string(value_93.as_str());
             }
         }
         object_91.finish();

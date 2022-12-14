@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_crate_error_internal_server_exception_json_err(
+pub(crate) fn deser_structure_crate_error_internal_server_exception_json_err(
     value: &[u8],
     mut builder: crate::error::internal_server_exception::Builder,
 ) -> Result<crate::error::internal_server_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -47,7 +47,7 @@ pub fn deser_structure_crate_error_internal_server_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_resource_not_found_exception_json_err(
+pub(crate) fn deser_structure_crate_error_resource_not_found_exception_json_err(
     value: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -90,7 +90,7 @@ pub fn deser_structure_crate_error_resource_not_found_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_service_quota_exceeded_exception_json_err(
+pub(crate) fn deser_structure_crate_error_service_quota_exceeded_exception_json_err(
     value: &[u8],
     mut builder: crate::error::service_quota_exceeded_exception::Builder,
 ) -> Result<
@@ -135,7 +135,7 @@ pub fn deser_structure_crate_error_service_quota_exceeded_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_validation_exception_json_err(
+pub(crate) fn deser_structure_crate_error_validation_exception_json_err(
     value: &[u8],
     mut builder: crate::error::validation_exception::Builder,
 ) -> Result<crate::error::validation_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -177,7 +177,7 @@ pub fn deser_structure_crate_error_validation_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_create_savings_plan(
+pub(crate) fn deser_operation_crate_operation_create_savings_plan(
     value: &[u8],
     mut builder: crate::output::create_savings_plan_output::Builder,
 ) -> Result<crate::output::create_savings_plan_output::Builder, aws_smithy_json::deserialize::Error>
@@ -220,7 +220,7 @@ pub fn deser_operation_crate_operation_create_savings_plan(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_describe_savings_plan_rates(
+pub(crate) fn deser_operation_crate_operation_describe_savings_plan_rates(
     value: &[u8],
     mut builder: crate::output::describe_savings_plan_rates_output::Builder,
 ) -> Result<
@@ -279,7 +279,7 @@ pub fn deser_operation_crate_operation_describe_savings_plan_rates(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_describe_savings_plans(
+pub(crate) fn deser_operation_crate_operation_describe_savings_plans(
     value: &[u8],
     mut builder: crate::output::describe_savings_plans_output::Builder,
 ) -> Result<
@@ -329,7 +329,7 @@ pub fn deser_operation_crate_operation_describe_savings_plans(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_describe_savings_plans_offering_rates(
+pub(crate) fn deser_operation_crate_operation_describe_savings_plans_offering_rates(
     value: &[u8],
     mut builder: crate::output::describe_savings_plans_offering_rates_output::Builder,
 ) -> Result<
@@ -379,7 +379,7 @@ pub fn deser_operation_crate_operation_describe_savings_plans_offering_rates(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_describe_savings_plans_offerings(
+pub(crate) fn deser_operation_crate_operation_describe_savings_plans_offerings(
     value: &[u8],
     mut builder: crate::output::describe_savings_plans_offerings_output::Builder,
 ) -> Result<
@@ -429,7 +429,7 @@ pub fn deser_operation_crate_operation_describe_savings_plans_offerings(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_tags_for_resource(
+pub(crate) fn deser_operation_crate_operation_list_tags_for_resource(
     value: &[u8],
     mut builder: crate::output::list_tags_for_resource_output::Builder,
 ) -> Result<
@@ -472,7 +472,7 @@ pub fn deser_operation_crate_operation_list_tags_for_resource(
     Ok(builder)
 }
 
-pub fn or_empty_doc(data: &[u8]) -> &[u8] {
+pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
     } else {
@@ -480,8 +480,8 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_savingsplans_savings_plan_rate_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_savingsplans_savings_plan_rate_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::SavingsPlanRate>>, aws_smithy_json::deserialize::Error>
 where
@@ -518,8 +518,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_savingsplans_savings_plan_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_savingsplans_savings_plan_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::SavingsPlan>>, aws_smithy_json::deserialize::Error>
 where
@@ -554,8 +554,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_savingsplans_savings_plan_offering_rates_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_savingsplans_savings_plan_offering_rates_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::SavingsPlanOfferingRate>>,
@@ -594,8 +594,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_savingsplans_savings_plan_offerings_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_savingsplans_savings_plan_offerings_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::SavingsPlanOffering>>,
@@ -635,8 +635,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_com_amazonaws_savingsplans_tag_map<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_map_com_amazonaws_savingsplans_tag_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -681,7 +681,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_savings_plan_rate<'a, I>(
+pub(crate) fn deser_structure_crate_model_savings_plan_rate<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SavingsPlanRate>, aws_smithy_json::deserialize::Error>
 where
@@ -693,7 +693,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::SavingsPlanRate::builder();
+            let mut builder = crate::model::savings_plan_rate::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -803,7 +803,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_savings_plan<'a, I>(
+pub(crate) fn deser_structure_crate_model_savings_plan<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SavingsPlan>, aws_smithy_json::deserialize::Error>
 where
@@ -815,7 +815,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::SavingsPlan::builder();
+            let mut builder = crate::model::savings_plan::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -981,7 +981,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -1009,7 +1009,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_savings_plan_offering_rate<'a, I>(
+pub(crate) fn deser_structure_crate_model_savings_plan_offering_rate<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SavingsPlanOfferingRate>, aws_smithy_json::deserialize::Error>
 where
@@ -1021,7 +1021,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::SavingsPlanOfferingRate::builder();
+            let mut builder = crate::model::savings_plan_offering_rate::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -1124,7 +1124,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_savings_plan_offering<'a, I>(
+pub(crate) fn deser_structure_crate_model_savings_plan_offering<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SavingsPlanOffering>, aws_smithy_json::deserialize::Error>
 where
@@ -1136,7 +1136,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::SavingsPlanOffering::builder();
+            let mut builder = crate::model::savings_plan_offering::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -1196,7 +1196,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -1263,8 +1263,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_savingsplans_savings_plan_rate_property_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_savingsplans_savings_plan_rate_property_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::SavingsPlanRateProperty>>,
@@ -1303,8 +1303,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_savingsplans_savings_plan_product_type_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_savingsplans_savings_plan_product_type_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::SavingsPlanProductType>>,
@@ -1348,7 +1348,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_parent_savings_plan_offering<'a, I>(
+pub(crate) fn deser_structure_crate_model_parent_savings_plan_offering<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ParentSavingsPlanOffering>, aws_smithy_json::deserialize::Error>
 where
@@ -1360,7 +1360,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::ParentSavingsPlanOffering::builder();
+            let mut builder = crate::model::parent_savings_plan_offering::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -1406,7 +1406,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -1450,8 +1450,11 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_savingsplans_savings_plan_offering_rate_property_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_savingsplans_savings_plan_offering_rate_property_list<
+    'a,
+    I,
+>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::SavingsPlanOfferingRateProperty>>,
@@ -1490,8 +1493,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_savingsplans_savings_plan_offering_property_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_savingsplans_savings_plan_offering_property_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::SavingsPlanOfferingProperty>>,
@@ -1530,7 +1533,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_savings_plan_rate_property<'a, I>(
+pub(crate) fn deser_structure_crate_model_savings_plan_rate_property<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SavingsPlanRateProperty>, aws_smithy_json::deserialize::Error>
 where
@@ -1542,7 +1545,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::SavingsPlanRateProperty::builder();
+            let mut builder = crate::model::savings_plan_rate_property::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -1591,7 +1594,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_savings_plan_offering_rate_property<'a, I>(
+pub(crate) fn deser_structure_crate_model_savings_plan_offering_rate_property<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::SavingsPlanOfferingRateProperty>,
@@ -1606,7 +1609,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::SavingsPlanOfferingRateProperty::builder();
+            let mut builder = crate::model::savings_plan_offering_rate_property::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -1649,7 +1652,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_savings_plan_offering_property<'a, I>(
+pub(crate) fn deser_structure_crate_model_savings_plan_offering_property<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SavingsPlanOfferingProperty>, aws_smithy_json::deserialize::Error>
 where
@@ -1661,7 +1664,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::SavingsPlanOfferingProperty::builder();
+            let mut builder = crate::model::savings_plan_offering_property::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

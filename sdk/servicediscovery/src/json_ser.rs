@@ -206,7 +206,7 @@ pub fn serialize_structure_crate_input_discover_instances_input(
         let mut object_50 = object.key("QueryParameters").start_object();
         for (key_51, value_52) in var_49 {
             {
-                object_50.key(key_51).string(value_52.as_str());
+                object_50.key(key_51.as_str()).string(value_52.as_str());
             }
         }
         object_50.finish();
@@ -215,7 +215,7 @@ pub fn serialize_structure_crate_input_discover_instances_input(
         let mut object_54 = object.key("OptionalParameters").start_object();
         for (key_55, value_56) in var_53 {
             {
-                object_54.key(key_55).string(value_56.as_str());
+                object_54.key(key_55.as_str()).string(value_56.as_str());
             }
         }
         object_54.finish();
@@ -433,7 +433,7 @@ pub fn serialize_structure_crate_input_register_instance_input(
         let mut object_95 = object.key("Attributes").start_object();
         for (key_96, value_97) in var_94 {
             {
-                object_95.key(key_96).string(value_97.as_str());
+                object_95.key(key_96.as_str()).string(value_97.as_str());
             }
         }
         object_95.finish();

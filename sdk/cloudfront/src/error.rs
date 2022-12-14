@@ -17,7 +17,7 @@ impl std::fmt::Debug for TrustedSignerDoesNotExist {
 }
 impl TrustedSignerDoesNotExist {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -82,7 +82,7 @@ impl std::fmt::Debug for TooManyTrustedSigners {
 }
 impl TooManyTrustedSigners {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -147,7 +147,7 @@ impl std::fmt::Debug for TooManyStreamingDistributionCnamEs {
 }
 impl TooManyStreamingDistributionCnamEs {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -215,7 +215,7 @@ impl std::fmt::Debug for PreconditionFailed {
 }
 impl PreconditionFailed {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -280,7 +280,7 @@ impl std::fmt::Debug for NoSuchStreamingDistribution {
 }
 impl NoSuchStreamingDistribution {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -345,7 +345,7 @@ impl std::fmt::Debug for MissingBody {
 }
 impl MissingBody {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -410,7 +410,7 @@ impl std::fmt::Debug for InvalidOriginAccessIdentity {
 }
 impl InvalidOriginAccessIdentity {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -475,7 +475,7 @@ impl std::fmt::Debug for InvalidOriginAccessControl {
 }
 impl InvalidOriginAccessControl {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -540,7 +540,7 @@ impl std::fmt::Debug for InvalidIfMatchVersion {
 }
 impl InvalidIfMatchVersion {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -605,7 +605,7 @@ impl std::fmt::Debug for InvalidArgument {
 }
 impl InvalidArgument {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -670,7 +670,7 @@ impl std::fmt::Debug for InconsistentQuantities {
 }
 impl InconsistentQuantities {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -735,7 +735,7 @@ impl std::fmt::Debug for IllegalUpdate {
 }
 impl IllegalUpdate {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -800,7 +800,7 @@ impl std::fmt::Debug for CnameAlreadyExists {
 }
 impl CnameAlreadyExists {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -865,7 +865,7 @@ impl std::fmt::Debug for AccessDenied {
 }
 impl AccessDenied {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -931,7 +931,7 @@ impl std::fmt::Debug for TooManyCustomHeadersInResponseHeadersPolicy {
 }
 impl TooManyCustomHeadersInResponseHeadersPolicy {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -997,7 +997,7 @@ impl std::fmt::Debug for TooLongCspInResponseHeadersPolicy {
 }
 impl TooLongCspInResponseHeadersPolicy {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1065,7 +1065,7 @@ impl std::fmt::Debug for ResponseHeadersPolicyAlreadyExists {
 }
 impl ResponseHeadersPolicyAlreadyExists {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1130,7 +1130,7 @@ impl std::fmt::Debug for NoSuchResponseHeadersPolicy {
 }
 impl NoSuchResponseHeadersPolicy {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1195,7 +1195,7 @@ impl std::fmt::Debug for NoSuchRealtimeLogConfig {
 }
 impl NoSuchRealtimeLogConfig {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1260,7 +1260,7 @@ impl std::fmt::Debug for NoSuchPublicKey {
 }
 impl NoSuchPublicKey {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1325,7 +1325,7 @@ impl std::fmt::Debug for CannotChangeImmutablePublicKeyFields {
 }
 impl CannotChangeImmutablePublicKeyFields {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1390,7 +1390,7 @@ impl std::fmt::Debug for TooManyQueryStringsInOriginRequestPolicy {
 }
 impl TooManyQueryStringsInOriginRequestPolicy {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1455,7 +1455,7 @@ impl std::fmt::Debug for TooManyHeadersInOriginRequestPolicy {
 }
 impl TooManyHeadersInOriginRequestPolicy {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1520,7 +1520,7 @@ impl std::fmt::Debug for TooManyCookiesInOriginRequestPolicy {
 }
 impl TooManyCookiesInOriginRequestPolicy {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1585,7 +1585,7 @@ impl std::fmt::Debug for OriginRequestPolicyAlreadyExists {
 }
 impl OriginRequestPolicyAlreadyExists {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1650,7 +1650,7 @@ impl std::fmt::Debug for NoSuchOriginRequestPolicy {
 }
 impl NoSuchOriginRequestPolicy {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1715,7 +1715,7 @@ impl std::fmt::Debug for OriginAccessControlAlreadyExists {
 }
 impl OriginAccessControlAlreadyExists {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1780,7 +1780,7 @@ impl std::fmt::Debug for NoSuchOriginAccessControl {
 }
 impl NoSuchOriginAccessControl {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1845,7 +1845,7 @@ impl std::fmt::Debug for TooManyPublicKeysInKeyGroup {
 }
 impl TooManyPublicKeysInKeyGroup {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1910,7 +1910,7 @@ impl std::fmt::Debug for NoSuchResource {
 }
 impl NoSuchResource {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1975,7 +1975,7 @@ impl std::fmt::Debug for KeyGroupAlreadyExists {
 }
 impl KeyGroupAlreadyExists {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2040,7 +2040,7 @@ impl std::fmt::Debug for UnsupportedOperation {
 }
 impl UnsupportedOperation {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2105,7 +2105,7 @@ impl std::fmt::Debug for NoSuchFunctionExists {
 }
 impl NoSuchFunctionExists {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2170,7 +2170,7 @@ impl std::fmt::Debug for FunctionSizeLimitExceeded {
 }
 impl FunctionSizeLimitExceeded {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2235,7 +2235,7 @@ impl std::fmt::Debug for TooManyFieldLevelEncryptionFieldPatterns {
 }
 impl TooManyFieldLevelEncryptionFieldPatterns {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2300,7 +2300,7 @@ impl std::fmt::Debug for TooManyFieldLevelEncryptionEncryptionEntities {
 }
 impl TooManyFieldLevelEncryptionEncryptionEntities {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2365,7 +2365,7 @@ impl std::fmt::Debug for NoSuchFieldLevelEncryptionProfile {
 }
 impl NoSuchFieldLevelEncryptionProfile {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2430,7 +2430,7 @@ impl std::fmt::Debug for FieldLevelEncryptionProfileSizeExceeded {
 }
 impl FieldLevelEncryptionProfileSizeExceeded {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2495,7 +2495,7 @@ impl std::fmt::Debug for FieldLevelEncryptionProfileAlreadyExists {
 }
 impl FieldLevelEncryptionProfileAlreadyExists {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2560,7 +2560,7 @@ impl std::fmt::Debug for TooManyFieldLevelEncryptionQueryArgProfiles {
 }
 impl TooManyFieldLevelEncryptionQueryArgProfiles {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2625,7 +2625,7 @@ impl std::fmt::Debug for TooManyFieldLevelEncryptionContentTypeProfiles {
 }
 impl TooManyFieldLevelEncryptionContentTypeProfiles {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2691,7 +2691,7 @@ impl std::fmt::Debug for QueryArgProfileEmpty {
 }
 impl QueryArgProfileEmpty {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2756,7 +2756,7 @@ impl std::fmt::Debug for NoSuchFieldLevelEncryptionConfig {
 }
 impl NoSuchFieldLevelEncryptionConfig {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2821,7 +2821,7 @@ impl std::fmt::Debug for TrustedKeyGroupDoesNotExist {
 }
 impl TrustedKeyGroupDoesNotExist {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2886,7 +2886,7 @@ impl std::fmt::Debug for TooManyQueryStringParameters {
 }
 impl TooManyQueryStringParameters {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2951,7 +2951,7 @@ impl std::fmt::Debug for TooManyOrigins {
 }
 impl TooManyOrigins {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3016,7 +3016,7 @@ impl std::fmt::Debug for TooManyOriginGroupsPerDistribution {
 }
 impl TooManyOriginGroupsPerDistribution {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3081,7 +3081,7 @@ impl std::fmt::Debug for TooManyOriginCustomHeaders {
 }
 impl TooManyOriginCustomHeaders {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3146,7 +3146,7 @@ impl std::fmt::Debug for TooManyLambdaFunctionAssociations {
 }
 impl TooManyLambdaFunctionAssociations {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3211,7 +3211,7 @@ impl std::fmt::Debug for TooManyKeyGroupsAssociatedToDistribution {
 }
 impl TooManyKeyGroupsAssociatedToDistribution {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3276,7 +3276,7 @@ impl std::fmt::Debug for TooManyHeadersInForwardedValues {
 }
 impl TooManyHeadersInForwardedValues {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3341,7 +3341,7 @@ impl std::fmt::Debug for TooManyFunctionAssociations {
 }
 impl TooManyFunctionAssociations {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3406,7 +3406,7 @@ impl std::fmt::Debug for TooManyDistributionsWithSingleFunctionArn {
 }
 impl TooManyDistributionsWithSingleFunctionArn {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3474,7 +3474,7 @@ impl std::fmt::Debug for TooManyDistributionsWithLambdaAssociations {
 }
 impl TooManyDistributionsWithLambdaAssociations {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3539,7 +3539,7 @@ impl std::fmt::Debug for TooManyDistributionsWithFunctionAssociations {
 }
 impl TooManyDistributionsWithFunctionAssociations {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3605,7 +3605,7 @@ impl std::fmt::Debug for TooManyDistributionsAssociatedToResponseHeadersPolicy {
 }
 impl TooManyDistributionsAssociatedToResponseHeadersPolicy {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3672,7 +3672,7 @@ impl std::fmt::Debug for TooManyDistributionsAssociatedToOriginRequestPolicy {
 }
 impl TooManyDistributionsAssociatedToOriginRequestPolicy {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3738,7 +3738,7 @@ impl std::fmt::Debug for TooManyDistributionsAssociatedToKeyGroup {
 }
 impl TooManyDistributionsAssociatedToKeyGroup {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3804,7 +3804,7 @@ impl std::fmt::Debug for TooManyDistributionsAssociatedToFieldLevelEncryptionCon
 }
 impl TooManyDistributionsAssociatedToFieldLevelEncryptionConfig {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3876,7 +3876,7 @@ impl std::fmt::Debug for TooManyDistributionsAssociatedToCachePolicy {
 }
 impl TooManyDistributionsAssociatedToCachePolicy {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3941,7 +3941,7 @@ impl std::fmt::Debug for TooManyDistributionCnamEs {
 }
 impl TooManyDistributionCnamEs {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4006,7 +4006,7 @@ impl std::fmt::Debug for TooManyCookieNamesInWhiteList {
 }
 impl TooManyCookieNamesInWhiteList {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4071,7 +4071,7 @@ impl std::fmt::Debug for TooManyCertificates {
 }
 impl TooManyCertificates {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4136,7 +4136,7 @@ impl std::fmt::Debug for TooManyCacheBehaviors {
 }
 impl TooManyCacheBehaviors {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4201,7 +4201,7 @@ impl std::fmt::Debug for RealtimeLogConfigOwnerMismatch {
 }
 impl RealtimeLogConfigOwnerMismatch {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4266,7 +4266,7 @@ impl std::fmt::Debug for NoSuchOrigin {
 }
 impl NoSuchOrigin {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4331,7 +4331,7 @@ impl std::fmt::Debug for NoSuchDistribution {
 }
 impl NoSuchDistribution {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4396,7 +4396,7 @@ impl std::fmt::Debug for NoSuchCachePolicy {
 }
 impl NoSuchCachePolicy {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4461,7 +4461,7 @@ impl std::fmt::Debug for InvalidWebAclId {
 }
 impl InvalidWebAclId {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4526,7 +4526,7 @@ impl std::fmt::Debug for InvalidViewerCertificate {
 }
 impl InvalidViewerCertificate {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4591,7 +4591,7 @@ impl std::fmt::Debug for InvalidTtlOrder {
 }
 impl InvalidTtlOrder {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4656,7 +4656,7 @@ impl std::fmt::Debug for InvalidResponseCode {
 }
 impl InvalidResponseCode {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4721,7 +4721,7 @@ impl std::fmt::Debug for InvalidRequiredProtocol {
 }
 impl InvalidRequiredProtocol {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4786,7 +4786,7 @@ impl std::fmt::Debug for InvalidRelativePath {
 }
 impl InvalidRelativePath {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4851,7 +4851,7 @@ impl std::fmt::Debug for InvalidQueryStringParameters {
 }
 impl InvalidQueryStringParameters {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4916,7 +4916,7 @@ impl std::fmt::Debug for InvalidOriginReadTimeout {
 }
 impl InvalidOriginReadTimeout {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4981,7 +4981,7 @@ impl std::fmt::Debug for InvalidOriginKeepaliveTimeout {
 }
 impl InvalidOriginKeepaliveTimeout {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5046,7 +5046,7 @@ impl std::fmt::Debug for InvalidMinimumProtocolVersion {
 }
 impl InvalidMinimumProtocolVersion {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5111,7 +5111,7 @@ impl std::fmt::Debug for InvalidLocationCode {
 }
 impl InvalidLocationCode {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5176,7 +5176,7 @@ impl std::fmt::Debug for InvalidLambdaFunctionAssociation {
 }
 impl InvalidLambdaFunctionAssociation {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5241,7 +5241,7 @@ impl std::fmt::Debug for InvalidHeadersForS3Origin {
 }
 impl InvalidHeadersForS3Origin {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5306,7 +5306,7 @@ impl std::fmt::Debug for InvalidGeoRestrictionParameter {
 }
 impl InvalidGeoRestrictionParameter {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5371,7 +5371,7 @@ impl std::fmt::Debug for InvalidFunctionAssociation {
 }
 impl InvalidFunctionAssociation {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5436,7 +5436,7 @@ impl std::fmt::Debug for InvalidForwardCookies {
 }
 impl InvalidForwardCookies {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5501,7 +5501,7 @@ impl std::fmt::Debug for InvalidErrorCode {
 }
 impl InvalidErrorCode {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5566,7 +5566,7 @@ impl std::fmt::Debug for InvalidDomainNameForOriginAccessControl {
 }
 impl InvalidDomainNameForOriginAccessControl {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5631,7 +5631,7 @@ impl std::fmt::Debug for InvalidDefaultRootObject {
 }
 impl InvalidDefaultRootObject {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5696,7 +5696,7 @@ impl std::fmt::Debug for IllegalOriginAccessConfiguration {
 }
 impl IllegalOriginAccessConfiguration {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5762,7 +5762,7 @@ impl std::fmt::Debug for IllegalFieldLevelEncryptionConfigAssociationWithCacheBe
 }
 impl IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5834,7 +5834,7 @@ impl std::fmt::Debug for NoSuchCloudFrontOriginAccessIdentity {
 }
 impl NoSuchCloudFrontOriginAccessIdentity {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5899,7 +5899,7 @@ impl std::fmt::Debug for TooManyQueryStringsInCachePolicy {
 }
 impl TooManyQueryStringsInCachePolicy {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5964,7 +5964,7 @@ impl std::fmt::Debug for TooManyHeadersInCachePolicy {
 }
 impl TooManyHeadersInCachePolicy {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6029,7 +6029,7 @@ impl std::fmt::Debug for TooManyCookiesInCachePolicy {
 }
 impl TooManyCookiesInCachePolicy {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6094,7 +6094,7 @@ impl std::fmt::Debug for CachePolicyAlreadyExists {
 }
 impl CachePolicyAlreadyExists {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6159,7 +6159,7 @@ impl std::fmt::Debug for InvalidTagging {
 }
 impl InvalidTagging {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6224,7 +6224,7 @@ impl std::fmt::Debug for TestFunctionFailed {
 }
 impl TestFunctionFailed {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6289,7 +6289,7 @@ impl std::fmt::Debug for NoSuchMonitoringSubscription {
 }
 impl NoSuchMonitoringSubscription {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6354,7 +6354,7 @@ impl std::fmt::Debug for NoSuchInvalidation {
 }
 impl NoSuchInvalidation {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6419,7 +6419,7 @@ impl std::fmt::Debug for StreamingDistributionNotDisabled {
 }
 impl StreamingDistributionNotDisabled {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6484,7 +6484,7 @@ impl std::fmt::Debug for ResponseHeadersPolicyInUse {
 }
 impl ResponseHeadersPolicyInUse {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6549,7 +6549,7 @@ impl std::fmt::Debug for IllegalDelete {
 }
 impl IllegalDelete {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6614,7 +6614,7 @@ impl std::fmt::Debug for RealtimeLogConfigInUse {
 }
 impl RealtimeLogConfigInUse {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6679,7 +6679,7 @@ impl std::fmt::Debug for PublicKeyInUse {
 }
 impl PublicKeyInUse {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6744,7 +6744,7 @@ impl std::fmt::Debug for OriginRequestPolicyInUse {
 }
 impl OriginRequestPolicyInUse {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6809,7 +6809,7 @@ impl std::fmt::Debug for OriginAccessControlInUse {
 }
 impl OriginAccessControlInUse {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6874,7 +6874,7 @@ impl std::fmt::Debug for ResourceInUse {
 }
 impl ResourceInUse {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6939,7 +6939,7 @@ impl std::fmt::Debug for FunctionInUse {
 }
 impl FunctionInUse {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7004,7 +7004,7 @@ impl std::fmt::Debug for FieldLevelEncryptionProfileInUse {
 }
 impl FieldLevelEncryptionProfileInUse {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7069,7 +7069,7 @@ impl std::fmt::Debug for FieldLevelEncryptionConfigInUse {
 }
 impl FieldLevelEncryptionConfigInUse {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7134,7 +7134,7 @@ impl std::fmt::Debug for DistributionNotDisabled {
 }
 impl DistributionNotDisabled {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7199,7 +7199,7 @@ impl std::fmt::Debug for CloudFrontOriginAccessIdentityInUse {
 }
 impl CloudFrontOriginAccessIdentityInUse {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7264,7 +7264,7 @@ impl std::fmt::Debug for CachePolicyInUse {
 }
 impl CachePolicyInUse {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7329,7 +7329,7 @@ impl std::fmt::Debug for TooManyStreamingDistributions {
 }
 impl TooManyStreamingDistributions {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7394,7 +7394,7 @@ impl std::fmt::Debug for StreamingDistributionAlreadyExists {
 }
 impl StreamingDistributionAlreadyExists {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7459,7 +7459,7 @@ impl std::fmt::Debug for InvalidOrigin {
 }
 impl InvalidOrigin {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7525,7 +7525,7 @@ impl std::fmt::Debug for TooManyResponseHeadersPolicies {
 }
 impl TooManyResponseHeadersPolicies {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7590,7 +7590,7 @@ impl std::fmt::Debug for TooManyRealtimeLogConfigs {
 }
 impl TooManyRealtimeLogConfigs {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7655,7 +7655,7 @@ impl std::fmt::Debug for RealtimeLogConfigAlreadyExists {
 }
 impl RealtimeLogConfigAlreadyExists {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7720,7 +7720,7 @@ impl std::fmt::Debug for TooManyPublicKeys {
 }
 impl TooManyPublicKeys {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7785,7 +7785,7 @@ impl std::fmt::Debug for PublicKeyAlreadyExists {
 }
 impl PublicKeyAlreadyExists {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7850,7 +7850,7 @@ impl std::fmt::Debug for TooManyOriginRequestPolicies {
 }
 impl TooManyOriginRequestPolicies {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7916,7 +7916,7 @@ impl std::fmt::Debug for TooManyOriginAccessControls {
 }
 impl TooManyOriginAccessControls {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7981,7 +7981,7 @@ impl std::fmt::Debug for MonitoringSubscriptionAlreadyExists {
 }
 impl MonitoringSubscriptionAlreadyExists {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8046,7 +8046,7 @@ impl std::fmt::Debug for TooManyKeyGroups {
 }
 impl TooManyKeyGroups {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8111,7 +8111,7 @@ impl std::fmt::Debug for TooManyInvalidationsInProgress {
 }
 impl TooManyInvalidationsInProgress {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8176,7 +8176,7 @@ impl std::fmt::Debug for BatchTooLarge {
 }
 impl BatchTooLarge {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8241,7 +8241,7 @@ impl std::fmt::Debug for TooManyFunctions {
 }
 impl TooManyFunctions {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8306,7 +8306,7 @@ impl std::fmt::Debug for FunctionAlreadyExists {
 }
 impl FunctionAlreadyExists {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8371,7 +8371,7 @@ impl std::fmt::Debug for TooManyFieldLevelEncryptionProfiles {
 }
 impl TooManyFieldLevelEncryptionProfiles {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8436,7 +8436,7 @@ impl std::fmt::Debug for TooManyFieldLevelEncryptionConfigs {
 }
 impl TooManyFieldLevelEncryptionConfigs {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8501,7 +8501,7 @@ impl std::fmt::Debug for FieldLevelEncryptionConfigAlreadyExists {
 }
 impl FieldLevelEncryptionConfigAlreadyExists {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8566,7 +8566,7 @@ impl std::fmt::Debug for TooManyDistributions {
 }
 impl TooManyDistributions {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8631,7 +8631,7 @@ impl std::fmt::Debug for InvalidProtocolSettings {
 }
 impl InvalidProtocolSettings {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8696,7 +8696,7 @@ impl std::fmt::Debug for DistributionAlreadyExists {
 }
 impl DistributionAlreadyExists {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8762,7 +8762,7 @@ impl std::fmt::Debug for TooManyDistributionsAssociatedToOriginAccessControl {
 }
 impl TooManyDistributionsAssociatedToOriginAccessControl {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8828,7 +8828,7 @@ impl std::fmt::Debug for TooManyCloudFrontOriginAccessIdentities {
 }
 impl TooManyCloudFrontOriginAccessIdentities {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8893,7 +8893,7 @@ impl std::fmt::Debug for CloudFrontOriginAccessIdentityAlreadyExists {
 }
 impl CloudFrontOriginAccessIdentityAlreadyExists {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8958,7 +8958,7 @@ impl std::fmt::Debug for TooManyCachePolicies {
 }
 impl TooManyCachePolicies {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }

@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_crate_error_internal_service_exception_json_err(
+pub(crate) fn deser_structure_crate_error_internal_service_exception_json_err(
     value: &[u8],
     mut builder: crate::error::internal_service_exception::Builder,
 ) -> Result<crate::error::internal_service_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -48,7 +48,7 @@ pub fn deser_structure_crate_error_internal_service_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_deployments(
+pub(crate) fn deser_operation_crate_operation_get_deployments(
     value: &[u8],
     mut builder: crate::output::get_deployments_output::Builder,
 ) -> Result<crate::output::get_deployments_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -86,7 +86,7 @@ pub fn deser_operation_crate_operation_get_deployments(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_device_registration(
+pub(crate) fn deser_operation_crate_operation_get_device_registration(
     value: &[u8],
     mut builder: crate::output::get_device_registration_output::Builder,
 ) -> Result<
@@ -140,7 +140,7 @@ pub fn deser_operation_crate_operation_get_device_registration(
     Ok(builder)
 }
 
-pub fn or_empty_doc(data: &[u8]) -> &[u8] {
+pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
     } else {
@@ -148,8 +148,8 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_sagemakeredge_edge_deployments<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_sagemakeredge_edge_deployments<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::EdgeDeployment>>, aws_smithy_json::deserialize::Error>
 where
@@ -184,7 +184,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_edge_deployment<'a, I>(
+pub(crate) fn deser_structure_crate_model_edge_deployment<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::EdgeDeployment>, aws_smithy_json::deserialize::Error>
 where
@@ -196,7 +196,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::EdgeDeployment::builder();
+            let mut builder = crate::model::edge_deployment::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -260,8 +260,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_sagemakeredge_definitions<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_sagemakeredge_definitions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Definition>>, aws_smithy_json::deserialize::Error>
 where
@@ -296,7 +296,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_definition<'a, I>(
+pub(crate) fn deser_structure_crate_model_definition<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Definition>, aws_smithy_json::deserialize::Error>
 where
@@ -308,7 +308,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Definition::builder();
+            let mut builder = crate::model::definition::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -370,7 +370,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_checksum<'a, I>(
+pub(crate) fn deser_structure_crate_model_checksum<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Checksum>, aws_smithy_json::deserialize::Error>
 where
@@ -382,7 +382,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Checksum::builder();
+            let mut builder = crate::model::checksum::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

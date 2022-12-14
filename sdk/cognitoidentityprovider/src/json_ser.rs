@@ -53,7 +53,7 @@ pub fn serialize_structure_crate_input_admin_confirm_sign_up_input(
         let mut object_12 = object.key("ClientMetadata").start_object();
         for (key_13, value_14) in var_11 {
             {
-                object_12.key(key_13).string(value_14.as_str());
+                object_12.key(key_13.as_str()).string(value_14.as_str());
             }
         }
         object_12.finish();
@@ -123,7 +123,7 @@ pub fn serialize_structure_crate_input_admin_create_user_input(
         let mut object_31 = object.key("ClientMetadata").start_object();
         for (key_32, value_33) in var_30 {
             {
-                object_31.key(key_32).string(value_33.as_str());
+                object_31.key(key_32.as_str()).string(value_33.as_str());
             }
         }
         object_31.finish();
@@ -272,7 +272,7 @@ pub fn serialize_structure_crate_input_admin_initiate_auth_input(
         let mut object_60 = object.key("AuthParameters").start_object();
         for (key_61, value_62) in var_59 {
             {
-                object_60.key(key_61).string(value_62.as_str());
+                object_60.key(key_61.as_str()).string(value_62.as_str());
             }
         }
         object_60.finish();
@@ -281,7 +281,7 @@ pub fn serialize_structure_crate_input_admin_initiate_auth_input(
         let mut object_64 = object.key("ClientMetadata").start_object();
         for (key_65, value_66) in var_63 {
             {
-                object_64.key(key_65).string(value_66.as_str());
+                object_64.key(key_65.as_str()).string(value_66.as_str());
             }
         }
         object_64.finish();
@@ -424,7 +424,7 @@ pub fn serialize_structure_crate_input_admin_reset_user_password_input(
         let mut object_94 = object.key("ClientMetadata").start_object();
         for (key_95, value_96) in var_93 {
             {
-                object_94.key(key_95).string(value_96.as_str());
+                object_94.key(key_95.as_str()).string(value_96.as_str());
             }
         }
         object_94.finish();
@@ -449,7 +449,7 @@ pub fn serialize_structure_crate_input_admin_respond_to_auth_challenge_input(
         let mut object_101 = object.key("ChallengeResponses").start_object();
         for (key_102, value_103) in var_100 {
             {
-                object_101.key(key_102).string(value_103.as_str());
+                object_101.key(key_102.as_str()).string(value_103.as_str());
             }
         }
         object_101.finish();
@@ -477,7 +477,7 @@ pub fn serialize_structure_crate_input_admin_respond_to_auth_challenge_input(
         let mut object_110 = object.key("ClientMetadata").start_object();
         for (key_111, value_112) in var_109 {
             {
-                object_110.key(key_111).string(value_112.as_str());
+                object_110.key(key_111.as_str()).string(value_112.as_str());
             }
         }
         object_110.finish();
@@ -628,7 +628,7 @@ pub fn serialize_structure_crate_input_admin_update_user_attributes_input(
         let mut object_143 = object.key("ClientMetadata").start_object();
         for (key_144, value_145) in var_142 {
             {
-                object_143.key(key_144).string(value_145.as_str());
+                object_143.key(key_144.as_str()).string(value_145.as_str());
             }
         }
         object_143.finish();
@@ -741,7 +741,7 @@ pub fn serialize_structure_crate_input_confirm_forgot_password_input(
         let mut object_168 = object.key("ClientMetadata").start_object();
         for (key_169, value_170) in var_167 {
             {
-                object_168.key(key_169).string(value_170.as_str());
+                object_168.key(key_169.as_str()).string(value_170.as_str());
             }
         }
         object_168.finish();
@@ -790,7 +790,7 @@ pub fn serialize_structure_crate_input_confirm_sign_up_input(
         let mut object_180 = object.key("ClientMetadata").start_object();
         for (key_181, value_182) in var_179 {
             {
-                object_180.key(key_181).string(value_182.as_str());
+                object_180.key(key_181.as_str()).string(value_182.as_str());
             }
         }
         object_180.finish();
@@ -840,7 +840,7 @@ pub fn serialize_structure_crate_input_create_identity_provider_input(
         let mut object_192 = object.key("ProviderDetails").start_object();
         for (key_193, value_194) in var_191 {
             {
-                object_192.key(key_193).string(value_194.as_str());
+                object_192.key(key_193.as_str()).string(value_194.as_str());
             }
         }
         object_192.finish();
@@ -849,7 +849,7 @@ pub fn serialize_structure_crate_input_create_identity_provider_input(
         let mut object_196 = object.key("AttributeMapping").start_object();
         for (key_197, value_198) in var_195 {
             {
-                object_196.key(key_197).string(value_198.as_str());
+                object_196.key(key_197.as_str()).string(value_198.as_str());
             }
         }
         object_196.finish();
@@ -1029,7 +1029,7 @@ pub fn serialize_structure_crate_input_create_user_pool_input(
         let mut object_242 = object.key("UserPoolTags").start_object();
         for (key_243, value_244) in var_241 {
             {
-                object_242.key(key_243).string(value_244.as_str());
+                object_242.key(key_243.as_str()).string(value_244.as_str());
             }
         }
         object_242.finish();
@@ -1488,7 +1488,7 @@ pub fn serialize_structure_crate_input_forgot_password_input(
         let mut object_336 = object.key("ClientMetadata").start_object();
         for (key_337, value_338) in var_335 {
             {
-                object_336.key(key_337).string(value_338.as_str());
+                object_336.key(key_337.as_str()).string(value_338.as_str());
             }
         }
         object_336.finish();
@@ -1592,7 +1592,7 @@ pub fn serialize_structure_crate_input_get_user_attribute_verification_code_inpu
         let mut object_353 = object.key("ClientMetadata").start_object();
         for (key_354, value_355) in var_352 {
             {
-                object_353.key(key_354).string(value_355.as_str());
+                object_353.key(key_354.as_str()).string(value_355.as_str());
             }
         }
         object_353.finish();
@@ -1631,7 +1631,7 @@ pub fn serialize_structure_crate_input_initiate_auth_input(
         let mut object_360 = object.key("AuthParameters").start_object();
         for (key_361, value_362) in var_359 {
             {
-                object_360.key(key_361).string(value_362.as_str());
+                object_360.key(key_361.as_str()).string(value_362.as_str());
             }
         }
         object_360.finish();
@@ -1640,7 +1640,7 @@ pub fn serialize_structure_crate_input_initiate_auth_input(
         let mut object_364 = object.key("ClientMetadata").start_object();
         for (key_365, value_366) in var_363 {
             {
-                object_364.key(key_365).string(value_366.as_str());
+                object_364.key(key_365.as_str()).string(value_366.as_str());
             }
         }
         object_364.finish();
@@ -1893,7 +1893,7 @@ pub fn serialize_structure_crate_input_resend_confirmation_code_input(
         let mut object_408 = object.key("ClientMetadata").start_object();
         for (key_409, value_410) in var_407 {
             {
-                object_408.key(key_409).string(value_410.as_str());
+                object_408.key(key_409.as_str()).string(value_410.as_str());
             }
         }
         object_408.finish();
@@ -1918,7 +1918,7 @@ pub fn serialize_structure_crate_input_respond_to_auth_challenge_input(
         let mut object_415 = object.key("ChallengeResponses").start_object();
         for (key_416, value_417) in var_414 {
             {
-                object_415.key(key_416).string(value_417.as_str());
+                object_415.key(key_416.as_str()).string(value_417.as_str());
             }
         }
         object_415.finish();
@@ -1943,7 +1943,7 @@ pub fn serialize_structure_crate_input_respond_to_auth_challenge_input(
         let mut object_423 = object.key("ClientMetadata").start_object();
         for (key_424, value_425) in var_422 {
             {
-                object_423.key(key_424).string(value_425.as_str());
+                object_423.key(key_424.as_str()).string(value_425.as_str());
             }
         }
         object_423.finish();
@@ -2169,7 +2169,7 @@ pub fn serialize_structure_crate_input_sign_up_input(
         let mut object_474 = object.key("ClientMetadata").start_object();
         for (key_475, value_476) in var_473 {
             {
-                object_474.key(key_475).string(value_476.as_str());
+                object_474.key(key_475.as_str()).string(value_476.as_str());
             }
         }
         object_474.finish();
@@ -2214,7 +2214,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_483 = object.key("Tags").start_object();
         for (key_484, value_485) in var_482 {
             {
-                object_483.key(key_484).string(value_485.as_str());
+                object_483.key(key_484.as_str()).string(value_485.as_str());
             }
         }
         object_483.finish();
@@ -2320,7 +2320,7 @@ pub fn serialize_structure_crate_input_update_identity_provider_input(
         let mut object_506 = object.key("ProviderDetails").start_object();
         for (key_507, value_508) in var_505 {
             {
-                object_506.key(key_507).string(value_508.as_str());
+                object_506.key(key_507.as_str()).string(value_508.as_str());
             }
         }
         object_506.finish();
@@ -2329,7 +2329,7 @@ pub fn serialize_structure_crate_input_update_identity_provider_input(
         let mut object_510 = object.key("AttributeMapping").start_object();
         for (key_511, value_512) in var_509 {
             {
-                object_510.key(key_511).string(value_512.as_str());
+                object_510.key(key_511.as_str()).string(value_512.as_str());
             }
         }
         object_510.finish();
@@ -2401,7 +2401,7 @@ pub fn serialize_structure_crate_input_update_user_attributes_input(
         let mut object_529 = object.key("ClientMetadata").start_object();
         for (key_530, value_531) in var_528 {
             {
-                object_529.key(key_530).string(value_531.as_str());
+                object_529.key(key_530.as_str()).string(value_531.as_str());
             }
         }
         object_529.finish();
@@ -2508,7 +2508,7 @@ pub fn serialize_structure_crate_input_update_user_pool_input(
         let mut object_556 = object.key("UserPoolTags").start_object();
         for (key_557, value_558) in var_555 {
             {
-                object_556.key(key_557).string(value_558.as_str());
+                object_556.key(key_557.as_str()).string(value_558.as_str());
             }
         }
         object_556.finish();

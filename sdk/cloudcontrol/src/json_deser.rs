@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_crate_error_concurrent_modification_exception_json_err(
+pub(crate) fn deser_structure_crate_error_concurrent_modification_exception_json_err(
     value: &[u8],
     mut builder: crate::error::concurrent_modification_exception::Builder,
 ) -> Result<
@@ -50,7 +50,7 @@ pub fn deser_structure_crate_error_concurrent_modification_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_request_token_not_found_exception_json_err(
+pub(crate) fn deser_structure_crate_error_request_token_not_found_exception_json_err(
     value: &[u8],
     mut builder: crate::error::request_token_not_found_exception::Builder,
 ) -> Result<
@@ -95,7 +95,7 @@ pub fn deser_structure_crate_error_request_token_not_found_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_cancel_resource_request(
+pub(crate) fn deser_operation_crate_operation_cancel_resource_request(
     value: &[u8],
     mut builder: crate::output::cancel_resource_request_output::Builder,
 ) -> Result<
@@ -136,7 +136,7 @@ pub fn deser_operation_crate_operation_cancel_resource_request(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_already_exists_exception_json_err(
+pub(crate) fn deser_structure_crate_error_already_exists_exception_json_err(
     value: &[u8],
     mut builder: crate::error::already_exists_exception::Builder,
 ) -> Result<crate::error::already_exists_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -178,7 +178,7 @@ pub fn deser_structure_crate_error_already_exists_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_client_token_conflict_exception_json_err(
+pub(crate) fn deser_structure_crate_error_client_token_conflict_exception_json_err(
     value: &[u8],
     mut builder: crate::error::client_token_conflict_exception::Builder,
 ) -> Result<
@@ -223,7 +223,7 @@ pub fn deser_structure_crate_error_client_token_conflict_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_concurrent_operation_exception_json_err(
+pub(crate) fn deser_structure_crate_error_concurrent_operation_exception_json_err(
     value: &[u8],
     mut builder: crate::error::concurrent_operation_exception::Builder,
 ) -> Result<
@@ -268,7 +268,7 @@ pub fn deser_structure_crate_error_concurrent_operation_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_general_service_exception_json_err(
+pub(crate) fn deser_structure_crate_error_general_service_exception_json_err(
     value: &[u8],
     mut builder: crate::error::general_service_exception::Builder,
 ) -> Result<crate::error::general_service_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -310,7 +310,7 @@ pub fn deser_structure_crate_error_general_service_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_handler_failure_exception_json_err(
+pub(crate) fn deser_structure_crate_error_handler_failure_exception_json_err(
     value: &[u8],
     mut builder: crate::error::handler_failure_exception::Builder,
 ) -> Result<crate::error::handler_failure_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -352,7 +352,7 @@ pub fn deser_structure_crate_error_handler_failure_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_handler_internal_failure_exception_json_err(
+pub(crate) fn deser_structure_crate_error_handler_internal_failure_exception_json_err(
     value: &[u8],
     mut builder: crate::error::handler_internal_failure_exception::Builder,
 ) -> Result<
@@ -397,7 +397,7 @@ pub fn deser_structure_crate_error_handler_internal_failure_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_invalid_credentials_exception_json_err(
+pub(crate) fn deser_structure_crate_error_invalid_credentials_exception_json_err(
     value: &[u8],
     mut builder: crate::error::invalid_credentials_exception::Builder,
 ) -> Result<crate::error::invalid_credentials_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -440,7 +440,7 @@ pub fn deser_structure_crate_error_invalid_credentials_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_invalid_request_exception_json_err(
+pub(crate) fn deser_structure_crate_error_invalid_request_exception_json_err(
     value: &[u8],
     mut builder: crate::error::invalid_request_exception::Builder,
 ) -> Result<crate::error::invalid_request_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -482,7 +482,7 @@ pub fn deser_structure_crate_error_invalid_request_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_network_failure_exception_json_err(
+pub(crate) fn deser_structure_crate_error_network_failure_exception_json_err(
     value: &[u8],
     mut builder: crate::error::network_failure_exception::Builder,
 ) -> Result<crate::error::network_failure_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -524,7 +524,7 @@ pub fn deser_structure_crate_error_network_failure_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_not_stabilized_exception_json_err(
+pub(crate) fn deser_structure_crate_error_not_stabilized_exception_json_err(
     value: &[u8],
     mut builder: crate::error::not_stabilized_exception::Builder,
 ) -> Result<crate::error::not_stabilized_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -566,7 +566,7 @@ pub fn deser_structure_crate_error_not_stabilized_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_not_updatable_exception_json_err(
+pub(crate) fn deser_structure_crate_error_not_updatable_exception_json_err(
     value: &[u8],
     mut builder: crate::error::not_updatable_exception::Builder,
 ) -> Result<crate::error::not_updatable_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -608,7 +608,7 @@ pub fn deser_structure_crate_error_not_updatable_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_private_type_exception_json_err(
+pub(crate) fn deser_structure_crate_error_private_type_exception_json_err(
     value: &[u8],
     mut builder: crate::error::private_type_exception::Builder,
 ) -> Result<crate::error::private_type_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -650,7 +650,7 @@ pub fn deser_structure_crate_error_private_type_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_resource_conflict_exception_json_err(
+pub(crate) fn deser_structure_crate_error_resource_conflict_exception_json_err(
     value: &[u8],
     mut builder: crate::error::resource_conflict_exception::Builder,
 ) -> Result<crate::error::resource_conflict_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -693,7 +693,7 @@ pub fn deser_structure_crate_error_resource_conflict_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_resource_not_found_exception_json_err(
+pub(crate) fn deser_structure_crate_error_resource_not_found_exception_json_err(
     value: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -736,7 +736,7 @@ pub fn deser_structure_crate_error_resource_not_found_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_service_internal_error_exception_json_err(
+pub(crate) fn deser_structure_crate_error_service_internal_error_exception_json_err(
     value: &[u8],
     mut builder: crate::error::service_internal_error_exception::Builder,
 ) -> Result<
@@ -781,7 +781,7 @@ pub fn deser_structure_crate_error_service_internal_error_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_service_limit_exceeded_exception_json_err(
+pub(crate) fn deser_structure_crate_error_service_limit_exceeded_exception_json_err(
     value: &[u8],
     mut builder: crate::error::service_limit_exceeded_exception::Builder,
 ) -> Result<
@@ -826,7 +826,7 @@ pub fn deser_structure_crate_error_service_limit_exceeded_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_throttling_exception_json_err(
+pub(crate) fn deser_structure_crate_error_throttling_exception_json_err(
     value: &[u8],
     mut builder: crate::error::throttling_exception::Builder,
 ) -> Result<crate::error::throttling_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -868,7 +868,7 @@ pub fn deser_structure_crate_error_throttling_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_type_not_found_exception_json_err(
+pub(crate) fn deser_structure_crate_error_type_not_found_exception_json_err(
     value: &[u8],
     mut builder: crate::error::type_not_found_exception::Builder,
 ) -> Result<crate::error::type_not_found_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -910,7 +910,7 @@ pub fn deser_structure_crate_error_type_not_found_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_unsupported_action_exception_json_err(
+pub(crate) fn deser_structure_crate_error_unsupported_action_exception_json_err(
     value: &[u8],
     mut builder: crate::error::unsupported_action_exception::Builder,
 ) -> Result<crate::error::unsupported_action_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -953,7 +953,7 @@ pub fn deser_structure_crate_error_unsupported_action_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_create_resource(
+pub(crate) fn deser_operation_crate_operation_create_resource(
     value: &[u8],
     mut builder: crate::output::create_resource_output::Builder,
 ) -> Result<crate::output::create_resource_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -991,7 +991,7 @@ pub fn deser_operation_crate_operation_create_resource(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_delete_resource(
+pub(crate) fn deser_operation_crate_operation_delete_resource(
     value: &[u8],
     mut builder: crate::output::delete_resource_output::Builder,
 ) -> Result<crate::output::delete_resource_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -1029,7 +1029,7 @@ pub fn deser_operation_crate_operation_delete_resource(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_resource(
+pub(crate) fn deser_operation_crate_operation_get_resource(
     value: &[u8],
     mut builder: crate::output::get_resource_output::Builder,
 ) -> Result<crate::output::get_resource_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -1078,7 +1078,7 @@ pub fn deser_operation_crate_operation_get_resource(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_resource_request_status(
+pub(crate) fn deser_operation_crate_operation_get_resource_request_status(
     value: &[u8],
     mut builder: crate::output::get_resource_request_status_output::Builder,
 ) -> Result<
@@ -1119,7 +1119,7 @@ pub fn deser_operation_crate_operation_get_resource_request_status(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_resource_requests(
+pub(crate) fn deser_operation_crate_operation_list_resource_requests(
     value: &[u8],
     mut builder: crate::output::list_resource_requests_output::Builder,
 ) -> Result<
@@ -1169,7 +1169,7 @@ pub fn deser_operation_crate_operation_list_resource_requests(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_resources(
+pub(crate) fn deser_operation_crate_operation_list_resources(
     value: &[u8],
     mut builder: crate::output::list_resources_output::Builder,
 ) -> Result<crate::output::list_resources_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -1225,7 +1225,7 @@ pub fn deser_operation_crate_operation_list_resources(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_update_resource(
+pub(crate) fn deser_operation_crate_operation_update_resource(
     value: &[u8],
     mut builder: crate::output::update_resource_output::Builder,
 ) -> Result<crate::output::update_resource_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -1263,7 +1263,7 @@ pub fn deser_operation_crate_operation_update_resource(
     Ok(builder)
 }
 
-pub fn or_empty_doc(data: &[u8]) -> &[u8] {
+pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
     } else {
@@ -1271,7 +1271,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-pub fn deser_structure_crate_model_progress_event<'a, I>(
+pub(crate) fn deser_structure_crate_model_progress_event<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ProgressEvent>, aws_smithy_json::deserialize::Error>
 where
@@ -1283,7 +1283,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::ProgressEvent::builder();
+            let mut builder = crate::model::progress_event::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -1407,7 +1407,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_resource_description<'a, I>(
+pub(crate) fn deser_structure_crate_model_resource_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ResourceDescription>, aws_smithy_json::deserialize::Error>
 where
@@ -1419,7 +1419,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::ResourceDescription::builder();
+            let mut builder = crate::model::resource_description::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -1462,8 +1462,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_cloudcontrol_resource_request_status_summaries<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_cloudcontrol_resource_request_status_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ProgressEvent>>, aws_smithy_json::deserialize::Error>
 where
@@ -1498,8 +1498,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_cloudcontrol_resource_descriptions<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_cloudcontrol_resource_descriptions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::ResourceDescription>>,

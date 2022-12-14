@@ -988,7 +988,7 @@ pub fn serialize_structure_crate_input_update_table_storage_optimizer_input(
                 let mut object_207 = object_204.key(key_205.as_str()).start_object();
                 for (key_208, value_209) in value_206 {
                     {
-                        object_207.key(key_208).string(value_209.as_str());
+                        object_207.key(key_208.as_str()).string(value_209.as_str());
                     }
                 }
                 object_207.finish();
@@ -1389,7 +1389,7 @@ pub fn serialize_structure_crate_model_query_planning_context(
         let mut object_302 = object.key("QueryParameters").start_object();
         for (key_303, value_304) in var_301 {
             {
-                object_302.key(key_303).string(value_304.as_str());
+                object_302.key(key_303.as_str()).string(value_304.as_str());
             }
         }
         object_302.finish();

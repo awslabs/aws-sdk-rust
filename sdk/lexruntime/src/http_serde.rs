@@ -38,7 +38,7 @@ pub fn add_headers_post_content(
         }
     }
     if let Some(inner_5) = &input.content_type {
-        let formatted_6 = AsRef::<str>::as_ref(inner_5);
+        let formatted_6 = inner_5.as_str();
         if !formatted_6.is_empty() {
             let header_value = formatted_6;
             let header_value =
@@ -55,7 +55,7 @@ pub fn add_headers_post_content(
         }
     }
     if let Some(inner_7) = &input.accept {
-        let formatted_8 = AsRef::<str>::as_ref(inner_7);
+        let formatted_8 = inner_7.as_str();
         if !formatted_8.is_empty() {
             let header_value = formatted_8;
             let header_value =
@@ -96,7 +96,7 @@ pub fn add_headers_put_session(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_11) = &input.accept {
-        let formatted_12 = AsRef::<str>::as_ref(inner_11);
+        let formatted_12 = inner_11.as_str();
         if !formatted_12.is_empty() {
             let header_value = formatted_12;
             let header_value =
@@ -115,7 +115,7 @@ pub fn add_headers_put_session(
     Ok(builder)
 }
 
-pub fn deser_header_delete_session_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_delete_session_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -125,7 +125,7 @@ pub fn deser_header_delete_session_limit_exceeded_exception_retry_after_seconds(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_session_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_session_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -135,7 +135,7 @@ pub fn deser_header_get_session_limit_exceeded_exception_retry_after_seconds(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_post_content_post_content_output_active_contexts(
+pub(crate) fn deser_header_post_content_post_content_output_active_contexts(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -170,7 +170,7 @@ pub fn deser_header_post_content_post_content_output_active_contexts(
     }
 }
 
-pub fn deser_header_post_content_post_content_output_alternative_intents(
+pub(crate) fn deser_header_post_content_post_content_output_alternative_intents(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -213,7 +213,7 @@ pub fn deser_payload_post_content_post_content_output_audio_stream(
     Ok(aws_smithy_http::byte_stream::ByteStream::new(body))
 }
 
-pub fn deser_header_post_content_post_content_output_bot_version(
+pub(crate) fn deser_header_post_content_post_content_output_bot_version(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -223,7 +223,7 @@ pub fn deser_header_post_content_post_content_output_bot_version(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_post_content_post_content_output_content_type(
+pub(crate) fn deser_header_post_content_post_content_output_content_type(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -233,7 +233,7 @@ pub fn deser_header_post_content_post_content_output_content_type(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_post_content_post_content_output_dialog_state(
+pub(crate) fn deser_header_post_content_post_content_output_dialog_state(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::DialogState>,
@@ -243,7 +243,7 @@ pub fn deser_header_post_content_post_content_output_dialog_state(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_post_content_post_content_output_encoded_input_transcript(
+pub(crate) fn deser_header_post_content_post_content_output_encoded_input_transcript(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -255,7 +255,7 @@ pub fn deser_header_post_content_post_content_output_encoded_input_transcript(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_post_content_post_content_output_encoded_message(
+pub(crate) fn deser_header_post_content_post_content_output_encoded_message(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -265,7 +265,7 @@ pub fn deser_header_post_content_post_content_output_encoded_message(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_post_content_post_content_output_input_transcript(
+pub(crate) fn deser_header_post_content_post_content_output_input_transcript(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -275,7 +275,7 @@ pub fn deser_header_post_content_post_content_output_input_transcript(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_post_content_post_content_output_intent_name(
+pub(crate) fn deser_header_post_content_post_content_output_intent_name(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -285,7 +285,7 @@ pub fn deser_header_post_content_post_content_output_intent_name(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_post_content_post_content_output_message(
+pub(crate) fn deser_header_post_content_post_content_output_message(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -295,7 +295,7 @@ pub fn deser_header_post_content_post_content_output_message(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_post_content_post_content_output_message_format(
+pub(crate) fn deser_header_post_content_post_content_output_message_format(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::MessageFormatType>,
@@ -305,7 +305,7 @@ pub fn deser_header_post_content_post_content_output_message_format(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_post_content_post_content_output_nlu_intent_confidence(
+pub(crate) fn deser_header_post_content_post_content_output_nlu_intent_confidence(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -340,7 +340,7 @@ pub fn deser_header_post_content_post_content_output_nlu_intent_confidence(
     }
 }
 
-pub fn deser_header_post_content_post_content_output_sentiment_response(
+pub(crate) fn deser_header_post_content_post_content_output_sentiment_response(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -350,7 +350,7 @@ pub fn deser_header_post_content_post_content_output_sentiment_response(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_post_content_post_content_output_session_attributes(
+pub(crate) fn deser_header_post_content_post_content_output_session_attributes(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -385,7 +385,7 @@ pub fn deser_header_post_content_post_content_output_session_attributes(
     }
 }
 
-pub fn deser_header_post_content_post_content_output_session_id(
+pub(crate) fn deser_header_post_content_post_content_output_session_id(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -395,7 +395,7 @@ pub fn deser_header_post_content_post_content_output_session_id(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_post_content_post_content_output_slot_to_elicit(
+pub(crate) fn deser_header_post_content_post_content_output_slot_to_elicit(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -405,7 +405,7 @@ pub fn deser_header_post_content_post_content_output_slot_to_elicit(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_post_content_post_content_output_slots(
+pub(crate) fn deser_header_post_content_post_content_output_slots(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -440,7 +440,7 @@ pub fn deser_header_post_content_post_content_output_slots(
     }
 }
 
-pub fn deser_header_post_content_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_post_content_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -450,7 +450,7 @@ pub fn deser_header_post_content_limit_exceeded_exception_retry_after_seconds(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_post_text_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_post_text_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -460,7 +460,7 @@ pub fn deser_header_post_text_limit_exceeded_exception_retry_after_seconds(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_session_put_session_output_active_contexts(
+pub(crate) fn deser_header_put_session_put_session_output_active_contexts(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -503,7 +503,7 @@ pub fn deser_payload_put_session_put_session_output_audio_stream(
     Ok(aws_smithy_http::byte_stream::ByteStream::new(body))
 }
 
-pub fn deser_header_put_session_put_session_output_content_type(
+pub(crate) fn deser_header_put_session_put_session_output_content_type(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -513,7 +513,7 @@ pub fn deser_header_put_session_put_session_output_content_type(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_session_put_session_output_dialog_state(
+pub(crate) fn deser_header_put_session_put_session_output_dialog_state(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::DialogState>,
@@ -523,7 +523,7 @@ pub fn deser_header_put_session_put_session_output_dialog_state(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_session_put_session_output_encoded_message(
+pub(crate) fn deser_header_put_session_put_session_output_encoded_message(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -533,7 +533,7 @@ pub fn deser_header_put_session_put_session_output_encoded_message(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_session_put_session_output_intent_name(
+pub(crate) fn deser_header_put_session_put_session_output_intent_name(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -543,7 +543,7 @@ pub fn deser_header_put_session_put_session_output_intent_name(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_session_put_session_output_message(
+pub(crate) fn deser_header_put_session_put_session_output_message(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -553,7 +553,7 @@ pub fn deser_header_put_session_put_session_output_message(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_session_put_session_output_message_format(
+pub(crate) fn deser_header_put_session_put_session_output_message_format(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::MessageFormatType>,
@@ -563,7 +563,7 @@ pub fn deser_header_put_session_put_session_output_message_format(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_session_put_session_output_session_attributes(
+pub(crate) fn deser_header_put_session_put_session_output_session_attributes(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -598,7 +598,7 @@ pub fn deser_header_put_session_put_session_output_session_attributes(
     }
 }
 
-pub fn deser_header_put_session_put_session_output_session_id(
+pub(crate) fn deser_header_put_session_put_session_output_session_id(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -608,7 +608,7 @@ pub fn deser_header_put_session_put_session_output_session_id(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_session_put_session_output_slot_to_elicit(
+pub(crate) fn deser_header_put_session_put_session_output_slot_to_elicit(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -618,7 +618,7 @@ pub fn deser_header_put_session_put_session_output_slot_to_elicit(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_session_put_session_output_slots(
+pub(crate) fn deser_header_put_session_put_session_output_slots(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -653,7 +653,7 @@ pub fn deser_header_put_session_put_session_output_slots(
     }
 }
 
-pub fn deser_header_put_session_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_put_session_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,

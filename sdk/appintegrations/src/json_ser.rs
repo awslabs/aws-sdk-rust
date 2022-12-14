@@ -30,7 +30,7 @@ pub fn serialize_structure_crate_input_create_data_integration_input(
         let mut object_9 = object.key("Tags").start_object();
         for (key_10, value_11) in var_8 {
             {
-                object_9.key(key_10).string(value_11.as_str());
+                object_9.key(key_10.as_str()).string(value_11.as_str());
             }
         }
         object_9.finish();
@@ -63,7 +63,7 @@ pub fn serialize_structure_crate_input_create_event_integration_input(
         let mut object_19 = object.key("Tags").start_object();
         for (key_20, value_21) in var_18 {
             {
-                object_19.key(key_20).string(value_21.as_str());
+                object_19.key(key_20.as_str()).string(value_21.as_str());
             }
         }
         object_19.finish();
@@ -79,7 +79,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_23 = object.key("tags").start_object();
         for (key_24, value_25) in var_22 {
             {
-                object_23.key(key_24).string(value_25.as_str());
+                object_23.key(key_24.as_str()).string(value_25.as_str());
             }
         }
         object_23.finish();

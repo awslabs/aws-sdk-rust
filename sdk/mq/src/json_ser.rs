@@ -87,7 +87,7 @@ pub fn serialize_structure_crate_input_create_broker_input(
         let mut object_26 = object.key("tags").start_object();
         for (key_27, value_28) in var_25 {
             {
-                object_26.key(key_27).string(value_28.as_str());
+                object_26.key(key_27.as_str()).string(value_28.as_str());
             }
         }
         object_26.finish();
@@ -126,7 +126,7 @@ pub fn serialize_structure_crate_input_create_configuration_input(
         let mut object_38 = object.key("tags").start_object();
         for (key_39, value_40) in var_37 {
             {
-                object_38.key(key_39).string(value_40.as_str());
+                object_38.key(key_39.as_str()).string(value_40.as_str());
             }
         }
         object_38.finish();
@@ -142,7 +142,7 @@ pub fn serialize_structure_crate_input_create_tags_input(
         let mut object_42 = object.key("tags").start_object();
         for (key_43, value_44) in var_41 {
             {
-                object_42.key(key_43).string(value_44.as_str());
+                object_42.key(key_43.as_str()).string(value_44.as_str());
             }
         }
         object_42.finish();

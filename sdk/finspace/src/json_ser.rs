@@ -44,7 +44,7 @@ pub fn serialize_structure_crate_input_create_environment_input(
         let mut object_13 = object.key("tags").start_object();
         for (key_14, value_15) in var_12 {
             {
-                object_13.key(key_14).string(value_15.as_str());
+                object_13.key(key_14.as_str()).string(value_15.as_str());
             }
         }
         object_13.finish();
@@ -60,7 +60,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_17 = object.key("tags").start_object();
         for (key_18, value_19) in var_16 {
             {
-                object_17.key(key_18).string(value_19.as_str());
+                object_17.key(key_18.as_str()).string(value_19.as_str());
             }
         }
         object_17.finish();
@@ -115,7 +115,7 @@ pub fn serialize_structure_crate_model_federation_parameters(
         let mut object_31 = object.key("attributeMap").start_object();
         for (key_32, value_33) in var_30 {
             {
-                object_31.key(key_32).string(value_33.as_str());
+                object_31.key(key_32.as_str()).string(value_33.as_str());
             }
         }
         object_31.finish();

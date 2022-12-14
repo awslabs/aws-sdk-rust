@@ -17,7 +17,7 @@ impl std::fmt::Debug for UnauthorizedResourceAccessException {
 }
 impl UnauthorizedResourceAccessException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -92,7 +92,7 @@ impl std::fmt::Debug for UnauthorizedOperationException {
 }
 impl UnauthorizedOperationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -169,7 +169,7 @@ impl std::fmt::Debug for ServiceUnavailableException {
 }
 impl ServiceUnavailableException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -234,7 +234,7 @@ impl std::fmt::Debug for InvalidArgumentException {
 }
 impl InvalidArgumentException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -299,7 +299,7 @@ impl std::fmt::Debug for IllegalUserStateException {
 }
 impl IllegalUserStateException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -364,7 +364,7 @@ impl std::fmt::Debug for FailedDependencyException {
 }
 impl FailedDependencyException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -439,7 +439,7 @@ impl std::fmt::Debug for EntityNotExistsException {
 }
 impl EntityNotExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -534,7 +534,7 @@ impl std::fmt::Debug for DeactivatingLastSystemUserException {
 }
 impl DeactivatingLastSystemUserException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -611,7 +611,7 @@ impl std::fmt::Debug for ProhibitedStateException {
 }
 impl ProhibitedStateException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -676,7 +676,7 @@ impl std::fmt::Debug for LimitExceededException {
 }
 impl LimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -741,7 +741,7 @@ impl std::fmt::Debug for EntityAlreadyExistsException {
 }
 impl EntityAlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -806,7 +806,7 @@ impl std::fmt::Debug for ConflictingOperationException {
 }
 impl ConflictingOperationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -871,7 +871,7 @@ impl std::fmt::Debug for ConcurrentModificationException {
 }
 impl ConcurrentModificationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -936,7 +936,7 @@ impl std::fmt::Debug for InvalidOperationException {
 }
 impl InvalidOperationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1001,7 +1001,7 @@ impl std::fmt::Debug for StorageLimitWillExceedException {
 }
 impl StorageLimitWillExceedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1066,7 +1066,7 @@ impl std::fmt::Debug for StorageLimitExceededException {
 }
 impl StorageLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1131,7 +1131,7 @@ impl std::fmt::Debug for ResourceAlreadyCheckedOutException {
 }
 impl ResourceAlreadyCheckedOutException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1196,7 +1196,7 @@ impl std::fmt::Debug for DraftUploadOutOfSyncException {
 }
 impl DraftUploadOutOfSyncException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1261,7 +1261,7 @@ impl std::fmt::Debug for InvalidPasswordException {
 }
 impl InvalidPasswordException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1326,7 +1326,7 @@ impl std::fmt::Debug for RequestedEntityTooLargeException {
 }
 impl RequestedEntityTooLargeException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1391,7 +1391,7 @@ impl std::fmt::Debug for DocumentLockedForCommentsException {
 }
 impl DocumentLockedForCommentsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1456,7 +1456,7 @@ impl std::fmt::Debug for TooManySubscriptionsException {
 }
 impl TooManySubscriptionsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1521,7 +1521,7 @@ impl std::fmt::Debug for TooManyLabelsException {
 }
 impl TooManyLabelsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1586,7 +1586,7 @@ impl std::fmt::Debug for CustomMetadataLimitExceededException {
 }
 impl CustomMetadataLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1651,7 +1651,7 @@ impl std::fmt::Debug for InvalidCommentOperationException {
 }
 impl InvalidCommentOperationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }

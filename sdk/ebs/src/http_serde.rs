@@ -22,7 +22,7 @@ pub fn add_headers_complete_snapshot(
         }
     }
     if let Some(inner_3) = &input.checksum {
-        let formatted_4 = AsRef::<str>::as_ref(inner_3);
+        let formatted_4 = inner_3.as_str();
         if !formatted_4.is_empty() {
             let header_value = formatted_4;
             let header_value =
@@ -39,7 +39,7 @@ pub fn add_headers_complete_snapshot(
         }
     }
     if let Some(inner_5) = &input.checksum_algorithm {
-        let formatted_6 = AsRef::<str>::as_ref(inner_5);
+        let formatted_6 = inner_5.as_str();
         if !formatted_6.is_empty() {
             let header_value = formatted_6;
             let header_value =
@@ -56,7 +56,7 @@ pub fn add_headers_complete_snapshot(
         }
     }
     if let Some(inner_7) = &input.checksum_aggregation_method {
-        let formatted_8 = AsRef::<str>::as_ref(inner_7);
+        let formatted_8 = inner_7.as_str();
         if !formatted_8.is_empty() {
             let header_value = formatted_8;
             let header_value =
@@ -116,7 +116,7 @@ pub fn add_headers_put_snapshot_block(
         }
     }
     if let Some(inner_13) = &input.checksum {
-        let formatted_14 = AsRef::<str>::as_ref(inner_13);
+        let formatted_14 = inner_13.as_str();
         if !formatted_14.is_empty() {
             let header_value = formatted_14;
             let header_value =
@@ -133,7 +133,7 @@ pub fn add_headers_put_snapshot_block(
         }
     }
     if let Some(inner_15) = &input.checksum_algorithm {
-        let formatted_16 = AsRef::<str>::as_ref(inner_15);
+        let formatted_16 = inner_15.as_str();
         if !formatted_16.is_empty() {
             let header_value = formatted_16;
             let header_value =
@@ -163,7 +163,7 @@ pub fn deser_payload_get_snapshot_block_get_snapshot_block_output_block_data(
     Ok(aws_smithy_http::byte_stream::ByteStream::new(body))
 }
 
-pub fn deser_header_get_snapshot_block_get_snapshot_block_output_checksum(
+pub(crate) fn deser_header_get_snapshot_block_get_snapshot_block_output_checksum(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -173,7 +173,7 @@ pub fn deser_header_get_snapshot_block_get_snapshot_block_output_checksum(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_snapshot_block_get_snapshot_block_output_checksum_algorithm(
+pub(crate) fn deser_header_get_snapshot_block_get_snapshot_block_output_checksum_algorithm(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::ChecksumAlgorithm>,
@@ -183,7 +183,7 @@ pub fn deser_header_get_snapshot_block_get_snapshot_block_output_checksum_algori
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_snapshot_block_get_snapshot_block_output_data_length(
+pub(crate) fn deser_header_get_snapshot_block_get_snapshot_block_output_data_length(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-amz-Data-Length").iter();
@@ -198,7 +198,7 @@ pub fn deser_header_get_snapshot_block_get_snapshot_block_output_data_length(
     }
 }
 
-pub fn deser_header_put_snapshot_block_put_snapshot_block_output_checksum(
+pub(crate) fn deser_header_put_snapshot_block_put_snapshot_block_output_checksum(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -208,7 +208,7 @@ pub fn deser_header_put_snapshot_block_put_snapshot_block_output_checksum(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_snapshot_block_put_snapshot_block_output_checksum_algorithm(
+pub(crate) fn deser_header_put_snapshot_block_put_snapshot_block_output_checksum_algorithm(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::ChecksumAlgorithm>,

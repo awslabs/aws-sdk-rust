@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_crate_error_internal_dependency_exception_json_err(
+pub(crate) fn deser_structure_crate_error_internal_dependency_exception_json_err(
     value: &[u8],
     mut builder: crate::error::internal_dependency_exception::Builder,
 ) -> Result<crate::error::internal_dependency_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -48,7 +48,7 @@ pub fn deser_structure_crate_error_internal_dependency_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_internal_failure_json_err(
+pub(crate) fn deser_structure_crate_error_internal_failure_json_err(
     value: &[u8],
     mut builder: crate::error::internal_failure::Builder,
 ) -> Result<crate::error::internal_failure::Builder, aws_smithy_json::deserialize::Error> {
@@ -90,7 +90,7 @@ pub fn deser_structure_crate_error_internal_failure_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_model_error_json_err(
+pub(crate) fn deser_structure_crate_error_model_error_json_err(
     value: &[u8],
     mut builder: crate::error::model_error::Builder,
 ) -> Result<crate::error::model_error::Builder, aws_smithy_json::deserialize::Error> {
@@ -118,7 +118,7 @@ pub fn deser_structure_crate_error_model_error_json_err(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.try_into())
+                            .map(i32::try_from)
                             .transpose()?,
                         );
                     }
@@ -159,7 +159,7 @@ pub fn deser_structure_crate_error_model_error_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_model_not_ready_exception_json_err(
+pub(crate) fn deser_structure_crate_error_model_not_ready_exception_json_err(
     value: &[u8],
     mut builder: crate::error::model_not_ready_exception::Builder,
 ) -> Result<crate::error::model_not_ready_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -201,7 +201,7 @@ pub fn deser_structure_crate_error_model_not_ready_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_service_unavailable_json_err(
+pub(crate) fn deser_structure_crate_error_service_unavailable_json_err(
     value: &[u8],
     mut builder: crate::error::service_unavailable::Builder,
 ) -> Result<crate::error::service_unavailable::Builder, aws_smithy_json::deserialize::Error> {
@@ -243,7 +243,7 @@ pub fn deser_structure_crate_error_service_unavailable_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_validation_error_json_err(
+pub(crate) fn deser_structure_crate_error_validation_error_json_err(
     value: &[u8],
     mut builder: crate::error::validation_error::Builder,
 ) -> Result<crate::error::validation_error::Builder, aws_smithy_json::deserialize::Error> {
@@ -285,7 +285,7 @@ pub fn deser_structure_crate_error_validation_error_json_err(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_invoke_endpoint_async(
+pub(crate) fn deser_operation_crate_operation_invoke_endpoint_async(
     value: &[u8],
     mut builder: crate::output::invoke_endpoint_async_output::Builder,
 ) -> Result<crate::output::invoke_endpoint_async_output::Builder, aws_smithy_json::deserialize::Error>
@@ -328,7 +328,7 @@ pub fn deser_operation_crate_operation_invoke_endpoint_async(
     Ok(builder)
 }
 
-pub fn or_empty_doc(data: &[u8]) -> &[u8] {
+pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
     } else {

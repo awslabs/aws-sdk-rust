@@ -18,7 +18,7 @@ pub fn serialize_structure_crate_input_put_session_input(
         let mut object_6 = object.key("requestAttributes").start_object();
         for (key_7, value_8) in var_5 {
             {
-                object_6.key(key_7).string(value_8.as_str());
+                object_6.key(key_7.as_str()).string(value_8.as_str());
             }
         }
         object_6.finish();
@@ -39,7 +39,7 @@ pub fn serialize_structure_crate_input_recognize_text_input(
         let mut object_12 = object.key("requestAttributes").start_object();
         for (key_13, value_14) in var_11 {
             {
-                object_12.key(key_13).string(value_14.as_str());
+                object_12.key(key_13.as_str()).string(value_14.as_str());
             }
         }
         object_12.finish();
@@ -108,7 +108,7 @@ pub fn serialize_structure_crate_model_session_state(
         let mut object_31 = object.key("sessionAttributes").start_object();
         for (key_32, value_33) in var_30 {
             {
-                object_31.key(key_32).string(value_33.as_str());
+                object_31.key(key_32.as_str()).string(value_33.as_str());
             }
         }
         object_31.finish();
@@ -183,7 +183,7 @@ pub fn serialize_structure_crate_model_intent(
         let mut object_51 = object.key("slots").start_object();
         for (key_52, value_53) in var_50 {
             {
-                let mut object_54 = object_51.key(key_52).start_object();
+                let mut object_54 = object_51.key(key_52.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_slot(&mut object_54, value_53)?;
                 object_54.finish();
             }
@@ -218,7 +218,7 @@ pub fn serialize_structure_crate_model_active_context(
         let mut object_61 = object.key("contextAttributes").start_object();
         for (key_62, value_63) in var_60 {
             {
-                object_61.key(key_62).string(value_63.as_str());
+                object_61.key(key_62.as_str()).string(value_63.as_str());
             }
         }
         object_61.finish();
@@ -234,10 +234,10 @@ pub fn serialize_structure_crate_model_runtime_hints(
         let mut object_65 = object.key("slotHints").start_object();
         for (key_66, value_67) in var_64 {
             {
-                let mut object_68 = object_65.key(key_66).start_object();
+                let mut object_68 = object_65.key(key_66.as_str()).start_object();
                 for (key_69, value_70) in value_67 {
                     {
-                        let mut object_71 = object_68.key(key_69).start_object();
+                        let mut object_71 = object_68.key(key_69.as_str()).start_object();
                         crate::json_ser::serialize_structure_crate_model_runtime_hint_details(
                             &mut object_71,
                             value_70,
@@ -308,7 +308,7 @@ pub fn serialize_structure_crate_model_slot(
         let mut object_85 = object.key("subSlots").start_object();
         for (key_86, value_87) in var_84 {
             {
-                let mut object_88 = object_85.key(key_86).start_object();
+                let mut object_88 = object_85.key(key_86.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_slot(&mut object_88, value_87)?;
                 object_88.finish();
             }
@@ -359,7 +359,7 @@ pub fn serialize_structure_crate_model_runtime_hint_details(
         let mut object_96 = object.key("subSlotHints").start_object();
         for (key_97, value_98) in var_95 {
             {
-                let mut object_99 = object_96.key(key_97).start_object();
+                let mut object_99 = object_96.key(key_97.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_runtime_hint_details(
                     &mut object_99,
                     value_98,

@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_crate_error_internal_service_error_exception_json_err(
+pub(crate) fn deser_structure_crate_error_internal_service_error_exception_json_err(
     value: &[u8],
     mut builder: crate::error::internal_service_error_exception::Builder,
 ) -> Result<
@@ -50,7 +50,7 @@ pub fn deser_structure_crate_error_internal_service_error_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_invalid_parameter_exception_json_err(
+pub(crate) fn deser_structure_crate_error_invalid_parameter_exception_json_err(
     value: &[u8],
     mut builder: crate::error::invalid_parameter_exception::Builder,
 ) -> Result<crate::error::invalid_parameter_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -93,7 +93,7 @@ pub fn deser_structure_crate_error_invalid_parameter_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_throttling_exception_json_err(
+pub(crate) fn deser_structure_crate_error_throttling_exception_json_err(
     value: &[u8],
     mut builder: crate::error::throttling_exception::Builder,
 ) -> Result<crate::error::throttling_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -135,7 +135,7 @@ pub fn deser_structure_crate_error_throttling_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_entitlements(
+pub(crate) fn deser_operation_crate_operation_get_entitlements(
     value: &[u8],
     mut builder: crate::output::get_entitlements_output::Builder,
 ) -> Result<crate::output::get_entitlements_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -182,7 +182,7 @@ pub fn deser_operation_crate_operation_get_entitlements(
     Ok(builder)
 }
 
-pub fn or_empty_doc(data: &[u8]) -> &[u8] {
+pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
     } else {
@@ -190,8 +190,8 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_marketplaceentitlementservice_entitlement_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_marketplaceentitlementservice_entitlement_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Entitlement>>, aws_smithy_json::deserialize::Error>
 where
@@ -226,7 +226,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_entitlement<'a, I>(
+pub(crate) fn deser_structure_crate_model_entitlement<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Entitlement>, aws_smithy_json::deserialize::Error>
 where
@@ -238,7 +238,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Entitlement::builder();
+            let mut builder = crate::model::entitlement::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -305,7 +305,7 @@ where
     }
 }
 
-pub fn deser_union_crate_model_entitlement_value<'a, I>(
+pub(crate) fn deser_union_crate_model_entitlement_value<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::EntitlementValue>, aws_smithy_json::deserialize::Error>
 where
@@ -330,7 +330,7 @@ where
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.try_into())
+                            .map(i32::try_from)
                             .transpose()?
                             .unwrap_or_default(),
                         )),

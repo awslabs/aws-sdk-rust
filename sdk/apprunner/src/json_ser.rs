@@ -868,7 +868,7 @@ pub fn serialize_structure_crate_model_image_configuration(
         let mut object_151 = object.key("RuntimeEnvironmentVariables").start_object();
         for (key_152, value_153) in var_150 {
             {
-                object_151.key(key_152).string(value_153.as_str());
+                object_151.key(key_152.as_str()).string(value_153.as_str());
             }
         }
         object_151.finish();
@@ -902,7 +902,7 @@ pub fn serialize_structure_crate_model_code_configuration_values(
         let mut object_161 = object.key("RuntimeEnvironmentVariables").start_object();
         for (key_162, value_163) in var_160 {
             {
-                object_161.key(key_162).string(value_163.as_str());
+                object_161.key(key_162.as_str()).string(value_163.as_str());
             }
         }
         object_161.finish();

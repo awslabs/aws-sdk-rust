@@ -70,7 +70,7 @@ pub fn serialize_structure_crate_input_create_log_group_input(
         let mut object_14 = object.key("tags").start_object();
         for (key_15, value_16) in var_13 {
             {
-                object_14.key(key_15).string(value_16.as_str());
+                object_14.key(key_15.as_str()).string(value_16.as_str());
             }
         }
         object_14.finish();
@@ -751,7 +751,7 @@ pub fn serialize_structure_crate_input_tag_log_group_input(
         let mut object_136 = object.key("tags").start_object();
         for (key_137, value_138) in var_135 {
             {
-                object_136.key(key_137).string(value_138.as_str());
+                object_136.key(key_137.as_str()).string(value_138.as_str());
             }
         }
         object_136.finish();
@@ -836,7 +836,7 @@ pub fn serialize_structure_crate_model_metric_transformation(
         let mut object_154 = object.key("dimensions").start_object();
         for (key_155, value_156) in var_153 {
             {
-                object_154.key(key_155).string(value_156.as_str());
+                object_154.key(key_155.as_str()).string(value_156.as_str());
             }
         }
         object_154.finish();

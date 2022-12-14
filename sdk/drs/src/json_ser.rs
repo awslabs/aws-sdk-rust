@@ -10,7 +10,7 @@ pub fn serialize_structure_crate_input_create_extended_source_server_input(
         let mut object_3 = object.key("tags").start_object();
         for (key_4, value_5) in var_2 {
             {
-                object_3.key(key_4).string(value_5.as_str());
+                object_3.key(key_4.as_str()).string(value_5.as_str());
             }
         }
         object_3.finish();
@@ -85,7 +85,7 @@ pub fn serialize_structure_crate_input_create_replication_configuration_template
         let mut object_22 = object.key("stagingAreaTags").start_object();
         for (key_23, value_24) in var_21 {
             {
-                object_22.key(key_23).string(value_24.as_str());
+                object_22.key(key_23.as_str()).string(value_24.as_str());
             }
         }
         object_22.finish();
@@ -94,7 +94,7 @@ pub fn serialize_structure_crate_input_create_replication_configuration_template
         let mut object_26 = object.key("tags").start_object();
         for (key_27, value_28) in var_25 {
             {
-                object_26.key(key_27).string(value_28.as_str());
+                object_26.key(key_27.as_str()).string(value_28.as_str());
             }
         }
         object_26.finish();
@@ -385,7 +385,7 @@ pub fn serialize_structure_crate_input_start_failback_launch_input(
         let mut object_66 = object.key("tags").start_object();
         for (key_67, value_68) in var_65 {
             {
-                object_66.key(key_67).string(value_68.as_str());
+                object_66.key(key_67.as_str()).string(value_68.as_str());
             }
         }
         object_66.finish();
@@ -415,7 +415,7 @@ pub fn serialize_structure_crate_input_start_recovery_input(
         let mut object_75 = object.key("tags").start_object();
         for (key_76, value_77) in var_74 {
             {
-                object_75.key(key_76).string(value_77.as_str());
+                object_75.key(key_76.as_str()).string(value_77.as_str());
             }
         }
         object_75.finish();
@@ -441,7 +441,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_80 = object.key("tags").start_object();
         for (key_81, value_82) in var_79 {
             {
-                object_80.key(key_81).string(value_82.as_str());
+                object_80.key(key_81.as_str()).string(value_82.as_str());
             }
         }
         object_80.finish();
@@ -603,7 +603,7 @@ pub fn serialize_structure_crate_input_update_replication_configuration_input(
         let mut object_119 = object.key("stagingAreaTags").start_object();
         for (key_120, value_121) in var_118 {
             {
-                object_119.key(key_120).string(value_121.as_str());
+                object_119.key(key_120.as_str()).string(value_121.as_str());
             }
         }
         object_119.finish();
@@ -693,7 +693,7 @@ pub fn serialize_structure_crate_input_update_replication_configuration_template
         let mut object_141 = object.key("stagingAreaTags").start_object();
         for (key_142, value_143) in var_140 {
             {
-                object_141.key(key_142).string(value_143.as_str());
+                object_141.key(key_142.as_str()).string(value_143.as_str());
             }
         }
         object_141.finish();

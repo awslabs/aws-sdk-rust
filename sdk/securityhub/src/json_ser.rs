@@ -150,7 +150,7 @@ pub fn serialize_structure_crate_input_batch_update_findings_input(
         let mut object_32 = object.key("UserDefinedFields").start_object();
         for (key_33, value_34) in var_31 {
             {
-                object_32.key(key_33).string(value_34.as_str());
+                object_32.key(key_33.as_str()).string(value_34.as_str());
             }
         }
         object_32.finish();
@@ -375,7 +375,7 @@ pub fn serialize_structure_crate_input_enable_security_hub_input(
         let mut object_73 = object.key("Tags").start_object();
         for (key_74, value_75) in var_72 {
             {
-                object_73.key(key_74).string(value_75.as_str());
+                object_73.key(key_74.as_str()).string(value_75.as_str());
             }
         }
         object_73.finish();
@@ -511,7 +511,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_98 = object.key("Tags").start_object();
         for (key_99, value_100) in var_97 {
             {
-                object_98.key(key_99).string(value_100.as_str());
+                object_98.key(key_99.as_str()).string(value_100.as_str());
             }
         }
         object_98.finish();
@@ -647,7 +647,7 @@ pub fn serialize_structure_crate_model_standards_subscription_request(
         let mut object_122 = object.key("StandardsInput").start_object();
         for (key_123, value_124) in var_121 {
             {
-                object_122.key(key_123).string(value_124.as_str());
+                object_122.key(key_123.as_str()).string(value_124.as_str());
             }
         }
         object_122.finish();
@@ -739,7 +739,7 @@ pub fn serialize_structure_crate_model_aws_security_finding(
         let mut object_148 = object.key("ProductFields").start_object();
         for (key_149, value_150) in var_147 {
             {
-                object_148.key(key_149).string(value_150.as_str());
+                object_148.key(key_149.as_str()).string(value_150.as_str());
             }
         }
         object_148.finish();
@@ -748,7 +748,7 @@ pub fn serialize_structure_crate_model_aws_security_finding(
         let mut object_152 = object.key("UserDefinedFields").start_object();
         for (key_153, value_154) in var_151 {
             {
-                object_152.key(key_153).string(value_154.as_str());
+                object_152.key(key_153.as_str()).string(value_154.as_str());
             }
         }
         object_152.finish();
@@ -2600,7 +2600,7 @@ pub fn serialize_structure_crate_model_resource(
         let mut object_641 = object.key("Tags").start_object();
         for (key_642, value_643) in var_640 {
             {
-                object_641.key(key_642).string(value_643.as_str());
+                object_641.key(key_642.as_str()).string(value_643.as_str());
             }
         }
         object_641.finish();
@@ -3473,7 +3473,7 @@ pub fn serialize_structure_crate_model_resource_details(
         let mut object_821 = object.key("Other").start_object();
         for (key_822, value_823) in var_820 {
             {
-                object_821.key(key_822).string(value_823.as_str());
+                object_821.key(key_822.as_str()).string(value_823.as_str());
             }
         }
         object_821.finish();
@@ -3905,7 +3905,7 @@ pub fn serialize_structure_crate_model_aws_api_call_action(
         let mut object_925 = object.key("AffectedResources").start_object();
         for (key_926, value_927) in var_924 {
             {
-                object_925.key(key_926).string(value_927.as_str());
+                object_925.key(key_926.as_str()).string(value_927.as_str());
             }
         }
         object_925.finish();
@@ -4850,7 +4850,9 @@ pub fn serialize_structure_crate_model_aws_elasticsearch_domain_details(
         let mut object_1160 = object.key("Endpoints").start_object();
         for (key_1161, value_1162) in var_1159 {
             {
-                object_1160.key(key_1161).string(value_1162.as_str());
+                object_1160
+                    .key(key_1161.as_str())
+                    .string(value_1162.as_str());
             }
         }
         object_1160.finish();
@@ -5256,7 +5258,9 @@ pub fn serialize_structure_crate_model_aws_api_gateway_v2_stage_details(
         let mut object_1256 = object.key("StageVariables").start_object();
         for (key_1257, value_1258) in var_1255 {
             {
-                object_1256.key(key_1257).string(value_1258.as_str());
+                object_1256
+                    .key(key_1257.as_str())
+                    .string(value_1258.as_str());
             }
         }
         object_1256.finish();
@@ -5514,7 +5518,9 @@ pub fn serialize_structure_crate_model_aws_api_gateway_stage_details(
         let mut object_1321 = object.key("Variables").start_object();
         for (key_1322, value_1323) in var_1320 {
             {
-                object_1321.key(key_1322).string(value_1323.as_str());
+                object_1321
+                    .key(key_1322.as_str())
+                    .string(value_1323.as_str());
             }
         }
         object_1321.finish();
@@ -8009,7 +8015,9 @@ pub fn serialize_structure_crate_model_aws_open_search_service_domain_details(
         let mut object_1928 = object.key("DomainEndpoints").start_object();
         for (key_1929, value_1930) in var_1927 {
             {
-                object_1928.key(key_1929).string(value_1930.as_str());
+                object_1928
+                    .key(key_1929.as_str())
+                    .string(value_1930.as_str());
             }
         }
         object_1928.finish();
@@ -10746,7 +10754,9 @@ pub fn serialize_structure_crate_model_aws_api_gateway_canary_settings(
         let mut object_2471 = object.key("StageVariableOverrides").start_object();
         for (key_2472, value_2473) in var_2470 {
             {
-                object_2471.key(key_2472).string(value_2473.as_str());
+                object_2471
+                    .key(key_2472.as_str())
+                    .string(value_2473.as_str());
             }
         }
         object_2471.finish();
@@ -11479,7 +11489,9 @@ pub fn serialize_structure_crate_model_aws_lambda_function_environment(
         let mut object_2591 = object.key("Variables").start_object();
         for (key_2592, value_2593) in var_2590 {
             {
-                object_2591.key(key_2592).string(value_2593.as_str());
+                object_2591
+                    .key(key_2592.as_str())
+                    .string(value_2593.as_str());
             }
         }
         object_2591.finish();
@@ -12024,7 +12036,9 @@ pub fn serialize_structure_crate_model_aws_ecs_task_definition_container_definit
         let mut object_2687 = object.key("DockerLabels").start_object();
         for (key_2688, value_2689) in var_2686 {
             {
-                object_2687.key(key_2688).string(value_2689.as_str());
+                object_2687
+                    .key(key_2688.as_str())
+                    .string(value_2689.as_str());
             }
         }
         object_2687.finish();
@@ -14507,7 +14521,9 @@ pub fn serialize_structure_crate_model_aws_ecs_task_definition_container_definit
         let mut object_3104 = object.key("Options").start_object();
         for (key_3105, value_3106) in var_3103 {
             {
-                object_3104.key(key_3105).string(value_3106.as_str());
+                object_3104
+                    .key(key_3105.as_str())
+                    .string(value_3106.as_str());
             }
         }
         object_3104.finish();
@@ -14626,7 +14642,9 @@ pub fn serialize_structure_crate_model_aws_ecs_task_definition_container_definit
         let mut object_3123 = object.key("Options").start_object();
         for (key_3124, value_3125) in var_3122 {
             {
-                object_3123.key(key_3124).string(value_3125.as_str());
+                object_3123
+                    .key(key_3124.as_str())
+                    .string(value_3125.as_str());
             }
         }
         object_3123.finish();
@@ -14794,7 +14812,9 @@ pub fn serialize_structure_crate_model_aws_ecs_task_definition_volumes_docker_vo
         let mut object_3146 = object.key("DriverOpts").start_object();
         for (key_3147, value_3148) in var_3145 {
             {
-                object_3146.key(key_3147).string(value_3148.as_str());
+                object_3146
+                    .key(key_3147.as_str())
+                    .string(value_3148.as_str());
             }
         }
         object_3146.finish();
@@ -14803,7 +14823,9 @@ pub fn serialize_structure_crate_model_aws_ecs_task_definition_volumes_docker_vo
         let mut object_3150 = object.key("Labels").start_object();
         for (key_3151, value_3152) in var_3149 {
             {
-                object_3150.key(key_3151).string(value_3152.as_str());
+                object_3150
+                    .key(key_3151.as_str())
+                    .string(value_3152.as_str());
             }
         }
         object_3150.finish();
@@ -15326,7 +15348,9 @@ pub fn serialize_structure_crate_model_aws_backup_backup_plan_advanced_backup_se
         let mut object_3229 = object.key("BackupOptions").start_object();
         for (key_3230, value_3231) in var_3228 {
             {
-                object_3229.key(key_3230).string(value_3231.as_str());
+                object_3229
+                    .key(key_3230.as_str())
+                    .string(value_3231.as_str());
             }
         }
         object_3229.finish();

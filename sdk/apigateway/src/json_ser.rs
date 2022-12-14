@@ -35,7 +35,7 @@ pub fn serialize_structure_crate_input_create_api_key_input(
         let mut object_9 = object.key("tags").start_object();
         for (key_10, value_11) in var_8 {
             {
-                object_9.key(key_10).string(value_11.as_str());
+                object_9.key(key_10.as_str()).string(value_11.as_str());
             }
         }
         object_9.finish();
@@ -141,7 +141,7 @@ pub fn serialize_structure_crate_input_create_deployment_input(
         let mut object_36 = object.key("variables").start_object();
         for (key_37, value_38) in var_35 {
             {
-                object_36.key(key_37).string(value_38.as_str());
+                object_36.key(key_37.as_str()).string(value_38.as_str());
             }
         }
         object_36.finish();
@@ -241,7 +241,7 @@ pub fn serialize_structure_crate_input_create_domain_name_input(
         let mut object_60 = object.key("tags").start_object();
         for (key_61, value_62) in var_59 {
             {
-                object_60.key(key_61).string(value_62.as_str());
+                object_60.key(key_61.as_str()).string(value_62.as_str());
             }
         }
         object_60.finish();
@@ -349,7 +349,7 @@ pub fn serialize_structure_crate_input_create_rest_api_input(
         let mut object_81 = object.key("tags").start_object();
         for (key_82, value_83) in var_80 {
             {
-                object_81.key(key_82).string(value_83.as_str());
+                object_81.key(key_82.as_str()).string(value_83.as_str());
             }
         }
         object_81.finish();
@@ -393,7 +393,7 @@ pub fn serialize_structure_crate_input_create_stage_input(
         let mut object_93 = object.key("tags").start_object();
         for (key_94, value_95) in var_92 {
             {
-                object_93.key(key_94).string(value_95.as_str());
+                object_93.key(key_94.as_str()).string(value_95.as_str());
             }
         }
         object_93.finish();
@@ -405,7 +405,7 @@ pub fn serialize_structure_crate_input_create_stage_input(
         let mut object_97 = object.key("variables").start_object();
         for (key_98, value_99) in var_96 {
             {
-                object_97.key(key_98).string(value_99.as_str());
+                object_97.key(key_98.as_str()).string(value_99.as_str());
             }
         }
         object_97.finish();
@@ -446,7 +446,7 @@ pub fn serialize_structure_crate_input_create_usage_plan_input(
         let mut object_109 = object.key("tags").start_object();
         for (key_110, value_111) in var_108 {
             {
-                object_109.key(key_110).string(value_111.as_str());
+                object_109.key(key_110.as_str()).string(value_111.as_str());
             }
         }
         object_109.finish();
@@ -489,7 +489,7 @@ pub fn serialize_structure_crate_input_create_vpc_link_input(
         let mut object_119 = object.key("tags").start_object();
         for (key_120, value_121) in var_118 {
             {
-                object_119.key(key_120).string(value_121.as_str());
+                object_119.key(key_120.as_str()).string(value_121.as_str());
             }
         }
         object_119.finish();
@@ -517,7 +517,7 @@ pub fn serialize_structure_crate_input_generate_client_certificate_input(
         let mut object_127 = object.key("tags").start_object();
         for (key_128, value_129) in var_126 {
             {
-                object_127.key(key_128).string(value_129.as_str());
+                object_127.key(key_128.as_str()).string(value_129.as_str());
             }
         }
         object_127.finish();
@@ -533,7 +533,7 @@ pub fn serialize_structure_crate_input_put_gateway_response_input(
         let mut object_131 = object.key("responseParameters").start_object();
         for (key_132, value_133) in var_130 {
             {
-                object_131.key(key_132).string(value_133.as_str());
+                object_131.key(key_132.as_str()).string(value_133.as_str());
             }
         }
         object_131.finish();
@@ -542,7 +542,7 @@ pub fn serialize_structure_crate_input_put_gateway_response_input(
         let mut object_135 = object.key("responseTemplates").start_object();
         for (key_136, value_137) in var_134 {
             {
-                object_135.key(key_136).string(value_137.as_str());
+                object_135.key(key_136.as_str()).string(value_137.as_str());
             }
         }
         object_135.finish();
@@ -591,7 +591,7 @@ pub fn serialize_structure_crate_input_put_integration_input(
         let mut object_150 = object.key("requestParameters").start_object();
         for (key_151, value_152) in var_149 {
             {
-                object_150.key(key_151).string(value_152.as_str());
+                object_150.key(key_151.as_str()).string(value_152.as_str());
             }
         }
         object_150.finish();
@@ -600,7 +600,7 @@ pub fn serialize_structure_crate_input_put_integration_input(
         let mut object_154 = object.key("requestTemplates").start_object();
         for (key_155, value_156) in var_153 {
             {
-                object_154.key(key_155).string(value_156.as_str());
+                object_154.key(key_155.as_str()).string(value_156.as_str());
             }
         }
         object_154.finish();
@@ -636,7 +636,7 @@ pub fn serialize_structure_crate_input_put_integration_response_input(
         let mut object_164 = object.key("responseParameters").start_object();
         for (key_165, value_166) in var_163 {
             {
-                object_164.key(key_165).string(value_166.as_str());
+                object_164.key(key_165.as_str()).string(value_166.as_str());
             }
         }
         object_164.finish();
@@ -645,7 +645,7 @@ pub fn serialize_structure_crate_input_put_integration_response_input(
         let mut object_168 = object.key("responseTemplates").start_object();
         for (key_169, value_170) in var_167 {
             {
-                object_168.key(key_169).string(value_170.as_str());
+                object_168.key(key_169.as_str()).string(value_170.as_str());
             }
         }
         object_168.finish();
@@ -685,7 +685,7 @@ pub fn serialize_structure_crate_input_put_method_input(
         let mut object_179 = object.key("requestModels").start_object();
         for (key_180, value_181) in var_178 {
             {
-                object_179.key(key_180).string(value_181.as_str());
+                object_179.key(key_180.as_str()).string(value_181.as_str());
             }
         }
         object_179.finish();
@@ -694,7 +694,7 @@ pub fn serialize_structure_crate_input_put_method_input(
         let mut object_183 = object.key("requestParameters").start_object();
         for (key_184, value_185) in var_182 {
             {
-                object_183.key(key_184).boolean(*value_185);
+                object_183.key(key_184.as_str()).boolean(*value_185);
             }
         }
         object_183.finish();
@@ -713,7 +713,7 @@ pub fn serialize_structure_crate_input_put_method_response_input(
         let mut object_188 = object.key("responseModels").start_object();
         for (key_189, value_190) in var_187 {
             {
-                object_188.key(key_189).string(value_190.as_str());
+                object_188.key(key_189.as_str()).string(value_190.as_str());
             }
         }
         object_188.finish();
@@ -722,7 +722,7 @@ pub fn serialize_structure_crate_input_put_method_response_input(
         let mut object_192 = object.key("responseParameters").start_object();
         for (key_193, value_194) in var_191 {
             {
-                object_192.key(key_193).boolean(*value_194);
+                object_192.key(key_193.as_str()).boolean(*value_194);
             }
         }
         object_192.finish();
@@ -738,7 +738,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_196 = object.key("tags").start_object();
         for (key_197, value_198) in var_195 {
             {
-                object_196.key(key_197).string(value_198.as_str());
+                object_196.key(key_197.as_str()).string(value_198.as_str());
             }
         }
         object_196.finish();
@@ -754,7 +754,7 @@ pub fn serialize_structure_crate_input_test_invoke_authorizer_input(
         let mut object_200 = object.key("additionalContext").start_object();
         for (key_201, value_202) in var_199 {
             {
-                object_200.key(key_201).string(value_202.as_str());
+                object_200.key(key_201.as_str()).string(value_202.as_str());
             }
         }
         object_200.finish();
@@ -766,7 +766,7 @@ pub fn serialize_structure_crate_input_test_invoke_authorizer_input(
         let mut object_205 = object.key("headers").start_object();
         for (key_206, value_207) in var_204 {
             {
-                object_205.key(key_206).string(value_207.as_str());
+                object_205.key(key_206.as_str()).string(value_207.as_str());
             }
         }
         object_205.finish();
@@ -775,7 +775,7 @@ pub fn serialize_structure_crate_input_test_invoke_authorizer_input(
         let mut object_209 = object.key("multiValueHeaders").start_object();
         for (key_210, value_211) in var_208 {
             {
-                let mut array_212 = object_209.key(key_210).start_array();
+                let mut array_212 = object_209.key(key_210.as_str()).start_array();
                 for item_213 in value_211 {
                     {
                         array_212.value().string(item_213.as_str());
@@ -793,7 +793,7 @@ pub fn serialize_structure_crate_input_test_invoke_authorizer_input(
         let mut object_216 = object.key("stageVariables").start_object();
         for (key_217, value_218) in var_215 {
             {
-                object_216.key(key_217).string(value_218.as_str());
+                object_216.key(key_217.as_str()).string(value_218.as_str());
             }
         }
         object_216.finish();
@@ -815,7 +815,7 @@ pub fn serialize_structure_crate_input_test_invoke_method_input(
         let mut object_222 = object.key("headers").start_object();
         for (key_223, value_224) in var_221 {
             {
-                object_222.key(key_223).string(value_224.as_str());
+                object_222.key(key_223.as_str()).string(value_224.as_str());
             }
         }
         object_222.finish();
@@ -824,7 +824,7 @@ pub fn serialize_structure_crate_input_test_invoke_method_input(
         let mut object_226 = object.key("multiValueHeaders").start_object();
         for (key_227, value_228) in var_225 {
             {
-                let mut array_229 = object_226.key(key_227).start_array();
+                let mut array_229 = object_226.key(key_227.as_str()).start_array();
                 for item_230 in value_228 {
                     {
                         array_229.value().string(item_230.as_str());
@@ -842,7 +842,7 @@ pub fn serialize_structure_crate_input_test_invoke_method_input(
         let mut object_233 = object.key("stageVariables").start_object();
         for (key_234, value_235) in var_232 {
             {
-                object_233.key(key_234).string(value_235.as_str());
+                object_233.key(key_234.as_str()).string(value_235.as_str());
             }
         }
         object_233.finish();
@@ -1339,7 +1339,7 @@ pub fn serialize_structure_crate_model_deployment_canary_settings(
         let mut object_327 = object.key("stageVariableOverrides").start_object();
         for (key_328, value_329) in var_326 {
             {
-                object_327.key(key_328).string(value_329.as_str());
+                object_327.key(key_328.as_str()).string(value_329.as_str());
             }
         }
         object_327.finish();
@@ -1427,7 +1427,7 @@ pub fn serialize_structure_crate_model_canary_settings(
         let mut object_345 = object.key("stageVariableOverrides").start_object();
         for (key_346, value_347) in var_344 {
             {
-                object_345.key(key_346).string(value_347.as_str());
+                object_345.key(key_346.as_str()).string(value_347.as_str());
             }
         }
         object_345.finish();
@@ -1452,7 +1452,7 @@ pub fn serialize_structure_crate_model_api_stage(
         let mut object_351 = object.key("throttle").start_object();
         for (key_352, value_353) in var_350 {
             {
-                let mut object_354 = object_351.key(key_352).start_object();
+                let mut object_354 = object_351.key(key_352.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_throttle_settings(
                     &mut object_354,
                     value_353,

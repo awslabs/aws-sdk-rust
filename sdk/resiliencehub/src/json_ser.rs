@@ -46,7 +46,7 @@ pub fn serialize_structure_crate_input_create_app_input(
         let mut object_12 = object.key("tags").start_object();
         for (key_13, value_14) in var_11 {
             {
-                object_12.key(key_13).string(value_14.as_str());
+                object_12.key(key_13.as_str()).string(value_14.as_str());
             }
         }
         object_12.finish();
@@ -95,7 +95,7 @@ pub fn serialize_structure_crate_input_create_recommendation_template_input(
         let mut object_27 = object.key("tags").start_object();
         for (key_28, value_29) in var_26 {
             {
-                object_27.key(key_28).string(value_29.as_str());
+                object_27.key(key_28.as_str()).string(value_29.as_str());
             }
         }
         object_27.finish();
@@ -137,7 +137,7 @@ pub fn serialize_structure_crate_input_create_resiliency_policy_input(
         let mut object_40 = object.key("tags").start_object();
         for (key_41, value_42) in var_39 {
             {
-                object_40.key(key_41).string(value_42.as_str());
+                object_40.key(key_41.as_str()).string(value_42.as_str());
             }
         }
         object_40.finish();
@@ -604,7 +604,7 @@ pub fn serialize_structure_crate_input_start_app_assessment_input(
         let mut object_128 = object.key("tags").start_object();
         for (key_129, value_130) in var_127 {
             {
-                object_128.key(key_129).string(value_130.as_str());
+                object_128.key(key_129.as_str()).string(value_130.as_str());
             }
         }
         object_128.finish();
@@ -620,7 +620,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_132 = object.key("tags").start_object();
         for (key_133, value_134) in var_131 {
             {
-                object_132.key(key_133).string(value_134.as_str());
+                object_132.key(key_133.as_str()).string(value_134.as_str());
             }
         }
         object_132.finish();

@@ -17,7 +17,7 @@ impl std::fmt::Debug for StateMachineDoesNotExist {
 }
 impl StateMachineDoesNotExist {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -82,7 +82,7 @@ impl std::fmt::Debug for StateMachineDeleting {
 }
 impl StateMachineDeleting {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -147,7 +147,7 @@ impl std::fmt::Debug for MissingRequiredParameter {
 }
 impl MissingRequiredParameter {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -212,7 +212,7 @@ impl std::fmt::Debug for InvalidTracingConfiguration {
 }
 impl InvalidTracingConfiguration {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -277,7 +277,7 @@ impl std::fmt::Debug for InvalidLoggingConfiguration {
 }
 impl InvalidLoggingConfiguration {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -342,7 +342,7 @@ impl std::fmt::Debug for InvalidDefinition {
 }
 impl InvalidDefinition {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -407,7 +407,7 @@ impl std::fmt::Debug for InvalidArn {
 }
 impl InvalidArn {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -482,7 +482,7 @@ impl std::fmt::Debug for ResourceNotFound {
 }
 impl ResourceNotFound {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -572,7 +572,7 @@ impl std::fmt::Debug for TooManyTags {
 }
 impl TooManyTags {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -652,7 +652,7 @@ impl std::fmt::Debug for ExecutionDoesNotExist {
 }
 impl ExecutionDoesNotExist {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -717,7 +717,7 @@ impl std::fmt::Debug for StateMachineTypeNotSupported {
 }
 impl StateMachineTypeNotSupported {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -782,7 +782,7 @@ impl std::fmt::Debug for InvalidName {
 }
 impl InvalidName {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -847,7 +847,7 @@ impl std::fmt::Debug for InvalidExecutionInput {
 }
 impl InvalidExecutionInput {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -912,7 +912,7 @@ impl std::fmt::Debug for ExecutionLimitExceeded {
 }
 impl ExecutionLimitExceeded {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -979,7 +979,7 @@ impl std::fmt::Debug for ExecutionAlreadyExists {
 }
 impl ExecutionAlreadyExists {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1044,7 +1044,7 @@ impl std::fmt::Debug for TaskTimedOut {
 }
 impl TaskTimedOut {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1109,7 +1109,7 @@ impl std::fmt::Debug for TaskDoesNotExist {
 }
 impl TaskDoesNotExist {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1174,7 +1174,7 @@ impl std::fmt::Debug for InvalidToken {
 }
 impl InvalidToken {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1239,7 +1239,7 @@ impl std::fmt::Debug for InvalidOutput {
 }
 impl InvalidOutput {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1304,7 +1304,7 @@ impl std::fmt::Debug for ActivityWorkerLimitExceeded {
 }
 impl ActivityWorkerLimitExceeded {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1369,7 +1369,7 @@ impl std::fmt::Debug for ActivityDoesNotExist {
 }
 impl ActivityDoesNotExist {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1434,7 +1434,7 @@ impl std::fmt::Debug for StateMachineLimitExceeded {
 }
 impl StateMachineLimitExceeded {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1499,7 +1499,7 @@ impl std::fmt::Debug for StateMachineAlreadyExists {
 }
 impl StateMachineAlreadyExists {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1564,7 +1564,7 @@ impl std::fmt::Debug for ActivityLimitExceeded {
 }
 impl ActivityLimitExceeded {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }

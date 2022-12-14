@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_crate_error_access_denied_exception_json_err(
+pub(crate) fn deser_structure_crate_error_access_denied_exception_json_err(
     value: &[u8],
     mut builder: crate::error::access_denied_exception::Builder,
 ) -> Result<crate::error::access_denied_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -47,7 +47,7 @@ pub fn deser_structure_crate_error_access_denied_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_duplicate_resource_exception_json_err(
+pub(crate) fn deser_structure_crate_error_duplicate_resource_exception_json_err(
     value: &[u8],
     mut builder: crate::error::duplicate_resource_exception::Builder,
 ) -> Result<crate::error::duplicate_resource_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -90,7 +90,7 @@ pub fn deser_structure_crate_error_duplicate_resource_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_internal_service_error_json_err(
+pub(crate) fn deser_structure_crate_error_internal_service_error_json_err(
     value: &[u8],
     mut builder: crate::error::internal_service_error::Builder,
 ) -> Result<crate::error::internal_service_error::Builder, aws_smithy_json::deserialize::Error> {
@@ -132,7 +132,7 @@ pub fn deser_structure_crate_error_internal_service_error_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_invalid_request_exception_json_err(
+pub(crate) fn deser_structure_crate_error_invalid_request_exception_json_err(
     value: &[u8],
     mut builder: crate::error::invalid_request_exception::Builder,
 ) -> Result<crate::error::invalid_request_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -174,7 +174,7 @@ pub fn deser_structure_crate_error_invalid_request_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_resource_quota_exceeded_exception_json_err(
+pub(crate) fn deser_structure_crate_error_resource_quota_exceeded_exception_json_err(
     value: &[u8],
     mut builder: crate::error::resource_quota_exceeded_exception::Builder,
 ) -> Result<
@@ -219,7 +219,7 @@ pub fn deser_structure_crate_error_resource_quota_exceeded_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_throttling_exception_json_err(
+pub(crate) fn deser_structure_crate_error_throttling_exception_json_err(
     value: &[u8],
     mut builder: crate::error::throttling_exception::Builder,
 ) -> Result<crate::error::throttling_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -261,7 +261,7 @@ pub fn deser_structure_crate_error_throttling_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_create_data_integration(
+pub(crate) fn deser_operation_crate_operation_create_data_integration(
     value: &[u8],
     mut builder: crate::output::create_data_integration_output::Builder,
 ) -> Result<
@@ -374,7 +374,7 @@ pub fn deser_operation_crate_operation_create_data_integration(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_create_event_integration(
+pub(crate) fn deser_operation_crate_operation_create_event_integration(
     value: &[u8],
     mut builder: crate::output::create_event_integration_output::Builder,
 ) -> Result<
@@ -419,7 +419,7 @@ pub fn deser_operation_crate_operation_create_event_integration(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_resource_not_found_exception_json_err(
+pub(crate) fn deser_structure_crate_error_resource_not_found_exception_json_err(
     value: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -462,7 +462,7 @@ pub fn deser_structure_crate_error_resource_not_found_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_data_integration(
+pub(crate) fn deser_operation_crate_operation_get_data_integration(
     value: &[u8],
     mut builder: crate::output::get_data_integration_output::Builder,
 ) -> Result<crate::output::get_data_integration_output::Builder, aws_smithy_json::deserialize::Error>
@@ -564,7 +564,7 @@ pub fn deser_operation_crate_operation_get_data_integration(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_event_integration(
+pub(crate) fn deser_operation_crate_operation_get_event_integration(
     value: &[u8],
     mut builder: crate::output::get_event_integration_output::Builder,
 ) -> Result<crate::output::get_event_integration_output::Builder, aws_smithy_json::deserialize::Error>
@@ -646,7 +646,7 @@ pub fn deser_operation_crate_operation_get_event_integration(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_data_integration_associations(
+pub(crate) fn deser_operation_crate_operation_list_data_integration_associations(
     value: &[u8],
     mut builder: crate::output::list_data_integration_associations_output::Builder,
 ) -> Result<
@@ -696,7 +696,7 @@ pub fn deser_operation_crate_operation_list_data_integration_associations(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_data_integrations(
+pub(crate) fn deser_operation_crate_operation_list_data_integrations(
     value: &[u8],
     mut builder: crate::output::list_data_integrations_output::Builder,
 ) -> Result<
@@ -746,7 +746,7 @@ pub fn deser_operation_crate_operation_list_data_integrations(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_event_integration_associations(
+pub(crate) fn deser_operation_crate_operation_list_event_integration_associations(
     value: &[u8],
     mut builder: crate::output::list_event_integration_associations_output::Builder,
 ) -> Result<
@@ -796,7 +796,7 @@ pub fn deser_operation_crate_operation_list_event_integration_associations(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_event_integrations(
+pub(crate) fn deser_operation_crate_operation_list_event_integrations(
     value: &[u8],
     mut builder: crate::output::list_event_integrations_output::Builder,
 ) -> Result<
@@ -846,7 +846,7 @@ pub fn deser_operation_crate_operation_list_event_integrations(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_tags_for_resource(
+pub(crate) fn deser_operation_crate_operation_list_tags_for_resource(
     value: &[u8],
     mut builder: crate::output::list_tags_for_resource_output::Builder,
 ) -> Result<
@@ -889,7 +889,7 @@ pub fn deser_operation_crate_operation_list_tags_for_resource(
     Ok(builder)
 }
 
-pub fn or_empty_doc(data: &[u8]) -> &[u8] {
+pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
     } else {
@@ -897,7 +897,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-pub fn deser_structure_crate_model_schedule_configuration<'a, I>(
+pub(crate) fn deser_structure_crate_model_schedule_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ScheduleConfiguration>, aws_smithy_json::deserialize::Error>
 where
@@ -909,7 +909,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::ScheduleConfiguration::builder();
+            let mut builder = crate::model::schedule_configuration::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -961,8 +961,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_com_amazonaws_appintegrations_tag_map<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_map_com_amazonaws_appintegrations_tag_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -1007,7 +1007,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_event_filter<'a, I>(
+pub(crate) fn deser_structure_crate_model_event_filter<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::EventFilter>, aws_smithy_json::deserialize::Error>
 where
@@ -1019,7 +1019,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::EventFilter::builder();
+            let mut builder = crate::model::event_filter::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -1053,8 +1053,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_appintegrations_data_integration_associations_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_appintegrations_data_integration_associations_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::DataIntegrationAssociationSummary>>,
@@ -1093,8 +1093,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_appintegrations_data_integrations_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_appintegrations_data_integrations_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::DataIntegrationSummary>>,
@@ -1133,8 +1133,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_appintegrations_event_integration_associations_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_appintegrations_event_integration_associations_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::EventIntegrationAssociation>>,
@@ -1173,8 +1173,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_appintegrations_event_integrations_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_appintegrations_event_integrations_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::EventIntegration>>,
@@ -1214,7 +1214,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_data_integration_association_summary<'a, I>(
+pub(crate) fn deser_structure_crate_model_data_integration_association_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::DataIntegrationAssociationSummary>,
@@ -1229,7 +1229,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::DataIntegrationAssociationSummary::builder();
+            let mut builder =
+                crate::model::data_integration_association_summary::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -1281,7 +1282,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_data_integration_summary<'a, I>(
+pub(crate) fn deser_structure_crate_model_data_integration_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DataIntegrationSummary>, aws_smithy_json::deserialize::Error>
 where
@@ -1293,7 +1294,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::DataIntegrationSummary::builder();
+            let mut builder = crate::model::data_integration_summary::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -1345,7 +1346,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_event_integration_association<'a, I>(
+pub(crate) fn deser_structure_crate_model_event_integration_association<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::EventIntegrationAssociation>, aws_smithy_json::deserialize::Error>
 where
@@ -1357,7 +1358,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::EventIntegrationAssociation::builder();
+            let mut builder = crate::model::event_integration_association::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -1432,7 +1433,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_event_integration<'a, I>(
+pub(crate) fn deser_structure_crate_model_event_integration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::EventIntegration>, aws_smithy_json::deserialize::Error>
 where
@@ -1444,7 +1445,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::EventIntegration::builder();
+            let mut builder = crate::model::event_integration::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -1517,8 +1518,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_com_amazonaws_appintegrations_client_association_metadata<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_map_com_amazonaws_appintegrations_client_association_metadata<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,

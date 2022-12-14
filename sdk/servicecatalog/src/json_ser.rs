@@ -984,7 +984,7 @@ pub fn serialize_structure_crate_input_execute_provisioned_product_service_actio
         let mut object_203 = object.key("Parameters").start_object();
         for (key_204, value_205) in var_202 {
             {
-                let mut array_206 = object_203.key(key_204).start_array();
+                let mut array_206 = object_203.key(key_204.as_str()).start_array();
                 for item_207 in value_205 {
                     {
                         array_206.value().string(item_207.as_str());
@@ -2144,7 +2144,7 @@ pub fn serialize_structure_crate_model_provisioning_artifact_properties(
         let mut object_441 = object.key("Info").start_object();
         for (key_442, value_443) in var_440 {
             {
-                object_441.key(key_442).string(value_443.as_str());
+                object_441.key(key_442.as_str()).string(value_443.as_str());
             }
         }
         object_441.finish();

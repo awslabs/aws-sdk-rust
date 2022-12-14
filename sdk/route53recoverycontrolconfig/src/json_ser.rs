@@ -13,7 +13,7 @@ pub fn serialize_structure_crate_input_create_cluster_input(
         let mut object_4 = object.key("Tags").start_object();
         for (key_5, value_6) in var_3 {
             {
-                object_4.key(key_5).string(value_6.as_str());
+                object_4.key(key_5.as_str()).string(value_6.as_str());
             }
         }
         object_4.finish();
@@ -38,7 +38,7 @@ pub fn serialize_structure_crate_input_create_control_panel_input(
         let mut object_11 = object.key("Tags").start_object();
         for (key_12, value_13) in var_10 {
             {
-                object_11.key(key_12).string(value_13.as_str());
+                object_11.key(key_12.as_str()).string(value_13.as_str());
             }
         }
         object_11.finish();
@@ -89,7 +89,7 @@ pub fn serialize_structure_crate_input_create_safety_rule_input(
         let mut object_24 = object.key("Tags").start_object();
         for (key_25, value_26) in var_23 {
             {
-                object_24.key(key_25).string(value_26.as_str());
+                object_24.key(key_25.as_str()).string(value_26.as_str());
             }
         }
         object_24.finish();
@@ -105,7 +105,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_28 = object.key("Tags").start_object();
         for (key_29, value_30) in var_27 {
             {
-                object_28.key(key_29).string(value_30.as_str());
+                object_28.key(key_29.as_str()).string(value_30.as_str());
             }
         }
         object_28.finish();

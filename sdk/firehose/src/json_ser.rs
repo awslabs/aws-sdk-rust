@@ -1832,7 +1832,7 @@ pub fn serialize_structure_crate_model_open_x_json_ser_de(
         let mut object_389 = object.key("ColumnToJsonKeyMappings").start_object();
         for (key_390, value_391) in var_388 {
             {
-                object_389.key(key_390).string(value_391.as_str());
+                object_389.key(key_390.as_str()).string(value_391.as_str());
             }
         }
         object_389.finish();

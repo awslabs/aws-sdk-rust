@@ -17,7 +17,7 @@ impl std::fmt::Debug for ObjectAlreadyInActiveTierError {
 }
 impl ObjectAlreadyInActiveTierError {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -82,7 +82,7 @@ impl std::fmt::Debug for NoSuchKey {
 }
 impl NoSuchKey {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -147,7 +147,7 @@ impl std::fmt::Debug for NoSuchBucket {
 }
 impl NoSuchBucket {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -212,7 +212,7 @@ impl std::fmt::Debug for NotFound {
 }
 impl NotFound {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -295,7 +295,7 @@ impl std::fmt::Debug for InvalidObjectState {
 }
 impl InvalidObjectState {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -390,7 +390,7 @@ impl std::fmt::Debug for BucketAlreadyOwnedByYou {
 }
 impl BucketAlreadyOwnedByYou {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -455,7 +455,7 @@ impl std::fmt::Debug for BucketAlreadyExists {
 }
 impl BucketAlreadyExists {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -520,7 +520,7 @@ impl std::fmt::Debug for ObjectNotInActiveTierError {
 }
 impl ObjectNotInActiveTierError {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -585,7 +585,7 @@ impl std::fmt::Debug for NoSuchUpload {
 }
 impl NoSuchUpload {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }

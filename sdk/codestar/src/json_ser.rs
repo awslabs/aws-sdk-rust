@@ -57,7 +57,7 @@ pub fn serialize_structure_crate_input_create_project_input(
         let mut object_17 = object.key("tags").start_object();
         for (key_18, value_19) in var_16 {
             {
-                object_17.key(key_18).string(value_19.as_str());
+                object_17.key(key_18.as_str()).string(value_19.as_str());
             }
         }
         object_17.finish();
@@ -243,7 +243,7 @@ pub fn serialize_structure_crate_input_tag_project_input(
         let mut object_46 = object.key("tags").start_object();
         for (key_47, value_48) in var_45 {
             {
-                object_46.key(key_47).string(value_48.as_str());
+                object_46.key(key_47.as_str()).string(value_48.as_str());
             }
         }
         object_46.finish();
@@ -357,7 +357,7 @@ pub fn serialize_structure_crate_model_toolchain(
         let mut object_72 = object.key("stackParameters").start_object();
         for (key_73, value_74) in var_71 {
             {
-                object_72.key(key_73).string(value_74.as_str());
+                object_72.key(key_73.as_str()).string(value_74.as_str());
             }
         }
         object_72.finish();

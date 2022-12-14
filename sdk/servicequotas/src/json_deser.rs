@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_crate_error_access_denied_exception_json_err(
+pub(crate) fn deser_structure_crate_error_access_denied_exception_json_err(
     value: &[u8],
     mut builder: crate::error::access_denied_exception::Builder,
 ) -> Result<crate::error::access_denied_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -47,7 +47,7 @@ pub fn deser_structure_crate_error_access_denied_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_aws_service_access_not_enabled_exception_json_err(
+pub(crate) fn deser_structure_crate_error_aws_service_access_not_enabled_exception_json_err(
     value: &[u8],
     mut builder: crate::error::aws_service_access_not_enabled_exception::Builder,
 ) -> Result<
@@ -92,7 +92,7 @@ pub fn deser_structure_crate_error_aws_service_access_not_enabled_exception_json
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_dependency_access_denied_exception_json_err(
+pub(crate) fn deser_structure_crate_error_dependency_access_denied_exception_json_err(
     value: &[u8],
     mut builder: crate::error::dependency_access_denied_exception::Builder,
 ) -> Result<
@@ -137,7 +137,7 @@ pub fn deser_structure_crate_error_dependency_access_denied_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_no_available_organization_exception_json_err(
+pub(crate) fn deser_structure_crate_error_no_available_organization_exception_json_err(
     value: &[u8],
     mut builder: crate::error::no_available_organization_exception::Builder,
 ) -> Result<
@@ -182,7 +182,7 @@ pub fn deser_structure_crate_error_no_available_organization_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_organization_not_in_all_features_mode_exception_json_err(
+pub(crate) fn deser_structure_crate_error_organization_not_in_all_features_mode_exception_json_err(
     value: &[u8],
     mut builder: crate::error::organization_not_in_all_features_mode_exception::Builder,
 ) -> Result<
@@ -227,7 +227,7 @@ pub fn deser_structure_crate_error_organization_not_in_all_features_mode_excepti
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_service_exception_json_err(
+pub(crate) fn deser_structure_crate_error_service_exception_json_err(
     value: &[u8],
     mut builder: crate::error::service_exception::Builder,
 ) -> Result<crate::error::service_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -269,7 +269,7 @@ pub fn deser_structure_crate_error_service_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_templates_not_available_in_region_exception_json_err(
+pub(crate) fn deser_structure_crate_error_templates_not_available_in_region_exception_json_err(
     value: &[u8],
     mut builder: crate::error::templates_not_available_in_region_exception::Builder,
 ) -> Result<
@@ -314,7 +314,7 @@ pub fn deser_structure_crate_error_templates_not_available_in_region_exception_j
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_too_many_requests_exception_json_err(
+pub(crate) fn deser_structure_crate_error_too_many_requests_exception_json_err(
     value: &[u8],
     mut builder: crate::error::too_many_requests_exception::Builder,
 ) -> Result<crate::error::too_many_requests_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -357,7 +357,7 @@ pub fn deser_structure_crate_error_too_many_requests_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_illegal_argument_exception_json_err(
+pub(crate) fn deser_structure_crate_error_illegal_argument_exception_json_err(
     value: &[u8],
     mut builder: crate::error::illegal_argument_exception::Builder,
 ) -> Result<crate::error::illegal_argument_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -400,7 +400,7 @@ pub fn deser_structure_crate_error_illegal_argument_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_no_such_resource_exception_json_err(
+pub(crate) fn deser_structure_crate_error_no_such_resource_exception_json_err(
     value: &[u8],
     mut builder: crate::error::no_such_resource_exception::Builder,
 ) -> Result<crate::error::no_such_resource_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -443,7 +443,7 @@ pub fn deser_structure_crate_error_no_such_resource_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_service_quota_template_not_in_use_exception_json_err(
+pub(crate) fn deser_structure_crate_error_service_quota_template_not_in_use_exception_json_err(
     value: &[u8],
     mut builder: crate::error::service_quota_template_not_in_use_exception::Builder,
 ) -> Result<
@@ -488,7 +488,7 @@ pub fn deser_structure_crate_error_service_quota_template_not_in_use_exception_j
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_association_for_service_quota_template(
+pub(crate) fn deser_operation_crate_operation_get_association_for_service_quota_template(
     value: &[u8],
     mut builder: crate::output::get_association_for_service_quota_template_output::Builder,
 ) -> Result<
@@ -539,7 +539,7 @@ pub fn deser_operation_crate_operation_get_association_for_service_quota_templat
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_aws_default_service_quota(
+pub(crate) fn deser_operation_crate_operation_get_aws_default_service_quota(
     value: &[u8],
     mut builder: crate::output::get_aws_default_service_quota_output::Builder,
 ) -> Result<
@@ -580,7 +580,7 @@ pub fn deser_operation_crate_operation_get_aws_default_service_quota(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_requested_service_quota_change(
+pub(crate) fn deser_operation_crate_operation_get_requested_service_quota_change(
     value: &[u8],
     mut builder: crate::output::get_requested_service_quota_change_output::Builder,
 ) -> Result<
@@ -621,7 +621,7 @@ pub fn deser_operation_crate_operation_get_requested_service_quota_change(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_service_quota(
+pub(crate) fn deser_operation_crate_operation_get_service_quota(
     value: &[u8],
     mut builder: crate::output::get_service_quota_output::Builder,
 ) -> Result<crate::output::get_service_quota_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -659,7 +659,7 @@ pub fn deser_operation_crate_operation_get_service_quota(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_service_quota_increase_request_from_template(
+pub(crate) fn deser_operation_crate_operation_get_service_quota_increase_request_from_template(
     value: &[u8],
     mut builder: crate::output::get_service_quota_increase_request_from_template_output::Builder,
 ) -> Result<
@@ -700,7 +700,7 @@ pub fn deser_operation_crate_operation_get_service_quota_increase_request_from_t
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_invalid_pagination_token_exception_json_err(
+pub(crate) fn deser_structure_crate_error_invalid_pagination_token_exception_json_err(
     value: &[u8],
     mut builder: crate::error::invalid_pagination_token_exception::Builder,
 ) -> Result<
@@ -745,7 +745,7 @@ pub fn deser_structure_crate_error_invalid_pagination_token_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_aws_default_service_quotas(
+pub(crate) fn deser_operation_crate_operation_list_aws_default_service_quotas(
     value: &[u8],
     mut builder: crate::output::list_aws_default_service_quotas_output::Builder,
 ) -> Result<
@@ -795,7 +795,7 @@ pub fn deser_operation_crate_operation_list_aws_default_service_quotas(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_requested_service_quota_change_history(
+pub(crate) fn deser_operation_crate_operation_list_requested_service_quota_change_history(
     value: &[u8],
     mut builder: crate::output::list_requested_service_quota_change_history_output::Builder,
 ) -> Result<
@@ -845,7 +845,7 @@ pub fn deser_operation_crate_operation_list_requested_service_quota_change_histo
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_requested_service_quota_change_history_by_quota(
+pub(crate) fn deser_operation_crate_operation_list_requested_service_quota_change_history_by_quota(
     value: &[u8],
     mut builder: crate::output::list_requested_service_quota_change_history_by_quota_output::Builder,
 ) -> Result<
@@ -895,7 +895,7 @@ pub fn deser_operation_crate_operation_list_requested_service_quota_change_histo
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_service_quota_increase_requests_in_template(
+pub(crate) fn deser_operation_crate_operation_list_service_quota_increase_requests_in_template(
     value: &[u8],
     mut builder: crate::output::list_service_quota_increase_requests_in_template_output::Builder,
 ) -> Result<
@@ -945,7 +945,7 @@ pub fn deser_operation_crate_operation_list_service_quota_increase_requests_in_t
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_service_quotas(
+pub(crate) fn deser_operation_crate_operation_list_service_quotas(
     value: &[u8],
     mut builder: crate::output::list_service_quotas_output::Builder,
 ) -> Result<crate::output::list_service_quotas_output::Builder, aws_smithy_json::deserialize::Error>
@@ -993,7 +993,7 @@ pub fn deser_operation_crate_operation_list_service_quotas(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_services(
+pub(crate) fn deser_operation_crate_operation_list_services(
     value: &[u8],
     mut builder: crate::output::list_services_output::Builder,
 ) -> Result<crate::output::list_services_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -1040,7 +1040,7 @@ pub fn deser_operation_crate_operation_list_services(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_tags_for_resource(
+pub(crate) fn deser_operation_crate_operation_list_tags_for_resource(
     value: &[u8],
     mut builder: crate::output::list_tags_for_resource_output::Builder,
 ) -> Result<
@@ -1083,7 +1083,7 @@ pub fn deser_operation_crate_operation_list_tags_for_resource(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_quota_exceeded_exception_json_err(
+pub(crate) fn deser_structure_crate_error_quota_exceeded_exception_json_err(
     value: &[u8],
     mut builder: crate::error::quota_exceeded_exception::Builder,
 ) -> Result<crate::error::quota_exceeded_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -1125,7 +1125,7 @@ pub fn deser_structure_crate_error_quota_exceeded_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_put_service_quota_increase_request_into_template(
+pub(crate) fn deser_operation_crate_operation_put_service_quota_increase_request_into_template(
     value: &[u8],
     mut builder: crate::output::put_service_quota_increase_request_into_template_output::Builder,
 ) -> Result<
@@ -1166,7 +1166,7 @@ pub fn deser_operation_crate_operation_put_service_quota_increase_request_into_t
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_invalid_resource_state_exception_json_err(
+pub(crate) fn deser_structure_crate_error_invalid_resource_state_exception_json_err(
     value: &[u8],
     mut builder: crate::error::invalid_resource_state_exception::Builder,
 ) -> Result<
@@ -1211,7 +1211,7 @@ pub fn deser_structure_crate_error_invalid_resource_state_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_resource_already_exists_exception_json_err(
+pub(crate) fn deser_structure_crate_error_resource_already_exists_exception_json_err(
     value: &[u8],
     mut builder: crate::error::resource_already_exists_exception::Builder,
 ) -> Result<
@@ -1256,7 +1256,7 @@ pub fn deser_structure_crate_error_resource_already_exists_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_request_service_quota_increase(
+pub(crate) fn deser_operation_crate_operation_request_service_quota_increase(
     value: &[u8],
     mut builder: crate::output::request_service_quota_increase_output::Builder,
 ) -> Result<
@@ -1297,7 +1297,7 @@ pub fn deser_operation_crate_operation_request_service_quota_increase(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_tag_policy_violation_exception_json_err(
+pub(crate) fn deser_structure_crate_error_tag_policy_violation_exception_json_err(
     value: &[u8],
     mut builder: crate::error::tag_policy_violation_exception::Builder,
 ) -> Result<
@@ -1342,7 +1342,7 @@ pub fn deser_structure_crate_error_tag_policy_violation_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_too_many_tags_exception_json_err(
+pub(crate) fn deser_structure_crate_error_too_many_tags_exception_json_err(
     value: &[u8],
     mut builder: crate::error::too_many_tags_exception::Builder,
 ) -> Result<crate::error::too_many_tags_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -1384,7 +1384,7 @@ pub fn deser_structure_crate_error_too_many_tags_exception_json_err(
     Ok(builder)
 }
 
-pub fn or_empty_doc(data: &[u8]) -> &[u8] {
+pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
     } else {
@@ -1392,7 +1392,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-pub fn deser_structure_crate_model_service_quota<'a, I>(
+pub(crate) fn deser_structure_crate_model_service_quota<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ServiceQuota>, aws_smithy_json::deserialize::Error>
 where
@@ -1404,7 +1404,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::ServiceQuota::builder();
+            let mut builder = crate::model::service_quota::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -1526,7 +1526,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_requested_service_quota_change<'a, I>(
+pub(crate) fn deser_structure_crate_model_requested_service_quota_change<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RequestedServiceQuotaChange>, aws_smithy_json::deserialize::Error>
 where
@@ -1538,7 +1538,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::RequestedServiceQuotaChange::builder();
+            let mut builder = crate::model::requested_service_quota_change::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -1687,7 +1687,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_service_quota_increase_request_in_template<'a, I>(
+pub(crate) fn deser_structure_crate_model_service_quota_increase_request_in_template<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::ServiceQuotaIncreaseRequestInTemplate>,
@@ -1702,7 +1702,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::ServiceQuotaIncreaseRequestInTemplate::builder();
+            let mut builder =
+                crate::model::service_quota_increase_request_in_template::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -1796,8 +1797,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_servicequotas_service_quota_list_definition<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_servicequotas_service_quota_list_definition<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ServiceQuota>>, aws_smithy_json::deserialize::Error>
 where
@@ -1832,8 +1833,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_servicequotas_requested_service_quota_change_history_list_definition<
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_servicequotas_requested_service_quota_change_history_list_definition<
     'a,
     I,
 >(
@@ -1875,8 +1876,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_servicequotas_service_quota_increase_request_in_template_list<
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_servicequotas_service_quota_increase_request_in_template_list<
     'a,
     I,
 >(
@@ -1918,8 +1919,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_servicequotas_service_info_list_definition<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_servicequotas_service_info_list_definition<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ServiceInfo>>, aws_smithy_json::deserialize::Error>
 where
@@ -1954,8 +1955,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_servicequotas_output_tags<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_servicequotas_output_tags<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Tag>>, aws_smithy_json::deserialize::Error>
 where
@@ -1989,7 +1990,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_metric_info<'a, I>(
+pub(crate) fn deser_structure_crate_model_metric_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::MetricInfo>, aws_smithy_json::deserialize::Error>
 where
@@ -2001,7 +2002,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::MetricInfo::builder();
+            let mut builder = crate::model::metric_info::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -2058,7 +2059,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_quota_period<'a, I>(
+pub(crate) fn deser_structure_crate_model_quota_period<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::QuotaPeriod>, aws_smithy_json::deserialize::Error>
 where
@@ -2070,7 +2071,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::QuotaPeriod::builder();
+            let mut builder = crate::model::quota_period::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -2081,7 +2082,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -2116,7 +2117,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_error_reason<'a, I>(
+pub(crate) fn deser_structure_crate_model_error_reason<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ErrorReason>, aws_smithy_json::deserialize::Error>
 where
@@ -2128,7 +2129,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::ErrorReason::builder();
+            let mut builder = crate::model::error_reason::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -2174,7 +2175,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_service_info<'a, I>(
+pub(crate) fn deser_structure_crate_model_service_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ServiceInfo>, aws_smithy_json::deserialize::Error>
 where
@@ -2186,7 +2187,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::ServiceInfo::builder();
+            let mut builder = crate::model::service_info::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -2229,7 +2230,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_tag<'a, I>(
+pub(crate) fn deser_structure_crate_model_tag<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Tag>, aws_smithy_json::deserialize::Error>
 where
@@ -2241,7 +2242,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Tag::builder();
+            let mut builder = crate::model::tag::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -2284,8 +2285,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_com_amazonaws_servicequotas_metric_dimensions_map_definition<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_map_com_amazonaws_servicequotas_metric_dimensions_map_definition<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,

@@ -90,7 +90,7 @@ pub fn serialize_structure_crate_input_create_action_input(
         let mut object_21 = object.key("Properties").start_object();
         for (key_22, value_23) in var_20 {
             {
-                object_21.key(key_22).string(value_23.as_str());
+                object_21.key(key_22.as_str()).string(value_23.as_str());
             }
         }
         object_21.finish();
@@ -253,7 +253,7 @@ pub fn serialize_structure_crate_input_create_artifact_input(
         let mut object_64 = object.key("Properties").start_object();
         for (key_65, value_66) in var_63 {
             {
-                object_64.key(key_65).string(value_66.as_str());
+                object_64.key(key_65.as_str()).string(value_66.as_str());
             }
         }
         object_64.finish();
@@ -458,7 +458,7 @@ pub fn serialize_structure_crate_input_create_context_input(
         let mut object_120 = object.key("Properties").start_object();
         for (key_121, value_122) in var_119 {
             {
-                object_120.key(key_121).string(value_122.as_str());
+                object_120.key(key_121.as_str()).string(value_122.as_str());
             }
         }
         object_120.finish();
@@ -1584,7 +1584,7 @@ pub fn serialize_structure_crate_input_create_model_package_input(
         let mut object_409 = object.key("CustomerMetadataProperties").start_object();
         for (key_410, value_411) in var_408 {
             {
-                object_409.key(key_410).string(value_411.as_str());
+                object_409.key(key_410.as_str()).string(value_411.as_str());
             }
         }
         object_409.finish();
@@ -2040,7 +2040,7 @@ pub fn serialize_structure_crate_input_create_processing_job_input(
         let mut object_523 = object.key("Environment").start_object();
         for (key_524, value_525) in var_522 {
             {
-                object_523.key(key_524).string(value_525.as_str());
+                object_523.key(key_524.as_str()).string(value_525.as_str());
             }
         }
         object_523.finish();
@@ -2153,7 +2153,7 @@ pub fn serialize_structure_crate_input_create_training_job_input(
         let mut object_552 = object.key("HyperParameters").start_object();
         for (key_553, value_554) in var_551 {
             {
-                object_552.key(key_553).string(value_554.as_str());
+                object_552.key(key_553.as_str()).string(value_554.as_str());
             }
         }
         object_552.finish();
@@ -2304,7 +2304,7 @@ pub fn serialize_structure_crate_input_create_training_job_input(
         let mut object_593 = object.key("Environment").start_object();
         for (key_594, value_595) in var_592 {
             {
-                object_593.key(key_594).string(value_595.as_str());
+                object_593.key(key_594.as_str()).string(value_595.as_str());
             }
         }
         object_593.finish();
@@ -2354,7 +2354,7 @@ pub fn serialize_structure_crate_input_create_transform_job_input(
         let mut object_606 = object.key("Environment").start_object();
         for (key_607, value_608) in var_605 {
             {
-                object_606.key(key_607).string(value_608.as_str());
+                object_606.key(key_607.as_str()).string(value_608.as_str());
             }
         }
         object_606.finish();
@@ -2474,7 +2474,7 @@ pub fn serialize_structure_crate_input_create_trial_component_input(
         let mut object_639 = object.key("Parameters").start_object();
         for (key_640, value_641) in var_638 {
             {
-                let mut object_642 = object_639.key(key_640).start_object();
+                let mut object_642 = object_639.key(key_640.as_str()).start_object();
                 crate::json_ser::serialize_union_crate_model_trial_component_parameter_value(
                     &mut object_642,
                     value_641,
@@ -2488,7 +2488,7 @@ pub fn serialize_structure_crate_input_create_trial_component_input(
         let mut object_644 = object.key("InputArtifacts").start_object();
         for (key_645, value_646) in var_643 {
             {
-                let mut object_647 = object_644.key(key_645).start_object();
+                let mut object_647 = object_644.key(key_645.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_trial_component_artifact(
                     &mut object_647,
                     value_646,
@@ -2502,7 +2502,7 @@ pub fn serialize_structure_crate_input_create_trial_component_input(
         let mut object_649 = object.key("OutputArtifacts").start_object();
         for (key_650, value_651) in var_648 {
             {
-                let mut object_652 = object_649.key(key_650).start_object();
+                let mut object_652 = object_649.key(key_650.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_trial_component_artifact(
                     &mut object_652,
                     value_651,
@@ -6502,7 +6502,9 @@ pub fn serialize_structure_crate_input_update_action_input(
         let mut object_1364 = object.key("Properties").start_object();
         for (key_1365, value_1366) in var_1363 {
             {
-                object_1364.key(key_1365).string(value_1366.as_str());
+                object_1364
+                    .key(key_1365.as_str())
+                    .string(value_1366.as_str());
             }
         }
         object_1364.finish();
@@ -6551,7 +6553,9 @@ pub fn serialize_structure_crate_input_update_artifact_input(
         let mut object_1376 = object.key("Properties").start_object();
         for (key_1377, value_1378) in var_1375 {
             {
-                object_1376.key(key_1377).string(value_1378.as_str());
+                object_1376
+                    .key(key_1377.as_str())
+                    .string(value_1378.as_str());
             }
         }
         object_1376.finish();
@@ -6600,7 +6604,9 @@ pub fn serialize_structure_crate_input_update_context_input(
         let mut object_1388 = object.key("Properties").start_object();
         for (key_1389, value_1390) in var_1387 {
             {
-                object_1388.key(key_1389).string(value_1390.as_str());
+                object_1388
+                    .key(key_1389.as_str())
+                    .string(value_1390.as_str());
             }
         }
         object_1388.finish();
@@ -6884,7 +6890,9 @@ pub fn serialize_structure_crate_input_update_model_package_input(
         let mut object_1452 = object.key("CustomerMetadataProperties").start_object();
         for (key_1453, value_1454) in var_1451 {
             {
-                object_1452.key(key_1453).string(value_1454.as_str());
+                object_1452
+                    .key(key_1453.as_str())
+                    .string(value_1454.as_str());
             }
         }
         object_1452.finish();
@@ -7239,7 +7247,7 @@ pub fn serialize_structure_crate_input_update_trial_component_input(
         let mut object_1529 = object.key("Parameters").start_object();
         for (key_1530, value_1531) in var_1528 {
             {
-                let mut object_1532 = object_1529.key(key_1530).start_object();
+                let mut object_1532 = object_1529.key(key_1530.as_str()).start_object();
                 crate::json_ser::serialize_union_crate_model_trial_component_parameter_value(
                     &mut object_1532,
                     value_1531,
@@ -7262,7 +7270,7 @@ pub fn serialize_structure_crate_input_update_trial_component_input(
         let mut object_1537 = object.key("InputArtifacts").start_object();
         for (key_1538, value_1539) in var_1536 {
             {
-                let mut object_1540 = object_1537.key(key_1538).start_object();
+                let mut object_1540 = object_1537.key(key_1538.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_trial_component_artifact(
                     &mut object_1540,
                     value_1539,
@@ -7285,7 +7293,7 @@ pub fn serialize_structure_crate_input_update_trial_component_input(
         let mut object_1545 = object.key("OutputArtifacts").start_object();
         for (key_1546, value_1547) in var_1544 {
             {
-                let mut object_1548 = object_1545.key(key_1546).start_object();
+                let mut object_1548 = object_1545.key(key_1546.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_trial_component_artifact(
                     &mut object_1548,
                     value_1547,
@@ -7969,7 +7977,9 @@ pub fn serialize_structure_crate_model_data_quality_app_specification(
         let mut object_1694 = object.key("Environment").start_object();
         for (key_1695, value_1696) in var_1693 {
             {
-                object_1694.key(key_1695).string(value_1696.as_str());
+                object_1694
+                    .key(key_1695.as_str())
+                    .string(value_1696.as_str());
             }
         }
         object_1694.finish();
@@ -8650,7 +8660,9 @@ pub fn serialize_structure_crate_model_hyper_parameter_training_job_definition(
         let mut object_1819 = object.key("StaticHyperParameters").start_object();
         for (key_1820, value_1821) in var_1818 {
             {
-                object_1819.key(key_1820).string(value_1821.as_str());
+                object_1819
+                    .key(key_1820.as_str())
+                    .string(value_1821.as_str());
             }
         }
         object_1819.finish();
@@ -9064,7 +9076,9 @@ pub fn serialize_structure_crate_model_container_definition(
         let mut object_1905 = object.key("Environment").start_object();
         for (key_1906, value_1907) in var_1904 {
             {
-                object_1905.key(key_1906).string(value_1907.as_str());
+                object_1905
+                    .key(key_1906.as_str())
+                    .string(value_1907.as_str());
             }
         }
         object_1905.finish();
@@ -9155,7 +9169,9 @@ pub fn serialize_structure_crate_model_model_bias_app_specification(
         let mut object_1925 = object.key("Environment").start_object();
         for (key_1926, value_1927) in var_1924 {
             {
-                object_1925.key(key_1926).string(value_1927.as_str());
+                object_1925
+                    .key(key_1926.as_str())
+                    .string(value_1927.as_str());
             }
         }
         object_1925.finish();
@@ -9218,7 +9234,9 @@ pub fn serialize_structure_crate_model_model_explainability_app_specification(
         let mut object_1938 = object.key("Environment").start_object();
         for (key_1939, value_1940) in var_1937 {
             {
-                object_1938.key(key_1939).string(value_1940.as_str());
+                object_1938
+                    .key(key_1939.as_str())
+                    .string(value_1940.as_str());
             }
         }
         object_1938.finish();
@@ -9480,7 +9498,9 @@ pub fn serialize_structure_crate_model_model_quality_app_specification(
         let mut object_2000 = object.key("Environment").start_object();
         for (key_2001, value_2002) in var_1999 {
             {
-                object_2000.key(key_2001).string(value_2002.as_str());
+                object_2000
+                    .key(key_2001.as_str())
+                    .string(value_2002.as_str());
             }
         }
         object_2000.finish();
@@ -9929,7 +9949,9 @@ pub fn serialize_structure_crate_model_debug_hook_config(
         let mut object_2079 = object.key("HookParameters").start_object();
         for (key_2080, value_2081) in var_2078 {
             {
-                object_2079.key(key_2080).string(value_2081.as_str());
+                object_2079
+                    .key(key_2080.as_str())
+                    .string(value_2081.as_str());
             }
         }
         object_2079.finish();
@@ -9982,7 +10004,9 @@ pub fn serialize_structure_crate_model_debug_rule_configuration(
         let mut object_2092 = object.key("RuleParameters").start_object();
         for (key_2093, value_2094) in var_2091 {
             {
-                object_2092.key(key_2093).string(value_2094.as_str());
+                object_2092
+                    .key(key_2093.as_str())
+                    .string(value_2094.as_str());
             }
         }
         object_2092.finish();
@@ -10020,7 +10044,9 @@ pub fn serialize_structure_crate_model_profiler_config(
         let mut object_2100 = object.key("ProfilingParameters").start_object();
         for (key_2101, value_2102) in var_2099 {
             {
-                object_2100.key(key_2101).string(value_2102.as_str());
+                object_2100
+                    .key(key_2101.as_str())
+                    .string(value_2102.as_str());
             }
         }
         object_2100.finish();
@@ -10059,7 +10085,9 @@ pub fn serialize_structure_crate_model_profiler_rule_configuration(
         let mut object_2109 = object.key("RuleParameters").start_object();
         for (key_2110, value_2111) in var_2108 {
             {
-                object_2109.key(key_2110).string(value_2111.as_str());
+                object_2109
+                    .key(key_2110.as_str())
+                    .string(value_2111.as_str());
             }
         }
         object_2109.finish();
@@ -10443,7 +10471,9 @@ pub fn serialize_structure_crate_model_query_filters(
         let mut object_2176 = object.key("Properties").start_object();
         for (key_2177, value_2178) in var_2175 {
             {
-                object_2176.key(key_2177).string(value_2178.as_str());
+                object_2176
+                    .key(key_2177.as_str())
+                    .string(value_2178.as_str());
             }
         }
         object_2176.finish();
@@ -10672,7 +10702,9 @@ pub fn serialize_structure_crate_model_profiler_config_for_update(
         let mut object_2218 = object.key("ProfilingParameters").start_object();
         for (key_2219, value_2220) in var_2217 {
             {
-                object_2218.key(key_2219).string(value_2220.as_str());
+                object_2218
+                    .key(key_2219.as_str())
+                    .string(value_2220.as_str());
             }
         }
         object_2218.finish();
@@ -10823,7 +10855,9 @@ pub fn serialize_structure_crate_model_model_package_container_definition(
         let mut object_2249 = object.key("Environment").start_object();
         for (key_2250, value_2251) in var_2248 {
             {
-                object_2249.key(key_2250).string(value_2251.as_str());
+                object_2249
+                    .key(key_2250.as_str())
+                    .string(value_2251.as_str());
             }
         }
         object_2249.finish();
@@ -12280,7 +12314,9 @@ pub fn serialize_structure_crate_model_monitoring_job_definition(
         let mut object_2505 = object.key("Environment").start_object();
         for (key_2506, value_2507) in var_2504 {
             {
-                object_2505.key(key_2506).string(value_2507.as_str());
+                object_2505
+                    .key(key_2506.as_str())
+                    .string(value_2507.as_str());
             }
         }
         object_2505.finish();
@@ -12491,7 +12527,9 @@ pub fn serialize_structure_crate_model_collection_configuration(
         let mut object_2543 = object.key("CollectionParameters").start_object();
         for (key_2544, value_2545) in var_2542 {
             {
-                object_2543.key(key_2544).string(value_2545.as_str());
+                object_2543
+                    .key(key_2544.as_str())
+                    .string(value_2545.as_str());
             }
         }
         object_2543.finish();
@@ -12684,7 +12722,9 @@ pub fn serialize_structure_crate_model_training_job_definition(
         let mut object_2577 = object.key("HyperParameters").start_object();
         for (key_2578, value_2579) in var_2576 {
             {
-                object_2577.key(key_2578).string(value_2579.as_str());
+                object_2577
+                    .key(key_2578.as_str())
+                    .string(value_2579.as_str());
             }
         }
         object_2577.finish();
@@ -12753,7 +12793,9 @@ pub fn serialize_structure_crate_model_transform_job_definition(
         let mut object_2594 = object.key("Environment").start_object();
         for (key_2595, value_2596) in var_2593 {
             {
-                object_2594.key(key_2595).string(value_2596.as_str());
+                object_2594
+                    .key(key_2595.as_str())
+                    .string(value_2596.as_str());
             }
         }
         object_2594.finish();

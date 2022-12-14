@@ -4,7 +4,7 @@ pub fn add_headers_get_profile(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_1) = &input.accept {
-        let formatted_2 = AsRef::<str>::as_ref(inner_1);
+        let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value =
@@ -28,7 +28,7 @@ pub fn add_headers_post_agent_profile(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_3) = &input.content_type {
-        let formatted_4 = AsRef::<str>::as_ref(inner_3);
+        let formatted_4 = inner_3.as_str();
         if !formatted_4.is_empty() {
             let header_value = formatted_4;
             let header_value =
@@ -89,7 +89,7 @@ pub fn deser_payload_describe_profiling_group_describe_profiling_group_output_pr
         .transpose()
 }
 
-pub fn deser_header_get_profile_get_profile_output_content_encoding(
+pub(crate) fn deser_header_get_profile_get_profile_output_content_encoding(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -99,7 +99,7 @@ pub fn deser_header_get_profile_get_profile_output_content_encoding(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_profile_get_profile_output_content_type(
+pub(crate) fn deser_header_get_profile_get_profile_output_content_type(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,

@@ -32,7 +32,7 @@ pub fn serialize_structure_crate_input_create_group_input(
         let mut object_10 = object.key("Tags").start_object();
         for (key_11, value_12) in var_9 {
             {
-                object_10.key(key_11).string(value_12.as_str());
+                object_10.key(key_11.as_str()).string(value_12.as_str());
             }
         }
         object_10.finish();
@@ -218,7 +218,7 @@ pub fn serialize_structure_crate_input_tag_input(
         let mut object_46 = object.key("Tags").start_object();
         for (key_47, value_48) in var_45 {
             {
-                object_46.key(key_47).string(value_48.as_str());
+                object_46.key(key_47.as_str()).string(value_48.as_str());
             }
         }
         object_46.finish();

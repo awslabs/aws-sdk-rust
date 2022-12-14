@@ -311,7 +311,7 @@ pub fn serialize_structure_crate_input_create_repository_input(
         let mut object_67 = object.key("tags").start_object();
         for (key_68, value_69) in var_66 {
             {
-                object_67.key(key_68).string(value_69.as_str());
+                object_67.key(key_68.as_str()).string(value_69.as_str());
             }
         }
         object_67.finish();
@@ -1427,7 +1427,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_282 = object.key("tags").start_object();
         for (key_283, value_284) in var_281 {
             {
-                object_282.key(key_283).string(value_284.as_str());
+                object_282.key(key_283.as_str()).string(value_284.as_str());
             }
         }
         object_282.finish();

@@ -161,7 +161,7 @@ pub fn serialize_structure_crate_input_create_ml_model_input(
         let mut object_34 = object.key("Parameters").start_object();
         for (key_35, value_36) in var_33 {
             {
-                object_34.key(key_35).string(value_36.as_str());
+                object_34.key(key_35.as_str()).string(value_36.as_str());
             }
         }
         object_34.finish();
@@ -502,7 +502,7 @@ pub fn serialize_structure_crate_input_predict_input(
         let mut object_103 = object.key("Record").start_object();
         for (key_104, value_105) in var_102 {
             {
-                object_103.key(key_104).string(value_105.as_str());
+                object_103.key(key_104.as_str()).string(value_105.as_str());
             }
         }
         object_103.finish();

@@ -605,7 +605,7 @@ pub fn serialize_structure_crate_input_create_player_sessions_input(
         let mut object_158 = object.key("PlayerDataMap").start_object();
         for (key_159, value_160) in var_157 {
             {
-                object_158.key(key_159).string(value_160.as_str());
+                object_158.key(key_159.as_str()).string(value_160.as_str());
             }
         }
         object_158.finish();
@@ -2659,7 +2659,7 @@ pub fn serialize_structure_crate_model_player(
         let mut object_544 = object.key("PlayerAttributes").start_object();
         for (key_545, value_546) in var_543 {
             {
-                let mut object_547 = object_544.key(key_545).start_object();
+                let mut object_547 = object_544.key(key_545.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_attribute_value(
                     &mut object_547,
                     value_546,
@@ -2676,7 +2676,7 @@ pub fn serialize_structure_crate_model_player(
         let mut object_550 = object.key("LatencyInMs").start_object();
         for (key_551, value_552) in var_549 {
             {
-                object_550.key(key_551).number(
+                object_550.key(key_551.as_str()).number(
                     #[allow(clippy::useless_conversion)]
                     aws_smithy_types::Number::NegInt((*value_552).into()),
                 );
@@ -2745,7 +2745,7 @@ pub fn serialize_structure_crate_model_attribute_value(
         let mut object_563 = object.key("SDM").start_object();
         for (key_564, value_565) in var_562 {
             {
-                object_563.key(key_564).number(
+                object_563.key(key_564.as_str()).number(
                     #[allow(clippy::useless_conversion)]
                     aws_smithy_types::Number::Float((*value_565).into()),
                 );

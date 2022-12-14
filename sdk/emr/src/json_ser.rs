@@ -1477,7 +1477,7 @@ pub fn serialize_structure_crate_model_block_public_access_configuration(
         let mut object_307 = object.key("Properties").start_object();
         for (key_308, value_309) in var_306 {
             {
-                object_307.key(key_308).string(value_309.as_str());
+                object_307.key(key_308.as_str()).string(value_309.as_str());
             }
         }
         object_307.finish();
@@ -1670,7 +1670,7 @@ pub fn serialize_structure_crate_model_application(
         let mut object_353 = object.key("AdditionalInfo").start_object();
         for (key_354, value_355) in var_352 {
             {
-                object_353.key(key_354).string(value_355.as_str());
+                object_353.key(key_354.as_str()).string(value_355.as_str());
             }
         }
         object_353.finish();
@@ -1703,7 +1703,7 @@ pub fn serialize_structure_crate_model_configuration(
         let mut object_362 = object.key("Properties").start_object();
         for (key_363, value_364) in var_361 {
             {
-                object_362.key(key_363).string(value_364.as_str());
+                object_362.key(key_363.as_str()).string(value_364.as_str());
             }
         }
         object_362.finish();

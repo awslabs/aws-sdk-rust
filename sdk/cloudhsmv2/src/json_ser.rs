@@ -136,7 +136,7 @@ pub fn serialize_structure_crate_input_describe_backups_input(
         let mut object_30 = object.key("Filters").start_object();
         for (key_31, value_32) in var_29 {
             {
-                let mut array_33 = object_30.key(key_31).start_array();
+                let mut array_33 = object_30.key(key_31.as_str()).start_array();
                 for item_34 in value_32 {
                     {
                         array_33.value().string(item_34.as_str());
@@ -161,7 +161,7 @@ pub fn serialize_structure_crate_input_describe_clusters_input(
         let mut object_37 = object.key("Filters").start_object();
         for (key_38, value_39) in var_36 {
             {
-                let mut array_40 = object_37.key(key_38).start_array();
+                let mut array_40 = object_37.key(key_38.as_str()).start_array();
                 for item_41 in value_39 {
                     {
                         array_40.value().string(item_41.as_str());

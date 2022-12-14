@@ -285,7 +285,7 @@ pub fn serialize_structure_crate_model_entity_filter(
                 let mut object_64 = array_62.value().start_object();
                 for (key_65, value_66) in item_63 {
                     {
-                        object_64.key(key_65).string(value_66.as_str());
+                        object_64.key(key_65.as_str()).string(value_66.as_str());
                     }
                 }
                 object_64.finish();
@@ -443,7 +443,7 @@ pub fn serialize_structure_crate_model_event_filter(
                 let mut object_111 = array_109.value().start_object();
                 for (key_112, value_113) in item_110 {
                     {
-                        object_111.key(key_112).string(value_113.as_str());
+                        object_111.key(key_112.as_str()).string(value_113.as_str());
                     }
                 }
                 object_111.finish();

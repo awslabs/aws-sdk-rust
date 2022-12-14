@@ -1100,7 +1100,7 @@ pub fn serialize_structure_crate_input_put_skill_authorization_input(
         let mut object_211 = object.key("AuthorizationResult").start_object();
         for (key_212, value_213) in var_210 {
             {
-                object_211.key(key_212).string(value_213.as_str());
+                object_211.key(key_212.as_str()).string(value_213.as_str());
             }
         }
         object_211.finish();

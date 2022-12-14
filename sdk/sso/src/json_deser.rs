@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_crate_error_invalid_request_exception_json_err(
+pub(crate) fn deser_structure_crate_error_invalid_request_exception_json_err(
     value: &[u8],
     mut builder: crate::error::invalid_request_exception::Builder,
 ) -> Result<crate::error::invalid_request_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -47,7 +47,7 @@ pub fn deser_structure_crate_error_invalid_request_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_resource_not_found_exception_json_err(
+pub(crate) fn deser_structure_crate_error_resource_not_found_exception_json_err(
     value: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -90,7 +90,7 @@ pub fn deser_structure_crate_error_resource_not_found_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_too_many_requests_exception_json_err(
+pub(crate) fn deser_structure_crate_error_too_many_requests_exception_json_err(
     value: &[u8],
     mut builder: crate::error::too_many_requests_exception::Builder,
 ) -> Result<crate::error::too_many_requests_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -133,7 +133,7 @@ pub fn deser_structure_crate_error_too_many_requests_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_unauthorized_exception_json_err(
+pub(crate) fn deser_structure_crate_error_unauthorized_exception_json_err(
     value: &[u8],
     mut builder: crate::error::unauthorized_exception::Builder,
 ) -> Result<crate::error::unauthorized_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -175,7 +175,7 @@ pub fn deser_structure_crate_error_unauthorized_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_role_credentials(
+pub(crate) fn deser_operation_crate_operation_get_role_credentials(
     value: &[u8],
     mut builder: crate::output::get_role_credentials_output::Builder,
 ) -> Result<crate::output::get_role_credentials_output::Builder, aws_smithy_json::deserialize::Error>
@@ -216,7 +216,7 @@ pub fn deser_operation_crate_operation_get_role_credentials(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_account_roles(
+pub(crate) fn deser_operation_crate_operation_list_account_roles(
     value: &[u8],
     mut builder: crate::output::list_account_roles_output::Builder,
 ) -> Result<crate::output::list_account_roles_output::Builder, aws_smithy_json::deserialize::Error>
@@ -264,7 +264,7 @@ pub fn deser_operation_crate_operation_list_account_roles(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_accounts(
+pub(crate) fn deser_operation_crate_operation_list_accounts(
     value: &[u8],
     mut builder: crate::output::list_accounts_output::Builder,
 ) -> Result<crate::output::list_accounts_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -313,7 +313,7 @@ pub fn deser_operation_crate_operation_list_accounts(
     Ok(builder)
 }
 
-pub fn or_empty_doc(data: &[u8]) -> &[u8] {
+pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
     } else {
@@ -321,7 +321,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-pub fn deser_structure_crate_model_role_credentials<'a, I>(
+pub(crate) fn deser_structure_crate_model_role_credentials<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RoleCredentials>, aws_smithy_json::deserialize::Error>
 where
@@ -333,7 +333,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::RoleCredentials::builder();
+            let mut builder = crate::model::role_credentials::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -371,7 +371,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -394,8 +394,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_sso_role_list_type<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_sso_role_list_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::RoleInfo>>, aws_smithy_json::deserialize::Error>
 where
@@ -430,8 +430,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_sso_account_list_type<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_sso_account_list_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::AccountInfo>>, aws_smithy_json::deserialize::Error>
 where
@@ -466,7 +466,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_role_info<'a, I>(
+pub(crate) fn deser_structure_crate_model_role_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RoleInfo>, aws_smithy_json::deserialize::Error>
 where
@@ -478,7 +478,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::RoleInfo::builder();
+            let mut builder = crate::model::role_info::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -521,7 +521,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_account_info<'a, I>(
+pub(crate) fn deser_structure_crate_model_account_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AccountInfo>, aws_smithy_json::deserialize::Error>
 where
@@ -533,7 +533,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::AccountInfo::builder();
+            let mut builder = crate::model::account_info::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

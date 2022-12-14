@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_crate_error_search_exception_json_err(
+pub(crate) fn deser_structure_crate_error_search_exception_json_err(
     value: &[u8],
     mut builder: crate::error::search_exception::Builder,
 ) -> Result<crate::error::search_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -47,7 +47,7 @@ pub fn deser_structure_crate_error_search_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_search(
+pub(crate) fn deser_operation_crate_operation_search(
     value: &[u8],
     mut builder: crate::output::search_output::Builder,
 ) -> Result<crate::output::search_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -103,7 +103,7 @@ pub fn deser_operation_crate_operation_search(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_suggest(
+pub(crate) fn deser_operation_crate_operation_suggest(
     value: &[u8],
     mut builder: crate::output::suggest_output::Builder,
 ) -> Result<crate::output::suggest_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -146,7 +146,7 @@ pub fn deser_operation_crate_operation_suggest(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_document_service_exception_json_err(
+pub(crate) fn deser_structure_crate_error_document_service_exception_json_err(
     value: &[u8],
     mut builder: crate::error::document_service_exception::Builder,
 ) -> Result<crate::error::document_service_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -198,7 +198,7 @@ pub fn deser_structure_crate_error_document_service_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_upload_documents(
+pub(crate) fn deser_operation_crate_operation_upload_documents(
     value: &[u8],
     mut builder: crate::output::upload_documents_output::Builder,
 ) -> Result<crate::output::upload_documents_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -217,7 +217,7 @@ pub fn deser_operation_crate_operation_upload_documents(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.try_into())
+                            .map(i64::try_from)
                             .transpose()?,
                         );
                     }
@@ -226,7 +226,7 @@ pub fn deser_operation_crate_operation_upload_documents(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.try_into())
+                            .map(i64::try_from)
                             .transpose()?,
                         );
                     }
@@ -263,7 +263,7 @@ pub fn deser_operation_crate_operation_upload_documents(
     Ok(builder)
 }
 
-pub fn or_empty_doc(data: &[u8]) -> &[u8] {
+pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
     } else {
@@ -271,8 +271,8 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_com_amazonaws_cloudsearchdomain_facets<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_map_com_amazonaws_cloudsearchdomain_facets<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, crate::model::BucketInfo>>,
@@ -314,7 +314,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_hits<'a, I>(
+pub(crate) fn deser_structure_crate_model_hits<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Hits>, aws_smithy_json::deserialize::Error>
 where
@@ -326,7 +326,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Hits::builder();
+            let mut builder = crate::model::hits::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -337,7 +337,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -346,7 +346,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -383,8 +383,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_com_amazonaws_cloudsearchdomain_stats<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_map_com_amazonaws_cloudsearchdomain_stats<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, crate::model::FieldStats>>,
@@ -426,7 +426,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_search_status<'a, I>(
+pub(crate) fn deser_structure_crate_model_search_status<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SearchStatus>, aws_smithy_json::deserialize::Error>
 where
@@ -438,7 +438,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::SearchStatus::builder();
+            let mut builder = crate::model::search_status::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -449,7 +449,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -481,7 +481,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_suggest_status<'a, I>(
+pub(crate) fn deser_structure_crate_model_suggest_status<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SuggestStatus>, aws_smithy_json::deserialize::Error>
 where
@@ -493,7 +493,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::SuggestStatus::builder();
+            let mut builder = crate::model::suggest_status::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -504,7 +504,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -536,7 +536,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_suggest_model<'a, I>(
+pub(crate) fn deser_structure_crate_model_suggest_model<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SuggestModel>, aws_smithy_json::deserialize::Error>
 where
@@ -548,7 +548,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::SuggestModel::builder();
+            let mut builder = crate::model::suggest_model::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -568,7 +568,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -596,8 +596,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_cloudsearchdomain_document_service_warnings<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_cloudsearchdomain_document_service_warnings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::DocumentServiceWarning>>,
@@ -636,7 +636,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_bucket_info<'a, I>(
+pub(crate) fn deser_structure_crate_model_bucket_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::BucketInfo>, aws_smithy_json::deserialize::Error>
 where
@@ -648,7 +648,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::BucketInfo::builder();
+            let mut builder = crate::model::bucket_info::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -678,8 +678,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_cloudsearchdomain_hit_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_cloudsearchdomain_hit_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Hit>>, aws_smithy_json::deserialize::Error>
 where
@@ -713,7 +713,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_field_stats<'a, I>(
+pub(crate) fn deser_structure_crate_model_field_stats<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::FieldStats>, aws_smithy_json::deserialize::Error>
 where
@@ -725,7 +725,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::FieldStats::builder();
+            let mut builder = crate::model::field_stats::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -754,7 +754,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -763,7 +763,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -819,8 +819,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_cloudsearchdomain_suggestions<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_cloudsearchdomain_suggestions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::SuggestionMatch>>, aws_smithy_json::deserialize::Error>
 where
@@ -857,7 +857,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_document_service_warning<'a, I>(
+pub(crate) fn deser_structure_crate_model_document_service_warning<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DocumentServiceWarning>, aws_smithy_json::deserialize::Error>
 where
@@ -869,7 +869,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::DocumentServiceWarning::builder();
+            let mut builder = crate::model::document_service_warning::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -903,8 +903,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_cloudsearchdomain_bucket_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_cloudsearchdomain_bucket_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Bucket>>, aws_smithy_json::deserialize::Error>
 where
@@ -938,7 +938,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_hit<'a, I>(
+pub(crate) fn deser_structure_crate_model_hit<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Hit>, aws_smithy_json::deserialize::Error>
 where
@@ -950,7 +950,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Hit::builder();
+            let mut builder = crate::model::hit::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -999,7 +999,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_suggestion_match<'a, I>(
+pub(crate) fn deser_structure_crate_model_suggestion_match<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SuggestionMatch>, aws_smithy_json::deserialize::Error>
 where
@@ -1011,7 +1011,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::SuggestionMatch::builder();
+            let mut builder = crate::model::suggestion_match::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -1031,7 +1031,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -1063,7 +1063,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_bucket<'a, I>(
+pub(crate) fn deser_structure_crate_model_bucket<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Bucket>, aws_smithy_json::deserialize::Error>
 where
@@ -1075,7 +1075,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Bucket::builder();
+            let mut builder = crate::model::bucket::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -1095,7 +1095,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -1118,8 +1118,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_com_amazonaws_cloudsearchdomain_fields<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_map_com_amazonaws_cloudsearchdomain_fields<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>,
@@ -1162,8 +1162,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_com_amazonaws_cloudsearchdomain_exprs<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_map_com_amazonaws_cloudsearchdomain_exprs<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -1208,8 +1208,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_com_amazonaws_cloudsearchdomain_highlights<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_map_com_amazonaws_cloudsearchdomain_highlights<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -1254,8 +1254,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_cloudsearchdomain_field_value<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_cloudsearchdomain_field_value<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, aws_smithy_json::deserialize::Error>
 where

@@ -84,7 +84,7 @@ pub fn serialize_structure_crate_input_create_network_input(
         let mut object_19 = object.key("tags").start_object();
         for (key_20, value_21) in var_18 {
             {
-                object_19.key(key_20).string(value_21.as_str());
+                object_19.key(key_20.as_str()).string(value_21.as_str());
             }
         }
         object_19.finish();
@@ -123,7 +123,7 @@ pub fn serialize_structure_crate_input_create_network_site_input(
         let mut object_31 = object.key("tags").start_object();
         for (key_32, value_33) in var_30 {
             {
-                object_31.key(key_32).string(value_33.as_str());
+                object_31.key(key_32.as_str()).string(value_33.as_str());
             }
         }
         object_31.finish();
@@ -319,7 +319,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_81 = object.key("tags").start_object();
         for (key_82, value_83) in var_80 {
             {
-                object_81.key(key_82).string(value_83.as_str());
+                object_81.key(key_82.as_str()).string(value_83.as_str());
             }
         }
         object_81.finish();

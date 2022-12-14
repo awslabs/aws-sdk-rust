@@ -79,7 +79,7 @@ pub fn serialize_structure_crate_input_create_profiling_group_input(
         let mut object_19 = object.key("tags").start_object();
         for (key_20, value_21) in var_18 {
             {
-                object_19.key(key_20).string(value_21.as_str());
+                object_19.key(key_20.as_str()).string(value_21.as_str());
             }
         }
         object_19.finish();
@@ -127,7 +127,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_29 = object.key("tags").start_object();
         for (key_30, value_31) in var_28 {
             {
-                object_29.key(key_30).string(value_31.as_str());
+                object_29.key(key_30.as_str()).string(value_31.as_str());
             }
         }
         object_29.finish();

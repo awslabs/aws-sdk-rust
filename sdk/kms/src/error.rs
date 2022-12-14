@@ -17,7 +17,7 @@ impl std::fmt::Debug for NotFoundException {
 }
 impl NotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -83,7 +83,7 @@ impl std::fmt::Debug for KmsInvalidStateException {
 }
 impl KmsInvalidStateException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -148,7 +148,7 @@ impl std::fmt::Debug for KmsInvalidMacException {
 }
 impl KmsInvalidMacException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -213,7 +213,7 @@ impl std::fmt::Debug for KmsInternalException {
 }
 impl KmsInternalException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -278,7 +278,7 @@ impl std::fmt::Debug for KeyUnavailableException {
 }
 impl KeyUnavailableException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -349,7 +349,7 @@ impl std::fmt::Debug for InvalidKeyUsageException {
 }
 impl InvalidKeyUsageException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -414,7 +414,7 @@ impl std::fmt::Debug for InvalidGrantTokenException {
 }
 impl InvalidGrantTokenException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -479,7 +479,7 @@ impl std::fmt::Debug for DisabledException {
 }
 impl DisabledException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -544,7 +544,7 @@ impl std::fmt::Debug for KmsInvalidSignatureException {
 }
 impl KmsInvalidSignatureException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -612,7 +612,7 @@ impl std::fmt::Debug for DependencyTimeoutException {
 }
 impl DependencyTimeoutException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -677,7 +677,7 @@ impl std::fmt::Debug for UnsupportedOperationException {
 }
 impl UnsupportedOperationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -742,7 +742,7 @@ impl std::fmt::Debug for InvalidArnException {
 }
 impl InvalidArnException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -807,7 +807,7 @@ impl std::fmt::Debug for CustomKeyStoreNotFoundException {
 }
 impl CustomKeyStoreNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -872,7 +872,7 @@ impl std::fmt::Debug for CustomKeyStoreNameInUseException {
 }
 impl CustomKeyStoreNameInUseException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -943,7 +943,7 @@ impl std::fmt::Debug for CustomKeyStoreInvalidStateException {
 }
 impl CustomKeyStoreInvalidStateException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1010,7 +1010,7 @@ impl std::fmt::Debug for CloudHsmClusterNotRelatedException {
 }
 impl CloudHsmClusterNotRelatedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1075,7 +1075,7 @@ impl std::fmt::Debug for CloudHsmClusterNotFoundException {
 }
 impl CloudHsmClusterNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1140,7 +1140,7 @@ impl std::fmt::Debug for CloudHsmClusterNotActiveException {
 }
 impl CloudHsmClusterNotActiveException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1212,7 +1212,7 @@ impl std::fmt::Debug for CloudHsmClusterInvalidConfigurationException {
 }
 impl CloudHsmClusterInvalidConfigurationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1277,7 +1277,7 @@ impl std::fmt::Debug for LimitExceededException {
 }
 impl LimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1342,7 +1342,7 @@ impl std::fmt::Debug for TagException {
 }
 impl TagException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1407,7 +1407,7 @@ impl std::fmt::Debug for InvalidGrantIdException {
 }
 impl InvalidGrantIdException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1472,7 +1472,7 @@ impl std::fmt::Debug for MalformedPolicyDocumentException {
 }
 impl MalformedPolicyDocumentException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1537,7 +1537,7 @@ impl std::fmt::Debug for AlreadyExistsException {
 }
 impl AlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1603,7 +1603,7 @@ impl std::fmt::Debug for InvalidCiphertextException {
 }
 impl InvalidCiphertextException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1668,7 +1668,7 @@ impl std::fmt::Debug for IncorrectKeyException {
 }
 impl IncorrectKeyException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1733,7 +1733,7 @@ impl std::fmt::Debug for InvalidMarkerException {
 }
 impl InvalidMarkerException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1798,7 +1798,7 @@ impl std::fmt::Debug for InvalidImportTokenException {
 }
 impl InvalidImportTokenException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1863,7 +1863,7 @@ impl std::fmt::Debug for IncorrectKeyMaterialException {
 }
 impl IncorrectKeyMaterialException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1928,7 +1928,7 @@ impl std::fmt::Debug for ExpiredImportTokenException {
 }
 impl ExpiredImportTokenException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1993,7 +1993,7 @@ impl std::fmt::Debug for CustomKeyStoreHasCmKsException {
 }
 impl CustomKeyStoreHasCmKsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2062,7 +2062,7 @@ impl std::fmt::Debug for IncorrectTrustAnchorException {
 }
 impl IncorrectTrustAnchorException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2128,7 +2128,7 @@ impl std::fmt::Debug for CloudHsmClusterInUseException {
 }
 impl CloudHsmClusterInUseException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2193,7 +2193,7 @@ impl std::fmt::Debug for InvalidAliasNameException {
 }
 impl InvalidAliasNameException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }

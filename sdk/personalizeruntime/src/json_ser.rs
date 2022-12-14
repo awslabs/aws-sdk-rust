@@ -10,7 +10,7 @@ pub fn serialize_structure_crate_input_get_personalized_ranking_input(
         let mut object_3 = object.key("context").start_object();
         for (key_4, value_5) in var_2 {
             {
-                object_3.key(key_4).string(value_5.as_str());
+                object_3.key(key_4.as_str()).string(value_5.as_str());
             }
         }
         object_3.finish();
@@ -22,7 +22,7 @@ pub fn serialize_structure_crate_input_get_personalized_ranking_input(
         let mut object_8 = object.key("filterValues").start_object();
         for (key_9, value_10) in var_7 {
             {
-                object_8.key(key_9).string(value_10.as_str());
+                object_8.key(key_9.as_str()).string(value_10.as_str());
             }
         }
         object_8.finish();
@@ -53,7 +53,7 @@ pub fn serialize_structure_crate_input_get_recommendations_input(
         let mut object_17 = object.key("context").start_object();
         for (key_18, value_19) in var_16 {
             {
-                object_17.key(key_18).string(value_19.as_str());
+                object_17.key(key_18.as_str()).string(value_19.as_str());
             }
         }
         object_17.finish();
@@ -65,7 +65,7 @@ pub fn serialize_structure_crate_input_get_recommendations_input(
         let mut object_22 = object.key("filterValues").start_object();
         for (key_23, value_24) in var_21 {
             {
-                object_22.key(key_23).string(value_24.as_str());
+                object_22.key(key_23.as_str()).string(value_24.as_str());
             }
         }
         object_22.finish();
@@ -122,7 +122,7 @@ pub fn serialize_structure_crate_model_promotion(
         let mut object_35 = object.key("filterValues").start_object();
         for (key_36, value_37) in var_34 {
             {
-                object_35.key(key_36).string(value_37.as_str());
+                object_35.key(key_36.as_str()).string(value_37.as_str());
             }
         }
         object_35.finish();

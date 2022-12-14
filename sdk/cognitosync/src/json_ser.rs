@@ -20,7 +20,7 @@ pub fn serialize_structure_crate_input_set_cognito_events_input(
         let mut object_4 = object.key("Events").start_object();
         for (key_5, value_6) in var_3 {
             {
-                object_4.key(key_5).string(value_6.as_str());
+                object_4.key(key_5.as_str()).string(value_6.as_str());
             }
         }
         object_4.finish();

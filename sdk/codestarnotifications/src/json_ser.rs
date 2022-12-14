@@ -31,7 +31,7 @@ pub fn serialize_structure_crate_input_create_notification_rule_input(
         let mut object_10 = object.key("Tags").start_object();
         for (key_11, value_12) in var_9 {
             {
-                object_10.key(key_11).string(value_12.as_str());
+                object_10.key(key_11.as_str()).string(value_12.as_str());
             }
         }
         object_10.finish();
@@ -214,7 +214,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_45 = object.key("Tags").start_object();
         for (key_46, value_47) in var_44 {
             {
-                object_45.key(key_46).string(value_47.as_str());
+                object_45.key(key_46.as_str()).string(value_47.as_str());
             }
         }
         object_45.finish();

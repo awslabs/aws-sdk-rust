@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_crate_error_resource_not_found_exception_json_err(
+pub(crate) fn deser_structure_crate_error_resource_not_found_exception_json_err(
     value: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -48,7 +48,7 @@ pub fn deser_structure_crate_error_resource_not_found_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_invalid_content_location_json_err(
+pub(crate) fn deser_structure_crate_error_invalid_content_location_json_err(
     value: &[u8],
     mut builder: crate::error::invalid_content_location::Builder,
 ) -> Result<crate::error::invalid_content_location::Builder, aws_smithy_json::deserialize::Error> {
@@ -90,7 +90,7 @@ pub fn deser_structure_crate_error_invalid_content_location_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_message_frozen_json_err(
+pub(crate) fn deser_structure_crate_error_message_frozen_json_err(
     value: &[u8],
     mut builder: crate::error::message_frozen::Builder,
 ) -> Result<crate::error::message_frozen::Builder, aws_smithy_json::deserialize::Error> {
@@ -132,7 +132,7 @@ pub fn deser_structure_crate_error_message_frozen_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_message_rejected_json_err(
+pub(crate) fn deser_structure_crate_error_message_rejected_json_err(
     value: &[u8],
     mut builder: crate::error::message_rejected::Builder,
 ) -> Result<crate::error::message_rejected::Builder, aws_smithy_json::deserialize::Error> {
@@ -174,7 +174,7 @@ pub fn deser_structure_crate_error_message_rejected_json_err(
     Ok(builder)
 }
 
-pub fn or_empty_doc(data: &[u8]) -> &[u8] {
+pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
     } else {

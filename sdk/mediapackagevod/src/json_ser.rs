@@ -34,7 +34,7 @@ pub fn serialize_structure_crate_input_create_asset_input(
         let mut object_9 = object.key("tags").start_object();
         for (key_10, value_11) in var_8 {
             {
-                object_9.key(key_10).string(value_11.as_str());
+                object_9.key(key_10.as_str()).string(value_11.as_str());
             }
         }
         object_9.finish();
@@ -76,7 +76,7 @@ pub fn serialize_structure_crate_input_create_packaging_configuration_input(
         let mut object_23 = object.key("tags").start_object();
         for (key_24, value_25) in var_22 {
             {
-                object_23.key(key_24).string(value_25.as_str());
+                object_23.key(key_24.as_str()).string(value_25.as_str());
             }
         }
         object_23.finish();
@@ -108,7 +108,7 @@ pub fn serialize_structure_crate_input_create_packaging_group_input(
         let mut object_32 = object.key("tags").start_object();
         for (key_33, value_34) in var_31 {
             {
-                object_32.key(key_33).string(value_34.as_str());
+                object_32.key(key_33.as_str()).string(value_34.as_str());
             }
         }
         object_32.finish();
@@ -124,7 +124,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_36 = object.key("tags").start_object();
         for (key_37, value_38) in var_35 {
             {
-                object_36.key(key_37).string(value_38.as_str());
+                object_36.key(key_37.as_str()).string(value_38.as_str());
             }
         }
         object_36.finish();

@@ -7,7 +7,7 @@ pub fn serialize_structure_crate_input_finalize_device_claim_input(
         let mut object_2 = object.key("tags").start_object();
         for (key_3, value_4) in var_1 {
             {
-                object_2.key(key_3).string(value_4.as_str());
+                object_2.key(key_3.as_str()).string(value_4.as_str());
             }
         }
         object_2.finish();
@@ -38,7 +38,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_9 = object.key("tags").start_object();
         for (key_10, value_11) in var_8 {
             {
-                object_9.key(key_10).string(value_11.as_str());
+                object_9.key(key_10.as_str()).string(value_11.as_str());
             }
         }
         object_9.finish();

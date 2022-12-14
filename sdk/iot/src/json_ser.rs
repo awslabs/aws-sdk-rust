@@ -98,7 +98,7 @@ pub fn serialize_structure_crate_input_cancel_job_execution_input(
         let mut object_18 = object.key("statusDetails").start_object();
         for (key_19, value_20) in var_17 {
             {
-                object_18.key(key_19).string(value_20.as_str());
+                object_18.key(key_19.as_str()).string(value_20.as_str());
             }
         }
         object_18.finish();
@@ -172,7 +172,7 @@ pub fn serialize_structure_crate_input_create_authorizer_input(
         let mut object_38 = object.key("tokenSigningPublicKeys").start_object();
         for (key_39, value_40) in var_37 {
             {
-                object_38.key(key_39).string(value_40.as_str());
+                object_38.key(key_39.as_str()).string(value_40.as_str());
             }
         }
         object_38.finish();
@@ -422,7 +422,7 @@ pub fn serialize_structure_crate_input_create_job_input(
         let mut object_103 = object.key("documentParameters").start_object();
         for (key_104, value_105) in var_102 {
             {
-                object_103.key(key_104).string(value_105.as_str());
+                object_103.key(key_104.as_str()).string(value_105.as_str());
             }
         }
         object_103.finish();
@@ -592,7 +592,7 @@ pub fn serialize_structure_crate_input_create_ota_update_input(
         let mut object_151 = object.key("additionalParameters").start_object();
         for (key_152, value_153) in var_150 {
             {
-                object_151.key(key_152).string(value_153.as_str());
+                object_151.key(key_152.as_str()).string(value_153.as_str());
             }
         }
         object_151.finish();
@@ -1364,7 +1364,7 @@ pub fn serialize_structure_crate_input_register_thing_input(
         let mut object_323 = object.key("parameters").start_object();
         for (key_324, value_325) in var_322 {
             {
-                object_323.key(key_324).string(value_325.as_str());
+                object_323.key(key_324.as_str()).string(value_325.as_str());
             }
         }
         object_323.finish();
@@ -1497,7 +1497,7 @@ pub fn serialize_structure_crate_input_start_audit_mitigation_actions_task_input
         let mut object_348 = object.key("auditCheckToActionsMapping").start_object();
         for (key_349, value_350) in var_347 {
             {
-                let mut array_351 = object_348.key(key_349).start_array();
+                let mut array_351 = object_348.key(key_349.as_str()).start_array();
                 for item_352 in value_350 {
                     {
                         array_351.value().string(item_352.as_str());
@@ -1729,7 +1729,7 @@ pub fn serialize_structure_crate_input_update_account_audit_configuration_input(
         let mut object_404 = object.key("auditCheckConfigurations").start_object();
         for (key_405, value_406) in var_403 {
             {
-                let mut object_407 = object_404.key(key_405).start_object();
+                let mut object_407 = object_404.key(key_405.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_audit_check_configuration(
                     &mut object_407,
                     value_406,
@@ -1810,7 +1810,7 @@ pub fn serialize_structure_crate_input_update_authorizer_input(
         let mut object_425 = object.key("tokenSigningPublicKeys").start_object();
         for (key_426, value_427) in var_424 {
             {
-                object_425.key(key_426).string(value_427.as_str());
+                object_425.key(key_426.as_str()).string(value_427.as_str());
             }
         }
         object_425.finish();
@@ -2745,7 +2745,7 @@ pub fn serialize_structure_crate_model_ota_update_file(
         let mut object_600 = object.key("attributes").start_object();
         for (key_601, value_602) in var_599 {
             {
-                object_600.key(key_601).string(value_602.as_str());
+                object_600.key(key_601.as_str()).string(value_602.as_str());
             }
         }
         object_600.finish();
@@ -2855,7 +2855,7 @@ pub fn serialize_structure_crate_model_attribute_payload(
         let mut object_621 = object.key("attributes").start_object();
         for (key_622, value_623) in var_620 {
             {
-                object_621.key(key_622).string(value_623.as_str());
+                object_621.key(key_622.as_str()).string(value_623.as_str());
             }
         }
         object_621.finish();
@@ -2972,7 +2972,7 @@ pub fn serialize_structure_crate_model_audit_mitigation_actions_task_target(
         let mut object_644 = object.key("auditCheckToReasonCodeFilter").start_object();
         for (key_645, value_646) in var_643 {
             {
-                let mut array_647 = object_644.key(key_645).start_array();
+                let mut array_647 = object_644.key(key_645.as_str()).start_array();
                 for item_648 in value_646 {
                     {
                         array_647.value().string(item_648.as_str());
@@ -3052,7 +3052,7 @@ pub fn serialize_structure_crate_model_http_context(
         let mut object_661 = object.key("headers").start_object();
         for (key_662, value_663) in var_660 {
             {
-                object_661.key(key_662).string(value_663.as_str());
+                object_661.key(key_662.as_str()).string(value_663.as_str());
             }
         }
         object_661.finish();
@@ -4446,7 +4446,7 @@ pub fn serialize_structure_crate_model_kafka_action(
         let mut object_940 = object.key("clientProperties").start_object();
         for (key_941, value_942) in var_939 {
             {
-                object_940.key(key_941).string(value_942.as_str());
+                object_940.key(key_941.as_str()).string(value_942.as_str());
             }
         }
         object_940.finish();

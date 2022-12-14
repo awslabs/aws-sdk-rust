@@ -27,7 +27,7 @@ impl std::fmt::Debug for TooManyRequests {
 }
 impl TooManyRequests {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -114,7 +114,7 @@ impl std::fmt::Debug for ThroughputLimitExceeded {
 }
 impl ThroughputLimitExceeded {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -201,7 +201,7 @@ impl std::fmt::Debug for InternalServerError {
 }
 impl InternalServerError {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -288,7 +288,7 @@ impl std::fmt::Debug for InsufficientThroughputCapacity {
 }
 impl InsufficientThroughputCapacity {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -375,7 +375,7 @@ impl std::fmt::Debug for IncorrectFileSystemLifeCycleState {
 }
 impl IncorrectFileSystemLifeCycleState {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -462,7 +462,7 @@ impl std::fmt::Debug for FileSystemNotFound {
 }
 impl FileSystemNotFound {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -549,7 +549,7 @@ impl std::fmt::Debug for BadRequest {
 }
 impl BadRequest {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -636,7 +636,7 @@ impl std::fmt::Debug for AccessPointNotFound {
 }
 impl AccessPointNotFound {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -723,7 +723,7 @@ impl std::fmt::Debug for InvalidPolicyException {
 }
 impl InvalidPolicyException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -810,7 +810,7 @@ impl std::fmt::Debug for ValidationException {
 }
 impl ValidationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -897,7 +897,7 @@ impl std::fmt::Debug for SecurityGroupNotFound {
 }
 impl SecurityGroupNotFound {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -984,7 +984,7 @@ impl std::fmt::Debug for SecurityGroupLimitExceeded {
 }
 impl SecurityGroupLimitExceeded {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1071,7 +1071,7 @@ impl std::fmt::Debug for MountTargetNotFound {
 }
 impl MountTargetNotFound {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1158,7 +1158,7 @@ impl std::fmt::Debug for IncorrectMountTargetState {
 }
 impl IncorrectMountTargetState {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1245,7 +1245,7 @@ impl std::fmt::Debug for ReplicationNotFound {
 }
 impl ReplicationNotFound {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1332,7 +1332,7 @@ impl std::fmt::Debug for PolicyNotFound {
 }
 impl PolicyNotFound {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1419,7 +1419,7 @@ impl std::fmt::Debug for DependencyTimeout {
 }
 impl DependencyTimeout {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1506,7 +1506,7 @@ impl std::fmt::Debug for FileSystemInUse {
 }
 impl FileSystemInUse {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1593,7 +1593,7 @@ impl std::fmt::Debug for UnsupportedAvailabilityZone {
 }
 impl UnsupportedAvailabilityZone {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1680,7 +1680,7 @@ impl std::fmt::Debug for FileSystemLimitExceeded {
 }
 impl FileSystemLimitExceeded {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1767,7 +1767,7 @@ impl std::fmt::Debug for SubnetNotFound {
 }
 impl SubnetNotFound {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1854,7 +1854,7 @@ impl std::fmt::Debug for NoFreeAddressesInSubnet {
 }
 impl NoFreeAddressesInSubnet {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1941,7 +1941,7 @@ impl std::fmt::Debug for NetworkInterfaceLimitExceeded {
 }
 impl NetworkInterfaceLimitExceeded {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2028,7 +2028,7 @@ impl std::fmt::Debug for MountTargetConflict {
 }
 impl MountTargetConflict {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2115,7 +2115,7 @@ impl std::fmt::Debug for IpAddressInUse {
 }
 impl IpAddressInUse {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2202,7 +2202,7 @@ impl std::fmt::Debug for AvailabilityZonesMismatch {
 }
 impl AvailabilityZonesMismatch {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2297,7 +2297,7 @@ impl std::fmt::Debug for FileSystemAlreadyExists {
 }
 impl FileSystemAlreadyExists {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2399,7 +2399,7 @@ impl std::fmt::Debug for ThrottlingException {
 }
 impl ThrottlingException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2486,7 +2486,7 @@ impl std::fmt::Debug for AccessPointLimitExceeded {
 }
 impl AccessPointLimitExceeded {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2581,7 +2581,7 @@ impl std::fmt::Debug for AccessPointAlreadyExists {
 }
 impl AccessPointAlreadyExists {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }

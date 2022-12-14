@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_crate_error_access_denied_exception_json_err(
+pub(crate) fn deser_structure_crate_error_access_denied_exception_json_err(
     value: &[u8],
     mut builder: crate::error::access_denied_exception::Builder,
 ) -> Result<crate::error::access_denied_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -47,7 +47,7 @@ pub fn deser_structure_crate_error_access_denied_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_conflict_exception_json_err(
+pub(crate) fn deser_structure_crate_error_conflict_exception_json_err(
     value: &[u8],
     mut builder: crate::error::conflict_exception::Builder,
 ) -> Result<crate::error::conflict_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -89,7 +89,7 @@ pub fn deser_structure_crate_error_conflict_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_internal_server_exception_json_err(
+pub(crate) fn deser_structure_crate_error_internal_server_exception_json_err(
     value: &[u8],
     mut builder: crate::error::internal_server_exception::Builder,
 ) -> Result<crate::error::internal_server_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -131,7 +131,7 @@ pub fn deser_structure_crate_error_internal_server_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_resource_not_found_exception_json_err(
+pub(crate) fn deser_structure_crate_error_resource_not_found_exception_json_err(
     value: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -174,7 +174,7 @@ pub fn deser_structure_crate_error_resource_not_found_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_service_quota_exceeded_exception_json_err(
+pub(crate) fn deser_structure_crate_error_service_quota_exceeded_exception_json_err(
     value: &[u8],
     mut builder: crate::error::service_quota_exceeded_exception::Builder,
 ) -> Result<
@@ -219,7 +219,7 @@ pub fn deser_structure_crate_error_service_quota_exceeded_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_throttling_exception_json_err(
+pub(crate) fn deser_structure_crate_error_throttling_exception_json_err(
     value: &[u8],
     mut builder: crate::error::throttling_exception::Builder,
 ) -> Result<crate::error::throttling_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -261,7 +261,7 @@ pub fn deser_structure_crate_error_throttling_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_validation_exception_json_err(
+pub(crate) fn deser_structure_crate_error_validation_exception_json_err(
     value: &[u8],
     mut builder: crate::error::validation_exception::Builder,
 ) -> Result<crate::error::validation_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -303,7 +303,7 @@ pub fn deser_structure_crate_error_validation_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_create_account_assignment(
+pub(crate) fn deser_operation_crate_operation_create_account_assignment(
     value: &[u8],
     mut builder: crate::output::create_account_assignment_output::Builder,
 ) -> Result<
@@ -344,7 +344,7 @@ pub fn deser_operation_crate_operation_create_account_assignment(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_create_permission_set(
+pub(crate) fn deser_operation_crate_operation_create_permission_set(
     value: &[u8],
     mut builder: crate::output::create_permission_set_output::Builder,
 ) -> Result<crate::output::create_permission_set_output::Builder, aws_smithy_json::deserialize::Error>
@@ -383,7 +383,7 @@ pub fn deser_operation_crate_operation_create_permission_set(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_delete_account_assignment(
+pub(crate) fn deser_operation_crate_operation_delete_account_assignment(
     value: &[u8],
     mut builder: crate::output::delete_account_assignment_output::Builder,
 ) -> Result<
@@ -424,7 +424,7 @@ pub fn deser_operation_crate_operation_delete_account_assignment(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_describe_account_assignment_creation_status(
+pub(crate) fn deser_operation_crate_operation_describe_account_assignment_creation_status(
     value: &[u8],
     mut builder: crate::output::describe_account_assignment_creation_status_output::Builder,
 ) -> Result<
@@ -465,7 +465,7 @@ pub fn deser_operation_crate_operation_describe_account_assignment_creation_stat
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_describe_account_assignment_deletion_status(
+pub(crate) fn deser_operation_crate_operation_describe_account_assignment_deletion_status(
     value: &[u8],
     mut builder: crate::output::describe_account_assignment_deletion_status_output::Builder,
 ) -> Result<
@@ -506,7 +506,7 @@ pub fn deser_operation_crate_operation_describe_account_assignment_deletion_stat
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_describe_instance_access_control_attribute_configuration(
+pub(crate) fn deser_operation_crate_operation_describe_instance_access_control_attribute_configuration(
     value: &[u8],
     mut builder: crate::output::describe_instance_access_control_attribute_configuration_output::Builder,
 ) -> Result<
@@ -565,7 +565,7 @@ pub fn deser_operation_crate_operation_describe_instance_access_control_attribut
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_describe_permission_set(
+pub(crate) fn deser_operation_crate_operation_describe_permission_set(
     value: &[u8],
     mut builder: crate::output::describe_permission_set_output::Builder,
 ) -> Result<
@@ -606,7 +606,7 @@ pub fn deser_operation_crate_operation_describe_permission_set(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_describe_permission_set_provisioning_status(
+pub(crate) fn deser_operation_crate_operation_describe_permission_set_provisioning_status(
     value: &[u8],
     mut builder: crate::output::describe_permission_set_provisioning_status_output::Builder,
 ) -> Result<
@@ -647,7 +647,7 @@ pub fn deser_operation_crate_operation_describe_permission_set_provisioning_stat
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_inline_policy_for_permission_set(
+pub(crate) fn deser_operation_crate_operation_get_inline_policy_for_permission_set(
     value: &[u8],
     mut builder: crate::output::get_inline_policy_for_permission_set_output::Builder,
 ) -> Result<
@@ -692,7 +692,7 @@ pub fn deser_operation_crate_operation_get_inline_policy_for_permission_set(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_permissions_boundary_for_permission_set(
+pub(crate) fn deser_operation_crate_operation_get_permissions_boundary_for_permission_set(
     value: &[u8],
     mut builder: crate::output::get_permissions_boundary_for_permission_set_output::Builder,
 ) -> Result<
@@ -735,7 +735,7 @@ pub fn deser_operation_crate_operation_get_permissions_boundary_for_permission_s
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_account_assignment_creation_status(
+pub(crate) fn deser_operation_crate_operation_list_account_assignment_creation_status(
     value: &[u8],
     mut builder: crate::output::list_account_assignment_creation_status_output::Builder,
 ) -> Result<
@@ -785,7 +785,7 @@ pub fn deser_operation_crate_operation_list_account_assignment_creation_status(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_account_assignment_deletion_status(
+pub(crate) fn deser_operation_crate_operation_list_account_assignment_deletion_status(
     value: &[u8],
     mut builder: crate::output::list_account_assignment_deletion_status_output::Builder,
 ) -> Result<
@@ -835,7 +835,7 @@ pub fn deser_operation_crate_operation_list_account_assignment_deletion_status(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_account_assignments(
+pub(crate) fn deser_operation_crate_operation_list_account_assignments(
     value: &[u8],
     mut builder: crate::output::list_account_assignments_output::Builder,
 ) -> Result<
@@ -885,7 +885,7 @@ pub fn deser_operation_crate_operation_list_account_assignments(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_accounts_for_provisioned_permission_set(
+pub(crate) fn deser_operation_crate_operation_list_accounts_for_provisioned_permission_set(
     value: &[u8],
     mut builder: crate::output::list_accounts_for_provisioned_permission_set_output::Builder,
 ) -> Result<
@@ -937,7 +937,7 @@ pub fn deser_operation_crate_operation_list_accounts_for_provisioned_permission_
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_customer_managed_policy_references_in_permission_set(
+pub(crate) fn deser_operation_crate_operation_list_customer_managed_policy_references_in_permission_set(
     value: &[u8],
     mut builder: crate::output::list_customer_managed_policy_references_in_permission_set_output::Builder,
 ) -> Result<
@@ -987,7 +987,7 @@ pub fn deser_operation_crate_operation_list_customer_managed_policy_references_i
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_instances(
+pub(crate) fn deser_operation_crate_operation_list_instances(
     value: &[u8],
     mut builder: crate::output::list_instances_output::Builder,
 ) -> Result<crate::output::list_instances_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -1036,7 +1036,7 @@ pub fn deser_operation_crate_operation_list_instances(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_managed_policies_in_permission_set(
+pub(crate) fn deser_operation_crate_operation_list_managed_policies_in_permission_set(
     value: &[u8],
     mut builder: crate::output::list_managed_policies_in_permission_set_output::Builder,
 ) -> Result<
@@ -1086,7 +1086,7 @@ pub fn deser_operation_crate_operation_list_managed_policies_in_permission_set(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_permission_set_provisioning_status(
+pub(crate) fn deser_operation_crate_operation_list_permission_set_provisioning_status(
     value: &[u8],
     mut builder: crate::output::list_permission_set_provisioning_status_output::Builder,
 ) -> Result<
@@ -1136,7 +1136,7 @@ pub fn deser_operation_crate_operation_list_permission_set_provisioning_status(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_permission_sets(
+pub(crate) fn deser_operation_crate_operation_list_permission_sets(
     value: &[u8],
     mut builder: crate::output::list_permission_sets_output::Builder,
 ) -> Result<crate::output::list_permission_sets_output::Builder, aws_smithy_json::deserialize::Error>
@@ -1184,7 +1184,7 @@ pub fn deser_operation_crate_operation_list_permission_sets(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_permission_sets_provisioned_to_account(
+pub(crate) fn deser_operation_crate_operation_list_permission_sets_provisioned_to_account(
     value: &[u8],
     mut builder: crate::output::list_permission_sets_provisioned_to_account_output::Builder,
 ) -> Result<
@@ -1234,7 +1234,7 @@ pub fn deser_operation_crate_operation_list_permission_sets_provisioned_to_accou
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_tags_for_resource(
+pub(crate) fn deser_operation_crate_operation_list_tags_for_resource(
     value: &[u8],
     mut builder: crate::output::list_tags_for_resource_output::Builder,
 ) -> Result<
@@ -1284,7 +1284,7 @@ pub fn deser_operation_crate_operation_list_tags_for_resource(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_provision_permission_set(
+pub(crate) fn deser_operation_crate_operation_provision_permission_set(
     value: &[u8],
     mut builder: crate::output::provision_permission_set_output::Builder,
 ) -> Result<
@@ -1325,7 +1325,7 @@ pub fn deser_operation_crate_operation_provision_permission_set(
     Ok(builder)
 }
 
-pub fn or_empty_doc(data: &[u8]) -> &[u8] {
+pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
     } else {
@@ -1333,7 +1333,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-pub fn deser_structure_crate_model_account_assignment_operation_status<'a, I>(
+pub(crate) fn deser_structure_crate_model_account_assignment_operation_status<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::AccountAssignmentOperationStatus>,
@@ -1348,7 +1348,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::AccountAssignmentOperationStatus::builder();
+            let mut builder = crate::model::account_assignment_operation_status::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -1462,7 +1462,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_permission_set<'a, I>(
+pub(crate) fn deser_structure_crate_model_permission_set<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::PermissionSet>, aws_smithy_json::deserialize::Error>
 where
@@ -1474,7 +1474,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::PermissionSet::builder();
+            let mut builder = crate::model::permission_set::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -1552,7 +1552,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_instance_access_control_attribute_configuration<'a, I>(
+pub(crate) fn deser_structure_crate_model_instance_access_control_attribute_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::InstanceAccessControlAttributeConfiguration>,
@@ -1567,7 +1567,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::InstanceAccessControlAttributeConfiguration::builder();
+            let mut builder =
+                crate::model::instance_access_control_attribute_configuration::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -1597,7 +1598,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_permission_set_provisioning_status<'a, I>(
+pub(crate) fn deser_structure_crate_model_permission_set_provisioning_status<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::PermissionSetProvisioningStatus>,
@@ -1612,7 +1613,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::PermissionSetProvisioningStatus::builder();
+            let mut builder = crate::model::permission_set_provisioning_status::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -1693,7 +1694,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_permissions_boundary<'a, I>(
+pub(crate) fn deser_structure_crate_model_permissions_boundary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::PermissionsBoundary>, aws_smithy_json::deserialize::Error>
 where
@@ -1705,7 +1706,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::PermissionsBoundary::builder();
+            let mut builder = crate::model::permissions_boundary::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -1744,8 +1745,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_ssoadmin_account_assignment_operation_status_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_ssoadmin_account_assignment_operation_status_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::AccountAssignmentOperationStatusMetadata>>,
@@ -1784,8 +1785,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_ssoadmin_account_assignment_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_ssoadmin_account_assignment_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::AccountAssignment>>,
@@ -1825,8 +1826,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_ssoadmin_account_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_ssoadmin_account_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, aws_smithy_json::deserialize::Error>
 where
@@ -1864,8 +1865,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_ssoadmin_customer_managed_policy_reference_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_ssoadmin_customer_managed_policy_reference_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::CustomerManagedPolicyReference>>,
@@ -1904,8 +1905,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_ssoadmin_instance_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_ssoadmin_instance_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::InstanceMetadata>>,
@@ -1945,8 +1946,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_ssoadmin_attached_managed_policy_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_ssoadmin_attached_managed_policy_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::AttachedManagedPolicy>>,
@@ -1986,8 +1987,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_ssoadmin_permission_set_provisioning_status_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_ssoadmin_permission_set_provisioning_status_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::PermissionSetProvisioningStatusMetadata>>,
@@ -2026,8 +2027,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_ssoadmin_permission_set_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_ssoadmin_permission_set_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, aws_smithy_json::deserialize::Error>
 where
@@ -2065,8 +2066,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_ssoadmin_tag_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_ssoadmin_tag_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Tag>>, aws_smithy_json::deserialize::Error>
 where
@@ -2100,8 +2101,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_ssoadmin_access_control_attribute_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_ssoadmin_access_control_attribute_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::AccessControlAttribute>>,
@@ -2140,7 +2141,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_customer_managed_policy_reference<'a, I>(
+pub(crate) fn deser_structure_crate_model_customer_managed_policy_reference<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CustomerManagedPolicyReference>, aws_smithy_json::deserialize::Error>
 where
@@ -2152,7 +2153,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::CustomerManagedPolicyReference::builder();
+            let mut builder = crate::model::customer_managed_policy_reference::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -2195,7 +2196,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_account_assignment_operation_status_metadata<'a, I>(
+pub(crate) fn deser_structure_crate_model_account_assignment_operation_status_metadata<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::AccountAssignmentOperationStatusMetadata>,
@@ -2210,7 +2211,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::AccountAssignmentOperationStatusMetadata::builder();
+            let mut builder =
+                crate::model::account_assignment_operation_status_metadata::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -2264,7 +2266,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_account_assignment<'a, I>(
+pub(crate) fn deser_structure_crate_model_account_assignment<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AccountAssignment>, aws_smithy_json::deserialize::Error>
 where
@@ -2276,7 +2278,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::AccountAssignment::builder();
+            let mut builder = crate::model::account_assignment::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -2340,7 +2342,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_instance_metadata<'a, I>(
+pub(crate) fn deser_structure_crate_model_instance_metadata<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::InstanceMetadata>, aws_smithy_json::deserialize::Error>
 where
@@ -2352,7 +2354,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::InstanceMetadata::builder();
+            let mut builder = crate::model::instance_metadata::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -2395,7 +2397,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_attached_managed_policy<'a, I>(
+pub(crate) fn deser_structure_crate_model_attached_managed_policy<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AttachedManagedPolicy>, aws_smithy_json::deserialize::Error>
 where
@@ -2407,7 +2409,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::AttachedManagedPolicy::builder();
+            let mut builder = crate::model::attached_managed_policy::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -2450,7 +2452,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_permission_set_provisioning_status_metadata<'a, I>(
+pub(crate) fn deser_structure_crate_model_permission_set_provisioning_status_metadata<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::PermissionSetProvisioningStatusMetadata>,
@@ -2465,7 +2467,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::PermissionSetProvisioningStatusMetadata::builder();
+            let mut builder =
+                crate::model::permission_set_provisioning_status_metadata::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -2519,7 +2522,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_tag<'a, I>(
+pub(crate) fn deser_structure_crate_model_tag<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Tag>, aws_smithy_json::deserialize::Error>
 where
@@ -2531,7 +2534,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Tag::builder();
+            let mut builder = crate::model::tag::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -2574,7 +2577,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_access_control_attribute<'a, I>(
+pub(crate) fn deser_structure_crate_model_access_control_attribute<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AccessControlAttribute>, aws_smithy_json::deserialize::Error>
 where
@@ -2586,7 +2589,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::AccessControlAttribute::builder();
+            let mut builder = crate::model::access_control_attribute::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -2625,7 +2628,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_access_control_attribute_value<'a, I>(
+pub(crate) fn deser_structure_crate_model_access_control_attribute_value<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AccessControlAttributeValue>, aws_smithy_json::deserialize::Error>
 where
@@ -2637,7 +2640,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::AccessControlAttributeValue::builder();
+            let mut builder = crate::model::access_control_attribute_value::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -2667,8 +2670,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_ssoadmin_access_control_attribute_value_source_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_ssoadmin_access_control_attribute_value_source_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, aws_smithy_json::deserialize::Error>
 where

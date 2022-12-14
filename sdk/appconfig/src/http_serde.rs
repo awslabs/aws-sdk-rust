@@ -29,7 +29,7 @@ pub fn add_headers_create_hosted_configuration_version(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_3) = &input.description {
-        let formatted_4 = AsRef::<str>::as_ref(inner_3);
+        let formatted_4 = inner_3.as_str();
         if !formatted_4.is_empty() {
             let header_value = formatted_4;
             let header_value =
@@ -46,7 +46,7 @@ pub fn add_headers_create_hosted_configuration_version(
         }
     }
     if let Some(inner_5) = &input.content_type {
-        let formatted_6 = AsRef::<str>::as_ref(inner_5);
+        let formatted_6 = inner_5.as_str();
         if !formatted_6.is_empty() {
             let header_value = formatted_6;
             let header_value =
@@ -83,7 +83,7 @@ pub fn add_headers_create_hosted_configuration_version(
     Ok(builder)
 }
 
-pub fn deser_header_create_hosted_configuration_version_create_hosted_configuration_version_output_application_id(
+pub(crate) fn deser_header_create_hosted_configuration_version_create_hosted_configuration_version_output_application_id(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -93,7 +93,7 @@ pub fn deser_header_create_hosted_configuration_version_create_hosted_configurat
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_hosted_configuration_version_create_hosted_configuration_version_output_configuration_profile_id(
+pub(crate) fn deser_header_create_hosted_configuration_version_create_hosted_configuration_version_output_configuration_profile_id(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -114,7 +114,7 @@ pub fn deser_payload_create_hosted_configuration_version_create_hosted_configura
         .transpose()
 }
 
-pub fn deser_header_create_hosted_configuration_version_create_hosted_configuration_version_output_content_type(
+pub(crate) fn deser_header_create_hosted_configuration_version_create_hosted_configuration_version_output_content_type(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -124,7 +124,7 @@ pub fn deser_header_create_hosted_configuration_version_create_hosted_configurat
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_hosted_configuration_version_create_hosted_configuration_version_output_description(
+pub(crate) fn deser_header_create_hosted_configuration_version_create_hosted_configuration_version_output_description(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -134,7 +134,7 @@ pub fn deser_header_create_hosted_configuration_version_create_hosted_configurat
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_hosted_configuration_version_create_hosted_configuration_version_output_version_number(
+pub(crate) fn deser_header_create_hosted_configuration_version_create_hosted_configuration_version_output_version_number(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Version-Number").iter();
@@ -149,7 +149,7 @@ pub fn deser_header_create_hosted_configuration_version_create_hosted_configurat
     }
 }
 
-pub fn deser_header_get_configuration_get_configuration_output_configuration_version(
+pub(crate) fn deser_header_get_configuration_get_configuration_output_configuration_version(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -170,7 +170,7 @@ pub fn deser_payload_get_configuration_get_configuration_output_content(
         .transpose()
 }
 
-pub fn deser_header_get_configuration_get_configuration_output_content_type(
+pub(crate) fn deser_header_get_configuration_get_configuration_output_content_type(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -180,7 +180,7 @@ pub fn deser_header_get_configuration_get_configuration_output_content_type(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_hosted_configuration_version_get_hosted_configuration_version_output_application_id(
+pub(crate) fn deser_header_get_hosted_configuration_version_get_hosted_configuration_version_output_application_id(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -190,7 +190,7 @@ pub fn deser_header_get_hosted_configuration_version_get_hosted_configuration_ve
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_hosted_configuration_version_get_hosted_configuration_version_output_configuration_profile_id(
+pub(crate) fn deser_header_get_hosted_configuration_version_get_hosted_configuration_version_output_configuration_profile_id(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -211,7 +211,7 @@ pub fn deser_payload_get_hosted_configuration_version_get_hosted_configuration_v
         .transpose()
 }
 
-pub fn deser_header_get_hosted_configuration_version_get_hosted_configuration_version_output_content_type(
+pub(crate) fn deser_header_get_hosted_configuration_version_get_hosted_configuration_version_output_content_type(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -221,7 +221,7 @@ pub fn deser_header_get_hosted_configuration_version_get_hosted_configuration_ve
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_hosted_configuration_version_get_hosted_configuration_version_output_description(
+pub(crate) fn deser_header_get_hosted_configuration_version_get_hosted_configuration_version_output_description(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -231,7 +231,7 @@ pub fn deser_header_get_hosted_configuration_version_get_hosted_configuration_ve
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_hosted_configuration_version_get_hosted_configuration_version_output_version_number(
+pub(crate) fn deser_header_get_hosted_configuration_version_get_hosted_configuration_version_output_version_number(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Version-Number").iter();

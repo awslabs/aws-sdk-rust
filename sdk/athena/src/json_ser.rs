@@ -67,7 +67,7 @@ pub fn serialize_structure_crate_input_create_data_catalog_input(
         let mut object_15 = object.key("Parameters").start_object();
         for (key_16, value_17) in var_14 {
             {
-                object_15.key(key_16).string(value_17.as_str());
+                object_15.key(key_16.as_str()).string(value_17.as_str());
             }
         }
         object_15.finish();
@@ -595,7 +595,7 @@ pub fn serialize_structure_crate_input_update_data_catalog_input(
         let mut object_111 = object.key("Parameters").start_object();
         for (key_112, value_113) in var_110 {
             {
-                object_111.key(key_112).string(value_113.as_str());
+                object_111.key(key_112.as_str()).string(value_113.as_str());
             }
         }
         object_111.finish();

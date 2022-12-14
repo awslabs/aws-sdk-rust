@@ -113,7 +113,7 @@ pub fn serialize_structure_crate_input_get_screen_data_input(
         let mut object_25 = object.key("variables").start_object();
         for (key_26, value_27) in var_24 {
             {
-                let mut object_28 = object_25.key(key_26).start_object();
+                let mut object_28 = object_25.key(key_26.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_variable_value(
                     &mut object_28,
                     value_27,
@@ -143,7 +143,7 @@ pub fn serialize_structure_crate_input_invoke_screen_automation_input(
         let mut object_33 = object.key("variables").start_object();
         for (key_34, value_35) in var_32 {
             {
-                let mut object_36 = object_33.key(key_34).start_object();
+                let mut object_36 = object_33.key(key_34.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_variable_value(
                     &mut object_36,
                     value_35,
@@ -236,7 +236,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_53 = object.key("tags").start_object();
         for (key_54, value_55) in var_52 {
             {
-                object_53.key(key_54).string(value_55.as_str());
+                object_53.key(key_54.as_str()).string(value_55.as_str());
             }
         }
         object_53.finish();
@@ -255,7 +255,7 @@ pub fn serialize_structure_crate_model_create_row_data(
         let mut object_58 = object.key("cellsToCreate").start_object();
         for (key_59, value_60) in var_57 {
             {
-                let mut object_61 = object_58.key(key_59).start_object();
+                let mut object_61 = object_58.key(key_59.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_cell_input(
                     &mut object_61,
                     value_60,
@@ -279,7 +279,7 @@ pub fn serialize_structure_crate_model_update_row_data(
         let mut object_64 = object.key("cellsToUpdate").start_object();
         for (key_65, value_66) in var_63 {
             {
-                let mut object_67 = object_64.key(key_65).start_object();
+                let mut object_67 = object_64.key(key_65.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_cell_input(
                     &mut object_67,
                     value_66,
@@ -308,7 +308,7 @@ pub fn serialize_structure_crate_model_upsert_row_data(
         let mut object_72 = object.key("cellsToUpdate").start_object();
         for (key_73, value_74) in var_71 {
             {
-                let mut object_75 = object_72.key(key_73).start_object();
+                let mut object_75 = object_72.key(key_73.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_cell_input(
                     &mut object_75,
                     value_74,
@@ -419,7 +419,7 @@ pub fn serialize_structure_crate_model_destination_options(
         let mut object_91 = object.key("columnMap").start_object();
         for (key_92, value_93) in var_90 {
             {
-                let mut object_94 = object_91.key(key_92).start_object();
+                let mut object_94 = object_91.key(key_92.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_source_data_column_properties(
                     &mut object_94,
                     value_93,

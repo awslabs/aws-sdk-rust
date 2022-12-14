@@ -17,7 +17,7 @@ impl std::fmt::Debug for VolumeNotFound {
 }
 impl VolumeNotFound {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -82,7 +82,7 @@ impl std::fmt::Debug for MissingVolumeConfiguration {
 }
 impl MissingVolumeConfiguration {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -147,7 +147,7 @@ impl std::fmt::Debug for InternalServerError {
 }
 impl InternalServerError {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -222,7 +222,7 @@ impl std::fmt::Debug for IncompatibleParameterError {
 }
 impl IncompatibleParameterError {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -299,7 +299,7 @@ impl std::fmt::Debug for BadRequest {
 }
 impl BadRequest {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -364,7 +364,7 @@ impl std::fmt::Debug for UnsupportedOperation {
 }
 impl UnsupportedOperation {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -429,7 +429,7 @@ impl std::fmt::Debug for StorageVirtualMachineNotFound {
 }
 impl StorageVirtualMachineNotFound {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -494,7 +494,7 @@ impl std::fmt::Debug for SnapshotNotFound {
 }
 impl SnapshotNotFound {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -569,7 +569,7 @@ impl std::fmt::Debug for ServiceLimitExceeded {
 }
 impl ServiceLimitExceeded {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -646,7 +646,7 @@ impl std::fmt::Debug for MissingFileSystemConfiguration {
 }
 impl MissingFileSystemConfiguration {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -711,7 +711,7 @@ impl std::fmt::Debug for FileSystemNotFound {
 }
 impl FileSystemNotFound {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -776,7 +776,7 @@ impl std::fmt::Debug for MissingFileCacheConfiguration {
 }
 impl MissingFileCacheConfiguration {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -841,7 +841,7 @@ impl std::fmt::Debug for FileCacheNotFound {
 }
 impl FileCacheNotFound {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -906,7 +906,7 @@ impl std::fmt::Debug for DataRepositoryAssociationNotFound {
 }
 impl DataRepositoryAssociationNotFound {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -981,7 +981,7 @@ impl std::fmt::Debug for ResourceNotFound {
 }
 impl ResourceNotFound {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1068,7 +1068,7 @@ impl std::fmt::Debug for ResourceDoesNotSupportTagging {
 }
 impl ResourceDoesNotSupportTagging {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1155,7 +1155,7 @@ impl std::fmt::Debug for NotServiceResourceError {
 }
 impl NotServiceResourceError {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1232,7 +1232,7 @@ impl std::fmt::Debug for DataRepositoryTaskNotFound {
 }
 impl DataRepositoryTaskNotFound {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1297,7 +1297,7 @@ impl std::fmt::Debug for InvalidDataRepositoryType {
 }
 impl InvalidDataRepositoryType {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1362,7 +1362,7 @@ impl std::fmt::Debug for BackupNotFound {
 }
 impl BackupNotFound {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1437,7 +1437,7 @@ impl std::fmt::Debug for BackupRestoring {
 }
 impl BackupRestoring {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1517,7 +1517,7 @@ impl std::fmt::Debug for BackupInProgress {
 }
 impl BackupInProgress {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1592,7 +1592,7 @@ impl std::fmt::Debug for BackupBeingCopied {
 }
 impl BackupBeingCopied {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1687,7 +1687,7 @@ impl std::fmt::Debug for ActiveDirectoryError {
 }
 impl ActiveDirectoryError {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1782,7 +1782,7 @@ impl std::fmt::Debug for InvalidPerUnitStorageThroughput {
 }
 impl InvalidPerUnitStorageThroughput {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1873,7 +1873,7 @@ impl std::fmt::Debug for InvalidNetworkSettings {
 }
 impl InvalidNetworkSettings {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1983,7 +1983,7 @@ impl std::fmt::Debug for InvalidImportPath {
 }
 impl InvalidImportPath {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2048,7 +2048,7 @@ impl std::fmt::Debug for InvalidExportPath {
 }
 impl InvalidExportPath {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2113,7 +2113,7 @@ impl std::fmt::Debug for DataRepositoryTaskExecuting {
 }
 impl DataRepositoryTaskExecuting {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2188,7 +2188,7 @@ impl std::fmt::Debug for SourceBackupUnavailable {
 }
 impl SourceBackupUnavailable {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2265,7 +2265,7 @@ impl std::fmt::Debug for InvalidSourceKmsKey {
 }
 impl InvalidSourceKmsKey {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2330,7 +2330,7 @@ impl std::fmt::Debug for InvalidRegion {
 }
 impl InvalidRegion {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2395,7 +2395,7 @@ impl std::fmt::Debug for InvalidDestinationKmsKey {
 }
 impl InvalidDestinationKmsKey {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2460,7 +2460,7 @@ impl std::fmt::Debug for IncompatibleRegionForMultiAz {
 }
 impl IncompatibleRegionForMultiAz {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2528,7 +2528,7 @@ impl std::fmt::Debug for DataRepositoryTaskEnded {
 }
 impl DataRepositoryTaskEnded {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }

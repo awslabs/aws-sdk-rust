@@ -313,7 +313,7 @@ pub fn serialize_structure_crate_input_create_vehicle_input(
         let mut object_81 = object.key("attributes").start_object();
         for (key_82, value_83) in var_80 {
             {
-                object_81.key(key_82).string(value_83.as_str());
+                object_81.key(key_82.as_str()).string(value_83.as_str());
             }
         }
         object_81.finish();
@@ -1070,7 +1070,7 @@ pub fn serialize_structure_crate_input_update_vehicle_input(
         let mut object_228 = object.key("attributes").start_object();
         for (key_229, value_230) in var_227 {
             {
-                object_228.key(key_229).string(value_230.as_str());
+                object_228.key(key_229.as_str()).string(value_230.as_str());
             }
         }
         object_228.finish();
@@ -1098,7 +1098,7 @@ pub fn serialize_structure_crate_model_create_vehicle_request_item(
         let mut object_236 = object.key("attributes").start_object();
         for (key_237, value_238) in var_235 {
             {
-                object_236.key(key_237).string(value_238.as_str());
+                object_236.key(key_237.as_str()).string(value_238.as_str());
             }
         }
         object_236.finish();
@@ -1137,7 +1137,7 @@ pub fn serialize_structure_crate_model_update_vehicle_request_item(
         let mut object_248 = object.key("attributes").start_object();
         for (key_249, value_250) in var_247 {
             {
-                object_248.key(key_249).string(value_250.as_str());
+                object_248.key(key_249.as_str()).string(value_250.as_str());
             }
         }
         object_248.finish();
@@ -1739,7 +1739,7 @@ pub fn serialize_structure_crate_model_can_dbc_definition(
         let mut object_336 = object.key("signalsMap").start_object();
         for (key_337, value_338) in var_335 {
             {
-                object_336.key(key_337).string(value_338.as_str());
+                object_336.key(key_337.as_str()).string(value_338.as_str());
             }
         }
         object_336.finish();

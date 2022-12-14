@@ -17,7 +17,7 @@ impl std::fmt::Debug for RegionDisabledException {
 }
 impl RegionDisabledException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -83,7 +83,7 @@ impl std::fmt::Debug for PackedPolicyTooLargeException {
 }
 impl PackedPolicyTooLargeException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -148,7 +148,7 @@ impl std::fmt::Debug for MalformedPolicyDocumentException {
 }
 impl MalformedPolicyDocumentException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -213,7 +213,7 @@ impl std::fmt::Debug for InvalidAuthorizationMessageException {
 }
 impl InvalidAuthorizationMessageException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -278,7 +278,7 @@ impl std::fmt::Debug for InvalidIdentityTokenException {
 }
 impl InvalidIdentityTokenException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -344,7 +344,7 @@ impl std::fmt::Debug for IdpRejectedClaimException {
 }
 impl IdpRejectedClaimException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -413,7 +413,7 @@ impl IdpCommunicationErrorException {
         aws_smithy_types::retry::ErrorKind::ServerError
     }
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -481,7 +481,7 @@ impl std::fmt::Debug for ExpiredTokenException {
 }
 impl ExpiredTokenException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }

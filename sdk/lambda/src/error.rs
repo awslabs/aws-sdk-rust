@@ -43,7 +43,7 @@ impl std::fmt::Debug for TooManyRequestsException {
 }
 impl TooManyRequestsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -160,7 +160,7 @@ impl std::fmt::Debug for ServiceException {
 }
 impl ServiceException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -247,7 +247,7 @@ impl std::fmt::Debug for ResourceNotFoundException {
 }
 impl ResourceNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -334,7 +334,7 @@ impl std::fmt::Debug for ResourceConflictException {
 }
 impl ResourceConflictException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -421,7 +421,7 @@ impl std::fmt::Debug for InvalidParameterValueException {
 }
 impl InvalidParameterValueException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -508,7 +508,7 @@ impl std::fmt::Debug for PreconditionFailedException {
 }
 impl PreconditionFailedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -595,7 +595,7 @@ impl std::fmt::Debug for InvalidCodeSignatureException {
 }
 impl InvalidCodeSignatureException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -682,7 +682,7 @@ impl std::fmt::Debug for CodeVerificationFailedException {
 }
 impl CodeVerificationFailedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -769,7 +769,7 @@ impl std::fmt::Debug for CodeSigningConfigNotFoundException {
 }
 impl CodeSigningConfigNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -856,7 +856,7 @@ impl std::fmt::Debug for CodeStorageExceededException {
 }
 impl CodeStorageExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -943,7 +943,7 @@ impl std::fmt::Debug for ResourceInUseException {
 }
 impl ResourceInUseException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1030,7 +1030,7 @@ impl std::fmt::Debug for InvalidRuntimeException {
 }
 impl InvalidRuntimeException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1117,7 +1117,7 @@ impl std::fmt::Debug for InvalidRequestContentException {
 }
 impl InvalidRequestContentException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1204,7 +1204,7 @@ impl std::fmt::Debug for UnsupportedMediaTypeException {
 }
 impl UnsupportedMediaTypeException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1291,7 +1291,7 @@ impl std::fmt::Debug for SubnetIpAddressLimitReachedException {
 }
 impl SubnetIpAddressLimitReachedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1381,7 +1381,7 @@ impl std::fmt::Debug for ResourceNotReadyException {
 }
 impl ResourceNotReadyException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1468,7 +1468,7 @@ impl std::fmt::Debug for RequestTooLargeException {
 }
 impl RequestTooLargeException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1555,7 +1555,7 @@ impl std::fmt::Debug for KmsNotFoundException {
 }
 impl KmsNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1642,7 +1642,7 @@ impl std::fmt::Debug for KmsInvalidStateException {
 }
 impl KmsInvalidStateException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1729,7 +1729,7 @@ impl std::fmt::Debug for KmsDisabledException {
 }
 impl KmsDisabledException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1816,7 +1816,7 @@ impl std::fmt::Debug for KmsAccessDeniedException {
 }
 impl KmsAccessDeniedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1903,7 +1903,7 @@ impl std::fmt::Debug for InvalidZipFileException {
 }
 impl InvalidZipFileException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1990,7 +1990,7 @@ impl std::fmt::Debug for InvalidSubnetIdException {
 }
 impl InvalidSubnetIdException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2077,7 +2077,7 @@ impl std::fmt::Debug for InvalidSecurityGroupIdException {
 }
 impl InvalidSecurityGroupIdException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2167,7 +2167,7 @@ impl std::fmt::Debug for EniLimitReachedException {
 }
 impl EniLimitReachedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2254,7 +2254,7 @@ impl std::fmt::Debug for EfsMountTimeoutException {
 }
 impl EfsMountTimeoutException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2341,7 +2341,7 @@ impl std::fmt::Debug for EfsMountFailureException {
 }
 impl EfsMountFailureException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2428,7 +2428,7 @@ impl std::fmt::Debug for EfsMountConnectivityException {
 }
 impl EfsMountConnectivityException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2518,7 +2518,7 @@ impl std::fmt::Debug for EfsioException {
 }
 impl EfsioException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2613,7 +2613,7 @@ impl std::fmt::Debug for Ec2UnexpectedException {
 }
 impl Ec2UnexpectedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2715,7 +2715,7 @@ impl std::fmt::Debug for Ec2ThrottledException {
 }
 impl Ec2ThrottledException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2802,7 +2802,7 @@ impl std::fmt::Debug for Ec2AccessDeniedException {
 }
 impl Ec2AccessDeniedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2889,7 +2889,7 @@ impl std::fmt::Debug for ProvisionedConcurrencyConfigNotFoundException {
 }
 impl ProvisionedConcurrencyConfigNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2976,7 +2976,7 @@ impl std::fmt::Debug for PolicyLengthExceededException {
 }
 impl PolicyLengthExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }

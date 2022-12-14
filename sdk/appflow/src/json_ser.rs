@@ -68,7 +68,7 @@ pub fn serialize_structure_crate_input_create_flow_input(
         let mut object_18 = object.key("tags").start_object();
         for (key_19, value_20) in var_17 {
             {
-                object_18.key(key_19).string(value_20.as_str());
+                object_18.key(key_19.as_str()).string(value_20.as_str());
             }
         }
         object_18.finish();
@@ -340,7 +340,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_67 = object.key("tags").start_object();
         for (key_68, value_69) in var_66 {
             {
-                object_67.key(key_68).string(value_69.as_str());
+                object_67.key(key_68.as_str()).string(value_69.as_str());
             }
         }
         object_67.finish();
@@ -1448,7 +1448,7 @@ pub fn serialize_structure_crate_model_custom_connector_profile_properties(
         let mut object_300 = object.key("profileProperties").start_object();
         for (key_301, value_302) in var_299 {
             {
-                object_300.key(key_301).string(value_302.as_str());
+                object_300.key(key_301.as_str()).string(value_302.as_str());
             }
         }
         object_300.finish();
@@ -2060,7 +2060,7 @@ pub fn serialize_structure_crate_model_custom_connector_destination_properties(
         let mut object_418 = object.key("customProperties").start_object();
         for (key_419, value_420) in var_417 {
             {
-                object_418.key(key_419).string(value_420.as_str());
+                object_418.key(key_419.as_str()).string(value_420.as_str());
             }
         }
         object_418.finish();
@@ -2306,7 +2306,7 @@ pub fn serialize_structure_crate_model_custom_connector_source_properties(
         let mut object_451 = object.key("customProperties").start_object();
         for (key_452, value_453) in var_450 {
             {
-                object_451.key(key_452).string(value_453.as_str());
+                object_451.key(key_452.as_str()).string(value_453.as_str());
             }
         }
         object_451.finish();
@@ -2393,7 +2393,7 @@ pub fn serialize_structure_crate_model_o_auth2_properties(
         let mut object_470 = object.key("tokenUrlCustomProperties").start_object();
         for (key_471, value_472) in var_469 {
             {
-                object_470.key(key_471).string(value_472.as_str());
+                object_470.key(key_471.as_str()).string(value_472.as_str());
             }
         }
         object_470.finish();
@@ -2507,7 +2507,7 @@ pub fn serialize_structure_crate_model_custom_auth_credentials(
         let mut object_493 = object.key("credentialsMap").start_object();
         for (key_494, value_495) in var_492 {
             {
-                object_493.key(key_494).string(value_495.as_str());
+                object_493.key(key_494.as_str()).string(value_495.as_str());
             }
         }
         object_493.finish();

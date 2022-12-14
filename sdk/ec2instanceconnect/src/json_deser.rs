@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_crate_error_auth_exception_json_err(
+pub(crate) fn deser_structure_crate_error_auth_exception_json_err(
     value: &[u8],
     mut builder: crate::error::auth_exception::Builder,
 ) -> Result<crate::error::auth_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -47,7 +47,7 @@ pub fn deser_structure_crate_error_auth_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_ec2_instance_not_found_exception_json_err(
+pub(crate) fn deser_structure_crate_error_ec2_instance_not_found_exception_json_err(
     value: &[u8],
     mut builder: crate::error::ec2_instance_not_found_exception::Builder,
 ) -> Result<
@@ -92,7 +92,7 @@ pub fn deser_structure_crate_error_ec2_instance_not_found_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_ec2_instance_state_invalid_exception_json_err(
+pub(crate) fn deser_structure_crate_error_ec2_instance_state_invalid_exception_json_err(
     value: &[u8],
     mut builder: crate::error::ec2_instance_state_invalid_exception::Builder,
 ) -> Result<
@@ -137,7 +137,7 @@ pub fn deser_structure_crate_error_ec2_instance_state_invalid_exception_json_err
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_ec2_instance_type_invalid_exception_json_err(
+pub(crate) fn deser_structure_crate_error_ec2_instance_type_invalid_exception_json_err(
     value: &[u8],
     mut builder: crate::error::ec2_instance_type_invalid_exception::Builder,
 ) -> Result<
@@ -182,7 +182,7 @@ pub fn deser_structure_crate_error_ec2_instance_type_invalid_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_ec2_instance_unavailable_exception_json_err(
+pub(crate) fn deser_structure_crate_error_ec2_instance_unavailable_exception_json_err(
     value: &[u8],
     mut builder: crate::error::ec2_instance_unavailable_exception::Builder,
 ) -> Result<
@@ -227,7 +227,7 @@ pub fn deser_structure_crate_error_ec2_instance_unavailable_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_invalid_args_exception_json_err(
+pub(crate) fn deser_structure_crate_error_invalid_args_exception_json_err(
     value: &[u8],
     mut builder: crate::error::invalid_args_exception::Builder,
 ) -> Result<crate::error::invalid_args_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -269,7 +269,7 @@ pub fn deser_structure_crate_error_invalid_args_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_serial_console_access_disabled_exception_json_err(
+pub(crate) fn deser_structure_crate_error_serial_console_access_disabled_exception_json_err(
     value: &[u8],
     mut builder: crate::error::serial_console_access_disabled_exception::Builder,
 ) -> Result<
@@ -314,7 +314,7 @@ pub fn deser_structure_crate_error_serial_console_access_disabled_exception_json
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_serial_console_session_limit_exceeded_exception_json_err(
+pub(crate) fn deser_structure_crate_error_serial_console_session_limit_exceeded_exception_json_err(
     value: &[u8],
     mut builder: crate::error::serial_console_session_limit_exceeded_exception::Builder,
 ) -> Result<
@@ -359,7 +359,7 @@ pub fn deser_structure_crate_error_serial_console_session_limit_exceeded_excepti
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_serial_console_session_unavailable_exception_json_err(
+pub(crate) fn deser_structure_crate_error_serial_console_session_unavailable_exception_json_err(
     value: &[u8],
     mut builder: crate::error::serial_console_session_unavailable_exception::Builder,
 ) -> Result<
@@ -404,7 +404,7 @@ pub fn deser_structure_crate_error_serial_console_session_unavailable_exception_
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_service_exception_json_err(
+pub(crate) fn deser_structure_crate_error_service_exception_json_err(
     value: &[u8],
     mut builder: crate::error::service_exception::Builder,
 ) -> Result<crate::error::service_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -446,7 +446,7 @@ pub fn deser_structure_crate_error_service_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_throttling_exception_json_err(
+pub(crate) fn deser_structure_crate_error_throttling_exception_json_err(
     value: &[u8],
     mut builder: crate::error::throttling_exception::Builder,
 ) -> Result<crate::error::throttling_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -488,7 +488,7 @@ pub fn deser_structure_crate_error_throttling_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_send_serial_console_ssh_public_key(
+pub(crate) fn deser_operation_crate_operation_send_serial_console_ssh_public_key(
     value: &[u8],
     mut builder: crate::output::send_serial_console_ssh_public_key_output::Builder,
 ) -> Result<
@@ -540,7 +540,7 @@ pub fn deser_operation_crate_operation_send_serial_console_ssh_public_key(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_send_ssh_public_key(
+pub(crate) fn deser_operation_crate_operation_send_ssh_public_key(
     value: &[u8],
     mut builder: crate::output::send_ssh_public_key_output::Builder,
 ) -> Result<crate::output::send_ssh_public_key_output::Builder, aws_smithy_json::deserialize::Error>
@@ -590,7 +590,7 @@ pub fn deser_operation_crate_operation_send_ssh_public_key(
     Ok(builder)
 }
 
-pub fn or_empty_doc(data: &[u8]) -> &[u8] {
+pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
     } else {

@@ -4,7 +4,7 @@ pub fn add_headers_start_medical_stream_transcription(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_1) = &input.language_code {
-        let formatted_2 = AsRef::<str>::as_ref(inner_1);
+        let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value =
@@ -39,7 +39,7 @@ pub fn add_headers_start_medical_stream_transcription(
         }
     }
     if let Some(inner_5) = &input.media_encoding {
-        let formatted_6 = AsRef::<str>::as_ref(inner_5);
+        let formatted_6 = inner_5.as_str();
         if !formatted_6.is_empty() {
             let header_value = formatted_6;
             let header_value =
@@ -56,7 +56,7 @@ pub fn add_headers_start_medical_stream_transcription(
         }
     }
     if let Some(inner_7) = &input.vocabulary_name {
-        let formatted_8 = AsRef::<str>::as_ref(inner_7);
+        let formatted_8 = inner_7.as_str();
         if !formatted_8.is_empty() {
             let header_value = formatted_8;
             let header_value =
@@ -73,7 +73,7 @@ pub fn add_headers_start_medical_stream_transcription(
         }
     }
     if let Some(inner_9) = &input.specialty {
-        let formatted_10 = AsRef::<str>::as_ref(inner_9);
+        let formatted_10 = inner_9.as_str();
         if !formatted_10.is_empty() {
             let header_value = formatted_10;
             let header_value =
@@ -90,7 +90,7 @@ pub fn add_headers_start_medical_stream_transcription(
         }
     }
     if let Some(inner_11) = &input.r#type {
-        let formatted_12 = AsRef::<str>::as_ref(inner_11);
+        let formatted_12 = inner_11.as_str();
         if !formatted_12.is_empty() {
             let header_value = formatted_12;
             let header_value =
@@ -125,7 +125,7 @@ pub fn add_headers_start_medical_stream_transcription(
         }
     }
     if let Some(inner_14) = &input.session_id {
-        let formatted_15 = AsRef::<str>::as_ref(inner_14);
+        let formatted_15 = inner_14.as_str();
         if !formatted_15.is_empty() {
             let header_value = formatted_15;
             let header_value =
@@ -182,7 +182,7 @@ pub fn add_headers_start_medical_stream_transcription(
         }
     }
     if let Some(inner_19) = &input.content_identification_type {
-        let formatted_20 = AsRef::<str>::as_ref(inner_19);
+        let formatted_20 = inner_19.as_str();
         if !formatted_20.is_empty() {
             let header_value = formatted_20;
             let header_value =
@@ -209,7 +209,7 @@ pub fn add_headers_start_stream_transcription(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_21) = &input.language_code {
-        let formatted_22 = AsRef::<str>::as_ref(inner_21);
+        let formatted_22 = inner_21.as_str();
         if !formatted_22.is_empty() {
             let header_value = formatted_22;
             let header_value =
@@ -244,7 +244,7 @@ pub fn add_headers_start_stream_transcription(
         }
     }
     if let Some(inner_25) = &input.media_encoding {
-        let formatted_26 = AsRef::<str>::as_ref(inner_25);
+        let formatted_26 = inner_25.as_str();
         if !formatted_26.is_empty() {
             let header_value = formatted_26;
             let header_value =
@@ -261,7 +261,7 @@ pub fn add_headers_start_stream_transcription(
         }
     }
     if let Some(inner_27) = &input.vocabulary_name {
-        let formatted_28 = AsRef::<str>::as_ref(inner_27);
+        let formatted_28 = inner_27.as_str();
         if !formatted_28.is_empty() {
             let header_value = formatted_28;
             let header_value =
@@ -278,7 +278,7 @@ pub fn add_headers_start_stream_transcription(
         }
     }
     if let Some(inner_29) = &input.session_id {
-        let formatted_30 = AsRef::<str>::as_ref(inner_29);
+        let formatted_30 = inner_29.as_str();
         if !formatted_30.is_empty() {
             let header_value = formatted_30;
             let header_value =
@@ -295,7 +295,7 @@ pub fn add_headers_start_stream_transcription(
         }
     }
     if let Some(inner_31) = &input.vocabulary_filter_name {
-        let formatted_32 = AsRef::<str>::as_ref(inner_31);
+        let formatted_32 = inner_31.as_str();
         if !formatted_32.is_empty() {
             let header_value = formatted_32;
             let header_value =
@@ -312,7 +312,7 @@ pub fn add_headers_start_stream_transcription(
         }
     }
     if let Some(inner_33) = &input.vocabulary_filter_method {
-        let formatted_34 = AsRef::<str>::as_ref(inner_33);
+        let formatted_34 = inner_33.as_str();
         if !formatted_34.is_empty() {
             let header_value = formatted_34;
             let header_value =
@@ -409,7 +409,7 @@ pub fn add_headers_start_stream_transcription(
         }
     }
     if let Some(inner_40) = &input.partial_results_stability {
-        let formatted_41 = AsRef::<str>::as_ref(inner_40);
+        let formatted_41 = inner_40.as_str();
         if !formatted_41.is_empty() {
             let header_value = formatted_41;
             let header_value =
@@ -426,7 +426,7 @@ pub fn add_headers_start_stream_transcription(
         }
     }
     if let Some(inner_42) = &input.content_identification_type {
-        let formatted_43 = AsRef::<str>::as_ref(inner_42);
+        let formatted_43 = inner_42.as_str();
         if !formatted_43.is_empty() {
             let header_value = formatted_43;
             let header_value =
@@ -446,7 +446,7 @@ pub fn add_headers_start_stream_transcription(
         }
     }
     if let Some(inner_44) = &input.content_redaction_type {
-        let formatted_45 = AsRef::<str>::as_ref(inner_44);
+        let formatted_45 = inner_44.as_str();
         if !formatted_45.is_empty() {
             let header_value = formatted_45;
             let header_value =
@@ -463,7 +463,7 @@ pub fn add_headers_start_stream_transcription(
         }
     }
     if let Some(inner_46) = &input.pii_entity_types {
-        let formatted_47 = AsRef::<str>::as_ref(inner_46);
+        let formatted_47 = inner_46.as_str();
         if !formatted_47.is_empty() {
             let header_value = formatted_47;
             let header_value =
@@ -480,7 +480,7 @@ pub fn add_headers_start_stream_transcription(
         }
     }
     if let Some(inner_48) = &input.language_model_name {
-        let formatted_49 = AsRef::<str>::as_ref(inner_48);
+        let formatted_49 = inner_48.as_str();
         if !formatted_49.is_empty() {
             let header_value = formatted_49;
             let header_value =
@@ -515,7 +515,7 @@ pub fn add_headers_start_stream_transcription(
         }
     }
     if let Some(inner_51) = &input.language_options {
-        let formatted_52 = AsRef::<str>::as_ref(inner_51);
+        let formatted_52 = inner_51.as_str();
         if !formatted_52.is_empty() {
             let header_value = formatted_52;
             let header_value =
@@ -532,7 +532,7 @@ pub fn add_headers_start_stream_transcription(
         }
     }
     if let Some(inner_53) = &input.preferred_language {
-        let formatted_54 = AsRef::<str>::as_ref(inner_53);
+        let formatted_54 = inner_53.as_str();
         if !formatted_54.is_empty() {
             let header_value = formatted_54;
             let header_value =
@@ -549,7 +549,7 @@ pub fn add_headers_start_stream_transcription(
         }
     }
     if let Some(inner_55) = &input.vocabulary_names {
-        let formatted_56 = AsRef::<str>::as_ref(inner_55);
+        let formatted_56 = inner_55.as_str();
         if !formatted_56.is_empty() {
             let header_value = formatted_56;
             let header_value =
@@ -566,7 +566,7 @@ pub fn add_headers_start_stream_transcription(
         }
     }
     if let Some(inner_57) = &input.vocabulary_filter_names {
-        let formatted_58 = AsRef::<str>::as_ref(inner_57);
+        let formatted_58 = inner_57.as_str();
         if !formatted_58.is_empty() {
             let header_value = formatted_58;
             let header_value =
@@ -585,7 +585,7 @@ pub fn add_headers_start_stream_transcription(
     Ok(builder)
 }
 
-pub fn deser_header_start_medical_stream_transcription_start_medical_stream_transcription_output_content_identification_type(
+pub(crate) fn deser_header_start_medical_stream_transcription_start_medical_stream_transcription_output_content_identification_type(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::MedicalContentIdentificationType>,
@@ -597,7 +597,7 @@ pub fn deser_header_start_medical_stream_transcription_start_medical_stream_tran
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_start_medical_stream_transcription_start_medical_stream_transcription_output_enable_channel_identification(
+pub(crate) fn deser_header_start_medical_stream_transcription_start_medical_stream_transcription_output_enable_channel_identification(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<bool>, aws_smithy_http::header::ParseError> {
     let headers = header_map
@@ -614,7 +614,7 @@ pub fn deser_header_start_medical_stream_transcription_start_medical_stream_tran
     }
 }
 
-pub fn deser_header_start_medical_stream_transcription_start_medical_stream_transcription_output_language_code(
+pub(crate) fn deser_header_start_medical_stream_transcription_start_medical_stream_transcription_output_language_code(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::LanguageCode>,
@@ -624,7 +624,7 @@ pub fn deser_header_start_medical_stream_transcription_start_medical_stream_tran
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_start_medical_stream_transcription_start_medical_stream_transcription_output_media_encoding(
+pub(crate) fn deser_header_start_medical_stream_transcription_start_medical_stream_transcription_output_media_encoding(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::MediaEncoding>,
@@ -636,7 +636,7 @@ pub fn deser_header_start_medical_stream_transcription_start_medical_stream_tran
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_start_medical_stream_transcription_start_medical_stream_transcription_output_media_sample_rate_hertz(
+pub(crate) fn deser_header_start_medical_stream_transcription_start_medical_stream_transcription_output_media_sample_rate_hertz(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-amzn-transcribe-sample-rate").iter();
@@ -651,7 +651,7 @@ pub fn deser_header_start_medical_stream_transcription_start_medical_stream_tran
     }
 }
 
-pub fn deser_header_start_medical_stream_transcription_start_medical_stream_transcription_output_number_of_channels(
+pub(crate) fn deser_header_start_medical_stream_transcription_start_medical_stream_transcription_output_number_of_channels(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map
@@ -668,7 +668,7 @@ pub fn deser_header_start_medical_stream_transcription_start_medical_stream_tran
     }
 }
 
-pub fn deser_header_start_medical_stream_transcription_start_medical_stream_transcription_output_request_id(
+pub(crate) fn deser_header_start_medical_stream_transcription_start_medical_stream_transcription_output_request_id(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -678,7 +678,7 @@ pub fn deser_header_start_medical_stream_transcription_start_medical_stream_tran
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_start_medical_stream_transcription_start_medical_stream_transcription_output_session_id(
+pub(crate) fn deser_header_start_medical_stream_transcription_start_medical_stream_transcription_output_session_id(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -688,7 +688,7 @@ pub fn deser_header_start_medical_stream_transcription_start_medical_stream_tran
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_start_medical_stream_transcription_start_medical_stream_transcription_output_show_speaker_label(
+pub(crate) fn deser_header_start_medical_stream_transcription_start_medical_stream_transcription_output_show_speaker_label(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<bool>, aws_smithy_http::header::ParseError> {
     let headers = header_map
@@ -705,7 +705,7 @@ pub fn deser_header_start_medical_stream_transcription_start_medical_stream_tran
     }
 }
 
-pub fn deser_header_start_medical_stream_transcription_start_medical_stream_transcription_output_specialty(
+pub(crate) fn deser_header_start_medical_stream_transcription_start_medical_stream_transcription_output_specialty(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::Specialty>,
@@ -732,7 +732,7 @@ pub fn deser_payload_start_medical_stream_transcription_start_medical_stream_tra
     ))
 }
 
-pub fn deser_header_start_medical_stream_transcription_start_medical_stream_transcription_output_type(
+pub(crate) fn deser_header_start_medical_stream_transcription_start_medical_stream_transcription_output_type(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<crate::model::Type>, aws_smithy_http::header::ParseError>
 {
@@ -740,7 +740,7 @@ pub fn deser_header_start_medical_stream_transcription_start_medical_stream_tran
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_start_medical_stream_transcription_start_medical_stream_transcription_output_vocabulary_name(
+pub(crate) fn deser_header_start_medical_stream_transcription_start_medical_stream_transcription_output_vocabulary_name(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -752,7 +752,7 @@ pub fn deser_header_start_medical_stream_transcription_start_medical_stream_tran
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_start_stream_transcription_start_stream_transcription_output_content_identification_type(
+pub(crate) fn deser_header_start_stream_transcription_start_stream_transcription_output_content_identification_type(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::ContentIdentificationType>,
@@ -764,7 +764,7 @@ pub fn deser_header_start_stream_transcription_start_stream_transcription_output
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_start_stream_transcription_start_stream_transcription_output_content_redaction_type(
+pub(crate) fn deser_header_start_stream_transcription_start_stream_transcription_output_content_redaction_type(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::ContentRedactionType>,
@@ -776,7 +776,7 @@ pub fn deser_header_start_stream_transcription_start_stream_transcription_output
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_start_stream_transcription_start_stream_transcription_output_enable_channel_identification(
+pub(crate) fn deser_header_start_stream_transcription_start_stream_transcription_output_enable_channel_identification(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<bool>, aws_smithy_http::header::ParseError> {
     let headers = header_map
@@ -793,7 +793,7 @@ pub fn deser_header_start_stream_transcription_start_stream_transcription_output
     }
 }
 
-pub fn deser_header_start_stream_transcription_start_stream_transcription_output_enable_partial_results_stabilization(
+pub(crate) fn deser_header_start_stream_transcription_start_stream_transcription_output_enable_partial_results_stabilization(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<bool>, aws_smithy_http::header::ParseError> {
     let headers = header_map
@@ -810,7 +810,7 @@ pub fn deser_header_start_stream_transcription_start_stream_transcription_output
     }
 }
 
-pub fn deser_header_start_stream_transcription_start_stream_transcription_output_identify_language(
+pub(crate) fn deser_header_start_stream_transcription_start_stream_transcription_output_identify_language(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<bool>, aws_smithy_http::header::ParseError> {
     let headers = header_map
@@ -827,7 +827,7 @@ pub fn deser_header_start_stream_transcription_start_stream_transcription_output
     }
 }
 
-pub fn deser_header_start_stream_transcription_start_stream_transcription_output_language_code(
+pub(crate) fn deser_header_start_stream_transcription_start_stream_transcription_output_language_code(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::LanguageCode>,
@@ -837,7 +837,7 @@ pub fn deser_header_start_stream_transcription_start_stream_transcription_output
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_start_stream_transcription_start_stream_transcription_output_language_model_name(
+pub(crate) fn deser_header_start_stream_transcription_start_stream_transcription_output_language_model_name(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -849,7 +849,7 @@ pub fn deser_header_start_stream_transcription_start_stream_transcription_output
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_start_stream_transcription_start_stream_transcription_output_language_options(
+pub(crate) fn deser_header_start_stream_transcription_start_stream_transcription_output_language_options(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -861,7 +861,7 @@ pub fn deser_header_start_stream_transcription_start_stream_transcription_output
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_start_stream_transcription_start_stream_transcription_output_media_encoding(
+pub(crate) fn deser_header_start_stream_transcription_start_stream_transcription_output_media_encoding(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::MediaEncoding>,
@@ -873,7 +873,7 @@ pub fn deser_header_start_stream_transcription_start_stream_transcription_output
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_start_stream_transcription_start_stream_transcription_output_media_sample_rate_hertz(
+pub(crate) fn deser_header_start_stream_transcription_start_stream_transcription_output_media_sample_rate_hertz(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-amzn-transcribe-sample-rate").iter();
@@ -888,7 +888,7 @@ pub fn deser_header_start_stream_transcription_start_stream_transcription_output
     }
 }
 
-pub fn deser_header_start_stream_transcription_start_stream_transcription_output_number_of_channels(
+pub(crate) fn deser_header_start_stream_transcription_start_stream_transcription_output_number_of_channels(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map
@@ -905,7 +905,7 @@ pub fn deser_header_start_stream_transcription_start_stream_transcription_output
     }
 }
 
-pub fn deser_header_start_stream_transcription_start_stream_transcription_output_partial_results_stability(
+pub(crate) fn deser_header_start_stream_transcription_start_stream_transcription_output_partial_results_stability(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::PartialResultsStability>,
@@ -917,7 +917,7 @@ pub fn deser_header_start_stream_transcription_start_stream_transcription_output
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_start_stream_transcription_start_stream_transcription_output_pii_entity_types(
+pub(crate) fn deser_header_start_stream_transcription_start_stream_transcription_output_pii_entity_types(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -929,7 +929,7 @@ pub fn deser_header_start_stream_transcription_start_stream_transcription_output
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_start_stream_transcription_start_stream_transcription_output_preferred_language(
+pub(crate) fn deser_header_start_stream_transcription_start_stream_transcription_output_preferred_language(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::LanguageCode>,
@@ -941,7 +941,7 @@ pub fn deser_header_start_stream_transcription_start_stream_transcription_output
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_start_stream_transcription_start_stream_transcription_output_request_id(
+pub(crate) fn deser_header_start_stream_transcription_start_stream_transcription_output_request_id(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -951,7 +951,7 @@ pub fn deser_header_start_stream_transcription_start_stream_transcription_output
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_start_stream_transcription_start_stream_transcription_output_session_id(
+pub(crate) fn deser_header_start_stream_transcription_start_stream_transcription_output_session_id(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -961,7 +961,7 @@ pub fn deser_header_start_stream_transcription_start_stream_transcription_output
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_start_stream_transcription_start_stream_transcription_output_show_speaker_label(
+pub(crate) fn deser_header_start_stream_transcription_start_stream_transcription_output_show_speaker_label(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<bool>, aws_smithy_http::header::ParseError> {
     let headers = header_map
@@ -995,7 +995,7 @@ pub fn deser_payload_start_stream_transcription_start_stream_transcription_outpu
     ))
 }
 
-pub fn deser_header_start_stream_transcription_start_stream_transcription_output_vocabulary_filter_method(
+pub(crate) fn deser_header_start_stream_transcription_start_stream_transcription_output_vocabulary_filter_method(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<crate::model::VocabularyFilterMethod>,
@@ -1007,7 +1007,7 @@ pub fn deser_header_start_stream_transcription_start_stream_transcription_output
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_start_stream_transcription_start_stream_transcription_output_vocabulary_filter_name(
+pub(crate) fn deser_header_start_stream_transcription_start_stream_transcription_output_vocabulary_filter_name(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1019,7 +1019,7 @@ pub fn deser_header_start_stream_transcription_start_stream_transcription_output
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_start_stream_transcription_start_stream_transcription_output_vocabulary_filter_names(
+pub(crate) fn deser_header_start_stream_transcription_start_stream_transcription_output_vocabulary_filter_names(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1031,7 +1031,7 @@ pub fn deser_header_start_stream_transcription_start_stream_transcription_output
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_start_stream_transcription_start_stream_transcription_output_vocabulary_name(
+pub(crate) fn deser_header_start_stream_transcription_start_stream_transcription_output_vocabulary_name(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1043,7 +1043,7 @@ pub fn deser_header_start_stream_transcription_start_stream_transcription_output
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_start_stream_transcription_start_stream_transcription_output_vocabulary_names(
+pub(crate) fn deser_header_start_stream_transcription_start_stream_transcription_output_vocabulary_names(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,

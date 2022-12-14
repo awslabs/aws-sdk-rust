@@ -51,7 +51,7 @@ pub fn serialize_structure_crate_input_describe_dimension_keys_input(
         let mut object_15 = object.key("Filter").start_object();
         for (key_16, value_17) in var_14 {
             {
-                object_15.key(key_16).string(value_17.as_str());
+                object_15.key(key_16.as_str()).string(value_17.as_str());
             }
         }
         object_15.finish();
@@ -264,7 +264,7 @@ pub fn serialize_structure_crate_model_metric_query(
         let mut object_63 = object.key("Filter").start_object();
         for (key_64, value_65) in var_62 {
             {
-                object_63.key(key_64).string(value_65.as_str());
+                object_63.key(key_64.as_str()).string(value_65.as_str());
             }
         }
         object_63.finish();

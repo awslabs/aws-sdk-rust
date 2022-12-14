@@ -1090,7 +1090,7 @@ pub fn serialize_structure_crate_model_add_attributes_activity(
         let mut object_219 = object.key("attributes").start_object();
         for (key_220, value_221) in var_218 {
             {
-                object_219.key(key_220).string(value_221.as_str());
+                object_219.key(key_220.as_str()).string(value_221.as_str());
             }
         }
         object_219.finish();

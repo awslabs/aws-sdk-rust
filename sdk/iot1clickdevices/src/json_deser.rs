@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_crate_error_forbidden_exception_json_err(
+pub(crate) fn deser_structure_crate_error_forbidden_exception_json_err(
     value: &[u8],
     mut builder: crate::error::forbidden_exception::Builder,
 ) -> Result<crate::error::forbidden_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -56,7 +56,7 @@ pub fn deser_structure_crate_error_forbidden_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_internal_failure_exception_json_err(
+pub(crate) fn deser_structure_crate_error_internal_failure_exception_json_err(
     value: &[u8],
     mut builder: crate::error::internal_failure_exception::Builder,
 ) -> Result<crate::error::internal_failure_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -108,7 +108,7 @@ pub fn deser_structure_crate_error_internal_failure_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_invalid_request_exception_json_err(
+pub(crate) fn deser_structure_crate_error_invalid_request_exception_json_err(
     value: &[u8],
     mut builder: crate::error::invalid_request_exception::Builder,
 ) -> Result<crate::error::invalid_request_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -159,7 +159,7 @@ pub fn deser_structure_crate_error_invalid_request_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_claim_devices_by_claim_code(
+pub(crate) fn deser_operation_crate_operation_claim_devices_by_claim_code(
     value: &[u8],
     mut builder: crate::output::claim_devices_by_claim_code_output::Builder,
 ) -> Result<
@@ -190,7 +190,7 @@ pub fn deser_operation_crate_operation_claim_devices_by_claim_code(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.try_into())
+                            .map(i32::try_from)
                             .transpose()?,
                         );
                     }
@@ -213,7 +213,7 @@ pub fn deser_operation_crate_operation_claim_devices_by_claim_code(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_resource_not_found_exception_json_err(
+pub(crate) fn deser_structure_crate_error_resource_not_found_exception_json_err(
     value: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -265,7 +265,7 @@ pub fn deser_structure_crate_error_resource_not_found_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_describe_device(
+pub(crate) fn deser_operation_crate_operation_describe_device(
     value: &[u8],
     mut builder: crate::output::describe_device_output::Builder,
 ) -> Result<crate::output::describe_device_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -305,7 +305,7 @@ pub fn deser_operation_crate_operation_describe_device(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_precondition_failed_exception_json_err(
+pub(crate) fn deser_structure_crate_error_precondition_failed_exception_json_err(
     value: &[u8],
     mut builder: crate::error::precondition_failed_exception::Builder,
 ) -> Result<crate::error::precondition_failed_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -357,7 +357,7 @@ pub fn deser_structure_crate_error_precondition_failed_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_resource_conflict_exception_json_err(
+pub(crate) fn deser_structure_crate_error_resource_conflict_exception_json_err(
     value: &[u8],
     mut builder: crate::error::resource_conflict_exception::Builder,
 ) -> Result<crate::error::resource_conflict_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -409,7 +409,7 @@ pub fn deser_structure_crate_error_resource_conflict_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_finalize_device_claim(
+pub(crate) fn deser_operation_crate_operation_finalize_device_claim(
     value: &[u8],
     mut builder: crate::output::finalize_device_claim_output::Builder,
 ) -> Result<crate::output::finalize_device_claim_output::Builder, aws_smithy_json::deserialize::Error>
@@ -452,7 +452,7 @@ pub fn deser_operation_crate_operation_finalize_device_claim(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_device_methods(
+pub(crate) fn deser_operation_crate_operation_get_device_methods(
     value: &[u8],
     mut builder: crate::output::get_device_methods_output::Builder,
 ) -> Result<crate::output::get_device_methods_output::Builder, aws_smithy_json::deserialize::Error>
@@ -491,7 +491,7 @@ pub fn deser_operation_crate_operation_get_device_methods(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_initiate_device_claim(
+pub(crate) fn deser_operation_crate_operation_initiate_device_claim(
     value: &[u8],
     mut builder: crate::output::initiate_device_claim_output::Builder,
 ) -> Result<crate::output::initiate_device_claim_output::Builder, aws_smithy_json::deserialize::Error>
@@ -534,7 +534,7 @@ pub fn deser_operation_crate_operation_initiate_device_claim(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_range_not_satisfiable_exception_json_err(
+pub(crate) fn deser_structure_crate_error_range_not_satisfiable_exception_json_err(
     value: &[u8],
     mut builder: crate::error::range_not_satisfiable_exception::Builder,
 ) -> Result<
@@ -588,7 +588,7 @@ pub fn deser_structure_crate_error_range_not_satisfiable_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_invoke_device_method(
+pub(crate) fn deser_operation_crate_operation_invoke_device_method(
     value: &[u8],
     mut builder: crate::output::invoke_device_method_output::Builder,
 ) -> Result<crate::output::invoke_device_method_output::Builder, aws_smithy_json::deserialize::Error>
@@ -631,7 +631,7 @@ pub fn deser_operation_crate_operation_invoke_device_method(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_device_events(
+pub(crate) fn deser_operation_crate_operation_list_device_events(
     value: &[u8],
     mut builder: crate::output::list_device_events_output::Builder,
 ) -> Result<crate::output::list_device_events_output::Builder, aws_smithy_json::deserialize::Error>
@@ -679,7 +679,7 @@ pub fn deser_operation_crate_operation_list_device_events(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_devices(
+pub(crate) fn deser_operation_crate_operation_list_devices(
     value: &[u8],
     mut builder: crate::output::list_devices_output::Builder,
 ) -> Result<crate::output::list_devices_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -726,7 +726,7 @@ pub fn deser_operation_crate_operation_list_devices(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_tags_for_resource(
+pub(crate) fn deser_operation_crate_operation_list_tags_for_resource(
     value: &[u8],
     mut builder: crate::output::list_tags_for_resource_output::Builder,
 ) -> Result<
@@ -767,7 +767,7 @@ pub fn deser_operation_crate_operation_list_tags_for_resource(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_unclaim_device(
+pub(crate) fn deser_operation_crate_operation_unclaim_device(
     value: &[u8],
     mut builder: crate::output::unclaim_device_output::Builder,
 ) -> Result<crate::output::unclaim_device_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -809,7 +809,7 @@ pub fn deser_operation_crate_operation_unclaim_device(
     Ok(builder)
 }
 
-pub fn or_empty_doc(data: &[u8]) -> &[u8] {
+pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
     } else {
@@ -817,7 +817,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-pub fn deser_structure_crate_model_device_description<'a, I>(
+pub(crate) fn deser_structure_crate_model_device_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DeviceDescription>, aws_smithy_json::deserialize::Error>
 where
@@ -829,7 +829,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::DeviceDescription::builder();
+            let mut builder = crate::model::device_description::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -906,8 +906,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_iot1clickdevicesservice___list_of_device_method<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_iot1clickdevicesservice___list_of_device_method<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::DeviceMethod>>, aws_smithy_json::deserialize::Error>
 where
@@ -942,8 +942,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_iot1clickdevicesservice___list_of_device_event<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_iot1clickdevicesservice___list_of_device_event<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::DeviceEvent>>, aws_smithy_json::deserialize::Error>
 where
@@ -978,8 +978,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_iot1clickdevicesservice___list_of_device_description<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_iot1clickdevicesservice___list_of_device_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::DeviceDescription>>,
@@ -1019,8 +1019,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_com_amazonaws_iot1clickdevicesservice___map_of__string<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_map_com_amazonaws_iot1clickdevicesservice___map_of__string<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -1065,8 +1065,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_com_amazonaws_iot1clickdevicesservice_device_attributes<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_map_com_amazonaws_iot1clickdevicesservice_device_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -1111,7 +1111,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_device_method<'a, I>(
+pub(crate) fn deser_structure_crate_model_device_method<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DeviceMethod>, aws_smithy_json::deserialize::Error>
 where
@@ -1123,7 +1123,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::DeviceMethod::builder();
+            let mut builder = crate::model::device_method::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -1166,7 +1166,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_device_event<'a, I>(
+pub(crate) fn deser_structure_crate_model_device_event<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DeviceEvent>, aws_smithy_json::deserialize::Error>
 where
@@ -1178,7 +1178,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::DeviceEvent::builder();
+            let mut builder = crate::model::device_event::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -1217,7 +1217,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_device<'a, I>(
+pub(crate) fn deser_structure_crate_model_device<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Device>, aws_smithy_json::deserialize::Error>
 where
@@ -1229,7 +1229,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Device::builder();
+            let mut builder = crate::model::device::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -1279,7 +1279,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_attributes<'a, I>(
+pub(crate) fn deser_structure_crate_model_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Attributes>, aws_smithy_json::deserialize::Error>
 where
@@ -1291,7 +1291,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::Attributes::builder();
+            let mut builder = crate::model::attributes::Builder::default();
             aws_smithy_json::deserialize::token::skip_to_end(tokens)?;
             Ok(Some(builder.build()))
         }

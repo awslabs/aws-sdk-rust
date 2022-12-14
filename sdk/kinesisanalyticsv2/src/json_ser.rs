@@ -1748,7 +1748,7 @@ pub fn serialize_structure_crate_model_property_group(
         let mut object_331 = object.key("PropertyMap").start_object();
         for (key_332, value_333) in var_330 {
             {
-                object_331.key(key_332).string(value_333.as_str());
+                object_331.key(key_332.as_str()).string(value_333.as_str());
             }
         }
         object_331.finish();

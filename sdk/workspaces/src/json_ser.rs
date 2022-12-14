@@ -1382,7 +1382,7 @@ pub fn serialize_structure_crate_model_default_import_client_branding_attributes
         let mut object_280 = object.key("LoginMessage").start_object();
         for (key_281, value_282) in var_279 {
             {
-                object_280.key(key_281).string(value_282.as_str());
+                object_280.key(key_281.as_str()).string(value_282.as_str());
             }
         }
         object_280.finish();
@@ -1422,7 +1422,7 @@ pub fn serialize_structure_crate_model_ios_import_client_branding_attributes(
         let mut object_290 = object.key("LoginMessage").start_object();
         for (key_291, value_292) in var_289 {
             {
-                object_290.key(key_291).string(value_292.as_str());
+                object_290.key(key_291.as_str()).string(value_292.as_str());
             }
         }
         object_290.finish();

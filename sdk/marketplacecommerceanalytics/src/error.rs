@@ -17,7 +17,7 @@ impl std::fmt::Debug for MarketplaceCommerceAnalyticsException {
 }
 impl MarketplaceCommerceAnalyticsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }

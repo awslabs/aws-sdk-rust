@@ -467,7 +467,7 @@ pub fn serialize_structure_crate_input_get_network_routes_input(
         let mut object_122 = object.key("DestinationFilters").start_object();
         for (key_123, value_124) in var_121 {
             {
-                let mut array_125 = object_122.key(key_123).start_array();
+                let mut array_125 = object_122.key(key_123.as_str()).start_array();
                 for item_126 in value_124 {
                     {
                         array_125.value().string(item_126.as_str());
@@ -747,7 +747,7 @@ pub fn serialize_structure_crate_input_update_network_resource_metadata_input(
         let mut object_186 = object.key("Metadata").start_object();
         for (key_187, value_188) in var_185 {
             {
-                object_186.key(key_187).string(value_188.as_str());
+                object_186.key(key_187.as_str()).string(value_188.as_str());
             }
         }
         object_186.finish();

@@ -134,7 +134,7 @@ pub fn serialize_structure_crate_input_create_workload_input(
         let mut object_34 = object.key("Tags").start_object();
         for (key_35, value_36) in var_33 {
             {
-                object_34.key(key_35).string(value_36.as_str());
+                object_34.key(key_35.as_str()).string(value_36.as_str());
             }
         }
         object_34.finish();
@@ -194,7 +194,7 @@ pub fn serialize_structure_crate_input_import_lens_input(
         let mut object_48 = object.key("Tags").start_object();
         for (key_49, value_50) in var_47 {
             {
-                object_48.key(key_49).string(value_50.as_str());
+                object_48.key(key_49.as_str()).string(value_50.as_str());
             }
         }
         object_48.finish();
@@ -264,7 +264,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_57 = object.key("Tags").start_object();
         for (key_58, value_59) in var_56 {
             {
-                object_57.key(key_58).string(value_59.as_str());
+                object_57.key(key_58.as_str()).string(value_59.as_str());
             }
         }
         object_57.finish();
@@ -280,7 +280,7 @@ pub fn serialize_structure_crate_input_update_answer_input(
         let mut object_61 = object.key("ChoiceUpdates").start_object();
         for (key_62, value_63) in var_60 {
             {
-                let mut object_64 = object_61.key(key_62).start_object();
+                let mut object_64 = object_61.key(key_62.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_choice_update(
                     &mut object_64,
                     value_63,
@@ -334,7 +334,7 @@ pub fn serialize_structure_crate_input_update_lens_review_input(
         let mut object_73 = object.key("PillarNotes").start_object();
         for (key_74, value_75) in var_72 {
             {
-                object_73.key(key_74).string(value_75.as_str());
+                object_73.key(key_74.as_str()).string(value_75.as_str());
             }
         }
         object_73.finish();

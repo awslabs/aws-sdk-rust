@@ -57,7 +57,7 @@ pub fn serialize_structure_crate_input_create_stream_input(
         let mut object_15 = object.key("Tags").start_object();
         for (key_16, value_17) in var_14 {
             {
-                object_15.key(key_16).string(value_17.as_str());
+                object_15.key(key_16.as_str()).string(value_17.as_str());
             }
         }
         object_15.finish();
@@ -288,7 +288,7 @@ pub fn serialize_structure_crate_input_tag_stream_input(
         let mut object_57 = object.key("Tags").start_object();
         for (key_58, value_59) in var_56 {
             {
-                object_57.key(key_58).string(value_59.as_str());
+                object_57.key(key_58.as_str()).string(value_59.as_str());
             }
         }
         object_57.finish();

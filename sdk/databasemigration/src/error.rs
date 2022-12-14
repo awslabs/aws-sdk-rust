@@ -17,7 +17,7 @@ impl std::fmt::Debug for InvalidResourceStateFault {
 }
 impl InvalidResourceStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -82,7 +82,7 @@ impl std::fmt::Debug for AccessDeniedFault {
 }
 impl AccessDeniedFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -147,7 +147,7 @@ impl std::fmt::Debug for ResourceQuotaExceededFault {
 }
 impl ResourceQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -212,7 +212,7 @@ impl std::fmt::Debug for ResourceNotFoundFault {
 }
 impl ResourceNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -277,7 +277,7 @@ impl std::fmt::Debug for KmsKeyNotAccessibleFault {
 }
 impl KmsKeyNotAccessibleFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -342,7 +342,7 @@ impl std::fmt::Debug for S3ResourceNotFoundFault {
 }
 impl S3ResourceNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -407,7 +407,7 @@ impl std::fmt::Debug for S3AccessDeniedFault {
 }
 impl S3AccessDeniedFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -482,7 +482,7 @@ impl std::fmt::Debug for ResourceAlreadyExistsFault {
 }
 impl ResourceAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -559,7 +559,7 @@ impl std::fmt::Debug for KmsNotFoundFault {
 }
 impl KmsNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -624,7 +624,7 @@ impl std::fmt::Debug for KmsInvalidStateFault {
 }
 impl KmsInvalidStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -689,7 +689,7 @@ impl std::fmt::Debug for KmsFault {
 }
 impl KmsFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -754,7 +754,7 @@ impl std::fmt::Debug for KmsDisabledFault {
 }
 impl KmsDisabledFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -819,7 +819,7 @@ impl std::fmt::Debug for KmsAccessDeniedFault {
 }
 impl KmsAccessDeniedFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -884,7 +884,7 @@ impl std::fmt::Debug for SubnetAlreadyInUse {
 }
 impl SubnetAlreadyInUse {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -949,7 +949,7 @@ impl std::fmt::Debug for ReplicationSubnetGroupDoesNotCoverEnoughAZs {
 }
 impl ReplicationSubnetGroupDoesNotCoverEnoughAZs {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1014,7 +1014,7 @@ impl std::fmt::Debug for InvalidSubnet {
 }
 impl InvalidSubnet {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1079,7 +1079,7 @@ impl std::fmt::Debug for UpgradeDependencyFailureFault {
 }
 impl UpgradeDependencyFailureFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1144,7 +1144,7 @@ impl std::fmt::Debug for StorageQuotaExceededFault {
 }
 impl StorageQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1209,7 +1209,7 @@ impl std::fmt::Debug for InsufficientResourceCapacityFault {
 }
 impl InsufficientResourceCapacityFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1274,7 +1274,7 @@ impl std::fmt::Debug for SnsNoAuthorizationFault {
 }
 impl SnsNoAuthorizationFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1339,7 +1339,7 @@ impl std::fmt::Debug for SnsInvalidTopicFault {
 }
 impl SnsInvalidTopicFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1404,7 +1404,7 @@ impl std::fmt::Debug for KmsThrottlingFault {
 }
 impl KmsThrottlingFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1469,7 +1469,7 @@ impl std::fmt::Debug for InvalidCertificateFault {
 }
 impl InvalidCertificateFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1534,7 +1534,7 @@ impl std::fmt::Debug for InvalidOperationFault {
 }
 impl InvalidOperationFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1599,7 +1599,7 @@ impl std::fmt::Debug for CollectorNotFoundFault {
 }
 impl CollectorNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }

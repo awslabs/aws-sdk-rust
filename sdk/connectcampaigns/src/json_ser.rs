@@ -26,7 +26,7 @@ pub fn serialize_structure_crate_input_create_campaign_input(
         let mut object_8 = object.key("tags").start_object();
         for (key_9, value_10) in var_7 {
             {
-                object_8.key(key_9).string(value_10.as_str());
+                object_8.key(key_9.as_str()).string(value_10.as_str());
             }
         }
         object_8.finish();
@@ -112,7 +112,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_25 = object.key("tags").start_object();
         for (key_26, value_27) in var_24 {
             {
-                object_25.key(key_26).string(value_27.as_str());
+                object_25.key(key_26.as_str()).string(value_27.as_str());
             }
         }
         object_25.finish();
@@ -255,7 +255,7 @@ pub fn serialize_structure_crate_model_dial_request(
         let mut object_48 = object.key("attributes").start_object();
         for (key_49, value_50) in var_47 {
             {
-                object_48.key(key_49).string(value_50.as_str());
+                object_48.key(key_49.as_str()).string(value_50.as_str());
             }
         }
         object_48.finish();

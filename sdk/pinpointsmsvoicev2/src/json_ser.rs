@@ -741,7 +741,7 @@ pub fn serialize_structure_crate_input_send_text_message_input(
         let mut object_160 = object.key("Context").start_object();
         for (key_161, value_162) in var_159 {
             {
-                object_160.key(key_161).string(value_162.as_str());
+                object_160.key(key_161.as_str()).string(value_162.as_str());
             }
         }
         object_160.finish();
@@ -798,7 +798,7 @@ pub fn serialize_structure_crate_input_send_voice_message_input(
         let mut object_176 = object.key("Context").start_object();
         for (key_177, value_178) in var_175 {
             {
-                object_176.key(key_177).string(value_178.as_str());
+                object_176.key(key_177.as_str()).string(value_178.as_str());
             }
         }
         object_176.finish();

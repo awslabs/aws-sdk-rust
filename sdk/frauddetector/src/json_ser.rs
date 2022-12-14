@@ -719,7 +719,7 @@ pub fn serialize_structure_crate_input_get_event_prediction_input(
         let mut object_152 = object.key("eventVariables").start_object();
         for (key_153, value_154) in var_151 {
             {
-                object_152.key(key_153).string(value_154.as_str());
+                object_152.key(key_153.as_str()).string(value_154.as_str());
             }
         }
         object_152.finish();
@@ -728,7 +728,7 @@ pub fn serialize_structure_crate_input_get_event_prediction_input(
         let mut object_156 = object.key("externalModelEndpointDataBlobs").start_object();
         for (key_157, value_158) in var_155 {
             {
-                let mut object_159 = object_156.key(key_157).start_object();
+                let mut object_159 = object_156.key(key_157.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_model_endpoint_data_blob(
                     &mut object_159,
                     value_158,
@@ -1224,7 +1224,7 @@ pub fn serialize_structure_crate_input_send_event_input(
         let mut object_265 = object.key("eventVariables").start_object();
         for (key_266, value_267) in var_264 {
             {
-                object_265.key(key_266).string(value_267.as_str());
+                object_265.key(key_266.as_str()).string(value_267.as_str());
             }
         }
         object_265.finish();
@@ -1752,7 +1752,7 @@ pub fn serialize_structure_crate_model_model_output_configuration(
         let mut object_383 = object.key("jsonKeyToVariableMap").start_object();
         for (key_384, value_385) in var_382 {
             {
-                object_383.key(key_384).string(value_385.as_str());
+                object_383.key(key_384.as_str()).string(value_385.as_str());
             }
         }
         object_383.finish();
@@ -1761,7 +1761,7 @@ pub fn serialize_structure_crate_model_model_output_configuration(
         let mut object_387 = object.key("csvIndexToVariableMap").start_object();
         for (key_388, value_389) in var_386 {
             {
-                object_387.key(key_388).string(value_389.as_str());
+                object_387.key(key_388.as_str()).string(value_389.as_str());
             }
         }
         object_387.finish();
@@ -1777,7 +1777,7 @@ pub fn serialize_structure_crate_model_label_schema(
         let mut object_391 = object.key("labelMapper").start_object();
         for (key_392, value_393) in var_390 {
             {
-                let mut array_394 = object_391.key(key_392).start_array();
+                let mut array_394 = object_391.key(key_392.as_str()).start_array();
                 for item_395 in value_393 {
                     {
                         array_394.value().string(item_395.as_str());

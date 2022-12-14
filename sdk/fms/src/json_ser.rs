@@ -455,7 +455,7 @@ pub fn serialize_structure_crate_model_apps_list_data(
         let mut object_77 = object.key("PreviousAppsList").start_object();
         for (key_78, value_79) in var_76 {
             {
-                let mut array_80 = object_77.key(key_78).start_array();
+                let mut array_80 = object_77.key(key_78.as_str()).start_array();
                 for item_81 in value_79 {
                     {
                         let mut object_82 = array_80.value().start_object();
@@ -618,7 +618,7 @@ pub fn serialize_structure_crate_model_protocols_list_data(
         let mut object_119 = object.key("PreviousProtocolsList").start_object();
         for (key_120, value_121) in var_118 {
             {
-                let mut array_122 = object_119.key(key_120).start_array();
+                let mut array_122 = object_119.key(key_120.as_str()).start_array();
                 for item_123 in value_121 {
                     {
                         array_122.value().string(item_123.as_str());

@@ -17,7 +17,7 @@ impl std::fmt::Debug for TextLengthExceededException {
 }
 impl TextLengthExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -82,7 +82,7 @@ impl std::fmt::Debug for SsmlMarksNotSupportedForTextTypeException {
 }
 impl SsmlMarksNotSupportedForTextTypeException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -147,7 +147,7 @@ impl std::fmt::Debug for ServiceFailureException {
 }
 impl ServiceFailureException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -212,7 +212,7 @@ impl std::fmt::Debug for MarksNotSupportedForFormatException {
 }
 impl MarksNotSupportedForFormatException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -278,7 +278,7 @@ impl std::fmt::Debug for LexiconNotFoundException {
 }
 impl LexiconNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -343,7 +343,7 @@ impl std::fmt::Debug for LanguageNotSupportedException {
 }
 impl LanguageNotSupportedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -408,7 +408,7 @@ impl std::fmt::Debug for InvalidSsmlException {
 }
 impl InvalidSsmlException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -473,7 +473,7 @@ impl std::fmt::Debug for InvalidSampleRateException {
 }
 impl InvalidSampleRateException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -538,7 +538,7 @@ impl std::fmt::Debug for EngineNotSupportedException {
 }
 impl EngineNotSupportedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -603,7 +603,7 @@ impl std::fmt::Debug for InvalidSnsTopicArnException {
 }
 impl InvalidSnsTopicArnException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -668,7 +668,7 @@ impl std::fmt::Debug for InvalidS3KeyException {
 }
 impl InvalidS3KeyException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -733,7 +733,7 @@ impl std::fmt::Debug for InvalidS3BucketException {
 }
 impl InvalidS3BucketException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -798,7 +798,7 @@ impl std::fmt::Debug for UnsupportedPlsLanguageException {
 }
 impl UnsupportedPlsLanguageException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -863,7 +863,7 @@ impl std::fmt::Debug for UnsupportedPlsAlphabetException {
 }
 impl UnsupportedPlsAlphabetException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -928,7 +928,7 @@ impl std::fmt::Debug for MaxLexiconsNumberExceededException {
 }
 impl MaxLexiconsNumberExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -993,7 +993,7 @@ impl std::fmt::Debug for MaxLexemeLengthExceededException {
 }
 impl MaxLexemeLengthExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1058,7 +1058,7 @@ impl std::fmt::Debug for LexiconSizeExceededException {
 }
 impl LexiconSizeExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1123,7 +1123,7 @@ impl std::fmt::Debug for InvalidLexiconException {
 }
 impl InvalidLexiconException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1188,7 +1188,7 @@ impl std::fmt::Debug for InvalidNextTokenException {
 }
 impl InvalidNextTokenException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1253,7 +1253,7 @@ impl std::fmt::Debug for SynthesisTaskNotFoundException {
 }
 impl SynthesisTaskNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1318,7 +1318,7 @@ impl std::fmt::Debug for InvalidTaskIdException {
 }
 impl InvalidTaskIdException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }

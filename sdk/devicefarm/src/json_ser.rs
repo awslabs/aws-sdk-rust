@@ -1464,7 +1464,7 @@ pub fn serialize_structure_crate_model_schedule_run_test(
         let mut object_260 = object.key("parameters").start_object();
         for (key_261, value_262) in var_259 {
             {
-                object_260.key(key_261).string(value_262.as_str());
+                object_260.key(key_261.as_str()).string(value_262.as_str());
             }
         }
         object_260.finish();

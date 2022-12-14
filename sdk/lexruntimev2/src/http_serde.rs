@@ -4,7 +4,7 @@ pub fn add_headers_put_session(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_1) = &input.response_content_type {
-        let formatted_2 = AsRef::<str>::as_ref(inner_1);
+        let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value =
@@ -28,7 +28,7 @@ pub fn add_headers_recognize_utterance(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_3) = &input.session_state {
-        let formatted_4 = AsRef::<str>::as_ref(inner_3);
+        let formatted_4 = inner_3.as_str();
         if !formatted_4.is_empty() {
             let header_value = formatted_4;
             let header_value =
@@ -45,7 +45,7 @@ pub fn add_headers_recognize_utterance(
         }
     }
     if let Some(inner_5) = &input.request_attributes {
-        let formatted_6 = AsRef::<str>::as_ref(inner_5);
+        let formatted_6 = inner_5.as_str();
         if !formatted_6.is_empty() {
             let header_value = formatted_6;
             let header_value =
@@ -62,7 +62,7 @@ pub fn add_headers_recognize_utterance(
         }
     }
     if let Some(inner_7) = &input.request_content_type {
-        let formatted_8 = AsRef::<str>::as_ref(inner_7);
+        let formatted_8 = inner_7.as_str();
         if !formatted_8.is_empty() {
             let header_value = formatted_8;
             let header_value =
@@ -79,7 +79,7 @@ pub fn add_headers_recognize_utterance(
         }
     }
     if let Some(inner_9) = &input.response_content_type {
-        let formatted_10 = AsRef::<str>::as_ref(inner_9);
+        let formatted_10 = inner_9.as_str();
         if !formatted_10.is_empty() {
             let header_value = formatted_10;
             let header_value =
@@ -106,7 +106,7 @@ pub fn deser_payload_put_session_put_session_output_audio_stream(
     Ok(aws_smithy_http::byte_stream::ByteStream::new(body))
 }
 
-pub fn deser_header_put_session_put_session_output_content_type(
+pub(crate) fn deser_header_put_session_put_session_output_content_type(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -116,7 +116,7 @@ pub fn deser_header_put_session_put_session_output_content_type(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_session_put_session_output_messages(
+pub(crate) fn deser_header_put_session_put_session_output_messages(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -126,7 +126,7 @@ pub fn deser_header_put_session_put_session_output_messages(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_session_put_session_output_request_attributes(
+pub(crate) fn deser_header_put_session_put_session_output_request_attributes(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -136,7 +136,7 @@ pub fn deser_header_put_session_put_session_output_request_attributes(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_session_put_session_output_session_id(
+pub(crate) fn deser_header_put_session_put_session_output_session_id(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -146,7 +146,7 @@ pub fn deser_header_put_session_put_session_output_session_id(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_session_put_session_output_session_state(
+pub(crate) fn deser_header_put_session_put_session_output_session_state(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -167,7 +167,7 @@ pub fn deser_payload_recognize_utterance_recognize_utterance_output_audio_stream
     Ok(aws_smithy_http::byte_stream::ByteStream::new(body))
 }
 
-pub fn deser_header_recognize_utterance_recognize_utterance_output_content_type(
+pub(crate) fn deser_header_recognize_utterance_recognize_utterance_output_content_type(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -177,7 +177,7 @@ pub fn deser_header_recognize_utterance_recognize_utterance_output_content_type(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_recognize_utterance_recognize_utterance_output_input_mode(
+pub(crate) fn deser_header_recognize_utterance_recognize_utterance_output_input_mode(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -187,7 +187,7 @@ pub fn deser_header_recognize_utterance_recognize_utterance_output_input_mode(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_recognize_utterance_recognize_utterance_output_input_transcript(
+pub(crate) fn deser_header_recognize_utterance_recognize_utterance_output_input_transcript(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -197,7 +197,7 @@ pub fn deser_header_recognize_utterance_recognize_utterance_output_input_transcr
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_recognize_utterance_recognize_utterance_output_interpretations(
+pub(crate) fn deser_header_recognize_utterance_recognize_utterance_output_interpretations(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -207,7 +207,7 @@ pub fn deser_header_recognize_utterance_recognize_utterance_output_interpretatio
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_recognize_utterance_recognize_utterance_output_messages(
+pub(crate) fn deser_header_recognize_utterance_recognize_utterance_output_messages(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -217,7 +217,7 @@ pub fn deser_header_recognize_utterance_recognize_utterance_output_messages(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_recognize_utterance_recognize_utterance_output_request_attributes(
+pub(crate) fn deser_header_recognize_utterance_recognize_utterance_output_request_attributes(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -227,7 +227,7 @@ pub fn deser_header_recognize_utterance_recognize_utterance_output_request_attri
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_recognize_utterance_recognize_utterance_output_session_id(
+pub(crate) fn deser_header_recognize_utterance_recognize_utterance_output_session_id(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -237,7 +237,7 @@ pub fn deser_header_recognize_utterance_recognize_utterance_output_session_id(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_recognize_utterance_recognize_utterance_output_session_state(
+pub(crate) fn deser_header_recognize_utterance_recognize_utterance_output_session_state(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,

@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_crate_error_access_denied_exception_json_err(
+pub(crate) fn deser_structure_crate_error_access_denied_exception_json_err(
     value: &[u8],
     mut builder: crate::error::access_denied_exception::Builder,
 ) -> Result<crate::error::access_denied_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -47,7 +47,7 @@ pub fn deser_structure_crate_error_access_denied_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_conflict_exception_json_err(
+pub(crate) fn deser_structure_crate_error_conflict_exception_json_err(
     value: &[u8],
     mut builder: crate::error::conflict_exception::Builder,
 ) -> Result<crate::error::conflict_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -107,7 +107,7 @@ pub fn deser_structure_crate_error_conflict_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_internal_server_exception_json_err(
+pub(crate) fn deser_structure_crate_error_internal_server_exception_json_err(
     value: &[u8],
     mut builder: crate::error::internal_server_exception::Builder,
 ) -> Result<crate::error::internal_server_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -135,7 +135,7 @@ pub fn deser_structure_crate_error_internal_server_exception_json_err(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.try_into())
+                            .map(i32::try_from)
                             .transpose()?,
                         );
                     }
@@ -158,7 +158,7 @@ pub fn deser_structure_crate_error_internal_server_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_resource_not_found_exception_json_err(
+pub(crate) fn deser_structure_crate_error_resource_not_found_exception_json_err(
     value: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -219,7 +219,7 @@ pub fn deser_structure_crate_error_resource_not_found_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_service_limit_exceeded_exception_json_err(
+pub(crate) fn deser_structure_crate_error_service_limit_exceeded_exception_json_err(
     value: &[u8],
     mut builder: crate::error::service_limit_exceeded_exception::Builder,
 ) -> Result<
@@ -300,7 +300,7 @@ pub fn deser_structure_crate_error_service_limit_exceeded_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_throttling_exception_json_err(
+pub(crate) fn deser_structure_crate_error_throttling_exception_json_err(
     value: &[u8],
     mut builder: crate::error::throttling_exception::Builder,
 ) -> Result<crate::error::throttling_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -328,7 +328,7 @@ pub fn deser_structure_crate_error_throttling_exception_json_err(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.try_into())
+                            .map(i32::try_from)
                             .transpose()?,
                         );
                     }
@@ -351,7 +351,7 @@ pub fn deser_structure_crate_error_throttling_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_validation_exception_json_err(
+pub(crate) fn deser_structure_crate_error_validation_exception_json_err(
     value: &[u8],
     mut builder: crate::error::validation_exception::Builder,
 ) -> Result<crate::error::validation_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -411,7 +411,7 @@ pub fn deser_structure_crate_error_validation_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_associate_accounts(
+pub(crate) fn deser_operation_crate_operation_associate_accounts(
     value: &[u8],
     mut builder: crate::output::associate_accounts_output::Builder,
 ) -> Result<crate::output::associate_accounts_output::Builder, aws_smithy_json::deserialize::Error>
@@ -454,7 +454,7 @@ pub fn deser_operation_crate_operation_associate_accounts(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_associate_pricing_rules(
+pub(crate) fn deser_operation_crate_operation_associate_pricing_rules(
     value: &[u8],
     mut builder: crate::output::associate_pricing_rules_output::Builder,
 ) -> Result<
@@ -499,7 +499,7 @@ pub fn deser_operation_crate_operation_associate_pricing_rules(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_batch_associate_resources_to_custom_line_item(
+pub(crate) fn deser_operation_crate_operation_batch_associate_resources_to_custom_line_item(
     value: &[u8],
     mut builder: crate::output::batch_associate_resources_to_custom_line_item_output::Builder,
 ) -> Result<
@@ -545,7 +545,7 @@ pub fn deser_operation_crate_operation_batch_associate_resources_to_custom_line_
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_batch_disassociate_resources_from_custom_line_item(
+pub(crate) fn deser_operation_crate_operation_batch_disassociate_resources_from_custom_line_item(
     value: &[u8],
     mut builder: crate::output::batch_disassociate_resources_from_custom_line_item_output::Builder,
 ) -> Result<
@@ -591,7 +591,7 @@ pub fn deser_operation_crate_operation_batch_disassociate_resources_from_custom_
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_create_billing_group(
+pub(crate) fn deser_operation_crate_operation_create_billing_group(
     value: &[u8],
     mut builder: crate::output::create_billing_group_output::Builder,
 ) -> Result<crate::output::create_billing_group_output::Builder, aws_smithy_json::deserialize::Error>
@@ -634,7 +634,7 @@ pub fn deser_operation_crate_operation_create_billing_group(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_create_custom_line_item(
+pub(crate) fn deser_operation_crate_operation_create_custom_line_item(
     value: &[u8],
     mut builder: crate::output::create_custom_line_item_output::Builder,
 ) -> Result<
@@ -679,7 +679,7 @@ pub fn deser_operation_crate_operation_create_custom_line_item(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_create_pricing_plan(
+pub(crate) fn deser_operation_crate_operation_create_pricing_plan(
     value: &[u8],
     mut builder: crate::output::create_pricing_plan_output::Builder,
 ) -> Result<crate::output::create_pricing_plan_output::Builder, aws_smithy_json::deserialize::Error>
@@ -722,7 +722,7 @@ pub fn deser_operation_crate_operation_create_pricing_plan(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_create_pricing_rule(
+pub(crate) fn deser_operation_crate_operation_create_pricing_rule(
     value: &[u8],
     mut builder: crate::output::create_pricing_rule_output::Builder,
 ) -> Result<crate::output::create_pricing_rule_output::Builder, aws_smithy_json::deserialize::Error>
@@ -765,7 +765,7 @@ pub fn deser_operation_crate_operation_create_pricing_rule(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_delete_billing_group(
+pub(crate) fn deser_operation_crate_operation_delete_billing_group(
     value: &[u8],
     mut builder: crate::output::delete_billing_group_output::Builder,
 ) -> Result<crate::output::delete_billing_group_output::Builder, aws_smithy_json::deserialize::Error>
@@ -808,7 +808,7 @@ pub fn deser_operation_crate_operation_delete_billing_group(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_delete_custom_line_item(
+pub(crate) fn deser_operation_crate_operation_delete_custom_line_item(
     value: &[u8],
     mut builder: crate::output::delete_custom_line_item_output::Builder,
 ) -> Result<
@@ -853,7 +853,7 @@ pub fn deser_operation_crate_operation_delete_custom_line_item(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_delete_pricing_plan(
+pub(crate) fn deser_operation_crate_operation_delete_pricing_plan(
     value: &[u8],
     mut builder: crate::output::delete_pricing_plan_output::Builder,
 ) -> Result<crate::output::delete_pricing_plan_output::Builder, aws_smithy_json::deserialize::Error>
@@ -896,7 +896,7 @@ pub fn deser_operation_crate_operation_delete_pricing_plan(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_delete_pricing_rule(
+pub(crate) fn deser_operation_crate_operation_delete_pricing_rule(
     value: &[u8],
     mut builder: crate::output::delete_pricing_rule_output::Builder,
 ) -> Result<crate::output::delete_pricing_rule_output::Builder, aws_smithy_json::deserialize::Error>
@@ -939,7 +939,7 @@ pub fn deser_operation_crate_operation_delete_pricing_rule(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_disassociate_accounts(
+pub(crate) fn deser_operation_crate_operation_disassociate_accounts(
     value: &[u8],
     mut builder: crate::output::disassociate_accounts_output::Builder,
 ) -> Result<crate::output::disassociate_accounts_output::Builder, aws_smithy_json::deserialize::Error>
@@ -982,7 +982,7 @@ pub fn deser_operation_crate_operation_disassociate_accounts(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_disassociate_pricing_rules(
+pub(crate) fn deser_operation_crate_operation_disassociate_pricing_rules(
     value: &[u8],
     mut builder: crate::output::disassociate_pricing_rules_output::Builder,
 ) -> Result<
@@ -1027,7 +1027,7 @@ pub fn deser_operation_crate_operation_disassociate_pricing_rules(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_account_associations(
+pub(crate) fn deser_operation_crate_operation_list_account_associations(
     value: &[u8],
     mut builder: crate::output::list_account_associations_output::Builder,
 ) -> Result<
@@ -1077,7 +1077,7 @@ pub fn deser_operation_crate_operation_list_account_associations(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_billing_group_cost_reports(
+pub(crate) fn deser_operation_crate_operation_list_billing_group_cost_reports(
     value: &[u8],
     mut builder: crate::output::list_billing_group_cost_reports_output::Builder,
 ) -> Result<
@@ -1127,7 +1127,7 @@ pub fn deser_operation_crate_operation_list_billing_group_cost_reports(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_billing_groups(
+pub(crate) fn deser_operation_crate_operation_list_billing_groups(
     value: &[u8],
     mut builder: crate::output::list_billing_groups_output::Builder,
 ) -> Result<crate::output::list_billing_groups_output::Builder, aws_smithy_json::deserialize::Error>
@@ -1175,7 +1175,7 @@ pub fn deser_operation_crate_operation_list_billing_groups(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_custom_line_items(
+pub(crate) fn deser_operation_crate_operation_list_custom_line_items(
     value: &[u8],
     mut builder: crate::output::list_custom_line_items_output::Builder,
 ) -> Result<
@@ -1225,7 +1225,7 @@ pub fn deser_operation_crate_operation_list_custom_line_items(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_pricing_plans(
+pub(crate) fn deser_operation_crate_operation_list_pricing_plans(
     value: &[u8],
     mut builder: crate::output::list_pricing_plans_output::Builder,
 ) -> Result<crate::output::list_pricing_plans_output::Builder, aws_smithy_json::deserialize::Error>
@@ -1282,7 +1282,7 @@ pub fn deser_operation_crate_operation_list_pricing_plans(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_pricing_plans_associated_with_pricing_rule(
+pub(crate) fn deser_operation_crate_operation_list_pricing_plans_associated_with_pricing_rule(
     value: &[u8],
     mut builder: crate::output::list_pricing_plans_associated_with_pricing_rule_output::Builder,
 ) -> Result<
@@ -1350,7 +1350,7 @@ pub fn deser_operation_crate_operation_list_pricing_plans_associated_with_pricin
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_pricing_rules(
+pub(crate) fn deser_operation_crate_operation_list_pricing_rules(
     value: &[u8],
     mut builder: crate::output::list_pricing_rules_output::Builder,
 ) -> Result<crate::output::list_pricing_rules_output::Builder, aws_smithy_json::deserialize::Error>
@@ -1407,7 +1407,7 @@ pub fn deser_operation_crate_operation_list_pricing_rules(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_pricing_rules_associated_to_pricing_plan(
+pub(crate) fn deser_operation_crate_operation_list_pricing_rules_associated_to_pricing_plan(
     value: &[u8],
     mut builder: crate::output::list_pricing_rules_associated_to_pricing_plan_output::Builder,
 ) -> Result<
@@ -1475,7 +1475,7 @@ pub fn deser_operation_crate_operation_list_pricing_rules_associated_to_pricing_
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_resources_associated_to_custom_line_item(
+pub(crate) fn deser_operation_crate_operation_list_resources_associated_to_custom_line_item(
     value: &[u8],
     mut builder: crate::output::list_resources_associated_to_custom_line_item_output::Builder,
 ) -> Result<
@@ -1534,7 +1534,7 @@ pub fn deser_operation_crate_operation_list_resources_associated_to_custom_line_
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_list_tags_for_resource(
+pub(crate) fn deser_operation_crate_operation_list_tags_for_resource(
     value: &[u8],
     mut builder: crate::output::list_tags_for_resource_output::Builder,
 ) -> Result<
@@ -1577,7 +1577,7 @@ pub fn deser_operation_crate_operation_list_tags_for_resource(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_update_billing_group(
+pub(crate) fn deser_operation_crate_operation_update_billing_group(
     value: &[u8],
     mut builder: crate::output::update_billing_group_output::Builder,
 ) -> Result<crate::output::update_billing_group_output::Builder, aws_smithy_json::deserialize::Error>
@@ -1615,7 +1615,7 @@ pub fn deser_operation_crate_operation_update_billing_group(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.try_into())
+                            .map(i64::try_from)
                             .transpose()?,
                         );
                     }
@@ -1651,7 +1651,7 @@ pub fn deser_operation_crate_operation_update_billing_group(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.try_into())
+                            .map(i64::try_from)
                             .transpose()?,
                         );
                     }
@@ -1695,7 +1695,7 @@ pub fn deser_operation_crate_operation_update_billing_group(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_update_custom_line_item(
+pub(crate) fn deser_operation_crate_operation_update_custom_line_item(
     value: &[u8],
     mut builder: crate::output::update_custom_line_item_output::Builder,
 ) -> Result<
@@ -1726,7 +1726,7 @@ pub fn deser_operation_crate_operation_update_custom_line_item(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.try_into())
+                            .map(i64::try_from)
                             .transpose()?,
                         );
                     }
@@ -1758,7 +1758,7 @@ pub fn deser_operation_crate_operation_update_custom_line_item(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.try_into())
+                            .map(i64::try_from)
                             .transpose()?,
                         );
                     }
@@ -1790,7 +1790,7 @@ pub fn deser_operation_crate_operation_update_custom_line_item(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_update_pricing_plan(
+pub(crate) fn deser_operation_crate_operation_update_pricing_plan(
     value: &[u8],
     mut builder: crate::output::update_pricing_plan_output::Builder,
 ) -> Result<crate::output::update_pricing_plan_output::Builder, aws_smithy_json::deserialize::Error>
@@ -1828,7 +1828,7 @@ pub fn deser_operation_crate_operation_update_pricing_plan(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.try_into())
+                            .map(i64::try_from)
                             .transpose()?,
                         );
                     }
@@ -1846,7 +1846,7 @@ pub fn deser_operation_crate_operation_update_pricing_plan(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.try_into())
+                            .map(i64::try_from)
                             .transpose()?,
                         );
                     }
@@ -1869,7 +1869,7 @@ pub fn deser_operation_crate_operation_update_pricing_plan(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_update_pricing_rule(
+pub(crate) fn deser_operation_crate_operation_update_pricing_rule(
     value: &[u8],
     mut builder: crate::output::update_pricing_rule_output::Builder,
 ) -> Result<crate::output::update_pricing_rule_output::Builder, aws_smithy_json::deserialize::Error>
@@ -1898,7 +1898,7 @@ pub fn deser_operation_crate_operation_update_pricing_rule(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.try_into())
+                            .map(i64::try_from)
                             .transpose()?,
                         );
                     }
@@ -1916,7 +1916,7 @@ pub fn deser_operation_crate_operation_update_pricing_rule(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.try_into())
+                            .map(i64::try_from)
                             .transpose()?,
                         );
                     }
@@ -1989,7 +1989,7 @@ pub fn deser_operation_crate_operation_update_pricing_rule(
     Ok(builder)
 }
 
-pub fn or_empty_doc(data: &[u8]) -> &[u8] {
+pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
     } else {
@@ -1997,8 +1997,8 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_billingconductor_validation_exception_field_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_billingconductor_validation_exception_field_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::ValidationExceptionField>>,
@@ -2037,8 +2037,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_billingconductor_associate_resources_response_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_billingconductor_associate_resources_response_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::AssociateResourceResponseElement>>,
@@ -2077,8 +2077,11 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_billingconductor_disassociate_resources_response_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_billingconductor_disassociate_resources_response_list<
+    'a,
+    I,
+>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::DisassociateResourceResponseElement>>,
@@ -2117,8 +2120,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_billingconductor_account_associations_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_billingconductor_account_associations_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::AccountAssociationsListElement>>,
@@ -2157,8 +2160,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_billingconductor_billing_group_cost_report_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_billingconductor_billing_group_cost_report_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::BillingGroupCostReportElement>>,
@@ -2197,8 +2200,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_billingconductor_billing_group_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_billingconductor_billing_group_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::BillingGroupListElement>>,
@@ -2237,8 +2240,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_billingconductor_custom_line_item_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_billingconductor_custom_line_item_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::CustomLineItemListElement>>,
@@ -2277,8 +2280,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_billingconductor_pricing_plan_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_billingconductor_pricing_plan_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::PricingPlanListElement>>,
@@ -2317,8 +2320,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_billingconductor_pricing_plan_arns<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_billingconductor_pricing_plan_arns<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, aws_smithy_json::deserialize::Error>
 where
@@ -2356,8 +2359,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_billingconductor_pricing_rule_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_billingconductor_pricing_rule_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::PricingRuleListElement>>,
@@ -2396,8 +2399,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_billingconductor_pricing_rule_arns<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_billingconductor_pricing_rule_arns<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, aws_smithy_json::deserialize::Error>
 where
@@ -2435,8 +2438,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_billingconductor_list_resources_associated_to_custom_line_item_response_list<
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_billingconductor_list_resources_associated_to_custom_line_item_response_list<
     'a,
     I,
 >(
@@ -2478,8 +2481,8 @@ where
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_com_amazonaws_billingconductor_tag_map<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_map_com_amazonaws_billingconductor_tag_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -2524,7 +2527,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_list_custom_line_item_charge_details<'a, I>(
+pub(crate) fn deser_structure_crate_model_list_custom_line_item_charge_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::ListCustomLineItemChargeDetails>,
@@ -2539,7 +2542,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::ListCustomLineItemChargeDetails::builder();
+            let mut builder =
+                crate::model::list_custom_line_item_charge_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -2587,7 +2591,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_validation_exception_field<'a, I>(
+pub(crate) fn deser_structure_crate_model_validation_exception_field<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ValidationExceptionField>, aws_smithy_json::deserialize::Error>
 where
@@ -2599,7 +2603,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::ValidationExceptionField::builder();
+            let mut builder = crate::model::validation_exception_field::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -2642,7 +2646,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_associate_resource_response_element<'a, I>(
+pub(crate) fn deser_structure_crate_model_associate_resource_response_element<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::AssociateResourceResponseElement>,
@@ -2657,7 +2661,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::AssociateResourceResponseElement::builder();
+            let mut builder = crate::model::associate_resource_response_element::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -2696,7 +2700,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_disassociate_resource_response_element<'a, I>(
+pub(crate) fn deser_structure_crate_model_disassociate_resource_response_element<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::DisassociateResourceResponseElement>,
@@ -2711,7 +2715,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::DisassociateResourceResponseElement::builder();
+            let mut builder =
+                crate::model::disassociate_resource_response_element::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -2750,7 +2755,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_account_associations_list_element<'a, I>(
+pub(crate) fn deser_structure_crate_model_account_associations_list_element<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AccountAssociationsListElement>, aws_smithy_json::deserialize::Error>
 where
@@ -2762,7 +2767,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::AccountAssociationsListElement::builder();
+            let mut builder = crate::model::account_associations_list_element::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -2823,7 +2828,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_billing_group_cost_report_element<'a, I>(
+pub(crate) fn deser_structure_crate_model_billing_group_cost_report_element<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::BillingGroupCostReportElement>, aws_smithy_json::deserialize::Error>
 where
@@ -2835,7 +2840,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::BillingGroupCostReportElement::builder();
+            let mut builder = crate::model::billing_group_cost_report_element::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -2914,7 +2919,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_billing_group_list_element<'a, I>(
+pub(crate) fn deser_structure_crate_model_billing_group_list_element<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::BillingGroupListElement>, aws_smithy_json::deserialize::Error>
 where
@@ -2926,7 +2931,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::BillingGroupListElement::builder();
+            let mut builder = crate::model::billing_group_list_element::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -2978,7 +2983,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -2987,7 +2992,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -2996,7 +3001,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -3041,7 +3046,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_custom_line_item_list_element<'a, I>(
+pub(crate) fn deser_structure_crate_model_custom_line_item_list_element<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CustomLineItemListElement>, aws_smithy_json::deserialize::Error>
 where
@@ -3053,7 +3058,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::CustomLineItemListElement::builder();
+            let mut builder = crate::model::custom_line_item_list_element::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -3126,7 +3131,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -3135,7 +3140,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -3144,7 +3149,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -3167,7 +3172,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_pricing_plan_list_element<'a, I>(
+pub(crate) fn deser_structure_crate_model_pricing_plan_list_element<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::PricingPlanListElement>, aws_smithy_json::deserialize::Error>
 where
@@ -3179,7 +3184,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::PricingPlanListElement::builder();
+            let mut builder = crate::model::pricing_plan_list_element::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -3217,7 +3222,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -3226,7 +3231,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -3235,7 +3240,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -3258,7 +3263,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_pricing_rule_list_element<'a, I>(
+pub(crate) fn deser_structure_crate_model_pricing_rule_list_element<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::PricingRuleListElement>, aws_smithy_json::deserialize::Error>
 where
@@ -3270,7 +3275,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::PricingRuleListElement::builder();
+            let mut builder = crate::model::pricing_rule_list_element::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -3351,7 +3356,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -3360,7 +3365,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -3369,7 +3374,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.try_into())
+                                    .map(i64::try_from)
                                     .transpose()?,
                                 );
                             }
@@ -3392,7 +3397,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_list_resources_associated_to_custom_line_item_response_element<
+pub(crate) fn deser_structure_crate_model_list_resources_associated_to_custom_line_item_response_element<
     'a,
     I,
 >(
@@ -3409,9 +3414,7 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]
-            let mut builder =
-                crate::model::ListResourcesAssociatedToCustomLineItemResponseElement::builder();
+            #[allow(unused_mut)]let mut builder = crate::model::list_resources_associated_to_custom_line_item_response_element::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -3460,7 +3463,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_list_custom_line_item_flat_charge_details<'a, I>(
+pub(crate) fn deser_structure_crate_model_list_custom_line_item_flat_charge_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::ListCustomLineItemFlatChargeDetails>,
@@ -3475,7 +3478,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::ListCustomLineItemFlatChargeDetails::builder();
+            let mut builder =
+                crate::model::list_custom_line_item_flat_charge_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -3508,7 +3512,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_list_custom_line_item_percentage_charge_details<'a, I>(
+pub(crate) fn deser_structure_crate_model_list_custom_line_item_percentage_charge_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::ListCustomLineItemPercentageChargeDetails>,
@@ -3523,7 +3527,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::ListCustomLineItemPercentageChargeDetails::builder();
+            let mut builder =
+                crate::model::list_custom_line_item_percentage_charge_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -3556,7 +3561,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_associate_resource_error<'a, I>(
+pub(crate) fn deser_structure_crate_model_associate_resource_error<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AssociateResourceError>, aws_smithy_json::deserialize::Error>
 where
@@ -3568,7 +3573,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::AssociateResourceError::builder();
+            let mut builder = crate::model::associate_resource_error::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -3617,7 +3622,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_computation_preference<'a, I>(
+pub(crate) fn deser_structure_crate_model_computation_preference<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ComputationPreference>, aws_smithy_json::deserialize::Error>
 where
@@ -3629,7 +3634,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::ComputationPreference::builder();
+            let mut builder = crate::model::computation_preference::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

@@ -10,7 +10,7 @@ pub fn serialize_structure_crate_input_create_replication_set_input(
         let mut object_3 = object.key("regions").start_object();
         for (key_4, value_5) in var_2 {
             {
-                let mut object_6 = object_3.key(key_4).start_object();
+                let mut object_6 = object_3.key(key_4.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_region_map_input_value(
                     &mut object_6,
                     value_5,
@@ -70,7 +70,7 @@ pub fn serialize_structure_crate_input_create_response_plan_input(
         let mut object_22 = object.key("tags").start_object();
         for (key_23, value_24) in var_21 {
             {
-                object_22.key(key_23).string(value_24.as_str());
+                object_22.key(key_23.as_str()).string(value_24.as_str());
             }
         }
         object_22.finish();
@@ -340,7 +340,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_73 = object.key("tags").start_object();
         for (key_74, value_75) in var_72 {
             {
-                object_73.key(key_74).string(value_75.as_str());
+                object_73.key(key_74.as_str()).string(value_75.as_str());
             }
         }
         object_73.finish();
@@ -530,7 +530,7 @@ pub fn serialize_structure_crate_input_update_response_plan_input(
         let mut object_121 = object.key("incidentTemplateTags").start_object();
         for (key_122, value_123) in var_120 {
             {
-                object_121.key(key_122).string(value_123.as_str());
+                object_121.key(key_122.as_str()).string(value_123.as_str());
             }
         }
         object_121.finish();
@@ -666,7 +666,7 @@ pub fn serialize_structure_crate_model_incident_template(
         let mut object_145 = object.key("incidentTags").start_object();
         for (key_146, value_147) in var_144 {
             {
-                object_145.key(key_146).string(value_147.as_str());
+                object_145.key(key_146.as_str()).string(value_147.as_str());
             }
         }
         object_145.finish();
@@ -825,7 +825,7 @@ pub fn serialize_structure_crate_model_ssm_automation(
         let mut object_167 = object.key("parameters").start_object();
         for (key_168, value_169) in var_166 {
             {
-                let mut array_170 = object_167.key(key_168).start_array();
+                let mut array_170 = object_167.key(key_168.as_str()).start_array();
                 for item_171 in value_169 {
                     {
                         array_170.value().string(item_171.as_str());
@@ -840,7 +840,7 @@ pub fn serialize_structure_crate_model_ssm_automation(
         let mut object_173 = object.key("dynamicParameters").start_object();
         for (key_174, value_175) in var_172 {
             {
-                let mut object_176 = object_173.key(key_174).start_object();
+                let mut object_176 = object_173.key(key_174.as_str()).start_object();
                 crate::json_ser::serialize_union_crate_model_dynamic_ssm_parameter_value(
                     &mut object_176,
                     value_175,

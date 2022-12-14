@@ -17,7 +17,7 @@ impl std::fmt::Debug for RepositoryNameRequiredException {
 }
 impl RepositoryNameRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -82,7 +82,7 @@ impl std::fmt::Debug for RepositoryNameExistsException {
 }
 impl RepositoryNameExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -147,7 +147,7 @@ impl std::fmt::Debug for RepositoryDoesNotExistException {
 }
 impl RepositoryDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -214,7 +214,7 @@ impl std::fmt::Debug for InvalidRepositoryNameException {
 }
 impl InvalidRepositoryNameException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -279,7 +279,7 @@ impl std::fmt::Debug for InvalidRepositoryDescriptionException {
 }
 impl InvalidRepositoryDescriptionException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -344,7 +344,7 @@ impl std::fmt::Debug for EncryptionKeyUnavailableException {
 }
 impl EncryptionKeyUnavailableException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -409,7 +409,7 @@ impl std::fmt::Debug for EncryptionKeyNotFoundException {
 }
 impl EncryptionKeyNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -474,7 +474,7 @@ impl std::fmt::Debug for EncryptionKeyDisabledException {
 }
 impl EncryptionKeyDisabledException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -539,7 +539,7 @@ impl std::fmt::Debug for EncryptionKeyAccessDeniedException {
 }
 impl EncryptionKeyAccessDeniedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -604,7 +604,7 @@ impl std::fmt::Debug for EncryptionIntegrityChecksFailedException {
 }
 impl EncryptionIntegrityChecksFailedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -669,7 +669,7 @@ impl std::fmt::Debug for TitleRequiredException {
 }
 impl TitleRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -734,7 +734,7 @@ impl std::fmt::Debug for PullRequestIdRequiredException {
 }
 impl PullRequestIdRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -799,7 +799,7 @@ impl std::fmt::Debug for PullRequestDoesNotExistException {
 }
 impl PullRequestDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -864,7 +864,7 @@ impl std::fmt::Debug for PullRequestAlreadyClosedException {
 }
 impl PullRequestAlreadyClosedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -929,7 +929,7 @@ impl std::fmt::Debug for InvalidTitleException {
 }
 impl InvalidTitleException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -994,7 +994,7 @@ impl std::fmt::Debug for InvalidPullRequestIdException {
 }
 impl InvalidPullRequestIdException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1059,7 +1059,7 @@ impl std::fmt::Debug for PullRequestStatusRequiredException {
 }
 impl PullRequestStatusRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1124,7 +1124,7 @@ impl std::fmt::Debug for InvalidPullRequestStatusUpdateException {
 }
 impl InvalidPullRequestStatusUpdateException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1189,7 +1189,7 @@ impl std::fmt::Debug for InvalidPullRequestStatusException {
 }
 impl InvalidPullRequestStatusException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1254,7 +1254,7 @@ impl std::fmt::Debug for InvalidDescriptionException {
 }
 impl InvalidDescriptionException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1319,7 +1319,7 @@ impl std::fmt::Debug for RevisionNotCurrentException {
 }
 impl RevisionNotCurrentException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1384,7 +1384,7 @@ impl std::fmt::Debug for RevisionIdRequiredException {
 }
 impl RevisionIdRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1449,7 +1449,7 @@ impl std::fmt::Debug for PullRequestCannotBeApprovedByAuthorException {
 }
 impl PullRequestCannotBeApprovedByAuthorException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1514,7 +1514,7 @@ impl std::fmt::Debug for MaximumNumberOfApprovalsExceededException {
 }
 impl MaximumNumberOfApprovalsExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1579,7 +1579,7 @@ impl std::fmt::Debug for InvalidRevisionIdException {
 }
 impl InvalidRevisionIdException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1644,7 +1644,7 @@ impl std::fmt::Debug for InvalidApprovalStateException {
 }
 impl InvalidApprovalStateException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1709,7 +1709,7 @@ impl std::fmt::Debug for ApprovalStateRequiredException {
 }
 impl ApprovalStateRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1774,7 +1774,7 @@ impl std::fmt::Debug for InvalidRuleContentSha256Exception {
 }
 impl InvalidRuleContentSha256Exception {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1839,7 +1839,7 @@ impl std::fmt::Debug for InvalidApprovalRuleNameException {
 }
 impl InvalidApprovalRuleNameException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1904,7 +1904,7 @@ impl std::fmt::Debug for InvalidApprovalRuleContentException {
 }
 impl InvalidApprovalRuleContentException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1969,7 +1969,7 @@ impl std::fmt::Debug for CannotModifyApprovalRuleFromTemplateException {
 }
 impl CannotModifyApprovalRuleFromTemplateException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2034,7 +2034,7 @@ impl std::fmt::Debug for ApprovalRuleNameRequiredException {
 }
 impl ApprovalRuleNameRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2099,7 +2099,7 @@ impl std::fmt::Debug for ApprovalRuleDoesNotExistException {
 }
 impl ApprovalRuleDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2164,7 +2164,7 @@ impl std::fmt::Debug for ApprovalRuleContentRequiredException {
 }
 impl ApprovalRuleContentRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2229,7 +2229,7 @@ impl std::fmt::Debug for InvalidBranchNameException {
 }
 impl InvalidBranchNameException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2294,7 +2294,7 @@ impl std::fmt::Debug for BranchNameRequiredException {
 }
 impl BranchNameRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2359,7 +2359,7 @@ impl std::fmt::Debug for BranchDoesNotExistException {
 }
 impl BranchDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2424,7 +2424,7 @@ impl std::fmt::Debug for InvalidCommentIdException {
 }
 impl InvalidCommentIdException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2489,7 +2489,7 @@ impl std::fmt::Debug for CommentNotCreatedByCallerException {
 }
 impl CommentNotCreatedByCallerException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2554,7 +2554,7 @@ impl std::fmt::Debug for CommentIdRequiredException {
 }
 impl CommentIdRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2619,7 +2619,7 @@ impl std::fmt::Debug for CommentDoesNotExistException {
 }
 impl CommentDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2684,7 +2684,7 @@ impl std::fmt::Debug for CommentDeletedException {
 }
 impl CommentDeletedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2749,7 +2749,7 @@ impl std::fmt::Debug for CommentContentSizeLimitExceededException {
 }
 impl CommentContentSizeLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2814,7 +2814,7 @@ impl std::fmt::Debug for CommentContentRequiredException {
 }
 impl CommentContentRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2879,7 +2879,7 @@ impl std::fmt::Debug for InvalidApprovalRuleTemplateNameException {
 }
 impl InvalidApprovalRuleTemplateNameException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2944,7 +2944,7 @@ impl std::fmt::Debug for ApprovalRuleTemplateNameRequiredException {
 }
 impl ApprovalRuleTemplateNameRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3009,7 +3009,7 @@ impl std::fmt::Debug for ApprovalRuleTemplateNameAlreadyExistsException {
 }
 impl ApprovalRuleTemplateNameAlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3075,7 +3075,7 @@ impl std::fmt::Debug for ApprovalRuleTemplateDoesNotExistException {
 }
 impl ApprovalRuleTemplateDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3140,7 +3140,7 @@ impl std::fmt::Debug for InvalidApprovalRuleTemplateDescriptionException {
 }
 impl InvalidApprovalRuleTemplateDescriptionException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3206,7 +3206,7 @@ impl std::fmt::Debug for InvalidApprovalRuleTemplateContentException {
 }
 impl InvalidApprovalRuleTemplateContentException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3271,7 +3271,7 @@ impl std::fmt::Debug for ApprovalRuleTemplateContentRequiredException {
 }
 impl ApprovalRuleTemplateContentRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3336,7 +3336,7 @@ impl std::fmt::Debug for TooManyTagsException {
 }
 impl TooManyTagsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3401,7 +3401,7 @@ impl std::fmt::Debug for TagPolicyException {
 }
 impl TagPolicyException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3466,7 +3466,7 @@ impl std::fmt::Debug for TagKeysListRequiredException {
 }
 impl TagKeysListRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3531,7 +3531,7 @@ impl std::fmt::Debug for ResourceArnRequiredException {
 }
 impl ResourceArnRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3596,7 +3596,7 @@ impl std::fmt::Debug for InvalidTagKeysListException {
 }
 impl InvalidTagKeysListException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3661,7 +3661,7 @@ impl std::fmt::Debug for InvalidSystemTagUsageException {
 }
 impl InvalidSystemTagUsageException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3726,7 +3726,7 @@ impl std::fmt::Debug for InvalidResourceArnException {
 }
 impl InvalidResourceArnException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3791,7 +3791,7 @@ impl std::fmt::Debug for RepositoryTriggersListRequiredException {
 }
 impl RepositoryTriggersListRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3856,7 +3856,7 @@ impl std::fmt::Debug for RepositoryTriggerNameRequiredException {
 }
 impl RepositoryTriggerNameRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3921,7 +3921,7 @@ impl std::fmt::Debug for RepositoryTriggerEventsListRequiredException {
 }
 impl RepositoryTriggerEventsListRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3986,7 +3986,7 @@ impl std::fmt::Debug for RepositoryTriggerDestinationArnRequiredException {
 }
 impl RepositoryTriggerDestinationArnRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4052,7 +4052,7 @@ impl std::fmt::Debug for RepositoryTriggerBranchNameListRequiredException {
 }
 impl RepositoryTriggerBranchNameListRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4118,7 +4118,7 @@ impl std::fmt::Debug for MaximumRepositoryTriggersExceededException {
 }
 impl MaximumRepositoryTriggersExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4183,7 +4183,7 @@ impl std::fmt::Debug for MaximumBranchesExceededException {
 }
 impl MaximumBranchesExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4248,7 +4248,7 @@ impl std::fmt::Debug for InvalidRepositoryTriggerRegionException {
 }
 impl InvalidRepositoryTriggerRegionException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4313,7 +4313,7 @@ impl std::fmt::Debug for InvalidRepositoryTriggerNameException {
 }
 impl InvalidRepositoryTriggerNameException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4378,7 +4378,7 @@ impl std::fmt::Debug for InvalidRepositoryTriggerEventsException {
 }
 impl InvalidRepositoryTriggerEventsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4443,7 +4443,7 @@ impl std::fmt::Debug for InvalidRepositoryTriggerDestinationArnException {
 }
 impl InvalidRepositoryTriggerDestinationArnException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4509,7 +4509,7 @@ impl std::fmt::Debug for InvalidRepositoryTriggerCustomDataException {
 }
 impl InvalidRepositoryTriggerCustomDataException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4574,7 +4574,7 @@ impl std::fmt::Debug for InvalidRepositoryTriggerBranchNameException {
 }
 impl InvalidRepositoryTriggerBranchNameException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4639,7 +4639,7 @@ impl std::fmt::Debug for TagsMapRequiredException {
 }
 impl TagsMapRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4704,7 +4704,7 @@ impl std::fmt::Debug for InvalidTagsMapException {
 }
 impl InvalidTagsMapException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4769,7 +4769,7 @@ impl std::fmt::Debug for SameFileContentException {
 }
 impl SameFileContentException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4834,7 +4834,7 @@ impl std::fmt::Debug for PathRequiredException {
 }
 impl PathRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4899,7 +4899,7 @@ impl std::fmt::Debug for ParentCommitIdRequiredException {
 }
 impl ParentCommitIdRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4964,7 +4964,7 @@ impl std::fmt::Debug for ParentCommitIdOutdatedException {
 }
 impl ParentCommitIdOutdatedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5029,7 +5029,7 @@ impl std::fmt::Debug for ParentCommitDoesNotExistException {
 }
 impl ParentCommitDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5094,7 +5094,7 @@ impl std::fmt::Debug for NameLengthExceededException {
 }
 impl NameLengthExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5159,7 +5159,7 @@ impl std::fmt::Debug for InvalidPathException {
 }
 impl InvalidPathException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5224,7 +5224,7 @@ impl std::fmt::Debug for InvalidParentCommitIdException {
 }
 impl InvalidParentCommitIdException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5289,7 +5289,7 @@ impl std::fmt::Debug for InvalidFileModeException {
 }
 impl InvalidFileModeException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5354,7 +5354,7 @@ impl std::fmt::Debug for InvalidEmailException {
 }
 impl InvalidEmailException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5419,7 +5419,7 @@ impl std::fmt::Debug for InvalidDeletionParameterException {
 }
 impl InvalidDeletionParameterException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5484,7 +5484,7 @@ impl std::fmt::Debug for FolderContentSizeLimitExceededException {
 }
 impl FolderContentSizeLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5549,7 +5549,7 @@ impl std::fmt::Debug for FilePathConflictsWithSubmodulePathException {
 }
 impl FilePathConflictsWithSubmodulePathException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5614,7 +5614,7 @@ impl std::fmt::Debug for FileNameConflictsWithDirectoryNameException {
 }
 impl FileNameConflictsWithDirectoryNameException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5679,7 +5679,7 @@ impl std::fmt::Debug for FileContentSizeLimitExceededException {
 }
 impl FileContentSizeLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5744,7 +5744,7 @@ impl std::fmt::Debug for FileContentRequiredException {
 }
 impl FileContentRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5809,7 +5809,7 @@ impl std::fmt::Debug for DirectoryNameConflictsWithFileNameException {
 }
 impl DirectoryNameConflictsWithFileNameException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5874,7 +5874,7 @@ impl std::fmt::Debug for CommitMessageLengthExceededException {
 }
 impl CommitMessageLengthExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5939,7 +5939,7 @@ impl std::fmt::Debug for BranchNameIsTagNameException {
 }
 impl BranchNameIsTagNameException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6004,7 +6004,7 @@ impl std::fmt::Debug for ReactionValueRequiredException {
 }
 impl ReactionValueRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6069,7 +6069,7 @@ impl std::fmt::Debug for ReactionLimitExceededException {
 }
 impl ReactionLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6134,7 +6134,7 @@ impl std::fmt::Debug for InvalidReactionValueException {
 }
 impl InvalidReactionValueException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6199,7 +6199,7 @@ impl std::fmt::Debug for InvalidClientRequestTokenException {
 }
 impl InvalidClientRequestTokenException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6264,7 +6264,7 @@ impl std::fmt::Debug for IdempotencyParameterMismatchException {
 }
 impl IdempotencyParameterMismatchException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6329,7 +6329,7 @@ impl std::fmt::Debug for ClientRequestTokenRequiredException {
 }
 impl ClientRequestTokenRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6394,7 +6394,7 @@ impl std::fmt::Debug for RepositoryNotAssociatedWithPullRequestException {
 }
 impl RepositoryNotAssociatedWithPullRequestException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6460,7 +6460,7 @@ impl std::fmt::Debug for PathDoesNotExistException {
 }
 impl PathDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6525,7 +6525,7 @@ impl std::fmt::Debug for InvalidRelativeFileVersionEnumException {
 }
 impl InvalidRelativeFileVersionEnumException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6590,7 +6590,7 @@ impl std::fmt::Debug for InvalidFilePositionException {
 }
 impl InvalidFilePositionException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6655,7 +6655,7 @@ impl std::fmt::Debug for InvalidFileLocationException {
 }
 impl InvalidFileLocationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6720,7 +6720,7 @@ impl std::fmt::Debug for InvalidCommitIdException {
 }
 impl InvalidCommitIdException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6785,7 +6785,7 @@ impl std::fmt::Debug for CommitIdRequiredException {
 }
 impl CommitIdRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6850,7 +6850,7 @@ impl std::fmt::Debug for CommitDoesNotExistException {
 }
 impl CommitDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6915,7 +6915,7 @@ impl std::fmt::Debug for BeforeCommitIdAndAfterCommitIdAreSameException {
 }
 impl BeforeCommitIdAndAfterCommitIdAreSameException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6981,7 +6981,7 @@ impl std::fmt::Debug for OverrideStatusRequiredException {
 }
 impl OverrideStatusRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7046,7 +7046,7 @@ impl std::fmt::Debug for OverrideAlreadySetException {
 }
 impl OverrideAlreadySetException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7111,7 +7111,7 @@ impl std::fmt::Debug for InvalidOverrideStatusException {
 }
 impl InvalidOverrideStatusException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7176,7 +7176,7 @@ impl std::fmt::Debug for TipsDivergenceExceededException {
 }
 impl TipsDivergenceExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7241,7 +7241,7 @@ impl std::fmt::Debug for TipOfSourceReferenceIsDifferentException {
 }
 impl TipOfSourceReferenceIsDifferentException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7306,7 +7306,7 @@ impl std::fmt::Debug for ReplacementTypeRequiredException {
 }
 impl ReplacementTypeRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7371,7 +7371,7 @@ impl std::fmt::Debug for ReplacementContentRequiredException {
 }
 impl ReplacementContentRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7436,7 +7436,7 @@ impl std::fmt::Debug for PullRequestApprovalRulesNotSatisfiedException {
 }
 impl PullRequestApprovalRulesNotSatisfiedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7501,7 +7501,7 @@ impl std::fmt::Debug for MultipleConflictResolutionEntriesException {
 }
 impl MultipleConflictResolutionEntriesException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7566,7 +7566,7 @@ impl std::fmt::Debug for MaximumItemsToCompareExceededException {
 }
 impl MaximumItemsToCompareExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7631,7 +7631,7 @@ impl std::fmt::Debug for MaximumFileContentToLoadExceededException {
 }
 impl MaximumFileContentToLoadExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7696,7 +7696,7 @@ impl std::fmt::Debug for MaximumConflictResolutionEntriesExceededException {
 }
 impl MaximumConflictResolutionEntriesExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7762,7 +7762,7 @@ impl std::fmt::Debug for ManualMergeRequiredException {
 }
 impl ManualMergeRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7827,7 +7827,7 @@ impl std::fmt::Debug for InvalidReplacementTypeException {
 }
 impl InvalidReplacementTypeException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7892,7 +7892,7 @@ impl std::fmt::Debug for InvalidReplacementContentException {
 }
 impl InvalidReplacementContentException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7957,7 +7957,7 @@ impl std::fmt::Debug for InvalidConflictResolutionStrategyException {
 }
 impl InvalidConflictResolutionStrategyException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8022,7 +8022,7 @@ impl std::fmt::Debug for InvalidConflictResolutionException {
 }
 impl InvalidConflictResolutionException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8087,7 +8087,7 @@ impl std::fmt::Debug for InvalidConflictDetailLevelException {
 }
 impl InvalidConflictDetailLevelException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8152,7 +8152,7 @@ impl std::fmt::Debug for ConcurrentReferenceUpdateException {
 }
 impl ConcurrentReferenceUpdateException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8217,7 +8217,7 @@ impl std::fmt::Debug for ReferenceDoesNotExistException {
 }
 impl ReferenceDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8282,7 +8282,7 @@ impl std::fmt::Debug for InvalidTargetBranchException {
 }
 impl InvalidTargetBranchException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8347,7 +8347,7 @@ impl std::fmt::Debug for InvalidCommitException {
 }
 impl InvalidCommitException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8412,7 +8412,7 @@ impl std::fmt::Debug for FileModeRequiredException {
 }
 impl FileModeRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8477,7 +8477,7 @@ impl std::fmt::Debug for CommitRequiredException {
 }
 impl CommitRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8542,7 +8542,7 @@ impl std::fmt::Debug for InvalidMaxResultsException {
 }
 impl InvalidMaxResultsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8607,7 +8607,7 @@ impl std::fmt::Debug for InvalidContinuationTokenException {
 }
 impl InvalidContinuationTokenException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8672,7 +8672,7 @@ impl std::fmt::Debug for InvalidSortByException {
 }
 impl InvalidSortByException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8737,7 +8737,7 @@ impl std::fmt::Debug for InvalidOrderException {
 }
 impl InvalidOrderException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8802,7 +8802,7 @@ impl std::fmt::Debug for InvalidAuthorArnException {
 }
 impl InvalidAuthorArnException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8867,7 +8867,7 @@ impl std::fmt::Debug for AuthorDoesNotExistException {
 }
 impl AuthorDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8932,7 +8932,7 @@ impl std::fmt::Debug for MergeOptionRequiredException {
 }
 impl MergeOptionRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8997,7 +8997,7 @@ impl std::fmt::Debug for InvalidSourceCommitSpecifierException {
 }
 impl InvalidSourceCommitSpecifierException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -9062,7 +9062,7 @@ impl std::fmt::Debug for InvalidMergeOptionException {
 }
 impl InvalidMergeOptionException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -9127,7 +9127,7 @@ impl std::fmt::Debug for InvalidMaxConflictFilesException {
 }
 impl InvalidMaxConflictFilesException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -9192,7 +9192,7 @@ impl std::fmt::Debug for InvalidDestinationCommitSpecifierException {
 }
 impl InvalidDestinationCommitSpecifierException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -9257,7 +9257,7 @@ impl std::fmt::Debug for FolderDoesNotExistException {
 }
 impl FolderDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -9322,7 +9322,7 @@ impl std::fmt::Debug for FileTooLargeException {
 }
 impl FileTooLargeException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -9387,7 +9387,7 @@ impl std::fmt::Debug for FileDoesNotExistException {
 }
 impl FileDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -9452,7 +9452,7 @@ impl std::fmt::Debug for CommitIdDoesNotExistException {
 }
 impl CommitIdDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -9517,7 +9517,7 @@ impl std::fmt::Debug for InvalidReactionUserArnException {
 }
 impl InvalidReactionUserArnException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -9582,7 +9582,7 @@ impl std::fmt::Debug for InvalidBlobIdException {
 }
 impl InvalidBlobIdException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -9647,7 +9647,7 @@ impl std::fmt::Debug for BlobIdRequiredException {
 }
 impl BlobIdRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -9712,7 +9712,7 @@ impl std::fmt::Debug for BlobIdDoesNotExistException {
 }
 impl BlobIdDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -9777,7 +9777,7 @@ impl std::fmt::Debug for InvalidPullRequestEventTypeException {
 }
 impl InvalidPullRequestEventTypeException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -9842,7 +9842,7 @@ impl std::fmt::Debug for InvalidActorArnException {
 }
 impl InvalidActorArnException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -9907,7 +9907,7 @@ impl std::fmt::Debug for ActorDoesNotExistException {
 }
 impl ActorDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -9972,7 +9972,7 @@ impl std::fmt::Debug for InvalidMaxMergeHunksException {
 }
 impl InvalidMaxMergeHunksException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -10037,7 +10037,7 @@ impl std::fmt::Debug for CannotDeleteApprovalRuleFromTemplateException {
 }
 impl CannotDeleteApprovalRuleFromTemplateException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -10102,7 +10102,7 @@ impl std::fmt::Debug for DefaultBranchCannotBeDeletedException {
 }
 impl DefaultBranchCannotBeDeletedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -10167,7 +10167,7 @@ impl std::fmt::Debug for ApprovalRuleTemplateInUseException {
 }
 impl ApprovalRuleTemplateInUseException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -10232,7 +10232,7 @@ impl std::fmt::Debug for RepositoryLimitExceededException {
 }
 impl RepositoryLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -10297,7 +10297,7 @@ impl std::fmt::Debug for NumberOfRulesExceededException {
 }
 impl NumberOfRulesExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -10362,7 +10362,7 @@ impl std::fmt::Debug for ApprovalRuleNameAlreadyExistsException {
 }
 impl ApprovalRuleNameAlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -10427,7 +10427,7 @@ impl std::fmt::Debug for TargetsRequiredException {
 }
 impl TargetsRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -10492,7 +10492,7 @@ impl std::fmt::Debug for TargetRequiredException {
 }
 impl TargetRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -10557,7 +10557,7 @@ impl std::fmt::Debug for SourceAndDestinationAreSameException {
 }
 impl SourceAndDestinationAreSameException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -10622,7 +10622,7 @@ impl std::fmt::Debug for ReferenceTypeNotSupportedException {
 }
 impl ReferenceTypeNotSupportedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -10687,7 +10687,7 @@ impl std::fmt::Debug for ReferenceNameRequiredException {
 }
 impl ReferenceNameRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -10752,7 +10752,7 @@ impl std::fmt::Debug for MultipleRepositoriesInPullRequestException {
 }
 impl MultipleRepositoriesInPullRequestException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -10817,7 +10817,7 @@ impl std::fmt::Debug for MaximumOpenPullRequestsExceededException {
 }
 impl MaximumOpenPullRequestsExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -10882,7 +10882,7 @@ impl std::fmt::Debug for InvalidTargetsException {
 }
 impl InvalidTargetsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -10947,7 +10947,7 @@ impl std::fmt::Debug for InvalidTargetException {
 }
 impl InvalidTargetException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -11012,7 +11012,7 @@ impl std::fmt::Debug for InvalidReferenceNameException {
 }
 impl InvalidReferenceNameException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -11077,7 +11077,7 @@ impl std::fmt::Debug for SourceFileOrContentRequiredException {
 }
 impl SourceFileOrContentRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -11142,7 +11142,7 @@ impl std::fmt::Debug for SamePathRequestException {
 }
 impl SamePathRequestException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -11207,7 +11207,7 @@ impl std::fmt::Debug for RestrictedSourceFileException {
 }
 impl RestrictedSourceFileException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -11272,7 +11272,7 @@ impl std::fmt::Debug for PutFileEntryConflictException {
 }
 impl PutFileEntryConflictException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -11337,7 +11337,7 @@ impl std::fmt::Debug for NoChangeException {
 }
 impl NoChangeException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -11402,7 +11402,7 @@ impl std::fmt::Debug for MaximumFileEntriesExceededException {
 }
 impl MaximumFileEntriesExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -11467,7 +11467,7 @@ impl std::fmt::Debug for FileEntryRequiredException {
 }
 impl FileEntryRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -11532,7 +11532,7 @@ impl std::fmt::Debug for FileContentAndSourceFileSpecifiedException {
 }
 impl FileContentAndSourceFileSpecifiedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -11597,7 +11597,7 @@ impl std::fmt::Debug for BranchNameExistsException {
 }
 impl BranchNameExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -11662,7 +11662,7 @@ impl std::fmt::Debug for NumberOfRuleTemplatesExceededException {
 }
 impl NumberOfRuleTemplatesExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -11727,7 +11727,7 @@ impl std::fmt::Debug for RepositoryNamesRequiredException {
 }
 impl RepositoryNamesRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -11792,7 +11792,7 @@ impl std::fmt::Debug for MaximumRepositoryNamesExceededException {
 }
 impl MaximumRepositoryNamesExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -11857,7 +11857,7 @@ impl std::fmt::Debug for CommitIdsListRequiredException {
 }
 impl CommitIdsListRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -11922,7 +11922,7 @@ impl std::fmt::Debug for CommitIdsLimitExceededException {
 }
 impl CommitIdsLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -11987,7 +11987,7 @@ impl std::fmt::Debug for MaximumRuleTemplatesAssociatedWithRepositoryException {
 }
 impl MaximumRuleTemplatesAssociatedWithRepositoryException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }

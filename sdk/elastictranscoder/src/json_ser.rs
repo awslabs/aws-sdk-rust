@@ -62,7 +62,7 @@ pub fn serialize_structure_crate_input_create_job_input(
         let mut object_20 = object.key("UserMetadata").start_object();
         for (key_21, value_22) in var_19 {
             {
-                object_20.key(key_21).string(value_22.as_str());
+                object_20.key(key_21.as_str()).string(value_22.as_str());
             }
         }
         object_20.finish();
@@ -499,7 +499,7 @@ pub fn serialize_structure_crate_model_video_parameters(
         let mut object_133 = object.key("CodecOptions").start_object();
         for (key_134, value_135) in var_132 {
             {
-                object_133.key(key_134).string(value_135.as_str());
+                object_133.key(key_134.as_str()).string(value_135.as_str());
             }
         }
         object_133.finish();

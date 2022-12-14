@@ -65,7 +65,7 @@ pub fn serialize_structure_crate_input_create_experiment_input(
         let mut object_17 = object.key("tags").start_object();
         for (key_18, value_19) in var_16 {
             {
-                object_17.key(key_18).string(value_19.as_str());
+                object_17.key(key_18.as_str()).string(value_19.as_str());
             }
         }
         object_17.finish();
@@ -101,7 +101,7 @@ pub fn serialize_structure_crate_input_create_feature_input(
         let mut object_27 = object.key("entityOverrides").start_object();
         for (key_28, value_29) in var_26 {
             {
-                object_27.key(key_28).string(value_29.as_str());
+                object_27.key(key_28.as_str()).string(value_29.as_str());
             }
         }
         object_27.finish();
@@ -116,7 +116,7 @@ pub fn serialize_structure_crate_input_create_feature_input(
         let mut object_33 = object.key("tags").start_object();
         for (key_34, value_35) in var_32 {
             {
-                object_33.key(key_34).string(value_35.as_str());
+                object_33.key(key_34.as_str()).string(value_35.as_str());
             }
         }
         object_33.finish();
@@ -191,7 +191,7 @@ pub fn serialize_structure_crate_input_create_launch_input(
         let mut object_54 = object.key("tags").start_object();
         for (key_55, value_56) in var_53 {
             {
-                object_54.key(key_55).string(value_56.as_str());
+                object_54.key(key_55.as_str()).string(value_56.as_str());
             }
         }
         object_54.finish();
@@ -229,7 +229,7 @@ pub fn serialize_structure_crate_input_create_project_input(
         let mut object_64 = object.key("tags").start_object();
         for (key_65, value_66) in var_63 {
             {
-                object_64.key(key_65).string(value_66.as_str());
+                object_64.key(key_65.as_str()).string(value_66.as_str());
             }
         }
         object_64.finish();
@@ -254,7 +254,7 @@ pub fn serialize_structure_crate_input_create_segment_input(
         let mut object_71 = object.key("tags").start_object();
         for (key_72, value_73) in var_70 {
             {
-                object_71.key(key_72).string(value_73.as_str());
+                object_71.key(key_72.as_str()).string(value_73.as_str());
             }
         }
         object_71.finish();
@@ -401,7 +401,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_101 = object.key("tags").start_object();
         for (key_102, value_103) in var_100 {
             {
-                object_101.key(key_102).string(value_103.as_str());
+                object_101.key(key_102.as_str()).string(value_103.as_str());
             }
         }
         object_101.finish();
@@ -511,7 +511,7 @@ pub fn serialize_structure_crate_input_update_feature_input(
         let mut object_127 = object.key("entityOverrides").start_object();
         for (key_128, value_129) in var_126 {
             {
-                object_127.key(key_128).string(value_129.as_str());
+                object_127.key(key_128.as_str()).string(value_129.as_str());
             }
         }
         object_127.finish();
@@ -666,7 +666,7 @@ pub fn serialize_structure_crate_model_online_ab_config(
         let mut object_161 = object.key("treatmentWeights").start_object();
         for (key_162, value_163) in var_160 {
             {
-                object_161.key(key_162).number(
+                object_161.key(key_162.as_str()).number(
                     #[allow(clippy::useless_conversion)]
                     aws_smithy_types::Number::NegInt((*value_163).into()),
                 );
@@ -910,7 +910,7 @@ pub fn serialize_structure_crate_model_scheduled_split_config(
         let mut object_200 = object.key("groupWeights").start_object();
         for (key_201, value_202) in var_199 {
             {
-                object_200.key(key_201).number(
+                object_200.key(key_201.as_str()).number(
                     #[allow(clippy::useless_conversion)]
                     aws_smithy_types::Number::NegInt((*value_202).into()),
                 );
@@ -952,7 +952,7 @@ pub fn serialize_structure_crate_model_segment_override(
         let mut object_210 = object.key("weights").start_object();
         for (key_211, value_212) in var_209 {
             {
-                object_210.key(key_211).number(
+                object_210.key(key_211.as_str()).number(
                     #[allow(clippy::useless_conversion)]
                     aws_smithy_types::Number::NegInt((*value_212).into()),
                 );

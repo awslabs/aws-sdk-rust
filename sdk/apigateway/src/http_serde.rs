@@ -4,7 +4,7 @@ pub fn add_headers_get_export(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_1) = &input.accepts {
-        let formatted_2 = AsRef::<str>::as_ref(inner_1);
+        let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value =
@@ -23,7 +23,7 @@ pub fn add_headers_get_export(
     Ok(builder)
 }
 
-pub fn deser_header_create_api_key_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_create_api_key_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -33,7 +33,7 @@ pub fn deser_header_create_api_key_limit_exceeded_exception_retry_after_seconds(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_api_key_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_create_api_key_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -43,7 +43,7 @@ pub fn deser_header_create_api_key_too_many_requests_exception_retry_after_secon
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_authorizer_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_create_authorizer_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -53,7 +53,7 @@ pub fn deser_header_create_authorizer_limit_exceeded_exception_retry_after_secon
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_authorizer_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_create_authorizer_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -63,7 +63,7 @@ pub fn deser_header_create_authorizer_too_many_requests_exception_retry_after_se
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_base_path_mapping_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_create_base_path_mapping_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -73,7 +73,7 @@ pub fn deser_header_create_base_path_mapping_limit_exceeded_exception_retry_afte
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_base_path_mapping_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_create_base_path_mapping_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -83,7 +83,7 @@ pub fn deser_header_create_base_path_mapping_too_many_requests_exception_retry_a
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_deployment_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_create_deployment_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -93,7 +93,7 @@ pub fn deser_header_create_deployment_limit_exceeded_exception_retry_after_secon
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_deployment_service_unavailable_exception_retry_after_seconds(
+pub(crate) fn deser_header_create_deployment_service_unavailable_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -103,7 +103,7 @@ pub fn deser_header_create_deployment_service_unavailable_exception_retry_after_
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_deployment_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_create_deployment_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -113,7 +113,7 @@ pub fn deser_header_create_deployment_too_many_requests_exception_retry_after_se
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_documentation_part_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_create_documentation_part_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -123,7 +123,7 @@ pub fn deser_header_create_documentation_part_limit_exceeded_exception_retry_aft
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_documentation_part_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_create_documentation_part_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -133,7 +133,7 @@ pub fn deser_header_create_documentation_part_too_many_requests_exception_retry_
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_documentation_version_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_create_documentation_version_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -143,7 +143,7 @@ pub fn deser_header_create_documentation_version_limit_exceeded_exception_retry_
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_documentation_version_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_create_documentation_version_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -153,7 +153,7 @@ pub fn deser_header_create_documentation_version_too_many_requests_exception_ret
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_domain_name_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_create_domain_name_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -163,7 +163,7 @@ pub fn deser_header_create_domain_name_limit_exceeded_exception_retry_after_seco
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_domain_name_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_create_domain_name_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -173,7 +173,7 @@ pub fn deser_header_create_domain_name_too_many_requests_exception_retry_after_s
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_model_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_create_model_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -183,7 +183,7 @@ pub fn deser_header_create_model_limit_exceeded_exception_retry_after_seconds(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_model_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_create_model_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -193,7 +193,7 @@ pub fn deser_header_create_model_too_many_requests_exception_retry_after_seconds
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_request_validator_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_create_request_validator_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -203,7 +203,7 @@ pub fn deser_header_create_request_validator_limit_exceeded_exception_retry_afte
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_request_validator_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_create_request_validator_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -213,7 +213,7 @@ pub fn deser_header_create_request_validator_too_many_requests_exception_retry_a
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_resource_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_create_resource_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -223,7 +223,7 @@ pub fn deser_header_create_resource_limit_exceeded_exception_retry_after_seconds
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_resource_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_create_resource_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -233,7 +233,7 @@ pub fn deser_header_create_resource_too_many_requests_exception_retry_after_seco
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_rest_api_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_create_rest_api_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -243,7 +243,7 @@ pub fn deser_header_create_rest_api_limit_exceeded_exception_retry_after_seconds
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_rest_api_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_create_rest_api_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -253,7 +253,7 @@ pub fn deser_header_create_rest_api_too_many_requests_exception_retry_after_seco
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_stage_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_create_stage_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -263,7 +263,7 @@ pub fn deser_header_create_stage_limit_exceeded_exception_retry_after_seconds(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_stage_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_create_stage_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -273,7 +273,7 @@ pub fn deser_header_create_stage_too_many_requests_exception_retry_after_seconds
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_usage_plan_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_create_usage_plan_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -283,7 +283,7 @@ pub fn deser_header_create_usage_plan_limit_exceeded_exception_retry_after_secon
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_usage_plan_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_create_usage_plan_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -293,7 +293,7 @@ pub fn deser_header_create_usage_plan_too_many_requests_exception_retry_after_se
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_usage_plan_key_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_create_usage_plan_key_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -303,7 +303,7 @@ pub fn deser_header_create_usage_plan_key_limit_exceeded_exception_retry_after_s
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_usage_plan_key_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_create_usage_plan_key_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -313,7 +313,7 @@ pub fn deser_header_create_usage_plan_key_too_many_requests_exception_retry_afte
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_vpc_link_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_create_vpc_link_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -323,7 +323,7 @@ pub fn deser_header_create_vpc_link_limit_exceeded_exception_retry_after_seconds
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_vpc_link_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_create_vpc_link_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -333,7 +333,7 @@ pub fn deser_header_create_vpc_link_too_many_requests_exception_retry_after_seco
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_delete_api_key_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_delete_api_key_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -343,7 +343,7 @@ pub fn deser_header_delete_api_key_too_many_requests_exception_retry_after_secon
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_delete_authorizer_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_delete_authorizer_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -353,7 +353,7 @@ pub fn deser_header_delete_authorizer_too_many_requests_exception_retry_after_se
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_delete_base_path_mapping_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_delete_base_path_mapping_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -363,7 +363,7 @@ pub fn deser_header_delete_base_path_mapping_too_many_requests_exception_retry_a
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_delete_client_certificate_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_delete_client_certificate_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -373,7 +373,7 @@ pub fn deser_header_delete_client_certificate_too_many_requests_exception_retry_
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_delete_deployment_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_delete_deployment_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -383,7 +383,7 @@ pub fn deser_header_delete_deployment_limit_exceeded_exception_retry_after_secon
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_delete_deployment_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_delete_deployment_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -393,7 +393,7 @@ pub fn deser_header_delete_deployment_too_many_requests_exception_retry_after_se
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_delete_documentation_part_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_delete_documentation_part_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -403,7 +403,7 @@ pub fn deser_header_delete_documentation_part_too_many_requests_exception_retry_
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_delete_documentation_version_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_delete_documentation_version_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -413,7 +413,7 @@ pub fn deser_header_delete_documentation_version_too_many_requests_exception_ret
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_delete_domain_name_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_delete_domain_name_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -423,7 +423,7 @@ pub fn deser_header_delete_domain_name_too_many_requests_exception_retry_after_s
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_delete_gateway_response_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_delete_gateway_response_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -433,7 +433,7 @@ pub fn deser_header_delete_gateway_response_too_many_requests_exception_retry_af
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_delete_integration_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_delete_integration_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -443,7 +443,7 @@ pub fn deser_header_delete_integration_too_many_requests_exception_retry_after_s
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_delete_integration_response_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_delete_integration_response_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -453,7 +453,7 @@ pub fn deser_header_delete_integration_response_too_many_requests_exception_retr
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_delete_method_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_delete_method_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -463,7 +463,7 @@ pub fn deser_header_delete_method_too_many_requests_exception_retry_after_second
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_delete_method_response_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_delete_method_response_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -473,7 +473,7 @@ pub fn deser_header_delete_method_response_too_many_requests_exception_retry_aft
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_delete_model_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_delete_model_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -483,7 +483,7 @@ pub fn deser_header_delete_model_too_many_requests_exception_retry_after_seconds
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_delete_request_validator_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_delete_request_validator_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -493,7 +493,7 @@ pub fn deser_header_delete_request_validator_too_many_requests_exception_retry_a
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_delete_resource_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_delete_resource_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -503,7 +503,7 @@ pub fn deser_header_delete_resource_too_many_requests_exception_retry_after_seco
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_delete_rest_api_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_delete_rest_api_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -513,7 +513,7 @@ pub fn deser_header_delete_rest_api_too_many_requests_exception_retry_after_seco
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_delete_stage_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_delete_stage_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -523,7 +523,7 @@ pub fn deser_header_delete_stage_limit_exceeded_exception_retry_after_seconds(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_delete_stage_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_delete_stage_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -533,7 +533,7 @@ pub fn deser_header_delete_stage_too_many_requests_exception_retry_after_seconds
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_delete_usage_plan_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_delete_usage_plan_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -543,7 +543,7 @@ pub fn deser_header_delete_usage_plan_too_many_requests_exception_retry_after_se
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_delete_usage_plan_key_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_delete_usage_plan_key_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -553,7 +553,7 @@ pub fn deser_header_delete_usage_plan_key_too_many_requests_exception_retry_afte
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_delete_vpc_link_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_delete_vpc_link_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -563,7 +563,7 @@ pub fn deser_header_delete_vpc_link_too_many_requests_exception_retry_after_seco
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_flush_stage_authorizers_cache_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_flush_stage_authorizers_cache_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -573,7 +573,7 @@ pub fn deser_header_flush_stage_authorizers_cache_limit_exceeded_exception_retry
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_flush_stage_authorizers_cache_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_flush_stage_authorizers_cache_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -583,7 +583,7 @@ pub fn deser_header_flush_stage_authorizers_cache_too_many_requests_exception_re
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_flush_stage_cache_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_flush_stage_cache_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -593,7 +593,7 @@ pub fn deser_header_flush_stage_cache_limit_exceeded_exception_retry_after_secon
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_flush_stage_cache_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_flush_stage_cache_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -603,7 +603,7 @@ pub fn deser_header_flush_stage_cache_too_many_requests_exception_retry_after_se
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_generate_client_certificate_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_generate_client_certificate_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -613,7 +613,7 @@ pub fn deser_header_generate_client_certificate_limit_exceeded_exception_retry_a
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_generate_client_certificate_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_generate_client_certificate_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -623,7 +623,7 @@ pub fn deser_header_generate_client_certificate_too_many_requests_exception_retr
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_account_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_account_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -633,7 +633,7 @@ pub fn deser_header_get_account_too_many_requests_exception_retry_after_seconds(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_api_key_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_api_key_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -643,7 +643,7 @@ pub fn deser_header_get_api_key_too_many_requests_exception_retry_after_seconds(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_api_keys_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_api_keys_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -653,7 +653,7 @@ pub fn deser_header_get_api_keys_too_many_requests_exception_retry_after_seconds
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_authorizer_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_authorizer_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -663,7 +663,7 @@ pub fn deser_header_get_authorizer_too_many_requests_exception_retry_after_secon
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_authorizers_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_authorizers_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -673,7 +673,7 @@ pub fn deser_header_get_authorizers_too_many_requests_exception_retry_after_seco
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_base_path_mapping_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_base_path_mapping_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -683,7 +683,7 @@ pub fn deser_header_get_base_path_mapping_too_many_requests_exception_retry_afte
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_base_path_mappings_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_base_path_mappings_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -693,7 +693,7 @@ pub fn deser_header_get_base_path_mappings_too_many_requests_exception_retry_aft
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_client_certificate_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_client_certificate_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -703,7 +703,7 @@ pub fn deser_header_get_client_certificate_too_many_requests_exception_retry_aft
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_client_certificates_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_client_certificates_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -713,7 +713,7 @@ pub fn deser_header_get_client_certificates_too_many_requests_exception_retry_af
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_deployment_service_unavailable_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_deployment_service_unavailable_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -723,7 +723,7 @@ pub fn deser_header_get_deployment_service_unavailable_exception_retry_after_sec
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_deployment_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_deployment_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -733,7 +733,7 @@ pub fn deser_header_get_deployment_too_many_requests_exception_retry_after_secon
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_deployments_service_unavailable_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_deployments_service_unavailable_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -743,7 +743,7 @@ pub fn deser_header_get_deployments_service_unavailable_exception_retry_after_se
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_deployments_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_deployments_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -753,7 +753,7 @@ pub fn deser_header_get_deployments_too_many_requests_exception_retry_after_seco
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_documentation_part_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_documentation_part_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -763,7 +763,7 @@ pub fn deser_header_get_documentation_part_too_many_requests_exception_retry_aft
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_documentation_parts_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_documentation_parts_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -773,7 +773,7 @@ pub fn deser_header_get_documentation_parts_too_many_requests_exception_retry_af
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_documentation_version_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_documentation_version_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -783,7 +783,7 @@ pub fn deser_header_get_documentation_version_too_many_requests_exception_retry_
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_documentation_versions_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_documentation_versions_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -793,7 +793,7 @@ pub fn deser_header_get_documentation_versions_too_many_requests_exception_retry
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_domain_name_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_domain_name_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -803,7 +803,7 @@ pub fn deser_header_get_domain_name_too_many_requests_exception_retry_after_seco
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_domain_names_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_domain_names_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -813,7 +813,7 @@ pub fn deser_header_get_domain_names_too_many_requests_exception_retry_after_sec
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_export_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_export_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -823,7 +823,7 @@ pub fn deser_header_get_export_limit_exceeded_exception_retry_after_seconds(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_export_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_export_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -842,7 +842,7 @@ pub fn deser_payload_get_export_get_export_output_body(
         .transpose()
 }
 
-pub fn deser_header_get_export_get_export_output_content_disposition(
+pub(crate) fn deser_header_get_export_get_export_output_content_disposition(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -852,7 +852,7 @@ pub fn deser_header_get_export_get_export_output_content_disposition(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_export_get_export_output_content_type(
+pub(crate) fn deser_header_get_export_get_export_output_content_type(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -862,7 +862,7 @@ pub fn deser_header_get_export_get_export_output_content_type(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_gateway_response_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_gateway_response_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -872,7 +872,7 @@ pub fn deser_header_get_gateway_response_too_many_requests_exception_retry_after
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_gateway_responses_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_gateway_responses_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -882,7 +882,7 @@ pub fn deser_header_get_gateway_responses_too_many_requests_exception_retry_afte
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_integration_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_integration_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -892,7 +892,7 @@ pub fn deser_header_get_integration_too_many_requests_exception_retry_after_seco
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_integration_response_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_integration_response_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -902,7 +902,7 @@ pub fn deser_header_get_integration_response_too_many_requests_exception_retry_a
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_method_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_method_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -912,7 +912,7 @@ pub fn deser_header_get_method_too_many_requests_exception_retry_after_seconds(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_method_response_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_method_response_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -922,7 +922,7 @@ pub fn deser_header_get_method_response_too_many_requests_exception_retry_after_
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_model_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_model_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -932,7 +932,7 @@ pub fn deser_header_get_model_too_many_requests_exception_retry_after_seconds(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_models_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_models_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -942,7 +942,7 @@ pub fn deser_header_get_models_too_many_requests_exception_retry_after_seconds(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_model_template_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_model_template_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -952,7 +952,7 @@ pub fn deser_header_get_model_template_too_many_requests_exception_retry_after_s
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_request_validator_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_request_validator_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -962,7 +962,7 @@ pub fn deser_header_get_request_validator_too_many_requests_exception_retry_afte
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_request_validators_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_request_validators_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -972,7 +972,7 @@ pub fn deser_header_get_request_validators_too_many_requests_exception_retry_aft
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_resource_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_resource_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -982,7 +982,7 @@ pub fn deser_header_get_resource_too_many_requests_exception_retry_after_seconds
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_resources_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_resources_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -992,7 +992,7 @@ pub fn deser_header_get_resources_too_many_requests_exception_retry_after_second
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_rest_api_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_rest_api_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1002,7 +1002,7 @@ pub fn deser_header_get_rest_api_too_many_requests_exception_retry_after_seconds
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_rest_apis_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_rest_apis_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1012,7 +1012,7 @@ pub fn deser_header_get_rest_apis_too_many_requests_exception_retry_after_second
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_sdk_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_sdk_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1022,7 +1022,7 @@ pub fn deser_header_get_sdk_limit_exceeded_exception_retry_after_seconds(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_sdk_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_sdk_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1040,7 +1040,7 @@ pub fn deser_payload_get_sdk_get_sdk_output_body(
         .transpose()
 }
 
-pub fn deser_header_get_sdk_get_sdk_output_content_disposition(
+pub(crate) fn deser_header_get_sdk_get_sdk_output_content_disposition(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1050,7 +1050,7 @@ pub fn deser_header_get_sdk_get_sdk_output_content_disposition(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_sdk_get_sdk_output_content_type(
+pub(crate) fn deser_header_get_sdk_get_sdk_output_content_type(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1060,7 +1060,7 @@ pub fn deser_header_get_sdk_get_sdk_output_content_type(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_sdk_type_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_sdk_type_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1070,7 +1070,7 @@ pub fn deser_header_get_sdk_type_too_many_requests_exception_retry_after_seconds
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_sdk_types_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_sdk_types_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1080,7 +1080,7 @@ pub fn deser_header_get_sdk_types_too_many_requests_exception_retry_after_second
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_stage_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_stage_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1090,7 +1090,7 @@ pub fn deser_header_get_stage_limit_exceeded_exception_retry_after_seconds(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_stage_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_stage_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1100,7 +1100,7 @@ pub fn deser_header_get_stage_too_many_requests_exception_retry_after_seconds(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_stages_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_stages_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1110,7 +1110,7 @@ pub fn deser_header_get_stages_limit_exceeded_exception_retry_after_seconds(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_stages_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_stages_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1120,7 +1120,7 @@ pub fn deser_header_get_stages_too_many_requests_exception_retry_after_seconds(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_tags_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_tags_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1130,7 +1130,7 @@ pub fn deser_header_get_tags_too_many_requests_exception_retry_after_seconds(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_usage_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_usage_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1140,7 +1140,7 @@ pub fn deser_header_get_usage_too_many_requests_exception_retry_after_seconds(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_usage_plan_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_usage_plan_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1150,7 +1150,7 @@ pub fn deser_header_get_usage_plan_too_many_requests_exception_retry_after_secon
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_usage_plan_key_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_usage_plan_key_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1160,7 +1160,7 @@ pub fn deser_header_get_usage_plan_key_too_many_requests_exception_retry_after_s
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_usage_plan_keys_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_usage_plan_keys_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1170,7 +1170,7 @@ pub fn deser_header_get_usage_plan_keys_too_many_requests_exception_retry_after_
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_usage_plans_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_usage_plans_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1180,7 +1180,7 @@ pub fn deser_header_get_usage_plans_too_many_requests_exception_retry_after_seco
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_vpc_link_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_vpc_link_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1190,7 +1190,7 @@ pub fn deser_header_get_vpc_link_too_many_requests_exception_retry_after_seconds
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_vpc_links_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_get_vpc_links_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1200,7 +1200,7 @@ pub fn deser_header_get_vpc_links_too_many_requests_exception_retry_after_second
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_import_api_keys_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_import_api_keys_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1210,7 +1210,7 @@ pub fn deser_header_import_api_keys_limit_exceeded_exception_retry_after_seconds
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_import_api_keys_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_import_api_keys_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1220,7 +1220,7 @@ pub fn deser_header_import_api_keys_too_many_requests_exception_retry_after_seco
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_import_documentation_parts_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_import_documentation_parts_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1230,7 +1230,7 @@ pub fn deser_header_import_documentation_parts_limit_exceeded_exception_retry_af
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_import_documentation_parts_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_import_documentation_parts_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1240,7 +1240,7 @@ pub fn deser_header_import_documentation_parts_too_many_requests_exception_retry
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_import_rest_api_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_import_rest_api_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1250,7 +1250,7 @@ pub fn deser_header_import_rest_api_limit_exceeded_exception_retry_after_seconds
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_import_rest_api_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_import_rest_api_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1260,7 +1260,7 @@ pub fn deser_header_import_rest_api_too_many_requests_exception_retry_after_seco
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_gateway_response_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_put_gateway_response_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1270,7 +1270,7 @@ pub fn deser_header_put_gateway_response_limit_exceeded_exception_retry_after_se
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_gateway_response_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_put_gateway_response_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1280,7 +1280,7 @@ pub fn deser_header_put_gateway_response_too_many_requests_exception_retry_after
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_integration_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_put_integration_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1290,7 +1290,7 @@ pub fn deser_header_put_integration_limit_exceeded_exception_retry_after_seconds
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_integration_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_put_integration_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1300,7 +1300,7 @@ pub fn deser_header_put_integration_too_many_requests_exception_retry_after_seco
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_integration_response_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_put_integration_response_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1310,7 +1310,7 @@ pub fn deser_header_put_integration_response_limit_exceeded_exception_retry_afte
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_integration_response_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_put_integration_response_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1320,7 +1320,7 @@ pub fn deser_header_put_integration_response_too_many_requests_exception_retry_a
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_method_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_put_method_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1330,7 +1330,7 @@ pub fn deser_header_put_method_limit_exceeded_exception_retry_after_seconds(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_method_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_put_method_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1340,7 +1340,7 @@ pub fn deser_header_put_method_too_many_requests_exception_retry_after_seconds(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_method_response_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_put_method_response_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1350,7 +1350,7 @@ pub fn deser_header_put_method_response_limit_exceeded_exception_retry_after_sec
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_method_response_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_put_method_response_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1360,7 +1360,7 @@ pub fn deser_header_put_method_response_too_many_requests_exception_retry_after_
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_rest_api_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_put_rest_api_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1370,7 +1370,7 @@ pub fn deser_header_put_rest_api_limit_exceeded_exception_retry_after_seconds(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_put_rest_api_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_put_rest_api_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1380,7 +1380,7 @@ pub fn deser_header_put_rest_api_too_many_requests_exception_retry_after_seconds
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_tag_resource_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_tag_resource_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1390,7 +1390,7 @@ pub fn deser_header_tag_resource_limit_exceeded_exception_retry_after_seconds(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_tag_resource_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_tag_resource_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1400,7 +1400,7 @@ pub fn deser_header_tag_resource_too_many_requests_exception_retry_after_seconds
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_test_invoke_authorizer_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_test_invoke_authorizer_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1410,7 +1410,7 @@ pub fn deser_header_test_invoke_authorizer_too_many_requests_exception_retry_aft
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_test_invoke_method_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_test_invoke_method_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1420,7 +1420,7 @@ pub fn deser_header_test_invoke_method_too_many_requests_exception_retry_after_s
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_untag_resource_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_untag_resource_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1430,7 +1430,7 @@ pub fn deser_header_untag_resource_limit_exceeded_exception_retry_after_seconds(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_untag_resource_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_untag_resource_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1440,7 +1440,7 @@ pub fn deser_header_untag_resource_too_many_requests_exception_retry_after_secon
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_account_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_account_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1450,7 +1450,7 @@ pub fn deser_header_update_account_limit_exceeded_exception_retry_after_seconds(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_account_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_account_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1460,7 +1460,7 @@ pub fn deser_header_update_account_too_many_requests_exception_retry_after_secon
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_api_key_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_api_key_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1470,7 +1470,7 @@ pub fn deser_header_update_api_key_limit_exceeded_exception_retry_after_seconds(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_api_key_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_api_key_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1480,7 +1480,7 @@ pub fn deser_header_update_api_key_too_many_requests_exception_retry_after_secon
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_authorizer_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_authorizer_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1490,7 +1490,7 @@ pub fn deser_header_update_authorizer_limit_exceeded_exception_retry_after_secon
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_authorizer_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_authorizer_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1500,7 +1500,7 @@ pub fn deser_header_update_authorizer_too_many_requests_exception_retry_after_se
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_base_path_mapping_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_base_path_mapping_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1510,7 +1510,7 @@ pub fn deser_header_update_base_path_mapping_limit_exceeded_exception_retry_afte
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_base_path_mapping_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_base_path_mapping_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1520,7 +1520,7 @@ pub fn deser_header_update_base_path_mapping_too_many_requests_exception_retry_a
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_client_certificate_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_client_certificate_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1530,7 +1530,7 @@ pub fn deser_header_update_client_certificate_limit_exceeded_exception_retry_aft
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_client_certificate_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_client_certificate_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1540,7 +1540,7 @@ pub fn deser_header_update_client_certificate_too_many_requests_exception_retry_
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_deployment_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_deployment_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1550,7 +1550,7 @@ pub fn deser_header_update_deployment_limit_exceeded_exception_retry_after_secon
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_deployment_service_unavailable_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_deployment_service_unavailable_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1560,7 +1560,7 @@ pub fn deser_header_update_deployment_service_unavailable_exception_retry_after_
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_deployment_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_deployment_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1570,7 +1570,7 @@ pub fn deser_header_update_deployment_too_many_requests_exception_retry_after_se
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_documentation_part_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_documentation_part_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1580,7 +1580,7 @@ pub fn deser_header_update_documentation_part_limit_exceeded_exception_retry_aft
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_documentation_part_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_documentation_part_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1590,7 +1590,7 @@ pub fn deser_header_update_documentation_part_too_many_requests_exception_retry_
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_documentation_version_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_documentation_version_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1600,7 +1600,7 @@ pub fn deser_header_update_documentation_version_limit_exceeded_exception_retry_
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_documentation_version_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_documentation_version_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1610,7 +1610,7 @@ pub fn deser_header_update_documentation_version_too_many_requests_exception_ret
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_domain_name_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_domain_name_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1620,7 +1620,7 @@ pub fn deser_header_update_domain_name_limit_exceeded_exception_retry_after_seco
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_domain_name_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_domain_name_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1630,7 +1630,7 @@ pub fn deser_header_update_domain_name_too_many_requests_exception_retry_after_s
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_gateway_response_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_gateway_response_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1640,7 +1640,7 @@ pub fn deser_header_update_gateway_response_limit_exceeded_exception_retry_after
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_gateway_response_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_gateway_response_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1650,7 +1650,7 @@ pub fn deser_header_update_gateway_response_too_many_requests_exception_retry_af
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_integration_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_integration_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1660,7 +1660,7 @@ pub fn deser_header_update_integration_limit_exceeded_exception_retry_after_seco
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_integration_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_integration_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1670,7 +1670,7 @@ pub fn deser_header_update_integration_too_many_requests_exception_retry_after_s
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_integration_response_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_integration_response_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1680,7 +1680,7 @@ pub fn deser_header_update_integration_response_limit_exceeded_exception_retry_a
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_integration_response_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_integration_response_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1690,7 +1690,7 @@ pub fn deser_header_update_integration_response_too_many_requests_exception_retr
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_method_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_method_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1700,7 +1700,7 @@ pub fn deser_header_update_method_too_many_requests_exception_retry_after_second
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_method_response_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_method_response_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1710,7 +1710,7 @@ pub fn deser_header_update_method_response_limit_exceeded_exception_retry_after_
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_method_response_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_method_response_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1720,7 +1720,7 @@ pub fn deser_header_update_method_response_too_many_requests_exception_retry_aft
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_model_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_model_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1730,7 +1730,7 @@ pub fn deser_header_update_model_limit_exceeded_exception_retry_after_seconds(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_model_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_model_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1740,7 +1740,7 @@ pub fn deser_header_update_model_too_many_requests_exception_retry_after_seconds
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_request_validator_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_request_validator_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1750,7 +1750,7 @@ pub fn deser_header_update_request_validator_limit_exceeded_exception_retry_afte
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_request_validator_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_request_validator_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1760,7 +1760,7 @@ pub fn deser_header_update_request_validator_too_many_requests_exception_retry_a
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_resource_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_resource_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1770,7 +1770,7 @@ pub fn deser_header_update_resource_too_many_requests_exception_retry_after_seco
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_rest_api_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_rest_api_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1780,7 +1780,7 @@ pub fn deser_header_update_rest_api_limit_exceeded_exception_retry_after_seconds
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_rest_api_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_rest_api_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1790,7 +1790,7 @@ pub fn deser_header_update_rest_api_too_many_requests_exception_retry_after_seco
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_stage_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_stage_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1800,7 +1800,7 @@ pub fn deser_header_update_stage_limit_exceeded_exception_retry_after_seconds(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_stage_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_stage_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1810,7 +1810,7 @@ pub fn deser_header_update_stage_too_many_requests_exception_retry_after_seconds
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_usage_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_usage_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1820,7 +1820,7 @@ pub fn deser_header_update_usage_limit_exceeded_exception_retry_after_seconds(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_usage_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_usage_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1830,7 +1830,7 @@ pub fn deser_header_update_usage_too_many_requests_exception_retry_after_seconds
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_usage_plan_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_usage_plan_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1840,7 +1840,7 @@ pub fn deser_header_update_usage_plan_limit_exceeded_exception_retry_after_secon
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_usage_plan_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_usage_plan_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1850,7 +1850,7 @@ pub fn deser_header_update_usage_plan_too_many_requests_exception_retry_after_se
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_vpc_link_limit_exceeded_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_vpc_link_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1860,7 +1860,7 @@ pub fn deser_header_update_vpc_link_limit_exceeded_exception_retry_after_seconds
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_vpc_link_too_many_requests_exception_retry_after_seconds(
+pub(crate) fn deser_header_update_vpc_link_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,

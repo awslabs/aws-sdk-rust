@@ -131,7 +131,7 @@ pub fn serialize_structure_crate_input_create_app_block_input(
         let mut object_28 = object.key("Tags").start_object();
         for (key_29, value_30) in var_27 {
             {
-                object_28.key(key_29).string(value_30.as_str());
+                object_28.key(key_29.as_str()).string(value_30.as_str());
             }
         }
         object_28.finish();
@@ -191,7 +191,7 @@ pub fn serialize_structure_crate_input_create_application_input(
         let mut object_47 = object.key("Tags").start_object();
         for (key_48, value_49) in var_46 {
             {
-                object_47.key(key_48).string(value_49.as_str());
+                object_47.key(key_48.as_str()).string(value_49.as_str());
             }
         }
         object_47.finish();
@@ -320,7 +320,7 @@ pub fn serialize_structure_crate_input_create_fleet_input(
         let mut object_81 = object.key("Tags").start_object();
         for (key_82, value_83) in var_80 {
             {
-                object_81.key(key_82).string(value_83.as_str());
+                object_81.key(key_82.as_str()).string(value_83.as_str());
             }
         }
         object_81.finish();
@@ -411,7 +411,7 @@ pub fn serialize_structure_crate_input_create_image_builder_input(
         let mut object_108 = object.key("Tags").start_object();
         for (key_109, value_110) in var_107 {
             {
-                object_108.key(key_109).string(value_110.as_str());
+                object_108.key(key_109.as_str()).string(value_110.as_str());
             }
         }
         object_108.finish();
@@ -508,7 +508,7 @@ pub fn serialize_structure_crate_input_create_stack_input(
         let mut object_133 = object.key("Tags").start_object();
         for (key_134, value_135) in var_132 {
             {
-                object_133.key(key_134).string(value_135.as_str());
+                object_133.key(key_134.as_str()).string(value_135.as_str());
             }
         }
         object_133.finish();
@@ -595,7 +595,7 @@ pub fn serialize_structure_crate_input_create_updated_image_input(
         let mut object_156 = object.key("newImageTags").start_object();
         for (key_157, value_158) in var_155 {
             {
-                object_156.key(key_157).string(value_158.as_str());
+                object_156.key(key_157.as_str()).string(value_158.as_str());
             }
         }
         object_156.finish();
@@ -1262,7 +1262,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_272 = object.key("Tags").start_object();
         for (key_273, value_274) in var_271 {
             {
-                object_272.key(key_273).string(value_274.as_str());
+                object_272.key(key_273.as_str()).string(value_274.as_str());
             }
         }
         object_272.finish();

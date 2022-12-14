@@ -153,7 +153,7 @@ pub fn serialize_structure_crate_input_decrypt_input(
         let mut object_35 = object.key("EncryptionContext").start_object();
         for (key_36, value_37) in var_34 {
             {
-                object_35.key(key_36).string(value_37.as_str());
+                object_35.key(key_36.as_str()).string(value_37.as_str());
             }
         }
         object_35.finish();
@@ -313,7 +313,7 @@ pub fn serialize_structure_crate_input_encrypt_input(
         let mut object_62 = object.key("EncryptionContext").start_object();
         for (key_63, value_64) in var_61 {
             {
-                object_62.key(key_63).string(value_64.as_str());
+                object_62.key(key_63.as_str()).string(value_64.as_str());
             }
         }
         object_62.finish();
@@ -344,7 +344,7 @@ pub fn serialize_structure_crate_input_generate_data_key_input(
         let mut object_71 = object.key("EncryptionContext").start_object();
         for (key_72, value_73) in var_70 {
             {
-                object_71.key(key_72).string(value_73.as_str());
+                object_71.key(key_72.as_str()).string(value_73.as_str());
             }
         }
         object_71.finish();
@@ -378,7 +378,7 @@ pub fn serialize_structure_crate_input_generate_data_key_pair_input(
         let mut object_80 = object.key("EncryptionContext").start_object();
         for (key_81, value_82) in var_79 {
             {
-                object_80.key(key_81).string(value_82.as_str());
+                object_80.key(key_81.as_str()).string(value_82.as_str());
             }
         }
         object_80.finish();
@@ -409,7 +409,7 @@ pub fn serialize_structure_crate_input_generate_data_key_pair_without_plaintext_
         let mut object_89 = object.key("EncryptionContext").start_object();
         for (key_90, value_91) in var_88 {
             {
-                object_89.key(key_90).string(value_91.as_str());
+                object_89.key(key_90.as_str()).string(value_91.as_str());
             }
         }
         object_89.finish();
@@ -443,7 +443,7 @@ pub fn serialize_structure_crate_input_generate_data_key_without_plaintext_input
         let mut object_99 = object.key("EncryptionContext").start_object();
         for (key_100, value_101) in var_98 {
             {
-                object_99.key(key_100).string(value_101.as_str());
+                object_99.key(key_100.as_str()).string(value_101.as_str());
             }
         }
         object_99.finish();
@@ -749,7 +749,7 @@ pub fn serialize_structure_crate_input_re_encrypt_input(
         let mut object_154 = object.key("SourceEncryptionContext").start_object();
         for (key_155, value_156) in var_153 {
             {
-                object_154.key(key_155).string(value_156.as_str());
+                object_154.key(key_155.as_str()).string(value_156.as_str());
             }
         }
         object_154.finish();
@@ -764,7 +764,7 @@ pub fn serialize_structure_crate_input_re_encrypt_input(
         let mut object_160 = object.key("DestinationEncryptionContext").start_object();
         for (key_161, value_162) in var_159 {
             {
-                object_160.key(key_161).string(value_162.as_str());
+                object_160.key(key_161.as_str()).string(value_162.as_str());
             }
         }
         object_160.finish();
@@ -1074,7 +1074,7 @@ pub fn serialize_structure_crate_model_grant_constraints(
         let mut object_225 = object.key("EncryptionContextSubset").start_object();
         for (key_226, value_227) in var_224 {
             {
-                object_225.key(key_226).string(value_227.as_str());
+                object_225.key(key_226.as_str()).string(value_227.as_str());
             }
         }
         object_225.finish();
@@ -1083,7 +1083,7 @@ pub fn serialize_structure_crate_model_grant_constraints(
         let mut object_229 = object.key("EncryptionContextEquals").start_object();
         for (key_230, value_231) in var_228 {
             {
-                object_229.key(key_230).string(value_231.as_str());
+                object_229.key(key_230.as_str()).string(value_231.as_str());
             }
         }
         object_229.finish();

@@ -4,7 +4,7 @@ pub fn add_headers_add_facet_to_object(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_1) = &input.directory_arn {
-        let formatted_2 = AsRef::<str>::as_ref(inner_1);
+        let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value =
@@ -28,7 +28,7 @@ pub fn add_headers_apply_schema(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_3) = &input.directory_arn {
-        let formatted_4 = AsRef::<str>::as_ref(inner_3);
+        let formatted_4 = inner_3.as_str();
         if !formatted_4.is_empty() {
             let header_value = formatted_4;
             let header_value =
@@ -52,7 +52,7 @@ pub fn add_headers_attach_object(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_5) = &input.directory_arn {
-        let formatted_6 = AsRef::<str>::as_ref(inner_5);
+        let formatted_6 = inner_5.as_str();
         if !formatted_6.is_empty() {
             let header_value = formatted_6;
             let header_value =
@@ -76,7 +76,7 @@ pub fn add_headers_attach_policy(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_7) = &input.directory_arn {
-        let formatted_8 = AsRef::<str>::as_ref(inner_7);
+        let formatted_8 = inner_7.as_str();
         if !formatted_8.is_empty() {
             let header_value = formatted_8;
             let header_value =
@@ -100,7 +100,7 @@ pub fn add_headers_attach_to_index(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_9) = &input.directory_arn {
-        let formatted_10 = AsRef::<str>::as_ref(inner_9);
+        let formatted_10 = inner_9.as_str();
         if !formatted_10.is_empty() {
             let header_value = formatted_10;
             let header_value =
@@ -124,7 +124,7 @@ pub fn add_headers_attach_typed_link(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_11) = &input.directory_arn {
-        let formatted_12 = AsRef::<str>::as_ref(inner_11);
+        let formatted_12 = inner_11.as_str();
         if !formatted_12.is_empty() {
             let header_value = formatted_12;
             let header_value =
@@ -148,7 +148,7 @@ pub fn add_headers_batch_read(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_13) = &input.directory_arn {
-        let formatted_14 = AsRef::<str>::as_ref(inner_13);
+        let formatted_14 = inner_13.as_str();
         if !formatted_14.is_empty() {
             let header_value = formatted_14;
             let header_value =
@@ -165,7 +165,7 @@ pub fn add_headers_batch_read(
         }
     }
     if let Some(inner_15) = &input.consistency_level {
-        let formatted_16 = AsRef::<str>::as_ref(inner_15);
+        let formatted_16 = inner_15.as_str();
         if !formatted_16.is_empty() {
             let header_value = formatted_16;
             let header_value =
@@ -189,7 +189,7 @@ pub fn add_headers_batch_write(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_17) = &input.directory_arn {
-        let formatted_18 = AsRef::<str>::as_ref(inner_17);
+        let formatted_18 = inner_17.as_str();
         if !formatted_18.is_empty() {
             let header_value = formatted_18;
             let header_value =
@@ -213,7 +213,7 @@ pub fn add_headers_create_directory(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_19) = &input.schema_arn {
-        let formatted_20 = AsRef::<str>::as_ref(inner_19);
+        let formatted_20 = inner_19.as_str();
         if !formatted_20.is_empty() {
             let header_value = formatted_20;
             let header_value =
@@ -237,7 +237,7 @@ pub fn add_headers_create_facet(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_21) = &input.schema_arn {
-        let formatted_22 = AsRef::<str>::as_ref(inner_21);
+        let formatted_22 = inner_21.as_str();
         if !formatted_22.is_empty() {
             let header_value = formatted_22;
             let header_value =
@@ -261,7 +261,7 @@ pub fn add_headers_create_index(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_23) = &input.directory_arn {
-        let formatted_24 = AsRef::<str>::as_ref(inner_23);
+        let formatted_24 = inner_23.as_str();
         if !formatted_24.is_empty() {
             let header_value = formatted_24;
             let header_value =
@@ -285,7 +285,7 @@ pub fn add_headers_create_object(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_25) = &input.directory_arn {
-        let formatted_26 = AsRef::<str>::as_ref(inner_25);
+        let formatted_26 = inner_25.as_str();
         if !formatted_26.is_empty() {
             let header_value = formatted_26;
             let header_value =
@@ -309,7 +309,7 @@ pub fn add_headers_create_typed_link_facet(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_27) = &input.schema_arn {
-        let formatted_28 = AsRef::<str>::as_ref(inner_27);
+        let formatted_28 = inner_27.as_str();
         if !formatted_28.is_empty() {
             let header_value = formatted_28;
             let header_value =
@@ -333,7 +333,7 @@ pub fn add_headers_delete_directory(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_29) = &input.directory_arn {
-        let formatted_30 = AsRef::<str>::as_ref(inner_29);
+        let formatted_30 = inner_29.as_str();
         if !formatted_30.is_empty() {
             let header_value = formatted_30;
             let header_value =
@@ -357,7 +357,7 @@ pub fn add_headers_delete_facet(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_31) = &input.schema_arn {
-        let formatted_32 = AsRef::<str>::as_ref(inner_31);
+        let formatted_32 = inner_31.as_str();
         if !formatted_32.is_empty() {
             let header_value = formatted_32;
             let header_value =
@@ -381,7 +381,7 @@ pub fn add_headers_delete_object(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_33) = &input.directory_arn {
-        let formatted_34 = AsRef::<str>::as_ref(inner_33);
+        let formatted_34 = inner_33.as_str();
         if !formatted_34.is_empty() {
             let header_value = formatted_34;
             let header_value =
@@ -405,7 +405,7 @@ pub fn add_headers_delete_schema(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_35) = &input.schema_arn {
-        let formatted_36 = AsRef::<str>::as_ref(inner_35);
+        let formatted_36 = inner_35.as_str();
         if !formatted_36.is_empty() {
             let header_value = formatted_36;
             let header_value =
@@ -429,7 +429,7 @@ pub fn add_headers_delete_typed_link_facet(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_37) = &input.schema_arn {
-        let formatted_38 = AsRef::<str>::as_ref(inner_37);
+        let formatted_38 = inner_37.as_str();
         if !formatted_38.is_empty() {
             let header_value = formatted_38;
             let header_value =
@@ -453,7 +453,7 @@ pub fn add_headers_detach_from_index(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_39) = &input.directory_arn {
-        let formatted_40 = AsRef::<str>::as_ref(inner_39);
+        let formatted_40 = inner_39.as_str();
         if !formatted_40.is_empty() {
             let header_value = formatted_40;
             let header_value =
@@ -477,7 +477,7 @@ pub fn add_headers_detach_object(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_41) = &input.directory_arn {
-        let formatted_42 = AsRef::<str>::as_ref(inner_41);
+        let formatted_42 = inner_41.as_str();
         if !formatted_42.is_empty() {
             let header_value = formatted_42;
             let header_value =
@@ -501,7 +501,7 @@ pub fn add_headers_detach_policy(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_43) = &input.directory_arn {
-        let formatted_44 = AsRef::<str>::as_ref(inner_43);
+        let formatted_44 = inner_43.as_str();
         if !formatted_44.is_empty() {
             let header_value = formatted_44;
             let header_value =
@@ -525,7 +525,7 @@ pub fn add_headers_detach_typed_link(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_45) = &input.directory_arn {
-        let formatted_46 = AsRef::<str>::as_ref(inner_45);
+        let formatted_46 = inner_45.as_str();
         if !formatted_46.is_empty() {
             let header_value = formatted_46;
             let header_value =
@@ -549,7 +549,7 @@ pub fn add_headers_disable_directory(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_47) = &input.directory_arn {
-        let formatted_48 = AsRef::<str>::as_ref(inner_47);
+        let formatted_48 = inner_47.as_str();
         if !formatted_48.is_empty() {
             let header_value = formatted_48;
             let header_value =
@@ -573,7 +573,7 @@ pub fn add_headers_enable_directory(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_49) = &input.directory_arn {
-        let formatted_50 = AsRef::<str>::as_ref(inner_49);
+        let formatted_50 = inner_49.as_str();
         if !formatted_50.is_empty() {
             let header_value = formatted_50;
             let header_value =
@@ -597,7 +597,7 @@ pub fn add_headers_get_directory(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_51) = &input.directory_arn {
-        let formatted_52 = AsRef::<str>::as_ref(inner_51);
+        let formatted_52 = inner_51.as_str();
         if !formatted_52.is_empty() {
             let header_value = formatted_52;
             let header_value =
@@ -621,7 +621,7 @@ pub fn add_headers_get_facet(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_53) = &input.schema_arn {
-        let formatted_54 = AsRef::<str>::as_ref(inner_53);
+        let formatted_54 = inner_53.as_str();
         if !formatted_54.is_empty() {
             let header_value = formatted_54;
             let header_value =
@@ -645,7 +645,7 @@ pub fn add_headers_get_link_attributes(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_55) = &input.directory_arn {
-        let formatted_56 = AsRef::<str>::as_ref(inner_55);
+        let formatted_56 = inner_55.as_str();
         if !formatted_56.is_empty() {
             let header_value = formatted_56;
             let header_value =
@@ -669,7 +669,7 @@ pub fn add_headers_get_object_attributes(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_57) = &input.directory_arn {
-        let formatted_58 = AsRef::<str>::as_ref(inner_57);
+        let formatted_58 = inner_57.as_str();
         if !formatted_58.is_empty() {
             let header_value = formatted_58;
             let header_value =
@@ -686,7 +686,7 @@ pub fn add_headers_get_object_attributes(
         }
     }
     if let Some(inner_59) = &input.consistency_level {
-        let formatted_60 = AsRef::<str>::as_ref(inner_59);
+        let formatted_60 = inner_59.as_str();
         if !formatted_60.is_empty() {
             let header_value = formatted_60;
             let header_value =
@@ -710,7 +710,7 @@ pub fn add_headers_get_object_information(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_61) = &input.directory_arn {
-        let formatted_62 = AsRef::<str>::as_ref(inner_61);
+        let formatted_62 = inner_61.as_str();
         if !formatted_62.is_empty() {
             let header_value = formatted_62;
             let header_value =
@@ -727,7 +727,7 @@ pub fn add_headers_get_object_information(
         }
     }
     if let Some(inner_63) = &input.consistency_level {
-        let formatted_64 = AsRef::<str>::as_ref(inner_63);
+        let formatted_64 = inner_63.as_str();
         if !formatted_64.is_empty() {
             let header_value = formatted_64;
             let header_value =
@@ -751,7 +751,7 @@ pub fn add_headers_get_schema_as_json(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_65) = &input.schema_arn {
-        let formatted_66 = AsRef::<str>::as_ref(inner_65);
+        let formatted_66 = inner_65.as_str();
         if !formatted_66.is_empty() {
             let header_value = formatted_66;
             let header_value =
@@ -775,7 +775,7 @@ pub fn add_headers_get_typed_link_facet_information(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_67) = &input.schema_arn {
-        let formatted_68 = AsRef::<str>::as_ref(inner_67);
+        let formatted_68 = inner_67.as_str();
         if !formatted_68.is_empty() {
             let header_value = formatted_68;
             let header_value =
@@ -799,7 +799,7 @@ pub fn add_headers_list_attached_indices(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_69) = &input.directory_arn {
-        let formatted_70 = AsRef::<str>::as_ref(inner_69);
+        let formatted_70 = inner_69.as_str();
         if !formatted_70.is_empty() {
             let header_value = formatted_70;
             let header_value =
@@ -816,7 +816,7 @@ pub fn add_headers_list_attached_indices(
         }
     }
     if let Some(inner_71) = &input.consistency_level {
-        let formatted_72 = AsRef::<str>::as_ref(inner_71);
+        let formatted_72 = inner_71.as_str();
         if !formatted_72.is_empty() {
             let header_value = formatted_72;
             let header_value =
@@ -840,7 +840,7 @@ pub fn add_headers_list_facet_attributes(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_73) = &input.schema_arn {
-        let formatted_74 = AsRef::<str>::as_ref(inner_73);
+        let formatted_74 = inner_73.as_str();
         if !formatted_74.is_empty() {
             let header_value = formatted_74;
             let header_value =
@@ -864,7 +864,7 @@ pub fn add_headers_list_facet_names(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_75) = &input.schema_arn {
-        let formatted_76 = AsRef::<str>::as_ref(inner_75);
+        let formatted_76 = inner_75.as_str();
         if !formatted_76.is_empty() {
             let header_value = formatted_76;
             let header_value =
@@ -888,7 +888,7 @@ pub fn add_headers_list_incoming_typed_links(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_77) = &input.directory_arn {
-        let formatted_78 = AsRef::<str>::as_ref(inner_77);
+        let formatted_78 = inner_77.as_str();
         if !formatted_78.is_empty() {
             let header_value = formatted_78;
             let header_value =
@@ -912,7 +912,7 @@ pub fn add_headers_list_index(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_79) = &input.directory_arn {
-        let formatted_80 = AsRef::<str>::as_ref(inner_79);
+        let formatted_80 = inner_79.as_str();
         if !formatted_80.is_empty() {
             let header_value = formatted_80;
             let header_value =
@@ -929,7 +929,7 @@ pub fn add_headers_list_index(
         }
     }
     if let Some(inner_81) = &input.consistency_level {
-        let formatted_82 = AsRef::<str>::as_ref(inner_81);
+        let formatted_82 = inner_81.as_str();
         if !formatted_82.is_empty() {
             let header_value = formatted_82;
             let header_value =
@@ -953,7 +953,7 @@ pub fn add_headers_list_object_attributes(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_83) = &input.directory_arn {
-        let formatted_84 = AsRef::<str>::as_ref(inner_83);
+        let formatted_84 = inner_83.as_str();
         if !formatted_84.is_empty() {
             let header_value = formatted_84;
             let header_value =
@@ -970,7 +970,7 @@ pub fn add_headers_list_object_attributes(
         }
     }
     if let Some(inner_85) = &input.consistency_level {
-        let formatted_86 = AsRef::<str>::as_ref(inner_85);
+        let formatted_86 = inner_85.as_str();
         if !formatted_86.is_empty() {
             let header_value = formatted_86;
             let header_value =
@@ -994,7 +994,7 @@ pub fn add_headers_list_object_children(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_87) = &input.directory_arn {
-        let formatted_88 = AsRef::<str>::as_ref(inner_87);
+        let formatted_88 = inner_87.as_str();
         if !formatted_88.is_empty() {
             let header_value = formatted_88;
             let header_value =
@@ -1011,7 +1011,7 @@ pub fn add_headers_list_object_children(
         }
     }
     if let Some(inner_89) = &input.consistency_level {
-        let formatted_90 = AsRef::<str>::as_ref(inner_89);
+        let formatted_90 = inner_89.as_str();
         if !formatted_90.is_empty() {
             let header_value = formatted_90;
             let header_value =
@@ -1035,7 +1035,7 @@ pub fn add_headers_list_object_parent_paths(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_91) = &input.directory_arn {
-        let formatted_92 = AsRef::<str>::as_ref(inner_91);
+        let formatted_92 = inner_91.as_str();
         if !formatted_92.is_empty() {
             let header_value = formatted_92;
             let header_value =
@@ -1059,7 +1059,7 @@ pub fn add_headers_list_object_parents(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_93) = &input.directory_arn {
-        let formatted_94 = AsRef::<str>::as_ref(inner_93);
+        let formatted_94 = inner_93.as_str();
         if !formatted_94.is_empty() {
             let header_value = formatted_94;
             let header_value =
@@ -1076,7 +1076,7 @@ pub fn add_headers_list_object_parents(
         }
     }
     if let Some(inner_95) = &input.consistency_level {
-        let formatted_96 = AsRef::<str>::as_ref(inner_95);
+        let formatted_96 = inner_95.as_str();
         if !formatted_96.is_empty() {
             let header_value = formatted_96;
             let header_value =
@@ -1100,7 +1100,7 @@ pub fn add_headers_list_object_policies(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_97) = &input.directory_arn {
-        let formatted_98 = AsRef::<str>::as_ref(inner_97);
+        let formatted_98 = inner_97.as_str();
         if !formatted_98.is_empty() {
             let header_value = formatted_98;
             let header_value =
@@ -1117,7 +1117,7 @@ pub fn add_headers_list_object_policies(
         }
     }
     if let Some(inner_99) = &input.consistency_level {
-        let formatted_100 = AsRef::<str>::as_ref(inner_99);
+        let formatted_100 = inner_99.as_str();
         if !formatted_100.is_empty() {
             let header_value = formatted_100;
             let header_value =
@@ -1141,7 +1141,7 @@ pub fn add_headers_list_outgoing_typed_links(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_101) = &input.directory_arn {
-        let formatted_102 = AsRef::<str>::as_ref(inner_101);
+        let formatted_102 = inner_101.as_str();
         if !formatted_102.is_empty() {
             let header_value = formatted_102;
             let header_value =
@@ -1165,7 +1165,7 @@ pub fn add_headers_list_policy_attachments(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_103) = &input.directory_arn {
-        let formatted_104 = AsRef::<str>::as_ref(inner_103);
+        let formatted_104 = inner_103.as_str();
         if !formatted_104.is_empty() {
             let header_value = formatted_104;
             let header_value =
@@ -1182,7 +1182,7 @@ pub fn add_headers_list_policy_attachments(
         }
     }
     if let Some(inner_105) = &input.consistency_level {
-        let formatted_106 = AsRef::<str>::as_ref(inner_105);
+        let formatted_106 = inner_105.as_str();
         if !formatted_106.is_empty() {
             let header_value = formatted_106;
             let header_value =
@@ -1206,7 +1206,7 @@ pub fn add_headers_list_typed_link_facet_attributes(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_107) = &input.schema_arn {
-        let formatted_108 = AsRef::<str>::as_ref(inner_107);
+        let formatted_108 = inner_107.as_str();
         if !formatted_108.is_empty() {
             let header_value = formatted_108;
             let header_value =
@@ -1230,7 +1230,7 @@ pub fn add_headers_list_typed_link_facet_names(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_109) = &input.schema_arn {
-        let formatted_110 = AsRef::<str>::as_ref(inner_109);
+        let formatted_110 = inner_109.as_str();
         if !formatted_110.is_empty() {
             let header_value = formatted_110;
             let header_value =
@@ -1254,7 +1254,7 @@ pub fn add_headers_lookup_policy(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_111) = &input.directory_arn {
-        let formatted_112 = AsRef::<str>::as_ref(inner_111);
+        let formatted_112 = inner_111.as_str();
         if !formatted_112.is_empty() {
             let header_value = formatted_112;
             let header_value =
@@ -1278,7 +1278,7 @@ pub fn add_headers_publish_schema(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_113) = &input.development_schema_arn {
-        let formatted_114 = AsRef::<str>::as_ref(inner_113);
+        let formatted_114 = inner_113.as_str();
         if !formatted_114.is_empty() {
             let header_value = formatted_114;
             let header_value =
@@ -1302,7 +1302,7 @@ pub fn add_headers_put_schema_from_json(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_115) = &input.schema_arn {
-        let formatted_116 = AsRef::<str>::as_ref(inner_115);
+        let formatted_116 = inner_115.as_str();
         if !formatted_116.is_empty() {
             let header_value = formatted_116;
             let header_value =
@@ -1326,7 +1326,7 @@ pub fn add_headers_remove_facet_from_object(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_117) = &input.directory_arn {
-        let formatted_118 = AsRef::<str>::as_ref(inner_117);
+        let formatted_118 = inner_117.as_str();
         if !formatted_118.is_empty() {
             let header_value = formatted_118;
             let header_value =
@@ -1350,7 +1350,7 @@ pub fn add_headers_update_facet(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_119) = &input.schema_arn {
-        let formatted_120 = AsRef::<str>::as_ref(inner_119);
+        let formatted_120 = inner_119.as_str();
         if !formatted_120.is_empty() {
             let header_value = formatted_120;
             let header_value =
@@ -1374,7 +1374,7 @@ pub fn add_headers_update_link_attributes(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_121) = &input.directory_arn {
-        let formatted_122 = AsRef::<str>::as_ref(inner_121);
+        let formatted_122 = inner_121.as_str();
         if !formatted_122.is_empty() {
             let header_value = formatted_122;
             let header_value =
@@ -1398,7 +1398,7 @@ pub fn add_headers_update_object_attributes(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_123) = &input.directory_arn {
-        let formatted_124 = AsRef::<str>::as_ref(inner_123);
+        let formatted_124 = inner_123.as_str();
         if !formatted_124.is_empty() {
             let header_value = formatted_124;
             let header_value =
@@ -1422,7 +1422,7 @@ pub fn add_headers_update_schema(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_125) = &input.schema_arn {
-        let formatted_126 = AsRef::<str>::as_ref(inner_125);
+        let formatted_126 = inner_125.as_str();
         if !formatted_126.is_empty() {
             let header_value = formatted_126;
             let header_value =
@@ -1446,7 +1446,7 @@ pub fn add_headers_update_typed_link_facet(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_127) = &input.schema_arn {
-        let formatted_128 = AsRef::<str>::as_ref(inner_127);
+        let formatted_128 = inner_127.as_str();
         if !formatted_128.is_empty() {
             let header_value = formatted_128;
             let header_value =

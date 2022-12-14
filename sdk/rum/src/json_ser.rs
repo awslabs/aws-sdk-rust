@@ -24,7 +24,7 @@ pub fn serialize_structure_crate_input_create_app_monitor_input(
         let mut object_7 = object.key("Tags").start_object();
         for (key_8, value_9) in var_6 {
             {
-                object_7.key(key_8).string(value_9.as_str());
+                object_7.key(key_8.as_str()).string(value_9.as_str());
             }
         }
         object_7.finish();
@@ -112,7 +112,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_27 = object.key("Tags").start_object();
         for (key_28, value_29) in var_26 {
             {
-                object_27.key(key_28).string(value_29.as_str());
+                object_27.key(key_28.as_str()).string(value_29.as_str());
             }
         }
         object_27.finish();

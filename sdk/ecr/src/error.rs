@@ -17,7 +17,7 @@ impl std::fmt::Debug for UploadNotFoundException {
 }
 impl UploadNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -82,7 +82,7 @@ impl std::fmt::Debug for ServerException {
 }
 impl ServerException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -147,7 +147,7 @@ impl std::fmt::Debug for RepositoryNotFoundException {
 }
 impl RepositoryNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -212,7 +212,7 @@ impl std::fmt::Debug for LimitExceededException {
 }
 impl LimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -287,7 +287,7 @@ impl std::fmt::Debug for KmsException {
 }
 impl KmsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -364,7 +364,7 @@ impl std::fmt::Debug for InvalidParameterException {
 }
 impl InvalidParameterException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -463,7 +463,7 @@ impl std::fmt::Debug for InvalidLayerPartException {
 }
 impl InvalidLayerPartException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -579,7 +579,7 @@ impl std::fmt::Debug for TooManyTagsException {
 }
 impl TooManyTagsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -644,7 +644,7 @@ impl std::fmt::Debug for InvalidTagParameterException {
 }
 impl InvalidTagParameterException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -709,7 +709,7 @@ impl std::fmt::Debug for LifecyclePolicyPreviewInProgressException {
 }
 impl LifecyclePolicyPreviewInProgressException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -774,7 +774,7 @@ impl std::fmt::Debug for LifecyclePolicyNotFoundException {
 }
 impl LifecyclePolicyNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -839,7 +839,7 @@ impl std::fmt::Debug for ValidationException {
 }
 impl ValidationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -904,7 +904,7 @@ impl std::fmt::Debug for UnsupportedImageTypeException {
 }
 impl UnsupportedImageTypeException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -969,7 +969,7 @@ impl std::fmt::Debug for ImageNotFoundException {
 }
 impl ImageNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1034,7 +1034,7 @@ impl std::fmt::Debug for ReferencedImagesNotFoundException {
 }
 impl ReferencedImagesNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1099,7 +1099,7 @@ impl std::fmt::Debug for LayersNotFoundException {
 }
 impl LayersNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1164,7 +1164,7 @@ impl std::fmt::Debug for ImageTagAlreadyExistsException {
 }
 impl ImageTagAlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1229,7 +1229,7 @@ impl std::fmt::Debug for ImageDigestDoesNotMatchException {
 }
 impl ImageDigestDoesNotMatchException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1294,7 +1294,7 @@ impl std::fmt::Debug for ImageAlreadyExistsException {
 }
 impl ImageAlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1359,7 +1359,7 @@ impl std::fmt::Debug for RepositoryPolicyNotFoundException {
 }
 impl RepositoryPolicyNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1424,7 +1424,7 @@ impl std::fmt::Debug for RegistryPolicyNotFoundException {
 }
 impl RegistryPolicyNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1489,7 +1489,7 @@ impl std::fmt::Debug for LifecyclePolicyPreviewNotFoundException {
 }
 impl LifecyclePolicyPreviewNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1554,7 +1554,7 @@ impl std::fmt::Debug for LayerInaccessibleException {
 }
 impl LayerInaccessibleException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1619,7 +1619,7 @@ impl std::fmt::Debug for PullThroughCacheRuleNotFoundException {
 }
 impl PullThroughCacheRuleNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1684,7 +1684,7 @@ impl std::fmt::Debug for ScanNotFoundException {
 }
 impl ScanNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1749,7 +1749,7 @@ impl std::fmt::Debug for RepositoryNotEmptyException {
 }
 impl RepositoryNotEmptyException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1814,7 +1814,7 @@ impl std::fmt::Debug for RepositoryAlreadyExistsException {
 }
 impl RepositoryAlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1879,7 +1879,7 @@ impl std::fmt::Debug for UnsupportedUpstreamRegistryException {
 }
 impl UnsupportedUpstreamRegistryException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1944,7 +1944,7 @@ impl std::fmt::Debug for PullThroughCacheRuleAlreadyExistsException {
 }
 impl PullThroughCacheRuleAlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2009,7 +2009,7 @@ impl std::fmt::Debug for LayerPartTooSmallException {
 }
 impl LayerPartTooSmallException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2074,7 +2074,7 @@ impl std::fmt::Debug for LayerAlreadyExistsException {
 }
 impl LayerAlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2139,7 +2139,7 @@ impl std::fmt::Debug for InvalidLayerException {
 }
 impl InvalidLayerException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2204,7 +2204,7 @@ impl std::fmt::Debug for EmptyUploadException {
 }
 impl EmptyUploadException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }

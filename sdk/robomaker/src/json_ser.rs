@@ -114,7 +114,7 @@ pub fn serialize_structure_crate_input_create_deployment_job_input(
         let mut object_21 = object.key("tags").start_object();
         for (key_22, value_23) in var_20 {
             {
-                object_21.key(key_22).string(value_23.as_str());
+                object_21.key(key_22.as_str()).string(value_23.as_str());
             }
         }
         object_21.finish();
@@ -133,7 +133,7 @@ pub fn serialize_structure_crate_input_create_fleet_input(
         let mut object_26 = object.key("tags").start_object();
         for (key_27, value_28) in var_25 {
             {
-                object_26.key(key_27).string(value_28.as_str());
+                object_26.key(key_27.as_str()).string(value_28.as_str());
             }
         }
         object_26.finish();
@@ -158,7 +158,7 @@ pub fn serialize_structure_crate_input_create_robot_input(
         let mut object_33 = object.key("tags").start_object();
         for (key_34, value_35) in var_32 {
             {
-                object_33.key(key_34).string(value_35.as_str());
+                object_33.key(key_34.as_str()).string(value_35.as_str());
             }
         }
         object_33.finish();
@@ -204,7 +204,7 @@ pub fn serialize_structure_crate_input_create_robot_application_input(
         let mut object_46 = object.key("tags").start_object();
         for (key_47, value_48) in var_45 {
             {
-                object_46.key(key_47).string(value_48.as_str());
+                object_46.key(key_47.as_str()).string(value_48.as_str());
             }
         }
         object_46.finish();
@@ -288,7 +288,7 @@ pub fn serialize_structure_crate_input_create_simulation_application_input(
         let mut object_69 = object.key("tags").start_object();
         for (key_70, value_71) in var_68 {
             {
-                object_69.key(key_70).string(value_71.as_str());
+                object_69.key(key_70.as_str()).string(value_71.as_str());
             }
         }
         object_69.finish();
@@ -401,7 +401,7 @@ pub fn serialize_structure_crate_input_create_simulation_job_input(
         let mut object_100 = object.key("tags").start_object();
         for (key_101, value_102) in var_99 {
             {
-                object_100.key(key_101).string(value_102.as_str());
+                object_100.key(key_101.as_str()).string(value_102.as_str());
             }
         }
         object_100.finish();
@@ -433,7 +433,7 @@ pub fn serialize_structure_crate_input_create_world_export_job_input(
         let mut object_110 = object.key("tags").start_object();
         for (key_111, value_112) in var_109 {
             {
-                object_110.key(key_111).string(value_112.as_str());
+                object_110.key(key_111.as_str()).string(value_112.as_str());
             }
         }
         object_110.finish();
@@ -461,7 +461,7 @@ pub fn serialize_structure_crate_input_create_world_generation_job_input(
         let mut object_118 = object.key("tags").start_object();
         for (key_119, value_120) in var_117 {
             {
-                object_118.key(key_119).string(value_120.as_str());
+                object_118.key(key_119.as_str()).string(value_120.as_str());
             }
         }
         object_118.finish();
@@ -478,7 +478,7 @@ pub fn serialize_structure_crate_input_create_world_generation_job_input(
         let mut object_125 = object.key("worldTags").start_object();
         for (key_126, value_127) in var_124 {
             {
-                object_125.key(key_126).string(value_127.as_str());
+                object_125.key(key_126.as_str()).string(value_127.as_str());
             }
         }
         object_125.finish();
@@ -500,7 +500,7 @@ pub fn serialize_structure_crate_input_create_world_template_input(
         let mut object_131 = object.key("tags").start_object();
         for (key_132, value_133) in var_130 {
             {
-                object_131.key(key_132).string(value_133.as_str());
+                object_131.key(key_132.as_str()).string(value_133.as_str());
             }
         }
         object_131.finish();
@@ -1062,7 +1062,7 @@ pub fn serialize_structure_crate_input_start_simulation_job_batch_input(
         let mut object_236 = object.key("tags").start_object();
         for (key_237, value_238) in var_235 {
             {
-                object_236.key(key_237).string(value_238.as_str());
+                object_236.key(key_237.as_str()).string(value_238.as_str());
             }
         }
         object_236.finish();
@@ -1091,7 +1091,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_242 = object.key("tags").start_object();
         for (key_243, value_244) in var_241 {
             {
-                object_242.key(key_243).string(value_244.as_str());
+                object_242.key(key_243.as_str()).string(value_244.as_str());
             }
         }
         object_242.finish();
@@ -1707,7 +1707,7 @@ pub fn serialize_structure_crate_model_simulation_job_request(
         let mut object_378 = object.key("tags").start_object();
         for (key_379, value_380) in var_377 {
             {
-                object_378.key(key_379).string(value_380.as_str());
+                object_378.key(key_379.as_str()).string(value_380.as_str());
             }
         }
         object_378.finish();
@@ -1735,7 +1735,7 @@ pub fn serialize_structure_crate_model_deployment_launch_config(
         let mut object_386 = object.key("environmentVariables").start_object();
         for (key_387, value_388) in var_385 {
             {
-                object_386.key(key_387).string(value_388.as_str());
+                object_386.key(key_387.as_str()).string(value_388.as_str());
             }
         }
         object_386.finish();
@@ -1773,7 +1773,7 @@ pub fn serialize_structure_crate_model_launch_config(
         let mut object_395 = object.key("environmentVariables").start_object();
         for (key_396, value_397) in var_394 {
             {
-                object_395.key(key_396).string(value_397.as_str());
+                object_395.key(key_396.as_str()).string(value_397.as_str());
             }
         }
         object_395.finish();

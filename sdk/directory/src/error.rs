@@ -27,7 +27,7 @@ impl std::fmt::Debug for UnsupportedOperationException {
 }
 impl UnsupportedOperationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -114,7 +114,7 @@ impl std::fmt::Debug for ServiceException {
 }
 impl ServiceException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -201,7 +201,7 @@ impl std::fmt::Debug for InvalidParameterException {
 }
 impl InvalidParameterException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -288,7 +288,7 @@ impl std::fmt::Debug for EntityDoesNotExistException {
 }
 impl EntityDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -375,7 +375,7 @@ impl std::fmt::Debug for ClientException {
 }
 impl ClientException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -462,7 +462,7 @@ impl std::fmt::Debug for UnsupportedSettingsException {
 }
 impl UnsupportedSettingsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -549,7 +549,7 @@ impl std::fmt::Debug for IncompatibleSettingsException {
 }
 impl IncompatibleSettingsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -636,7 +636,7 @@ impl std::fmt::Debug for DirectoryUnavailableException {
 }
 impl DirectoryUnavailableException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -723,7 +723,7 @@ impl std::fmt::Debug for DirectoryDoesNotExistException {
 }
 impl DirectoryDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -810,7 +810,7 @@ impl std::fmt::Debug for DomainControllerLimitExceededException {
 }
 impl DomainControllerLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -897,7 +897,7 @@ impl std::fmt::Debug for InvalidTargetException {
 }
 impl InvalidTargetException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -984,7 +984,7 @@ impl std::fmt::Debug for DirectoryNotSharedException {
 }
 impl DirectoryNotSharedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1071,7 +1071,7 @@ impl std::fmt::Debug for SnapshotLimitExceededException {
 }
 impl SnapshotLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1158,7 +1158,7 @@ impl std::fmt::Debug for ShareLimitExceededException {
 }
 impl ShareLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1245,7 +1245,7 @@ impl std::fmt::Debug for OrganizationsException {
 }
 impl OrganizationsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1332,7 +1332,7 @@ impl std::fmt::Debug for DirectoryAlreadySharedException {
 }
 impl DirectoryAlreadySharedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1419,7 +1419,7 @@ impl std::fmt::Debug for AccessDeniedException {
 }
 impl AccessDeniedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1506,7 +1506,7 @@ impl std::fmt::Debug for UserDoesNotExistException {
 }
 impl UserDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1593,7 +1593,7 @@ impl std::fmt::Debug for InvalidPasswordException {
 }
 impl InvalidPasswordException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1680,7 +1680,7 @@ impl std::fmt::Debug for InvalidCertificateException {
 }
 impl InvalidCertificateException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1767,7 +1767,7 @@ impl std::fmt::Debug for CertificateLimitExceededException {
 }
 impl CertificateLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1854,7 +1854,7 @@ impl std::fmt::Debug for CertificateAlreadyExistsException {
 }
 impl CertificateAlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1941,7 +1941,7 @@ impl std::fmt::Debug for InvalidNextTokenException {
 }
 impl InvalidNextTokenException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2028,7 +2028,7 @@ impl std::fmt::Debug for InsufficientPermissionsException {
 }
 impl InsufficientPermissionsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2115,7 +2115,7 @@ impl std::fmt::Debug for AuthenticationFailedException {
 }
 impl AuthenticationFailedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2202,7 +2202,7 @@ impl std::fmt::Debug for EntityAlreadyExistsException {
 }
 impl EntityAlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2289,7 +2289,7 @@ impl std::fmt::Debug for NoAvailableCertificateException {
 }
 impl NoAvailableCertificateException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2376,7 +2376,7 @@ impl std::fmt::Debug for InvalidLdapsStatusException {
 }
 impl InvalidLdapsStatusException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2466,7 +2466,7 @@ impl std::fmt::Debug for InvalidClientAuthStatusException {
 }
 impl InvalidClientAuthStatusException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2553,7 +2553,7 @@ impl std::fmt::Debug for CertificateDoesNotExistException {
 }
 impl CertificateDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2640,7 +2640,7 @@ impl std::fmt::Debug for CertificateInUseException {
 }
 impl CertificateInUseException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2727,7 +2727,7 @@ impl std::fmt::Debug for DirectoryLimitExceededException {
 }
 impl DirectoryLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2814,7 +2814,7 @@ impl std::fmt::Debug for TagLimitExceededException {
 }
 impl TagLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2901,7 +2901,7 @@ impl std::fmt::Debug for RegionLimitExceededException {
 }
 impl RegionLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2988,7 +2988,7 @@ impl std::fmt::Debug for DirectoryAlreadyInRegionException {
 }
 impl DirectoryAlreadyInRegionException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3075,7 +3075,7 @@ impl std::fmt::Debug for IpRouteLimitExceededException {
 }
 impl IpRouteLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }

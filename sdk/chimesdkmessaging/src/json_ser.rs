@@ -254,7 +254,7 @@ pub fn serialize_structure_crate_input_send_channel_message_input(
         let mut object_55 = object.key("MessageAttributes").start_object();
         for (key_56, value_57) in var_54 {
             {
-                let mut object_58 = object_55.key(key_56).start_object();
+                let mut object_58 = object_55.key(key_56.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_message_attribute_value(
                     &mut object_58,
                     value_57,
@@ -418,7 +418,7 @@ pub fn serialize_structure_crate_model_channel_message_callback(
         let mut object_92 = object.key("MessageAttributes").start_object();
         for (key_93, value_94) in var_91 {
             {
-                let mut object_95 = object_92.key(key_93).start_object();
+                let mut object_95 = object_92.key(key_93.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_message_attribute_value(
                     &mut object_95,
                     value_94,

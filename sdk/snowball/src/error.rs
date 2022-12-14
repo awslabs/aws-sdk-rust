@@ -27,7 +27,7 @@ impl std::fmt::Debug for InvalidResourceException {
 }
 impl InvalidResourceException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -107,7 +107,7 @@ impl std::fmt::Debug for InvalidJobStateException {
 }
 impl InvalidJobStateException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -172,7 +172,7 @@ impl std::fmt::Debug for KmsRequestFailedException {
 }
 impl KmsRequestFailedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -237,7 +237,7 @@ impl std::fmt::Debug for InvalidInputCombinationException {
 }
 impl InvalidInputCombinationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -302,7 +302,7 @@ impl std::fmt::Debug for Ec2RequestFailedException {
 }
 impl Ec2RequestFailedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -367,7 +367,7 @@ impl std::fmt::Debug for ClusterLimitExceededException {
 }
 impl ClusterLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -432,7 +432,7 @@ impl std::fmt::Debug for InvalidNextTokenException {
 }
 impl InvalidNextTokenException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -507,7 +507,7 @@ impl std::fmt::Debug for ConflictException {
 }
 impl ConflictException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -587,7 +587,7 @@ impl std::fmt::Debug for ReturnShippingLabelAlreadyExistsException {
 }
 impl ReturnShippingLabelAlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -652,7 +652,7 @@ impl std::fmt::Debug for UnsupportedAddressException {
 }
 impl UnsupportedAddressException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -717,7 +717,7 @@ impl std::fmt::Debug for InvalidAddressException {
 }
 impl InvalidAddressException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }

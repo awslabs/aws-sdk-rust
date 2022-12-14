@@ -407,7 +407,7 @@ pub fn serialize_structure_crate_input_poll_for_jobs_input(
         let mut object_76 = object.key("queryParam").start_object();
         for (key_77, value_78) in var_75 {
             {
-                object_76.key(key_77).string(value_78.as_str());
+                object_76.key(key_77.as_str()).string(value_78.as_str());
             }
         }
         object_76.finish();
@@ -520,7 +520,7 @@ pub fn serialize_structure_crate_input_put_job_success_result_input(
         let mut object_103 = object.key("outputVariables").start_object();
         for (key_104, value_105) in var_102 {
             {
-                object_103.key(key_104).string(value_105.as_str());
+                object_103.key(key_104.as_str()).string(value_105.as_str());
             }
         }
         object_103.finish();
@@ -835,7 +835,7 @@ pub fn serialize_structure_crate_model_pipeline_declaration(
         let mut object_160 = object.key("artifactStores").start_object();
         for (key_161, value_162) in var_159 {
             {
-                let mut object_163 = object_160.key(key_161).start_object();
+                let mut object_163 = object_160.key(key_161.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_artifact_store(
                     &mut object_163,
                     value_162,
@@ -1354,7 +1354,7 @@ pub fn serialize_structure_crate_model_action_declaration(
         let mut object_260 = object.key("configuration").start_object();
         for (key_261, value_262) in var_259 {
             {
-                object_260.key(key_261).string(value_262.as_str());
+                object_260.key(key_261.as_str()).string(value_262.as_str());
             }
         }
         object_260.finish();

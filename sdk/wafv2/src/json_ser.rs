@@ -160,7 +160,7 @@ pub fn serialize_structure_crate_input_create_rule_group_input(
         let mut object_44 = object.key("CustomResponseBodies").start_object();
         for (key_45, value_46) in var_43 {
             {
-                let mut object_47 = object_44.key(key_45).start_object();
+                let mut object_47 = object_44.key(key_45.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_custom_response_body(
                     &mut object_47,
                     value_46,
@@ -222,7 +222,7 @@ pub fn serialize_structure_crate_input_create_web_acl_input(
         let mut object_64 = object.key("CustomResponseBodies").start_object();
         for (key_65, value_66) in var_63 {
             {
-                let mut object_67 = object_64.key(key_65).start_object();
+                let mut object_67 = object_64.key(key_65.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_custom_response_body(
                     &mut object_67,
                     value_66,
@@ -813,7 +813,7 @@ pub fn serialize_structure_crate_input_put_managed_rule_set_versions_input(
         let mut object_170 = object.key("VersionsToPublish").start_object();
         for (key_171, value_172) in var_169 {
             {
-                let mut object_173 = object_170.key(key_171).start_object();
+                let mut object_173 = object_170.key(key_171.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_version_to_publish(
                     &mut object_173,
                     value_172,
@@ -1012,7 +1012,7 @@ pub fn serialize_structure_crate_input_update_rule_group_input(
         let mut object_220 = object.key("CustomResponseBodies").start_object();
         for (key_221, value_222) in var_219 {
             {
-                let mut object_223 = object_220.key(key_221).start_object();
+                let mut object_223 = object_220.key(key_221.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_custom_response_body(
                     &mut object_223,
                     value_222,
@@ -1072,7 +1072,7 @@ pub fn serialize_structure_crate_input_update_web_acl_input(
         let mut object_238 = object.key("CustomResponseBodies").start_object();
         for (key_239, value_240) in var_237 {
             {
-                let mut object_241 = object_238.key(key_239).start_object();
+                let mut object_241 = object_238.key(key_239.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_custom_response_body(
                     &mut object_241,
                     value_240,

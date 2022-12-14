@@ -7,7 +7,7 @@ pub fn serialize_structure_crate_input_create_environment_input(
         let mut object_2 = object.key("AirflowConfigurationOptions").start_object();
         for (key_3, value_4) in var_1 {
             {
-                object_2.key(key_3).string(value_4.as_str());
+                object_2.key(key_3.as_str()).string(value_4.as_str());
             }
         }
         object_2.finish();
@@ -82,7 +82,7 @@ pub fn serialize_structure_crate_input_create_environment_input(
         let mut object_23 = object.key("Tags").start_object();
         for (key_24, value_25) in var_22 {
             {
-                object_23.key(key_24).string(value_25.as_str());
+                object_23.key(key_24.as_str()).string(value_25.as_str());
             }
         }
         object_23.finish();
@@ -127,7 +127,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_33 = object.key("Tags").start_object();
         for (key_34, value_35) in var_32 {
             {
-                object_33.key(key_34).string(value_35.as_str());
+                object_33.key(key_34.as_str()).string(value_35.as_str());
             }
         }
         object_33.finish();
@@ -143,7 +143,7 @@ pub fn serialize_structure_crate_input_update_environment_input(
         let mut object_37 = object.key("AirflowConfigurationOptions").start_object();
         for (key_38, value_39) in var_36 {
             {
-                object_37.key(key_38).string(value_39.as_str());
+                object_37.key(key_38.as_str()).string(value_39.as_str());
             }
         }
         object_37.finish();

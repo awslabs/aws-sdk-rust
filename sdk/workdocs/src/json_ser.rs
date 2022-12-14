@@ -60,7 +60,7 @@ pub fn serialize_structure_crate_input_create_custom_metadata_input(
         let mut object_12 = object.key("CustomMetadata").start_object();
         for (key_13, value_14) in var_11 {
             {
-                object_12.key(key_13).string(value_14.as_str());
+                object_12.key(key_13.as_str()).string(value_14.as_str());
             }
         }
         object_12.finish();

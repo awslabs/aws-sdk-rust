@@ -15,7 +15,7 @@ pub fn serialize_structure_crate_input_create_workflow_input(
         let mut object_4 = object.key("inputParameters").start_object();
         for (key_5, value_6) in var_3 {
             {
-                let mut object_7 = object_4.key(key_5).start_object();
+                let mut object_7 = object_4.key(key_5.as_str()).start_object();
                 crate::json_ser::serialize_union_crate_model_step_input(&mut object_7, value_6)?;
                 object_7.finish();
             }
@@ -38,7 +38,7 @@ pub fn serialize_structure_crate_input_create_workflow_input(
         let mut object_13 = object.key("tags").start_object();
         for (key_14, value_15) in var_12 {
             {
-                object_13.key(key_14).string(value_15.as_str());
+                object_13.key(key_14.as_str()).string(value_15.as_str());
             }
         }
         object_13.finish();
@@ -164,7 +164,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_47 = object.key("tags").start_object();
         for (key_48, value_49) in var_46 {
             {
-                object_47.key(key_48).string(value_49.as_str());
+                object_47.key(key_48.as_str()).string(value_49.as_str());
             }
         }
         object_47.finish();
@@ -183,7 +183,7 @@ pub fn serialize_structure_crate_input_update_workflow_input(
         let mut object_52 = object.key("inputParameters").start_object();
         for (key_53, value_54) in var_51 {
             {
-                let mut object_55 = object_52.key(key_53).start_object();
+                let mut object_55 = object_52.key(key_53.as_str()).start_object();
                 crate::json_ser::serialize_union_crate_model_step_input(&mut object_55, value_54)?;
                 object_55.finish();
             }
@@ -339,7 +339,7 @@ pub fn serialize_union_crate_model_step_input(
             let mut object_91 = object_7.key("mapOfStringValue").start_object();
             for (key_92, value_93) in inner {
                 {
-                    object_91.key(key_92).string(value_93.as_str());
+                    object_91.key(key_92.as_str()).string(value_93.as_str());
                 }
             }
             object_91.finish();

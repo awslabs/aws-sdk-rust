@@ -17,7 +17,7 @@ impl std::fmt::Debug for UnsupportedApiEndpointException {
 }
 impl UnsupportedApiEndpointException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -96,7 +96,7 @@ impl std::fmt::Debug for TooManyRequestsException {
 }
 impl TooManyRequestsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -173,7 +173,7 @@ impl std::fmt::Debug for ServiceException {
 }
 impl ServiceException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -238,7 +238,7 @@ impl std::fmt::Debug for PolicyNotFoundException {
 }
 impl PolicyNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -303,7 +303,7 @@ impl std::fmt::Debug for PolicyChangesInProgressException {
 }
 impl PolicyChangesInProgressException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -368,7 +368,7 @@ impl std::fmt::Debug for MalformedPolicyDocumentException {
 }
 impl MalformedPolicyDocumentException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -471,7 +471,7 @@ impl std::fmt::Debug for InvalidInputException {
 }
 impl InvalidInputException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -551,7 +551,7 @@ impl std::fmt::Debug for DuplicatePolicyException {
 }
 impl DuplicatePolicyException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -666,7 +666,7 @@ impl std::fmt::Debug for ConstraintViolationException {
 }
 impl ConstraintViolationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -746,7 +746,7 @@ impl std::fmt::Debug for ConcurrentModificationException {
 }
 impl ConcurrentModificationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -811,7 +811,7 @@ impl std::fmt::Debug for AwsOrganizationsNotInUseException {
 }
 impl AwsOrganizationsNotInUseException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -879,7 +879,7 @@ impl std::fmt::Debug for AccessDeniedException {
 }
 impl AccessDeniedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -944,7 +944,7 @@ impl std::fmt::Debug for OrganizationalUnitNotFoundException {
 }
 impl OrganizationalUnitNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1009,7 +1009,7 @@ impl std::fmt::Debug for DuplicateOrganizationalUnitException {
 }
 impl DuplicateOrganizationalUnitException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1074,7 +1074,7 @@ impl std::fmt::Debug for TargetNotFoundException {
 }
 impl TargetNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1139,7 +1139,7 @@ impl std::fmt::Debug for MasterCannotLeaveOrganizationException {
 }
 impl MasterCannotLeaveOrganizationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1204,7 +1204,7 @@ impl std::fmt::Debug for AccountNotFoundException {
 }
 impl AccountNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1269,7 +1269,7 @@ impl std::fmt::Debug for AccountAlreadyRegisteredException {
 }
 impl AccountAlreadyRegisteredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1334,7 +1334,7 @@ impl std::fmt::Debug for SourceParentNotFoundException {
 }
 impl SourceParentNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1399,7 +1399,7 @@ impl std::fmt::Debug for DuplicateAccountException {
 }
 impl DuplicateAccountException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1464,7 +1464,7 @@ impl std::fmt::Debug for DestinationParentNotFoundException {
 }
 impl DestinationParentNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1529,7 +1529,7 @@ impl std::fmt::Debug for ChildNotFoundException {
 }
 impl ChildNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1594,7 +1594,7 @@ impl std::fmt::Debug for ParentNotFoundException {
 }
 impl ParentNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1659,7 +1659,7 @@ impl std::fmt::Debug for AccountNotRegisteredException {
 }
 impl AccountNotRegisteredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1751,7 +1751,7 @@ impl std::fmt::Debug for HandshakeConstraintViolationException {
 }
 impl HandshakeConstraintViolationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1835,7 +1835,7 @@ impl std::fmt::Debug for FinalizingOrganizationException {
 }
 impl FinalizingOrganizationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1900,7 +1900,7 @@ impl std::fmt::Debug for DuplicateHandshakeException {
 }
 impl DuplicateHandshakeException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1965,7 +1965,7 @@ impl std::fmt::Debug for AccountOwnerNotVerifiedException {
 }
 impl AccountOwnerNotVerifiedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2030,7 +2030,7 @@ impl std::fmt::Debug for RootNotFoundException {
 }
 impl RootNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2095,7 +2095,7 @@ impl std::fmt::Debug for PolicyTypeNotAvailableForOrganizationException {
 }
 impl PolicyTypeNotAvailableForOrganizationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2161,7 +2161,7 @@ impl std::fmt::Debug for PolicyTypeAlreadyEnabledException {
 }
 impl PolicyTypeAlreadyEnabledException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2226,7 +2226,7 @@ impl std::fmt::Debug for PolicyTypeNotEnabledException {
 }
 impl PolicyTypeNotEnabledException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2291,7 +2291,7 @@ impl std::fmt::Debug for PolicyNotAttachedException {
 }
 impl PolicyNotAttachedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2356,7 +2356,7 @@ impl std::fmt::Debug for HandshakeNotFoundException {
 }
 impl HandshakeNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2421,7 +2421,7 @@ impl std::fmt::Debug for EffectivePolicyNotFoundException {
 }
 impl EffectivePolicyNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2486,7 +2486,7 @@ impl std::fmt::Debug for CreateAccountStatusNotFoundException {
 }
 impl CreateAccountStatusNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2551,7 +2551,7 @@ impl std::fmt::Debug for PolicyInUseException {
 }
 impl PolicyInUseException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2616,7 +2616,7 @@ impl std::fmt::Debug for OrganizationalUnitNotEmptyException {
 }
 impl OrganizationalUnitNotEmptyException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2681,7 +2681,7 @@ impl std::fmt::Debug for OrganizationNotEmptyException {
 }
 impl OrganizationNotEmptyException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2746,7 +2746,7 @@ impl std::fmt::Debug for InvalidHandshakeTransitionException {
 }
 impl InvalidHandshakeTransitionException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2811,7 +2811,7 @@ impl std::fmt::Debug for HandshakeAlreadyInStateException {
 }
 impl HandshakeAlreadyInStateException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2876,7 +2876,7 @@ impl std::fmt::Debug for AlreadyInOrganizationException {
 }
 impl AlreadyInOrganizationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2953,7 +2953,7 @@ impl std::fmt::Debug for AccessDeniedForDependencyException {
 }
 impl AccessDeniedForDependencyException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3037,7 +3037,7 @@ impl std::fmt::Debug for ConflictException {
 }
 impl ConflictException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3102,7 +3102,7 @@ impl std::fmt::Debug for AccountAlreadyClosedException {
 }
 impl AccountAlreadyClosedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3167,7 +3167,7 @@ impl std::fmt::Debug for DuplicatePolicyAttachmentException {
 }
 impl DuplicatePolicyAttachmentException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }

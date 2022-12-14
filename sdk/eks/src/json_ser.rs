@@ -42,7 +42,7 @@ pub fn serialize_structure_crate_input_associate_identity_provider_config_input(
         let mut object_10 = object.key("tags").start_object();
         for (key_11, value_12) in var_9 {
             {
-                object_10.key(key_11).string(value_12.as_str());
+                object_10.key(key_11.as_str()).string(value_12.as_str());
             }
         }
         object_10.finish();
@@ -73,7 +73,7 @@ pub fn serialize_structure_crate_input_create_addon_input(
         let mut object_19 = object.key("tags").start_object();
         for (key_20, value_21) in var_18 {
             {
-                object_19.key(key_20).string(value_21.as_str());
+                object_19.key(key_20.as_str()).string(value_21.as_str());
             }
         }
         object_19.finish();
@@ -141,7 +141,7 @@ pub fn serialize_structure_crate_input_create_cluster_input(
         let mut object_38 = object.key("tags").start_object();
         for (key_39, value_40) in var_37 {
             {
-                object_38.key(key_39).string(value_40.as_str());
+                object_38.key(key_39.as_str()).string(value_40.as_str());
             }
         }
         object_38.finish();
@@ -192,7 +192,7 @@ pub fn serialize_structure_crate_input_create_fargate_profile_input(
         let mut object_53 = object.key("tags").start_object();
         for (key_54, value_55) in var_52 {
             {
-                object_53.key(key_54).string(value_55.as_str());
+                object_53.key(key_54.as_str()).string(value_55.as_str());
             }
         }
         object_53.finish();
@@ -232,7 +232,7 @@ pub fn serialize_structure_crate_input_create_nodegroup_input(
         let mut object_64 = object.key("labels").start_object();
         for (key_65, value_66) in var_63 {
             {
-                object_64.key(key_65).string(value_66.as_str());
+                object_64.key(key_65.as_str()).string(value_66.as_str());
             }
         }
         object_64.finish();
@@ -283,7 +283,7 @@ pub fn serialize_structure_crate_input_create_nodegroup_input(
         let mut object_80 = object.key("tags").start_object();
         for (key_81, value_82) in var_79 {
             {
-                object_80.key(key_81).string(value_82.as_str());
+                object_80.key(key_81.as_str()).string(value_82.as_str());
             }
         }
         object_80.finish();
@@ -368,7 +368,7 @@ pub fn serialize_structure_crate_input_register_cluster_input(
         let mut object_100 = object.key("tags").start_object();
         for (key_101, value_102) in var_99 {
             {
-                object_100.key(key_101).string(value_102.as_str());
+                object_100.key(key_101.as_str()).string(value_102.as_str());
             }
         }
         object_100.finish();
@@ -384,7 +384,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_104 = object.key("tags").start_object();
         for (key_105, value_106) in var_103 {
             {
-                object_104.key(key_105).string(value_106.as_str());
+                object_104.key(key_105.as_str()).string(value_106.as_str());
             }
         }
         object_104.finish();
@@ -568,7 +568,7 @@ pub fn serialize_structure_crate_model_oidc_identity_provider_config_request(
         let mut object_145 = object.key("requiredClaims").start_object();
         for (key_146, value_147) in var_144 {
             {
-                object_145.key(key_146).string(value_147.as_str());
+                object_145.key(key_146.as_str()).string(value_147.as_str());
             }
         }
         object_145.finish();
@@ -682,7 +682,7 @@ pub fn serialize_structure_crate_model_fargate_profile_selector(
         let mut object_171 = object.key("labels").start_object();
         for (key_172, value_173) in var_170 {
             {
-                object_171.key(key_172).string(value_173.as_str());
+                object_171.key(key_172.as_str()).string(value_173.as_str());
             }
         }
         object_171.finish();
@@ -819,7 +819,7 @@ pub fn serialize_structure_crate_model_update_labels_payload(
         let mut object_194 = object.key("addOrUpdateLabels").start_object();
         for (key_195, value_196) in var_193 {
             {
-                object_194.key(key_195).string(value_196.as_str());
+                object_194.key(key_195.as_str()).string(value_196.as_str());
             }
         }
         object_194.finish();

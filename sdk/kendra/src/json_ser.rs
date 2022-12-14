@@ -3983,7 +3983,7 @@ pub fn serialize_structure_crate_model_relevance(
         let mut object_927 = object.key("ValueImportanceMap").start_object();
         for (key_928, value_929) in var_926 {
             {
-                object_927.key(key_928).number(
+                object_927.key(key_928.as_str()).number(
                     #[allow(clippy::useless_conversion)]
                     aws_smithy_types::Number::NegInt((*value_929).into()),
                 );

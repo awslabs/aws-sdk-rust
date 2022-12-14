@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_crate_error_access_denied_exception_json_err(
+pub(crate) fn deser_structure_crate_error_access_denied_exception_json_err(
     value: &[u8],
     mut builder: crate::error::access_denied_exception::Builder,
 ) -> Result<crate::error::access_denied_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -65,7 +65,7 @@ pub fn deser_structure_crate_error_access_denied_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_authorization_pending_exception_json_err(
+pub(crate) fn deser_structure_crate_error_authorization_pending_exception_json_err(
     value: &[u8],
     mut builder: crate::error::authorization_pending_exception::Builder,
 ) -> Result<
@@ -128,7 +128,7 @@ pub fn deser_structure_crate_error_authorization_pending_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_expired_token_exception_json_err(
+pub(crate) fn deser_structure_crate_error_expired_token_exception_json_err(
     value: &[u8],
     mut builder: crate::error::expired_token_exception::Builder,
 ) -> Result<crate::error::expired_token_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -188,7 +188,7 @@ pub fn deser_structure_crate_error_expired_token_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_internal_server_exception_json_err(
+pub(crate) fn deser_structure_crate_error_internal_server_exception_json_err(
     value: &[u8],
     mut builder: crate::error::internal_server_exception::Builder,
 ) -> Result<crate::error::internal_server_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -248,7 +248,7 @@ pub fn deser_structure_crate_error_internal_server_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_invalid_client_exception_json_err(
+pub(crate) fn deser_structure_crate_error_invalid_client_exception_json_err(
     value: &[u8],
     mut builder: crate::error::invalid_client_exception::Builder,
 ) -> Result<crate::error::invalid_client_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -308,7 +308,7 @@ pub fn deser_structure_crate_error_invalid_client_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_invalid_grant_exception_json_err(
+pub(crate) fn deser_structure_crate_error_invalid_grant_exception_json_err(
     value: &[u8],
     mut builder: crate::error::invalid_grant_exception::Builder,
 ) -> Result<crate::error::invalid_grant_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -368,7 +368,7 @@ pub fn deser_structure_crate_error_invalid_grant_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_invalid_request_exception_json_err(
+pub(crate) fn deser_structure_crate_error_invalid_request_exception_json_err(
     value: &[u8],
     mut builder: crate::error::invalid_request_exception::Builder,
 ) -> Result<crate::error::invalid_request_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -428,7 +428,7 @@ pub fn deser_structure_crate_error_invalid_request_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_invalid_scope_exception_json_err(
+pub(crate) fn deser_structure_crate_error_invalid_scope_exception_json_err(
     value: &[u8],
     mut builder: crate::error::invalid_scope_exception::Builder,
 ) -> Result<crate::error::invalid_scope_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -488,7 +488,7 @@ pub fn deser_structure_crate_error_invalid_scope_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_slow_down_exception_json_err(
+pub(crate) fn deser_structure_crate_error_slow_down_exception_json_err(
     value: &[u8],
     mut builder: crate::error::slow_down_exception::Builder,
 ) -> Result<crate::error::slow_down_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -548,7 +548,7 @@ pub fn deser_structure_crate_error_slow_down_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_unauthorized_client_exception_json_err(
+pub(crate) fn deser_structure_crate_error_unauthorized_client_exception_json_err(
     value: &[u8],
     mut builder: crate::error::unauthorized_client_exception::Builder,
 ) -> Result<crate::error::unauthorized_client_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -609,7 +609,7 @@ pub fn deser_structure_crate_error_unauthorized_client_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_unsupported_grant_type_exception_json_err(
+pub(crate) fn deser_structure_crate_error_unsupported_grant_type_exception_json_err(
     value: &[u8],
     mut builder: crate::error::unsupported_grant_type_exception::Builder,
 ) -> Result<
@@ -672,7 +672,7 @@ pub fn deser_structure_crate_error_unsupported_grant_type_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_create_token(
+pub(crate) fn deser_operation_crate_operation_create_token(
     value: &[u8],
     mut builder: crate::output::create_token_output::Builder,
 ) -> Result<crate::output::create_token_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -700,7 +700,7 @@ pub fn deser_operation_crate_operation_create_token(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.try_into())
+                            .map(i32::try_from)
                             .transpose()?,
                         );
                     }
@@ -750,7 +750,7 @@ pub fn deser_operation_crate_operation_create_token(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_invalid_client_metadata_exception_json_err(
+pub(crate) fn deser_structure_crate_error_invalid_client_metadata_exception_json_err(
     value: &[u8],
     mut builder: crate::error::invalid_client_metadata_exception::Builder,
 ) -> Result<
@@ -813,7 +813,7 @@ pub fn deser_structure_crate_error_invalid_client_metadata_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_register_client(
+pub(crate) fn deser_operation_crate_operation_register_client(
     value: &[u8],
     mut builder: crate::output::register_client_output::Builder,
 ) -> Result<crate::output::register_client_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -850,7 +850,7 @@ pub fn deser_operation_crate_operation_register_client(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.try_into())
+                            .map(i64::try_from)
                             .transpose()?,
                         );
                     }
@@ -868,7 +868,7 @@ pub fn deser_operation_crate_operation_register_client(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.try_into())
+                            .map(i64::try_from)
                             .transpose()?,
                         );
                     }
@@ -900,7 +900,7 @@ pub fn deser_operation_crate_operation_register_client(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_start_device_authorization(
+pub(crate) fn deser_operation_crate_operation_start_device_authorization(
     value: &[u8],
     mut builder: crate::output::start_device_authorization_output::Builder,
 ) -> Result<
@@ -931,7 +931,7 @@ pub fn deser_operation_crate_operation_start_device_authorization(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.try_into())
+                            .map(i32::try_from)
                             .transpose()?,
                         );
                     }
@@ -940,7 +940,7 @@ pub fn deser_operation_crate_operation_start_device_authorization(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.try_into())
+                            .map(i32::try_from)
                             .transpose()?,
                         );
                     }
@@ -990,7 +990,7 @@ pub fn deser_operation_crate_operation_start_device_authorization(
     Ok(builder)
 }
 
-pub fn or_empty_doc(data: &[u8]) -> &[u8] {
+pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
     } else {

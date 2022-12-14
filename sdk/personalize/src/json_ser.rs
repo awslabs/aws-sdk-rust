@@ -1115,7 +1115,7 @@ pub fn serialize_structure_crate_model_batch_inference_job_config(
         let mut object_208 = object.key("itemExplorationConfig").start_object();
         for (key_209, value_210) in var_207 {
             {
-                object_208.key(key_209).string(value_210.as_str());
+                object_208.key(key_209.as_str()).string(value_210.as_str());
             }
         }
         object_208.finish();
@@ -1168,7 +1168,7 @@ pub fn serialize_structure_crate_model_campaign_config(
         let mut object_218 = object.key("itemExplorationConfig").start_object();
         for (key_219, value_220) in var_217 {
             {
-                object_218.key(key_219).string(value_220.as_str());
+                object_218.key(key_219.as_str()).string(value_220.as_str());
             }
         }
         object_218.finish();
@@ -1206,7 +1206,7 @@ pub fn serialize_structure_crate_model_recommender_config(
         let mut object_225 = object.key("itemExplorationConfig").start_object();
         for (key_226, value_227) in var_224 {
             {
-                object_225.key(key_226).string(value_227.as_str());
+                object_225.key(key_226.as_str()).string(value_227.as_str());
             }
         }
         object_225.finish();
@@ -1236,7 +1236,7 @@ pub fn serialize_structure_crate_model_solution_config(
         let mut object_233 = object.key("algorithmHyperParameters").start_object();
         for (key_234, value_235) in var_232 {
             {
-                object_233.key(key_234).string(value_235.as_str());
+                object_233.key(key_234.as_str()).string(value_235.as_str());
             }
         }
         object_233.finish();
@@ -1245,7 +1245,7 @@ pub fn serialize_structure_crate_model_solution_config(
         let mut object_237 = object.key("featureTransformationParameters").start_object();
         for (key_238, value_239) in var_236 {
             {
-                object_237.key(key_238).string(value_239.as_str());
+                object_237.key(key_238.as_str()).string(value_239.as_str());
             }
         }
         object_237.finish();

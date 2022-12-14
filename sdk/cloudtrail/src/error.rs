@@ -17,7 +17,7 @@ impl std::fmt::Debug for UnsupportedOperationException {
 }
 impl UnsupportedOperationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -82,7 +82,7 @@ impl std::fmt::Debug for TrailNotProvidedException {
 }
 impl TrailNotProvidedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -147,7 +147,7 @@ impl std::fmt::Debug for TrailNotFoundException {
 }
 impl TrailNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -212,7 +212,7 @@ impl std::fmt::Debug for S3BucketDoesNotExistException {
 }
 impl S3BucketDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -277,7 +277,7 @@ impl std::fmt::Debug for OrganizationsNotInUseException {
 }
 impl OrganizationsNotInUseException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -342,7 +342,7 @@ impl std::fmt::Debug for OrganizationNotInAllFeaturesModeException {
 }
 impl OrganizationNotInAllFeaturesModeException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -407,7 +407,7 @@ impl std::fmt::Debug for OperationNotPermittedException {
 }
 impl OperationNotPermittedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -472,7 +472,7 @@ impl std::fmt::Debug for NotOrganizationMasterAccountException {
 }
 impl NotOrganizationMasterAccountException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -537,7 +537,7 @@ impl std::fmt::Debug for KmsKeyNotFoundException {
 }
 impl KmsKeyNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -603,7 +603,7 @@ impl std::fmt::Debug for KmsKeyDisabledException {
 }
 impl KmsKeyDisabledException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -668,7 +668,7 @@ impl std::fmt::Debug for KmsException {
 }
 impl KmsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -740,7 +740,7 @@ impl std::fmt::Debug for InvalidTrailNameException {
 }
 impl InvalidTrailNameException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -805,7 +805,7 @@ impl std::fmt::Debug for InvalidSnsTopicNameException {
 }
 impl InvalidSnsTopicNameException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -870,7 +870,7 @@ impl std::fmt::Debug for InvalidS3PrefixException {
 }
 impl InvalidS3PrefixException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -935,7 +935,7 @@ impl std::fmt::Debug for InvalidS3BucketNameException {
 }
 impl InvalidS3BucketNameException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1000,7 +1000,7 @@ impl std::fmt::Debug for InvalidParameterCombinationException {
 }
 impl InvalidParameterCombinationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1065,7 +1065,7 @@ impl std::fmt::Debug for InvalidKmsKeyIdException {
 }
 impl InvalidKmsKeyIdException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1130,7 +1130,7 @@ impl std::fmt::Debug for InvalidHomeRegionException {
 }
 impl InvalidHomeRegionException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1202,7 +1202,7 @@ impl std::fmt::Debug for InvalidEventSelectorsException {
 }
 impl InvalidEventSelectorsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1267,7 +1267,7 @@ impl std::fmt::Debug for InvalidCloudWatchLogsRoleArnException {
 }
 impl InvalidCloudWatchLogsRoleArnException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1332,7 +1332,7 @@ impl std::fmt::Debug for InvalidCloudWatchLogsLogGroupArnException {
 }
 impl InvalidCloudWatchLogsLogGroupArnException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1397,7 +1397,7 @@ impl std::fmt::Debug for InsufficientSnsTopicPolicyException {
 }
 impl InsufficientSnsTopicPolicyException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1462,7 +1462,7 @@ impl std::fmt::Debug for InsufficientS3BucketPolicyException {
 }
 impl InsufficientS3BucketPolicyException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1527,7 +1527,7 @@ impl std::fmt::Debug for InsufficientEncryptionPolicyException {
 }
 impl InsufficientEncryptionPolicyException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1593,7 +1593,7 @@ impl std::fmt::Debug for InsufficientDependencyServiceAccessPermissionException 
 }
 impl InsufficientDependencyServiceAccessPermissionException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1660,7 +1660,7 @@ impl std::fmt::Debug for CloudWatchLogsDeliveryUnavailableException {
 }
 impl CloudWatchLogsDeliveryUnavailableException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1725,7 +1725,7 @@ impl std::fmt::Debug for CloudTrailInvalidClientTokenIdException {
 }
 impl CloudTrailInvalidClientTokenIdException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1790,7 +1790,7 @@ impl std::fmt::Debug for CloudTrailAccessNotEnabledException {
 }
 impl CloudTrailAccessNotEnabledException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1855,7 +1855,7 @@ impl std::fmt::Debug for InvalidParameterException {
 }
 impl InvalidParameterException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1920,7 +1920,7 @@ impl std::fmt::Debug for InactiveEventDataStoreException {
 }
 impl InactiveEventDataStoreException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1985,7 +1985,7 @@ impl std::fmt::Debug for EventDataStoreNotFoundException {
 }
 impl EventDataStoreNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2050,7 +2050,7 @@ impl std::fmt::Debug for EventDataStoreHasOngoingImportException {
 }
 impl EventDataStoreHasOngoingImportException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2115,7 +2115,7 @@ impl std::fmt::Debug for EventDataStoreArnInvalidException {
 }
 impl EventDataStoreArnInvalidException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2183,7 +2183,7 @@ impl std::fmt::Debug for ImportNotFoundException {
 }
 impl ImportNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2248,7 +2248,7 @@ impl std::fmt::Debug for MaxConcurrentQueriesException {
 }
 impl MaxConcurrentQueriesException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2313,7 +2313,7 @@ impl std::fmt::Debug for InvalidQueryStatementException {
 }
 impl InvalidQueryStatementException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2378,7 +2378,7 @@ impl std::fmt::Debug for InvalidImportSourceException {
 }
 impl InvalidImportSourceException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2443,7 +2443,7 @@ impl std::fmt::Debug for InvalidEventDataStoreStatusException {
 }
 impl InvalidEventDataStoreStatusException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2508,7 +2508,7 @@ impl std::fmt::Debug for InvalidEventDataStoreCategoryException {
 }
 impl InvalidEventDataStoreCategoryException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2573,7 +2573,7 @@ impl std::fmt::Debug for AccountHasOngoingImportException {
 }
 impl AccountHasOngoingImportException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2638,7 +2638,7 @@ impl std::fmt::Debug for EventDataStoreMaxLimitExceededException {
 }
 impl EventDataStoreMaxLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2703,7 +2703,7 @@ impl std::fmt::Debug for ResourceTypeNotSupportedException {
 }
 impl ResourceTypeNotSupportedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2768,7 +2768,7 @@ impl std::fmt::Debug for ResourceNotFoundException {
 }
 impl ResourceNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2833,7 +2833,7 @@ impl std::fmt::Debug for InvalidTagParameterException {
 }
 impl InvalidTagParameterException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2899,7 +2899,7 @@ impl std::fmt::Debug for CloudTrailArnInvalidException {
 }
 impl CloudTrailArnInvalidException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2967,7 +2967,7 @@ impl std::fmt::Debug for InvalidInsightSelectorsException {
 }
 impl InvalidInsightSelectorsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3032,7 +3032,7 @@ impl std::fmt::Debug for InvalidTimeRangeException {
 }
 impl InvalidTimeRangeException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3097,7 +3097,7 @@ impl std::fmt::Debug for InvalidNextTokenException {
 }
 impl InvalidNextTokenException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3162,7 +3162,7 @@ impl std::fmt::Debug for InvalidMaxResultsException {
 }
 impl InvalidMaxResultsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3227,7 +3227,7 @@ impl std::fmt::Debug for InvalidLookupAttributesException {
 }
 impl InvalidLookupAttributesException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3292,7 +3292,7 @@ impl std::fmt::Debug for InvalidEventCategoryException {
 }
 impl InvalidEventCategoryException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3357,7 +3357,7 @@ impl std::fmt::Debug for InvalidTokenException {
 }
 impl InvalidTokenException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3422,7 +3422,7 @@ impl std::fmt::Debug for InvalidQueryStatusException {
 }
 impl InvalidQueryStatusException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3487,7 +3487,7 @@ impl std::fmt::Debug for InvalidDateRangeException {
 }
 impl InvalidDateRangeException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3552,7 +3552,7 @@ impl std::fmt::Debug for QueryIdNotFoundException {
 }
 impl QueryIdNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3617,7 +3617,7 @@ impl std::fmt::Debug for InsightNotEnabledException {
 }
 impl InsightNotEnabledException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3682,7 +3682,7 @@ impl std::fmt::Debug for ChannelNotFoundException {
 }
 impl ChannelNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3747,7 +3747,7 @@ impl std::fmt::Debug for ChannelArnInvalidException {
 }
 impl ChannelArnInvalidException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3812,7 +3812,7 @@ impl std::fmt::Debug for ConflictException {
 }
 impl ConflictException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3877,7 +3877,7 @@ impl std::fmt::Debug for EventDataStoreTerminationProtectedException {
 }
 impl EventDataStoreTerminationProtectedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3942,7 +3942,7 @@ impl std::fmt::Debug for TrailAlreadyExistsException {
 }
 impl TrailAlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4007,7 +4007,7 @@ impl std::fmt::Debug for MaximumNumberOfTrailsExceededException {
 }
 impl MaximumNumberOfTrailsExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4072,7 +4072,7 @@ impl std::fmt::Debug for EventDataStoreAlreadyExistsException {
 }
 impl EventDataStoreAlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4137,7 +4137,7 @@ impl std::fmt::Debug for InactiveQueryException {
 }
 impl InactiveQueryException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4202,7 +4202,7 @@ impl std::fmt::Debug for TagsLimitExceededException {
 }
 impl TagsLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }

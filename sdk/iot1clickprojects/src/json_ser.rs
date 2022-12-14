@@ -17,7 +17,7 @@ pub fn serialize_structure_crate_input_create_placement_input(
         let mut object_3 = object.key("attributes").start_object();
         for (key_4, value_5) in var_2 {
             {
-                object_3.key(key_4).string(value_5.as_str());
+                object_3.key(key_4.as_str()).string(value_5.as_str());
             }
         }
         object_3.finish();
@@ -47,7 +47,7 @@ pub fn serialize_structure_crate_input_create_project_input(
         let mut object_12 = object.key("tags").start_object();
         for (key_13, value_14) in var_11 {
             {
-                object_12.key(key_13).string(value_14.as_str());
+                object_12.key(key_13.as_str()).string(value_14.as_str());
             }
         }
         object_12.finish();
@@ -63,7 +63,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_16 = object.key("tags").start_object();
         for (key_17, value_18) in var_15 {
             {
-                object_16.key(key_17).string(value_18.as_str());
+                object_16.key(key_17.as_str()).string(value_18.as_str());
             }
         }
         object_16.finish();
@@ -79,7 +79,7 @@ pub fn serialize_structure_crate_input_update_placement_input(
         let mut object_20 = object.key("attributes").start_object();
         for (key_21, value_22) in var_19 {
             {
-                object_20.key(key_21).string(value_22.as_str());
+                object_20.key(key_21.as_str()).string(value_22.as_str());
             }
         }
         object_20.finish();
@@ -113,7 +113,7 @@ pub fn serialize_structure_crate_model_placement_template(
         let mut object_27 = object.key("defaultAttributes").start_object();
         for (key_28, value_29) in var_26 {
             {
-                object_27.key(key_28).string(value_29.as_str());
+                object_27.key(key_28.as_str()).string(value_29.as_str());
             }
         }
         object_27.finish();
@@ -122,7 +122,7 @@ pub fn serialize_structure_crate_model_placement_template(
         let mut object_31 = object.key("deviceTemplates").start_object();
         for (key_32, value_33) in var_30 {
             {
-                let mut object_34 = object_31.key(key_32).start_object();
+                let mut object_34 = object_31.key(key_32.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_device_template(
                     &mut object_34,
                     value_33,
@@ -146,7 +146,7 @@ pub fn serialize_structure_crate_model_device_template(
         let mut object_37 = object.key("callbackOverrides").start_object();
         for (key_38, value_39) in var_36 {
             {
-                object_37.key(key_38).string(value_39.as_str());
+                object_37.key(key_38.as_str()).string(value_39.as_str());
             }
         }
         object_37.finish();

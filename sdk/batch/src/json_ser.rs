@@ -34,7 +34,7 @@ pub fn serialize_structure_crate_input_create_compute_environment_input(
         let mut object_9 = object.key("tags").start_object();
         for (key_10, value_11) in var_8 {
             {
-                object_9.key(key_10).string(value_11.as_str());
+                object_9.key(key_10.as_str()).string(value_11.as_str());
             }
         }
         object_9.finish();
@@ -88,7 +88,7 @@ pub fn serialize_structure_crate_input_create_job_queue_input(
         let mut object_23 = object.key("tags").start_object();
         for (key_24, value_25) in var_22 {
             {
-                object_23.key(key_24).string(value_25.as_str());
+                object_23.key(key_24.as_str()).string(value_25.as_str());
             }
         }
         object_23.finish();
@@ -112,7 +112,7 @@ pub fn serialize_structure_crate_input_create_scheduling_policy_input(
         let mut object_30 = object.key("tags").start_object();
         for (key_31, value_32) in var_29 {
             {
-                object_30.key(key_31).string(value_32.as_str());
+                object_30.key(key_31.as_str()).string(value_32.as_str());
             }
         }
         object_30.finish();
@@ -355,7 +355,7 @@ pub fn serialize_structure_crate_input_register_job_definition_input(
         let mut object_78 = object.key("parameters").start_object();
         for (key_79, value_80) in var_77 {
             {
-                object_78.key(key_79).string(value_80.as_str());
+                object_78.key(key_79.as_str()).string(value_80.as_str());
             }
         }
         object_78.finish();
@@ -387,7 +387,7 @@ pub fn serialize_structure_crate_input_register_job_definition_input(
         let mut object_89 = object.key("tags").start_object();
         for (key_90, value_91) in var_88 {
             {
-                object_89.key(key_90).string(value_91.as_str());
+                object_89.key(key_90.as_str()).string(value_91.as_str());
             }
         }
         object_89.finish();
@@ -452,7 +452,7 @@ pub fn serialize_structure_crate_input_submit_job_input(
         let mut object_109 = object.key("parameters").start_object();
         for (key_110, value_111) in var_108 {
             {
-                object_109.key(key_110).string(value_111.as_str());
+                object_109.key(key_110.as_str()).string(value_111.as_str());
             }
         }
         object_109.finish();
@@ -478,7 +478,7 @@ pub fn serialize_structure_crate_input_submit_job_input(
         let mut object_118 = object.key("tags").start_object();
         for (key_119, value_120) in var_117 {
             {
-                object_118.key(key_119).string(value_120.as_str());
+                object_118.key(key_119.as_str()).string(value_120.as_str());
             }
         }
         object_118.finish();
@@ -499,7 +499,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_124 = object.key("tags").start_object();
         for (key_125, value_126) in var_123 {
             {
-                object_124.key(key_125).string(value_126.as_str());
+                object_124.key(key_125.as_str()).string(value_126.as_str());
             }
         }
         object_124.finish();
@@ -677,7 +677,7 @@ pub fn serialize_structure_crate_model_compute_resource(
         let mut object_166 = object.key("tags").start_object();
         for (key_167, value_168) in var_165 {
             {
-                object_166.key(key_167).string(value_168.as_str());
+                object_166.key(key_167.as_str()).string(value_168.as_str());
             }
         }
         object_166.finish();
@@ -1190,7 +1190,7 @@ pub fn serialize_structure_crate_model_compute_resource_update(
         let mut object_284 = object.key("tags").start_object();
         for (key_285, value_286) in var_283 {
             {
-                object_284.key(key_285).string(value_286.as_str());
+                object_284.key(key_285.as_str()).string(value_286.as_str());
             }
         }
         object_284.finish();
@@ -1447,7 +1447,7 @@ pub fn serialize_structure_crate_model_log_configuration(
         let mut object_335 = object.key("options").start_object();
         for (key_336, value_337) in var_334 {
             {
-                object_335.key(key_336).string(value_337.as_str());
+                object_335.key(key_336.as_str()).string(value_337.as_str());
             }
         }
         object_335.finish();

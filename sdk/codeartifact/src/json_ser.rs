@@ -13,7 +13,7 @@ pub fn serialize_structure_crate_input_copy_package_versions_input(
         let mut object_4 = object.key("versionRevisions").start_object();
         for (key_5, value_6) in var_3 {
             {
-                object_4.key(key_5).string(value_6.as_str());
+                object_4.key(key_5.as_str()).string(value_6.as_str());
             }
         }
         object_4.finish();
@@ -116,7 +116,7 @@ pub fn serialize_structure_crate_input_dispose_package_versions_input(
         let mut object_30 = object.key("versionRevisions").start_object();
         for (key_31, value_32) in var_29 {
             {
-                object_30.key(key_31).string(value_32.as_str());
+                object_30.key(key_31.as_str()).string(value_32.as_str());
             }
         }
         object_30.finish();
@@ -244,7 +244,7 @@ pub fn serialize_structure_crate_input_update_package_versions_status_input(
         let mut object_56 = object.key("versionRevisions").start_object();
         for (key_57, value_58) in var_55 {
             {
-                object_56.key(key_57).string(value_58.as_str());
+                object_56.key(key_57.as_str()).string(value_58.as_str());
             }
         }
         object_56.finish();

@@ -27,7 +27,7 @@ impl std::fmt::Debug for ServiceFault {
 }
 impl ServiceFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -117,7 +117,7 @@ impl std::fmt::Debug for RequestError {
 }
 impl RequestError {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }

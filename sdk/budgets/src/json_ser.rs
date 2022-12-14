@@ -569,7 +569,7 @@ pub fn serialize_structure_crate_model_budget(
         let mut object_131 = object.key("PlannedBudgetLimits").start_object();
         for (key_132, value_133) in var_130 {
             {
-                let mut object_134 = object_131.key(key_132).start_object();
+                let mut object_134 = object_131.key(key_132.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_spend(&mut object_134, value_133)?;
                 object_134.finish();
             }
@@ -580,7 +580,7 @@ pub fn serialize_structure_crate_model_budget(
         let mut object_136 = object.key("CostFilters").start_object();
         for (key_137, value_138) in var_135 {
             {
-                let mut array_139 = object_136.key(key_137).start_array();
+                let mut array_139 = object_136.key(key_137.as_str()).start_array();
                 for item_140 in value_138 {
                     {
                         array_139.value().string(item_140.as_str());

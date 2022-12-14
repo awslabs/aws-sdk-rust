@@ -19,7 +19,7 @@ impl std::fmt::Debug for ValidationException {
 }
 impl ValidationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -84,7 +84,7 @@ impl std::fmt::Debug for ResourceNotFoundException {
 }
 impl ResourceNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -149,7 +149,7 @@ impl std::fmt::Debug for TooManyTagsException {
 }
 impl TooManyTagsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -214,7 +214,7 @@ impl std::fmt::Debug for NoSuchConfigurationRecorderException {
 }
 impl NoSuchConfigurationRecorderException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -279,7 +279,7 @@ impl std::fmt::Debug for NoSuchRemediationConfigurationException {
 }
 impl NoSuchRemediationConfigurationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -344,7 +344,7 @@ impl std::fmt::Debug for InvalidParameterValueException {
 }
 impl InvalidParameterValueException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -419,7 +419,7 @@ impl std::fmt::Debug for InsufficientPermissionsException {
 }
 impl InsufficientPermissionsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -484,7 +484,7 @@ impl std::fmt::Debug for NoAvailableDeliveryChannelException {
 }
 impl NoAvailableDeliveryChannelException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -558,7 +558,7 @@ impl std::fmt::Debug for ResourceInUseException {
 }
 impl ResourceInUseException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -623,7 +623,7 @@ impl std::fmt::Debug for NoSuchConfigRuleException {
 }
 impl NoSuchConfigRuleException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -689,7 +689,7 @@ impl std::fmt::Debug for LimitExceededException {
 }
 impl LimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -754,7 +754,7 @@ impl std::fmt::Debug for InvalidNextTokenException {
 }
 impl InvalidNextTokenException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -819,7 +819,7 @@ impl std::fmt::Debug for InvalidLimitException {
 }
 impl InvalidLimitException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -884,7 +884,7 @@ impl std::fmt::Debug for InvalidExpressionException {
 }
 impl InvalidExpressionException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -949,7 +949,7 @@ impl std::fmt::Debug for NoSuchConfigurationAggregatorException {
 }
 impl NoSuchConfigurationAggregatorException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1014,7 +1014,7 @@ impl std::fmt::Debug for ResourceConcurrentModificationException {
 }
 impl ResourceConcurrentModificationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1079,7 +1079,7 @@ impl std::fmt::Debug for MaxNumberOfRetentionConfigurationsExceededException {
 }
 impl MaxNumberOfRetentionConfigurationsExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1145,7 +1145,7 @@ impl std::fmt::Debug for NoRunningConfigurationRecorderException {
 }
 impl NoRunningConfigurationRecorderException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1210,7 +1210,7 @@ impl std::fmt::Debug for MaxActiveResourcesExceededException {
 }
 impl MaxActiveResourcesExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1276,7 +1276,7 @@ impl std::fmt::Debug for OrganizationConformancePackTemplateValidationException 
 }
 impl OrganizationConformancePackTemplateValidationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1343,7 +1343,7 @@ impl std::fmt::Debug for OrganizationAllFeaturesNotEnabledException {
 }
 impl OrganizationAllFeaturesNotEnabledException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1415,7 +1415,7 @@ impl std::fmt::Debug for OrganizationAccessDeniedException {
 }
 impl OrganizationAccessDeniedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1480,7 +1480,7 @@ impl std::fmt::Debug for NoAvailableOrganizationException {
 }
 impl NoAvailableOrganizationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1546,7 +1546,7 @@ impl std::fmt::Debug for MaxNumberOfOrganizationConformancePacksExceededExceptio
 }
 impl MaxNumberOfOrganizationConformancePacksExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1618,7 +1618,7 @@ impl std::fmt::Debug for MaxNumberOfOrganizationConfigRulesExceededException {
 }
 impl MaxNumberOfOrganizationConfigRulesExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1684,7 +1684,7 @@ impl std::fmt::Debug for InvalidResultTokenException {
 }
 impl InvalidResultTokenException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1749,7 +1749,7 @@ impl std::fmt::Debug for NoSuchBucketException {
 }
 impl NoSuchBucketException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1814,7 +1814,7 @@ impl std::fmt::Debug for NoAvailableConfigurationRecorderException {
 }
 impl NoAvailableConfigurationRecorderException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1879,7 +1879,7 @@ impl std::fmt::Debug for MaxNumberOfDeliveryChannelsExceededException {
 }
 impl MaxNumberOfDeliveryChannelsExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1944,7 +1944,7 @@ impl std::fmt::Debug for InvalidSnsTopicArnException {
 }
 impl InvalidSnsTopicArnException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2012,7 +2012,7 @@ impl std::fmt::Debug for InvalidS3KmsKeyArnException {
 }
 impl InvalidS3KmsKeyArnException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2077,7 +2077,7 @@ impl std::fmt::Debug for InvalidS3KeyPrefixException {
 }
 impl InvalidS3KeyPrefixException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2142,7 +2142,7 @@ impl std::fmt::Debug for InvalidDeliveryChannelNameException {
 }
 impl InvalidDeliveryChannelNameException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2207,7 +2207,7 @@ impl std::fmt::Debug for InsufficientDeliveryPolicyException {
 }
 impl InsufficientDeliveryPolicyException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2272,7 +2272,7 @@ impl std::fmt::Debug for MaxNumberOfConformancePacksExceededException {
 }
 impl MaxNumberOfConformancePacksExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2337,7 +2337,7 @@ impl std::fmt::Debug for ConformancePackTemplateValidationException {
 }
 impl ConformancePackTemplateValidationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2402,7 +2402,7 @@ impl std::fmt::Debug for MaxNumberOfConfigurationRecordersExceededException {
 }
 impl MaxNumberOfConfigurationRecordersExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2468,7 +2468,7 @@ impl std::fmt::Debug for InvalidRoleException {
 }
 impl InvalidRoleException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2533,7 +2533,7 @@ impl std::fmt::Debug for InvalidRecordingGroupException {
 }
 impl InvalidRecordingGroupException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2598,7 +2598,7 @@ impl std::fmt::Debug for InvalidConfigurationRecorderNameException {
 }
 impl InvalidConfigurationRecorderNameException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2663,7 +2663,7 @@ impl std::fmt::Debug for MaxNumberOfConfigRulesExceededException {
 }
 impl MaxNumberOfConfigRulesExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2728,7 +2728,7 @@ impl std::fmt::Debug for ResourceNotDiscoveredException {
 }
 impl ResourceNotDiscoveredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2793,7 +2793,7 @@ impl std::fmt::Debug for InvalidTimeRangeException {
 }
 impl InvalidTimeRangeException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2858,7 +2858,7 @@ impl std::fmt::Debug for NoSuchOrganizationConfigRuleException {
 }
 impl NoSuchOrganizationConfigRuleException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2924,7 +2924,7 @@ impl std::fmt::Debug for NoSuchOrganizationConformancePackException {
 }
 impl NoSuchOrganizationConformancePackException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2989,7 +2989,7 @@ impl std::fmt::Debug for NoSuchConformancePackException {
 }
 impl NoSuchConformancePackException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3054,7 +3054,7 @@ impl std::fmt::Debug for NoSuchConfigRuleInConformancePackException {
 }
 impl NoSuchConfigRuleInConformancePackException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3119,7 +3119,7 @@ impl std::fmt::Debug for OversizedConfigurationItemException {
 }
 impl OversizedConfigurationItemException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3184,7 +3184,7 @@ impl std::fmt::Debug for NoSuchRetentionConfigurationException {
 }
 impl NoSuchRetentionConfigurationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3249,7 +3249,7 @@ impl std::fmt::Debug for NoSuchDeliveryChannelException {
 }
 impl NoSuchDeliveryChannelException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3314,7 +3314,7 @@ impl std::fmt::Debug for NoSuchRemediationExceptionException {
 }
 impl NoSuchRemediationExceptionException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3379,7 +3379,7 @@ impl std::fmt::Debug for RemediationInProgressException {
 }
 impl RemediationInProgressException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3444,7 +3444,7 @@ impl std::fmt::Debug for LastDeliveryChannelDeleteFailedException {
 }
 impl LastDeliveryChannelDeleteFailedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }

@@ -17,7 +17,7 @@ impl std::fmt::Debug for InvalidDbInstanceStateFault {
 }
 impl InvalidDbInstanceStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -85,7 +85,7 @@ impl std::fmt::Debug for DbInstanceNotFoundFault {
 }
 impl DbInstanceNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -150,7 +150,7 @@ impl std::fmt::Debug for SnapshotQuotaExceededFault {
 }
 impl SnapshotQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -215,7 +215,7 @@ impl std::fmt::Debug for InvalidDbClusterStateFault {
 }
 impl InvalidDbClusterStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -280,7 +280,7 @@ impl std::fmt::Debug for DbSnapshotAlreadyExistsFault {
 }
 impl DbSnapshotAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -348,7 +348,7 @@ impl std::fmt::Debug for DbClusterNotFoundFault {
 }
 impl DbClusterNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -413,7 +413,7 @@ impl std::fmt::Debug for ResourceNotFoundFault {
 }
 impl ResourceNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -478,7 +478,7 @@ impl std::fmt::Debug for KmsKeyNotAccessibleFault {
 }
 impl KmsKeyNotAccessibleFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -543,7 +543,7 @@ impl std::fmt::Debug for InvalidS3BucketFault {
 }
 impl InvalidS3BucketFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -608,7 +608,7 @@ impl std::fmt::Debug for InvalidExportSourceStateFault {
 }
 impl InvalidExportSourceStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -673,7 +673,7 @@ impl std::fmt::Debug for InvalidExportOnlyFault {
 }
 impl InvalidExportOnlyFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -738,7 +738,7 @@ impl std::fmt::Debug for IamRoleNotFoundFault {
 }
 impl IamRoleNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -803,7 +803,7 @@ impl std::fmt::Debug for IamRoleMissingPermissionsFault {
 }
 impl IamRoleMissingPermissionsFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -868,7 +868,7 @@ impl std::fmt::Debug for ExportTaskAlreadyExistsFault {
 }
 impl ExportTaskAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -933,7 +933,7 @@ impl std::fmt::Debug for DbSnapshotNotFoundFault {
 }
 impl DbSnapshotNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -998,7 +998,7 @@ impl std::fmt::Debug for DbClusterSnapshotNotFoundFault {
 }
 impl DbClusterSnapshotNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1066,7 +1066,7 @@ impl std::fmt::Debug for StorageTypeNotSupportedFault {
 }
 impl StorageTypeNotSupportedFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1131,7 +1131,7 @@ impl std::fmt::Debug for DbInstanceAutomatedBackupQuotaExceededFault {
 }
 impl DbInstanceAutomatedBackupQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1196,7 +1196,7 @@ impl std::fmt::Debug for InvalidVpcNetworkStateFault {
 }
 impl InvalidVpcNetworkStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1264,7 +1264,7 @@ impl std::fmt::Debug for InvalidSubnet {
 }
 impl InvalidSubnet {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1329,7 +1329,7 @@ impl std::fmt::Debug for InsufficientDbInstanceCapacityFault {
 }
 impl InsufficientDbInstanceCapacityFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1397,7 +1397,7 @@ impl std::fmt::Debug for DbSubnetGroupNotFoundFault {
 }
 impl DbSubnetGroupNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1462,7 +1462,7 @@ impl std::fmt::Debug for DbSubnetGroupDoesNotCoverEnoughAZs {
 }
 impl DbSubnetGroupDoesNotCoverEnoughAZs {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1531,7 +1531,7 @@ impl std::fmt::Debug for AuthorizationNotFoundFault {
 }
 impl AuthorizationNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1596,7 +1596,7 @@ impl std::fmt::Debug for InvalidDbSecurityGroupStateFault {
 }
 impl InvalidDbSecurityGroupStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1664,7 +1664,7 @@ impl std::fmt::Debug for DbSecurityGroupNotFoundFault {
 }
 impl DbSecurityGroupNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1732,7 +1732,7 @@ impl std::fmt::Debug for StorageQuotaExceededFault {
 }
 impl StorageQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1797,7 +1797,7 @@ impl std::fmt::Debug for ProvisionedIopsNotAvailableInAzFault {
 }
 impl ProvisionedIopsNotAvailableInAzFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1865,7 +1865,7 @@ impl std::fmt::Debug for PointInTimeRestoreNotEnabledFault {
 }
 impl PointInTimeRestoreNotEnabledFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1930,7 +1930,7 @@ impl std::fmt::Debug for OptionGroupNotFoundFault {
 }
 impl OptionGroupNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1995,7 +1995,7 @@ impl std::fmt::Debug for NetworkTypeNotSupported {
 }
 impl NetworkTypeNotSupported {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2060,7 +2060,7 @@ impl std::fmt::Debug for InvalidRestoreFault {
 }
 impl InvalidRestoreFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2125,7 +2125,7 @@ impl std::fmt::Debug for InstanceQuotaExceededFault {
 }
 impl InstanceQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2190,7 +2190,7 @@ impl std::fmt::Debug for DomainNotFoundFault {
 }
 impl DomainNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2255,7 +2255,7 @@ impl std::fmt::Debug for DbParameterGroupNotFoundFault {
 }
 impl DbParameterGroupNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2323,7 +2323,7 @@ impl std::fmt::Debug for DbInstanceAutomatedBackupNotFoundFault {
 }
 impl DbInstanceAutomatedBackupNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2391,7 +2391,7 @@ impl std::fmt::Debug for DbInstanceAlreadyExistsFault {
 }
 impl DbInstanceAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2460,7 +2460,7 @@ impl std::fmt::Debug for BackupPolicyNotFoundFault {
 }
 impl BackupPolicyNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2525,7 +2525,7 @@ impl std::fmt::Debug for InvalidDbSnapshotStateFault {
 }
 impl InvalidDbSnapshotStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2593,7 +2593,7 @@ impl std::fmt::Debug for InvalidDbClusterSnapshotStateFault {
 }
 impl InvalidDbClusterSnapshotStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2661,7 +2661,7 @@ impl std::fmt::Debug for InsufficientStorageClusterCapacityFault {
 }
 impl InsufficientStorageClusterCapacityFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2726,7 +2726,7 @@ impl std::fmt::Debug for InsufficientDbClusterCapacityFault {
 }
 impl InsufficientDbClusterCapacityFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2794,7 +2794,7 @@ impl std::fmt::Debug for DbClusterQuotaExceededFault {
 }
 impl DbClusterQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2862,7 +2862,7 @@ impl std::fmt::Debug for DbClusterParameterGroupNotFoundFault {
 }
 impl DbClusterParameterGroupNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2930,7 +2930,7 @@ impl std::fmt::Debug for DbClusterAlreadyExistsFault {
 }
 impl DbClusterAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2998,7 +2998,7 @@ impl std::fmt::Debug for InvalidDbSubnetGroupStateFault {
 }
 impl InvalidDbSubnetGroupStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3066,7 +3066,7 @@ impl std::fmt::Debug for InvalidDbParameterGroupStateFault {
 }
 impl InvalidDbParameterGroupStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3134,7 +3134,7 @@ impl std::fmt::Debug for DbProxyTargetGroupNotFoundFault {
 }
 impl DbProxyTargetGroupNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3202,7 +3202,7 @@ impl std::fmt::Debug for DbProxyNotFoundFault {
 }
 impl DbProxyNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3267,7 +3267,7 @@ impl std::fmt::Debug for SubscriptionNotFoundFault {
 }
 impl SubscriptionNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3332,7 +3332,7 @@ impl std::fmt::Debug for SourceNotFoundFault {
 }
 impl SourceNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3397,7 +3397,7 @@ impl std::fmt::Debug for DbInstanceRoleNotFoundFault {
 }
 impl DbInstanceRoleNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3465,7 +3465,7 @@ impl std::fmt::Debug for DbClusterRoleNotFoundFault {
 }
 impl DbClusterRoleNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3530,7 +3530,7 @@ impl std::fmt::Debug for InvalidGlobalClusterStateFault {
 }
 impl InvalidGlobalClusterStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3595,7 +3595,7 @@ impl std::fmt::Debug for GlobalClusterNotFoundFault {
 }
 impl GlobalClusterNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3660,7 +3660,7 @@ impl std::fmt::Debug for InvalidDbProxyStateFault {
 }
 impl InvalidDbProxyStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3725,7 +3725,7 @@ impl std::fmt::Debug for InsufficientAvailableIPsInSubnetFault {
 }
 impl InsufficientAvailableIPsInSubnetFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3790,7 +3790,7 @@ impl std::fmt::Debug for DbProxyTargetAlreadyRegisteredFault {
 }
 impl DbProxyTargetAlreadyRegisteredFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3858,7 +3858,7 @@ impl std::fmt::Debug for ReservedDbInstancesOfferingNotFoundFault {
 }
 impl ReservedDbInstancesOfferingNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3926,7 +3926,7 @@ impl std::fmt::Debug for ReservedDbInstanceQuotaExceededFault {
 }
 impl ReservedDbInstanceQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3994,7 +3994,7 @@ impl std::fmt::Debug for ReservedDbInstanceAlreadyExistsFault {
 }
 impl ReservedDbInstanceAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4062,7 +4062,7 @@ impl std::fmt::Debug for InvalidOptionGroupStateFault {
 }
 impl InvalidOptionGroupStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4127,7 +4127,7 @@ impl std::fmt::Debug for SubscriptionCategoryNotFoundFault {
 }
 impl SubscriptionCategoryNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4192,7 +4192,7 @@ impl std::fmt::Debug for SnsTopicArnNotFoundFault {
 }
 impl SnsTopicArnNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4257,7 +4257,7 @@ impl std::fmt::Debug for SnsNoAuthorizationFault {
 }
 impl SnsNoAuthorizationFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4322,7 +4322,7 @@ impl std::fmt::Debug for SnsInvalidTopicFault {
 }
 impl SnsInvalidTopicFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4387,7 +4387,7 @@ impl std::fmt::Debug for EventSubscriptionQuotaExceededFault {
 }
 impl EventSubscriptionQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4452,7 +4452,7 @@ impl std::fmt::Debug for SubnetAlreadyInUse {
 }
 impl SubnetAlreadyInUse {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4517,7 +4517,7 @@ impl std::fmt::Debug for DbSubnetQuotaExceededFault {
 }
 impl DbSubnetQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4582,7 +4582,7 @@ impl std::fmt::Debug for SharedSnapshotQuotaExceededFault {
 }
 impl SharedSnapshotQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4647,7 +4647,7 @@ impl std::fmt::Debug for InvalidDbProxyEndpointStateFault {
 }
 impl InvalidDbProxyEndpointStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4715,7 +4715,7 @@ impl std::fmt::Debug for DbProxyEndpointNotFoundFault {
 }
 impl DbProxyEndpointNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4783,7 +4783,7 @@ impl std::fmt::Debug for DbProxyEndpointAlreadyExistsFault {
 }
 impl DbProxyEndpointAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4851,7 +4851,7 @@ impl std::fmt::Debug for DbProxyAlreadyExistsFault {
 }
 impl DbProxyAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4916,7 +4916,7 @@ impl std::fmt::Debug for DbUpgradeDependencyFailureFault {
 }
 impl DbUpgradeDependencyFailureFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4984,7 +4984,7 @@ impl std::fmt::Debug for CertificateNotFoundFault {
 }
 impl CertificateNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5049,7 +5049,7 @@ impl std::fmt::Debug for InvalidDbClusterEndpointStateFault {
 }
 impl InvalidDbClusterEndpointStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5117,7 +5117,7 @@ impl std::fmt::Debug for DbClusterEndpointNotFoundFault {
 }
 impl DbClusterEndpointNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5185,7 +5185,7 @@ impl std::fmt::Debug for InvalidCustomDbEngineVersionStateFault {
 }
 impl InvalidCustomDbEngineVersionStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5253,7 +5253,7 @@ impl std::fmt::Debug for CustomDbEngineVersionNotFoundFault {
 }
 impl CustomDbEngineVersionNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5321,7 +5321,7 @@ impl std::fmt::Debug for InvalidDbClusterCapacityFault {
 }
 impl InvalidDbClusterCapacityFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5389,7 +5389,7 @@ impl std::fmt::Debug for DbLogFileNotFoundFault {
 }
 impl DbLogFileNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5454,7 +5454,7 @@ impl std::fmt::Debug for ReservedDbInstanceNotFoundFault {
 }
 impl ReservedDbInstanceNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5522,7 +5522,7 @@ impl std::fmt::Debug for ExportTaskNotFoundFault {
 }
 impl ExportTaskNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5587,7 +5587,7 @@ impl std::fmt::Debug for DbProxyTargetNotFoundFault {
 }
 impl DbProxyTargetNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5652,7 +5652,7 @@ impl std::fmt::Debug for DbClusterBacktrackNotFoundFault {
 }
 impl DbClusterBacktrackNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5720,7 +5720,7 @@ impl std::fmt::Debug for InvalidEventSubscriptionStateFault {
 }
 impl InvalidEventSubscriptionStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5785,7 +5785,7 @@ impl std::fmt::Debug for InvalidDbSubnetStateFault {
 }
 impl InvalidDbSubnetStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5850,7 +5850,7 @@ impl std::fmt::Debug for InvalidDbInstanceAutomatedBackupStateFault {
 }
 impl InvalidDbInstanceAutomatedBackupStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5915,7 +5915,7 @@ impl std::fmt::Debug for DbClusterSnapshotAlreadyExistsFault {
 }
 impl DbClusterSnapshotAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5983,7 +5983,7 @@ impl std::fmt::Debug for OptionGroupQuotaExceededFault {
 }
 impl OptionGroupQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6048,7 +6048,7 @@ impl std::fmt::Debug for OptionGroupAlreadyExistsFault {
 }
 impl OptionGroupAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6113,7 +6113,7 @@ impl std::fmt::Debug for GlobalClusterQuotaExceededFault {
 }
 impl GlobalClusterQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6178,7 +6178,7 @@ impl std::fmt::Debug for GlobalClusterAlreadyExistsFault {
 }
 impl GlobalClusterAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6243,7 +6243,7 @@ impl std::fmt::Debug for SubscriptionAlreadyExistFault {
 }
 impl SubscriptionAlreadyExistFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6308,7 +6308,7 @@ impl std::fmt::Debug for DbSubnetGroupQuotaExceededFault {
 }
 impl DbSubnetGroupQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6376,7 +6376,7 @@ impl std::fmt::Debug for DbSubnetGroupAlreadyExistsFault {
 }
 impl DbSubnetGroupAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6444,7 +6444,7 @@ impl std::fmt::Debug for DbSecurityGroupQuotaExceededFault {
 }
 impl DbSecurityGroupQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6512,7 +6512,7 @@ impl std::fmt::Debug for DbSecurityGroupNotSupportedFault {
 }
 impl DbSecurityGroupNotSupportedFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6580,7 +6580,7 @@ impl std::fmt::Debug for DbSecurityGroupAlreadyExistsFault {
 }
 impl DbSecurityGroupAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6648,7 +6648,7 @@ impl std::fmt::Debug for DbProxyEndpointQuotaExceededFault {
 }
 impl DbProxyEndpointQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6716,7 +6716,7 @@ impl std::fmt::Debug for DbProxyQuotaExceededFault {
 }
 impl DbProxyQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6781,7 +6781,7 @@ impl std::fmt::Debug for DbParameterGroupQuotaExceededFault {
 }
 impl DbParameterGroupQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6849,7 +6849,7 @@ impl std::fmt::Debug for DbParameterGroupAlreadyExistsFault {
 }
 impl DbParameterGroupAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6917,7 +6917,7 @@ impl std::fmt::Debug for InvalidDbSubnetGroupFault {
 }
 impl InvalidDbSubnetGroupFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6982,7 +6982,7 @@ impl std::fmt::Debug for DbSubnetGroupNotAllowedFault {
 }
 impl DbSubnetGroupNotAllowedFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7050,7 +7050,7 @@ impl std::fmt::Debug for DbClusterEndpointQuotaExceededFault {
 }
 impl DbClusterEndpointQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7118,7 +7118,7 @@ impl std::fmt::Debug for DbClusterEndpointAlreadyExistsFault {
 }
 impl DbClusterEndpointAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7186,7 +7186,7 @@ impl std::fmt::Debug for CustomDbEngineVersionQuotaExceededFault {
 }
 impl CustomDbEngineVersionQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7254,7 +7254,7 @@ impl std::fmt::Debug for CustomDbEngineVersionAlreadyExistsFault {
 }
 impl CustomDbEngineVersionAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7322,7 +7322,7 @@ impl std::fmt::Debug for CustomAvailabilityZoneNotFoundFault {
 }
 impl CustomAvailabilityZoneNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7387,7 +7387,7 @@ impl std::fmt::Debug for InvalidExportTaskStateFault {
 }
 impl InvalidExportTaskStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7452,7 +7452,7 @@ impl std::fmt::Debug for AuthorizationQuotaExceededFault {
 }
 impl AuthorizationQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7517,7 +7517,7 @@ impl std::fmt::Debug for AuthorizationAlreadyExistsFault {
 }
 impl AuthorizationAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7582,7 +7582,7 @@ impl std::fmt::Debug for DbInstanceRoleQuotaExceededFault {
 }
 impl DbInstanceRoleQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7650,7 +7650,7 @@ impl std::fmt::Debug for DbInstanceRoleAlreadyExistsFault {
 }
 impl DbInstanceRoleAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7718,7 +7718,7 @@ impl std::fmt::Debug for DbClusterRoleQuotaExceededFault {
 }
 impl DbClusterRoleQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7786,7 +7786,7 @@ impl std::fmt::Debug for DbClusterRoleAlreadyExistsFault {
 }
 impl DbClusterRoleAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }

@@ -4,7 +4,7 @@ pub fn add_headers_invoke_endpoint(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_1) = &input.content_type {
-        let formatted_2 = AsRef::<str>::as_ref(inner_1);
+        let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value =
@@ -21,7 +21,7 @@ pub fn add_headers_invoke_endpoint(
         }
     }
     if let Some(inner_3) = &input.accept {
-        let formatted_4 = AsRef::<str>::as_ref(inner_3);
+        let formatted_4 = inner_3.as_str();
         if !formatted_4.is_empty() {
             let header_value = formatted_4;
             let header_value =
@@ -38,7 +38,7 @@ pub fn add_headers_invoke_endpoint(
         }
     }
     if let Some(inner_5) = &input.custom_attributes {
-        let formatted_6 = AsRef::<str>::as_ref(inner_5);
+        let formatted_6 = inner_5.as_str();
         if !formatted_6.is_empty() {
             let header_value = formatted_6;
             let header_value =
@@ -55,7 +55,7 @@ pub fn add_headers_invoke_endpoint(
         }
     }
     if let Some(inner_7) = &input.target_model {
-        let formatted_8 = AsRef::<str>::as_ref(inner_7);
+        let formatted_8 = inner_7.as_str();
         if !formatted_8.is_empty() {
             let header_value = formatted_8;
             let header_value =
@@ -72,7 +72,7 @@ pub fn add_headers_invoke_endpoint(
         }
     }
     if let Some(inner_9) = &input.target_variant {
-        let formatted_10 = AsRef::<str>::as_ref(inner_9);
+        let formatted_10 = inner_9.as_str();
         if !formatted_10.is_empty() {
             let header_value = formatted_10;
             let header_value =
@@ -89,7 +89,7 @@ pub fn add_headers_invoke_endpoint(
         }
     }
     if let Some(inner_11) = &input.target_container_hostname {
-        let formatted_12 = AsRef::<str>::as_ref(inner_11);
+        let formatted_12 = inner_11.as_str();
         if !formatted_12.is_empty() {
             let header_value = formatted_12;
             let header_value =
@@ -106,7 +106,7 @@ pub fn add_headers_invoke_endpoint(
         }
     }
     if let Some(inner_13) = &input.inference_id {
-        let formatted_14 = AsRef::<str>::as_ref(inner_13);
+        let formatted_14 = inner_13.as_str();
         if !formatted_14.is_empty() {
             let header_value = formatted_14;
             let header_value =
@@ -123,7 +123,7 @@ pub fn add_headers_invoke_endpoint(
         }
     }
     if let Some(inner_15) = &input.enable_explanations {
-        let formatted_16 = AsRef::<str>::as_ref(inner_15);
+        let formatted_16 = inner_15.as_str();
         if !formatted_16.is_empty() {
             let header_value = formatted_16;
             let header_value =
@@ -147,7 +147,7 @@ pub fn add_headers_invoke_endpoint_async(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_17) = &input.content_type {
-        let formatted_18 = AsRef::<str>::as_ref(inner_17);
+        let formatted_18 = inner_17.as_str();
         if !formatted_18.is_empty() {
             let header_value = formatted_18;
             let header_value =
@@ -164,7 +164,7 @@ pub fn add_headers_invoke_endpoint_async(
         }
     }
     if let Some(inner_19) = &input.accept {
-        let formatted_20 = AsRef::<str>::as_ref(inner_19);
+        let formatted_20 = inner_19.as_str();
         if !formatted_20.is_empty() {
             let header_value = formatted_20;
             let header_value =
@@ -181,7 +181,7 @@ pub fn add_headers_invoke_endpoint_async(
         }
     }
     if let Some(inner_21) = &input.custom_attributes {
-        let formatted_22 = AsRef::<str>::as_ref(inner_21);
+        let formatted_22 = inner_21.as_str();
         if !formatted_22.is_empty() {
             let header_value = formatted_22;
             let header_value =
@@ -198,7 +198,7 @@ pub fn add_headers_invoke_endpoint_async(
         }
     }
     if let Some(inner_23) = &input.inference_id {
-        let formatted_24 = AsRef::<str>::as_ref(inner_23);
+        let formatted_24 = inner_23.as_str();
         if !formatted_24.is_empty() {
             let header_value = formatted_24;
             let header_value =
@@ -215,7 +215,7 @@ pub fn add_headers_invoke_endpoint_async(
         }
     }
     if let Some(inner_25) = &input.input_location {
-        let formatted_26 = AsRef::<str>::as_ref(inner_25);
+        let formatted_26 = inner_25.as_str();
         if !formatted_26.is_empty() {
             let header_value = formatted_26;
             let header_value =
@@ -263,7 +263,7 @@ pub fn deser_payload_invoke_endpoint_invoke_endpoint_output_body(
         .transpose()
 }
 
-pub fn deser_header_invoke_endpoint_invoke_endpoint_output_content_type(
+pub(crate) fn deser_header_invoke_endpoint_invoke_endpoint_output_content_type(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -273,7 +273,7 @@ pub fn deser_header_invoke_endpoint_invoke_endpoint_output_content_type(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_invoke_endpoint_invoke_endpoint_output_custom_attributes(
+pub(crate) fn deser_header_invoke_endpoint_invoke_endpoint_output_custom_attributes(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -285,7 +285,7 @@ pub fn deser_header_invoke_endpoint_invoke_endpoint_output_custom_attributes(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_invoke_endpoint_invoke_endpoint_output_invoked_production_variant(
+pub(crate) fn deser_header_invoke_endpoint_invoke_endpoint_output_invoked_production_variant(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -297,7 +297,7 @@ pub fn deser_header_invoke_endpoint_invoke_endpoint_output_invoked_production_va
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_invoke_endpoint_async_invoke_endpoint_async_output_output_location(
+pub(crate) fn deser_header_invoke_endpoint_async_invoke_endpoint_async_output_output_location(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,

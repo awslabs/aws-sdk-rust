@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_crate_error_marketplace_commerce_analytics_exception_json_err(
+pub(crate) fn deser_structure_crate_error_marketplace_commerce_analytics_exception_json_err(
     value: &[u8],
     mut builder: crate::error::marketplace_commerce_analytics_exception::Builder,
 ) -> Result<
@@ -50,7 +50,7 @@ pub fn deser_structure_crate_error_marketplace_commerce_analytics_exception_json
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_generate_data_set(
+pub(crate) fn deser_operation_crate_operation_generate_data_set(
     value: &[u8],
     mut builder: crate::output::generate_data_set_output::Builder,
 ) -> Result<crate::output::generate_data_set_output::Builder, aws_smithy_json::deserialize::Error> {
@@ -92,7 +92,7 @@ pub fn deser_operation_crate_operation_generate_data_set(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_start_support_data_export(
+pub(crate) fn deser_operation_crate_operation_start_support_data_export(
     value: &[u8],
     mut builder: crate::output::start_support_data_export_output::Builder,
 ) -> Result<
@@ -137,7 +137,7 @@ pub fn deser_operation_crate_operation_start_support_data_export(
     Ok(builder)
 }
 
-pub fn or_empty_doc(data: &[u8]) -> &[u8] {
+pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
     } else {

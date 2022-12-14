@@ -671,7 +671,7 @@ pub fn serialize_structure_crate_input_create_sip_media_application_call_input(
         let mut object_144 = object.key("SipHeaders").start_object();
         for (key_145, value_146) in var_143 {
             {
-                object_144.key(key_145).string(value_146.as_str());
+                object_144.key(key_145.as_str()).string(value_146.as_str());
             }
         }
         object_144.finish();
@@ -1409,7 +1409,7 @@ pub fn serialize_structure_crate_input_update_sip_media_application_call_input(
         let mut object_278 = object.key("Arguments").start_object();
         for (key_279, value_280) in var_277 {
             {
-                object_278.key(key_279).string(value_280.as_str());
+                object_278.key(key_279.as_str()).string(value_280.as_str());
             }
         }
         object_278.finish();

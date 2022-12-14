@@ -52,7 +52,7 @@ pub fn serialize_structure_crate_input_create_alert_input(
         let mut object_11 = object.key("Tags").start_object();
         for (key_12, value_13) in var_10 {
             {
-                object_11.key(key_12).string(value_13.as_str());
+                object_11.key(key_12.as_str()).string(value_13.as_str());
             }
         }
         object_11.finish();
@@ -87,7 +87,7 @@ pub fn serialize_structure_crate_input_create_anomaly_detector_input(
         let mut object_20 = object.key("Tags").start_object();
         for (key_21, value_22) in var_19 {
             {
-                object_20.key(key_21).string(value_22.as_str());
+                object_20.key(key_21.as_str()).string(value_22.as_str());
             }
         }
         object_20.finish();
@@ -160,7 +160,7 @@ pub fn serialize_structure_crate_input_create_metric_set_input(
         let mut object_42 = object.key("Tags").start_object();
         for (key_43, value_44) in var_41 {
             {
-                object_42.key(key_43).string(value_44.as_str());
+                object_42.key(key_43.as_str()).string(value_44.as_str());
             }
         }
         object_42.finish();
@@ -499,7 +499,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_97 = object.key("tags").start_object();
         for (key_98, value_99) in var_96 {
             {
-                object_97.key(key_98).string(value_99.as_str());
+                object_97.key(key_98.as_str()).string(value_99.as_str());
             }
         }
         object_97.finish();

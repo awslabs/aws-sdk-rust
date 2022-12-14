@@ -608,7 +608,7 @@ pub fn serialize_structure_crate_model_sampling_rule(
         let mut object_117 = object.key("Attributes").start_object();
         for (key_118, value_119) in var_116 {
             {
-                object_117.key(key_118).string(value_119.as_str());
+                object_117.key(key_118.as_str()).string(value_119.as_str());
             }
         }
         object_117.finish();
@@ -762,7 +762,7 @@ pub fn serialize_structure_crate_model_sampling_rule_update(
         let mut object_144 = object.key("Attributes").start_object();
         for (key_145, value_146) in var_143 {
             {
-                object_144.key(key_145).string(value_146.as_str());
+                object_144.key(key_145.as_str()).string(value_146.as_str());
             }
         }
         object_144.finish();

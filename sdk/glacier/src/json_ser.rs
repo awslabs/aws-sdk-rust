@@ -7,7 +7,7 @@ pub fn serialize_structure_crate_input_add_tags_to_vault_input(
         let mut object_2 = object.key("Tags").start_object();
         for (key_3, value_4) in var_1 {
             {
-                object_2.key(key_3).string(value_4.as_str());
+                object_2.key(key_3.as_str()).string(value_4.as_str());
             }
         }
         object_2.finish();
@@ -285,7 +285,7 @@ pub fn serialize_structure_crate_model_s3_location(
         let mut object_61 = object.key("Tagging").start_object();
         for (key_62, value_63) in var_60 {
             {
-                object_61.key(key_62).string(value_63.as_str());
+                object_61.key(key_62.as_str()).string(value_63.as_str());
             }
         }
         object_61.finish();
@@ -294,7 +294,7 @@ pub fn serialize_structure_crate_model_s3_location(
         let mut object_65 = object.key("UserMetadata").start_object();
         for (key_66, value_67) in var_64 {
             {
-                object_65.key(key_66).string(value_67.as_str());
+                object_65.key(key_66.as_str()).string(value_67.as_str());
             }
         }
         object_65.finish();

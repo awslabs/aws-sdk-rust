@@ -7,7 +7,7 @@ pub fn serialize_structure_crate_input_create_browser_settings_input(
         let mut object_2 = object.key("additionalEncryptionContext").start_object();
         for (key_3, value_4) in var_1 {
             {
-                object_2.key(key_3).string(value_4.as_str());
+                object_2.key(key_3.as_str()).string(value_4.as_str());
             }
         }
         object_2.finish();
@@ -46,7 +46,7 @@ pub fn serialize_structure_crate_input_create_identity_provider_input(
         let mut object_14 = object.key("identityProviderDetails").start_object();
         for (key_15, value_16) in var_13 {
             {
-                object_14.key(key_15).string(value_16.as_str());
+                object_14.key(key_15.as_str()).string(value_16.as_str());
             }
         }
         object_14.finish();
@@ -113,7 +113,7 @@ pub fn serialize_structure_crate_input_create_portal_input(
         let mut object_33 = object.key("additionalEncryptionContext").start_object();
         for (key_34, value_35) in var_32 {
             {
-                object_33.key(key_34).string(value_35.as_str());
+                object_33.key(key_34.as_str()).string(value_35.as_str());
             }
         }
         object_33.finish();
@@ -266,7 +266,7 @@ pub fn serialize_structure_crate_input_update_identity_provider_input(
         let mut object_72 = object.key("identityProviderDetails").start_object();
         for (key_73, value_74) in var_71 {
             {
-                object_72.key(key_73).string(value_74.as_str());
+                object_72.key(key_73.as_str()).string(value_74.as_str());
             }
         }
         object_72.finish();

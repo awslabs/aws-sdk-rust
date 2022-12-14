@@ -10,7 +10,7 @@ pub fn serialize_structure_crate_input_create_bot_input(
         let mut object_3 = object.key("botTags").start_object();
         for (key_4, value_5) in var_2 {
             {
-                object_3.key(key_4).string(value_5.as_str());
+                object_3.key(key_4.as_str()).string(value_5.as_str());
             }
         }
         object_3.finish();
@@ -36,7 +36,7 @@ pub fn serialize_structure_crate_input_create_bot_input(
         let mut object_12 = object.key("testBotAliasTags").start_object();
         for (key_13, value_14) in var_11 {
             {
-                object_12.key(key_13).string(value_14.as_str());
+                object_12.key(key_13.as_str()).string(value_14.as_str());
             }
         }
         object_12.finish();
@@ -52,7 +52,7 @@ pub fn serialize_structure_crate_input_create_bot_alias_input(
         let mut object_16 = object.key("botAliasLocaleSettings").start_object();
         for (key_17, value_18) in var_15 {
             {
-                let mut object_19 = object_16.key(key_17).start_object();
+                let mut object_19 = object_16.key(key_17.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_bot_alias_locale_settings(
                     &mut object_19,
                     value_18,
@@ -91,7 +91,7 @@ pub fn serialize_structure_crate_input_create_bot_alias_input(
         let mut object_28 = object.key("tags").start_object();
         for (key_29, value_30) in var_27 {
             {
-                object_28.key(key_29).string(value_30.as_str());
+                object_28.key(key_29.as_str()).string(value_30.as_str());
             }
         }
         object_28.finish();
@@ -131,7 +131,7 @@ pub fn serialize_structure_crate_input_create_bot_version_input(
         let mut object_37 = object.key("botVersionLocaleSpecification").start_object();
         for (key_38, value_39) in var_36 {
             {
-                let mut object_40 = object_37.key(key_38).start_object();
+                let mut object_40 = object_37.key(key_38.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_bot_version_locale_details(
                     &mut object_40,
                     value_39,
@@ -301,10 +301,10 @@ pub fn serialize_structure_crate_input_create_resource_policy_statement_input(
         let mut object_78 = object.key("condition").start_object();
         for (key_79, value_80) in var_77 {
             {
-                let mut object_81 = object_78.key(key_79).start_object();
+                let mut object_81 = object_78.key(key_79.as_str()).start_object();
                 for (key_82, value_83) in value_80 {
                     {
-                        object_81.key(key_82).string(value_83.as_str());
+                        object_81.key(key_82.as_str()).string(value_83.as_str());
                     }
                 }
                 object_81.finish();
@@ -971,7 +971,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_224 = object.key("tags").start_object();
         for (key_225, value_226) in var_223 {
             {
-                object_224.key(key_225).string(value_226.as_str());
+                object_224.key(key_225.as_str()).string(value_226.as_str());
             }
         }
         object_224.finish();
@@ -1014,7 +1014,7 @@ pub fn serialize_structure_crate_input_update_bot_alias_input(
         let mut object_234 = object.key("botAliasLocaleSettings").start_object();
         for (key_235, value_236) in var_233 {
             {
-                let mut object_237 = object_234.key(key_235).start_object();
+                let mut object_237 = object_234.key(key_235.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_bot_alias_locale_settings(
                     &mut object_237,
                     value_236,
@@ -1776,7 +1776,7 @@ pub fn serialize_structure_crate_model_sub_slot_setting(
         let mut object_384 = object.key("slotSpecifications").start_object();
         for (key_385, value_386) in var_383 {
             {
-                let mut object_387 = object_384.key(key_385).start_object();
+                let mut object_387 = object_384.key(key_385.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_specifications(
                     &mut object_387,
                     value_386,
@@ -2610,7 +2610,7 @@ pub fn serialize_structure_crate_model_dialog_state(
         let mut object_547 = object.key("sessionAttributes").start_object();
         for (key_548, value_549) in var_546 {
             {
-                object_547.key(key_548).string(value_549.as_str());
+                object_547.key(key_548.as_str()).string(value_549.as_str());
             }
         }
         object_547.finish();
@@ -3001,7 +3001,7 @@ pub fn serialize_structure_crate_model_bot_import_specification(
         let mut object_627 = object.key("botTags").start_object();
         for (key_628, value_629) in var_626 {
             {
-                object_627.key(key_628).string(value_629.as_str());
+                object_627.key(key_628.as_str()).string(value_629.as_str());
             }
         }
         object_627.finish();
@@ -3010,7 +3010,7 @@ pub fn serialize_structure_crate_model_bot_import_specification(
         let mut object_631 = object.key("testBotAliasTags").start_object();
         for (key_632, value_633) in var_630 {
             {
-                object_631.key(key_632).string(value_633.as_str());
+                object_631.key(key_632.as_str()).string(value_633.as_str());
             }
         }
         object_631.finish();
@@ -3219,7 +3219,7 @@ pub fn serialize_structure_crate_model_intent_override(
         let mut object_672 = object.key("slots").start_object();
         for (key_673, value_674) in var_671 {
             {
-                let mut object_675 = object_672.key(key_673).start_object();
+                let mut object_675 = object_672.key(key_673.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_slot_value_override(
                     &mut object_675,
                     value_674,

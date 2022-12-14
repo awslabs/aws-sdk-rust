@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_crate_error_invalid_input_exception_json_err(
+pub(crate) fn deser_structure_crate_error_invalid_input_exception_json_err(
     value: &[u8],
     mut builder: crate::error::invalid_input_exception::Builder,
 ) -> Result<crate::error::invalid_input_exception::Builder, aws_smithy_json::deserialize::Error> {
@@ -47,7 +47,7 @@ pub fn deser_structure_crate_error_invalid_input_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_structure_crate_error_resource_not_found_exception_json_err(
+pub(crate) fn deser_structure_crate_error_resource_not_found_exception_json_err(
     value: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, aws_smithy_json::deserialize::Error>
@@ -90,7 +90,7 @@ pub fn deser_structure_crate_error_resource_not_found_exception_json_err(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_personalized_ranking(
+pub(crate) fn deser_operation_crate_operation_get_personalized_ranking(
     value: &[u8],
     mut builder: crate::output::get_personalized_ranking_output::Builder,
 ) -> Result<
@@ -140,7 +140,7 @@ pub fn deser_operation_crate_operation_get_personalized_ranking(
     Ok(builder)
 }
 
-pub fn deser_operation_crate_operation_get_recommendations(
+pub(crate) fn deser_operation_crate_operation_get_recommendations(
     value: &[u8],
     mut builder: crate::output::get_recommendations_output::Builder,
 ) -> Result<crate::output::get_recommendations_output::Builder, aws_smithy_json::deserialize::Error>
@@ -188,7 +188,7 @@ pub fn deser_operation_crate_operation_get_recommendations(
     Ok(builder)
 }
 
-pub fn or_empty_doc(data: &[u8]) -> &[u8] {
+pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
     } else {
@@ -196,8 +196,8 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_personalizeruntime_item_list<'a, I>(
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_personalizeruntime_item_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::PredictedItem>>, aws_smithy_json::deserialize::Error>
 where
@@ -232,7 +232,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_predicted_item<'a, I>(
+pub(crate) fn deser_structure_crate_model_predicted_item<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::PredictedItem>, aws_smithy_json::deserialize::Error>
 where
@@ -244,7 +244,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::PredictedItem::builder();
+            let mut builder = crate::model::predicted_item::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

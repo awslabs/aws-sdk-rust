@@ -1745,7 +1745,7 @@ pub fn serialize_structure_crate_input_put_resource_config_input(
         let mut object_305 = object.key("Tags").start_object();
         for (key_306, value_307) in var_304 {
             {
-                object_305.key(key_306).string(value_307.as_str());
+                object_305.key(key_306.as_str()).string(value_307.as_str());
             }
         }
         object_305.finish();
@@ -2588,7 +2588,7 @@ pub fn serialize_structure_crate_model_remediation_configuration(
         let mut object_479 = object.key("Parameters").start_object();
         for (key_480, value_481) in var_478 {
             {
-                let mut object_482 = object_479.key(key_480).start_object();
+                let mut object_482 = object_479.key(key_480.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_remediation_parameter_value(
                     &mut object_482,
                     value_481,

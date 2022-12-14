@@ -10,7 +10,7 @@ pub fn deser_payload_synthesize_speech_synthesize_speech_output_audio_stream(
     Ok(aws_smithy_http::byte_stream::ByteStream::new(body))
 }
 
-pub fn deser_header_synthesize_speech_synthesize_speech_output_content_type(
+pub(crate) fn deser_header_synthesize_speech_synthesize_speech_output_content_type(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -20,7 +20,7 @@ pub fn deser_header_synthesize_speech_synthesize_speech_output_content_type(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_synthesize_speech_synthesize_speech_output_request_characters(
+pub(crate) fn deser_header_synthesize_speech_synthesize_speech_output_request_characters(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-amzn-RequestCharacters").iter();

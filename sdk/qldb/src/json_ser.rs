@@ -19,9 +19,9 @@ pub fn serialize_structure_crate_input_create_ledger_input(
         let mut object_6 = object.key("Tags").start_object();
         for (key_7, value_8) in var_5 {
             if let Some(var_9) = value_8 {
-                object_6.key(key_7).string(var_9.as_str());
+                object_6.key(key_7.as_str()).string(var_9.as_str());
             } else {
-                object_6.key(key_7).null();
+                object_6.key(key_7.as_str()).null();
             }
         }
         object_6.finish();
@@ -129,9 +129,9 @@ pub fn serialize_structure_crate_input_stream_journal_to_kinesis_input(
         let mut object_32 = object.key("Tags").start_object();
         for (key_33, value_34) in var_31 {
             if let Some(var_35) = value_34 {
-                object_32.key(key_33).string(var_35.as_str());
+                object_32.key(key_33.as_str()).string(var_35.as_str());
             } else {
-                object_32.key(key_33).null();
+                object_32.key(key_33.as_str()).null();
             }
         }
         object_32.finish();
@@ -147,9 +147,9 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_37 = object.key("Tags").start_object();
         for (key_38, value_39) in var_36 {
             if let Some(var_40) = value_39 {
-                object_37.key(key_38).string(var_40.as_str());
+                object_37.key(key_38.as_str()).string(var_40.as_str());
             } else {
-                object_37.key(key_38).null();
+                object_37.key(key_38.as_str()).null();
             }
         }
         object_37.finish();

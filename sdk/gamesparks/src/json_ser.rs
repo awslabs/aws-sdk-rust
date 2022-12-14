@@ -16,7 +16,7 @@ pub fn serialize_structure_crate_input_create_game_input(
         let mut object_5 = object.key("Tags").start_object();
         for (key_6, value_7) in var_4 {
             {
-                object_5.key(key_6).string(value_7.as_str());
+                object_5.key(key_6.as_str()).string(value_7.as_str());
             }
         }
         object_5.finish();
@@ -54,7 +54,7 @@ pub fn serialize_structure_crate_input_create_stage_input(
         let mut object_14 = object.key("Tags").start_object();
         for (key_15, value_16) in var_13 {
             {
-                object_14.key(key_15).string(value_16.as_str());
+                object_14.key(key_15.as_str()).string(value_16.as_str());
             }
         }
         object_14.finish();
@@ -110,7 +110,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_24 = object.key("tags").start_object();
         for (key_25, value_26) in var_23 {
             {
-                object_24.key(key_25).string(value_26.as_str());
+                object_24.key(key_25.as_str()).string(value_26.as_str());
             }
         }
         object_24.finish();

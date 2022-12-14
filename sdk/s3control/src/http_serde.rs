@@ -4,7 +4,7 @@ pub fn add_headers_create_access_point(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_1) = &input.account_id {
-        let formatted_2 = AsRef::<str>::as_ref(inner_1);
+        let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value =
@@ -28,7 +28,7 @@ pub fn add_headers_create_access_point_for_object_lambda(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_3) = &input.account_id {
-        let formatted_4 = AsRef::<str>::as_ref(inner_3);
+        let formatted_4 = inner_3.as_str();
         if !formatted_4.is_empty() {
             let header_value = formatted_4;
             let header_value =
@@ -52,7 +52,7 @@ pub fn add_headers_create_bucket(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_5) = &input.acl {
-        let formatted_6 = AsRef::<str>::as_ref(inner_5);
+        let formatted_6 = inner_5.as_str();
         if !formatted_6.is_empty() {
             let header_value = formatted_6;
             let header_value =
@@ -69,7 +69,7 @@ pub fn add_headers_create_bucket(
         }
     }
     if let Some(inner_7) = &input.grant_full_control {
-        let formatted_8 = AsRef::<str>::as_ref(inner_7);
+        let formatted_8 = inner_7.as_str();
         if !formatted_8.is_empty() {
             let header_value = formatted_8;
             let header_value =
@@ -86,7 +86,7 @@ pub fn add_headers_create_bucket(
         }
     }
     if let Some(inner_9) = &input.grant_read {
-        let formatted_10 = AsRef::<str>::as_ref(inner_9);
+        let formatted_10 = inner_9.as_str();
         if !formatted_10.is_empty() {
             let header_value = formatted_10;
             let header_value =
@@ -103,7 +103,7 @@ pub fn add_headers_create_bucket(
         }
     }
     if let Some(inner_11) = &input.grant_read_acp {
-        let formatted_12 = AsRef::<str>::as_ref(inner_11);
+        let formatted_12 = inner_11.as_str();
         if !formatted_12.is_empty() {
             let header_value = formatted_12;
             let header_value =
@@ -120,7 +120,7 @@ pub fn add_headers_create_bucket(
         }
     }
     if let Some(inner_13) = &input.grant_write {
-        let formatted_14 = AsRef::<str>::as_ref(inner_13);
+        let formatted_14 = inner_13.as_str();
         if !formatted_14.is_empty() {
             let header_value = formatted_14;
             let header_value =
@@ -137,7 +137,7 @@ pub fn add_headers_create_bucket(
         }
     }
     if let Some(inner_15) = &input.grant_write_acp {
-        let formatted_16 = AsRef::<str>::as_ref(inner_15);
+        let formatted_16 = inner_15.as_str();
         if !formatted_16.is_empty() {
             let header_value = formatted_16;
             let header_value =
@@ -173,7 +173,7 @@ pub fn add_headers_create_bucket(
         }
     }
     if let Some(inner_18) = &input.outpost_id {
-        let formatted_19 = AsRef::<str>::as_ref(inner_18);
+        let formatted_19 = inner_18.as_str();
         if !formatted_19.is_empty() {
             let header_value = formatted_19;
             let header_value =
@@ -197,7 +197,7 @@ pub fn add_headers_create_job(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_20) = &input.account_id {
-        let formatted_21 = AsRef::<str>::as_ref(inner_20);
+        let formatted_21 = inner_20.as_str();
         if !formatted_21.is_empty() {
             let header_value = formatted_21;
             let header_value =
@@ -221,7 +221,7 @@ pub fn add_headers_create_multi_region_access_point(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_22) = &input.account_id {
-        let formatted_23 = AsRef::<str>::as_ref(inner_22);
+        let formatted_23 = inner_22.as_str();
         if !formatted_23.is_empty() {
             let header_value = formatted_23;
             let header_value =
@@ -245,7 +245,7 @@ pub fn add_headers_delete_access_point(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_24) = &input.account_id {
-        let formatted_25 = AsRef::<str>::as_ref(inner_24);
+        let formatted_25 = inner_24.as_str();
         if !formatted_25.is_empty() {
             let header_value = formatted_25;
             let header_value =
@@ -269,7 +269,7 @@ pub fn add_headers_delete_access_point_for_object_lambda(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_26) = &input.account_id {
-        let formatted_27 = AsRef::<str>::as_ref(inner_26);
+        let formatted_27 = inner_26.as_str();
         if !formatted_27.is_empty() {
             let header_value = formatted_27;
             let header_value =
@@ -293,7 +293,7 @@ pub fn add_headers_delete_access_point_policy(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_28) = &input.account_id {
-        let formatted_29 = AsRef::<str>::as_ref(inner_28);
+        let formatted_29 = inner_28.as_str();
         if !formatted_29.is_empty() {
             let header_value = formatted_29;
             let header_value =
@@ -317,7 +317,7 @@ pub fn add_headers_delete_access_point_policy_for_object_lambda(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_30) = &input.account_id {
-        let formatted_31 = AsRef::<str>::as_ref(inner_30);
+        let formatted_31 = inner_30.as_str();
         if !formatted_31.is_empty() {
             let header_value = formatted_31;
             let header_value =
@@ -341,7 +341,7 @@ pub fn add_headers_delete_bucket(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_32) = &input.account_id {
-        let formatted_33 = AsRef::<str>::as_ref(inner_32);
+        let formatted_33 = inner_32.as_str();
         if !formatted_33.is_empty() {
             let header_value = formatted_33;
             let header_value =
@@ -365,7 +365,7 @@ pub fn add_headers_delete_bucket_lifecycle_configuration(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_34) = &input.account_id {
-        let formatted_35 = AsRef::<str>::as_ref(inner_34);
+        let formatted_35 = inner_34.as_str();
         if !formatted_35.is_empty() {
             let header_value = formatted_35;
             let header_value =
@@ -389,7 +389,7 @@ pub fn add_headers_delete_bucket_policy(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_36) = &input.account_id {
-        let formatted_37 = AsRef::<str>::as_ref(inner_36);
+        let formatted_37 = inner_36.as_str();
         if !formatted_37.is_empty() {
             let header_value = formatted_37;
             let header_value =
@@ -413,7 +413,7 @@ pub fn add_headers_delete_bucket_tagging(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_38) = &input.account_id {
-        let formatted_39 = AsRef::<str>::as_ref(inner_38);
+        let formatted_39 = inner_38.as_str();
         if !formatted_39.is_empty() {
             let header_value = formatted_39;
             let header_value =
@@ -437,7 +437,7 @@ pub fn add_headers_delete_job_tagging(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_40) = &input.account_id {
-        let formatted_41 = AsRef::<str>::as_ref(inner_40);
+        let formatted_41 = inner_40.as_str();
         if !formatted_41.is_empty() {
             let header_value = formatted_41;
             let header_value =
@@ -461,7 +461,7 @@ pub fn add_headers_delete_multi_region_access_point(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_42) = &input.account_id {
-        let formatted_43 = AsRef::<str>::as_ref(inner_42);
+        let formatted_43 = inner_42.as_str();
         if !formatted_43.is_empty() {
             let header_value = formatted_43;
             let header_value =
@@ -485,7 +485,7 @@ pub fn add_headers_delete_public_access_block(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_44) = &input.account_id {
-        let formatted_45 = AsRef::<str>::as_ref(inner_44);
+        let formatted_45 = inner_44.as_str();
         if !formatted_45.is_empty() {
             let header_value = formatted_45;
             let header_value =
@@ -509,7 +509,7 @@ pub fn add_headers_delete_storage_lens_configuration(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_46) = &input.account_id {
-        let formatted_47 = AsRef::<str>::as_ref(inner_46);
+        let formatted_47 = inner_46.as_str();
         if !formatted_47.is_empty() {
             let header_value = formatted_47;
             let header_value =
@@ -533,7 +533,7 @@ pub fn add_headers_delete_storage_lens_configuration_tagging(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_48) = &input.account_id {
-        let formatted_49 = AsRef::<str>::as_ref(inner_48);
+        let formatted_49 = inner_48.as_str();
         if !formatted_49.is_empty() {
             let header_value = formatted_49;
             let header_value =
@@ -557,7 +557,7 @@ pub fn add_headers_describe_job(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_50) = &input.account_id {
-        let formatted_51 = AsRef::<str>::as_ref(inner_50);
+        let formatted_51 = inner_50.as_str();
         if !formatted_51.is_empty() {
             let header_value = formatted_51;
             let header_value =
@@ -581,7 +581,7 @@ pub fn add_headers_describe_multi_region_access_point_operation(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_52) = &input.account_id {
-        let formatted_53 = AsRef::<str>::as_ref(inner_52);
+        let formatted_53 = inner_52.as_str();
         if !formatted_53.is_empty() {
             let header_value = formatted_53;
             let header_value =
@@ -605,7 +605,7 @@ pub fn add_headers_get_access_point(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_54) = &input.account_id {
-        let formatted_55 = AsRef::<str>::as_ref(inner_54);
+        let formatted_55 = inner_54.as_str();
         if !formatted_55.is_empty() {
             let header_value = formatted_55;
             let header_value =
@@ -629,7 +629,7 @@ pub fn add_headers_get_access_point_configuration_for_object_lambda(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_56) = &input.account_id {
-        let formatted_57 = AsRef::<str>::as_ref(inner_56);
+        let formatted_57 = inner_56.as_str();
         if !formatted_57.is_empty() {
             let header_value = formatted_57;
             let header_value =
@@ -653,7 +653,7 @@ pub fn add_headers_get_access_point_for_object_lambda(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_58) = &input.account_id {
-        let formatted_59 = AsRef::<str>::as_ref(inner_58);
+        let formatted_59 = inner_58.as_str();
         if !formatted_59.is_empty() {
             let header_value = formatted_59;
             let header_value =
@@ -677,7 +677,7 @@ pub fn add_headers_get_access_point_policy(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_60) = &input.account_id {
-        let formatted_61 = AsRef::<str>::as_ref(inner_60);
+        let formatted_61 = inner_60.as_str();
         if !formatted_61.is_empty() {
             let header_value = formatted_61;
             let header_value =
@@ -701,7 +701,7 @@ pub fn add_headers_get_access_point_policy_for_object_lambda(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_62) = &input.account_id {
-        let formatted_63 = AsRef::<str>::as_ref(inner_62);
+        let formatted_63 = inner_62.as_str();
         if !formatted_63.is_empty() {
             let header_value = formatted_63;
             let header_value =
@@ -725,7 +725,7 @@ pub fn add_headers_get_access_point_policy_status(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_64) = &input.account_id {
-        let formatted_65 = AsRef::<str>::as_ref(inner_64);
+        let formatted_65 = inner_64.as_str();
         if !formatted_65.is_empty() {
             let header_value = formatted_65;
             let header_value =
@@ -749,7 +749,7 @@ pub fn add_headers_get_access_point_policy_status_for_object_lambda(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_66) = &input.account_id {
-        let formatted_67 = AsRef::<str>::as_ref(inner_66);
+        let formatted_67 = inner_66.as_str();
         if !formatted_67.is_empty() {
             let header_value = formatted_67;
             let header_value =
@@ -773,7 +773,7 @@ pub fn add_headers_get_bucket(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_68) = &input.account_id {
-        let formatted_69 = AsRef::<str>::as_ref(inner_68);
+        let formatted_69 = inner_68.as_str();
         if !formatted_69.is_empty() {
             let header_value = formatted_69;
             let header_value =
@@ -797,7 +797,7 @@ pub fn add_headers_get_bucket_lifecycle_configuration(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_70) = &input.account_id {
-        let formatted_71 = AsRef::<str>::as_ref(inner_70);
+        let formatted_71 = inner_70.as_str();
         if !formatted_71.is_empty() {
             let header_value = formatted_71;
             let header_value =
@@ -821,7 +821,7 @@ pub fn add_headers_get_bucket_policy(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_72) = &input.account_id {
-        let formatted_73 = AsRef::<str>::as_ref(inner_72);
+        let formatted_73 = inner_72.as_str();
         if !formatted_73.is_empty() {
             let header_value = formatted_73;
             let header_value =
@@ -845,7 +845,7 @@ pub fn add_headers_get_bucket_tagging(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_74) = &input.account_id {
-        let formatted_75 = AsRef::<str>::as_ref(inner_74);
+        let formatted_75 = inner_74.as_str();
         if !formatted_75.is_empty() {
             let header_value = formatted_75;
             let header_value =
@@ -869,7 +869,7 @@ pub fn add_headers_get_bucket_versioning(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_76) = &input.account_id {
-        let formatted_77 = AsRef::<str>::as_ref(inner_76);
+        let formatted_77 = inner_76.as_str();
         if !formatted_77.is_empty() {
             let header_value = formatted_77;
             let header_value =
@@ -893,7 +893,7 @@ pub fn add_headers_get_job_tagging(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_78) = &input.account_id {
-        let formatted_79 = AsRef::<str>::as_ref(inner_78);
+        let formatted_79 = inner_78.as_str();
         if !formatted_79.is_empty() {
             let header_value = formatted_79;
             let header_value =
@@ -917,7 +917,7 @@ pub fn add_headers_get_multi_region_access_point(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_80) = &input.account_id {
-        let formatted_81 = AsRef::<str>::as_ref(inner_80);
+        let formatted_81 = inner_80.as_str();
         if !formatted_81.is_empty() {
             let header_value = formatted_81;
             let header_value =
@@ -941,7 +941,7 @@ pub fn add_headers_get_multi_region_access_point_policy(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_82) = &input.account_id {
-        let formatted_83 = AsRef::<str>::as_ref(inner_82);
+        let formatted_83 = inner_82.as_str();
         if !formatted_83.is_empty() {
             let header_value = formatted_83;
             let header_value =
@@ -965,7 +965,7 @@ pub fn add_headers_get_multi_region_access_point_policy_status(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_84) = &input.account_id {
-        let formatted_85 = AsRef::<str>::as_ref(inner_84);
+        let formatted_85 = inner_84.as_str();
         if !formatted_85.is_empty() {
             let header_value = formatted_85;
             let header_value =
@@ -989,7 +989,7 @@ pub fn add_headers_get_public_access_block(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_86) = &input.account_id {
-        let formatted_87 = AsRef::<str>::as_ref(inner_86);
+        let formatted_87 = inner_86.as_str();
         if !formatted_87.is_empty() {
             let header_value = formatted_87;
             let header_value =
@@ -1013,7 +1013,7 @@ pub fn add_headers_get_storage_lens_configuration(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_88) = &input.account_id {
-        let formatted_89 = AsRef::<str>::as_ref(inner_88);
+        let formatted_89 = inner_88.as_str();
         if !formatted_89.is_empty() {
             let header_value = formatted_89;
             let header_value =
@@ -1037,7 +1037,7 @@ pub fn add_headers_get_storage_lens_configuration_tagging(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_90) = &input.account_id {
-        let formatted_91 = AsRef::<str>::as_ref(inner_90);
+        let formatted_91 = inner_90.as_str();
         if !formatted_91.is_empty() {
             let header_value = formatted_91;
             let header_value =
@@ -1061,7 +1061,7 @@ pub fn add_headers_list_access_points(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_92) = &input.account_id {
-        let formatted_93 = AsRef::<str>::as_ref(inner_92);
+        let formatted_93 = inner_92.as_str();
         if !formatted_93.is_empty() {
             let header_value = formatted_93;
             let header_value =
@@ -1085,7 +1085,7 @@ pub fn add_headers_list_access_points_for_object_lambda(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_94) = &input.account_id {
-        let formatted_95 = AsRef::<str>::as_ref(inner_94);
+        let formatted_95 = inner_94.as_str();
         if !formatted_95.is_empty() {
             let header_value = formatted_95;
             let header_value =
@@ -1109,7 +1109,7 @@ pub fn add_headers_list_jobs(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_96) = &input.account_id {
-        let formatted_97 = AsRef::<str>::as_ref(inner_96);
+        let formatted_97 = inner_96.as_str();
         if !formatted_97.is_empty() {
             let header_value = formatted_97;
             let header_value =
@@ -1133,7 +1133,7 @@ pub fn add_headers_list_multi_region_access_points(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_98) = &input.account_id {
-        let formatted_99 = AsRef::<str>::as_ref(inner_98);
+        let formatted_99 = inner_98.as_str();
         if !formatted_99.is_empty() {
             let header_value = formatted_99;
             let header_value =
@@ -1157,7 +1157,7 @@ pub fn add_headers_list_regional_buckets(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_100) = &input.account_id {
-        let formatted_101 = AsRef::<str>::as_ref(inner_100);
+        let formatted_101 = inner_100.as_str();
         if !formatted_101.is_empty() {
             let header_value = formatted_101;
             let header_value =
@@ -1174,7 +1174,7 @@ pub fn add_headers_list_regional_buckets(
         }
     }
     if let Some(inner_102) = &input.outpost_id {
-        let formatted_103 = AsRef::<str>::as_ref(inner_102);
+        let formatted_103 = inner_102.as_str();
         if !formatted_103.is_empty() {
             let header_value = formatted_103;
             let header_value =
@@ -1198,7 +1198,7 @@ pub fn add_headers_list_storage_lens_configurations(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_104) = &input.account_id {
-        let formatted_105 = AsRef::<str>::as_ref(inner_104);
+        let formatted_105 = inner_104.as_str();
         if !formatted_105.is_empty() {
             let header_value = formatted_105;
             let header_value =
@@ -1222,7 +1222,7 @@ pub fn add_headers_put_access_point_configuration_for_object_lambda(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_106) = &input.account_id {
-        let formatted_107 = AsRef::<str>::as_ref(inner_106);
+        let formatted_107 = inner_106.as_str();
         if !formatted_107.is_empty() {
             let header_value = formatted_107;
             let header_value =
@@ -1246,7 +1246,7 @@ pub fn add_headers_put_access_point_policy(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_108) = &input.account_id {
-        let formatted_109 = AsRef::<str>::as_ref(inner_108);
+        let formatted_109 = inner_108.as_str();
         if !formatted_109.is_empty() {
             let header_value = formatted_109;
             let header_value =
@@ -1270,7 +1270,7 @@ pub fn add_headers_put_access_point_policy_for_object_lambda(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_110) = &input.account_id {
-        let formatted_111 = AsRef::<str>::as_ref(inner_110);
+        let formatted_111 = inner_110.as_str();
         if !formatted_111.is_empty() {
             let header_value = formatted_111;
             let header_value =
@@ -1294,7 +1294,7 @@ pub fn add_headers_put_bucket_lifecycle_configuration(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_112) = &input.account_id {
-        let formatted_113 = AsRef::<str>::as_ref(inner_112);
+        let formatted_113 = inner_112.as_str();
         if !formatted_113.is_empty() {
             let header_value = formatted_113;
             let header_value =
@@ -1318,7 +1318,7 @@ pub fn add_headers_put_bucket_policy(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_114) = &input.account_id {
-        let formatted_115 = AsRef::<str>::as_ref(inner_114);
+        let formatted_115 = inner_114.as_str();
         if !formatted_115.is_empty() {
             let header_value = formatted_115;
             let header_value =
@@ -1361,7 +1361,7 @@ pub fn add_headers_put_bucket_tagging(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_117) = &input.account_id {
-        let formatted_118 = AsRef::<str>::as_ref(inner_117);
+        let formatted_118 = inner_117.as_str();
         if !formatted_118.is_empty() {
             let header_value = formatted_118;
             let header_value =
@@ -1385,7 +1385,7 @@ pub fn add_headers_put_bucket_versioning(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_119) = &input.account_id {
-        let formatted_120 = AsRef::<str>::as_ref(inner_119);
+        let formatted_120 = inner_119.as_str();
         if !formatted_120.is_empty() {
             let header_value = formatted_120;
             let header_value =
@@ -1402,7 +1402,7 @@ pub fn add_headers_put_bucket_versioning(
         }
     }
     if let Some(inner_121) = &input.mfa {
-        let formatted_122 = AsRef::<str>::as_ref(inner_121);
+        let formatted_122 = inner_121.as_str();
         if !formatted_122.is_empty() {
             let header_value = formatted_122;
             let header_value =
@@ -1426,7 +1426,7 @@ pub fn add_headers_put_job_tagging(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_123) = &input.account_id {
-        let formatted_124 = AsRef::<str>::as_ref(inner_123);
+        let formatted_124 = inner_123.as_str();
         if !formatted_124.is_empty() {
             let header_value = formatted_124;
             let header_value =
@@ -1450,7 +1450,7 @@ pub fn add_headers_put_multi_region_access_point_policy(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_125) = &input.account_id {
-        let formatted_126 = AsRef::<str>::as_ref(inner_125);
+        let formatted_126 = inner_125.as_str();
         if !formatted_126.is_empty() {
             let header_value = formatted_126;
             let header_value =
@@ -1474,7 +1474,7 @@ pub fn add_headers_put_public_access_block(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_127) = &input.account_id {
-        let formatted_128 = AsRef::<str>::as_ref(inner_127);
+        let formatted_128 = inner_127.as_str();
         if !formatted_128.is_empty() {
             let header_value = formatted_128;
             let header_value =
@@ -1498,7 +1498,7 @@ pub fn add_headers_put_storage_lens_configuration(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_129) = &input.account_id {
-        let formatted_130 = AsRef::<str>::as_ref(inner_129);
+        let formatted_130 = inner_129.as_str();
         if !formatted_130.is_empty() {
             let header_value = formatted_130;
             let header_value =
@@ -1522,7 +1522,7 @@ pub fn add_headers_put_storage_lens_configuration_tagging(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_131) = &input.account_id {
-        let formatted_132 = AsRef::<str>::as_ref(inner_131);
+        let formatted_132 = inner_131.as_str();
         if !formatted_132.is_empty() {
             let header_value = formatted_132;
             let header_value =
@@ -1546,7 +1546,7 @@ pub fn add_headers_update_job_priority(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_133) = &input.account_id {
-        let formatted_134 = AsRef::<str>::as_ref(inner_133);
+        let formatted_134 = inner_133.as_str();
         if !formatted_134.is_empty() {
             let header_value = formatted_134;
             let header_value =
@@ -1570,7 +1570,7 @@ pub fn add_headers_update_job_status(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_135) = &input.account_id {
-        let formatted_136 = AsRef::<str>::as_ref(inner_135);
+        let formatted_136 = inner_135.as_str();
         if !formatted_136.is_empty() {
             let header_value = formatted_136;
             let header_value =
@@ -1589,7 +1589,7 @@ pub fn add_headers_update_job_status(
     Ok(builder)
 }
 
-pub fn deser_header_create_bucket_create_bucket_output_location(
+pub(crate) fn deser_header_create_bucket_create_bucket_output_location(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,

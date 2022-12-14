@@ -1349,7 +1349,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_298 = object.key("Tags").start_object();
         for (key_299, value_300) in var_297 {
             {
-                object_298.key(key_299).string(value_300.as_str());
+                object_298.key(key_299.as_str()).string(value_300.as_str());
             }
         }
         object_298.finish();
@@ -1894,7 +1894,7 @@ pub fn serialize_structure_crate_model_deployment_command(
         let mut object_433 = object.key("Args").start_object();
         for (key_434, value_435) in var_432 {
             {
-                let mut array_436 = object_433.key(key_434).start_array();
+                let mut array_436 = object_433.key(key_434.as_str()).start_array();
                 for item_437 in value_435 {
                     {
                         array_436.value().string(item_437.as_str());
@@ -2136,7 +2136,7 @@ pub fn serialize_structure_crate_model_weekly_auto_scaling_schedule(
         let mut object_484 = object.key("Monday").start_object();
         for (key_485, value_486) in var_483 {
             {
-                object_484.key(key_485).string(value_486.as_str());
+                object_484.key(key_485.as_str()).string(value_486.as_str());
             }
         }
         object_484.finish();
@@ -2145,7 +2145,7 @@ pub fn serialize_structure_crate_model_weekly_auto_scaling_schedule(
         let mut object_488 = object.key("Tuesday").start_object();
         for (key_489, value_490) in var_487 {
             {
-                object_488.key(key_489).string(value_490.as_str());
+                object_488.key(key_489.as_str()).string(value_490.as_str());
             }
         }
         object_488.finish();
@@ -2154,7 +2154,7 @@ pub fn serialize_structure_crate_model_weekly_auto_scaling_schedule(
         let mut object_492 = object.key("Wednesday").start_object();
         for (key_493, value_494) in var_491 {
             {
-                object_492.key(key_493).string(value_494.as_str());
+                object_492.key(key_493.as_str()).string(value_494.as_str());
             }
         }
         object_492.finish();
@@ -2163,7 +2163,7 @@ pub fn serialize_structure_crate_model_weekly_auto_scaling_schedule(
         let mut object_496 = object.key("Thursday").start_object();
         for (key_497, value_498) in var_495 {
             {
-                object_496.key(key_497).string(value_498.as_str());
+                object_496.key(key_497.as_str()).string(value_498.as_str());
             }
         }
         object_496.finish();
@@ -2172,7 +2172,7 @@ pub fn serialize_structure_crate_model_weekly_auto_scaling_schedule(
         let mut object_500 = object.key("Friday").start_object();
         for (key_501, value_502) in var_499 {
             {
-                object_500.key(key_501).string(value_502.as_str());
+                object_500.key(key_501.as_str()).string(value_502.as_str());
             }
         }
         object_500.finish();
@@ -2181,7 +2181,7 @@ pub fn serialize_structure_crate_model_weekly_auto_scaling_schedule(
         let mut object_504 = object.key("Saturday").start_object();
         for (key_505, value_506) in var_503 {
             {
-                object_504.key(key_505).string(value_506.as_str());
+                object_504.key(key_505.as_str()).string(value_506.as_str());
             }
         }
         object_504.finish();
@@ -2190,7 +2190,7 @@ pub fn serialize_structure_crate_model_weekly_auto_scaling_schedule(
         let mut object_508 = object.key("Sunday").start_object();
         for (key_509, value_510) in var_507 {
             {
-                object_508.key(key_509).string(value_510.as_str());
+                object_508.key(key_509.as_str()).string(value_510.as_str());
             }
         }
         object_508.finish();
